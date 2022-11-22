@@ -16,6 +16,7 @@ const {
 
 
 export const parse = (rom, mode) => {
+    let sideViewMaps = extractSideViewMapData(rom);
     let westHyruleMap = extractWestHyruleMapLocations(rom);
     let westHyruleSpriteMap = extractWestHyruleSpriteMap(rom, mode);
     let eastHyruleMap = extractEastHyruleMapLocations(rom);
@@ -27,6 +28,7 @@ export const parse = (rom, mode) => {
     let textData = extractTextData(rom);
 
     return {
+        sideViewMaps,
         westHyruleMap,
         westHyruleSpriteMap,
         eastHyruleMap,

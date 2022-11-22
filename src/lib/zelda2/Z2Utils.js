@@ -370,7 +370,7 @@ const sleep = (ms) => {
     });
 }
 
-const drawMap = async (level, backMaps) => {
+const drawMap = (level, backMaps) => {
     let mapWidth = 4 * WIDTH_OF_SCREEN;
     
     let objectSet = level.header.objectSet;
@@ -395,7 +395,7 @@ const drawMap = async (level, backMaps) => {
             backMapBank = 5;
         }
         backMap = backMaps[backMapBank][level.header.backMap];
-        backMapLayer = await drawMap(backMap);
+        backMapLayer = drawMap(backMap);
     }
 
     let largeObjects = LARGE_OBJECT_SETS[level.mapSetNumber][objectSet];
@@ -416,7 +416,7 @@ const drawMap = async (level, backMaps) => {
         floorLevel = newLevel;
         ceilingLevel = 1;
     } else if (c === "C") {
-        newFloorLevel = 2;
+        floorLevel = 2;
         ceilingLevel = newLevel;
     } else {
         drawWall = true;
@@ -427,10 +427,10 @@ const drawMap = async (level, backMaps) => {
     }
 
     if (grass) {
-        hLine2D(bg, mapWidth, 0, mapWidth, 0xA, colorize(32, "█"));
+        hLine2D(bg, mapWidth, 0, mapWidth, 0xA, {name: "grass", solid: false});
     }
     if (bushes) {
-        hLine2D(bg, mapWidth, 0, mapWidth, 0xB, colorize(2, colorize(32, "█")));
+        hLine2D(bg, mapWidth, 0, mapWidth, 0xB,  {name: "bushes", solid: false});
     }
 
     let x = 0;
@@ -443,7 +443,7 @@ const drawMap = async (level, backMaps) => {
         
         if (drawWall) {
             for (let i = 0; i < xSpace; i++) {
-                vLine2D(map, mapWidth, 0, 12, newX + i, "█");
+                vLine2D(map, mapWidth, 0, 12, newX + i, {name: "wall", solid: true});
             }
             drawWall = false;
         } 
@@ -469,39 +469,33 @@ const drawMap = async (level, backMaps) => {
             size = objectNumber & 0b00001111;
             objectNumber = objectNumber >> 4;
             if (objectNumber === 0x2 || objectNumber === 0x1) {
-                rectangle2D(fg, mapWidth, newX, 10, newX + size, 13, colorize(31, "█"));
+                rectangle2D(fg, mapWidth, newX, 10, newX + size, 13, {name: "lava", solid: true});
             }
         } else {
             if (objectNumber === 0xF && y < 13) {
                 // SPECIAL OBJECT
-                plot2D(fg, mapWidth, newX, y, "!");
+                plot2D(fg, mapWidth, newX, y, {name: "collectible"});
             } else if (objectNumber > 0xF) {
                 // LARGE OBJECT
                 size = objectNumber & 0b00001111;
                 objectNumber = objectNumber >> 4;
-                let {width, height, solid, clear, breakable, collapsing, type, toGround} = largeObjects[objectNumber];
-                let print = solid ? "█" : colorize(2, "█");
-                print = clear ? " " : print;
-                print = breakable ? "X" : print;
-                print = collapsing ? ":" : print;
+                let {width, height, type, toGround} = largeObjects[objectNumber];
                 let y2 = toGround ? 13 : y + height;
                 if (type === "wide") {
-                    rectangle2D(map, mapWidth, newX, y, newX + (size * width), y2, print);
+                    rectangle2D(map, mapWidth, newX, y, newX + (size * width), y2, largeObjects[objectNumber]);
                 } else if (type === "tall") {
-                    rectangle2D(map, mapWidth, newX, y, newX + width - 1, y2 + (size * height), print);
+                    rectangle2D(map, mapWidth, newX, y, newX + width - 1, y2 + (size * height), largeObjects[objectNumber]);
                 }
             } else {
-                let {width, height, solid, clear, toGround} = smallObjects[objectNumber];
-                let print = solid ? "█" : colorize(2, "█");
-                print = clear ? " " : print;
+                let {width, height, toGround} = smallObjects[objectNumber];
                 let y2 = toGround ? 10 : y + height;
-                rectangle2D(fg, mapWidth, newX, y, newX + width - 1, y2, print);
+                rectangle2D(fg, mapWidth, newX, y, newX + width - 1, y2, smallObjects[objectNumber]);
             }
         }
         
         if (xSpace !== 0) {
-            rectangle2D(bg, mapWidth, x, 13 - floorLevel,  newX - 1, 13,           "█");
-            rectangle2D(bg, mapWidth, x, 0,                newX - 1, ceilingLevel, "█");
+            rectangle2D(map, mapWidth, x, 13 - floorLevel,  newX - 1, 13,           {name: "floor", solid: true});
+            rectangle2D(map, mapWidth, x, 0,                newX - 1, ceilingLevel, {name: "ceiling", solid: true});
         }
 
         x = newX;
@@ -510,27 +504,16 @@ const drawMap = async (level, backMaps) => {
         if (noCeiling) {
             ceilingLevel = 0;
         }
-
-        // let f = plot2D(map, mapWidth, x, 13 - floorLevel, colorize(5, "^"));
-        // let c = plot2D(map, mapWidth, x, ceilingLevel, colorize(5, "v"));
-        // let p = plot2D(map, mapWidth, x, y, colorize(5, "*"));
-        // draw2D(map, mapWidth);
-        // plot2D(map, mapWidth, x, 13 - floorLevel, f);
-        // plot2D(map, mapWidth, x, ceilingLevel, c);
-        // plot2D(map, mapWidth, x, y, p);
-        // await sleep(1000);
     };
     if (x < mapWidth) {
         if (drawWall) {
-            rectangle2D(map, mapWidth, x, 0, mapWidth - 1, 13, "█");
+            rectangle2D(map, mapWidth, x, 0, mapWidth - 1, 13, {name: "wall", solid: true});
         }
-        rectangle2D(map, mapWidth, x, 13 - floorLevel,  mapWidth - 1, 13,           "█");
-        rectangle2D(map, mapWidth, x, 0,                mapWidth - 1, ceilingLevel, "█");
+        rectangle2D(map, mapWidth, x, 13 - floorLevel,  mapWidth - 1, 13,           {name: "floor", solid: true});
+        rectangle2D(map, mapWidth, x, 0,                mapWidth - 1, ceilingLevel, {name: "ceiling", solid: true});
     }
-    let layers = layer2D(backMapLayer, bg, map, fg);
-    draw2D(layers, mapWidth);
-
-    return layers;
+    //return layer2D(backMapLayer, bg, map, fg);
+    return map;
 }
 
 exports.printDebugMap = printDebugMap;

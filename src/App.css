@@ -1,6 +1,16 @@
+body * {
+    box-sizing: border-box;
+}
+
 .map-data-display {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    background-color: gray;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
 }
 
 .table-head {
@@ -22,6 +32,26 @@
     color: white;
     align-items: center;
     justify-content: center;
+}
+
+.map-container .map-square:hover {
+    scale: 1.5;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.side-view {
+    display: grid;
+    grid-template-columns: repeat(64, 10px);
+    border: 1px solid black;
+    width: 640px;
+    margin: auto;
+}
+
+.side-view .side-view-block {
+    width: 10px;
+    height: 10px;
+    border: 1px solid gray;
 }
 
 .blinking {

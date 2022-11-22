@@ -1,5 +1,4 @@
 export default ({locationData}) => {
-    console.table(locationData);
     return (
         <div className="map-data-display">
             <div className="table-head"></div>

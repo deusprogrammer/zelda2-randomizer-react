@@ -4,6 +4,7 @@ import {useState} from 'react';
 import { parse } from './lib/Z2Parser';
 import MapData from './components/MapData';
 import MapDisplay from './components/MapDisplay';
+import MapSideView from './components/MapSideView';
 
 function App() {
     const [romData, setRomData] = useState(null);
@@ -40,16 +41,21 @@ function App() {
                     <MapData locationData={romData.westHyruleMap} />
                     <h4>Map</h4>
                     <MapDisplay locationData={romData.westHyruleMap} spriteMap={romData.westHyruleSpriteMap} />
+                    <h4>Side View Maps</h4>
+                    <MapSideView level={romData.sideViewMaps[0][33]} />
+                    
                     <h3>East Hyrule</h3>
                     <h4>Data</h4>
                     <MapData locationData={romData.eastHyruleMap} />
                     <h4>Map</h4>
                     <MapDisplay locationData={romData.eastHyruleMap} spriteMap={romData.eastHyruleSpriteMap} />
+                    
                     <h3>Death Mountain</h3>
                     <h4>Data</h4>
                     <MapData locationData={romData.deathMountainHyruleMap} />
                     <h4>Map</h4>
                     <MapDisplay locationData={romData.deathMountainHyruleMap} spriteMap={romData.deathMountainHyruleSpriteMap} />
+                    
                     <h3>Maze Island</h3>
                     <h4>Data</h4>
                     <MapData locationData={romData.mazeIslandMountainHyruleMap} />

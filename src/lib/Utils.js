@@ -28,18 +28,6 @@ const colorize = (color, output) => {
     return output;
 }
 
-console.json = (value) => {
-    console.log(JSON.stringify(value, null, 5));
-}
-
-console.hexTable = (obj) => {
-    console.table(objectDig(obj, (value) => "0x" + value.toString(16)));
-}
-
-console.binTable = (obj) => {
-    console.table(objectDig(obj, (value) => "0b" + value.toString(2)));
-}
-
 const snakeCaseToCamelCase = (value) => {
     let newName = "";
     let state = "LOWER";
@@ -66,7 +54,13 @@ const snakeCaseToCamelCase = (value) => {
 }
 
 const create2D = (width, height) => {
-    return new Array(width * height);
+    let buffer = [];
+
+    for (let i = 0; i < width * height; i++ ) {
+        buffer.push(null);
+    }
+
+    return buffer;
 }
 
 const plot2D = (buffer, width, x, y, value) => {
@@ -106,7 +100,9 @@ const layer2D = (...layerBuffers) => {
     for (let i = 0; i < layerBuffers.length; i++) {
         let layer = layerBuffers[i];
         layer.forEach((block, j) => {
-            buffer[j] = block;
+            if (block) {
+                buffer[j] = block;
+            }
         })
     }
 

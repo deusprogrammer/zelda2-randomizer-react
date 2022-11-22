@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 const OVERWORLD_SPRITE_SYMBOLS = [
-    {c: "P", color: "white", backgroundColor: "red"},
-    {c: " ", color: "white", backgroundColor: "black"},
     {c: "T", color: "white", backgroundColor: "red"},
+    {c: " ", color: "white", backgroundColor: "black"},
+    {c: "P", color: "white", backgroundColor: "red"},
     {c: "=", color: "black", backgroundColor: "yellow"},
     {c: " ", color: "white", backgroundColor: "sandybrown"},
     {c: " ", color: "white", backgroundColor: "lightgreen"},
@@ -18,6 +20,8 @@ const OVERWORLD_SPRITE_SYMBOLS = [
 ]
 
 export default ({spriteMap, locationData}) => {
+    const [selectedSquare, setSelectedSquare] = useState("");
+
     const printSpriteMap = (mapObject, locations) => {
         let mapBlocks = [];
         let i = 0;
@@ -32,7 +36,16 @@ export default ({spriteMap, locationData}) => {
                 });
         
                 let {c, backgroundColor, color} = OVERWORLD_SPRITE_SYMBOLS[sprite.type];
-                mapBlocks.push(<div className={`map-square ${found ? 'blinking' : ''}`} style={{color, backgroundColor}}>{c}</div>);
+                mapBlocks.push(
+                    <div 
+                        className={`map-square ${found ? 'blinking' : ''}`} 
+                        style={{color, backgroundColor}}
+                        onMouseEnter={() => {setSelectedSquare(found)}}
+                        onMouseLeave={() => {setSelectedSquare(null)}}
+                    >
+                        {c}
+                    </div>
+                );
             }
         }
 
@@ -41,6 +54,7 @@ export default ({spriteMap, locationData}) => {
 
     return (
         <div>
+            {selectedSquare ? <div style={{display: "inline-block", position: "fixed", top: "0px", left: "0px", backgroundColor: "gray", color: "white"}}>{selectedSquare}</div>: null}
             {printSpriteMap(spriteMap, locationData)}
         </div>
     )
