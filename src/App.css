@@ -20,6 +20,11 @@ body * {
     margin: 0;
 }
 
+.map-data-table tr td:first-child {
+    text-align: left;
+    font-weight: bolder;
+}
+
 .map-data-table tr:nth-child(even) {
     background-color: lightslategray;
     color: white;
