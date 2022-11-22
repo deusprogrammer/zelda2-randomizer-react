@@ -1,8 +1,8 @@
-const { getValueFromMap } = require("../Utils");
+import { getValueFromMap }  from "../Utils";
 
 const LAST_BIT_MASK = 1 >>> 0;
 
-const littleEndianConvert = (buffer) => {
+export const littleEndianConvert = (buffer) => {
     let n = 0;
     for (let i = buffer.length - 1; i >= 0; i--) {
         n = (n << 8) + buffer[i];
@@ -10,7 +10,7 @@ const littleEndianConvert = (buffer) => {
     return n;
 }
 
-const bigEndianConvert = (buffer) => {
+export const bigEndianConvert = (buffer) => {
     let n = 0;
     for (let i = 0; i < buffer.length; i++) {
         n = (n << 8) + buffer[i];
@@ -18,7 +18,7 @@ const bigEndianConvert = (buffer) => {
     return n;
 }
 
-const maskBits = (bytes, mask) => {
+export const maskBits = (bytes, mask) => {
     let maskedValue = mask & bytes;
     while ((mask & LAST_BIT_MASK) === 0) {
         maskedValue = maskedValue >> 1;
@@ -28,7 +28,7 @@ const maskBits = (bytes, mask) => {
     return maskedValue;
 }
 
-const byteMaskExtractor = (fieldMap, bytes) => {
+export const byteMaskExtractor = (fieldMap, bytes) => {
     let fields = {};
     bytes = bytes >>> 0;
     for (let key in fieldMap) {
@@ -38,7 +38,7 @@ const byteMaskExtractor = (fieldMap, bytes) => {
     return fields;
 }
 
-const extractFields = (fields, buffer, offset) => {
+export const extractFields = (fields, buffer, offset) => {
     let element = {};
     for (let {name, size, relOffset, mask} of fields) {
         let fieldSize = size || 1;
@@ -52,7 +52,7 @@ const extractFields = (fields, buffer, offset) => {
     return element;
 }
 
-const extractElements = (objDesc, buffer, start) => {
+export const extractElements = (objDesc, buffer, start) => {
     let {size, elements: {size: elementSize, fields}} = objDesc;
     let elements = [];
     for (let offset = start, i = 0; offset < start + size; offset += elementSize, i++) {
@@ -61,7 +61,7 @@ const extractElements = (objDesc, buffer, start) => {
     return elements;
 }
 
-const hexExtractor = (map, buffer, start = 0) => {
+export const hexExtractor = (map, buffer, start = 0) => {
     let offset = start;
     let extracted = {};
     for (let key in map) {
@@ -95,7 +95,7 @@ const hexExtractor = (map, buffer, start = 0) => {
     return [extracted, offset];
 }
 
-const hexArrayExtractor = (map, buffer, nElements, start = 0) => {
+export const hexArrayExtractor = (map, buffer, nElements, start = 0) => {
     let elements = [];
     for (let i = 0; i < nElements; i++) {
         let [extracted, newOffset] = hexExtractor(map, buffer, start);
@@ -104,12 +104,3 @@ const hexArrayExtractor = (map, buffer, nElements, start = 0) => {
     }
     return elements;
 }
-
-exports.maskBits = maskBits;
-exports.hexExtractor = hexExtractor;
-exports.hexArrayExtractor = hexArrayExtractor;
-exports.extractFields = extractFields;
-exports.extractElements = extractElements;
-exports.byteMaskExtractor = byteMaskExtractor;
-exports.bigEndianConvert = bigEndianConvert;
-exports.littleEndianConvert = littleEndianConvert;

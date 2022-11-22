@@ -1,5 +1,5 @@
 const { hexExtractor, extractElements, hexArrayExtractor, littleEndianConvert, extractFields, maskBits } = require("../memory/HexTools");
-const { colorize, create2D, draw2D, hLine2D, vLine2D, plot2D, rectangle2D, layer2D } = require("../Utils");
+const { create2D, hLine2D, vLine2D, plot2D, rectangle2D, layer2D } = require("../Utils");
 const { LARGE_OBJECT_SETS, SMALL_OBJECTS } = require("./Z2Data");
 const { 
     toFileAddr,
@@ -31,16 +31,16 @@ const {
     TEXT_DATA_LENGTH,
     BACKMAP_POINTER_BANK_OFFSETS} = require("./Z2MemoryMappings");
 
-const WIDTH_OF_SCREEN  = 16;
-const HEIGHT_OF_SCREEN = 16;
+export const WIDTH_OF_SCREEN  = 16;
+export const HEIGHT_OF_SCREEN = 16;
 
-const DRAWING_OP = {
+export const DRAWING_OP = {
     0xD: "CHANGE FLOOR LEVEL",
     0xE: "SKIP",
     0xF: "EXTRA OBJECT"
 }
 
-const SUB_OP_MAP = {
+export const SUB_OP_MAP = {
     F: "FLOOR",
     C: "CEILING",
     W: "WALL"
@@ -77,12 +77,12 @@ const SUB_OP_MAP = {
 //     return v;
 // }
 
-const readUint16 = (buffer, offset) => {
+export const readUint16 = (buffer, offset) => {
     let bytes = buffer.slice(offset, offset + 2);
     return littleEndianConvert(bytes);
 }
 
-const printDebugMap = (mapObject) => {
+export const printDebugMap = (mapObject) => {
     let legend = {};
     Object.keys(mapObject).forEach((key, index) => {
         legend[key] = index;
@@ -109,23 +109,23 @@ const printDebugMap = (mapObject) => {
     console.log();
 }
 
-const extractWestHyruleMapLocations = (buffer) => {
+export const extractWestHyruleMapLocations = (buffer) => {
     return hexExtractor(WEST_HYRULE_LOCATION_MAPPINGS, buffer)[0];
 }
 
-const extractEastHyruleMapLocations = (buffer) => {
+export const extractEastHyruleMapLocations = (buffer) => {
     return hexExtractor(EAST_HYRULE_LOCATION_MAPPINGS, buffer)[0];
 }
 
-const extractDeathMountainMapLocations = (buffer) => {
+export const extractDeathMountainMapLocations = (buffer) => {
     return hexExtractor(DEATH_MOUNTAIN_LOCATION_MAPPINGS, buffer)[0];
 }
 
-const extractMazeIslandMapLocations = (buffer) => {
+export const extractMazeIslandMapLocations = (buffer) => {
     return hexExtractor(MAZE_ISLAND_LOCATION_MAPPINGS, buffer)[0];
 }
 
-const extractWestHyruleSpriteMap = (buffer, mode) => {
+export const extractWestHyruleSpriteMap = (buffer, mode) => {
     let offset = WEST_HYRULE_MAP_VANILLA_OFFSET;
     if (mode === "RANDO") {
         offset = WEST_HYRULE_MAP_RANDO_OFFSET;
@@ -133,7 +133,7 @@ const extractWestHyruleSpriteMap = (buffer, mode) => {
     return extractElements(WEST_HYRULE_OVERWORLD_SPRITE_MAPPING, buffer, offset);
 }
 
-const extractEastHyruleSpriteMap = (buffer, mode) => {
+export const extractEastHyruleSpriteMap = (buffer, mode) => {
     let offset = EAST_HYRULE_MAP_VANILLA_OFFSET;
     if (mode === "RANDO") {
         offset = EAST_HYRULE_MAP_RANDO_OFFSET;
@@ -141,7 +141,7 @@ const extractEastHyruleSpriteMap = (buffer, mode) => {
     return extractElements(EAST_HYRULE_OVERWORLD_SPRITE_MAPPING, buffer, offset);
 }
 
-const extractDeathMountainSpriteMap = (buffer, mode) => {
+export const extractDeathMountainSpriteMap = (buffer, mode) => {
     let offset = DEATH_MOUNTAIN_MAP_VANILLA_OFFSET;
     if (mode === "RANDO") {
         offset = DEATH_MOUNTAIN_MAP_RANDO_OFFSET;
@@ -149,7 +149,7 @@ const extractDeathMountainSpriteMap = (buffer, mode) => {
     return extractElements(DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING, buffer, offset);
 }
 
-const extractMazeIslandSpriteMap = (buffer, mode) => {
+export const extractMazeIslandSpriteMap = (buffer, mode) => {
     let offset = MAZE_ISLAND_MAP_VANILLA_OFFSET;
     if (mode === "RANDO") {
         offset = MAZE_ISLAND_MAP_RANDO_OFFSET;
@@ -157,7 +157,7 @@ const extractMazeIslandSpriteMap = (buffer, mode) => {
     return extractElements(MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING, buffer, offset);
 }
 
-const extractSideViewMapData = (buffer) => {
+export const extractSideViewMapData = (buffer) => {
     let mapSets = [];
     for (let bank = 0; bank < 5; bank++) {
         let maps = [];
@@ -216,7 +216,7 @@ const extractSideViewMapData = (buffer) => {
     return mapSets;
 }
 
-const extractBackMapData = (buffer) => {
+export const extractBackMapData = (buffer) => {
     let mapSets = [];
     for (let bank = 0; bank < 5; bank++) {
         let maps = [];
@@ -247,7 +247,7 @@ const extractBackMapData = (buffer) => {
     return mapSets;
 }
 
-const extractLevelExits = (buffer) => {
+export const extractLevelExits = (buffer) => {
     let mapSets = [];
     for (let bank = 0; bank < 5; bank++) {
         let offset = LEVEL_EXITS_BANK_OFFSETS1[bank];
@@ -268,7 +268,7 @@ const extractLevelExits = (buffer) => {
     return mapSets;
 }
 
-const extractTextData = (buffer) => {
+export const extractTextData = (buffer) => {
     const CHARACTER_MAP = {0x32: '*', 0x34: '?', 0x36: '!', 0x9C: ',', 0xCE: '/', 0xCF: '.', 0xF7: 'l', 0xF8: 't', 0xF9: 'm', 0xFC: 'x', 0xFD: '\n', 0xFE: '\n', 0xF4: ' ', 0xF5: ' '};
     let texts = [];
     let text = "";
@@ -297,7 +297,7 @@ const extractTextData = (buffer) => {
     return texts;
 }
 
-const debugMap = (mapSets, mapSetNumber, mapNumber) => {
+export const debugMap = (mapSets, mapSetNumber, mapNumber) => {
     let mapSet = mapSets[mapSetNumber];
     let level = mapSet[mapNumber];
     console.box("MAP " + mapSetNumber + "-" + mapNumber);
@@ -340,21 +340,21 @@ const debugMap = (mapSets, mapSetNumber, mapNumber) => {
     }));
 }
 
-const debugLevelExits = (mapSets, mapSetNumber, mapNumber) => {
+export const debugLevelExits = (mapSets, mapSetNumber, mapNumber) => {
     let mapSet = mapSets[mapSetNumber];
     let level = mapSet[mapNumber];
     console.box("MAP " + mapSetNumber + "-" + mapNumber);
     console.table(level);
 }
 
-const debugMapBank = (banks, mapSetNumber) => {
+export const debugMapBank = (banks, mapSetNumber) => {
     let levels = banks[mapSetNumber];
     levels.forEach((mapNumber) => {
         debugMap(banks, mapSetNumber, mapNumber);
     });
 }
 
-const getFloorPosition = (floorLevel) => {
+export const getFloorPosition = (floorLevel) => {
     if (floorLevel >= 0 && floorLevel <= 7) {
         return [floorLevel + 2, 'F'];
     } else if (floorLevel > 7 && floorLevel <= 14) {
@@ -364,13 +364,7 @@ const getFloorPosition = (floorLevel) => {
     }
 }
 
-const sleep = (ms) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {resolve()}, ms);
-    });
-}
-
-const drawMap = (level, backMaps) => {
+export const drawMap = (level, backMaps) => {
     let mapWidth = 4 * WIDTH_OF_SCREEN;
     
     let objectSet = level.header.objectSet;
@@ -514,21 +508,3 @@ const drawMap = (level, backMaps) => {
     }
     return layer2D(backMapLayer, bg, map, fg);
 }
-
-exports.printDebugMap = printDebugMap;
-exports.extractWestHyruleMapLocations = extractWestHyruleMapLocations;
-exports.extractEastHyruleMapLocations = extractEastHyruleMapLocations;
-exports.extractWestHyruleSpriteMap = extractWestHyruleSpriteMap;
-exports.extractEastHyruleSpriteMap = extractEastHyruleSpriteMap;
-exports.extractDeathMountainMapLocations = extractDeathMountainMapLocations;
-exports.extractMazeIslandMapLocations = extractMazeIslandMapLocations;
-exports.extractDeathMountainSpriteMap = extractDeathMountainSpriteMap;
-exports.extractMazeIslandSpriteMap = extractMazeIslandSpriteMap;
-exports.extractSideViewMapData = extractSideViewMapData;
-exports.extractBackMapData = extractBackMapData;
-exports.extractLevelExits = extractLevelExits;
-exports.extractTextData = extractTextData;
-exports.debugMap = debugMap;
-exports.debugLevelExits = debugLevelExits;
-exports.debugMapBank = debugMapBank;
-exports.drawMap = drawMap;

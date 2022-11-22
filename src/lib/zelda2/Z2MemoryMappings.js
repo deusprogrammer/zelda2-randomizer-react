@@ -1,11 +1,8 @@
-const toFileAddr = (ramAddress, bank) => {
+export const toFileAddr = (ramAddress, bank) => {
     return (ramAddress - 0x8000) + (bank * 0x4000) + 0x10;
 }
 
-const TOWN_PPU_DATA_OFFSET = 0x007B3;
-const PPU_DATA_LENGTH = 0x4;
-
-const LEVEL_EXIT_MAPPING = [
+export const LEVEL_EXIT_MAPPING = [
     {
         name: 'mapNumber',
         relOffset: 0x00,
@@ -18,7 +15,7 @@ const LEVEL_EXIT_MAPPING = [
     }
 ];
 
-const LEVEL_EXITS_MAPPING = {
+export const LEVEL_EXITS_MAPPING = {
     leftExit: {
         size: 0x1,
         offset: 0x0,
@@ -41,7 +38,7 @@ const LEVEL_EXITS_MAPPING = {
     }
 }
 
-const LEVEL_HEADER_MAPPING = [
+export const LEVEL_HEADER_MAPPING = [
     {
         name: 'sizeOfLevel',
         relOffset: 0x00,
@@ -112,7 +109,7 @@ const LEVEL_HEADER_MAPPING = [
     },
 ]
 
-const LEVEL_OBJECT_3B = [
+export const LEVEL_OBJECT_3B = [
     {
         name: 'yPosition',
         relOffset: 0x00,
@@ -136,7 +133,7 @@ const LEVEL_OBJECT_3B = [
 ]
 
 
-const LEVEL_OBJECT = [
+export const LEVEL_OBJECT = [
     {
         name: 'yPosition',
         relOffset: 0x00,
@@ -154,7 +151,7 @@ const LEVEL_OBJECT = [
     }
 ]
 
-const LOCATION_MAPPING_FIELDS = [
+export const LOCATION_MAPPING_FIELDS = [
     {
         name: 'y',
         relOffset: 0x00,
@@ -217,7 +214,7 @@ const LOCATION_MAPPING_FIELDS = [
     }
 ]
 
-const OVERWORLD_SPRITE_TYPES = [
+export const OVERWORLD_SPRITE_TYPES = [
     "Town",
     "Cave",
     "Palace",
@@ -236,11 +233,11 @@ const OVERWORLD_SPRITE_TYPES = [
     "Spider"
 ]
 
-const BACKMAP_OFFSET      = 0x8000;
-const MAP_POINTER_OFFSET1 = 0x8523;
-const MAP_POINTER_OFFSET2 = 0xA000;
+export const BACKMAP_OFFSET      = 0x8000;
+export const MAP_POINTER_OFFSET1 = 0x8523;
+export const MAP_POINTER_OFFSET2 = 0xA000;
 
-const BACKMAP_POINTER_BANK_OFFSETS = [
+export const BACKMAP_POINTER_BANK_OFFSETS = [
     toFileAddr(BACKMAP_OFFSET, 1),
     toFileAddr(BACKMAP_OFFSET, 2),
     toFileAddr(BACKMAP_OFFSET, 3),
@@ -248,7 +245,7 @@ const BACKMAP_POINTER_BANK_OFFSETS = [
     toFileAddr(BACKMAP_OFFSET, 5),
 ];
 
-const MAP_POINTER_BANK_OFFSETS1 = [
+export const MAP_POINTER_BANK_OFFSETS1 = [
     toFileAddr(MAP_POINTER_OFFSET1, 1),
     toFileAddr(MAP_POINTER_OFFSET1, 2),
     toFileAddr(MAP_POINTER_OFFSET1, 3),
@@ -256,7 +253,7 @@ const MAP_POINTER_BANK_OFFSETS1 = [
     toFileAddr(MAP_POINTER_OFFSET1, 5),
 ];
 
-const MAP_POINTER_BANK_OFFSETS2 = [
+export const MAP_POINTER_BANK_OFFSETS2 = [
     toFileAddr(MAP_POINTER_OFFSET2, 1),
     toFileAddr(MAP_POINTER_OFFSET1, 2),
     toFileAddr(MAP_POINTER_OFFSET2, 3),
@@ -264,10 +261,10 @@ const MAP_POINTER_BANK_OFFSETS2 = [
     toFileAddr(MAP_POINTER_OFFSET2, 5),
 ];
 
-const LEVEL_EXITS_OFFSET1 = 0x871B;
-const LEVEL_EXITS_OFFSET2 = 0xA1F8;
+export const LEVEL_EXITS_OFFSET1 = 0x871B;
+export const LEVEL_EXITS_OFFSET2 = 0xA1F8;
 
-const LEVEL_EXITS_BANK_OFFSETS1 = [
+export const LEVEL_EXITS_BANK_OFFSETS1 = [
     toFileAddr(LEVEL_EXITS_OFFSET1, 1),
     toFileAddr(LEVEL_EXITS_OFFSET1, 2),
     toFileAddr(LEVEL_EXITS_OFFSET1, 3),
@@ -275,7 +272,7 @@ const LEVEL_EXITS_BANK_OFFSETS1 = [
     toFileAddr(LEVEL_EXITS_OFFSET1, 5),
 ];
 
-const LEVEL_EXITS_BANK_OFFSETS2 = [
+export const LEVEL_EXITS_BANK_OFFSETS2 = [
     toFileAddr(LEVEL_EXITS_OFFSET2, 1),
     toFileAddr(LEVEL_EXITS_OFFSET2, 2),
     toFileAddr(LEVEL_EXITS_OFFSET2, 3),
@@ -283,11 +280,11 @@ const LEVEL_EXITS_BANK_OFFSETS2 = [
     toFileAddr(LEVEL_EXITS_OFFSET2, 5),
 ];
 
-const WEST_HYRULE_MAP_RANDO_OFFSET      = 0x7480;
-const WEST_HYRULE_MAP_VANILLA_OFFSET    = 0x506C;
-const WEST_HYRULE_MAP_LENGTH            = 0x538C - 0x506C;
+export const WEST_HYRULE_MAP_RANDO_OFFSET      = 0x7480;
+export const WEST_HYRULE_MAP_VANILLA_OFFSET    = 0x506C;
+export const WEST_HYRULE_MAP_LENGTH            = 0x538C - 0x506C;
 
-const WEST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
+export const WEST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
     size: WEST_HYRULE_MAP_LENGTH,
     elements: {
         size: 0x01,
@@ -306,7 +303,7 @@ const WEST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
     }
 }
 
-const WEST_HYRULE_LOCATION_MAPPINGS = {
+export const WEST_HYRULE_LOCATION_MAPPINGS = {
     NORTH_CASTLE: {
         offset: 0x462F,
         fields: LOCATION_MAPPING_FIELDS
@@ -493,11 +490,11 @@ const WEST_HYRULE_LOCATION_MAPPINGS = {
     }
 }
 
-const DEATH_MOUNTAIN_MAP_RANDO_OFFSET = 0x7A00;
-const DEATH_MOUNTAIN_MAP_VANILLA_OFFSET = 0x665C;
-const DEATH_MOUNTAIN_MAP_LENGTH = 0x6942 - 0x665C;
+export const DEATH_MOUNTAIN_MAP_RANDO_OFFSET = 0x7A00;
+export const DEATH_MOUNTAIN_MAP_VANILLA_OFFSET = 0x665C;
+export const DEATH_MOUNTAIN_MAP_LENGTH = 0x6942 - 0x665C;
 
-const DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING = {
+export const DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING = {
     size: WEST_HYRULE_MAP_LENGTH,
     elements: {
         size: 0x01,
@@ -516,7 +513,7 @@ const DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING = {
     }
 }
 
-const DEATH_MOUNTAIN_LOCATION_MAPPINGS = {
+export const DEATH_MOUNTAIN_LOCATION_MAPPINGS = {
     CAVE_B_W: {
         offset: 0x610C,
         fields: LOCATION_MAPPING_FIELDS
@@ -723,11 +720,11 @@ const DEATH_MOUNTAIN_LOCATION_MAPPINGS = {
     },
 }
 
-const MAZE_ISLAND_MAP_RANDO_OFFSET = 0xBA00;
-const MAZE_ISLAND_MAP_VANILLA_OFFSET = 0xA65C;
-const MAZE_ISLAND_MAP_LENGTH = 0xA942 - 0xA65C;
+export const MAZE_ISLAND_MAP_RANDO_OFFSET = 0xBA00;
+export const MAZE_ISLAND_MAP_VANILLA_OFFSET = 0xA65C;
+export const MAZE_ISLAND_MAP_LENGTH = 0xA942 - 0xA65C;
 
-const MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING = {
+export const MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING = {
     size: WEST_HYRULE_MAP_LENGTH,
     elements: {
         size: 0x01,
@@ -746,7 +743,7 @@ const MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING = {
     }
 }
 
-const MAZE_ISLAND_LOCATION_MAPPINGS = {
+export const MAZE_ISLAND_LOCATION_MAPPINGS = {
     CAVE_B_W: {
         offset: 0xA10C,
         fields: LOCATION_MAPPING_FIELDS
@@ -953,11 +950,11 @@ const MAZE_ISLAND_LOCATION_MAPPINGS = {
     },
 }
 
-const EAST_HYRULE_MAP_RANDO_OFFSET      = 0xB480;
-const EAST_HYRULE_MAP_VANILLA_OFFSET    = 0x9056;
-const EAST_HYRULE_MAP_LENGTH            = 0x936F - 0x9056;
+export const EAST_HYRULE_MAP_RANDO_OFFSET      = 0xB480;
+export const EAST_HYRULE_MAP_VANILLA_OFFSET    = 0x9056;
+export const EAST_HYRULE_MAP_LENGTH            = 0x936F - 0x9056;
 
-const EAST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
+export const EAST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
     size: EAST_HYRULE_MAP_LENGTH,
     elements: {
         size: 0x01,
@@ -976,7 +973,7 @@ const EAST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
     }
 }
 
-const EAST_HYRULE_LOCATION_MAPPINGS = {
+export const EAST_HYRULE_LOCATION_MAPPINGS = {
     FIRE_TOWN_FOREST_500P_BAG:  {
         offset: 0x862F,
         fields: LOCATION_MAPPING_FIELDS
@@ -1147,52 +1144,5 @@ const EAST_HYRULE_LOCATION_MAPPINGS = {
     }
 }
 
-const TEXT_DATA_OFFSET = 0xE390;
-const TEXT_DATA_LENGTH = 0xEFCC - 0xE390;
-
-exports.LEVEL_OBJECT                            = LEVEL_OBJECT;
-exports.LEVEL_OBJECT_3B                         = LEVEL_OBJECT_3B;
-
-exports.WEST_HYRULE_OVERWORLD_SPRITE_MAPPING    = WEST_HYRULE_OVERWORLD_SPRITE_MAPPING;
-exports.EAST_HYRULE_OVERWORLD_SPRITE_MAPPING    = EAST_HYRULE_OVERWORLD_SPRITE_MAPPING;
-exports.DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING = DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING;
-exports.MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING    = MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING;
-exports.OVERWORLD_SPRITE_TYPES                  = OVERWORLD_SPRITE_TYPES;
-
-exports.BACKMAP_POINTER_BANK_OFFSETS           = BACKMAP_POINTER_BANK_OFFSETS;
-exports.MAP_POINTER_BANK_OFFSETS1               = MAP_POINTER_BANK_OFFSETS1;
-exports.MAP_POINTER_BANK_OFFSETS2               = MAP_POINTER_BANK_OFFSETS2;
-
-exports.LEVEL_HEADER_MAPPING                    = LEVEL_HEADER_MAPPING;
-exports.LEVEL_EXITS_MAPPING                     = LEVEL_EXITS_MAPPING;
-exports.LEVEL_EXITS_BANK_OFFSETS1               = LEVEL_EXITS_BANK_OFFSETS1;
-exports.LEVEL_EXITS_BANK_OFFSETS2               = LEVEL_EXITS_BANK_OFFSETS2;
-
-exports.WEST_HYRULE_LOCATION_MAPPINGS           = WEST_HYRULE_LOCATION_MAPPINGS;
-exports.WEST_HYRULE_MAP_RANDO_OFFSET            = WEST_HYRULE_MAP_RANDO_OFFSET;
-exports.WEST_HYRULE_MAP_VANILLA_OFFSET          = WEST_HYRULE_MAP_VANILLA_OFFSET;
-exports.WEST_HYRULE_MAP_LENGTH                  = WEST_HYRULE_MAP_LENGTH;
-
-exports.EAST_HYRULE_LOCATION_MAPPINGS           = EAST_HYRULE_LOCATION_MAPPINGS;
-exports.EAST_HYRULE_MAP_RANDO_OFFSET            = EAST_HYRULE_MAP_RANDO_OFFSET;
-exports.EAST_HYRULE_MAP_VANILLA_OFFSET          = EAST_HYRULE_MAP_VANILLA_OFFSET;
-exports.EAST_HYRULE_MAP_LENGTH                  = EAST_HYRULE_MAP_LENGTH;
-
-exports.DEATH_MOUNTAIN_LOCATION_MAPPINGS        = DEATH_MOUNTAIN_LOCATION_MAPPINGS;
-exports.DEATH_MOUNTAIN_MAP_RANDO_OFFSET         = DEATH_MOUNTAIN_MAP_RANDO_OFFSET;
-exports.DEATH_MOUNTAIN_MAP_VANILLA_OFFSET       = DEATH_MOUNTAIN_MAP_VANILLA_OFFSET;
-exports.DEATH_MOUNTAIN_MAP_LENGTH               = DEATH_MOUNTAIN_MAP_LENGTH;
-
-exports.MAZE_ISLAND_LOCATION_MAPPINGS           = MAZE_ISLAND_LOCATION_MAPPINGS;
-exports.MAZE_ISLAND_MAP_RANDO_OFFSET            = MAZE_ISLAND_MAP_RANDO_OFFSET;
-exports.MAZE_ISLAND_MAP_VANILLA_OFFSET          = MAZE_ISLAND_MAP_VANILLA_OFFSET;
-exports.MAZE_ISLAND_MAP_LENGTH                  = MAZE_ISLAND_MAP_LENGTH;
-
-exports.TEXT_DATA_OFFSET                        = TEXT_DATA_OFFSET;
-exports.TEXT_DATA_LENGTH                        = TEXT_DATA_LENGTH;
-
-exports.toFileAddr = toFileAddr;
-
-// 665C - 6942 - Death Mountain
-// 9056 - 936F - East Hyrule
-// A65C - A942 - Maze Island
+export const TEXT_DATA_OFFSET = 0xE390;
+export const TEXT_DATA_LENGTH = 0xEFCC - 0xE390;

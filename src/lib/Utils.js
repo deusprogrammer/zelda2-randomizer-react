@@ -1,4 +1,4 @@
-const objectDig = (o, transform) => {
+export const objectDig = (o, transform) => {
     if (o instanceof Object || o instanceof Array) {
         let modified = o instanceof Object ? {} : [];
         for (const key in o) {
@@ -11,7 +11,7 @@ const objectDig = (o, transform) => {
     }
 }
 
-const getValueFromMap = (obj, path) => {
+export const getValueFromMap = (obj, path) => {
     let pathSegments = path.split(".");
     let objPtr = obj;
     for (let pathSegment of pathSegments) {
@@ -24,11 +24,11 @@ const getValueFromMap = (obj, path) => {
     return objPtr;
 }
 
-const colorize = (color, output) => {
+export const colorize = (color, output) => {
     return output;
 }
 
-const snakeCaseToCamelCase = (value) => {
+export const snakeCaseToCamelCase = (value) => {
     let newName = "";
     let state = "LOWER";
     for (let c of value) {
@@ -53,7 +53,7 @@ const snakeCaseToCamelCase = (value) => {
     return newName;
 }
 
-const create2D = (width, height) => {
+export const create2D = (width, height) => {
     let buffer = [];
 
     for (let i = 0; i < width * height; i++ ) {
@@ -63,13 +63,13 @@ const create2D = (width, height) => {
     return buffer;
 }
 
-const plot2D = (buffer, width, x, y, value) => {
+export const plot2D = (buffer, width, x, y, value) => {
     let oldValue = buffer[y*width + x];
     buffer[y*width + x] = value;
     return oldValue;
 }
 
-const rectangle2D = (buffer, width, x1, y1, x2, y2, c) => {
+export const rectangle2D = (buffer, width, x1, y1, x2, y2, c) => {
     let yStart = Math.min(y1, y2);
     let yEnd = Math.max(y1, y2);
     for (let y = yStart; y < yEnd; y++) {
@@ -77,7 +77,7 @@ const rectangle2D = (buffer, width, x1, y1, x2, y2, c) => {
     }
 }
 
-const hLine2D = (buffer, width, x1, x2, y, c) => {
+export const hLine2D = (buffer, width, x1, x2, y, c) => {
     let start = Math.min(x1, x2);
     let end = Math.max(x1, x2);
 
@@ -86,7 +86,7 @@ const hLine2D = (buffer, width, x1, x2, y, c) => {
     }
 }
 
-const vLine2D = (buffer, width, y1, y2, x, c) => {
+export const vLine2D = (buffer, width, y1, y2, x, c) => {
     let start = Math.min(y1, y2);
     let end = Math.max(y1, y2);
 
@@ -95,7 +95,7 @@ const vLine2D = (buffer, width, y1, y2, x, c) => {
     }
 }
 
-const layer2D = (...layerBuffers) => {
+export const layer2D = (...layerBuffers) => {
     console.log("LENGTH: " + layerBuffers[0].length);
     let buffer = [];
     for (let i = 0; i < layerBuffers[0].length; i++) {
@@ -114,7 +114,7 @@ const layer2D = (...layerBuffers) => {
     return buffer;
 }
 
-const draw2D = (buffer, width) => {
+export const draw2D = (buffer, width) => {
     process.stdout.write(' ');
     for (let i = 0; i < width; i++) {
         process.stdout.write((i % 16).toString(16));
@@ -131,15 +131,8 @@ const draw2D = (buffer, width) => {
     console.log();
 }
 
-exports.snakeCaseToCamelCase = snakeCaseToCamelCase;
-exports.getValueFromMap = getValueFromMap;
-exports.objectDig = objectDig;
-exports.colorize = colorize;
-
-exports.create2D = create2D;
-exports.plot2D = plot2D;
-exports.draw2D = draw2D;
-exports.layer2D = layer2D;
-exports.hLine2D = hLine2D;
-exports.vLine2D = vLine2D;
-exports.rectangle2D = rectangle2D;
+export const sleep = (ms) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {resolve()}, ms);
+    });
+}
