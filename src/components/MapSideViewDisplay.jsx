@@ -5,7 +5,7 @@ export default ({level}) => {
         let mapBuffer = drawMap(level);
         let mapBlocks = [];
         mapBuffer.forEach((mapBlock) => {
-            if (!mapBlock) {
+            if (!mapBlock || mapBlock.clear) {
                 mapBlocks.push(
                     <div className="side-view-block" />
                 );
@@ -33,6 +33,7 @@ export default ({level}) => {
 
     return (
         <div>
+            <h5>Map</h5>
             {drawSideView(level)}
         </div>
     )

@@ -96,14 +96,19 @@ const vLine2D = (buffer, width, y1, y2, x, c) => {
 }
 
 const layer2D = (...layerBuffers) => {
-    let buffer = new Array(layerBuffers[0].length);
+    console.log("LENGTH: " + layerBuffers[0].length);
+    let buffer = [];
+    for (let i = 0; i < layerBuffers[0].length; i++) {
+        buffer.push(null);
+    }
     for (let i = 0; i < layerBuffers.length; i++) {
-        let layer = layerBuffers[i];
-        layer.forEach((block, j) => {
-            if (block) {
-                buffer[j] = block;
+        let layerBlocks = layerBuffers[i];
+        for (let j = 0; j < layerBuffers[0].length; j++) {
+            let layerBlock = layerBlocks[j];
+            if (layerBlock) {
+                buffer[j] = layerBlock;
             }
-        })
+        }
     }
 
     return buffer;

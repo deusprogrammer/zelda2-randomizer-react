@@ -4,7 +4,8 @@ import {useState} from 'react';
 import { parse } from './lib/Z2Parser';
 import MapData from './components/MapData';
 import MapDisplay from './components/MapDisplay';
-import MapSideView from './components/MapSideView';
+import MapSideViewDisplay from './components/MapSideViewDisplay';
+import MapSideViews from './components/MapSideViews';
 
 function App() {
     const [romData, setRomData] = useState(null);
@@ -42,25 +43,31 @@ function App() {
                     <h4>Map</h4>
                     <MapDisplay locationData={romData.westHyruleMap} spriteMap={romData.westHyruleSpriteMap} />
                     <h4>Side View Maps</h4>
-                    <MapSideView level={romData.sideViewMaps[0][33]} />
-                    
+                    <MapSideViews locationData={romData.westHyruleMap} maps={romData.sideViewMaps} continent={0} />
+
                     <h3>East Hyrule</h3>
                     <h4>Data</h4>
                     <MapData locationData={romData.eastHyruleMap} />
                     <h4>Map</h4>
                     <MapDisplay locationData={romData.eastHyruleMap} spriteMap={romData.eastHyruleSpriteMap} />
+                    <h4>Side View Maps</h4>
+                    <MapSideViews locationData={romData.eastHyruleMap} maps={romData.sideViewMaps} continent={2} />
                     
                     <h3>Death Mountain</h3>
                     <h4>Data</h4>
                     <MapData locationData={romData.deathMountainHyruleMap} />
                     <h4>Map</h4>
                     <MapDisplay locationData={romData.deathMountainHyruleMap} spriteMap={romData.deathMountainHyruleSpriteMap} />
-                    
+                    <h4>Side View Maps</h4>
+                    <MapSideViews locationData={romData.deathMountainHyruleMap} maps={romData.sideViewMaps} continent={1} />
+
                     <h3>Maze Island</h3>
                     <h4>Data</h4>
                     <MapData locationData={romData.mazeIslandMountainHyruleMap} />
                     <h4>Map</h4>
                     <MapDisplay locationData={romData.mazeIslandMountainHyruleMap} spriteMap={romData.mazeIslandMountainHyruleSpriteMap} />
+                    <h4>Side View Maps</h4>
+                    <MapSideViews locationData={romData.mazeIslandMountainHyruleMap} maps={romData.sideViewMaps} continent={1} />
                 </div>
             }
         </div>

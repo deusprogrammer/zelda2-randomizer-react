@@ -469,7 +469,7 @@ const drawMap = (level, backMaps) => {
             size = objectNumber & 0b00001111;
             objectNumber = objectNumber >> 4;
             if (objectNumber === 0x2 || objectNumber === 0x1) {
-                rectangle2D(fg, mapWidth, newX, 10, newX + size, 13, {name: "lava", solid: true});
+                rectangle2D(fg, mapWidth, newX, 10, newX + size, 13, {name: "lava"});
             }
         } else {
             if (objectNumber === 0xF && y < 13) {
@@ -494,8 +494,8 @@ const drawMap = (level, backMaps) => {
         }
         
         if (xSpace !== 0) {
-            rectangle2D(map, mapWidth, x, 13 - floorLevel,  newX - 1, 13,           {name: "floor", solid: true});
-            rectangle2D(map, mapWidth, x, 0,                newX - 1, ceilingLevel, {name: "ceiling", solid: true});
+            rectangle2D(bg, mapWidth, x, 13 - floorLevel,  newX - 1, 13,           {name: "floor", solid: true});
+            rectangle2D(bg, mapWidth, x, 0,                newX - 1, ceilingLevel, {name: "ceiling", solid: true});
         }
 
         x = newX;
@@ -507,13 +507,12 @@ const drawMap = (level, backMaps) => {
     };
     if (x < mapWidth) {
         if (drawWall) {
-            rectangle2D(map, mapWidth, x, 0, mapWidth - 1, 13, {name: "wall", solid: true});
+            rectangle2D(bg, mapWidth, x, 0, mapWidth - 1, 13, {name: "wall", solid: true});
         }
-        rectangle2D(map, mapWidth, x, 13 - floorLevel,  mapWidth - 1, 13,           {name: "floor", solid: true});
-        rectangle2D(map, mapWidth, x, 0,                mapWidth - 1, ceilingLevel, {name: "ceiling", solid: true});
+        rectangle2D(bg, mapWidth, x, 13 - floorLevel,  mapWidth - 1, 13,           {name: "floor", solid: true});
+        rectangle2D(bg, mapWidth, x, 0,                mapWidth - 1, ceilingLevel, {name: "ceiling", solid: true});
     }
-    //return layer2D(backMapLayer, bg, map, fg);
-    return map;
+    return layer2D(backMapLayer, bg, map, fg);
 }
 
 exports.printDebugMap = printDebugMap;
