@@ -30,7 +30,7 @@ function App() {
         <div>
             <h1>Zelda 2 Rando</h1>
             { !romData ?
-                <div>
+                <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
                     <h2>ROM File Selection</h2>
                     <label>Zelda 2 ROM File</label>
                     <input type="file" onChange={onFileLoad} />
