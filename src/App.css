@@ -2,15 +2,27 @@ body * {
     box-sizing: border-box;
 }
 
-.map-data-display {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+.map-data-table {
     background-color: gray;
     color: white;
     border-radius: 15px;
     padding: 10px;
     width: 80%;
+    table-layout: fixed;
     margin: auto;
+    border-collapse: collapse;
+}
+
+.map-data-table :is(td, th) {
+    text-align: center;
+    border: none;
+    border-spacing: 0;
+    margin: 0;
+}
+
+.map-data-table tr:nth-child(even) {
+    background-color: lightslategray;
+    color: white;
 }
 
 .table-head {
@@ -52,6 +64,7 @@ body * {
     width: 10px;
     height: 10px;
     border: 1px solid gray;
+    background-color: black;
 }
 
 .blinking {

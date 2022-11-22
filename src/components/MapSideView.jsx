@@ -10,16 +10,16 @@ export default ({level}) => {
                     <div className="side-view-block" />
                 );
             } else {
-                let color = "gray";
+                let backgroundColor = "gray";
                 if (mapBlock.solid) {
-                    color = "black"
+                    backgroundColor = "white"
                 } else if (mapBlock.name === "lava") {
-                    color = "red";
+                    backgroundColor = "red";
                 } else if (mapBlock.name === "collectible") {
-                    color = "green";
+                    backgroundColor = "green";
                 }
                 mapBlocks.push(
-                    <div className="side-view-block" style={{backgroundColor: color}} />
+                    <div className="side-view-block" style={{backgroundColor}} />
                 );
             }
         });

@@ -8,13 +8,13 @@ const OVERWORLD_SPRITE_SYMBOLS = [
     {c: " ", color: "white", backgroundColor: "sandybrown"},
     {c: " ", color: "white", backgroundColor: "lightgreen"},
     {c: " ", color: "white", backgroundColor: "green"},
-    {c: " ", color: "white", backgroundColor: "purple"},
+    {c: "~", color: "white", backgroundColor: "purple"},
     {c: "+", color: "white", backgroundColor: "purple"},
     {c: " ", color: "white", backgroundColor: "peachpuff"},
     {c: " ", color: "white", backgroundColor: "crimson"},
     {c: "^", color: "white", backgroundColor: "brown"},
-    {c: " ", color: "white", backgroundColor: "blue"},
-    {c: " ", color: "white", backgroundColor: "lightblue"},
+    {c: "~", color: "white", backgroundColor: "blue"},
+    {c: "~", color: "white", backgroundColor: "lightblue"},
     {c: "O", color: "white", backgroundColor: "brown"},
     {c: "*", color: "white", backgroundColor: "red"}
 ]

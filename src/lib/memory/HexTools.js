@@ -20,7 +20,7 @@ const bigEndianConvert = (buffer) => {
 
 const maskBits = (bytes, mask) => {
     let maskedValue = mask & bytes;
-    while ((mask & LAST_BIT_MASK) == 0) {
+    while ((mask & LAST_BIT_MASK) === 0) {
         maskedValue = maskedValue >> 1;
         mask = mask >> 1;
     }
@@ -81,6 +81,7 @@ const hexExtractor = (map, buffer, start = 0) => {
             offset = start + offsetOverride;
         }
 
+        let data = null;
         if (fields) {
             data = extractFields(fields, buffer, offset);
         } else if (elements) {

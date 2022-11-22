@@ -191,9 +191,14 @@ const LOCATION_MAPPING_FIELDS = [
         mask: 0b11000000
     },
     {
-        name: 'worldNumber',
+        name: 'continent',
         relOffset: 0xBD,
-        mask: 0b00011111
+        mask: 0b00000011
+    },
+    {
+        name: 'mapSet',
+        relOffset: 0xBD,
+        mask: 0b00011100
     },
     {
         name: 'rightEnt',
