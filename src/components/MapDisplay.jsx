@@ -53,7 +53,7 @@ export default ({spriteMap, locationData, continent: continentNumber}) => {
 
                     mapBlocks.push(
                         <div 
-                            className={`map-square 'blinking'}`} 
+                            className={`map-square blinking`} 
                             style={{color, backgroundColor}}
                             onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}
                             onMouseEnter={() => {setSelectedSquare(found)}}

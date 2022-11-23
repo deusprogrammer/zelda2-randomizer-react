@@ -33,12 +33,9 @@ body * {
     color: white;
 }
 
-.link-rows tr {
+.link-rows tr:has(:not(th)):hover {
+    background-color: rgb(0, 81, 255);
     cursor: pointer;
-}
-
-.link-rows tr:hover {
-    background-color: rgb(0, 81, 255) !important;
 }
 
 .table-head {
