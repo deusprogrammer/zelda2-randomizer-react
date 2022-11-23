@@ -6,6 +6,23 @@ body * {
     box-sizing: border-box;
 }
 
+.centered {
+    margin: auto;
+}
+
+.t-centered {
+    text-align: center;
+}
+
+.data-div {
+    margin: auto;
+    text-align: center;
+    width: min(80%, 600px);
+    padding: 20px;
+    color: white;
+    background-color: gray;
+}
+
 .data-table {
     border-collapse: collapse;
     margin: auto;

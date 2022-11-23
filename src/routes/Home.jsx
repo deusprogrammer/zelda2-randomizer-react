@@ -45,10 +45,13 @@ export default () => {
             <div>
                 <h2>ROM Details</h2>
                 <h3>ROM Data</h3>
-                <button style={{margin: "auto", display: "block"}} onClick={() => {setRomData(null)}}>Close ROM</button>
                 <KeyValueTable map={{
                     Version: romData.isDigiShake ? 'DigiShake Randomizer' : 'Vanilla'
                 }} />
+                <h3>Actions</h3>
+                <div className="data-div">
+                    <button onClick={() => {setRomData(null)}}>Close ROM</button>
+                </div>
 
 
                 <h3>West Hyrule</h3>
