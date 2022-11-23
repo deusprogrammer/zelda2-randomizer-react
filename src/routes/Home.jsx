@@ -45,6 +45,7 @@ export default () => {
             <div>
                 <h2>ROM Details</h2>
                 <h3>ROM Data</h3>
+                <button onClick={() => {setRomData(null)}}>Close ROM</button>
                 <KeyValueTable map={{
                     Version: romData.isDigiShake ? 'DigiShake Randomizer' : 'Vanilla'
                 }} />
