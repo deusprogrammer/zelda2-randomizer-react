@@ -38,27 +38,27 @@ export default () => {
                 <h2>ROM Details</h2>
                 <h3>West Hyrule</h3>
                 <h4>Data</h4>
-                <MapData locationData={romData.westHyruleMap} />
+                <MapData locationData={romData.westHyruleMap} continent={0} />
                 <h4>Map</h4>
-                <MapDisplay locationData={romData.westHyruleMap} spriteMap={romData.westHyruleSpriteMap} />
+                <MapDisplay locationData={romData.westHyruleMap} spriteMap={romData.westHyruleSpriteMap} continent={0} />
+
+                <h3>Death Mountain</h3>
+                <h4>Data</h4>
+                <MapData locationData={romData.deathMountainHyruleMap} continent={1} />
+                <h4>Map</h4>
+                <MapDisplay locationData={romData.deathMountainHyruleMap} spriteMap={romData.deathMountainHyruleSpriteMap} continent={1} />
 
                 <h3>East Hyrule</h3>
                 <h4>Data</h4>
-                <MapData locationData={romData.eastHyruleMap} />
+                <MapData locationData={romData.eastHyruleMap} continent={2} />
                 <h4>Map</h4>
-                <MapDisplay locationData={romData.eastHyruleMap} spriteMap={romData.eastHyruleSpriteMap} />
+                <MapDisplay locationData={romData.eastHyruleMap} spriteMap={romData.eastHyruleSpriteMap} continent={2} />
                 
-                <h3>Death Mountain</h3>
-                <h4>Data</h4>
-                <MapData locationData={romData.deathMountainHyruleMap} />
-                <h4>Map</h4>
-                <MapDisplay locationData={romData.deathMountainHyruleMap} spriteMap={romData.deathMountainHyruleSpriteMap} />
-
                 <h3>Maze Island</h3>
                 <h4>Data</h4>
-                <MapData locationData={romData.mazeIslandMountainHyruleMap} />
+                <MapData locationData={romData.mazeIslandMountainHyruleMap} continent={3} />
                 <h4>Map</h4>
-                <MapDisplay locationData={romData.mazeIslandMountainHyruleMap} spriteMap={romData.mazeIslandMountainHyruleSpriteMap} />
+                <MapDisplay locationData={romData.mazeIslandMountainHyruleMap} spriteMap={romData.mazeIslandMountainHyruleSpriteMap} continent={3} />
             </div>
         );
     }

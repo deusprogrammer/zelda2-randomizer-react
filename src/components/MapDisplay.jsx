@@ -20,9 +20,11 @@ const OVERWORLD_SPRITE_SYMBOLS = [
     {c: "*", color: "white", backgroundColor: "red"}
 ]
 
-export default ({spriteMap, locationData}) => {
+export default ({spriteMap, locationData, continent: continentNumber}) => {
     const [selectedSquare, setSelectedSquare] = useState("");
     const navigate = useNavigate();
+
+    console.log("CONTINENT: " + continentNumber);
 
     const printSpriteMap = (mapObject, locations) => {
         let mapBlocks = [];
@@ -40,9 +42,9 @@ export default ({spriteMap, locationData}) => {
                 let {c, backgroundColor, color} = OVERWORLD_SPRITE_SYMBOLS[sprite.type];
 
                 if (found) {
-                    let {mapNumber, continent, mapSet} = locations[found];
-                    if (mapSet === 0 && continent === 0) {      // Overworld
-                        mapSet = continent;
+                    let {mapNumber, mapSet, continent} = locations[found];
+                    if (mapSet === 0 && continent === 0) {// Overworld
+                        mapSet = continentNumber;
                     } else if (mapSet === 1 || mapSet === 2) {  // Towns
                         mapSet = 4;
                     } else if (mapSet > 2) {

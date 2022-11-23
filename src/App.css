@@ -6,40 +6,39 @@ body * {
     box-sizing: border-box;
 }
 
-.map-data-table, .side-view-header-table, .side-view-data-table, .level-exit-data-table {
+.data-table {
+    border-collapse: collapse;
+    margin: auto;
+    table-layout: fixed;
     background-color: gray;
     color: white;
-    border-radius: 15px;
+    padding: 20px;
+}
+
+.data-table :is(td, th) {
     padding: 10px;
-    width: 80%;
-    table-layout: fixed;
-    text-align: center;
-    margin: auto;
-    border-collapse: collapse;
 }
 
-.map-data-table :is(td, th) {
-    border: none;
-    border-spacing: 0;
-    margin: 0;
-}
-
-:is(.map-data-table, .side-view-header-table, .level-exit-data-table) tr td:first-child {
+.row-labeled tr td:first-child {
     text-align: left;
     font-weight: bolder;
 }
 
-.map-data-table tr {
+.col-labeled tr:first-child {
+    font-weight: bolder;
+}
+
+.striped tr:nth-child(even) {
+    background-color: lightslategray;
+    color: white;
+}
+
+.link-rows tr {
     cursor: pointer;
 }
 
-.map-data-table tr:hover {
+.link-rows tr:hover {
     background-color: rgb(0, 81, 255) !important;
-}
-
-:is(.map-data-table, .side-view-data-table, .side-view-header-table, .level-exit-data-table) tr:nth-child(even) {
-    background-color: lightslategray;
-    color: white;
 }
 
 .table-head {

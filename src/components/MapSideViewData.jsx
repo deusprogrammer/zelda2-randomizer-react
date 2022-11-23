@@ -4,7 +4,7 @@ export default ({level}) => {
     return (
         <div>
             <h5>Header</h5>
-            <table className="side-view-header-table">
+            <table className="data-table striped row-labeled">
             { Object.keys(level.header).map(key => {
                 return (
                     <tr>
@@ -15,7 +15,7 @@ export default ({level}) => {
             })}
             </table>
             <h5>Data</h5>
-            <table className="side-view-data-table">
+            <table className="data-table striped row-labeled col-labeled">
                 <tr>
                     <th>
                         Y Position
