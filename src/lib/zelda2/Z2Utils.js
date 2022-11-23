@@ -403,7 +403,7 @@ export const getFloorPosition = (floorLevel) => {
     }
 }
 
-export const drawMap = (level, backMaps) => {
+export const drawMap = (level, backMaps, steps = -1) => {
     let mapWidth = 4 * WIDTH_OF_SCREEN;
     
     let objectSet = level.header.objectSet;
@@ -467,7 +467,7 @@ export const drawMap = (level, backMaps) => {
     }
 
     let x = 0;
-
+    let step = 0;
     for (let element of level.levelElements) {
         let {yPosition: y, advanceCursor: xSpace, objectNumber, collectableObjectNumber} = element;
         let newX = 0;
@@ -536,6 +536,11 @@ export const drawMap = (level, backMaps) => {
         floorLevel      = newFloorLevel;
         if (noCeiling) {
             ceilingLevel = 0;
+        }
+
+        if (steps >= 0 && ++step > steps) {
+            console.log("REACHED END STEP");
+            return layer2D(backMapLayer, bg, map, fg);
         }
     };
     if (x < mapWidth) {

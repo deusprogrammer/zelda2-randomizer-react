@@ -32,6 +32,10 @@ body * {
     padding: 20px;
 }
 
+.data-table tr.selected {
+    background-color: black !important;
+}
+
 .data-table :is(td, th) {
     padding: 10px;
 }

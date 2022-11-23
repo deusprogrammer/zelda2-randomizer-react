@@ -1,11 +1,13 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { drawMap } from "../lib/zelda2/Z2Utils"
 
-export default ({level, levelExitData, mapSet}) => {
+export default ({level, levelExitData, mapSet, steps}) => {
     const navigate = useNavigate();
 
-    const drawSideView = (level) => {
-        let mapBuffer = drawMap(level);
+    const drawSideView = (level, steps) => {
+        console.log("BUILDING MAP");
+        let mapBuffer = drawMap(level, null, steps);
         let mapBlocks = [];
         mapBuffer.forEach((mapBlock) => {
             if (!mapBlock || mapBlock.clear) {
@@ -42,7 +44,7 @@ export default ({level, levelExitData, mapSet}) => {
                 <div><button onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${levelExitData.upExit.mapNumber}`)}} disabled={levelExitData.upExit.mapNumber === 63} className="top">Up</button></div>
                 <div></div>
                 <div><button onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${levelExitData.leftExit.mapNumber}`)}} disabled={levelExitData.leftExit.mapNumber === 63} className="side">Left</button></div>
-                {drawSideView(level)}
+                {drawSideView(level, steps)}
                 <div><button onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${levelExitData.rightExit.mapNumber}`)}} disabled={levelExitData.rightExit.mapNumber === 63} className="side">Right</button></div>
                 <div></div>
                 <div><button onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${levelExitData.downExit.mapNumber}`)}} disabled={levelExitData.downExit.mapNumber === 63} className="top">Down</button></div>

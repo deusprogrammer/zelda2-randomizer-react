@@ -37,7 +37,7 @@ export default () => {
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
                 <h2>ROM File Selection</h2>
                 <label>Zelda 2 ROM File</label>
-                <input type="file" onChange={onFileLoad} />
+                <input type="file" accept='.nes' onChange={onFileLoad} />
             </div>
         );
     } else {
