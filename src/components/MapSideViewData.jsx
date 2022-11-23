@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { LARGE_OBJECT_SETS, SMALL_OBJECTS } from "../lib/zelda2/Z2Data";
+import { ITEM_MAP } from '../lib/zelda2/Z2Utils';
 
 export default ({level, onStepChange}) => {
     const [selectedStep, setSelectedStep] = useState(-1);
@@ -63,7 +64,7 @@ export default ({level, onStepChange}) => {
                             Object
                         </th>
                     </tr>
-                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber}, step) => {
+                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber, collectableObjectNumber}, step) => {
                         let mapSetNumber = level.mapSetNumber;
                         let object = "unknown";
                         let size = 1;
@@ -75,7 +76,7 @@ export default ({level, onStepChange}) => {
                             object = "Extra Object";
                         } else {
                             if (objectNumber === 0xF && yPosition < 13) {
-                                object = "Collectible Object";
+                                object = ITEM_MAP[collectableObjectNumber];
                             } else if (objectNumber > 0xF) {
                                 size = objectNumber & 0b00001111;
                                 objectNumber = objectNumber >> 4;

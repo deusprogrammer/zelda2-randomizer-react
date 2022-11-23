@@ -37,6 +37,8 @@ export const HEIGHT_OF_SCREEN = 16;
 
 const CHARACTER_MAP = {0x32: '*', 0x34: '?', 0x36: '!', 0x9C: ',', 0xCE: '/', 0xCF: '.', 0xF7: 'l', 0xF8: 't', 0xF9: 'm', 0xFC: 'x', 0xFD: '\n', 0xFE: '\n', 0xF4: ' ', 0xF5: ' '};
 
+export const ITEM_MAP      = ["candle", "glove", "raft", "boots", "recorder", "cross", "hammer", "magic key", "key", "", "50p bag", "100p bag", "200p bag", "500p bag", "magic container", "heart container", "blue jar", "red jar", "1up", "medicine", "trophy", "child"];
+
 export const DRAWING_OP = {
     0xD: "CHANGE FLOOR LEVEL",
     0xE: "SKIP",
@@ -507,7 +509,7 @@ export const drawMap = (level, backMaps, steps = -1) => {
         } else {
             if (objectNumber === 0xF && y < 13) {
                 // SPECIAL OBJECT
-                plot2D(fg, mapWidth, newX, y, {name: "collectible"});
+                plot2D(fg, mapWidth, newX, y, {name: ITEM_MAP[collectableObjectNumber], collectable: true});
             } else if (objectNumber > 0xF) {
                 // LARGE OBJECT
                 size = objectNumber & 0b00001111;

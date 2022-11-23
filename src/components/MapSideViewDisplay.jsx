@@ -6,7 +6,6 @@ export default ({level, levelExitData, mapSet, steps}) => {
     const navigate = useNavigate();
 
     const drawSideView = (level, steps) => {
-        console.log("BUILDING MAP");
         let mapBuffer = drawMap(level, null, steps);
         let mapBlocks = [];
         mapBuffer.forEach((mapBlock) => {
@@ -20,7 +19,7 @@ export default ({level, levelExitData, mapSet, steps}) => {
                     backgroundColor = "white"
                 } else if (mapBlock.name === "lava") {
                     backgroundColor = "red";
-                } else if (mapBlock.name === "collectible") {
+                } else if (mapBlock.collectable) {
                     backgroundColor = "green";
                 }
                 mapBlocks.push(

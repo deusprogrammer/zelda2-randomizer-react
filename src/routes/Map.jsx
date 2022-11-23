@@ -20,10 +20,15 @@ export default () => {
         return;
     }
 
+    if (mapSet === "6" && mapNumber === "58") {
+        console.log("HIIIIII!  I'M DERPY BARBA!");
+    }
+
     return (
         <>
             <h2>Map</h2>
             <MapSideView maps={romData.sideViewMaps} levelExits={romData.levelExits} mapNumber={mapNumber} mapSet={mapSet} />
+            {mapSet === "6" && mapNumber === "58" ? <img src={`${process.env.PUBLIC_URL}/derpybarba.png`} className="popup" /> : null}
         </>
     )
 }
