@@ -1,12 +1,19 @@
+import { useEffect } from 'react';
+
 import { useAtom } from "jotai";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate, useParams, useLocation } from "react-router";
 import { romAtom } from "../atoms/rom.atom";
 import MapSideView from "../components/MapSideView";
 
 export default () => {
-    const [romData] = useAtom(romAtom);
-    const {continent, mapNumber, mapSet} = useParams();
+    const [ romData ] = useAtom(romAtom);
+    const { mapNumber, mapSet } = useParams();
+    const { pathname } = useLocation();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     if (!romData || mapNumber == 63) {
         navigate(`${process.env.PUBLIC_URL}/`);

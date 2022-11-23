@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from "react-router";
 import { useAtom } from 'jotai';
 
 import { parse } from '../lib/Z2Parser';
@@ -6,7 +8,8 @@ import MapDisplay from '../components/MapDisplay';
 import { romAtom } from '../atoms/rom.atom';
 
 export default () => {
-    const [romData, setRomData] = useAtom(romAtom);
+    const [ romData, setRomData ] = useAtom(romAtom);
+    const { pathname } = useLocation();
 
     const parseRom = (romData) => {
         setRomData(parse(romData, "VANILLA"));
@@ -23,6 +26,10 @@ export default () => {
 
         fr.readAsArrayBuffer(file);
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     if (!romData) {
         return (
