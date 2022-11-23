@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const OVERWORLD_SPRITE_SYMBOLS = [
     {c: "T", color: "white", backgroundColor: "red"},
@@ -21,6 +22,7 @@ const OVERWORLD_SPRITE_SYMBOLS = [
 
 export default ({spriteMap, locationData}) => {
     const [selectedSquare, setSelectedSquare] = useState("");
+    const navigate = useNavigate();
 
     const printSpriteMap = (mapObject, locations) => {
         let mapBlocks = [];
@@ -36,16 +38,40 @@ export default ({spriteMap, locationData}) => {
                 });
         
                 let {c, backgroundColor, color} = OVERWORLD_SPRITE_SYMBOLS[sprite.type];
-                mapBlocks.push(
-                    <div 
-                        className={`map-square ${found ? 'blinking' : ''}`} 
-                        style={{color, backgroundColor}}
-                        onMouseEnter={() => {setSelectedSquare(found)}}
-                        onMouseLeave={() => {setSelectedSquare(null)}}
-                    >
-                        {c}
-                    </div>
-                );
+
+                if (found) {
+                    let {mapNumber, continent, mapSet} = locations[found];
+                    if (mapSet === 0 && continent === 0) {      // Overworld
+                        mapSet = continent;
+                    } else if (mapSet === 1 || mapSet === 2) {  // Towns
+                        mapSet = 4;
+                    } else if (mapSet > 2) {
+                        mapSet = mapSet + 2;                    // Palaces
+                    }
+
+                    mapBlocks.push(
+                        <div 
+                            className={`map-square 'blinking'}`} 
+                            style={{color, backgroundColor}}
+                            onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}
+                            onMouseEnter={() => {setSelectedSquare(found)}}
+                            onMouseLeave={() => {setSelectedSquare(null)}}
+                        >
+                            {c}
+                        </div>
+                    );
+                } else {
+                    mapBlocks.push(
+                        <div 
+                            className={`map-square`}
+                            style={{color, backgroundColor}}
+                            onMouseEnter={() => {setSelectedSquare(found)}}
+                            onMouseLeave={() => {setSelectedSquare(null)}}
+                        >
+                            {c}
+                        </div>
+                    );
+                }
             }
         }
 

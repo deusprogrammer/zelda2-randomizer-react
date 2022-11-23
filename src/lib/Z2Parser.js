@@ -26,6 +26,7 @@ export const parse = (rom, mode) => {
     let mazeIslandMountainHyruleMap = extractMazeIslandMapLocations(rom);
     let mazeIslandMountainHyruleSpriteMap = extractMazeIslandSpriteMap(rom, mode);
     let textData = extractTextData(rom);
+    let levelExits = extractLevelExits(rom);
 
     return {
         sideViewMaps,
@@ -37,6 +38,7 @@ export const parse = (rom, mode) => {
         deathMountainHyruleSpriteMap,
         mazeIslandMountainHyruleMap,
         mazeIslandMountainHyruleSpriteMap,
+        levelExits,
         textData
     }
 }

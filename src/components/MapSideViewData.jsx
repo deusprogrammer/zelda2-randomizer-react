@@ -4,7 +4,7 @@ export default ({level}) => {
     return (
         <div>
             <h5>Header</h5>
-            <table className="map-data-table">
+            <table className="side-view-header-table">
             { Object.keys(level.header).map(key => {
                 return (
                     <tr>

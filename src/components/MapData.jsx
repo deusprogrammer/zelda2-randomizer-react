@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router";
+
 export default ({locationData}) => {
+    const navigate = useNavigate();
+
     return (
         <table className="map-data-table">
             <tr>
@@ -18,8 +22,17 @@ export default ({locationData}) => {
             </tr>
             {Object.keys(locationData).map((key) => {
                 let {x, y, external, caveSeg, reserved, mapNumber, hPosEnt, continent, mapSet, rightEnt, passThrough, fallInto} = locationData[key];
+                if (mapSet === 0 && continent === 0) {      // Overworld
+                    mapSet = continent;
+                } else if (mapSet === 1 || mapSet === 2) {  // Towns
+                    mapSet = 4;
+                } else if (mapSet > 2) {
+                    mapSet = mapSet + 2;                    // Palaces
+                } else {
+                    return null;
+                }
                 return (
-                    <tr>
+                    <tr onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}>
                         <td>{key}</td>
                         <td>{x}</td>
                         <td>{y}</td>

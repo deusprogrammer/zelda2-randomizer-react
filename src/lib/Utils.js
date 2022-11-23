@@ -96,7 +96,6 @@ export const vLine2D = (buffer, width, y1, y2, x, c) => {
 }
 
 export const layer2D = (...layerBuffers) => {
-    console.log("LENGTH: " + layerBuffers[0].length);
     let buffer = [];
     for (let i = 0; i < layerBuffers[0].length; i++) {
         buffer.push(null);
