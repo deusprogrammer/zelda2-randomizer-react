@@ -1,5 +1,5 @@
-const {
-    printSpriteMap,
+import { calculateNESOffsets, exportNESHeaders, extractNESHeaders } from './nes/NESUtils';
+import {
     extractEastHyruleSpriteMap,
     extractWestHyruleSpriteMap,
     extractWestHyruleMapLocations,
@@ -11,11 +11,16 @@ const {
     extractMazeIslandSpriteMap,
     extractMazeIslandMapLocations,
     extractTextData,
-    extractBackMapData
-} = require('./zelda2/Z2Utils');
+    isDigiShakeRando} from './zelda2/Z2Utils';
 
 
-export const parse = (rom, mode) => {
+export const parse = (rom) => {
+    let isDigiShake = isDigiShakeRando(rom);
+
+    let mode = isDigiShake ? "RANDO" : "VANILLA";
+
+    let nesHeaders = extractNESHeaders(rom);
+    let nesOffsets = calculateNESOffsets(nesHeaders);
     let sideViewMaps = extractSideViewMapData(rom);
     let westHyruleMap = extractWestHyruleMapLocations(rom);
     let westHyruleSpriteMap = extractWestHyruleSpriteMap(rom, mode);
@@ -27,8 +32,10 @@ export const parse = (rom, mode) => {
     let mazeIslandMountainHyruleSpriteMap = extractMazeIslandSpriteMap(rom, mode);
     let textData = extractTextData(rom);
     let levelExits = extractLevelExits(rom);
-
+    
     return {
+        nesHeaders,
+        nesOffsets,
         sideViewMaps,
         westHyruleMap,
         westHyruleSpriteMap,
@@ -39,6 +46,7 @@ export const parse = (rom, mode) => {
         mazeIslandMountainHyruleMap,
         mazeIslandMountainHyruleSpriteMap,
         levelExits,
-        textData
+        textData,
+        isDigiShake
     }
 }

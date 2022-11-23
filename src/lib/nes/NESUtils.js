@@ -1,3 +1,10 @@
+import { hexExtractor } from "../memory/HexTools";
+import { NES_HEADER_MAP } from "./NESMemoryMappings";
+
+export const extractNESHeaders = (rom) => {
+    return hexExtractor(NES_HEADER_MAP, rom, 0x0);
+}
+
 export const calculateNESOffsets = (headers) => {
     let trainerSize = headers.trainer === 1 ? 0x0200 : 0;
     let prgRomSize = headers.prgRomSize * 0x4000;

@@ -29,10 +29,13 @@ const {
     DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING,
     TEXT_DATA_OFFSET,
     TEXT_DATA_LENGTH,
-    BACKMAP_POINTER_BANK_OFFSETS} = require("./Z2MemoryMappings");
+    BACKMAP_POINTER_BANK_OFFSETS,
+    DIGISHAKE_CREDIT_OFFSET} = require("./Z2MemoryMappings");
 
 export const WIDTH_OF_SCREEN  = 16;
 export const HEIGHT_OF_SCREEN = 16;
+
+const CHARACTER_MAP = {0x32: '*', 0x34: '?', 0x36: '!', 0x9C: ',', 0xCE: '/', 0xCF: '.', 0xF7: 'l', 0xF8: 't', 0xF9: 'm', 0xFC: 'x', 0xFD: '\n', 0xFE: '\n', 0xF4: ' ', 0xF5: ' '};
 
 export const DRAWING_OP = {
     0xD: "CHANGE FLOOR LEVEL",
@@ -268,8 +271,26 @@ export const extractLevelExits = (buffer) => {
     return mapSets;
 }
 
+export const z2BytesToString = (bytes) => {
+    let text = "";
+    for (let offset = 0; offset < bytes.length && bytes[offset] !== 0xFF; offset++) {
+        let h = bytes[offset];
+        let c = "";
+        if (h >= 0xD0 && h <= 0xD9) {
+            c = h - 0xD0;
+        } else if (h >= 0xDA && h <= 0xF3) {
+            c = String.fromCharCode('A'.charCodeAt(0) + (h - 0xDA));
+        }else {
+            c = CHARACTER_MAP[h];
+        }
+
+        text += c;
+    }
+
+    return text;
+}
+
 export const extractTextData = (buffer) => {
-    const CHARACTER_MAP = {0x32: '*', 0x34: '?', 0x36: '!', 0x9C: ',', 0xCE: '/', 0xCF: '.', 0xF7: 'l', 0xF8: 't', 0xF9: 'm', 0xFC: 'x', 0xFD: '\n', 0xFE: '\n', 0xF4: ' ', 0xF5: ' '};
     let texts = [];
     let text = "";
     let startingOffset = TEXT_DATA_OFFSET;
@@ -295,6 +316,24 @@ export const extractTextData = (buffer) => {
     }
 
     return texts;
+}
+
+export const extractTextDataFromOffset = (rom, offset) => {
+    let text = "";
+    for (; rom[offset] !== 0xFF; offset++) {
+        let h = rom[offset];
+        let c = "";
+        if (h >= 0xD0 && h <= 0xD9) {
+            c = h - 0xD0;
+        } else if (h >= 0xDA && h <= 0xF3) {
+            c = String.fromCharCode('A'.charCodeAt(0) + (h - 0xDA));
+        }else {
+            c = CHARACTER_MAP[h];
+        }
+
+        text += c;
+    }
+    return text;
 }
 
 export const debugMap = (mapSets, mapSetNumber, mapNumber) => {
@@ -507,4 +546,12 @@ export const drawMap = (level, backMaps) => {
         rectangle2D(bg, mapWidth, x, 0,                mapWidth - 1, ceilingLevel, {name: "ceiling", solid: true});
     }
     return layer2D(backMapLayer, bg, map, fg);
+}
+
+export const isDigiShakeRando = (rom) => {
+    let creditsLine2 = extractTextDataFromOffset(rom, DIGISHAKE_CREDIT_OFFSET);
+
+    console.log("CREDIT: " + creditsLine2);
+
+    return creditsLine2.trim() === "DIGSHAKE";
 }

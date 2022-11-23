@@ -6,6 +6,7 @@ import { parse } from '../lib/Z2Parser';
 import MapData from '../components/MapData';
 import MapDisplay from '../components/MapDisplay';
 import { romAtom } from '../atoms/rom.atom';
+import KeyValueTable from '../components/KeyValueTable';
 
 export default () => {
     const [ romData, setRomData ] = useAtom(romAtom);
@@ -43,6 +44,12 @@ export default () => {
         return (
             <div>
                 <h2>ROM Details</h2>
+                <h3>ROM Data</h3>
+                <KeyValueTable map={{
+                    Version: romData.isDigiShake ? 'DigiShake Randomizer' : 'Vanilla'
+                }} />
+
+
                 <h3>West Hyrule</h3>
                 <h4>Data</h4>
                 <MapData locationData={romData.westHyruleMap} continent={0} />

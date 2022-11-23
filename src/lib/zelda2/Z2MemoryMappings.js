@@ -1146,3 +1146,5 @@ export const EAST_HYRULE_LOCATION_MAPPINGS = {
 
 export const TEXT_DATA_OFFSET = 0xE390;
 export const TEXT_DATA_LENGTH = 0xEFCC - 0xE390;
+
+export const DIGISHAKE_CREDIT_OFFSET = 0x15384;
