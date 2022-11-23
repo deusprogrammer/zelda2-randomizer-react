@@ -3,8 +3,6 @@ import { useNavigate } from "react-router";
 export default ({locationData, continent : continentNumber}) => {
     const navigate = useNavigate();
 
-    console.log("CONTINENT: " + continentNumber);
-
     return (
         <table className="data-table striped row-labeled col-labeled link-rows">
             <tr>
@@ -24,7 +22,7 @@ export default ({locationData, continent : continentNumber}) => {
             </tr>
             {Object.keys(locationData).map((key) => {
                 let {x, y, external, caveSeg, reserved, mapNumber, continent, hPosEnt, mapSet, rightEnt, passThrough, fallInto} = locationData[key];
-                if (mapSet === 0 && continent === 0) {// Overworld
+                if (mapSet === 0 && continent === 0) {      // Overworld
                     mapSet = continentNumber;
                 } else if (mapSet === 1 || mapSet === 2) {  // Towns
                     mapSet = 4;

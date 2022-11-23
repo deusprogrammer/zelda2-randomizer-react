@@ -24,8 +24,6 @@ export default ({spriteMap, locationData, continent: continentNumber}) => {
     const [selectedSquare, setSelectedSquare] = useState("");
     const navigate = useNavigate();
 
-    console.log("CONTINENT: " + continentNumber);
-
     const printSpriteMap = (mapObject, locations) => {
         let mapBlocks = [];
         let i = 0;
@@ -43,7 +41,7 @@ export default ({spriteMap, locationData, continent: continentNumber}) => {
 
                 if (found) {
                     let {mapNumber, mapSet, continent} = locations[found];
-                    if (mapSet === 0 && continent === 0) {// Overworld
+                    if (mapSet === 0 && continent === 0) {      // Overworld
                         mapSet = continentNumber;
                     } else if (mapSet === 1 || mapSet === 2) {  // Towns
                         mapSet = 4;

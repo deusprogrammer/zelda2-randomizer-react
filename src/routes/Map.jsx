@@ -4,11 +4,11 @@ import { romAtom } from "../atoms/rom.atom";
 import MapSideView from "../components/MapSideView";
 
 export default () => {
-    const [romData, setRomData] = useAtom(romAtom);
-    const {mapNumber, mapSet} = useParams();
+    const [romData] = useAtom(romAtom);
+    const {continent, mapNumber, mapSet} = useParams();
     const navigate = useNavigate();
 
-    if (!romData || mapNumber === 63) {
+    if (!romData || mapNumber == 63) {
         navigate(`${process.env.PUBLIC_URL}/`);
         return;
     }
