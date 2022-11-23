@@ -15,7 +15,7 @@ export default ({level}) => {
             })}
             </table>
             <h5>Data</h5>
-            <table className="data-table striped row-labeled col-labeled">
+            <table className="data-table striped col-labeled">
                 <tr>
                     <th>
                         Y Position

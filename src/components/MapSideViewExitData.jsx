@@ -2,7 +2,7 @@ export default ({levelExitData: {upExit, leftExit, downExit, rightExit}}) => {
     return (
         <div className="level-exit-data">
             <h5>Level Exits</h5>
-            <table className="level-exit-data-table">
+            <table className="data-table striped row-labeled col-labeled">
                 <tr>
                     <td>Direction</td><td>Map Number</td><td>X Position</td>
                 </tr>
