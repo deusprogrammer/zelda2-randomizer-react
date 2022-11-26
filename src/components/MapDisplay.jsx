@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { explore } from "../lib/zelda2/Z2Utils";
 
 const OVERWORLD_SPRITE_SYMBOLS = [
     {c: "T", color: "white", backgroundColor: "red"},
@@ -20,7 +21,7 @@ const OVERWORLD_SPRITE_SYMBOLS = [
     {c: "*", color: "white", backgroundColor: "red"}
 ]
 
-export default ({spriteMap, locationData, continent: continentNumber}) => {
+export default ({maps, levelExits, spriteMap, locationData, continent: continentNumber}) => {
     const [selectedSquare, setSelectedSquare] = useState("");
     const navigate = useNavigate();
 
@@ -49,12 +50,14 @@ export default ({spriteMap, locationData, continent: continentNumber}) => {
                         mapSet = mapSet + 2;                    // Palaces
                     }
 
+                    let items = explore(maps, levelExits, mapNumber, mapSet);
+
                     mapBlocks.push(
                         <div 
                             className={`map-square blinking`} 
                             style={{color, backgroundColor}}
                             onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}
-                            onMouseEnter={() => {setSelectedSquare(found)}}
+                            onMouseEnter={() => {setSelectedSquare({name: found, items})}}
                             onMouseLeave={() => {setSelectedSquare(null)}}
                         >
                             {c}
@@ -65,8 +68,6 @@ export default ({spriteMap, locationData, continent: continentNumber}) => {
                         <div 
                             className={`map-square`}
                             style={{color, backgroundColor}}
-                            onMouseEnter={() => {setSelectedSquare(found)}}
-                            onMouseLeave={() => {setSelectedSquare(null)}}
                         >
                             {c}
                         </div>
@@ -80,7 +81,13 @@ export default ({spriteMap, locationData, continent: continentNumber}) => {
 
     return (
         <div>
-            {selectedSquare ? <div style={{display: "inline-block", position: "fixed", top: "0px", left: "0px", backgroundColor: "gray", color: "white"}}>{selectedSquare}</div>: null}
+            {selectedSquare ? 
+                <div style={{display: "inline-block", position: "fixed", top: "0px", left: "0px", padding: "20px", backgroundColor: "gray", color: "white"}}>
+                    <h6>{selectedSquare.name}</h6>
+                    {selectedSquare.items.filter(item => (item.number >= 0 && item.number <= 7) || (item.number >= 14 && item.number <= 15) || (item.number >= 19 && item.number <= 21)).map(item => <div>{item.name}</div>)}
+                </div>
+                : null
+            }
             {printSpriteMap(spriteMap, locationData)}
         </div>
     )

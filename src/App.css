@@ -6,6 +6,23 @@ body * {
     box-sizing: border-box;
 }
 
+.centered {
+    margin: auto;
+}
+
+.t-centered {
+    text-align: center;
+}
+
+.data-div {
+    margin: auto;
+    text-align: center;
+    width: min(80%, 600px);
+    padding: 20px;
+    color: white;
+    background-color: gray;
+}
+
 .data-table {
     border-collapse: collapse;
     margin: auto;
@@ -13,6 +30,10 @@ body * {
     background-color: gray;
     color: white;
     padding: 20px;
+}
+
+.data-table tr.selected {
+    background-color: black !important;
 }
 
 .data-table :is(td, th) {
@@ -102,6 +123,12 @@ body * {
     animation: blink-animation 1s ease-in-out infinite alternate;
 }
 
+img.popup {
+    position: fixed;
+    left: 0px;
+    animation: popup 3s ease-in 2 alternate;
+}
+
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
@@ -109,5 +136,17 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes blink-animation {
     to {
         opacity: 0;
+    }
+}
+
+@keyframes popup {
+    0% {
+        bottom: -400px;
+    }
+    75%, 99% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 0px;
     }
 }

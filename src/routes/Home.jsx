@@ -6,6 +6,7 @@ import { parse } from '../lib/Z2Parser';
 import MapData from '../components/MapData';
 import MapDisplay from '../components/MapDisplay';
 import { romAtom } from '../atoms/rom.atom';
+import KeyValueTable from '../components/KeyValueTable';
 
 export default () => {
     const [ romData, setRomData ] = useAtom(romAtom);
@@ -36,36 +37,46 @@ export default () => {
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
                 <h2>ROM File Selection</h2>
                 <label>Zelda 2 ROM File</label>
-                <input type="file" onChange={onFileLoad} />
+                <input type="file" accept='.nes' onChange={onFileLoad} />
             </div>
         );
     } else {
         return (
             <div>
                 <h2>ROM Details</h2>
+                <h3>ROM Data</h3>
+                <KeyValueTable map={{
+                    Version: romData.isDigiShake ? 'DigiShake Randomizer' : 'Vanilla'
+                }} />
+                <h3>Actions</h3>
+                <div className="data-div">
+                    <button onClick={() => {setRomData(null)}}>Close ROM</button>
+                </div>
+
+
                 <h3>West Hyrule</h3>
                 <h4>Data</h4>
                 <MapData locationData={romData.westHyruleMap} continent={0} />
                 <h4>Map</h4>
-                <MapDisplay id="map-0" locationData={romData.westHyruleMap} spriteMap={romData.westHyruleSpriteMap} continent={0} />
+                <MapDisplay id="map-0" maps={romData.sideViewMaps} levelExits={romData.levelExits} locationData={romData.westHyruleMap} spriteMap={romData.westHyruleSpriteMap} continent={0} />
 
                 <h3>Death Mountain</h3>
                 <h4>Data</h4>
                 <MapData locationData={romData.deathMountainHyruleMap} continent={1} />
                 <h4>Map</h4>
-                <MapDisplay id="map-1" locationData={romData.deathMountainHyruleMap} spriteMap={romData.deathMountainHyruleSpriteMap} continent={1} />
+                <MapDisplay id="map-1" maps={romData.sideViewMaps} levelExits={romData.levelExits} locationData={romData.deathMountainHyruleMap} spriteMap={romData.deathMountainHyruleSpriteMap} continent={1} />
 
                 <h3>East Hyrule</h3>
                 <h4>Data</h4>
                 <MapData locationData={romData.eastHyruleMap} continent={2} />
                 <h4>Map</h4>
-                <MapDisplay id="map-2" locationData={romData.eastHyruleMap} spriteMap={romData.eastHyruleSpriteMap} continent={2} />
+                <MapDisplay id="map-2" maps={romData.sideViewMaps} levelExits={romData.levelExits} locationData={romData.eastHyruleMap} spriteMap={romData.eastHyruleSpriteMap} continent={2} />
                 
                 <h3>Maze Island</h3>
                 <h4>Data</h4>
-                <MapData locationData={romData.mazeIslandMountainHyruleMap} continent={3} />
+                <MapData locationData={romData.mazeIslandMountainHyruleMap} continent={1} />
                 <h4>Map</h4>
-                <MapDisplay id="map-3" locationData={romData.mazeIslandMountainHyruleMap} spriteMap={romData.mazeIslandMountainHyruleSpriteMap} continent={3} />
+                <MapDisplay id="map-3" maps={romData.sideViewMaps} levelExits={romData.levelExits} locationData={romData.mazeIslandMountainHyruleMap} spriteMap={romData.mazeIslandMountainHyruleSpriteMap} continent={1} />
             </div>
         );
     }

@@ -29,10 +29,7 @@ export default ({locationData, continent : continentNumber}) => {
                 } else if (mapSet > 2) {
                     mapSet = mapSet + 2;                    // Palaces
                 }
-                console.log("KEY:       " + key);
-                console.log("CONTINENT: " + continentNumber);
-                console.log("MAPSET:    " + mapSet);
-                console.log("\n");
+
                 return (
                     <tr onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}>
                         <td>{key}</td>
