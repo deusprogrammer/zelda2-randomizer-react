@@ -7,12 +7,12 @@ export default ({locationData, maps, continent}) => {
         let mapNumber = location.mapNumber;
         let mapSet = 0;
 
-        if (location.mapSet === 0 && location.continent === 0) {  // Overworld
+        if (location.mapSet === 0 && location.continent === 0) {        // Overworld
             mapSet = continent;
-        } else if (location.mapSet === 1 || location.mapSet === 2) {                    // Towns
+        } else if (location.mapSet === 1 || location.mapSet === 2) {    // Towns
             mapSet = 4;
-        } else if (location.mapSet > 2) {
-            mapSet = location.mapSet + 2;                                               // Palaces
+        } else if (location.mapSet > 2) {                               // Palaces
+            mapSet = location.mapSet + 2;
         } else {
             return null;
         }

@@ -38,6 +38,14 @@ export const LEVEL_EXITS_MAPPING = {
     }
 }
 
+export const LEVEL_EXIT_BLOCK = {
+    size: 63,
+    elements: {
+        size: 0x04,
+        fields: LEVEL_EXITS_MAPPING
+    }
+}
+
 export const LEVEL_HEADER_MAPPING = [
     {
         name: 'sizeOfLevel',

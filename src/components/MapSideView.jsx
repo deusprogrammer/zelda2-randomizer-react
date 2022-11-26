@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom"
+import { ITEM_MAP } from '../lib/zelda2/Z2Utils';
 
 import MapSideViewData from "./MapSideViewData"
 import MapSideViewDisplay from "./MapSideViewDisplay"

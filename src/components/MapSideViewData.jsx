@@ -39,7 +39,6 @@ export default ({level, onStepChange}) => {
                         let iHandle = setInterval(() => {
                             setSelectedStep(step => {
                                 if (step + 1 > level.levelElements.length + 1) {
-                                    console.log("RESTARTING");
                                     step = 0;
                                 }
                                 onStepChange(step);

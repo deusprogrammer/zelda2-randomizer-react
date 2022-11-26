@@ -30,7 +30,8 @@ const {
     TEXT_DATA_OFFSET,
     TEXT_DATA_LENGTH,
     BACKMAP_POINTER_BANK_OFFSETS,
-    DIGISHAKE_CREDIT_OFFSET} = require("./Z2MemoryMappings");
+    DIGISHAKE_CREDIT_OFFSET,
+    LEVEL_EXIT_BLOCK} = require("./Z2MemoryMappings");
 
 export const WIDTH_OF_SCREEN  = 16;
 export const HEIGHT_OF_SCREEN = 16;
@@ -256,6 +257,7 @@ export const extractLevelExits = (buffer) => {
     let mapSets = [];
     for (let bank = 0; bank < 5; bank++) {
         let offset = LEVEL_EXITS_BANK_OFFSETS1[bank];
+        console.log("OFFSET: " + offset.toString(16));
         let newBank = hexArrayExtractor(LEVEL_EXITS_MAPPING, buffer, 63, offset);
 
         mapSets.push(newBank);
@@ -265,6 +267,7 @@ export const extractLevelExits = (buffer) => {
         }
         
         offset = LEVEL_EXITS_BANK_OFFSETS2[bank];
+        console.log("OFFSET: " + offset.toString(16));
         newBank = hexArrayExtractor(LEVEL_EXITS_MAPPING, buffer, 63, offset);
 
         mapSets.push(newBank);
@@ -504,7 +507,7 @@ export const drawMap = (level, backMaps, steps = -1) => {
             size = objectNumber & 0b00001111;
             objectNumber = objectNumber >> 4;
             if (objectNumber === 0x2 || objectNumber === 0x1) {
-                rectangle2D(fg, mapWidth, newX, 10, newX + size, 13, {name: "lava"});
+                rectangle2D(fg, mapWidth, newX, 11, newX + size, 13, {name: "lava"});
             }
         } else {
             if (objectNumber === 0xF && y < 13) {
@@ -561,4 +564,41 @@ export const isDigiShakeRando = (rom) => {
     console.log("CREDIT: " + creditsLine2);
 
     return creditsLine2.trim() === "DIGSHAKE";
+}
+
+export const explore = (maps, levelExits, mapNumber, mapSet, explored = []) => {
+    let items = [];
+    if (mapNumber === 63 || explored.includes(mapNumber)) {
+        return [];
+    }
+
+    let currentMap = maps[mapSet][mapNumber];
+
+    currentMap.levelElements.forEach(({collectableObjectNumber}) => {
+        if (collectableObjectNumber !== undefined) {
+            items.push({name: ITEM_MAP[collectableObjectNumber], number: collectableObjectNumber, mapNumber, mapSet});
+        }
+    });
+
+    const {upExit, downExit, leftExit, rightExit} = levelExits[mapSet][mapNumber];
+    explored.push(mapNumber);
+
+    // Explore up
+    if (upExit.mapNumber > 0 || upExit.xCoord > 0) {
+        items = [...items, ...explore(maps, levelExits, upExit.mapNumber, mapSet, explored)];
+    }
+    // Explore down
+    if (downExit.mapNumber > 0 || downExit.xCoord > 0) {
+        items = [...items, ...explore(maps, levelExits, downExit.mapNumber, mapSet, explored)];
+    }
+    // Explore left
+    if (leftExit.mapNumber > 0 || leftExit.xCoord > 0) {
+        items = [...items, ...explore(maps, levelExits, leftExit.mapNumber, mapSet, explored)];
+    }
+    // Explore right
+    if (rightExit.mapNumber > 0 || rightExit.xCoord > 0) {
+        items = [...items, ...explore(maps, levelExits, rightExit.mapNumber, mapSet, explored)];
+    }
+
+    return items;
 }
