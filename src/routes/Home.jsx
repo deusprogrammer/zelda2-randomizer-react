@@ -33,8 +33,6 @@ export default () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    let {isDigiShake} = romData;
-
     if (!romData) {
         return (
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
@@ -44,6 +42,7 @@ export default () => {
             </div>
         );
     } else {
+        let {isDigiShake} = romData;
         return (
             <div>
                 <h2>ROM Details</h2>

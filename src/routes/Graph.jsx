@@ -7,6 +7,19 @@ import { useAtom } from "jotai";
 import { romAtom } from "../atoms/rom.atom";
 import { useNavigate } from "react-router";
 
+const connectToDistantNeighbors = (parentNode, childNode, nodes) => {
+    let edges = [];
+    let node = nodes[childNode];
+    if (!node || !node.connections || node.bottleneck) {
+        return edges;
+    }
+    node.connections.forEach(connection => {
+        console.log(`${parentNode} -> ${connection}`);
+        edges.push({from: parentNode, to: connection});
+        edges = [...edges, ...connectToDistantNeighbors(parentNode, connection, nodes)];
+    });
+    return edges;
+}
 
 const generateEdgeList = (nodeName, nodes) => {
     let edges = [];
@@ -17,7 +30,7 @@ const generateEdgeList = (nodeName, nodes) => {
     node.connections.forEach((connection => {
         console.log(`${nodeName} => ${connection}`);
         edges.push({from: nodeName, to: connection});
-        edges = [...edges, ...generateEdgeList(connection, nodes)];
+        edges = [...edges, ...generateEdgeList(connection, nodes), ...connectToDistantNeighbors(nodeName, connection, nodes)];
     }));
     return edges;
 }
@@ -50,7 +63,11 @@ const MyGraph = () => {
         });
         let edges = generateEdgeList(Object.keys(graphData)[0], graphData);
         edges.forEach(edge => {
-            graph.addEdgeWithKey(`${edge.from}=>${edge.to}`, edge.from, edge.to, {label: `${edge.from}=>${edge.to}`});
+            try {
+                graph.addEdgeWithKey(`${edge.from}=>${edge.to}`, edge.from, edge.to, {label: `${edge.from}=>${edge.to}`});
+            } catch (e) {
+                console.error(e);
+            }
         });
         loadGraph(graph);
     }, [loadGraph]);
@@ -62,7 +79,7 @@ export default ({locations}) => {
     return (
         <SigmaContainer
             graph={MultiDirectedGraph}
-            style={{ height: "800px" }}
+            style={{ height: "1000px" }}
             settings={{ renderEdgeLabels: true, defaultEdgeType: "line" }}
         >
             <MyGraph locations={locations} />
