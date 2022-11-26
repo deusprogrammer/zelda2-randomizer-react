@@ -434,7 +434,9 @@ export const drawMap = (level, backMaps) => {
         let newX = 0;
         let newFloorLevel = floorLevel;
         let newCeilingLevel = ceilingLevel;
-        
+
+        newX = x + xSpace;
+
         if (drawWall) {
             for (let i = 0; i < xSpace; i++) {
                 vLine2D(map, mapWidth, 0, 12, newX + i, {name: "wall", solid: true});
@@ -442,7 +444,6 @@ export const drawMap = (level, backMaps) => {
             drawWall = false;
         } 
 
-        newX = x + xSpace;
         if (y === 0xD) {
             let [newLevel, c] = getFloorPosition(objectNumber & 0b00001111);
             noCeiling = maskBits(objectNumber, 0b10000000);
