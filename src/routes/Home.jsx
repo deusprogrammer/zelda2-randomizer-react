@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from "react-router";
+import { Link } from 'react-router-dom';
 import { useAtom } from 'jotai';
 
 import { parse } from '../lib/Z2Parser';
@@ -32,6 +33,8 @@ export default () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
+    let {isDigiShake} = romData;
+
     if (!romData) {
         return (
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
@@ -55,6 +58,13 @@ export default () => {
 
 
                 <h3>West Hyrule</h3>
+                {!isDigiShake ? 
+                <>
+                    <h4>Graph</h4>
+                    <div style={{textAlign: "center"}}>
+                        <Link to={`${process.env.PUBLIC_URL}/graph`}>Vanilla Graph Test</Link>
+                    </div>
+                </> : null}
                 <h4>Data</h4>
                 <MapData locationData={romData.westHyruleMap} continent={0} />
                 <h4>Map</h4>

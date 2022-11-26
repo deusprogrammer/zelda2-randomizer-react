@@ -444,7 +444,7 @@ export const WEST_HYRULE_LOCATION_MAPPINGS = {
         offset: 0x464F,
         fields: LOCATION_MAPPING_FIELDS
     },
-    RAFT_DOCK: {
+    RAFT_DOCK_W: {
         offset: 0x4658,
         fields: LOCATION_MAPPING_FIELDS
     },

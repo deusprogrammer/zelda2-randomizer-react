@@ -479,14 +479,14 @@ export const drawMap = (level, backMaps, steps = -1) => {
         let newFloorLevel = floorLevel;
         let newCeilingLevel = ceilingLevel;
 
-        newX = x + xSpace;
-
         if (drawWall) {
             for (let i = 0; i < xSpace; i++) {
-                vLine2D(map, mapWidth, 0, 12, newX + i, {name: "wall", solid: true});
+                vLine2D(map, mapWidth, 0, 12, x + i, {name: "wall", solid: true});
             }
             drawWall = false;
         } 
+
+        newX = x + xSpace;
 
         if (y === 0xD) {
             let [newLevel, c] = getFloorPosition(objectNumber & 0b00001111);
@@ -508,7 +508,7 @@ export const drawMap = (level, backMaps, steps = -1) => {
             size = objectNumber & 0b00001111;
             objectNumber = objectNumber >> 4;
             if (objectNumber === 0x2 || objectNumber === 0x1) {
-                rectangle2D(fg, mapWidth, newX, 11, newX + size, 13, {name: "lava"});
+                rectangle2D(fg, mapWidth, newX, 10, newX + size, 13, {name: "lava"});
             }
         } else {
             if (objectNumber === 0xF && y < 13) {

@@ -4,6 +4,7 @@ import Home from './routes/Home';
 import Map from './routes/Map';
 
 import './App.css';
+import Graph from './routes/Graph';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
                 <Routes>
                     <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
                     <Route path={`${process.env.PUBLIC_URL}/maps/:mapSet/:mapNumber`} element={<Map />} />
+                    <Route path={`${process.env.PUBLIC_URL}/graph`} element={<Graph />} />
                 </Routes>
             </Router>
         </div>
