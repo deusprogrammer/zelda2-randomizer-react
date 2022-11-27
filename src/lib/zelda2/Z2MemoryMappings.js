@@ -1030,7 +1030,7 @@ export const EAST_HYRULE_LOCATION_MAPPINGS = {
         offset: 0x863A,
         fields: LOCATION_MAPPING_FIELDS
     },
-    FIRE_TOWN_CAVE_ENTRACE: {
+    FIRE_TOWN_CAVE_ENTRANCE: {
         offset: 0x863B,
         fields: LOCATION_MAPPING_FIELDS
     },
@@ -1118,7 +1118,7 @@ export const EAST_HYRULE_LOCATION_MAPPINGS = {
         offset: 0x8657,
         fields: LOCATION_MAPPING_FIELDS
     },
-    RAFT_DOCK: {
+    RAFT_DOCK_E: {
         offset: 0x8658,
         fields: LOCATION_MAPPING_FIELDS
     },

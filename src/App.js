@@ -18,7 +18,7 @@ function App() {
             <Router>
                 <Routes>
                     <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
-                    <Route path={`${process.env.PUBLIC_URL}/maps/:mapSet/:mapNumber`} element={<Map />} />
+                    <Route path={`${process.env.PUBLIC_URL}/maps/:mapSet/:mapNumber/:locationKey`} element={<Map />} />
                     <Route path={`${process.env.PUBLIC_URL}/graph`} element={<Graph />} />
                 </Routes>
             </Router>

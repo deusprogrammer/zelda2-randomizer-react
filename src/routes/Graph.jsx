@@ -7,30 +7,17 @@ import { useAtom } from "jotai";
 import { romAtom } from "../atoms/rom.atom";
 import { useNavigate } from "react-router";
 
-const connectToDistantNeighbors = (parentNode, childNode, nodes) => {
-    let edges = [];
-    let node = nodes[childNode];
-    if (!node || !node.connections || node.bottleneck) {
-        return edges;
-    }
-    node.connections.forEach(connection => {
-        console.log(`${parentNode} -> ${connection}`);
-        edges.push({from: parentNode, to: connection});
-        edges = [...edges, ...connectToDistantNeighbors(parentNode, connection, nodes)];
-    });
-    return edges;
-}
-
-const generateEdgeList = (nodeName, nodes) => {
+const generateEdgeList = (nodeName, nodes, traversed = []) => {
     let edges = [];
     let node = nodes[nodeName];
-    if (!node || !node.connections) {
+    if (!node || !node.connections || traversed.includes(nodeName)) {
         return edges;
     }
+    traversed.push(nodeName);
     node.connections.forEach((connection => {
         console.log(`${nodeName} => ${connection}`);
         edges.push({from: nodeName, to: connection});
-        edges = [...edges, ...generateEdgeList(connection, nodes), ...connectToDistantNeighbors(nodeName, connection, nodes)];
+        edges = [...edges, ...generateEdgeList(connection, nodes, traversed)];
     }));
     return edges;
 }
@@ -46,20 +33,35 @@ const MyGraph = () => {
             return;
         }
 
-        const {westHyruleMap} = romData;
+        const {mapData} = romData;
 
         // Create the graph
         const graph = new MultiDirectedGraph();
         Object.keys(graphData).forEach(nodeName => {
-            let {x, y} = westHyruleMap[nodeName] || {x: 0, y: 0};
-            let {x: x1, y: y1} = graphData[nodeName];
+            let {x: x1, y: y1, area, subArea, map} = graphData[nodeName];
+            if (!area) {
+                area = 0;
+            }
+
+            if (!subArea) {
+                subArea = 0;
+            }
+
+            if (!map) {
+                map = 0;
+            }
+
+            let {x, y} = mapData[map][nodeName] || {x: 0, y: 0};
+            
             if (x1) {
                 x = x1;
             }
             if (y1) {
                 y = y1;
             }
-            graph.addNode(nodeName, {x: x, y: -y, label: nodeName, size: 10});
+
+            graphData[nodeName] = {...graphData[nodeName], x, y, area};
+            graph.addNode(nodeName, {x: x + area * 100, y: -y - subArea * 100, label: nodeName, size: 10});
         });
         let edges = generateEdgeList(Object.keys(graphData)[0], graphData);
         edges.forEach(edge => {
@@ -70,6 +72,7 @@ const MyGraph = () => {
             }
         });
         loadGraph(graph);
+        console.log(JSON.stringify(graphData, null, 5));
     }, [loadGraph]);
 
     return null;

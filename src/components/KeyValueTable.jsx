@@ -1,8 +1,12 @@
 import HexValue from "./HexValue";
 
-export default ({map, keyMap}) => {
+export default ({map, keyMap, showHex}) => {
     if (!map) {
         return <div>No Data</div>
+    }
+
+    if (showHex === undefined || showHex === null) {
+        showHex = true;
     }
 
     return (
@@ -10,7 +14,7 @@ export default ({map, keyMap}) => {
             <tr>
                 <th>Key</th>
                 <th>Value</th>
-                <th>ROM Address</th>
+                {showHex ? <th>ROM Address</th> : null}
             </tr>
             { Object.keys(map).filter(key => !key.startsWith("_")).map((key) => {
                     let value = map[key];
@@ -18,7 +22,7 @@ export default ({map, keyMap}) => {
                         <tr>
                             <td>{keyMap ? keyMap[key] : key}</td>
                             <td>{value}</td>
-                            <td>{map._metadata && map._metadata[key] ? <HexValue>{map._metadata[key].romAddress}</HexValue> : null}</td>
+                            {showHex ? <td>{map._metadata && map._metadata[key] ? <HexValue>{map._metadata[key].romAddress}</HexValue> : null}</td> : null}
                         </tr>
                     )
                 })}

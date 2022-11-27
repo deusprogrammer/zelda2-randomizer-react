@@ -7,7 +7,7 @@ import MapSideView from "../components/MapSideView";
 
 export default () => {
     const [ romData ] = useAtom(romAtom);
-    const { mapNumber, mapSet } = useParams();
+    const { mapNumber, mapSet, locationKey } = useParams();
     const { pathname } = useLocation();
     const navigate = useNavigate();
 
@@ -25,9 +25,13 @@ export default () => {
     }
 
     let location = null;
-    if (romData.mapData[mapSet]) {
-        let mapKey = Object.keys(romData.mapData[mapSet]).find(key => romData.mapData[mapSet][key].mapNumber == mapNumber);
-        location = romData.mapData[mapSet][mapKey];
+    for (let map of romData.mapData) {
+        let found = Object.keys(map).find(key => key === locationKey);
+
+        if (found) {
+            location = map[found];
+            break;
+        }
     }
 
     return (
