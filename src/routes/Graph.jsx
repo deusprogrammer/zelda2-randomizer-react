@@ -7,7 +7,6 @@ import graphData from '../lib/zelda2/z2-vanilla.graph';
 import { useAtom } from "jotai";
 import { romAtom } from "../atoms/rom.atom";
 import { useNavigate } from "react-router";
-import { createRef } from "react";
 import saveAsPNG from "../utils/GraphUtils";
 
 const generateEdgeList = (nodeName, nodes, traversed = []) => {
@@ -25,24 +24,22 @@ const generateEdgeList = (nodeName, nodes, traversed = []) => {
     return edges;
 }
 
-const templateToEdges = (graphData, romData) => {
-    const {mapData} = romData;
-
-    // Create the graph
-    const graph = new MultiDirectedGraph();
-    Object.keys(graphData).forEach(nodeName => {
-        let {x: x1, y: y1, area, subArea, map} = graphData[nodeName];
-        if (!area) {
-            area = 0;
-        }
-
-        if (!subArea) {
-            subArea = 0;
-        }
-
-        if (!map) {
-            map = 0;
-        }
+const createVanillaNodeMapping = (graphData, mapData) => {
+    let mapping = {};
+    let template = {};
+    Object.keys(graphData).forEach((nodeName, i) => {
+        mapping[nodeName] = `NODE${i}`;
+    });
+    Object.keys(graphData).forEach((nodeName, i) => {
+        let {x: x1, y: y1, area, subArea, map, connections, requirements, items, spells, bottleneck} = graphData[nodeName];
+        
+        area = area || 0;
+        subArea = subArea || 0;
+        map = map || 0;
+        connections = connections || [];
+        requirements = requirements || [];
+        items = items || [];
+        spells = spells || [];
 
         let {x, y} = mapData[map][nodeName] || {x: 0, y: 0};
         
@@ -53,7 +50,41 @@ const templateToEdges = (graphData, romData) => {
             y = y1;
         }
 
-        graphData[nodeName] = {...graphData[nodeName], x, y, area};
+        connections = connections.map(connection => mapping[connection]);
+        template[`NODE${i}`] = {locationName: nodeName, x, y, map, area, subArea, bottleneck, connections, requirements, items, spells};
+    });
+    return template;
+}
+
+const templateToEdges = (graphData, romData) => {
+    const {mapData} = romData;
+
+    // Create the graph
+    const graph = new MultiDirectedGraph();
+    let vanillaTemplate = createVanillaNodeMapping(graphData, mapData);
+    console.log("VANILLA TEMPLATE: " + JSON.stringify(vanillaTemplate, null, 5));
+
+    Object.keys(graphData).forEach((nodeName, i) => {
+        let {x: x1, y: y1, area, subArea, map, connections, requirements, items, spells} = graphData[nodeName];
+        
+        area = area || 0;
+        subArea = subArea || 0;
+        map = map || 0;
+        connections = connections || [];
+        requirements = requirements || [];
+        items = items || [];
+        spells = spells || [];
+
+        let {x, y} = mapData[map][nodeName] || {x: 0, y: 0};
+        
+        if (x1) {
+            x = x1;
+        }
+        if (y1) {
+            y = y1;
+        }
+
+        graphData[nodeName] = {...graphData[nodeName], x, y, map, area, subArea, connections, requirements, items, spells};
         graph.addNode(nodeName, {x: x + area * 100, y: -y - subArea * 100, label: nodeName, size: 10});
     });
     let edges = generateEdgeList(Object.keys(graphData)[0], graphData);
@@ -91,7 +122,6 @@ const MyGraph = () => {
 
         let graph = templateToEdges(graphData, romData);
         loadGraph(graph);
-        console.log(JSON.stringify(graphData, null, 5));
     }, [loadGraph]);
 
     return null;
