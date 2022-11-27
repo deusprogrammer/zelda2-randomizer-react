@@ -1,4 +1,4 @@
-import { calculateNESOffsets, exportNESHeaders, extractNESHeaders } from './nes/NESUtils';
+import { calculateNESOffsets, extractNESHeaders } from './nes/NESUtils';
 import {
     extractEastHyruleSpriteMap,
     extractWestHyruleSpriteMap,
@@ -52,3 +52,5 @@ export const parse = (rom) => {
         isDigiShake
     }
 }
+
+export default parse;

@@ -257,7 +257,6 @@ export const extractLevelExits = (buffer) => {
     let mapSets = [];
     for (let bank = 0; bank < 5; bank++) {
         let offset = LEVEL_EXITS_BANK_OFFSETS1[bank];
-        console.log("OFFSET: " + offset.toString(16));
         let newBank = hexArrayExtractor(LEVEL_EXITS_MAPPING, buffer, 63, offset);
 
         mapSets.push(newBank);
@@ -267,7 +266,6 @@ export const extractLevelExits = (buffer) => {
         }
         
         offset = LEVEL_EXITS_BANK_OFFSETS2[bank];
-        console.log("OFFSET: " + offset.toString(16));
         newBank = hexArrayExtractor(LEVEL_EXITS_MAPPING, buffer, 63, offset);
 
         mapSets.push(newBank);
@@ -557,6 +555,44 @@ export const drawMap = (level, backMaps, steps = -1) => {
         rectangle2D(bg, mapWidth, x, 0,                mapWidth - 1, ceilingLevel, {name: "ceiling", solid: true});
     }
     return layer2D(backMapLayer, bg, map, fg);
+}
+
+export const getItemType = (item) => {
+    let itemType = "SMALL_ITEM";
+    if (["CANDLE", "HANDY_GLOVE", "RAFT", "BOOTS", "RECORDER", "CROSS", "HAMMER", "MAGIC_KEY"].includes(item)) {
+        itemType = "BIG_ITEM";
+    } else if (item === "BAGU_SAUCE") {
+        itemType = "BAGU_SAUCE";
+    }
+
+    return itemType;
+}
+
+export const createVanillaNodeMapping = (graphData, mapData) => {
+    let mapping = {};
+    let template = {};
+    Object.keys(graphData).forEach((nodeName, i) => {
+        mapping[nodeName] = `NODE${i}`;
+    });
+    Object.keys(graphData).forEach((nodeName, i) => {
+        let {x: x1, y: y1, map, connections} = graphData[nodeName];
+        
+        map = map || 0;
+        connections = connections || [];
+
+        let {x, y, mapNumber, mapSet} = mapData[map][nodeName] || {x: 0, y: 0};
+        
+        if (x1) {
+            x = x1;
+        }
+        if (y1) {
+            y = y1;
+        }
+
+        connections = connections.map(connection => mapping[connection]);
+        template[`NODE${i}`] = {locationKey: nodeName, x, y, continent: map, mapSet, mapNumber, connections};
+    });
+    return template;
 }
 
 export const isDigiShakeRando = (rom) => {

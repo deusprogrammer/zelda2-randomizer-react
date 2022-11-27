@@ -82,6 +82,9 @@ export default {
         "items": "50p",
         "connections": []
     },
+    "FOREST_100P": {
+        "items": "100p"
+    },
     "JUMP_CAVE_S": {
         "connections": [
             "MEDICINE_CAVE_FAIRY",
@@ -215,7 +218,8 @@ export default {
         ],
         "connections": [
             "LIFE_TOWN_N",
-            "LIFE_TOWN_BRIDGE_EW"
+            "LIFE_TOWN_BRIDGE_EW",
+            "FOREST_100P"
         ],
         "bottleneck": true
     },
@@ -765,7 +769,7 @@ export default {
     },
     "CAVE_E_N": {
         "connections": [
-            "CAVE_N_S"
+            "CAVE_E_S"
         ],
         "subArea": 1,
         "map": 1,
@@ -808,7 +812,7 @@ export default {
     },
     "CAVE_J_E": {
         "connections": [
-            "CAVE_N_S"
+            "CAVE_J_W"
         ],
         "subArea": 1,
         "map": 1,
@@ -888,7 +892,7 @@ export default {
     },
     "CAVE_R_S": {
         "connections": [
-            "CAVE_K",
+            "CAVE_N_S",
             "HAMMER_CAVE",
             "DM_MAGIC"
         ],
@@ -983,5 +987,46 @@ export default {
         ],
         "area": 2,
         "map": 3
+    },
+    "GP": {
+        "requirements": [
+            "7CRYSTALS"
+        ],
+        "area": 1,
+        "map": 2
+    },
+    "FIRE_TOWN": {
+        "area": 1,
+        "map": 2
+    },
+    "THUNDER_TOWN_SWAMP_LIFE": {
+        "area": 1,
+        "map": 2
+    },
+    "THUNDER_TOWN_CAVE_500P_BAG": {
+        "area": 1,
+        "map": 2
+    },
+    "ELEVATOR_CAVE_G_E_TL": {
+        "subArea": 1,
+        "map": 1
+    },
+    "ELEVATOR_CAVE_H_W_TR": {
+        "subArea": 1,
+        "map": 1
+    },
+    "CAVE_N_S": {
+        "subArea": 1,
+        "map": 1,
+        "connections": [
+            "CAVE_N_N"
+        ]
+    },
+    "CAVE_N_N": {
+        "subArea": 1,
+        "map": 1,
+        "connections": [
+            "CAVE_K"
+        ]
     }
 }
