@@ -24,10 +24,16 @@ export default () => {
         console.log("HIIIIII!  I'M DERPY BARBA!");
     }
 
+    let location = null;
+    if (romData.mapData[mapSet]) {
+        let mapKey = Object.keys(romData.mapData[mapSet]).find(key => romData.mapData[mapSet][key].mapNumber == mapNumber);
+        location = romData.mapData[mapSet][mapKey];
+    }
+
     return (
         <>
             <h2>Map</h2>
-            <MapSideView maps={romData.sideViewMaps} levelExits={romData.levelExits} mapNumber={mapNumber} mapSet={mapSet} />
+            <MapSideView location={location} maps={romData.sideViewMaps} levelExits={romData.levelExits} mapNumber={mapNumber} mapSet={mapSet} />
             {mapSet === "6" && mapNumber === "58" ? <img src={`${process.env.PUBLIC_URL}/derpybarba.png`} className="popup" /> : null}
         </>
     )

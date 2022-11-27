@@ -1,13 +1,24 @@
+import HexValue from "./HexValue";
+
 export default ({map, keyMap}) => {
+    if (!map) {
+        return <div>No Data</div>
+    }
+
     return (
         <table className="data-table striped row-labeled">
-            { Object.keys(map).map((key) => {
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+                <th>ROM Address</th>
+            </tr>
+            { Object.keys(map).filter(key => !key.startsWith("_")).map((key) => {
                     let value = map[key];
-                    console.log(key + " = " + value);
                     return (
                         <tr>
                             <td>{keyMap ? keyMap[key] : key}</td>
                             <td>{value}</td>
+                            <td>{map._metadata && map._metadata[key] ? <HexValue>{map._metadata[key].romAddress}</HexValue> : null}</td>
                         </tr>
                     )
                 })}

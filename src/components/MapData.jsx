@@ -33,8 +33,8 @@ export default ({locationData, continent : continentNumber}) => {
                 }
 
                 return (
-                    <tr>
-                        <td onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}>{key}</td>
+                    <tr onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}>
+                        <td>{key}</td>
                         <td>{x}</td>
                         <td>{y}</td>
                         <td>{external}</td>

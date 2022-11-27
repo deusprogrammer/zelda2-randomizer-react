@@ -2,13 +2,18 @@ import { useState } from 'react';
 import { LARGE_OBJECT_SETS, SMALL_OBJECTS } from "../lib/zelda2/Z2Data";
 import { ITEM_MAP } from '../lib/zelda2/Z2Utils';
 import HexValue from './HexValue';
+import KeyValueTable from './KeyValueTable';
 
-export default ({level, onStepChange}) => {
+export default ({level, onStepChange, location}) => {
     const [selectedStep, setSelectedStep] = useState(-1);
     const [intervalHandler, setIntervalHandler] = useState(null);
 
     return (
         <div style={{display: "flex", flexDirection: "row", gap: "10px"}}>
+            <div>
+                <h5>Location Data</h5>
+                <KeyValueTable map={location} />
+            </div>
             <div>
                 <h5>Header</h5>
                 <table className="data-table striped row-labeled">
@@ -18,8 +23,6 @@ export default ({level, onStepChange}) => {
                         <th>ROM Address</th>
                     </tr>
                     { Object.keys(level.header).filter(key => !key.startsWith("_")).map(key => {
-                        console.log("KEY: " + key);
-                        console.log("HEADER: " + JSON.stringify(level.header, null, 5));
                         return (
                             <tr>
                                 <td>{key}</td>
@@ -32,31 +35,6 @@ export default ({level, onStepChange}) => {
             </div>
             <div>
                 <h5>Data</h5>
-                <div className="data-div">
-                    <button onClick={() => {
-                        setSelectedStep(0);
-                        onStepChange(0);
-
-                        if (intervalHandler) {
-                            clearInterval(intervalHandler);
-                            setIntervalHandler(null);
-                            setSelectedStep(-1);
-                            onStepChange(-1);
-                            return;
-                        }
-
-                        let iHandle = setInterval(() => {
-                            setSelectedStep(step => {
-                                if (step + 1 > level.levelElements.length + 1) {
-                                    step = 0;
-                                }
-                                onStepChange(step);
-                                return step + 1
-                            });
-                        }, 1000);
-                        setIntervalHandler(iHandle);
-                    }}>{intervalHandler ? 'Stop Animation' : 'Animate'}</button>
-                </div>
                 <table className="data-table striped col-labeled link-rows">
                     <tr>
                         <th>
@@ -115,6 +93,31 @@ export default ({level, onStepChange}) => {
                         <td>Done</td>
                     </tr>
                 </table>
+                <div className="data-div">
+                    <button onClick={() => {
+                        setSelectedStep(0);
+                        onStepChange(0);
+
+                        if (intervalHandler) {
+                            clearInterval(intervalHandler);
+                            setIntervalHandler(null);
+                            setSelectedStep(-1);
+                            onStepChange(-1);
+                            return;
+                        }
+
+                        let iHandle = setInterval(() => {
+                            setSelectedStep(step => {
+                                if (step + 1 > level.levelElements.length + 1) {
+                                    step = 0;
+                                }
+                                onStepChange(step);
+                                return step + 1
+                            });
+                        }, 1000);
+                        setIntervalHandler(iHandle);
+                    }}>{intervalHandler ? 'Stop Animation' : 'Animate'}</button>
+                </div>
             </div>
         </div>
     )
