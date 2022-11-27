@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { LARGE_OBJECT_SETS, SMALL_OBJECTS } from "../lib/zelda2/Z2Data";
 import { ITEM_MAP } from '../lib/zelda2/Z2Utils';
+import HexValue from './HexValue';
 
 export default ({level, onStepChange}) => {
     const [selectedStep, setSelectedStep] = useState(-1);
@@ -11,14 +12,22 @@ export default ({level, onStepChange}) => {
             <div>
                 <h5>Header</h5>
                 <table className="data-table striped row-labeled">
-                { Object.keys(level.header).map(key => {
-                    return (
-                        <tr>
-                            <td>{key}</td>
-                            <td>{level.header[key]}</td>
-                        </tr>
-                    )
-                })}
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                        <th>ROM Address</th>
+                    </tr>
+                    { Object.keys(level.header).filter(key => !key.startsWith("_")).map(key => {
+                        console.log("KEY: " + key);
+                        console.log("HEADER: " + JSON.stringify(level.header, null, 5));
+                        return (
+                            <tr>
+                                <td>{key}</td>
+                                <td>{level.header[key]}</td>
+                                <td><HexValue>{level.header._metadata[key].romAddress}</HexValue></td>
+                            </tr>
+                        )
+                    })}
                 </table>
             </div>
             <div>
@@ -62,8 +71,11 @@ export default ({level, onStepChange}) => {
                         <th>
                             Object
                         </th>
+                        <th>
+                            ROM Address
+                        </th>
                     </tr>
-                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber, collectableObjectNumber}, step) => {
+                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber, collectableObjectNumber, _romAddress}, step) => {
                         let mapSetNumber = level.mapSetNumber;
                         let object = "unknown";
                         let size = 1;
@@ -92,6 +104,7 @@ export default ({level, onStepChange}) => {
                                 <td>{advanceCursor}</td>
                                 <td style={{fontFamily: "monospace, monospace"}}>0x{objectNumber.toString(16).padStart(2, "0")}</td>
                                 <td>{object}</td>
+                                <td><HexValue>{_romAddress}</HexValue></td>
                             </tr>
                         )
                     })}

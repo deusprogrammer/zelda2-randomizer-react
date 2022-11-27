@@ -123,6 +123,15 @@ body * {
     animation: blink-animation 1s ease-in-out infinite alternate;
 }
 
+.hex-value {
+    cursor: pointer;
+}
+
+.hex-value:hover {
+    background-color: black;
+    color: white;
+}
+
 img.popup {
     position: fixed;
     left: 0px;

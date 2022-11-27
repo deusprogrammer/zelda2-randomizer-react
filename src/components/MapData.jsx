@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import HexValue from "./HexValue";
 
 export default ({locationData, continent : continentNumber}) => {
     const navigate = useNavigate();
@@ -19,9 +20,10 @@ export default ({locationData, continent : continentNumber}) => {
                 <th>rightEnt</th>
                 <th>passThrough</th>
                 <th>fallInto</th>
+                <th>ROM Address</th>
             </tr>
-            {Object.keys(locationData).map((key) => {
-                let {x, y, external, caveSeg, reserved, mapNumber, continent, hPosEnt, mapSet, rightEnt, passThrough, fallInto} = locationData[key];
+            {Object.keys(locationData).filter(key => !key.startsWith("_")).map((key) => {
+                let {x, y, external, caveSeg, reserved, mapNumber, continent, hPosEnt, mapSet, rightEnt, passThrough, fallInto, _romAddress} = locationData[key];
                 if (mapSet === 0 && continent === 0) {      // Overworld
                     mapSet = continentNumber;
                 } else if (mapSet === 1 || mapSet === 2) {  // Towns
@@ -31,8 +33,8 @@ export default ({locationData, continent : continentNumber}) => {
                 }
 
                 return (
-                    <tr onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}>
-                        <td>{key}</td>
+                    <tr>
+                        <td onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}>{key}</td>
                         <td>{x}</td>
                         <td>{y}</td>
                         <td>{external}</td>
@@ -45,6 +47,7 @@ export default ({locationData, continent : continentNumber}) => {
                         <td>{rightEnt}</td>
                         <td>{passThrough}</td>
                         <td>{fallInto}</td>
+                        <td><HexValue>{_romAddress}</HexValue></td>
                     </tr>
                 )
             })}
