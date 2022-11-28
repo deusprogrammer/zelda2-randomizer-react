@@ -1,5 +1,13 @@
 # Zelda 2 Randomizer React
 
+## What is Zelda 2 Randomizer React
+
+This app is an attempt at a web based randomizer with a different approach to ROM generation.  This isn't an effor to replace the amazing work of Digshake, but a learning experience for me as a developer and hopefully a source of inspiration and data for improving the existing randomizer.
+
+## Current State
+
+Starting work on the randomization portion.  ROM interrogation is almost complete with the exception of enemy data.  The design for the data structure for creation of randomized overworld maps and playability testing is complete.
+
 ## Notes
 
 ### Templates
