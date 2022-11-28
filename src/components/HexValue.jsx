@@ -6,5 +6,8 @@ export default ({children}) => {
         navigator.clipboard.writeText(`0x${children.toString(16)}`);
         e.stopPropagation();
     }
+    if (!children) {
+        return <div>undefined</div>
+    }
     return <div className="hex-value" onClick={copyHex}>0x{children.toString(16)}</div>
 }

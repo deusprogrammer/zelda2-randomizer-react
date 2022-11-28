@@ -16,20 +16,21 @@ export default ({locationData, continent : continentNumber}) => {
                 <th>mapNumber</th>
                 <th>hPosEnt</th>
                 <th>continent</th>
-                <th>mapSet</th>
+                <th>world</th>
                 <th>rightEnt</th>
                 <th>passThrough</th>
                 <th>fallInto</th>
                 <th>ROM Address</th>
             </tr>
             {Object.keys(locationData).filter(key => !key.startsWith("_")).map((key) => {
-                let {x, y, external, caveSeg, reserved, mapNumber, continent, hPosEnt, mapSet, rightEnt, passThrough, fallInto, _romAddress} = locationData[key];
+                let {x, y, external, caveSeg, reserved, mapNumber, continent, hPosEnt, mapSet, rightEnt, passThrough, fallInto, _offset} = locationData[key];
+                let mapIndex;
                 if (mapSet === 0 && continent === 0) {      // Overworld
-                    mapSet = continentNumber;
+                    mapIndex = continentNumber;
                 } else if (mapSet === 1 || mapSet === 2) {  // Towns
-                    mapSet = 4;
+                    mapIndex = 4;
                 } else if (mapSet > 2) {
-                    mapSet = mapSet + 2;                    // Palaces
+                    mapIndex = mapSet + 2;                    // Palaces
                 }
 
                 return (
@@ -47,7 +48,7 @@ export default ({locationData, continent : continentNumber}) => {
                         <td>{rightEnt}</td>
                         <td>{passThrough}</td>
                         <td>{fallInto}</td>
-                        <td><HexValue>{_romAddress}</HexValue></td>
+                        <td><HexValue>{_offset}</HexValue></td>
                     </tr>
                 )
             })}

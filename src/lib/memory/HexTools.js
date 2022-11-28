@@ -50,11 +50,11 @@ export const extractFields = (fields, buffer, offset) => {
         fieldBytes = littleEndianConvert(fieldBytes);
         element[name] = maskBits(fieldBytes, mask);
         metadata[name] = {
-            romAddress: fieldOffset,
+            offset: fieldOffset,
             mask
         }
     }
-    element._romAddress = offset;
+    element._offset = offset;
     element._metadata = metadata;
     return element;
 }
@@ -75,7 +75,7 @@ export const calculateOffset = (map, offset, fieldName) => {
 
 export const hexExtractor = (map, buffer, start = 0) => {
     let offset = start;
-    let extracted = {};
+    let extracted = {_metadata: {}};
     for (let key in map) {
         let {fields, elements, size, sizeRef, sizeRefAdjustment, offset: offsetOverride} = map[key];
 
@@ -98,13 +98,19 @@ export const hexExtractor = (map, buffer, start = 0) => {
             data = extractFields(fields, buffer, offset);
         } else if (elements) {
             data = extractElements({size, elements}, buffer, offset);
+        } else {
+            data = buffer.slice(offset, offset + size);
+            data = littleEndianConvert(data);
         }
 
         offset += size;
         extracted[key] = data;
+        extracted._metadata[key] = {
+            offset
+        }
     }
 
-    extracted._romAddress = start;
+    extracted._offset = start;
 
     return [extracted, offset];
 }

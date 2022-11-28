@@ -22,7 +22,7 @@ export default ({map, keyMap, showHex}) => {
                         <tr>
                             <td>{keyMap ? keyMap[key] : key}</td>
                             <td>{value}</td>
-                            {showHex ? <td>{map._metadata && map._metadata[key] ? <HexValue>{map._metadata[key].romAddress}</HexValue> : null}</td> : null}
+                            {showHex ? <td>{map._metadata && map._metadata[key] ? <HexValue>{map._metadata[key].offset}</HexValue> : null}</td> : null}
                         </tr>
                     )
                 })}

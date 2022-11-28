@@ -27,7 +27,7 @@ export default ({level, onStepChange, location}) => {
                             <tr>
                                 <td>{key}</td>
                                 <td>{level.header[key]}</td>
-                                <td><HexValue>{level.header._metadata[key].romAddress}</HexValue></td>
+                                <td><HexValue>{level.header._metadata[key].offset}</HexValue></td>
                             </tr>
                         )
                     })}
@@ -53,7 +53,7 @@ export default ({level, onStepChange, location}) => {
                             ROM Address
                         </th>
                     </tr>
-                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber, collectableObjectNumber, _romAddress}, step) => {
+                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber, collectableObjectNumber, _offset}, step) => {
                         let mapSetNumber = level.mapSetNumber;
                         let object = "unknown";
                         let size = 1;
@@ -82,7 +82,7 @@ export default ({level, onStepChange, location}) => {
                                 <td>{advanceCursor}</td>
                                 <td style={{fontFamily: "monospace, monospace"}}>0x{objectNumber.toString(16).padStart(2, "0")}</td>
                                 <td>{object}</td>
-                                <td><HexValue>{_romAddress}</HexValue></td>
+                                <td><HexValue>{_offset}</HexValue></td>
                             </tr>
                         )
                     })}
