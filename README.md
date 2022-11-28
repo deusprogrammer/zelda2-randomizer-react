@@ -106,3 +106,7 @@ Shows location data like map number, map set, number of item slots, spell slots,
             "HANDY_GLOVE"
         ]
     }
+
+#### ROM Generation
+
+![ROM Generation Diagram](https://github.com/deusprogrammer/zelda2-randomizer-react/raw/main/ROM_Generation.png)
