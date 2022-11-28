@@ -33,8 +33,6 @@ export default () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    let {isDigiShake} = romData;
-
     if (!romData) {
         return (
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
@@ -44,11 +42,12 @@ export default () => {
             </div>
         );
     } else {
+        let {isDigiShake} = romData;
         return (
             <div>
                 <h2>ROM Details</h2>
                 <h3>ROM Data</h3>
-                <KeyValueTable map={{
+                <KeyValueTable showHex={false} map={{
                     Version: romData.isDigiShake ? 'DigiShake Randomizer' : 'Vanilla'
                 }} />
                 <h3>Actions</h3>
@@ -56,15 +55,16 @@ export default () => {
                     <button onClick={() => {setRomData(null)}}>Close ROM</button>
                 </div>
 
-
-                <h3>West Hyrule</h3>
                 {!isDigiShake ? 
                 <>
-                    <h4>Graph</h4>
+                    <h3>Graph</h3>
                     <div style={{textAlign: "center"}}>
                         <Link to={`${process.env.PUBLIC_URL}/graph`}>Vanilla Graph Test</Link>
                     </div>
                 </> : null}
+
+
+                <h3>West Hyrule</h3>
                 <h4>Data</h4>
                 <MapData locationData={romData.westHyruleMap} continent={0} />
                 <h4>Map</h4>

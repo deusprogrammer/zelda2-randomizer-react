@@ -1,4 +1,4 @@
-import { calculateNESOffsets, exportNESHeaders, extractNESHeaders } from './nes/NESUtils';
+import { calculateNESOffsets, extractNESHeaders } from './nes/NESUtils';
 import {
     extractEastHyruleSpriteMap,
     extractWestHyruleSpriteMap,
@@ -32,10 +32,12 @@ export const parse = (rom) => {
     let mazeIslandMountainHyruleSpriteMap = extractMazeIslandSpriteMap(rom, mode);
     let textData = extractTextData(rom);
     let levelExits = extractLevelExits(rom);
+    let mapData = [westHyruleMap, deathMountainHyruleMap, eastHyruleMap, mazeIslandMountainHyruleMap];
     
     return {
         nesHeaders,
         nesOffsets,
+        mapData,
         sideViewMaps,
         westHyruleMap,
         westHyruleSpriteMap,
@@ -50,3 +52,5 @@ export const parse = (rom) => {
         isDigiShake
     }
 }
+
+export default parse;

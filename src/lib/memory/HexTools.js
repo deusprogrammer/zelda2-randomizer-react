@@ -40,6 +40,7 @@ export const byteMaskExtractor = (fieldMap, bytes) => {
 
 export const extractFields = (fields, buffer, offset) => {
     let element = {};
+    let metadata = {};
     for (let {name, size, relOffset, mask} of fields) {
         let fieldSize = size || 1;
         mask = mask || 0b11111111;
@@ -48,7 +49,13 @@ export const extractFields = (fields, buffer, offset) => {
         let fieldBytes = buffer.slice(fieldOffset, fieldOffset + fieldSize);
         fieldBytes = littleEndianConvert(fieldBytes);
         element[name] = maskBits(fieldBytes, mask);
+        metadata[name] = {
+            romAddress: fieldOffset,
+            mask
+        }
     }
+    element._romAddress = offset;
+    element._metadata = metadata;
     return element;
 }
 
@@ -59,6 +66,11 @@ export const extractElements = (objDesc, buffer, start) => {
         elements[i] = extractFields(fields, buffer, offset);
     }
     return elements;
+}
+
+export const calculateOffset = (map, offset, fieldName) => {
+    let field = map.find(field => field.name === fieldName);
+    return offset + field.relOffset;
 }
 
 export const hexExtractor = (map, buffer, start = 0) => {
@@ -91,6 +103,8 @@ export const hexExtractor = (map, buffer, start = 0) => {
         offset += size;
         extracted[key] = data;
     }
+
+    extracted._romAddress = start;
 
     return [extracted, offset];
 }

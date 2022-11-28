@@ -1,53 +1,40 @@
 import { useState } from 'react';
 import { LARGE_OBJECT_SETS, SMALL_OBJECTS } from "../lib/zelda2/Z2Data";
 import { ITEM_MAP } from '../lib/zelda2/Z2Utils';
+import HexValue from './HexValue';
+import KeyValueTable from './KeyValueTable';
 
-export default ({level, onStepChange}) => {
+export default ({level, onStepChange, location}) => {
     const [selectedStep, setSelectedStep] = useState(-1);
     const [intervalHandler, setIntervalHandler] = useState(null);
 
     return (
         <div style={{display: "flex", flexDirection: "row", gap: "10px"}}>
             <div>
+                <h5>Location Data</h5>
+                <KeyValueTable map={location} />
+            </div>
+            <div>
                 <h5>Header</h5>
                 <table className="data-table striped row-labeled">
-                { Object.keys(level.header).map(key => {
-                    return (
-                        <tr>
-                            <td>{key}</td>
-                            <td>{level.header[key]}</td>
-                        </tr>
-                    )
-                })}
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                        <th>ROM Address</th>
+                    </tr>
+                    { Object.keys(level.header).filter(key => !key.startsWith("_")).map(key => {
+                        return (
+                            <tr>
+                                <td>{key}</td>
+                                <td>{level.header[key]}</td>
+                                <td><HexValue>{level.header._metadata[key].romAddress}</HexValue></td>
+                            </tr>
+                        )
+                    })}
                 </table>
             </div>
             <div>
                 <h5>Data</h5>
-                <div className="data-div">
-                    <button onClick={() => {
-                        setSelectedStep(0);
-                        onStepChange(0);
-
-                        if (intervalHandler) {
-                            clearInterval(intervalHandler);
-                            setIntervalHandler(null);
-                            setSelectedStep(-1);
-                            onStepChange(-1);
-                            return;
-                        }
-
-                        let iHandle = setInterval(() => {
-                            setSelectedStep(step => {
-                                if (step + 1 > level.levelElements.length + 1) {
-                                    step = 0;
-                                }
-                                onStepChange(step);
-                                return step + 1
-                            });
-                        }, 1000);
-                        setIntervalHandler(iHandle);
-                    }}>{intervalHandler ? 'Stop Animation' : 'Animate'}</button>
-                </div>
                 <table className="data-table striped col-labeled link-rows">
                     <tr>
                         <th>
@@ -62,8 +49,11 @@ export default ({level, onStepChange}) => {
                         <th>
                             Object
                         </th>
+                        <th>
+                            ROM Address
+                        </th>
                     </tr>
-                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber, collectableObjectNumber}, step) => {
+                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber, collectableObjectNumber, _romAddress}, step) => {
                         let mapSetNumber = level.mapSetNumber;
                         let object = "unknown";
                         let size = 1;
@@ -92,6 +82,7 @@ export default ({level, onStepChange}) => {
                                 <td>{advanceCursor}</td>
                                 <td style={{fontFamily: "monospace, monospace"}}>0x{objectNumber.toString(16).padStart(2, "0")}</td>
                                 <td>{object}</td>
+                                <td><HexValue>{_romAddress}</HexValue></td>
                             </tr>
                         )
                     })}
@@ -102,6 +93,31 @@ export default ({level, onStepChange}) => {
                         <td>Done</td>
                     </tr>
                 </table>
+                <div className="data-div">
+                    <button onClick={() => {
+                        setSelectedStep(0);
+                        onStepChange(0);
+
+                        if (intervalHandler) {
+                            clearInterval(intervalHandler);
+                            setIntervalHandler(null);
+                            setSelectedStep(-1);
+                            onStepChange(-1);
+                            return;
+                        }
+
+                        let iHandle = setInterval(() => {
+                            setSelectedStep(step => {
+                                if (step + 1 > level.levelElements.length + 1) {
+                                    step = 0;
+                                }
+                                onStepChange(step);
+                                return step + 1
+                            });
+                        }, 1000);
+                        setIntervalHandler(iHandle);
+                    }}>{intervalHandler ? 'Stop Animation' : 'Animate'}</button>
+                </div>
             </div>
         </div>
     )

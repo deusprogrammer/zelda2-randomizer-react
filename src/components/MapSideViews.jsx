@@ -7,6 +7,8 @@ export default ({locationData, maps, continent}) => {
         let mapNumber = location.mapNumber;
         let mapSet = 0;
 
+        console.table(locationData);
+
         if (location.mapSet === 0 && location.continent === 0) {        // Overworld
             mapSet = continent;
         } else if (location.mapSet === 1 || location.mapSet === 2) {    // Towns
@@ -19,7 +21,7 @@ export default ({locationData, maps, continent}) => {
         return (
             <div>
                 <h5>{key}</h5>
-                <MapSideViewData level={maps[mapSet][mapNumber]} />
+                <MapSideViewData level={maps[mapSet][mapNumber]} location={location} />
                 <MapSideViewDisplay level={maps[mapSet][mapNumber]} />
             </div>
         )

@@ -3,22 +3,22 @@ import { useNavigate } from "react-router";
 import { explore } from "../lib/zelda2/Z2Utils";
 
 const OVERWORLD_SPRITE_SYMBOLS = [
-    {c: "T", color: "white", backgroundColor: "red"},
-    {c: " ", color: "white", backgroundColor: "black"},
-    {c: "P", color: "white", backgroundColor: "red"},
-    {c: "=", color: "black", backgroundColor: "yellow"},
-    {c: " ", color: "white", backgroundColor: "sandybrown"},
-    {c: " ", color: "white", backgroundColor: "lightgreen"},
-    {c: " ", color: "white", backgroundColor: "green"},
-    {c: "~", color: "white", backgroundColor: "purple"},
-    {c: "+", color: "white", backgroundColor: "purple"},
-    {c: " ", color: "white", backgroundColor: "peachpuff"},
-    {c: " ", color: "white", backgroundColor: "crimson"},
-    {c: "^", color: "white", backgroundColor: "brown"},
-    {c: "~", color: "white", backgroundColor: "blue"},
-    {c: "~", color: "white", backgroundColor: "lightblue"},
-    {c: "O", color: "white", backgroundColor: "brown"},
-    {c: "*", color: "white", backgroundColor: "red"}
+    {name: "Town", c: "T", color: "white", backgroundColor: "red"},
+    {name: "Cave", c: " ", color: "white", backgroundColor: "black"},
+    {name: "Palace", c: "P", color: "white", backgroundColor: "red"},
+    {name: "Bridge", c: "=", color: "black", backgroundColor: "yellow"},
+    {name: "Desert", c: " ", color: "white", backgroundColor: "sandybrown"},
+    {name: "Grass", c: " ", color: "white", backgroundColor: "lightgreen"},
+    {name: "Forest", c: " ", color: "white", backgroundColor: "green"},
+    {name: "Swamp", c: "~", color: "white", backgroundColor: "purple"},
+    {name: "Cemetary", c: "+", color: "white", backgroundColor: "purple"},
+    {name: "Road", c: " ", color: "white", backgroundColor: "peachpuff"},
+    {name: "Lava", c: " ", color: "white", backgroundColor: "crimson"},
+    {name: "Mountains", c: "^", color: "white", backgroundColor: "brown"},
+    {name: "Water", c: "~", color: "white", backgroundColor: "blue"},
+    {name: "Shallow Water", c: "~", color: "white", backgroundColor: "lightblue"},
+    {name: "Boulder", c: "O", color: "white", backgroundColor: "brown"},
+    {name: "Spider", c: "*", color: "white", backgroundColor: "red"}
 ]
 
 export default ({maps, levelExits, spriteMap, locationData, continent: continentNumber}) => {
@@ -31,14 +31,14 @@ export default ({maps, levelExits, spriteMap, locationData, continent: continent
         for (let sprite of mapObject) {
             for (let j = 0; j < sprite.length + 1; j++) {
                 let x = i % 64;
-                let y = Math.ceil(i / 64);
+                let y = Math.floor(i / 64);
                 i++;
     
                 let found = Object.keys(locations).find(key => {
-                    return locations[key].x === x && locations[key].y - 29 === y
+                    return locations[key].x === x && locations[key].y - 30 === y
                 });
         
-                let {c, backgroundColor, color} = OVERWORLD_SPRITE_SYMBOLS[sprite.type];
+                let {name, c, backgroundColor, color} = OVERWORLD_SPRITE_SYMBOLS[sprite.type];
 
                 if (found) {
                     let {mapNumber, mapSet, continent} = locations[found];
@@ -56,8 +56,8 @@ export default ({maps, levelExits, spriteMap, locationData, continent: continent
                         <div 
                             className={`map-square blinking`} 
                             style={{color, backgroundColor}}
-                            onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}
-                            onMouseEnter={() => {setSelectedSquare({name: found, items})}}
+                            onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}/${found}`)}}
+                            onMouseEnter={() => {setSelectedSquare({id: found, name, x, y: y + 30, items})}}
                             onMouseLeave={() => {setSelectedSquare(null)}}
                         >
                             {c}
@@ -68,6 +68,8 @@ export default ({maps, levelExits, spriteMap, locationData, continent: continent
                         <div 
                             className={`map-square`}
                             style={{color, backgroundColor}}
+                            onMouseEnter={() => {setSelectedSquare({id: "", name, x, y: y + 30, items: []})}}
+                            onMouseLeave={() => {setSelectedSquare(null)}}
                         >
                             {c}
                         </div>
@@ -83,7 +85,7 @@ export default ({maps, levelExits, spriteMap, locationData, continent: continent
         <div>
             {selectedSquare ? 
                 <div style={{display: "inline-block", position: "fixed", top: "0px", left: "0px", padding: "20px", backgroundColor: "gray", color: "white"}}>
-                    <h6>{selectedSquare.name}</h6>
+                    <h6>{selectedSquare.id}[{selectedSquare.name}]({selectedSquare.x}, {selectedSquare.y})</h6>
                     {selectedSquare.items.filter(item => (item.number >= 0 && item.number <= 7) || (item.number >= 14 && item.number <= 15) || (item.number >= 19 && item.number <= 21)).map(item => <div>{item.name}</div>)}
                 </div>
                 : null
