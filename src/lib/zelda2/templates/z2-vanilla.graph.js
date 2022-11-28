@@ -10,8 +10,7 @@ export default {
             "JUMP_CAVE_N",
             "SHIELD_TOWN",
             "JUMP_TOWN",
-            "FOREST_50P",
-            "SHIELD_TOWN_BOULDER"
+            "FOREST_50P"
         ]
     },
     "MAGIC_CAVE": {
@@ -109,8 +108,7 @@ export default {
             "FAIRY_TOWN",
             "LIFE_TOWN_BRIDGE_NS",
             "LIFE_TOWN_BRIDGE_EW",
-            "LIFE_TOWN_FAIRY",
-            "SHIELD_TOWN_BOULDER"
+            "LIFE_TOWN_FAIRY"
         ],
         "connectionRequirements": {
             "FAIRY_TOWN": ["HAMMER"]
@@ -161,20 +159,6 @@ export default {
         "items": [
             "RED_JAR"
         ]
-    },
-    "FAIRY_TOWN_BOULDER": {
-        "connections": [
-            "FAIRY_TOWN",
-            "RAFT_DOCK_W",
-            "KINGS_TOMB",
-            "RED_JAR_CEM",
-            "FAIRY_CAVE_HOLE",
-            "EX_LIFE_BEACH",
-            "DM_BRIDGE_EXIT_E"
-        ],
-        "x": 46,
-        "y": 77,
-        "bottleneck": true
     },
     "EX_LIFE_BEACH": {
         "items": [
@@ -287,13 +271,6 @@ export default {
         ],
         "bottleneck": true
     },
-    "SHIELD_TOWN_BOULDER": {
-        "connections": [
-        ],
-        "x": 47,
-        "y": 57,
-        "bottleneck": true
-    },
     "LIFE_TOWN_BRIDGE_EW": {
         "bottleneck": true
     },
@@ -341,19 +318,6 @@ export default {
             "REFLECT_TOWN_CLIFF_2",
             "MAZE_ISLAND_BRIDGE",
         ],
-        "area": 1,
-        "map": 2,
-        "bottleneck": true
-    },
-    "RIVER_DEMON": {
-        "connections": [
-            "WILSON_FENCE_1"
-        ],
-        "requirements": [
-            "RECORDER"
-        ],
-        "x": 19,
-        "y": 74,
         "area": 1,
         "map": 2,
         "bottleneck": true

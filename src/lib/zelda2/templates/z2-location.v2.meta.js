@@ -24,7 +24,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 6,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -668,7 +668,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 26,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -685,7 +685,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 24,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -702,7 +702,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 25,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -812,7 +812,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 5,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -831,7 +831,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 4,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -905,7 +905,7 @@ export default {
         "continent": 2,
         "mapSet": 0,
         "mapNumber": 40,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1446,7 +1446,7 @@ export default {
             "JUMP_CAVE_S"
         ],
         "linkRequirements": {
-            "JUMP_CAVE_S": "FAIRY | JUMP"
+            "JUMP_CAVE_S": ["FAIRY | JUMP"]
         }
     },
     "JUMP_CAVE_S": {
@@ -1510,7 +1510,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 2,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1527,7 +1527,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 1,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1574,7 +1574,7 @@ export default {
         ],
         "linkRequirements": {
             "LIFE_TOWN_S": [
-                "FAIRY | BAGU_SAUCE"
+                "FAIRY | JUMP"
             ]
         }
     },
@@ -1597,7 +1597,7 @@ export default {
         ],
         "linkRequirements": {
             "LIFE_TOWN_N": [
-                "FAIRY | BAGU_SAUCE"
+                "FAIRY | JUMP"
             ]
         }
     },
@@ -1711,7 +1711,7 @@ export default {
         "continent": 1,
         "mapSet": 0,
         "mapNumber": 40,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1749,7 +1749,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 35,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1766,7 +1766,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 34,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1783,7 +1783,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 47,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1800,7 +1800,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 49,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1817,7 +1817,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 50,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1834,7 +1834,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 51,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -1851,7 +1851,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 48,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -2102,9 +2102,7 @@ export default {
             "BIG_ITEM"
         ],
         "itemRequirements": [],
-        "entryRequirements": [
-            "RECORDER"
-        ],
+        "entryRequirements": [],
         "completionRequirements": [],
         "links": [],
         "linkRequirements": {}
@@ -2203,7 +2201,7 @@ export default {
             "RAFT_DOCK_W"
         ],
         "linkRequirements": {
-            "RAFT_DOCK_W": "RAFT"
+            "RAFT_DOCK_W": ["RAFT"]
         }
     },
     "RAFT_DOCK_W": {
@@ -2224,7 +2222,7 @@ export default {
             "RAFT_DOCK_E"
         ],
         "linkRequirements": {
-            "RAFT_DOCK_E": "RAFT"
+            "RAFT_DOCK_E": ["RAFT"]
         }
     },
     "RED_JAR_CEM": {
@@ -2290,7 +2288,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 6,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -2307,7 +2305,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 23,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -2353,9 +2351,7 @@ export default {
             "SPELL",
             "MAGIC7"
         ],
-        "entryRequirements": [
-            "HAMMER"
-        ],
+        "entryRequirements": [],
         "completionRequirements": [],
         "links": [],
         "linkRequirements": {}
@@ -2440,7 +2436,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 1,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -2457,7 +2453,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 0,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -2510,7 +2506,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 2,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -2527,7 +2523,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 3,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -2544,7 +2540,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 4,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
@@ -2561,7 +2557,7 @@ export default {
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 5,
-        "passThrough": false,
+        "passThrough": true,
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
