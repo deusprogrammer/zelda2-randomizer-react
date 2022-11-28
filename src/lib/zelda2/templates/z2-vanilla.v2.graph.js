@@ -683,7 +683,14 @@ export default {
           "completionRequirements": [],
           "links": [],
           "linkRequirements": {},
-          "connections": [],
+          "connections": [
+               "NODE23",
+               "NODE35",
+               "NODE22",
+               "NODE25",
+               "NODE21",
+               "NODE30"
+          ],
           "connectionRequirements": {},
           "renderData": {
                "map": 0,
@@ -800,7 +807,11 @@ export default {
                ]
           },
           "connections": [],
-          "connectionRequirements": {},
+          "connectionRequirements": {
+               "NODE29": [
+                    "BAGU_SAUCE | FAIRY"
+               ]
+          },
           "renderData": {
                "map": 0,
                "area": 0,
@@ -1252,6 +1263,9 @@ export default {
                "NODE48"
           ],
           "connectionRequirements": {
+               "NODE23": [
+                    "RAFT"
+               ],
                "NODE48": [
                     "RECORDER"
                ],

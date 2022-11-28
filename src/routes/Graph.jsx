@@ -51,7 +51,7 @@ const templateToEdges = (graphData) => {
     let edges = generateEdgeList(Object.keys(graphData)[0], graphData);
     edges.forEach(edge => {
         try {
-            graph.addEdgeWithKey(`${edge.from}=>${edge.to}`, edge.from, edge.to, {label: `${edge.from}=>${edge.to}`});
+            graph.addEdgeWithKey(`${edge.from}=>${edge.to}`, edge.from, edge.to, {label: `${edge.from}=>${edge.to}`, color: edge.type === "link" ? "red" : "black"});
         } catch (e) {
             console.error(e);
         }

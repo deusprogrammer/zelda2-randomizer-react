@@ -179,6 +179,14 @@ export default {
         }
     },
     "FAIRY_TOWN": {
+        "connections": [
+            "RAFT_DOCK_W",
+            "KINGS_TOMB",
+            "RED_JAR_CEM",
+            "FAIRY_CAVE_HOLE",
+            "EX_LIFE_BEACH",
+            "DM_BRIDGE_EXIT_E"
+        ],
         "requirements": [
             "JUMP",
             "MEDICINE"
