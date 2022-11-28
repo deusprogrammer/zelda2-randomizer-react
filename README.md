@@ -8,6 +8,10 @@ This app is an attempt at a web based randomizer with a different approach to RO
 
 Starting work on the randomization portion.  ROM interrogation is almost complete with the exception of enemy data.  The design for the data structure for creation of randomized overworld maps and playability testing is complete.
 
+[Check it out!](https://z2r-react.web.app/)
+
+It's a work in progress.  Be kind.  I'm also willing to collaborate if anyone is interested.
+
 ## Notes
 
 ### Templates
