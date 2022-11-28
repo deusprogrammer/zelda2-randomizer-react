@@ -6,6 +6,12 @@
 
 Show predefined node layouts with positions and no set connections and randomization attributes.  Connections are set randomly.
 
+### Graph
+
+Randomization and testing playability is performed through the use of a graph.  Nodes are randomly placed, and then connections are randomly placed.  Then items are placed randomly, but in such a way that the seed is completeable.  The graph is then used to generate the map.
+
+![Graph Image](https://github.com/deusprogrammer/zelda2-randomizer-react/raw/main/Vanilla_Graph.png)
+
 ### Location Meta
 
 Shows location data like map number, map set, number of item slots, spell slots, and hard connections known as "links" (i.e. like between caves, bridges, Life Town N and S...)
