@@ -8,7 +8,8 @@ import { useNavigate } from "react-router";
 
 import saveAsPNG from "../utils/GraphUtils"
 import { romAtom } from "../atoms/rom.atom";
-import graphData from '../lib/zelda2/templates/z2-vanilla.template';
+import graphData from '../lib/zelda2/templates/z2-vanilla-2w.graph';
+import locationData from '../lib/zelda2/templates/z2-vanilla.template';
 
 import "@react-sigma/core/lib/react-sigma.min.css";
 
@@ -20,29 +21,38 @@ const generateEdgeList = (nodeName, nodes, traversed = []) => {
     }
     traversed.push(nodeName);
     node.connections.forEach((connection => {
-        console.log(`CREATING EDGE: ${nodeName} => ${connection}`)
-        edges.push({from: nodeName, to: connection});
+        edges.push({from: nodeName, to: connection, type: "open"});
         edges = [...edges, ...generateEdgeList(connection, nodes, traversed)];
     }));
+    if(node.linkedTo){
+        node.linkedTo.forEach(link => {
+            edges.push({from: nodeName, to: link, type: "link"});
+            edges = [...edges, ...generateEdgeList(link, nodes, traversed)];
+        });
+    }
     return edges;
 }
 
-const templateToEdges = (graphData, romData) => {
+const templateToEdges = (graphData) => {
     // Create the graph
     const graph = new MultiDirectedGraph();
-    const areaSubAreaMap = [
-        [0, 0],
-        [0, 1],
-        [1, 0],
-        [2, 0]
-    ];
-    Object.keys(graphData).forEach((nodeName) => {
-        let {locationKey, x, y, continent: map} = graphData[nodeName];
 
-        let [area, subArea] = areaSubAreaMap[map];
-        
-        console.log(`CREATING NODE: ${nodeName}`);
-        graph.addNode(nodeName, {x: x + area * 100, y: -y - subArea * 100, label: locationKey, size: 10});
+    Object.keys(graphData).forEach((nodeName) => {
+        let {x, y, map, area, subArea} = graphData[nodeName];
+        let locationKey = Object.keys(locationData).find(key => locationData[key].locationKey === nodeName);
+        let location = locationData[locationKey];
+        map = map || 0;
+        area = area || 0;
+        subArea = subArea || 0;
+ 
+        if (location && !x && !y) {
+            let {x: x1, y: y1} = location;
+            x = x1;
+            y = y1;
+        }
+
+        console.log(`CREATING NODE: ${nodeName} ${x},${y} ${area} ${subArea}`);
+        graph.addNode(nodeName, {x: x + area * 100, y: -y - subArea * 100, label: nodeName, size: 10});
     });
     let edges = generateEdgeList(Object.keys(graphData)[0], graphData);
     edges.forEach(edge => {

@@ -595,10 +595,22 @@ export const createVanillaNodeMapping = (graphData, mapData) => {
     return template;
 }
 
+export const getLocationByKey = (romData, locationKey) => {
+    let location = null;
+    for (let map of romData.mapData) {
+        let found = Object.keys(map).find(key => key === locationKey);
+
+        if (found) {
+            location = map[found];
+            break;
+        }
+    }
+
+    return location;
+}
+
 export const isDigiShakeRando = (rom) => {
     let creditsLine2 = extractTextDataFromOffset(rom, DIGISHAKE_CREDIT_OFFSET);
-
-    console.log("CREDIT: " + creditsLine2);
 
     return creditsLine2.trim() === "DIGSHAKE";
 }

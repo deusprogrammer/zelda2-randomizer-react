@@ -42,7 +42,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "DM_ENTRANCE"
         ]
     },
@@ -55,7 +55,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_B_W"
         ]
     },
@@ -68,7 +68,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_B_E"
         ]
     },
@@ -81,7 +81,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_C_W"
         ]
     },
@@ -94,7 +94,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_C_E"
         ]
     },
@@ -107,7 +107,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_D_W"
         ]
     },
@@ -120,7 +120,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_D_E"
         ]
     },
@@ -133,7 +133,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_E_S"
         ]
     },
@@ -146,7 +146,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_E_N"
         ]
     },
@@ -159,7 +159,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_F_W"
         ]
     },
@@ -172,7 +172,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_F_E"
         ]
     },
@@ -185,7 +185,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_I_S"
         ]
     },
@@ -198,7 +198,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_I_N"
         ]
     },
@@ -211,7 +211,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_J_W"
         ]
     },
@@ -224,7 +224,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_J_E"
         ]
     },
@@ -237,7 +237,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "DM_EXIT"
         ]
     },
@@ -250,7 +250,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_L_S"
         ]
     },
@@ -263,7 +263,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_L_N"
         ]
     },
@@ -276,7 +276,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_M_W"
         ]
     },
@@ -289,7 +289,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_M_E"
         ]
     },
@@ -302,7 +302,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_N_S"
         ]
     },
@@ -315,7 +315,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_N_N"
         ]
     },
@@ -328,7 +328,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_O_S"
         ]
     },
@@ -341,7 +341,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_O_N"
         ]
     },
@@ -354,7 +354,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_P_W"
         ]
     },
@@ -367,7 +367,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_P_E"
         ]
     },
@@ -380,7 +380,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_Q_W"
         ]
     },
@@ -393,7 +393,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_Q_E"
         ]
     },
@@ -406,7 +406,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_R_S"
         ]
     },
@@ -419,7 +419,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_R_N"
         ]
     },
@@ -486,7 +486,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "DEATH_VALLEY_CAVE_1_EXIT"
         ]
     },
@@ -499,7 +499,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "DEATH_VALLEY_CAVE_1_ENTRANCE"
         ]
     },
@@ -512,7 +512,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "DEATH_VALLEY_CAVE_2_EXIT"
         ]
     },
@@ -525,7 +525,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "DEATH_VALLEY_CAVE_2_ENTRANCE"
         ]
     },
@@ -548,7 +548,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "DM_BRIDGE_EXIT_W"
         ]
     },
@@ -561,7 +561,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "DM_BRIDGE_EXIT_E"
         ]
     },
@@ -574,7 +574,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_A"
         ]
     },
@@ -587,7 +587,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "CAVE_K"
         ]
     },
@@ -614,7 +614,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "MAZE_ISLAND_BRIDGE"
         ]
     },
@@ -627,7 +627,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "ELEVATOR_CAVE_G_W_BR",
             "ELEVATOR_CAVE_G_W_TR",
             "ELEVATOR_CAVE_G_E_TL"
@@ -642,7 +642,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "ELEVATOR_CAVE_G_E_BL"
         ]
     },
@@ -655,7 +655,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "ELEVATOR_CAVE_G_E_BL"
         ]
     },
@@ -668,7 +668,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "ELEVATOR_CAVE_G_E_BL"
         ]
     },
@@ -681,7 +681,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "ELEVATOR_CAVE_H_N_BR",
             "ELEVATOR_CAVE_H_W_TR",
             "ELEVATOR_CAVE_H_E_TL"
@@ -696,7 +696,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "ELEVATOR_CAVE_H_W_TR",
             "ELEVATOR_CAVE_H_N_BR",
             "ELEVATOR_CAVE_H_D_BL"
@@ -711,7 +711,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "ELEVATOR_CAVE_H_D_BL",
             "ELEVATOR_CAVE_H_E_TL"
         ]
@@ -725,7 +725,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "ELEVATOR_CAVE_H_D_BL",
             "ELEVATOR_CAVE_H_E_TL"
         ]
@@ -761,7 +761,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "FAIRY_CAVE_HOLE"
         ]
     },
@@ -778,7 +778,7 @@ export default {
                 "FAIRY"
             ]
         },
-        "linkedTo": [
+        "connections": [
             "FAIRY_CAVE"
         ]
     },
@@ -835,7 +835,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "FIRE_TOWN_CAVE_EXIT"
         ]
     },
@@ -848,7 +848,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "FIRE_TOWN_CAVE_ENTRANCE"
         ]
     },
@@ -986,7 +986,7 @@ export default {
                 "FAIRY_JUMP"
             ]
         },
-        "linkedTo": [
+        "connections": [
             "JUMP_CAVE_S"
         ]
     },
@@ -999,7 +999,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "JUMP_CAVE_N"
         ]
     },
@@ -1156,7 +1156,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "EAST_HYRULE_BRIDGE"
         ]
     },
@@ -1455,7 +1455,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "PARAPA_CAVE_S"
         ]
     },
@@ -1468,12 +1468,12 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "PARAPA_CAVE_N"
         ]
     },
     "RAFT_DOCK_E": {
-        "type": "DOCK",
+        "type": "OTHER",
         "continent": 0,
         "mapSet": 0,
         "mapNumber": 41,
@@ -1481,12 +1481,12 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "RAFT_DOCK_W"
         ]
     },
     "RAFT_DOCK_W": {
-        "type": "DOCK",
+        "type": "OTHER",
         "continent": 2,
         "mapSet": 0,
         "mapNumber": 41,
@@ -1498,7 +1498,7 @@ export default {
                 "RAFT"
             ]
         },
-        "linkedTo": [
+        "connections": [
             "RAFT_DOCK_E"
         ]
     },
@@ -1610,7 +1610,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "SPELL_TOWN_CAVE_EXIT"
         ]
     },
@@ -1623,7 +1623,7 @@ export default {
         "items": [],
         "spells": [],
         "requirements": [],
-        "linkedTo": [
+        "connections": [
             "SPELL_TOWN_CAVE_ENTRANCE"
         ]
     },

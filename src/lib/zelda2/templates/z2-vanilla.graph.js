@@ -104,7 +104,8 @@ export default {
             "FAIRY_TOWN_BOULDER",
             "LIFE_TOWN_BRIDGE_NS",
             "LIFE_TOWN_BRIDGE_EW",
-            "LIFE_TOWN_FAIRY"
+            "LIFE_TOWN_FAIRY",
+            "SHIELD_TOWN_BOULDER"
         ],
         "bottleneck": true
     },
@@ -280,7 +281,6 @@ export default {
     },
     "SHIELD_TOWN_BOULDER": {
         "connections": [
-            "FAIRY_TOWN_BOULDER"
         ],
         "x": 47,
         "y": 57,
@@ -554,7 +554,8 @@ export default {
             "EAST_HYRULE_BRIDGE"
         ],
         "area": 1,
-        "map": 2
+        "map": 2,
+        "bottleneck": true
     },
     "FIRE_TOWN_CAVE_500P_BAG": {
         "items": [
@@ -916,7 +917,8 @@ export default {
     },
     "CAVE_K": {
         "subArea": 1,
-        "map": 1
+        "map": 1,
+        "bottleneck": true
     },
     "EAST_HYRULE_BRIDGE": {
         "connections": [
@@ -927,7 +929,8 @@ export default {
             "MAZE_ISLAND_FORCED_BATTLE_3"
         ],
         "area": 2,
-        "map": 3
+        "map": 3,
+        "bottleneck": true
     },
     "MAZE_ISLAND_MAGIC": {
         "connections": [
@@ -939,15 +942,18 @@ export default {
     },
     "MAZE_ISLAND_FORCED_BATTLE_1": {
         "area": 2,
-        "map": 3
+        "map": 3,
+        "bottleneck": true
     },
     "MAZE_ISLAND_FORCED_BATTLE_2": {
         "area": 2,
-        "map": 3
+        "map": 3,
+        "bottleneck": true
     },
     "MAZE_ISLAND_FORCED_BATTLE_3": {
         "area": 2,
-        "map": 3
+        "map": 3,
+        "bottleneck": true
     },
     "MAZE_ISLAND_FORCED_BATTLE_4": {
         "connections": [
@@ -957,19 +963,23 @@ export default {
             "P4"
         ],
         "area": 2,
-        "map": 3
+        "map": 3,
+        "bottleneck": true
     },
     "MAZE_ISLAND_FORCED_BATTLE_5": {
         "area": 2,
-        "map": 3
+        "map": 3,
+        "bottleneck": true
     },
     "MAZE_ISLAND_FORCED_BATTLE_6": {
         "area": 2,
-        "map": 3
+        "map": 3,
+        "bottleneck": true
     },
     "MAZE_ISLAND_FORCED_BATTLE_7": {
         "area": 2,
-        "map": 3
+        "map": 3,
+        "bottleneck": true
     },
     "P4": {
         "items": [
@@ -1009,24 +1019,28 @@ export default {
     },
     "ELEVATOR_CAVE_G_E_TL": {
         "subArea": 1,
-        "map": 1
+        "map": 1,
+        "bottleneck": true
     },
     "ELEVATOR_CAVE_H_W_TR": {
         "subArea": 1,
-        "map": 1
+        "map": 1,
+        "bottleneck": true
     },
     "CAVE_N_S": {
         "subArea": 1,
         "map": 1,
         "connections": [
             "CAVE_N_N"
-        ]
+        ],
+        "bottleneck": true
     },
     "CAVE_N_N": {
         "subArea": 1,
         "map": 1,
         "connections": [
             "CAVE_K"
-        ]
+        ],
+        "bottleneck": true
     }
 }
