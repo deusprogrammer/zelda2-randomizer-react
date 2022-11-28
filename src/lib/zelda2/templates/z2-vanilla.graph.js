@@ -51,13 +51,15 @@ export default {
         ]
     },
     "JUMP_CAVE_N": {
-        "requirements": [
-            "JUMP_FAIRY"
-        ],
         "connections": [
             "JUMP_CAVE_S"
         ],
-        "bottleneck": true
+        "linkTo": [
+            "JUMP_CAVE_S"
+        ],
+        "linkRequirements": {
+            "JUMP_CAVE_S": ["FAIRY | JUMP"]
+        }
     },
     "SHIELD_TOWN": {
         "requirements": [],
@@ -65,8 +67,11 @@ export default {
             "SHIELD"
         ],
         "connections": [
-            "SHIELD_TOWN_BOULDER"
-        ]
+            "P2"
+        ],
+        "connectionRequirements": {
+            "P2": ["HAMMER"]
+        }
     },
     "JUMP_TOWN": {
         "requirements": [
@@ -101,13 +106,15 @@ export default {
             "P2",
             "P2_RED_JAR",
             "RED_JAR_SWAMP",
-            "FAIRY_TOWN_BOULDER",
+            "FAIRY_TOWN",
             "LIFE_TOWN_BRIDGE_NS",
             "LIFE_TOWN_BRIDGE_EW",
             "LIFE_TOWN_FAIRY",
             "SHIELD_TOWN_BOULDER"
         ],
-        "bottleneck": true
+        "connectionRequirements": {
+            "FAIRY_TOWN": ["HAMMER"]
+        }
     },
     "MEDICINE_CAVE_FAIRY": {
         "items": [
@@ -180,13 +187,12 @@ export default {
         ]
     },
     "RAFT_DOCK_W": {
-        "requirements": [
-            "RAFT"
-        ],
         "connections": [
             "RAFT_DOCK_E"
         ],
-        "bottleneck": true
+        "connectionRequirments": {
+            "RAFT_DOCK_E": ["RAFT"]
+        }
     },
     "FAIRY_TOWN": {
         "requirements": [
@@ -225,19 +231,21 @@ export default {
         "bottleneck": true
     },
     "LIFE_TOWN_N": {
-        "requirements": [
-            "BAGU_SAUCE"
-        ],
         "connections": [
             "LIFE_TOWN_S"
         ],
-        "bottleneck": true
+        "connectionRequirements": {
+            "LIFE_TOWN_S": ["BAGU_SAUCE | FAIRY"]
+        }
     },
     "LIFE_TOWN_S": {
         "connections": [
-            "DM_ENTRANCE"
+            "DM_ENTRANCE",
+            "LIFE_TOWN_N"
         ],
-        "bottleneck": true
+        "connectionsRequirements": {
+            "LIFE_TOWN_N": ["BAGU_SAUCE | FAIRY"]
+        }
     },
     "DM_BRIDGE_EXIT_E": {
         "connections": [
@@ -306,11 +314,18 @@ export default {
             "P5_HEART",
             "P5_500P_BAG",
             "P5",
-            "RIVER_DEMON"
+            "RAFT_DOCK_W",
+            "WILSON_FENCE_1"
         ],
         "area": 1,
         "map": 2,
-        "bottleneck": true
+        "connectionRequirements": {
+            "RAFT_DOCK_W": ["RAFT"],
+            "WILSON_FENCE_1": ["RECORDER"],
+            "P5": ["BOOTS"],
+            "P5_HEART": ["BOOTS"],
+            "P5_500P_BACK": ["BOOTS | HAMMER"]
+        }
     },
     "FIRE_TOWN_CAVE_EXIT": {
         "connections": [
