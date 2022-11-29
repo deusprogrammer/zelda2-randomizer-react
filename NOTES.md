@@ -106,6 +106,47 @@ All of the following are 1 bit of the P register
         BEQ A           ; If not complete, jump back to A
 
 ## Code analysis
+
+### Loading overworld map
+
+    A:00 X:00 Y:00 S:F7 P:NvUBdIzc         $8C2D: 20 48 8C  JSR $8C48
+    A:00 X:00 Y:00 S:F5 P:NvUBdIzc           $8C48: 0A        ASL
+    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C49: A8        TAY
+    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C4A: B9 00 60  LDA $6000,Y @ $6000 = #$00
+    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C4D: 85 0E     STA $0E = #$FE
+    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C4F: B9 01 60  LDA $6001,Y @ $6001 = #$7C
+    A:7C X:00 Y:00 S:F5 P:nvUBdIzc           $8C52: 85 0F     STA $0F = #$8B
+    A:7C X:00 Y:00 S:F5 P:nvUBdIzc           $8C54: A0 00     LDY #$00
+    A:7C X:00 Y:00 S:F5 P:nvUBdIZc           $8C56: 60        RTS (from $8C48) ----------------------------
+    A:7C X:00 Y:00 S:F7 P:nvUBdIZc         $8C30: 20 01 E0  JSR $E001
+    A:7C X:00 Y:00 S:F5 P:nvUBdIZc           $E001: 20 C9 FF  JSR $FFC9
+    A:7C X:00 Y:00 S:F3 P:nvUBdIZc             $FFC9: AD 69 07  LDA $0769 Bank Switch = #$01
+    A:01 X:00 Y:00 S:F3 P:nvUBdIzc             $FFCC: 8D 00 E0  STA $E000 = #$FF
+    A:01 X:00 Y:00 S:F3 P:nvUBdIzc             $FFCF: 4A        LSR
+    A:00 X:00 Y:00 S:F3 P:nvUBdIZC             $FFD0: 8D 00 E0  STA $E000 = #$FF
+    A:00 X:00 Y:00 S:F3 P:nvUBdIZC             $FFD3: 4A        LSR
+    A:00 X:00 Y:00 S:F3 P:nvUBdIZc             $FFD4: 8D 00 E0  STA $E000 = #$FF
+    A:00 X:00 Y:00 S:F3 P:nvUBdIZc             $FFD7: 4A        LSR
+    A:00 X:00 Y:00 S:F3 P:nvUBdIZc             $FFD8: 8D 00 E0  STA $E000 = #$FF
+    A:00 X:00 Y:00 S:F3 P:nvUBdIZc             $FFDB: 4A        LSR
+    A:00 X:00 Y:00 S:F3 P:nvUBdIZc             $FFDC: 8D 00 E0  STA $E000 = #$FF
+    A:00 X:00 Y:00 S:F3 P:nvUBdIZc             $FFDF: 60        RTS (from $FFC9) ----------------------------
+    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $E004: B1 0E     LDA ($0E),Y @ $7C00 = #$BB
+    A:BB X:00 Y:00 S:F5 P:NvUBdIzc           $E006: 29 0F     AND #$0F
+    A:0B X:00 Y:00 S:F5 P:nvUBdIzc           $E008: 85 02     STA $02 = #$0B
+    A:0B X:00 Y:00 S:F5 P:nvUBdIzc           $E00A: B1 0E     LDA ($0E),Y @ $7C00 = #$BB
+    A:BB X:00 Y:00 S:F5 P:NvUBdIzc           $E00C: 4A        LSR
+    A:5D X:00 Y:00 S:F5 P:nvUBdIzC           $E00D: 4A        LSR
+    A:2E X:00 Y:00 S:F5 P:nvUBdIzC           $E00E: 4A        LSR
+    A:17 X:00 Y:00 S:F5 P:nvUBdIzc           $E00F: 4A        LSR
+    A:0B X:00 Y:00 S:F5 P:nvUBdIzC           $E010: 38        SEC
+    A:0B X:00 Y:00 S:F5 P:nvUBdIzC           $E011: 65 03     ADC $03 = #$00
+    A:0C X:00 Y:00 S:F5 P:nvUBdIzc           $E013: 85 03     STA $03 = #$00
+    A:0C X:00 Y:00 S:F5 P:nvUBdIzc           $E015: 48        PHA
+    A:0C X:00 Y:00 S:F4 P:nvUBdIzc            $E016: 20 C5 FF  JSR $FFC5
+
+### Exit issue
+
     ; These two repeat over and over
     A:0B X:FF Y:01 S:F7 P:nvUBdIZC         $C1DD: 20 30 CF  JSR $CF30
     A:0B X:FF Y:01 S:F5 P:nvUBdIZC           $CF30: AD 06 07  LDA $0706 Overworld Index = #$00
@@ -181,23 +222,11 @@ All of the following are 1 bit of the P register
     A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFF8: 8D 36 07  STA $0736 Game Mode/Current State = #$10
     A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFFB: 60        RTS (from $C2CA) ----------------------------
 
-<THE ANSWER>
-Get map number in accumulator
-Load world into Y ($0707)
-If world isn't 0, then skip ahead to multiplying accumulator
-If world is 0, then set accumulator to 0 (clearing the map number)
-Multiply accumulator by 2
-Multiply accumulator by 2
-Add value at memory location $3B (current map page) to accumulator (to get exit nearest your map page)
-Transfer the accumulator to Y
-Load data from connectivity table with offet Y
-</THE ANSWER>
-
 $CF52 Load current scene/map index into accumulator ($21)
 $CF55 Load world into Y (#$00)
 >$CF58 If world number was not zero, jump to $CF60
-$CF5A Compare accumulator with #$1D
-$CF5C Branch on carry clear to $CF60
+$CF5A Compare accumulator with #$1D (29)
+$CF5C Branch if accumulator is less than #$1D (29) to $CF60
 $CF5E Load #$0 into accumulator
 $CF60 Shift left
 $CF61 Shift left
