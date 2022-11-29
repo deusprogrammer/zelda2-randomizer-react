@@ -109,7 +109,7 @@ All of the following are 1 bit of the P register
 
 $CF52 Load current scene/map index into accumulator ($21)
 $CF55 Load world into Y (#$00)
-$CF58 If world number was not zero, jump to $CF60
+>$CF58 If world number was not zero, jump to $CF60
 $CF5A Compare accumulator with #$1D
 $CF5C Branch on carry clear to $CF60
 $CF5E Load #$0 into accumulator
@@ -121,7 +121,7 @@ $CF65 Loading room connectivity data into accumulator from $6AFC,Y ($6AFF)
 $CF68 Push accumulator (room connectivity data) onto the stack
 $CF69 Mask accumulator with #$FC (0b11111100) (I believe that's the map number)
 $CF6B Compare with #$FC
-$CF6D If not equal, branch to $CFB2
+>$CF6D If not equal, branch to $CFB2
 $CF68 Pull accumulator from the stack
 $CF70 Mask accumulator with #$03 (0b00000011)
 $CF72 Clear carry flag
@@ -134,12 +134,16 @@ $CF81 Load Y with #$90
 $CF83 Store Y to SQ1_VOL?
 $CF86 Load accumulator with value #$00
 $CF88 Load Y with world number
-$CF8B If world number is zero, branch to $CF9D
+>$CF8B If world number is zero, branch to $CF9D
+...
 $CF9D Load y with #$04
 $CF9F Store y to $05E9
-$CFA2 If overworld index is not zero, branch back to $CF9A
-$CFAA If map number is not zero, branch back to $CF9A
+$CFA2 Load overworld index into Y 
+>$CFA5 If overworld index is not zero, branch back to $CF9A  
+$CFA7 Load current scene/map index into Y
+>$CFAA If map number is not zero, branch back to $CF9A
 $CF9A Jump to $CFF8
+...
 $CFF8 Store accumlator (01) to current game mode/current state (which was previously $10)
 
 $C1A8 PPU Shit
