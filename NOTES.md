@@ -106,6 +106,30 @@ All of the following are 1 bit of the P register
         BEQ A           ; If not complete, jump back to A
 
 ## Code analysis
+    ; These two repeat over and over
+    A:0B X:FF Y:01 S:F7 P:nvUBdIZC         $C1DD: 20 30 CF  JSR $CF30
+    A:0B X:FF Y:01 S:F5 P:nvUBdIZC           $CF30: AD 06 07  LDA $0706 Overworld Index = #$00
+    A:00 X:FF Y:01 S:F5 P:nvUBdIZC           $CF33: 0A        ASL
+    A:00 X:FF Y:01 S:F5 P:nvUBdIZc           $CF34: 0A        ASL
+    A:00 X:FF Y:01 S:F5 P:nvUBdIZc           $CF35: 6D 06 07  ADC $0706 Overworld Index = #$00
+    A:00 X:FF Y:01 S:F5 P:nvUBdIZc           $CF38: 6D 07 07  ADC $0707 World = #$00
+    A:00 X:FF Y:01 S:F5 P:nvUBdIZc           $CF3B: 60        RTS (from $CF30) ----------------------------
+    A:00 X:FF Y:01 S:F7 P:nvUBdIZc         $C1E0: C9 01     CMP #$01
+    A:00 X:FF Y:01 S:F7 P:NvUBdIzc         $C1E2: D0 22     BNE $C206
+
+    ...
+
+    A:00 X:FF Y:02 S:F9 P:nvUBdIZc       $D50A: 20 E5 80  JSR $80E5
+    A:00 X:FF Y:02 S:F7 P:nvUBdIZc         $80E5: AD 07 07  LDA $0707 World = #$00
+    A:00 X:FF Y:02 S:F7 P:nvUBdIZc         $80E8: 0D 61 05  ORA $0561 current scene/map index = #$21
+    A:21 X:FF Y:02 S:F7 P:nvUBdIzc         $80EB: 0D 06 07  ORA $0706 Overworld Index = #$00
+    A:21 X:FF Y:02 S:F7 P:nvUBdIzc         $80EE: D0 4F     BNE $813F
+
+    ; THIS SECTION WHERE IT SKIPS MIGHT BE IMPORTANT
+
+    A:21 X:FF Y:02 S:F7 P:nvUBdIzc         $813F: 60        RTS (from $80E5) ----------------------------
+    A:21 X:FF Y:02 S:F9 P:nvUBdIzc       $D50D: 20 47 98  JSR $9847
+    ; End these two
 
     A:F8 X:09 Y:00 S:F9 P:nvUBdIZc       $CF4F: 20 C9 FF  JSR $FFC9
     A:F8 X:09 Y:00 S:F7 P:nvUBdIZc         $FFC9: AD 69 07  LDA $0769 Bank Switch = #$01
@@ -160,11 +184,11 @@ All of the following are 1 bit of the P register
 <THE ANSWER>
 Get map number in accumulator
 Load world into Y ($0707)
-If world isn't 0, then skip ahead to $CF60
-If world is 0, then set accumulator to 0
+If world isn't 0, then skip ahead to multiplying accumulator
+If world is 0, then set accumulator to 0 (clearing the map number)
 Multiply accumulator by 2
 Multiply accumulator by 2
-Add value at memory location $3B (current map page) to accumulator
+Add value at memory location $3B (current map page) to accumulator (to get exit nearest your map page)
 Transfer the accumulator to Y
 Load data from connectivity table with offet Y
 </THE ANSWER>
