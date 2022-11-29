@@ -259,6 +259,16 @@ export const extractLevelExits = (buffer) => {
         let offset = LEVEL_EXITS_BANK_OFFSETS1[bank];
         let newBank = hexArrayExtractor(LEVEL_EXITS_MAPPING, buffer, 63, offset);
 
+        if (bank < 2) {
+            newBank = newBank.map((levelEntry, mapNumber) => {
+                if (mapNumber < 29) {
+                    return levelEntry;
+                } else {
+                    return newBank[0];
+                }
+            });
+        }
+
         mapSets.push(newBank);
 
         if (bank === 2 || bank === 4) {
@@ -267,6 +277,14 @@ export const extractLevelExits = (buffer) => {
         
         offset = LEVEL_EXITS_BANK_OFFSETS2[bank];
         newBank = hexArrayExtractor(LEVEL_EXITS_MAPPING, buffer, 63, offset);
+
+        newBank = newBank.map((levelEntry, mapNumber) => {
+            if (mapNumber < 29) {
+                return levelEntry;
+            } else {
+                return newBank[0];
+            }
+        });
 
         mapSets.push(newBank);
     }
