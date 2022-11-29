@@ -1,7 +1,5 @@
 # Notes
 
-## 
-
 ## Memory Locations
 
     $0706 - overworld index (0=west hyrule, 1=death mtn/maze island, 2=east hyrule)
@@ -80,3 +78,19 @@ All of the following are 1 bit of the P register
     DEC - Decrement memory by 1
     DEX - Decrement x register by 1
     DEY - Decrement y register by 1
+
+## Playing with 6502 ASM
+; Perform a summation of 0 - 10 (non inclusive)
+    LDA #$00        ; Reset the accumulator to 0
+    LDX #$00        ; Reset the X index to 0
+A   STX $D010       ; Store X into memory location 0xD010
+    ADC $D010       ; Add the data at memory location to the accumulator
+    INX             ; Increment X
+    CPX #$0A        ; Compare X and 0x0A
+    BMI A           ; If X < 0x0A, go back to point A
+
+; Shift bits until the 1 falls off the left end
+    LDA #$01        ; Load the accumulator with 0x1
+A   ASL             ; Shift the bit left
+    INX             ; Increment X
+    BCC A           ; If carry bit is not set, continue
