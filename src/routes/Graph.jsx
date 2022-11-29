@@ -12,6 +12,7 @@ import graphData from '../lib/zelda2/templates/z2-vanilla.v2.graph';
 import locationData from '../lib/zelda2/templates/z2-vanilla.v2.template';
 
 import "@react-sigma/core/lib/react-sigma.min.css";
+import { Link } from "react-router-dom";
 
 const generateEdgeList = (nodeName, nodes, traversed = []) => {
     let edges = [];
@@ -93,6 +94,12 @@ export default ({locations}) => {
 
     return (
         <div>
+            <h2>Graph Viewer</h2>
+            <h3>Actions</h3>
+            <div className="data-div">
+                <Link to={`${process.env.PUBLIC_URL}/`}><button>Go Home</button></Link><br />
+                <button onClick={() => {save(romData)}}>Save as Image</button>
+            </div>
             <SigmaContainer
                 id="z2-graph"
                 graph={MultiDirectedGraph}
@@ -101,7 +108,6 @@ export default ({locations}) => {
             >
                 <MyGraph locations={locations} />
             </SigmaContainer>
-            <button onClick={() => {save(romData)}}>Save as Image</button>
         </div>
     )
 }

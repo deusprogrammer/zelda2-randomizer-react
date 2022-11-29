@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { extractCDLEntries } from "../lib/nes/NESUtils";
 
 export default () => {
@@ -24,14 +24,15 @@ export default () => {
     }
 
     const go = (value) => {
-        let address = parseInt(searchValue, 16);
-        if (address === NaN) {
+        try {
+            let address = parseInt(value, 16);
+            let newPage = Math.floor(address/512);
+
+            setPage(newPage);
+            setSearchValue(value);
+        } catch (e) {
             setSearchValue("0x0000");
-            return;
         }
-        let newPage = Math.floor(address/512);
-        setPage(newPage);
-        setSearchValue(value);
     }
 
     if (working) {
@@ -42,19 +43,23 @@ export default () => {
         return (
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
                 <h2>CDL File Selection</h2>
-                <label>CDL File</label>
                 <input type="file" accept='.cdl' onChange={onFileLoad} />
             </div>
         );
     } else {
         return (
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
-                <h2>Memory Map</h2>
+                <h2>CDL Viewer</h2>
+                <h3>Actions</h3>
+                <div className="data-div">
+                    <Link to={`${process.env.PUBLIC_URL}/`}><button>Go Home</button></Link>
+                </div>
                 <h3>Legend</h3>
                 <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                     <div style={{display: "flex"}}><div style={{width: "10px", height: "10px", backgroundColor: "red", border: "1px solid black"}}></div><div>Code Access</div></div>
                     <div style={{display: "flex"}}><div style={{width: "10px", height: "10px", backgroundColor: "orange", border: "1px solid black"}}></div><div>Data Access</div></div>
                 </div>
+                <h3>Controls</h3>
                 <div>
                     <label>Go To:</label><input type="text" onChange={(e) => {go(e.target.value)}} value={searchValue} /><br />
                     <button onClick={() => {setPage(page - 1)}} disabled={page === 0}>Prev</button>0x{(page * 512).toString(16).padStart(4, "0")} - 0x{((page + 1) * 512).toString(16).padStart(4, "0")}<button onClick={() => {setPage(page + 1)}}>Next</button>
@@ -69,7 +74,7 @@ export default () => {
                     { cdlData.slice(page * 512, (page + 1) * 512).map((byte, i) => {
                         let label = null;
                         if (i % 16 == 0) {
-                            label = <div className="label-column" id={`0x${(Math.floor(i + (page * 512)/16) * 0x10).toString(16).padStart(4, '0')}`}>0x{(Math.floor(i + (page * 512)/16) * 0x10).toString(16).padStart(4, '0')}</div>;
+                            label = <div className="label-column" id={`0x${(page * 512 + Math.floor(i/16) * 0x10).toString(16).padStart(4, '0')}`}>{`0x${(page * 512 + Math.floor(i/16) * 0x10).toString(16).padStart(4, '0')}`}</div>;
                         }
                         let c1 = "";
                         let c2 = "";

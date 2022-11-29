@@ -21,9 +21,6 @@ export default () => {
             mapNumber = value;
         }
         navigate(`/maps/${mapSet}/${mapNumber}`);
-        // let copy = {...navFormData};
-        // copy[key] = value;
-        // setNavFormData(copy);
     }
 
     useEffect(() => {
@@ -59,7 +56,6 @@ export default () => {
             <div style={{textAlign: "center"}}>
                 <input type="number" onChange={({target: {value}}) => {updateNavForm("mapSet", value)}} value={navFormData.mapSet} />:
                 <input type="number" onChange={({target: {value}}) => {updateNavForm("mapNumber", value)}} value={navFormData.mapNumber} />
-                {/* <button onClick={() => {navigate(`/maps/${navFormData.mapSet}/${navFormData.mapNumber}`)}}>Navigate</button> */}
             </div>
             <MapSideView location={location} maps={romData.sideViewMaps} levelExits={romData.levelExits} mapNumber={mapNumber} mapSet={mapSet} />
             {mapSet === "6" && mapNumber === "58" ? <img src={`${process.env.PUBLIC_URL}/derpybarba.png`} className="popup" /> : null}

@@ -7,7 +7,8 @@ import Graph from './routes/Graph';
 
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import CDLParse from './routes/CDLParse';
+import CDLViewer from './routes/CDLViewer';
+import HexViewer from './routes/HexViewer';
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
                     <Route path={`${process.env.PUBLIC_URL}/maps/:mapSet/:mapNumber`} element={<Map />} />
                     <Route path={`${process.env.PUBLIC_URL}/maps/:mapSet/:mapNumber/:locationKey`} element={<Map />} />
                     <Route path={`${process.env.PUBLIC_URL}/graph`} element={<Graph />} />
-                    <Route path={`${process.env.PUBLIC_URL}/cdl`} element={<CDLParse />} />
+                    <Route path={`${process.env.PUBLIC_URL}/cdl`} element={<CDLViewer />} />
+                    <Route path={`${process.env.PUBLIC_URL}/hex`} element={<HexViewer />} />
                 </Routes>
             </Router>
         </div>

@@ -147,11 +147,42 @@ body * {
     justify-content: center;
 }
 
+.hex-view.bigger {
+    grid-template-columns: fit-content(1ch) repeat(16, 40px);
+}
+
+.hex-view.ascii {
+    grid-template-columns: repeat(16, 20px);
+    background-color: lightslategray;
+    color: white;
+    font-family: monospace;
+}
+
+:is(.hex-view.bigger, .hex-view.ascii) div {
+    display: flex;
+    height: 40px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+:is(.hex-view.bigger, .hex-view.ascii) .selected {
+    background-color: blue;
+    color: white;
+}
+
+:is(.hex-view.bigger, .hex-view.ascii) .hover-selected {
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+
 .hex-view div {
     display: flex;
     height: 20px;
     border: 1px solid black;
     align-items: center;
+    justify-items: center;
 }
 
 .hex-view .selected {
@@ -180,14 +211,40 @@ body * {
 
 .label-column {
     padding-left: 10px;
+    font-weight: bolder;
 }
 
 .label-row {
     position: sticky;
     top: 0px;
     background-color: white;
+    font-weight: bolder;
     text-align: center;
     justify-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex.row {
+    flex-direction: row;
+}
+
+.flex.col {
+    flex-direction: column;
+}
+
+.flex.center {
+    justify-content: center;
+}
+
+.flex.v-center {
+    align-items: center;
 }
 
 img.popup {
@@ -198,6 +255,11 @@ img.popup {
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
+}
+
+input[type=file] {
+    background-color: gray;
+    color: white;
 }
 
 @keyframes blink-animation {

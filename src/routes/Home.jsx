@@ -38,13 +38,12 @@ export default () => {
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
                 <div>
                     <h2>ROM File Selection</h2>
-                    <label>Zelda 2 ROM File</label>
                     <input type="file" accept='.nes' onChange={onFileLoad} />
                 </div>
-                <div>
+                <div style={{display: "flex", flexDirection: "column"}}>
                     <h2>Debugging Tools</h2>
                     <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link>
-                    <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>Hex Viewer</button></Link>
+                    <Link to={`${process.env.PUBLIC_URL}/hex`}><button>Hex Viewer</button></Link>
                 </div>
             </div>
         );
@@ -59,6 +58,8 @@ export default () => {
                 }} />
                 <h3>Actions</h3>
                 <div className="data-div">
+                    <Link to={`${process.env.PUBLIC_URL}/hex`}><button>Hex Viewer</button></Link><br/>
+                    <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link><br/>
                     <button onClick={() => {setRomData(null)}}>Close ROM</button>
                 </div>
 
