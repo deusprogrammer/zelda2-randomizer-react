@@ -7,6 +7,7 @@ import Graph from './routes/Graph';
 
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
+import CDLParse from './routes/CDLParse';
 
 function App() {
 
@@ -18,8 +19,10 @@ function App() {
             <Router>
                 <Routes>
                     <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
+                    <Route path={`${process.env.PUBLIC_URL}/maps/:mapSet/:mapNumber`} element={<Map />} />
                     <Route path={`${process.env.PUBLIC_URL}/maps/:mapSet/:mapNumber/:locationKey`} element={<Map />} />
                     <Route path={`${process.env.PUBLIC_URL}/graph`} element={<Graph />} />
+                    <Route path={`${process.env.PUBLIC_URL}/cdl`} element={<CDLParse />} />
                 </Routes>
             </Router>
         </div>

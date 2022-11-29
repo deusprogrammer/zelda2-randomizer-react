@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LARGE_OBJECT_SETS, SMALL_OBJECTS } from "../lib/zelda2/Z2Data";
+import { LARGE_OBJECT_SETS, SMALL_OBJECTS, WORLD_INDEX_MAPPINGS, WORLD_MAPPINGS } from "../lib/zelda2/Z2Data";
 import { ITEM_MAP } from '../lib/zelda2/Z2Utils';
 import HexValue from './HexValue';
 import KeyValueTable from './KeyValueTable';
@@ -8,12 +8,22 @@ export default ({level, onStepChange, location}) => {
     const [selectedStep, setSelectedStep] = useState(-1);
     const [intervalHandler, setIntervalHandler] = useState(null);
 
-    return (
-        <div style={{display: "flex", flexDirection: "row", gap: "10px"}}>
+    let extraContent;
+    if (location) {
+        let {x, y, external, caveSeg, reserved, continent, mapSet, mapNumber, rightEnt, hPosEnt, passThrough, fallInto} = location;
+        continent = mapSet === 0 && continent === 0 ? "self" : WORLD_INDEX_MAPPINGS[continent];
+        mapSet = WORLD_MAPPINGS[mapSet];
+        extraContent = (
             <div>
                 <h5>Location Data</h5>
-                <KeyValueTable map={location} />
+                <KeyValueTable map={{x, y, external, caveSeg, reserved, continent, mapSet, mapNumber, rightEnt, hPosEnt, passThrough, fallInto}} />
             </div>
+        )
+    }
+
+    return (
+        <div style={{display: "flex", flexDirection: "row", gap: "10px"}}>
+            {extraContent}
             <div>
                 <h5>Header</h5>
                 <table className="data-table striped row-labeled">

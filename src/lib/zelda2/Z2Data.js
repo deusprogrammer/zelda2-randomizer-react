@@ -1,3 +1,18 @@
+export const WORLD_MAPPINGS = {
+    0x0: "world",
+    0x1: "west hyrule towns",
+    0x2: "east hyrule towns",
+    0x3: "palace set 1",
+    0x4: "palace set 2",
+    0x5: "grand palace"
+}
+
+export const WORLD_INDEX_MAPPINGS = {
+    0x0: "west hyrule",
+    0x1: "dm/maze island",
+    0x2: "east hyrule"
+}
+
 const OVERWORLD_SMALL_OBJECTS = {
     0x0: {name: "headstone",                    height: 1, width: 1, type: "wide"},
     0x1: {name: "cross",                        height: 1, width: 1, type: "wide"},
@@ -120,7 +135,7 @@ const PALACE_SMALL_OBJECTS = {
     0x8: { name: "small cloud",                 height: 1, width: 1, type: "wide"},
     0x9: { name: "ironknuckle statue",          height: 2, width: 1, type: "wide"},
     0xA: { name: "small cloud",                 height: 1, width: 1, type: "wide"},
-    0xC: { name: "small cloud",                 height: 1, width: 1, type: "wide"},
+    0xB: { name: "small cloud",                 height: 1, width: 1, type: "wide"},
     0xC: { name: "small cloud",                 height: 1, width: 1, type: "wide"},
     0xD: { name: "small cloud",                 height: 1, width: 1, type: "wide"},
     0xE: { name: "small cloud",                 height: 1, width: 1, type: "wide"},

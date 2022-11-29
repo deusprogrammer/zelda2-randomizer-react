@@ -36,9 +36,16 @@ export default () => {
     if (!romData) {
         return (
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
-                <h2>ROM File Selection</h2>
-                <label>Zelda 2 ROM File</label>
-                <input type="file" accept='.nes' onChange={onFileLoad} />
+                <div>
+                    <h2>ROM File Selection</h2>
+                    <label>Zelda 2 ROM File</label>
+                    <input type="file" accept='.nes' onChange={onFileLoad} />
+                </div>
+                <div>
+                    <h2>Debugging Tools</h2>
+                    <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link>
+                    <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>Hex Viewer</button></Link>
+                </div>
             </div>
         );
     } else {

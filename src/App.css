@@ -36,6 +36,12 @@ body * {
     background-color: black !important;
 }
 
+.data-table tr:has(th) {
+    position: sticky;
+    top: 0px;
+    background-color: gray;
+}
+
 .data-table :is(td, th) {
     padding: 10px;
 }
@@ -133,6 +139,51 @@ body * {
 .hex-value:hover {
     background-color: black;
     color: white;
+}
+
+.hex-view {
+    display: grid;
+    grid-template-columns: fit-content(1ch) repeat(16, 20px);
+    justify-content: center;
+}
+
+.hex-view div {
+    display: flex;
+    height: 20px;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.no-access {
+    background-color: white;
+}
+
+.code-access {
+    background-color: orange;
+}
+
+.data-access {
+    background-color: red;
+}
+
+.incorrect-code-access {
+    border: 1px solid red;
+}
+
+.incorrect-data-access {
+    border: 1px solid orange;
+}
+
+.label-column {
+    padding-left: 10px;
+}
+
+.label-row {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
 }
 
 img.popup {

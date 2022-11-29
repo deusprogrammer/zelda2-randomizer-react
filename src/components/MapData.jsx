@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { WORLD_INDEX_MAPPINGS, WORLD_MAPPINGS } from "../lib/zelda2/Z2Data";
 import HexValue from "./HexValue";
 
 export default ({locationData, continent : continentNumber}) => {
@@ -34,7 +35,7 @@ export default ({locationData, continent : continentNumber}) => {
                 }
 
                 return (
-                    <tr onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}/${key}`)}}>
+                    <tr onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapIndex}/${mapNumber}/${key}`)}}>
                         <td>{key}</td>
                         <td>{x}</td>
                         <td>{y}</td>
@@ -43,8 +44,8 @@ export default ({locationData, continent : continentNumber}) => {
                         <td>{reserved}</td>
                         <td>{mapNumber}</td>
                         <td>{hPosEnt}</td>
-                        <td>{continent}</td>
-                        <td>{mapSet}</td>
+                        <td>{continent === 0 && mapSet === 0 ? "self" : WORLD_INDEX_MAPPINGS[continent]}</td>
+                        <td>{WORLD_MAPPINGS[mapSet]}</td>
                         <td>{rightEnt}</td>
                         <td>{passThrough}</td>
                         <td>{fallInto}</td>
