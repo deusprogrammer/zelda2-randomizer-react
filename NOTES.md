@@ -80,17 +80,27 @@ All of the following are 1 bit of the P register
     DEY - Decrement y register by 1
 
 ## Playing with 6502 ASM
-; Perform a summation of 0 - 10 (non inclusive)
-    LDA #$00        ; Reset the accumulator to 0
-    LDX #$00        ; Reset the X index to 0
-A   STX $D010       ; Store X into memory location 0xD010
-    ADC $D010       ; Add the data at memory location to the accumulator
-    INX             ; Increment X
-    CPX #$0A        ; Compare X and 0x0A
-    BMI A           ; If X < 0x0A, go back to point A
+    ; Perform a summation of 0 - 10 (non inclusive)
+        LDA #$00        ; Reset the accumulator to 0
+        LDX #$00        ; Reset the X index to 0
+    A   STX $D010       ; Store X into memory location 0xD010
+        ADC $D010       ; Add the data at memory location to the accumulator
+        INX             ; Increment X
+        CPX #$0A        ; Compare X and 0x0A
+        BMI A           ; If X < 0x0A, go back to point A
 
-; Shift bits until the 1 falls off the left end
-    LDA #$01        ; Load the accumulator with 0x1
-A   ASL             ; Shift the bit left
-    INX             ; Increment X
-    BCC A           ; If carry bit is not set, continue
+    ; Shift bits until the 1 falls off the left end
+        LDA #$01        ; Load the accumulator with 0x1
+    A   ASL             ; Shift the bit left
+        INX             ; Increment X
+        BCC A           ; If carry bit is not set, continue
+
+## Notes for issue with missing exit numbers
+
+    ; Loading probably looks something like this
+        STX #$00        ; Initialize X to 0
+    A   LDA $XXXX,X     ; Load a byte from $AAAA + X
+        STA $YYYY,Y     ; Store a byte to $BBBB + X
+        INX             ; Increment X
+        CPX #$C         ; Check to see if $C bytes have been read
+        BEQ A           ; If not complete, jump back to A
