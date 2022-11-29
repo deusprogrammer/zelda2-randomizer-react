@@ -154,6 +154,10 @@ body * {
     align-items: center;
 }
 
+.hex-view .selected {
+    border: 1px solid red;
+}
+
 .no-access {
     background-color: white;
 }

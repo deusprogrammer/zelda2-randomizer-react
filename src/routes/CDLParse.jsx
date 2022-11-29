@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { extractCDLEntries } from "../lib/nes/NESUtils";
 
 export default () => {
     const [page, setPage] = useState(0);
     const [cdlData, setCdlData] = useState();
-    const [searchValue, setSearchValue] = useState(0);
+    const [searchValue, setSearchValue] = useState("0x0000");
     const [working, setWorking] = useState(false);
 
     const onFileLoad = (event) => {
@@ -22,9 +23,15 @@ export default () => {
         fr.readAsArrayBuffer(file);
     }
 
-    const go = () => {
-        let el = document.getElementById("0x" + parseInt(searchValue, 16).replace("0x", "").padStart(4, "0"));
-        el.scrollTo();
+    const go = (value) => {
+        let address = parseInt(searchValue, 16);
+        if (address === NaN) {
+            setSearchValue("0x0000");
+            return;
+        }
+        let newPage = Math.floor(address/512);
+        setPage(newPage);
+        setSearchValue(value);
     }
 
     if (working) {
@@ -49,7 +56,7 @@ export default () => {
                     <div style={{display: "flex"}}><div style={{width: "10px", height: "10px", backgroundColor: "orange", border: "1px solid black"}}></div><div>Data Access</div></div>
                 </div>
                 <div>
-                    <label>Go To:</label><input type="text" onChange={(e) => {setSearchValue(e.target.value)}} value={searchValue} /><button onClick={() => {go()}}>Go</button><br />
+                    <label>Go To:</label><input type="text" onChange={(e) => {go(e.target.value)}} value={searchValue} /><br />
                     <button onClick={() => {setPage(page - 1)}} disabled={page === 0}>Prev</button>0x{(page * 512).toString(16).padStart(4, "0")} - 0x{((page + 1) * 512).toString(16).padStart(4, "0")}<button onClick={() => {setPage(page + 1)}}>Next</button>
                 </div>
                 <h3>Memory</h3>
@@ -64,8 +71,9 @@ export default () => {
                         if (i % 16 == 0) {
                             label = <div className="label-column" id={`0x${(Math.floor(i + (page * 512)/16) * 0x10).toString(16).padStart(4, '0')}`}>0x{(Math.floor(i + (page * 512)/16) * 0x10).toString(16).padStart(4, '0')}</div>;
                         }
-                        let c1 = null;
-                        let c2 = null;
+                        let c1 = "";
+                        let c2 = "";
+                        let c3 = "";
                         if (byte.noAccess) {
                             c1 = "no-access";
                         } else if (byte.codeAccess) {
@@ -79,7 +87,11 @@ export default () => {
                         } else if (byte.indirectDataAccess) {
                             c2 = "indirect-data-access";
                         }
-                        return <React.Fragment key={`byte${i}`}>{label}<div id={`0x${(i  + (page * 512)).toString(16)}`} className={`${c1} ${c2}`} title={`0x${(i + (page * 512)).toString(16)}`}></div></React.Fragment>
+
+                        if (i + (page * 512) === parseInt(searchValue, 16)) {
+                            c3 = "blinking selected";
+                        } 
+                        return <React.Fragment key={`byte${i}`}>{label}<div id={`0x${(i  + (page * 512)).toString(16)}`} className={`${c1} ${c2} ${c3}`} title={`0x${(i + (page * 512)).toString(16)}`}></div></React.Fragment>
                     })}
                 </div>
             </div>
