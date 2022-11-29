@@ -107,55 +107,67 @@ All of the following are 1 bit of the P register
 
 ## Code analysis
 
-A:F8 X:09 Y:00 S:F9 P:nvUBdIZc       $CF4F: 20 C9 FF  JSR $FFC9
-A:F8 X:09 Y:00 S:F7 P:nvUBdIZc         $FFC9: AD 69 07  LDA $0769 Bank Switch = #$01
-A:01 X:09 Y:00 S:F7 P:nvUBdIzc         $FFCC: 8D 00 E0  STA $E000 = #$FF
-A:01 X:09 Y:00 S:F7 P:nvUBdIzc         $FFCF: 4A        LSR
-A:00 X:09 Y:00 S:F7 P:nvUBdIZC         $FFD0: 8D 00 E0  STA $E000 = #$FF
-A:00 X:09 Y:00 S:F7 P:nvUBdIZC         $FFD3: 4A        LSR
-A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD4: 8D 00 E0  STA $E000 = #$FF
-A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD7: 4A        LSR
-A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD8: 8D 00 E0  STA $E000 = #$FF
-A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDB: 4A        LSR
-A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDC: 8D 00 E0  STA $E000 = #$FF
-A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDF: 60        RTS (from $FFC9) ----------------------------
-A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF52: AD 61 05  LDA $0561 current scene/map index = #$21
-A:21 X:09 Y:00 S:F9 P:nvUBdIzc       $CF55: AC 07 07  LDY $0707 World = #$00
-A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF58: D0 06     BNE $CF60
-A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF5A: C9 1D     CMP #$1D
-A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5C: 90 02     BCC $CF60
-A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5E: A9 00     LDA #$00
-A:00 X:09 Y:00 S:F9 P:nvUBdIZC       $CF60: 0A        ASL
-A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF61: 0A        ASL
-A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF62: 65 3B     ADC $3B = #$03
-A:03 X:09 Y:00 S:F9 P:nvUBdIzc       $CF64: A8        TAY
-A:03 X:09 Y:03 S:F9 P:nvUBdIzc       $CF65: B9 FC 6A  LDA $6AFC Room Connectivity Data,Y @ $6AFF Do
-A:FC X:09 Y:03 S:F9 P:NvUBdIzc       $CF68: 48        PHA
-A:FC X:09 Y:03 S:F8 P:NvUBdIzc        $CF69: 29 FC     AND #$FC
-A:FC X:09 Y:03 S:F8 P:NvUBdIzc        $CF6B: C9 FC     CMP #$FC
-A:FC X:09 Y:03 S:F8 P:nvUBdIZC        $CF6D: D0 43     BNE $CFB2
-A:FC X:09 Y:03 S:F8 P:nvUBdIZC        $CF6F: 68        PLA
-A:FC X:09 Y:03 S:F9 P:NvUBdIzC       $CF70: 29 03     AND #$03
-A:00 X:09 Y:03 S:F9 P:nvUBdIZC       $CF72: 18        CLC
-A:00 X:09 Y:03 S:F9 P:nvUBdIZc       $CF73: 6D 48 07  ADC $0748 Area Location Index = #$01
-A:01 X:09 Y:03 S:F9 P:nvUBdIzc       $CF76: 8D 48 07  STA $0748 Area Location Index = #$01
-A:01 X:09 Y:03 S:F9 P:nvUBdIzc       $CF79: A0 00     LDY #$00
-A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF7B: 8C FF 07  STY $07FF = #$00
-A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF7E: 8C E9 05  STY $05E9 = #$04
-A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF81: A0 90     LDY #$90
-A:01 X:09 Y:90 S:F9 P:NvUBdIzc       $CF83: 8C 00 40  STY SQ1_VOL = #$91
-A:01 X:09 Y:90 S:F9 P:NvUBdIzc       $CF86: A9 01     LDA #$01
-A:01 X:09 Y:90 S:F9 P:nvUBdIzc       $CF88: AC 07 07  LDY $0707 World = #$00
-A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF8B: F0 10     BEQ $CF9D
-A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF9D: A0 04     LDY #$04
-A:01 X:09 Y:04 S:F9 P:nvUBdIzc       $CF9F: 8C E9 05  STY $05E9 = #$00
-A:01 X:09 Y:04 S:F9 P:nvUBdIzc       $CFA2: AC 06 07  LDY $0706 Overworld Index = #$00
-A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CFA5: D0 F3     BNE $CF9A
-A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CFA7: AC 61 05  LDY $0561 current scene/map index = #$21
-A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFAA: D0 EE     BNE $CF9A
-A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CF9A: 4C F8 CF  JMP $CFF8
-A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFF8: 8D 36 07  STA $0736 Game Mode/Current State = #$10
-A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFFB: 60        RTS (from $C2CA) ----------------------------
+    A:F8 X:09 Y:00 S:F9 P:nvUBdIZc       $CF4F: 20 C9 FF  JSR $FFC9
+    A:F8 X:09 Y:00 S:F7 P:nvUBdIZc         $FFC9: AD 69 07  LDA $0769 Bank Switch = #$01
+    A:01 X:09 Y:00 S:F7 P:nvUBdIzc         $FFCC: 8D 00 E0  STA $E000 = #$FF
+    A:01 X:09 Y:00 S:F7 P:nvUBdIzc         $FFCF: 4A        LSR
+    A:00 X:09 Y:00 S:F7 P:nvUBdIZC         $FFD0: 8D 00 E0  STA $E000 = #$FF
+    A:00 X:09 Y:00 S:F7 P:nvUBdIZC         $FFD3: 4A        LSR
+    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD4: 8D 00 E0  STA $E000 = #$FF
+    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD7: 4A        LSR
+    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD8: 8D 00 E0  STA $E000 = #$FF
+    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDB: 4A        LSR
+    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDC: 8D 00 E0  STA $E000 = #$FF
+    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDF: 60        RTS (from $FFC9) ----------------------------
+    A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF52: AD 61 05  LDA $0561 current scene/map index = #$21
+    A:21 X:09 Y:00 S:F9 P:nvUBdIzc       $CF55: AC 07 07  LDY $0707 World = #$00
+    A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF58: D0 06     BNE $CF60
+    A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF5A: C9 1D     CMP #$1D
+    A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5C: 90 02     BCC $CF60
+    A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5E: A9 00     LDA #$00
+    A:00 X:09 Y:00 S:F9 P:nvUBdIZC       $CF60: 0A        ASL
+    A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF61: 0A        ASL
+    A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF62: 65 3B     ADC $3B = #$03
+    A:03 X:09 Y:00 S:F9 P:nvUBdIzc       $CF64: A8        TAY
+    A:03 X:09 Y:03 S:F9 P:nvUBdIzc       $CF65: B9 FC 6A  LDA $6AFC Room Connectivity Data,Y @ $6AFF Do
+    A:FC X:09 Y:03 S:F9 P:NvUBdIzc       $CF68: 48        PHA
+    A:FC X:09 Y:03 S:F8 P:NvUBdIzc        $CF69: 29 FC     AND #$FC
+    A:FC X:09 Y:03 S:F8 P:NvUBdIzc        $CF6B: C9 FC     CMP #$FC
+    A:FC X:09 Y:03 S:F8 P:nvUBdIZC        $CF6D: D0 43     BNE $CFB2
+    A:FC X:09 Y:03 S:F8 P:nvUBdIZC        $CF6F: 68        PLA
+    A:FC X:09 Y:03 S:F9 P:NvUBdIzC       $CF70: 29 03     AND #$03
+    A:00 X:09 Y:03 S:F9 P:nvUBdIZC       $CF72: 18        CLC
+    A:00 X:09 Y:03 S:F9 P:nvUBdIZc       $CF73: 6D 48 07  ADC $0748 Area Location Index = #$01
+    A:01 X:09 Y:03 S:F9 P:nvUBdIzc       $CF76: 8D 48 07  STA $0748 Area Location Index = #$01
+    A:01 X:09 Y:03 S:F9 P:nvUBdIzc       $CF79: A0 00     LDY #$00
+    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF7B: 8C FF 07  STY $07FF = #$00
+    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF7E: 8C E9 05  STY $05E9 = #$04
+    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF81: A0 90     LDY #$90
+    A:01 X:09 Y:90 S:F9 P:NvUBdIzc       $CF83: 8C 00 40  STY SQ1_VOL = #$91
+    A:01 X:09 Y:90 S:F9 P:NvUBdIzc       $CF86: A9 01     LDA #$01
+    A:01 X:09 Y:90 S:F9 P:nvUBdIzc       $CF88: AC 07 07  LDY $0707 World = #$00
+    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF8B: F0 10     BEQ $CF9D
+    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF9D: A0 04     LDY #$04
+    A:01 X:09 Y:04 S:F9 P:nvUBdIzc       $CF9F: 8C E9 05  STY $05E9 = #$00
+    A:01 X:09 Y:04 S:F9 P:nvUBdIzc       $CFA2: AC 06 07  LDY $0706 Overworld Index = #$00
+    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CFA5: D0 F3     BNE $CF9A
+    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CFA7: AC 61 05  LDY $0561 current scene/map index = #$21
+    A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFAA: D0 EE     BNE $CF9A
+    A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CF9A: 4C F8 CF  JMP $CFF8
+    A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFF8: 8D 36 07  STA $0736 Game Mode/Current State = #$10
+    A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFFB: 60        RTS (from $C2CA) ----------------------------
+
+<THE ANSWER>
+Get map number in accumulator
+Load world into Y ($0707)
+If world isn't 0, then skip ahead to $CF60
+If world is 0, then set accumulator to 0
+Multiply accumulator by 2
+Multiply accumulator by 2
+Add value at memory location $3B (current map page) to accumulator
+Transfer the accumulator to Y
+Load data from connectivity table with offet Y
+</THE ANSWER>
 
 $CF52 Load current scene/map index into accumulator ($21)
 $CF55 Load world into Y (#$00)
