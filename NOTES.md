@@ -107,6 +107,56 @@ All of the following are 1 bit of the P register
 
 ## Code analysis
 
+A:F8 X:09 Y:00 S:F9 P:nvUBdIZc       $CF4F: 20 C9 FF  JSR $FFC9
+A:F8 X:09 Y:00 S:F7 P:nvUBdIZc         $FFC9: AD 69 07  LDA $0769 Bank Switch = #$01
+A:01 X:09 Y:00 S:F7 P:nvUBdIzc         $FFCC: 8D 00 E0  STA $E000 = #$FF
+A:01 X:09 Y:00 S:F7 P:nvUBdIzc         $FFCF: 4A        LSR
+A:00 X:09 Y:00 S:F7 P:nvUBdIZC         $FFD0: 8D 00 E0  STA $E000 = #$FF
+A:00 X:09 Y:00 S:F7 P:nvUBdIZC         $FFD3: 4A        LSR
+A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD4: 8D 00 E0  STA $E000 = #$FF
+A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD7: 4A        LSR
+A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD8: 8D 00 E0  STA $E000 = #$FF
+A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDB: 4A        LSR
+A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDC: 8D 00 E0  STA $E000 = #$FF
+A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDF: 60        RTS (from $FFC9) ----------------------------
+A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF52: AD 61 05  LDA $0561 current scene/map index = #$21
+A:21 X:09 Y:00 S:F9 P:nvUBdIzc       $CF55: AC 07 07  LDY $0707 World = #$00
+A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF58: D0 06     BNE $CF60
+A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF5A: C9 1D     CMP #$1D
+A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5C: 90 02     BCC $CF60
+A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5E: A9 00     LDA #$00
+A:00 X:09 Y:00 S:F9 P:nvUBdIZC       $CF60: 0A        ASL
+A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF61: 0A        ASL
+A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF62: 65 3B     ADC $3B = #$03
+A:03 X:09 Y:00 S:F9 P:nvUBdIzc       $CF64: A8        TAY
+A:03 X:09 Y:03 S:F9 P:nvUBdIzc       $CF65: B9 FC 6A  LDA $6AFC Room Connectivity Data,Y @ $6AFF Do
+A:FC X:09 Y:03 S:F9 P:NvUBdIzc       $CF68: 48        PHA
+A:FC X:09 Y:03 S:F8 P:NvUBdIzc        $CF69: 29 FC     AND #$FC
+A:FC X:09 Y:03 S:F8 P:NvUBdIzc        $CF6B: C9 FC     CMP #$FC
+A:FC X:09 Y:03 S:F8 P:nvUBdIZC        $CF6D: D0 43     BNE $CFB2
+A:FC X:09 Y:03 S:F8 P:nvUBdIZC        $CF6F: 68        PLA
+A:FC X:09 Y:03 S:F9 P:NvUBdIzC       $CF70: 29 03     AND #$03
+A:00 X:09 Y:03 S:F9 P:nvUBdIZC       $CF72: 18        CLC
+A:00 X:09 Y:03 S:F9 P:nvUBdIZc       $CF73: 6D 48 07  ADC $0748 Area Location Index = #$01
+A:01 X:09 Y:03 S:F9 P:nvUBdIzc       $CF76: 8D 48 07  STA $0748 Area Location Index = #$01
+A:01 X:09 Y:03 S:F9 P:nvUBdIzc       $CF79: A0 00     LDY #$00
+A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF7B: 8C FF 07  STY $07FF = #$00
+A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF7E: 8C E9 05  STY $05E9 = #$04
+A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF81: A0 90     LDY #$90
+A:01 X:09 Y:90 S:F9 P:NvUBdIzc       $CF83: 8C 00 40  STY SQ1_VOL = #$91
+A:01 X:09 Y:90 S:F9 P:NvUBdIzc       $CF86: A9 01     LDA #$01
+A:01 X:09 Y:90 S:F9 P:nvUBdIzc       $CF88: AC 07 07  LDY $0707 World = #$00
+A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF8B: F0 10     BEQ $CF9D
+A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF9D: A0 04     LDY #$04
+A:01 X:09 Y:04 S:F9 P:nvUBdIzc       $CF9F: 8C E9 05  STY $05E9 = #$00
+A:01 X:09 Y:04 S:F9 P:nvUBdIzc       $CFA2: AC 06 07  LDY $0706 Overworld Index = #$00
+A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CFA5: D0 F3     BNE $CF9A
+A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CFA7: AC 61 05  LDY $0561 current scene/map index = #$21
+A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFAA: D0 EE     BNE $CF9A
+A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CF9A: 4C F8 CF  JMP $CFF8
+A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFF8: 8D 36 07  STA $0736 Game Mode/Current State = #$10
+A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFFB: 60        RTS (from $C2CA) ----------------------------
+
 $CF52 Load current scene/map index into accumulator ($21)
 $CF55 Load world into Y (#$00)
 >$CF58 If world number was not zero, jump to $CF60
@@ -150,21 +200,22 @@ $C1A8 PPU Shit
 
 $C010 Load game mode/current state into accumulator
 $C013 Compare against #$08
-$C015 Jump to $C01B if equal
+>$C015 Jump to $C01B if equal
 $C017 Compare against #$14
 $C019 Go back to $C010 if not equal
 
 $D168 Load game mode into accumulator
 $D16B Compare game mode to value in $0737
 $D16E Store accumulator into $0737
-$D171 If game mode not equal to value in $0737 (#$10), then jump to $D18D
+>$D171 If game mode not equal to value in $0737 (#$10), then jump to $D18D
 
 $CCB3 Zero accumulator
 $CCB5 Store accumulator into return to overworld (#$00)
 $CCB8 Store accumulator into $075B
 $CCBB Load area location index (#$01) into Y
 $CCBE Load accumulator with data at $6A00,Y (Overworld destinations table) $6A01 (Y position)
-$CCC1 If value loaded wasn't 0, then branch to $CCCC
+>$CCC1 If value loaded wasn't 0, then branch to $CCCC
+...
 $CCCC Mask the accumulator with #$7F (0b01111111)
 $CCCE Store the accumulator to $73
 $CCD0 Load accumulator with data at $6A3F,Y ($6A40) (X Position)
@@ -172,7 +223,7 @@ $CCD3 Mask the accumulator with $3F (0b00111111)
 $CCD5 Store the accumulator with to $74
 $CCD7 Load accumulator with data at $6ABD,Y ($6ABE) (World Number)
 $CCDA Mask the accumulator with $40 (0b01000000)
-$CCDC If masking set zero flag, jump to $CCF9
+>$CCDC If masking set zero flag, jump to $CCF9
 
 $CF05 Increment memory by 1 at Game Mode/Current State memory location
 
