@@ -104,3 +104,112 @@ All of the following are 1 bit of the P register
         INX             ; Increment X
         CPX #$C         ; Check to see if $C bytes have been read
         BEQ A           ; If not complete, jump back to A
+
+## Code analysis
+
+$CF52 Load current scene/map index into accumulator ($21)
+$CF55 Load world into Y (#$00)
+$CF58 If world number was not zero, jump to $CF60
+$CF5A Compare accumulator with #$1D
+$CF5C Branch on carry clear to $CF60
+$CF5E Load #$0 into accumulator
+$CF60 Shift left
+$CF61 Shift left
+$CF62 Add what is at memory location $3B (#$03) to accumulator
+$CF64 Transfer accumulator to index Y (TAY)
+$CF65 Loading room connectivity data into accumulator from $6AFC,Y ($6AFF)
+$CF68 Push accumulator (room connectivity data) onto the stack
+$CF69 Mask accumulator with #$FC (0b11111100) (I believe that's the map number)
+$CF6B Compare with #$FC
+$CF6D If not equal, branch to $CFB2
+$CF68 Pull accumulator from the stack
+$CF70 Mask accumulator with #$03 (0b00000011)
+$CF72 Clear carry flag
+$CF73 Add area location index to accumulator
+$CF76 Store accumulator back to area location index
+$CF79 Reset Y to 0
+$CF7B Store Y to $07FF
+$CF7E Store Y to $05E9
+$CF81 Load Y with #$90
+$CF83 Store Y to SQ1_VOL?
+$CF86 Load accumulator with value #$00
+$CF88 Load Y with world number
+$CF8B If world number is zero, branch to $CF9D
+$CF9D Load y with #$04
+$CF9F Store y to $05E9
+$CFA2 If overworld index is not zero, branch back to $CF9A
+$CFAA If map number is not zero, branch back to $CF9A
+$CF9A Jump to $CFF8
+$CFF8 Store accumlator (01) to current game mode/current state (which was previously $10)
+
+$C1A8 PPU Shit
+
+$C010 Load game mode/current state into accumulator
+$C013 Compare against #$08
+$C015 Jump to $C01B if equal
+$C017 Compare against #$14
+$C019 Go back to $C010 if not equal
+
+$D168 Load game mode into accumulator
+$D16B Compare game mode to value in $0737
+$D16E Store accumulator into $0737
+$D171 If game mode not equal to value in $0737 (#$10), then jump to $D18D
+
+$CCB3 Zero accumulator
+$CCB5 Store accumulator into return to overworld (#$00)
+$CCB8 Store accumulator into $075B
+$CCBB Load area location index (#$01) into Y
+$CCBE Load accumulator with data at $6A00,Y (Overworld destinations table) $6A01 (Y position)
+$CCC1 If value loaded wasn't 0, then branch to $CCCC
+$CCCC Mask the accumulator with #$7F (0b01111111)
+$CCCE Store the accumulator to $73
+$CCD0 Load accumulator with data at $6A3F,Y ($6A40) (X Position)
+$CCD3 Mask the accumulator with $3F (0b00111111)
+$CCD5 Store the accumulator with to $74
+$CCD7 Load accumulator with data at $6ABD,Y ($6ABE) (World Number)
+$CCDA Mask the accumulator with $40 (0b01000000)
+$CCDC If masking set zero flag, jump to $CCF9
+
+$CF05 Increment memory by 1 at Game Mode/Current State memory location
+
+Enter $C010 loop again
+
+$C07B Some long process involving the PPU
+
+Back to $D168
+
+$81A9 Increment game mode/current status
+
+Enter $C010 loop again
+
+$C07B Again
+
+$C19B Some loop incrementing X
+    Rotating right one bit memory at $051A,X ($051A - $0522)
+
+$D254 Some loop incrementing Y
+    Storing data at $0200,Y ($0204 - $02FC) 4 bytes at a time
+
+$FFC9 Loading bank switch into accumulator.
+
+$8C39 Storing accumulator data (#$0C) into ($048C - $0499)
+
+$FFC9 Again
+
+$8C39 Storing accumulator data (#$04) into ($049A - $04A1)
+
+$FFC9 Again
+
+$8C39 Storing accumulator data (#$0C) into ($04A2 - $04B1)
+
+$FFC9 Again
+
+$8C39 Storing accumulator data (#$0C) into ($04B2 - $04BD)
+
+$FFC9 Again
+
+$8C39 Storing accumulator data (#$0B) into ($0480 - $048C)
+
+
+...does this a lot...
+
