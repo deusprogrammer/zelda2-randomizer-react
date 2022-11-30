@@ -10,7 +10,9 @@
     $0748 - area location index (the index of the spot on the overworld that pulled you into the sideview)
     $0769 - Bank to switch to (other than 0 or 7)
 
-## Registers
+## 6502 Assembly Notes
+
+### Registers
 
 All of the below are 1 byte in size
 
@@ -21,7 +23,7 @@ All of the below are 1 byte in size
     S  => Stack Pointer
     P  => Status
 
-## Status Flags
+### Status Flags
 
 All of the following are 1 bit of the P register
 
@@ -37,7 +39,7 @@ All of the following are 1 bit of the P register
     7654 3210
     NV-B DIZC
 
-## Operations
+### Operations
 
     AND - And Accumulator and Memory        A & M -> A
     ORA - Or Accumulator and Memory         A | M -> A
@@ -79,7 +81,7 @@ All of the following are 1 bit of the P register
     DEX - Decrement x register by 1
     DEY - Decrement y register by 1
 
-## Playing with 6502 ASM
+### Playing with 6502 ASM
     ; Perform a summation of 0 - 10 (non inclusive)
         LDA #$00        ; Reset the accumulator to 0
         LDX #$00        ; Reset the X index to 0
@@ -95,7 +97,7 @@ All of the following are 1 bit of the P register
         INX             ; Increment X
         BCC A           ; If carry bit is not set, continue
 
-## Notes for issue with missing exit numbers
+### Notes for issue with missing exit numbers
 
     ; Loading probably looks something like this
         STX #$00        ; Initialize X to 0
