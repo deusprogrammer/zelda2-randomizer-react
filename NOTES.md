@@ -109,17 +109,17 @@ All of the following are 1 bit of the P register
 
 ### Checking for passthrough
 
-    A:1D X:09 Y:01 S:F9 P:nvUBdIzc       $CCD7: B9 BD 6A  LDA $6ABD,Y @ $6ABE = #$00
-    A:00 X:09 Y:01 S:F9 P:nvUBdIZc       $CCDA: 29 40     AND #$40
+    A:1D X:09 Y:01 S:F9 P:nvUBdIzc       $CCD7: B9 BD 6A  LDA $6ABD,Y @ $6ABE = #$00        ;$6ABD is the address of world number info
+    A:00 X:09 Y:01 S:F9 P:nvUBdIZc       $CCDA: 29 40     AND #$40                          ;#$40 is 0b0100000 which is the mask for the passthrough bit
 
 ### Loading overworld map
 
     A:00 X:00 Y:00 S:F7 P:NvUBdIzc         $8C2D: 20 48 8C  JSR $8C48
     A:00 X:00 Y:00 S:F5 P:NvUBdIzc           $8C48: 0A        ASL
     A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C49: A8        TAY
-    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C4A: B9 00 60  LDA $6000,Y @ $6000 = #$00
+    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C4A: B9 00 60  LDA $6000,Y @ $6000 = #$00    ;Upper part of compressed map address is stored here
     A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C4D: 85 0E     STA $0E = #$FE
-    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C4F: B9 01 60  LDA $6001,Y @ $6001 = #$7C
+    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $8C4F: B9 01 60  LDA $6001,Y @ $6001 = #$7C    ;Lower part of compressed map address is stored here
     A:7C X:00 Y:00 S:F5 P:nvUBdIzc           $8C52: 85 0F     STA $0F = #$8B
     A:7C X:00 Y:00 S:F5 P:nvUBdIzc           $8C54: A0 00     LDY #$00
     A:7C X:00 Y:00 S:F5 P:nvUBdIZc           $8C56: 60        RTS (from $8C48) ----------------------------
@@ -136,19 +136,19 @@ All of the following are 1 bit of the P register
     A:00 X:00 Y:00 S:F3 P:nvUBdIZc             $FFDB: 4A        LSR
     A:00 X:00 Y:00 S:F3 P:nvUBdIZc             $FFDC: 8D 00 E0  STA $E000 = #$FF
     A:00 X:00 Y:00 S:F3 P:nvUBdIZc             $FFDF: 60        RTS (from $FFC9) ----------------------------
-    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $E004: B1 0E     LDA ($0E),Y @ $7C00 = #$BB
-    A:BB X:00 Y:00 S:F5 P:NvUBdIzc           $E006: 29 0F     AND #$0F
-    A:0B X:00 Y:00 S:F5 P:nvUBdIzc           $E008: 85 02     STA $02 = #$0B
-    A:0B X:00 Y:00 S:F5 P:nvUBdIzc           $E00A: B1 0E     LDA ($0E),Y @ $7C00 = #$BB
-    A:BB X:00 Y:00 S:F5 P:NvUBdIzc           $E00C: 4A        LSR
+    A:00 X:00 Y:00 S:F5 P:nvUBdIZc           $E004: B1 0E     LDA ($0E),Y @ $7C00 = #$BB    ;Load address of compressed world map into accumulator
+    A:BB X:00 Y:00 S:F5 P:NvUBdIzc           $E006: 29 0F     AND #$0F                      ;Mask #$0F (0b00001111) to get type
+    A:0B X:00 Y:00 S:F5 P:nvUBdIzc           $E008: 85 02     STA $02 = #$0B                ;Store type into $02
+    A:0B X:00 Y:00 S:F5 P:nvUBdIzc           $E00A: B1 0E     LDA ($0E),Y @ $7C00 = #$BB    ;Load address of compressed world map into accumulator
+    A:BB X:00 Y:00 S:F5 P:NvUBdIzc           $E00C: 4A        LSR                           ;Remove lower 4 bites
     A:5D X:00 Y:00 S:F5 P:nvUBdIzC           $E00D: 4A        LSR
     A:2E X:00 Y:00 S:F5 P:nvUBdIzC           $E00E: 4A        LSR
     A:17 X:00 Y:00 S:F5 P:nvUBdIzc           $E00F: 4A        LSR
-    A:0B X:00 Y:00 S:F5 P:nvUBdIzC           $E010: 38        SEC
-    A:0B X:00 Y:00 S:F5 P:nvUBdIzC           $E011: 65 03     ADC $03 = #$00
-    A:0C X:00 Y:00 S:F5 P:nvUBdIzc           $E013: 85 03     STA $03 = #$00
-    A:0C X:00 Y:00 S:F5 P:nvUBdIzc           $E015: 48        PHA
-    A:0C X:00 Y:00 S:F4 P:nvUBdIzc            $E016: 20 C5 FF  JSR $FFC5
+    A:0B X:00 Y:00 S:F5 P:nvUBdIzC           $E010: 38        SEC                           ;Set carry flag
+    A:0B X:00 Y:00 S:F5 P:nvUBdIzC           $E011: 65 03     ADC $03 = #$00                ;Add value in $03 to accumulator
+    A:0C X:00 Y:00 S:F5 P:nvUBdIzc           $E013: 85 03     STA $03 = #$00                ;Store run length into $03
+    A:0C X:00 Y:00 S:F5 P:nvUBdIzc           $E015: 48        PHA                           ;Push accumulator to stack
+    A:0C X:00 Y:00 S:F4 P:nvUBdIzc            $E016: 20 C5 FF  JSR $FFC5                    ;Jump to $FFC5
 
 ### Exit issue
 
