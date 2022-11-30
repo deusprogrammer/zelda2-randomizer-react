@@ -262,9 +262,9 @@ export const extractLevelExits = (buffer) => {
         if (bank < 2) {
             newBank = newBank.map((levelEntry, mapNumber) => {
                 if (mapNumber < 29) {
-                    return levelEntry;
+                    return {...levelEntry, editable: true};
                 } else {
-                    return newBank[0];
+                    return {...newBank[0], editable: true};
                 }
             });
         }
@@ -278,13 +278,15 @@ export const extractLevelExits = (buffer) => {
         offset = LEVEL_EXITS_BANK_OFFSETS2[bank];
         newBank = hexArrayExtractor(LEVEL_EXITS_MAPPING, buffer, 63, offset);
 
-        newBank = newBank.map((levelEntry, mapNumber) => {
-            if (mapNumber < 29) {
-                return levelEntry;
-            } else {
-                return newBank[0];
-            }
-        });
+        if (bank < 2) {
+            newBank = newBank.map((levelEntry, mapNumber) => {
+                if (mapNumber < 29) {
+                    return {...levelEntry, editable: true};
+                } else {
+                    return {...newBank[0], editable: true};
+                }
+            });
+        }
 
         mapSets.push(newBank);
     }

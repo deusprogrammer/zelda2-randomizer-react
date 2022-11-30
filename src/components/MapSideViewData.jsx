@@ -1,22 +1,57 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
-import { LARGE_OBJECT_SETS, SMALL_OBJECTS, WORLD_INDEX_MAPPINGS, WORLD_MAPPINGS } from "../lib/zelda2/Z2Data";
+import { useAtom } from 'jotai';
+import { romAtom } from '../atoms/rom.atom';
+import { LARGE_OBJECT_SETS, SMALL_OBJECTS } from "../lib/zelda2/Z2Data";
 import { ITEM_MAP } from '../lib/zelda2/Z2Utils';
 import HexValue from './HexValue';
 import KeyValueTable from './KeyValueTable';
+import FileSaver from "file-saver";
 
 export default ({level, onStepChange, location}) => {
+    const [romData] = useAtom(romAtom);
     const [selectedStep, setSelectedStep] = useState(-1);
     const [intervalHandler, setIntervalHandler] = useState(null);
 
+    const [collectibleItems, setCollectibleItems] = useState([]);
+
+    useEffect(() => {
+        let items = [];
+        level.levelElements.forEach((element, i) => {
+            let offset = 0x0;
+            if (element.collectableObjectNumber) {
+                offset = element._metadata.collectableObjectNumber.offset;
+            }
+            items.push({itemNumber: element.collectableObjectNumber || -1, romAddress: offset});
+        });
+        setCollectibleItems(items);
+    }, [level.levelElements]);
+
+    const updateCollectibleItem = (elementIndex, itemNumber, romAddress) => {
+        let copy = [...collectibleItems];
+        copy[elementIndex] = {itemNumber, romAddress};
+        setCollectibleItems(copy);
+    }
+
+    const write = (elementIndex) => {
+        let romDataCopy = new Uint8Array(romData.rawBytes);
+        let romAddress = collectibleItems[elementIndex].romAddress;
+        let itemNumber = collectibleItems[elementIndex].itemNumber;
+        if (itemNumber < 0) {
+            return;
+        }
+        romDataCopy[romAddress] = itemNumber;
+        let file = new File([romDataCopy], "Zelda 2 Modified.nes", {type: "application/octet-stream"});
+        FileSaver.saveAs(file);
+    }
+
     let extraContent;
     if (location) {
-        let {x, y, external, caveSeg, reserved, continent, mapSet, mapNumber, rightEnt, hPosEnt, passThrough, fallInto} = location;
-        continent = mapSet === 0 && continent === 0 ? "self" : WORLD_INDEX_MAPPINGS[continent];
-        mapSet = WORLD_MAPPINGS[mapSet];
+        let {x, y, external, caveSeg, reserved, continent, mapSet, mapNumber, rightEnt, hPosEnt, passThrough, fallInto, _metadata} = location;
         extraContent = (
             <div>
                 <h5>Location Data</h5>
-                <KeyValueTable map={{x, y, external, caveSeg, reserved, continent, mapSet, mapNumber, rightEnt, hPosEnt, passThrough, fallInto}} />
+                <KeyValueTable map={{x, y, external, caveSeg, reserved, continent, mapSet, mapNumber, rightEnt, hPosEnt, passThrough, fallInto, _metadata}} />
             </div>
         )
     }
@@ -63,7 +98,7 @@ export default ({level, onStepChange, location}) => {
                             ROM Address
                         </th>
                     </tr>
-                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber, collectableObjectNumber, _offset}, step) => {
+                    { level.levelElements.map(({yPosition, advanceCursor, objectNumber, collectableObjectNumber, _offset, _metadata}, step) => {
                         let mapSetNumber = level.mapSetNumber;
                         let object = "unknown";
                         let size = 1;
@@ -75,7 +110,18 @@ export default ({level, onStepChange, location}) => {
                             object = "Extra Object";
                         } else {
                             if (objectNumber === 0xF && yPosition < 13) {
-                                object = ITEM_MAP[collectableObjectNumber];
+                                let itemNumber = collectableObjectNumber;
+                                let offset = _metadata["collectableObjectNumber"].offset;
+                                if (collectibleItems[step]) {
+                                    itemNumber = collectibleItems[step].itemNumber;
+                                }
+                                object = (
+                                    <select value={itemNumber} onChange={({target: {value}}) => {updateCollectibleItem(step, value, offset)}}>
+                                        { ITEM_MAP.map((item, i) => {
+                                            return <option value={i}>{item}</option>
+                                        })}
+                                    </select>
+                                );
                             } else if (objectNumber > 0xF) {
                                 size = objectNumber & 0b00001111;
                                 objectNumber = objectNumber >> 4;
@@ -93,6 +139,7 @@ export default ({level, onStepChange, location}) => {
                                 <td style={{fontFamily: "monospace, monospace"}}>0x{objectNumber.toString(16).padStart(2, "0")}</td>
                                 <td>{object}</td>
                                 <td><HexValue>{_offset}</HexValue></td>
+                                <td><button onClick={() => { write(step) }}>Write</button></td>
                             </tr>
                         )
                     })}

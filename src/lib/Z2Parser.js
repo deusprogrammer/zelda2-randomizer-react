@@ -49,7 +49,8 @@ export const parse = (rom) => {
         mazeIslandMountainHyruleSpriteMap,
         levelExits,
         textData,
-        isDigiShake
+        isDigiShake,
+        rawBytes: rom
     }
 }
 

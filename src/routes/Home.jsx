@@ -53,7 +53,7 @@ export default () => {
             <div>
                 <h2>ROM Details</h2>
                 <h3>ROM Data</h3>
-                <KeyValueTable showHex={false} map={{
+                <KeyValueTable showHex={false} editable={false} map={{
                     Version: romData.isDigiShake ? 'DigiShake Randomizer' : 'Vanilla'
                 }} />
                 <h3>Actions</h3>

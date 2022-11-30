@@ -223,6 +223,10 @@ body * {
     justify-content: center;
 }
 
+.data-table input {
+    width: 50px;
+}
+
 .flex {
     display: flex;
 }

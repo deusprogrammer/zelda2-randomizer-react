@@ -51,7 +51,11 @@ export const extractFields = (fields, buffer, offset) => {
         element[name] = maskBits(fieldBytes, mask);
         metadata[name] = {
             offset: fieldOffset,
-            mask
+            name,
+            size,
+            relOffset,
+            mask,
+            fields
         }
     }
     element._offset = offset;
