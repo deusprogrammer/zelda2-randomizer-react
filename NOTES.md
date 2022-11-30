@@ -107,6 +107,11 @@ All of the following are 1 bit of the P register
 
 ## Code analysis
 
+### Checking for passthrough
+
+    A:1D X:09 Y:01 S:F9 P:nvUBdIzc       $CCD7: B9 BD 6A  LDA $6ABD,Y @ $6ABE = #$00
+    A:00 X:09 Y:01 S:F9 P:nvUBdIZc       $CCDA: 29 40     AND #$40
+
 ### Loading overworld map
 
     A:00 X:00 Y:00 S:F7 P:NvUBdIzc         $8C2D: 20 48 8C  JSR $8C48
@@ -146,6 +151,43 @@ All of the following are 1 bit of the P register
     A:0C X:00 Y:00 S:F4 P:nvUBdIzc            $E016: 20 C5 FF  JSR $FFC5
 
 ### Exit issue
+
+#### Solution
+
+    A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF52: AD 61 05  LDA $0561 current scene/map index = #$21
+    A:21 X:09 Y:00 S:F9 P:nvUBdIzc       $CF55: AC 07 07  LDY $0707 World = #$00
+    A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF58: D0 06     BNE $CF60
+    A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF5A: C9 1D     CMP #$1D
+    A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5C: 90 02     BCC $CF60
+    A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5E: A9 00     LDA #$00
+    A:00 X:09 Y:00 S:F9 P:nvUBdIZC       $CF60: 0A        ASL
+    A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF61: 0A        ASL
+    A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF62: 65 3B     ADC $3B = #$03
+    A:03 X:09 Y:00 S:F9 P:nvUBdIzc       $CF64: A8        TAY
+    A:03 X:09 Y:03 S:F9 P:nvUBdIzc       $CF65: B9 FC 6A  LDA $6AFC Room Connectivity Data,Y @ $6AFF Do
+
+    On line $CF5A the mapNumber is compared to $1D (29).
+    So basically if the mapNumber is greater than 29 and the "world" is zero (meaning it's overworld or in technical terms banks 1 and 2), then it uses the level exits at mapNumber 0 (which has 63 for all four exits).
+    LDA loads the data at the provided memory location into the accumulator.
+    LDY does the same but it loads into the Y register
+    BNE branches if the Z flag is set.  The Z flag gets set when a LD operation loads a zero value or when a CMP op finds the two values equal.
+    CMP compares the accumulator with the value in a memory location.  It sets the Z flag if the two are equal, and it sets the C flag if the accumulator is less.
+    ASL shifts left (multiplies by 2)
+    ADC adds the value at memory address to the accumulator
+    TAY transfers the value of the accumulator to the Y register
+
+    Note #$XX is an immediate value instead of a memory address.  So for example #$FF is the byte 0xFF.
+
+    ASL ASL is multiplying by 4 (because each level connection entry is 4 bytes).
+    LDA $6AFC,Y is loading from $6AFC + Y
+    $3B holds the current map page
+    $0707 holds the world
+    $0561 holds the current map (edited)
+    I am in world 0 (#$00)
+    I am in trophy cave (#$21)
+    I am in map page 3 (#$03) (edited)
+
+#### Notes
 
     ; These two repeat over and over
     A:0B X:FF Y:01 S:F7 P:nvUBdIZC         $C1DD: 20 30 CF  JSR $CF30
