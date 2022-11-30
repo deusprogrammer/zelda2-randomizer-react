@@ -150,6 +150,9 @@ All of the following are 1 bit of the P register
     A:0C X:00 Y:00 S:F5 P:nvUBdIzc           $E015: 48        PHA                           ;Push accumulator to stack
     A:0C X:00 Y:00 S:F4 P:nvUBdIzc            $E016: 20 C5 FF  JSR $FFC5                    ;Jump to $FFC5
 
+    $02 holds type of block to draw
+    $03 holds current position for drawing based on run length
+
 ### Exit issue
 
 #### Solution
