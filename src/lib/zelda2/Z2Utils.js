@@ -618,21 +618,6 @@ export const createVanillaNodeMapping = (graphData, mapData) => {
     return template;
 }
 
-export const getLocationByKey = (overworld, locationKey) => {
-    let location = null;
-    for (let i in overworld) {
-        let map = overworld[i].locations;
-        let found = Object.keys(map).find(key => key === locationKey);
-
-        if (found) {
-            location = map[found];
-            break;
-        }
-    }
-
-    return location;
-}
-
 export const isDigiShakeRando = (rom) => {
     let creditsLine2 = extractTextDataFromOffset(rom, DIGISHAKE_CREDIT_OFFSET);
 
@@ -677,25 +662,32 @@ export const explore = (maps, mapSet, mapNumber, explored = []) => {
     return items;
 }
 
-export const getMapByKey = (locationKey, continent, locations, maps) => {
-    let foundLocation;
-    for (let location of locations) {
-        let found = Object.keys(location).find(key => key === locationKey);
+export const getLocationByKey = (romData, locationKey) => {
+    let location = [null, null];
+    for (let i in romData.overworld) {
+        let map = romData.overworld[i].locations;
+        let found = Object.keys(map).find(key => key === locationKey);
 
         if (found) {
-            foundLocation = location[found];
+            location = [map[found], i];
             break;
         }
     }
 
-    let {mapSet, worldNumber, mapNumber} = foundLocation;
-    if (mapSet === 0 && worldNumber === 0) {      // Overworld
+    return location;
+}
+
+export const getMapByKey = (romData, locationKey) => {
+    let [foundLocation, continent] = getLocationByKey(romData, locationKey);
+
+    let {mapSet, continent: worldNumber, mapNumber} = foundLocation;
+    if (mapSet === 0 && worldNumber === 0) {        // Overworld
         mapSet = continent;
-    } else if (mapSet === 1 || mapSet === 2) {  // Towns
+    } else if (mapSet === 1 || mapSet === 2) {      // Towns
         mapSet = 4;
     } else if (mapSet > 2) {
-        mapSet = mapSet + 2;                    // Palaces
+        mapSet = mapSet + 2;                        // Palaces
     }
 
-    return maps[mapSet][mapNumber];
+    return romData.sideViewMaps[mapSet][mapNumber];
 }

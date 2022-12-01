@@ -4,7 +4,7 @@ import { drawMap } from "../lib/zelda2/Z2Utils"
 export default ({level, steps}) => {
     const navigate = useNavigate();
 
-    let {exit: levelExitData, mapSetNumber: mapSet} = level;
+    let {exits: levelExitData, mapSetNumber: mapSet} = level;
 
     const drawSideView = (level, steps) => {
         let mapBuffer = drawMap(level, null, steps);

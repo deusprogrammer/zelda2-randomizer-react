@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HexValue from "./HexValue";
 
-export default (data) => {
+export default ({level: {exits: data}}) => {
     const [exitData, updateExitData] = useState({...data});
 
     const updateField = (key, value) => {
@@ -10,11 +10,7 @@ export default (data) => {
         updateExitData({...exitData, levelExitData: copy});
     }
 
-    const write = (key) => {
-
-    }
-
-    let {levelExitData: {exits: {upExit, leftExit, downExit, rightExit}}} = exitData;
+    let {upExit, leftExit, downExit, rightExit} = exitData;
     return (
         <div className="level-exit-data">
             <h5>Level Exits</h5>
@@ -37,9 +33,6 @@ export default (data) => {
                     <td>
                         <HexValue>{upExit._offset}</HexValue>
                     </td>
-                    <td>
-                        <button>Write</button>
-                    </td>
                 </tr>
                 <tr>
                     <td>down</td>
@@ -51,9 +44,6 @@ export default (data) => {
                     </td>
                     <td>
                         <HexValue>{downExit._offset}</HexValue>
-                    </td>
-                    <td>
-                        <button>Write</button>
                     </td>
                 </tr>
                 <tr>
@@ -67,9 +57,6 @@ export default (data) => {
                     <td>
                         <HexValue>{leftExit._offset}</HexValue>
                     </td>
-                    <td>
-                        <button>Write</button>
-                    </td>
                 </tr>
                 <tr>
                     <td>right</td>
@@ -81,9 +68,6 @@ export default (data) => {
                     </td>
                     <td>
                         <HexValue>{rightExit._offset}</HexValue>
-                    </td>
-                    <td>
-                        <button>Write</button>
                     </td>
                 </tr>
                 <tr>

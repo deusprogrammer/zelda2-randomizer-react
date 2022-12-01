@@ -43,8 +43,8 @@ export default () => {
 
     let location, map;
     if (locationKey) {
-        location = getLocationByKey(romData.overworld, locationKey);
-        map = getMapByKey(locationKey);
+        [location] = getLocationByKey(romData, locationKey);
+        map = getMapByKey(romData, locationKey);
         mapSet = location.mapSet;
         mapNumber = location.mapNumber;
     } else {

@@ -33,18 +33,6 @@ export default ({level, onStepChange, location}) => {
         setCollectibleItems(copy);
     }
 
-    const write = (elementIndex) => {
-        let romDataCopy = new Uint8Array(romData.rawBytes);
-        let romAddress = collectibleItems[elementIndex].romAddress;
-        let itemNumber = collectibleItems[elementIndex].itemNumber;
-        if (itemNumber < 0) {
-            return;
-        }
-        romDataCopy[romAddress] = itemNumber;
-        let file = new File([romDataCopy], "Zelda 2 Modified.nes", {type: "application/octet-stream"});
-        FileSaver.saveAs(file);
-    }
-
     let extraContent;
     if (location) {
         let {x, y, external, caveSeg, reserved, continent, mapSet, mapNumber, rightEnt, hPosEnt, passThrough, fallInto, _metadata} = location;
@@ -139,7 +127,6 @@ export default ({level, onStepChange, location}) => {
                                 <td style={{fontFamily: "monospace, monospace"}}>0x{objectNumber.toString(16).padStart(2, "0")}</td>
                                 <td>{object}</td>
                                 <td><HexValue>{_offset}</HexValue></td>
-                                <td><button onClick={() => { write(step) }}>Write</button></td>
                             </tr>
                         )
                     })}
