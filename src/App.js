@@ -21,7 +21,7 @@ function App() {
                 <Routes>
                     <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
                     <Route path={`${process.env.PUBLIC_URL}/maps/:mapSet/:mapNumber`} element={<Map />} />
-                    <Route path={`${process.env.PUBLIC_URL}/maps/:mapSet/:mapNumber/:locationKey`} element={<Map />} />
+                    <Route path={`${process.env.PUBLIC_URL}/maps/:locationKey`} element={<Map />} />
                     <Route path={`${process.env.PUBLIC_URL}/graph`} element={<Graph />} />
                     <Route path={`${process.env.PUBLIC_URL}/cdl`} element={<CDLViewer />} />
                     <Route path={`${process.env.PUBLIC_URL}/hex`} element={<HexViewer />} />

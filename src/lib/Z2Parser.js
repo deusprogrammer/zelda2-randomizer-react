@@ -11,7 +11,11 @@ import {
     extractMazeIslandSpriteMap,
     extractMazeIslandMapLocations,
     extractTextData,
-    isDigiShakeRando} from './zelda2/Z2Utils';
+    isDigiShakeRando,
+    combineLevelData,
+    createMap,
+    createLevelData
+} from './zelda2/Z2Utils';
 
 
 export const parse = (rom) => {
@@ -21,33 +25,57 @@ export const parse = (rom) => {
 
     let nesHeaders = extractNESHeaders(rom);
     let nesOffsets = calculateNESOffsets(nesHeaders);
-    let sideViewMaps = extractSideViewMapData(rom);
+
     let westHyruleMap = extractWestHyruleMapLocations(rom);
     let westHyruleSpriteMap = extractWestHyruleSpriteMap(rom, mode);
+
     let eastHyruleMap = extractEastHyruleMapLocations(rom);
     let eastHyruleSpriteMap = extractEastHyruleSpriteMap(rom, mode);
+
     let deathMountainHyruleMap = extractDeathMountainMapLocations(rom);
     let deathMountainHyruleSpriteMap = extractDeathMountainSpriteMap(rom, mode);
+
     let mazeIslandMountainHyruleMap = extractMazeIslandMapLocations(rom);
     let mazeIslandMountainHyruleSpriteMap = extractMazeIslandSpriteMap(rom, mode);
-    let textData = extractTextData(rom);
+
+    let sideViewMaps = extractSideViewMapData(rom);
     let levelExits = extractLevelExits(rom);
-    let mapData = [westHyruleMap, deathMountainHyruleMap, eastHyruleMap, mazeIslandMountainHyruleMap];
-    
+    sideViewMaps = combineLevelData(sideViewMaps, levelExits);
+
+    let textData = extractTextData(rom);
+
+    let overworld = [
+        { 
+            locations: westHyruleMap, 
+            spriteMap: westHyruleSpriteMap, 
+            worldNumber: 0, 
+            index: 0 
+        },
+        { 
+            locations: deathMountainHyruleMap, 
+            spriteMap: deathMountainHyruleSpriteMap, 
+            worldNumber: 1, 
+            index: 1 
+        },
+        { 
+            locations: eastHyruleMap, 
+            spriteMap: eastHyruleSpriteMap, 
+            worldNumber: 2, 
+            index: 2 
+        },
+        { 
+            locations: mazeIslandMountainHyruleMap, 
+            spriteMap: mazeIslandMountainHyruleSpriteMap, 
+            worldNumber: 1, 
+            index: 3 
+        }
+    ];
+
     return {
         nesHeaders,
         nesOffsets,
-        mapData,
+        overworld,
         sideViewMaps,
-        westHyruleMap,
-        westHyruleSpriteMap,
-        eastHyruleMap,
-        eastHyruleSpriteMap,
-        deathMountainHyruleMap,
-        deathMountainHyruleSpriteMap,
-        mazeIslandMountainHyruleMap,
-        mazeIslandMountainHyruleSpriteMap,
-        levelExits,
         textData,
         isDigiShake,
         rawBytes: rom

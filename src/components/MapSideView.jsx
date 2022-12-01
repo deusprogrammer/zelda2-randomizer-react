@@ -6,7 +6,7 @@ import MapSideViewData from "./MapSideViewData"
 import MapSideViewDisplay from "./MapSideViewDisplay"
 import MapSideViewExitData from "./MapSideViewExitData"
 
-export default ({location, levelExits, maps, mapNumber, mapSet}) => {
+export default ({location, map}) => {
     const [steps, setSteps] = useState(-1);
 
     return (
@@ -15,10 +15,10 @@ export default ({location, levelExits, maps, mapNumber, mapSet}) => {
             <div className="data-div">
                 <Link to={`${process.env.PUBLIC_URL}/`}><button>Back to World Map</button></Link>
             </div>
-            <MapSideViewDisplay steps={steps} level={maps[mapSet][mapNumber]} levelExitData={levelExits[mapSet][mapNumber]} mapSet={mapSet} />
+            <MapSideViewDisplay steps={steps} level={map} />
             <div style={{display: "flex", flexDirection: "row", gap: "10px", justifyContent: "center"}}>
-                <MapSideViewData location={location} onStepChange={(step) => {setSteps(step)}} level={maps[mapSet][mapNumber]} />
-                <MapSideViewExitData levelExitData={levelExits[mapSet][mapNumber]} />
+                <MapSideViewData location={location} onStepChange={(step) => {setSteps(step)}} level={map} />
+                <MapSideViewExitData level={map} />
             </div>
         </div>
     )

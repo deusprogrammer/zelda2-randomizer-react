@@ -14,7 +14,7 @@ export default (data) => {
 
     }
 
-    let {levelExitData: {upExit, leftExit, downExit, rightExit}} = exitData;
+    let {levelExitData: {exits: {upExit, leftExit, downExit, rightExit}}} = exitData;
     return (
         <div className="level-exit-data">
             <h5>Level Exits</h5>

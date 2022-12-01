@@ -2,6 +2,25 @@ import { getValueFromMap }  from "../Utils";
 
 const LAST_BIT_MASK = 1 >>> 0;
 
+export const writeFieldToROM = (object, field, bytes) => {
+    let romDataCopy = new Uint8Array(bytes);
+    let {offset: romAddress, relOffset: fieldRelOffset, fields} = object._metadata[field];
+    let relatedFields = fields.filter(({relOffset, name}) => relOffset === fieldRelOffset);
+    
+    let byte = 0x0;
+    relatedFields.forEach(({mask, name}) => {
+        let value = object[name];
+        console.log(name + " => " + value.toString(2));
+        while ((mask & LAST_BIT_MASK) === 0) {
+            mask = mask >> 1;
+            value = value << 1;
+        }
+        byte += value;
+    });
+
+    romDataCopy[romAddress] = byte;
+}
+
 export const littleEndianConvert = (buffer) => {
     let n = 0;
     for (let i = buffer.length - 1; i >= 0; i--) {
@@ -51,11 +70,7 @@ export const extractFields = (fields, buffer, offset) => {
         element[name] = maskBits(fieldBytes, mask);
         metadata[name] = {
             offset: fieldOffset,
-            name,
-            size,
-            relOffset,
-            mask,
-            fields
+            bitFields: fields.filter(({relOffset: fieldRelOffset}) => fieldRelOffset === relOffset)
         }
     }
     element._offset = offset;

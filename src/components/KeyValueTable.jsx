@@ -23,11 +23,10 @@ export default ({map, keyMap, showHex, editable}) => {
 
     const writeToROM = (field) => {
         let romDataCopy = new Uint8Array(romData.rawBytes);
-        let {offset: romAddress, relOffset: fieldRelOffset, fields} = mapCache._metadata[field];
-        let relatedFields = fields.filter(({relOffset, name}) => relOffset === fieldRelOffset);
+        let {offset: romAddress, bitFields} = mapCache._metadata[field];
         
         let byte = 0x0;
-        relatedFields.forEach(({mask, name}) => {
+        bitFields.forEach(({mask, name}) => {
             let value = mapCache[name];
             console.log(name + " => " + value.toString(2));
             while ((mask & LAST_BIT_MASK) === 0) {

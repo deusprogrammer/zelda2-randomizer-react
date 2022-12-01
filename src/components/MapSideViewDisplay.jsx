@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router";
 import { drawMap } from "../lib/zelda2/Z2Utils"
 
-export default ({level, levelExitData, mapSet, steps}) => {
+export default ({level, steps}) => {
     const navigate = useNavigate();
+
+    let {exit: levelExitData, mapSetNumber: mapSet} = level;
 
     const drawSideView = (level, steps) => {
         let mapBuffer = drawMap(level, null, steps);

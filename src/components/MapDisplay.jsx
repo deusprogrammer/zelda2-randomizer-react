@@ -21,14 +21,14 @@ const OVERWORLD_SPRITE_SYMBOLS = [
     {name: "Spider", c: "*", color: "white", backgroundColor: "red"}
 ]
 
-export default ({maps, levelExits, spriteMap, locationData, continent: continentNumber}) => {
+export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
     const [selectedSquare, setSelectedSquare] = useState("");
     const navigate = useNavigate();
 
-    const printSpriteMap = (mapObject, locations) => {
+    const printSpriteMap = () => {
         let mapBlocks = [];
         let i = 0;
-        for (let sprite of mapObject) {
+        for (let sprite of spriteMap) {
             for (let j = 0; j < sprite.length + 1; j++) {
                 let x = i % 64;
                 let y = Math.floor(i / 64);
@@ -43,20 +43,20 @@ export default ({maps, levelExits, spriteMap, locationData, continent: continent
                 if (found) {
                     let {mapNumber, mapSet, continent} = locations[found];
                     if (mapSet === 0 && continent === 0) {      // Overworld
-                        mapSet = continentNumber;
+                        mapSet = worldNumber;
                     } else if (mapSet === 1 || mapSet === 2) {  // Towns
                         mapSet = 4;
                     } else if (mapSet > 2) {
                         mapSet = mapSet + 2;                    // Palaces
                     }
 
-                    let items = explore(maps, levelExits, mapNumber, mapSet);
+                    let items = explore(maps, mapSet, mapNumber);
 
                     mapBlocks.push(
                         <div 
                             className={`map-square blinking`} 
                             style={{color, backgroundColor}}
-                            onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}/${found}`)}}
+                            onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${found}`)}}
                             onMouseEnter={() => {setSelectedSquare({id: found, name, x, y: y + 30, items})}}
                             onMouseLeave={() => {setSelectedSquare(null)}}
                         >
@@ -90,7 +90,7 @@ export default ({maps, levelExits, spriteMap, locationData, continent: continent
                 </div>
                 : null
             }
-            {printSpriteMap(spriteMap, locationData)}
+            {printSpriteMap()}
         </div>
     )
 }

@@ -5,31 +5,32 @@ import { useNavigate, useParams, useLocation } from "react-router";
 import { romAtom } from "../atoms/rom.atom";
 import MapSideView from "../components/MapSideView";
 import { useState } from 'react';
+import { getLocationByKey, getMap, getMapByKey } from '../lib/zelda2/Z2Utils';
 
 export default () => {
     const [ romData ] = useAtom(romAtom);
-    const { mapNumber, mapSet, locationKey } = useParams();
-    const [ navFormData, setNavFormData ] = useState({mapSet, mapNumber});
+    let { mapNumber, mapSet, locationKey } = useParams();
+    // const [ navFormData, setNavFormData ] = useState({mapSet, mapNumber});
     const { pathname } = useLocation();
     const navigate = useNavigate();
 
-    const updateNavForm = (key, value) => {
-        let {mapSet, mapNumber} = navFormData;
-        if (key === "mapSet") {
-            mapSet = value;
-        } else {
-            mapNumber = value;
-        }
-        navigate(`/maps/${mapSet}/${mapNumber}`);
-    }
+    // const updateNavForm = (key, value) => {
+    //     let {mapSet, mapNumber} = navFormData;
+    //     if (key === "mapSet") {
+    //         mapSet = value;
+    //     } else {
+    //         mapNumber = value;
+    //     }
+    //     navigate(`/maps/${mapSet}/${mapNumber}`);
+    // }
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    useEffect(() => {
-        setNavFormData({mapSet, mapNumber});
-    }, [mapSet, mapNumber]);
+    // useEffect(() => {
+    //     setNavFormData({mapSet, mapNumber});
+    // }, [mapSet, mapNumber]);
 
     if (!romData || mapNumber == 63) {
         navigate(`${process.env.PUBLIC_URL}/`);
@@ -40,24 +41,24 @@ export default () => {
         console.log("HIIIIII!  I'M DERPY BARBA!");
     }
 
-    let location = null;
-    for (let map of romData.mapData) {
-        let found = Object.keys(map).find(key => key === locationKey);
-
-        if (found) {
-            location = map[found];
-            break;
-        }
+    let location, map;
+    if (locationKey) {
+        location = getLocationByKey(romData.overworld, locationKey);
+        map = getMapByKey(locationKey);
+        mapSet = location.mapSet;
+        mapNumber = location.mapNumber;
+    } else {
+        map = romData.sideViewMaps[mapSet][mapNumber];
     }
 
     return (
         <>
             <h2>Map</h2>
-            <div style={{textAlign: "center"}}>
+            {/* <div style={{textAlign: "center"}}>
                 <input type="number" onChange={({target: {value}}) => {updateNavForm("mapSet", value)}} value={navFormData.mapSet} />:
                 <input type="number" onChange={({target: {value}}) => {updateNavForm("mapNumber", value)}} value={navFormData.mapNumber} />
-            </div>
-            <MapSideView location={location} maps={romData.sideViewMaps} levelExits={romData.levelExits} mapNumber={mapNumber} mapSet={mapSet} />
+            </div> */}
+            <MapSideView location={location} map={map} />
             {mapSet === "6" && mapNumber === "58" ? <img src={`${process.env.PUBLIC_URL}/derpybarba.png`} className="popup" /> : null}
         </>
     )

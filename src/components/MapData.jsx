@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 import { WORLD_INDEX_MAPPINGS, WORLD_MAPPINGS } from "../lib/zelda2/Z2Data";
 import HexValue from "./HexValue";
 
-export default ({locationData, continent : continentNumber}) => {
+export default ({overworld: {locations, worldNumber}}) => {
     const navigate = useNavigate();
 
     return (
@@ -23,11 +23,11 @@ export default ({locationData, continent : continentNumber}) => {
                 <th>fallInto</th>
                 <th>ROM Address</th>
             </tr>
-            {Object.keys(locationData).filter(key => !key.startsWith("_")).map((key) => {
-                let {x, y, external, caveSeg, reserved, mapNumber, continent, hPosEnt, mapSet, rightEnt, passThrough, fallInto, _offset} = locationData[key];
+            {Object.keys(locations).filter(key => !key.startsWith("_")).map((key) => {
+                let {x, y, external, caveSeg, reserved, mapNumber, continent, hPosEnt, mapSet, rightEnt, passThrough, fallInto, _offset} = locations[key];
                 let mapIndex;
                 if (mapSet === 0 && continent === 0) {      // Overworld
-                    mapIndex = continentNumber;
+                    mapIndex = worldNumber;
                 } else if (mapSet === 1 || mapSet === 2) {  // Towns
                     mapIndex = 4;
                 } else if (mapSet > 2) {
@@ -35,7 +35,7 @@ export default ({locationData, continent : continentNumber}) => {
                 }
 
                 return (
-                    <tr onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapIndex}/${mapNumber}/${key}`)}}>
+                    <tr onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${key}`)}}>
                         <td>{key}</td>
                         <td>{x}</td>
                         <td>{y}</td>

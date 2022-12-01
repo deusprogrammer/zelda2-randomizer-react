@@ -74,27 +74,27 @@ export default () => {
 
                 <h3>West Hyrule</h3>
                 <h4>Data</h4>
-                <MapData locationData={romData.westHyruleMap} continent={0} />
+                <MapData overworld={romData.overworld[0]} continent={0} />
                 <h4>Map</h4>
-                <MapDisplay id="map-0" maps={romData.sideViewMaps} levelExits={romData.levelExits} locationData={romData.westHyruleMap} spriteMap={romData.westHyruleSpriteMap} continent={0} />
+                <MapDisplay id="map-0" maps={romData.sideViewMaps} overworld={romData.overworld[0]} />
 
                 <h3>Death Mountain</h3>
                 <h4>Data</h4>
-                <MapData locationData={romData.deathMountainHyruleMap} continent={1} />
+                <MapData overworld={romData.overworld[1]} continent={1} />
                 <h4>Map</h4>
-                <MapDisplay id="map-1" maps={romData.sideViewMaps} levelExits={romData.levelExits} locationData={romData.deathMountainHyruleMap} spriteMap={romData.deathMountainHyruleSpriteMap} continent={1} />
+                <MapDisplay id="map-1" maps={romData.sideViewMaps} overworld={romData.overworld[1]} />
 
                 <h3>East Hyrule</h3>
                 <h4>Data</h4>
-                <MapData locationData={romData.eastHyruleMap} continent={2} />
+                <MapData overworld={romData.overworld[2]} continent={2} />
                 <h4>Map</h4>
-                <MapDisplay id="map-2" maps={romData.sideViewMaps} levelExits={romData.levelExits} locationData={romData.eastHyruleMap} spriteMap={romData.eastHyruleSpriteMap} continent={2} />
+                <MapDisplay id="map-2" maps={romData.sideViewMaps} overworld={romData.overworld[2]} />
                 
                 <h3>Maze Island</h3>
                 <h4>Data</h4>
-                <MapData locationData={romData.mazeIslandMountainHyruleMap} continent={1} />
+                <MapData overworld={romData.overworld[3]} continent={1} />
                 <h4>Map</h4>
-                <MapDisplay id="map-3" maps={romData.sideViewMaps} levelExits={romData.levelExits} locationData={romData.mazeIslandMountainHyruleMap} spriteMap={romData.mazeIslandMountainHyruleSpriteMap} continent={1} />
+                <MapDisplay id="map-3" maps={romData.sideViewMaps} overworld={romData.overworld[3]} />
             </div>
         );
     }

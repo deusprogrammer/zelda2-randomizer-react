@@ -30,15 +30,33 @@ const {
     TEXT_DATA_OFFSET,
     TEXT_DATA_LENGTH,
     BACKMAP_POINTER_BANK_OFFSETS,
-    DIGISHAKE_CREDIT_OFFSET,
-    LEVEL_EXIT_BLOCK} = require("./Z2MemoryMappings");
+    DIGISHAKE_CREDIT_OFFSET} = require("./Z2MemoryMappings");
 
 export const WIDTH_OF_SCREEN  = 16;
 export const HEIGHT_OF_SCREEN = 16;
 
-const CHARACTER_MAP = {0x32: '*', 0x34: '?', 0x36: '!', 0x9C: ',', 0xCE: '/', 0xCF: '.', 0xF7: 'l', 0xF8: 't', 0xF9: 'm', 0xFC: 'x', 0xFD: '\n', 0xFE: '\n', 0xF4: ' ', 0xF5: ' '};
+export const CHARACTER_MAP = {0x32: '*', 0x34: '?', 0x36: '!', 0x9C: ',', 0xCE: '/', 0xCF: '.', 0xF7: 'l', 0xF8: 't', 0xF9: 'm', 0xFC: 'x', 0xFD: '\n', 0xFE: '\n', 0xF4: ' ', 0xF5: ' '};
 
 export const ITEM_MAP      = ["candle", "glove", "raft", "boots", "recorder", "cross", "hammer", "magic key", "key", "", "50p bag", "100p bag", "200p bag", "500p bag", "magic container", "heart container", "blue jar", "red jar", "1up", "medicine", "trophy", "child"];
+
+export const OVERWORLD_SPRITE_SYMBOLS = [
+    {name: "Town", c: "T", color: "white", backgroundColor: "red"},
+    {name: "Cave", c: " ", color: "white", backgroundColor: "black"},
+    {name: "Palace", c: "P", color: "white", backgroundColor: "red"},
+    {name: "Bridge", c: "=", color: "black", backgroundColor: "yellow"},
+    {name: "Desert", c: " ", color: "white", backgroundColor: "sandybrown"},
+    {name: "Grass", c: " ", color: "white", backgroundColor: "lightgreen"},
+    {name: "Forest", c: " ", color: "white", backgroundColor: "green"},
+    {name: "Swamp", c: "~", color: "white", backgroundColor: "purple"},
+    {name: "Cemetary", c: "+", color: "white", backgroundColor: "purple"},
+    {name: "Road", c: " ", color: "white", backgroundColor: "peachpuff"},
+    {name: "Lava", c: " ", color: "white", backgroundColor: "crimson"},
+    {name: "Mountains", c: "^", color: "white", backgroundColor: "brown"},
+    {name: "Water", c: "~", color: "white", backgroundColor: "blue"},
+    {name: "Shallow Water", c: "~", color: "white", backgroundColor: "lightblue"},
+    {name: "Boulder", c: "O", color: "white", backgroundColor: "brown"},
+    {name: "Spider", c: "*", color: "white", backgroundColor: "red"}
+]
 
 export const DRAWING_OP = {
     0xD: "CHANGE FLOOR LEVEL",
@@ -51,37 +69,6 @@ export const SUB_OP_MAP = {
     C: "CEILING",
     W: "WALL"
 }
-
-// const debugElement = (element, type, objectSet = 0) => {
-//     let v = {
-//         ...element,
-//         yPosition: "0x" + element.yPosition.toString(16),
-//         objectNumber: "0x" + (element.objectNumber & 0b00001111).toString(16)
-//     };
-
-//     if (element.yPosition > 0xC) {
-//         let opData = element.objectNumber & 0b00001111;
-//         let subOp = null;
-//         [opData, subOp] = getFloorPosition(opData);
-//         subOp = SUB_OP_MAP[subOp];
-//         v.noCeiling = maskBits(element.objectNumber, 0b10000000) !== 0;
-//         v.op = DRAWING_OP[element.yPosition];
-//         v.subOp = subOp;
-//         v.opData = opData;
-//     } else {
-//         let objectNumber = element.objectNumber;
-//         let object = null;
-//         if (type === "LARGE") {
-//             objectNumber = objectNumber & 0b00001111;
-//             object = OVERWORLD_LARGE_OBJECTS[objectSet][objectNumber].name;
-//         } else if (type === "SMALL") {
-//             object = OVERWORLD_SMALL_OBJECTS[objectNumber].name;
-//         }
-//         v.object = object;
-//     }
-
-//     return v;
-// }
 
 export const readUint16 = (buffer, offset) => {
     let bytes = buffer.slice(offset, offset + 2);
@@ -292,6 +279,22 @@ export const extractLevelExits = (buffer) => {
     }
 
     return mapSets;
+}
+
+export const combineLevelData = (sideViewMapSets, levelExits) => {
+    return sideViewMapSets.map((sideViewMapSet, i) => {
+        return createLevelData(sideViewMapSet, levelExits[i]);
+    });
+}
+
+export const createLevelData = (sideViewMapSet, levelExits) => {
+    return sideViewMapSet.map((sideViewMap, i) => {
+        let exits = levelExits[i];
+        return {
+            ...sideViewMap,
+            exits
+        };
+    });
 }
 
 export const z2BytesToString = (bytes) => {
@@ -615,9 +618,10 @@ export const createVanillaNodeMapping = (graphData, mapData) => {
     return template;
 }
 
-export const getLocationByKey = (romData, locationKey) => {
+export const getLocationByKey = (overworld, locationKey) => {
     let location = null;
-    for (let map of romData.mapData) {
+    for (let i in overworld) {
+        let map = overworld[i].locations;
         let found = Object.keys(map).find(key => key === locationKey);
 
         if (found) {
@@ -635,13 +639,14 @@ export const isDigiShakeRando = (rom) => {
     return creditsLine2.trim() === "DIGSHAKE";
 }
 
-export const explore = (maps, levelExits, mapNumber, mapSet, explored = []) => {
+export const explore = (maps, mapSet, mapNumber, explored = []) => {
     let items = [];
     if (mapNumber === 63 || explored.includes(mapNumber)) {
         return [];
     }
 
     let currentMap = maps[mapSet][mapNumber];
+    let levelExits = currentMap.exits;
 
     currentMap.levelElements.forEach(({collectableObjectNumber}) => {
         if (collectableObjectNumber !== undefined) {
@@ -649,25 +654,48 @@ export const explore = (maps, levelExits, mapNumber, mapSet, explored = []) => {
         }
     });
 
-    const {upExit, downExit, leftExit, rightExit} = levelExits[mapSet][mapNumber];
+    const {upExit, downExit, leftExit, rightExit} = levelExits;
     explored.push(mapNumber);
 
     // Explore up
     if (upExit.mapNumber > 0 || upExit.xCoord > 0) {
-        items = [...items, ...explore(maps, levelExits, upExit.mapNumber, mapSet, explored)];
+        items = [...items, ...explore(maps, mapSet, upExit.mapNumber, explored)];
     }
     // Explore down
     if (downExit.mapNumber > 0 || downExit.xCoord > 0) {
-        items = [...items, ...explore(maps, levelExits, downExit.mapNumber, mapSet, explored)];
+        items = [...items, ...explore(maps, mapSet, downExit.mapNumber, explored)];
     }
     // Explore left
     if (leftExit.mapNumber > 0 || leftExit.xCoord > 0) {
-        items = [...items, ...explore(maps, levelExits, leftExit.mapNumber, mapSet, explored)];
+        items = [...items, ...explore(maps, mapSet, leftExit.mapNumber, explored)];
     }
     // Explore right
     if (rightExit.mapNumber > 0 || rightExit.xCoord > 0) {
-        items = [...items, ...explore(maps, levelExits, rightExit.mapNumber, mapSet, explored)];
+        items = [...items, ...explore(maps, mapSet, rightExit.mapNumber, explored)];
     }
 
     return items;
+}
+
+export const getMapByKey = (locationKey, continent, locations, maps) => {
+    let foundLocation;
+    for (let location of locations) {
+        let found = Object.keys(location).find(key => key === locationKey);
+
+        if (found) {
+            foundLocation = location[found];
+            break;
+        }
+    }
+
+    let {mapSet, worldNumber, mapNumber} = foundLocation;
+    if (mapSet === 0 && worldNumber === 0) {      // Overworld
+        mapSet = continent;
+    } else if (mapSet === 1 || mapSet === 2) {  // Towns
+        mapSet = 4;
+    } else if (mapSet > 2) {
+        mapSet = mapSet + 2;                    // Palaces
+    }
+
+    return maps[mapSet][mapNumber];
 }
