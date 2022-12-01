@@ -1,7 +1,7 @@
 export default {
     "BAGUS_CABIN": {
         "id": "BAGUS_CABIN",
-        "type": "OTHER",
+        "type": "TOWN",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 1,
@@ -86,7 +86,7 @@ export default {
     },
     "BUBBLE_CLIFF": {
         "id": "BUBBLE_CLIFF",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -2804,7 +2804,7 @@ export default {
     },
     "DAZZLE_LIFE": {
         "id": "DAZZLE_LIFE",
-        "type": "OTHER",
+        "type": "DESERT",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -2889,7 +2889,7 @@ export default {
     },
     "DEATH_VALLEY_500P_BAG": {
         "id": "DEATH_VALLEY_500P_BAG",
-        "type": "OTHER",
+        "type": "LAVA",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -2974,7 +2974,7 @@ export default {
     },
     "DEATH_VALLEY_BATTLE_1": {
         "id": "DEATH_VALLEY_BATTLE_1",
-        "type": "OTHER",
+        "type": "LAVA",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -3057,7 +3057,7 @@ export default {
     },
     "DEATH_VALLEY_BATTLE_2": {
         "id": "DEATH_VALLEY_BATTLE_2",
-        "type": "OTHER",
+        "type": "LAVA",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -3140,7 +3140,7 @@ export default {
     },
     "DEATH_VALLEY_BATTLE_3": {
         "id": "DEATH_VALLEY_BATTLE_3",
-        "type": "OTHER",
+        "type": "LAVA",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -3563,7 +3563,7 @@ export default {
     },
     "DEATH_VALLEY_RED_JAR": {
         "id": "DEATH_VALLEY_RED_JAR",
-        "type": "OTHER",
+        "type": "LAVA",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -3816,7 +3816,7 @@ export default {
     },
     "DM_ENTRANCE": {
         "id": "DM_ENTRANCE",
-        "type": "OTHER",
+        "type": "CAVE",
         "continent": 0,
         "worldNumber": 1,
         "mapSet": 0,
@@ -3901,7 +3901,7 @@ export default {
     },
     "DM_EXIT": {
         "id": "DM_EXIT",
-        "type": "OTHER",
+        "type": "CAVE",
         "continent": 0,
         "worldNumber": 1,
         "mapSet": 0,
@@ -3986,7 +3986,7 @@ export default {
     },
     "DM_MAGIC": {
         "id": "DM_MAGIC",
-        "type": "OTHER",
+        "type": "CAVE",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -4842,7 +4842,7 @@ export default {
     },
     "EX_LIFE_BEACH": {
         "id": "EX_LIFE_BEACH",
-        "type": "OTHER",
+        "type": "DESERT",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -4925,7 +4925,7 @@ export default {
     },
     "EX_LIFE_SWAMP_1": {
         "id": "EX_LIFE_SWAMP_1",
-        "type": "OTHER",
+        "type": "SWAMP",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -5095,7 +5095,7 @@ export default {
     },
     "FAIRY_CAVE_HOLE": {
         "id": "FAIRY_CAVE_HOLE",
-        "type": "CAVE",
+        "type": "CEMETARY",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -5609,7 +5609,7 @@ export default {
     },
     "FIRE_TOWN_FAIRY": {
         "id": "FIRE_TOWN_FAIRY",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -5694,7 +5694,7 @@ export default {
     },
     "FIRE_TOWN_FOREST_500P_BAG": {
         "id": "FIRE_TOWN_FOREST_500P_BAG",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -5779,7 +5779,7 @@ export default {
     },
     "FIRE_TOWN_RED_JAR": {
         "id": "FIRE_TOWN_RED_JAR",
-        "type": "OTHER",
+        "type": "DESERT",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -5864,7 +5864,7 @@ export default {
     },
     "FOREST_100P": {
         "id": "FOREST_100P",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -5949,7 +5949,7 @@ export default {
     },
     "FOREST_50P": {
         "id": "FOREST_50P",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -6295,7 +6295,7 @@ export default {
     },
     "HEART_CLIFF": {
         "id": "HEART_CLIFF",
-        "type": "OTHER",
+        "type": "GRASS",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -6639,7 +6639,7 @@ export default {
     },
     "KINGS_TOMB": {
         "id": "KINGS_TOMB",
-        "type": "OTHER",
+        "type": "CEMETARY",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 1,
@@ -6888,7 +6888,7 @@ export default {
     },
     "LIFE_TOWN_FAIRY": {
         "id": "LIFE_TOWN_FAIRY",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -7149,7 +7149,7 @@ export default {
     },
     "LOST_WOODS_1": {
         "id": "LOST_WOODS_1",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -7232,7 +7232,7 @@ export default {
     },
     "LOST_WOODS_2": {
         "id": "LOST_WOODS_2",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -7315,7 +7315,7 @@ export default {
     },
     "LOST_WOODS_3": {
         "id": "LOST_WOODS_3",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -7398,7 +7398,7 @@ export default {
     },
     "LOST_WOODS_4": {
         "id": "LOST_WOODS_4",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -7481,7 +7481,7 @@ export default {
     },
     "LOST_WOODS_5": {
         "id": "LOST_WOODS_5",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -7734,7 +7734,7 @@ export default {
     },
     "MAZE_ISLAND_CHILD": {
         "id": "MAZE_ISLAND_CHILD",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -7819,7 +7819,7 @@ export default {
     },
     "MAZE_ISLAND_FORCED_BATTLE_1": {
         "id": "MAZE_ISLAND_FORCED_BATTLE_1",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -7902,7 +7902,7 @@ export default {
     },
     "MAZE_ISLAND_FORCED_BATTLE_2": {
         "id": "MAZE_ISLAND_FORCED_BATTLE_2",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -7985,7 +7985,7 @@ export default {
     },
     "MAZE_ISLAND_FORCED_BATTLE_3": {
         "id": "MAZE_ISLAND_FORCED_BATTLE_3",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -8068,7 +8068,7 @@ export default {
     },
     "MAZE_ISLAND_FORCED_BATTLE_4": {
         "id": "MAZE_ISLAND_FORCED_BATTLE_4",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -8151,7 +8151,7 @@ export default {
     },
     "MAZE_ISLAND_FORCED_BATTLE_5": {
         "id": "MAZE_ISLAND_FORCED_BATTLE_5",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -8234,7 +8234,7 @@ export default {
     },
     "MAZE_ISLAND_FORCED_BATTLE_6": {
         "id": "MAZE_ISLAND_FORCED_BATTLE_6",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -8317,7 +8317,7 @@ export default {
     },
     "MAZE_ISLAND_FORCED_BATTLE_7": {
         "id": "MAZE_ISLAND_FORCED_BATTLE_7",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -8400,7 +8400,7 @@ export default {
     },
     "MAZE_ISLAND_MAGIC": {
         "id": "MAZE_ISLAND_MAGIC",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 1,
         "worldNumber": 0,
         "mapSet": 0,
@@ -8568,7 +8568,7 @@ export default {
     },
     "MEDICINE_CAVE_FAIRY": {
         "id": "MEDICINE_CAVE_FAIRY",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -8577,9 +8577,7 @@ export default {
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
-        "items": [
-            "SMALL_ITEM"
-        ],
+        "items": [],
         "itemRequirements": [],
         "entryRequirements": [],
         "completionRequirements": [],
@@ -8653,7 +8651,7 @@ export default {
     },
     "NORTH_CASTLE": {
         "id": "NORTH_CASTLE",
-        "type": "OTHER",
+        "type": "START",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -9248,7 +9246,7 @@ export default {
     },
     "P5_500P_BAG": {
         "id": "P5_500P_BAG",
-        "type": "OTHER",
+        "type": "DESERT",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -9333,7 +9331,7 @@ export default {
     },
     "P5_HEART": {
         "id": "P5_HEART",
-        "type": "OTHER",
+        "type": "SHALLOWS",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -9503,7 +9501,7 @@ export default {
     },
     "P6_500P_BAG": {
         "id": "P6_500P_BAG",
-        "type": "OTHER",
+        "type": "FOREST",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -9588,7 +9586,7 @@ export default {
     },
     "P6_HEART": {
         "id": "P6_HEART",
-        "type": "OTHER",
+        "type": "DESERT",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -10021,7 +10019,7 @@ export default {
     },
     "RED_JAR_CEM": {
         "id": "RED_JAR_CEM",
-        "type": "OTHER",
+        "type": "CEMETARY",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -10104,7 +10102,7 @@ export default {
     },
     "RED_JAR_SWAMP": {
         "id": "RED_JAR_SWAMP",
-        "type": "OTHER",
+        "type": "SWAMP",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,
@@ -10276,7 +10274,7 @@ export default {
     },
     "REFLECT_TOWN_CLIFF_1": {
         "id": "REFLECT_TOWN_CLIFF_1",
-        "type": "OTHER",
+        "type": "DESERT",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -10359,7 +10357,7 @@ export default {
     },
     "REFLECT_TOWN_CLIFF_2": {
         "id": "REFLECT_TOWN_CLIFF_2",
-        "type": "OTHER",
+        "type": "DESERT",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -11118,7 +11116,7 @@ export default {
     },
     "THUNDER_TOWN_SWAMP_LIFE": {
         "id": "THUNDER_TOWN_SWAMP_LIFE",
-        "type": "OTHER",
+        "type": "SWAMP",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -11211,7 +11209,7 @@ export default {
         "abilityRequirements": [],
         "spellRequirements": [],
         "items": [
-            "SMALL_ITEM"
+            "LARGE_ITEM"
         ],
         "itemRequirements": [],
         "entryRequirements": [],
@@ -11286,7 +11284,7 @@ export default {
     },
     "WILSON_FENCE_1": {
         "id": "WILSON_FENCE_1",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -11369,7 +11367,7 @@ export default {
     },
     "WILSON_FENCE_2": {
         "id": "WILSON_FENCE_2",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -11452,7 +11450,7 @@ export default {
     },
     "WILSON_FENCE_3": {
         "id": "WILSON_FENCE_3",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,
@@ -11535,7 +11533,7 @@ export default {
     },
     "WILSON_FENCE_4": {
         "id": "WILSON_FENCE_4",
-        "type": "OTHER",
+        "type": "PATH",
         "continent": 2,
         "worldNumber": 0,
         "mapSet": 0,

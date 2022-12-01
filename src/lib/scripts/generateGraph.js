@@ -1,5 +1,5 @@
 import graphData from '../zelda2/templates/z2-vanilla.graph';
-import locationMeta from '../zelda2/templates/z2-location.v2.meta';
+import locationMeta from '../zelda2/templates/z2-location.v3.meta';
 
 const generateNodeMap = (graphData) => {
     let nodeMap = {};
@@ -20,6 +20,7 @@ Object.keys(graphData).forEach(key => {
         id,
         type,
         continent, 
+        worldNumber,
         mapSet, 
         mapNumber, 
         passThrough,
@@ -31,7 +32,9 @@ Object.keys(graphData).forEach(key => {
         abilityRequirements, 
         spellRequirements, 
         itemRequirements, 
-        linkRequirements } = locationMeta[key];
+        linkRequirements,
+        romMetaData
+    } = locationMeta[key];
 
     let {
         subArea,
@@ -44,7 +47,8 @@ Object.keys(graphData).forEach(key => {
     newGraph[nodeMap[key]] = {
         id, 
         type, 
-        continent, 
+        continent,
+        worldNumber, 
         mapSet, 
         mapNumber, 
         passThrough: passThrough === 1 ? true : false, 
@@ -63,7 +67,8 @@ Object.keys(graphData).forEach(key => {
             map: map || 0,
             area: area || 0,
             subArea: subArea || 0
-        }
+        },
+        romMetaData
     }
     newGraph[nodeMap[key]].connections = newGraph[nodeMap[key]].connections.filter(connection => !newGraph[nodeMap[key]].links.includes(connection)).map(key => nodeMap[key]);
     newGraph[nodeMap[key]].links = newGraph[nodeMap[key]].links.map(key => nodeMap[key]);
