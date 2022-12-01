@@ -669,7 +669,7 @@ export const getLocationByKey = (romData, locationKey) => {
         let found = Object.keys(map).find(key => key === locationKey);
 
         if (found) {
-            location = [map[found], i];
+            location = [map[found], parseInt(i)];
             break;
         }
     }
