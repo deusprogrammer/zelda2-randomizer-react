@@ -9,9 +9,12 @@ import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import CDLViewer from './routes/CDLViewer';
 import HexViewer from './routes/HexViewer';
+import { useAtom } from 'jotai';
+import { romAtom } from './atoms/rom.atom';
+import FileSaver from 'file-saver';
 
-function App() {
-
+const App = () => {
+    const [romData] = useAtom(romAtom);
 
     return (
         <div>

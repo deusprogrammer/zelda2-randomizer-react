@@ -31,11 +31,11 @@ export default ({overworld: {locations, worldNumber}}) => {
                 } else if (mapSet === 1 || mapSet === 2) {  // Towns
                     mapIndex = 4;
                 } else if (mapSet > 2) {
-                    mapIndex = mapSet + 2;                    // Palaces
+                    mapIndex = mapSet + 2;                  // Palaces
                 }
 
                 return (
-                    <tr onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${key}`)}}>
+                    <tr key={key} onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${key}`)}}>
                         <td>{key}</td>
                         <td>{x}</td>
                         <td>{y}</td>

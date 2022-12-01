@@ -8,6 +8,7 @@ import MapData from '../components/MapData';
 import MapDisplay from '../components/MapDisplay';
 import { romAtom } from '../atoms/rom.atom';
 import KeyValueTable from '../components/KeyValueTable';
+import FileSaver from 'file-saver';
 
 export default () => {
     const [ romData, setRomData ] = useAtom(romAtom);
@@ -58,8 +59,16 @@ export default () => {
                 }} />
                 <h3>Actions</h3>
                 <div className="data-div">
+                    <h4>Viewing</h4>
                     <Link to={`${process.env.PUBLIC_URL}/hex`}><button>Hex Viewer</button></Link><br/>
                     <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link><br/>
+                    <h4>ROM</h4>
+                    <button onClick={() => {
+                        let file = new File([romData.rawBytes], "Zelda 2.modified.nes", {type: "application/octet-stream"});
+                        FileSaver.saveAs(file);
+                    }}>
+                        Download Current ROM
+                    </button><br />
                     <button onClick={() => {setRomData(null)}}>Close ROM</button>
                 </div>
 

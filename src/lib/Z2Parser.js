@@ -12,9 +12,7 @@ import {
     extractMazeIslandMapLocations,
     extractTextData,
     isDigiShakeRando,
-    combineLevelData,
-    createMap,
-    createLevelData
+    combineLevelData
 } from './zelda2/Z2Utils';
 
 

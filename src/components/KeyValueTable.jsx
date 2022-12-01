@@ -1,15 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import { romAtom } from "../atoms/rom.atom";
 import HexValue from "./HexValue";
-import FileSaver from "file-saver";
-import { maskBits } from "../lib/memory/HexTools";
-
-const LAST_BIT_MASK = 0x01 >>> 0;
+import { writeFieldToROM } from "../lib/memory/HexTools";
+import parse from "../lib/Z2Parser";
+import { toast } from "react-toastify";
 
 export default ({map, keyMap, showHex, editable}) => {
     const [mapCache, updateMapCache] = useState({...map});
-    const [romData] = useAtom(romAtom);
+    const [romData, setRomData] = useAtom(romAtom);
 
     if (editable === undefined || editable === null) {
         editable = true;
@@ -19,6 +18,16 @@ export default ({map, keyMap, showHex, editable}) => {
         let copy = {...mapCache};
         copy[key] = value;
         updateMapCache(copy);
+    }
+
+    const writeData = (key) => {
+        try {
+            let updatedBytes = writeFieldToROM(mapCache, key, romData.rawBytes);
+            setRomData(parse(updatedBytes));
+            toast("ROM has been updated", {type: "success"});
+        } catch (error) {
+            toast("Failed to update ROM", {type: "error"});
+        }
     }
 
     if (!map) {
@@ -39,9 +48,15 @@ export default ({map, keyMap, showHex, editable}) => {
             { Object.keys(mapCache).filter(key => !key.startsWith("_")).map((key) => {
                     let value = mapCache[key];
                     return (
-                        <tr>
+                        <tr key={key}>
                             <td>{keyMap ? keyMap[key] : key}</td>
-                            <td>{editable ? <input type="text" onChange={({target: {value: v}}) => {updateField(key, v)}} value={value}/> : value}</td>
+                            <td>{editable ? 
+                                <input 
+                                    type="text" 
+                                    onBlur={({target: {value: v}}) => {writeData(key)}}
+                                    onChange={({target: {value: v}}) => {updateField(key, v)}} 
+                                    value={value}/> : value}
+                            </td>
                             {showHex ? <td>{map._metadata && map._metadata[key] ? <HexValue>{map._metadata[key].offset}</HexValue> : null}</td> : null}
                         </tr>
                     )

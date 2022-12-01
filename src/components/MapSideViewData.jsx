@@ -6,10 +6,11 @@ import { LARGE_OBJECT_SETS, SMALL_OBJECTS } from "../lib/zelda2/Z2Data";
 import { ITEM_MAP } from '../lib/zelda2/Z2Utils';
 import HexValue from './HexValue';
 import KeyValueTable from './KeyValueTable';
-import FileSaver from "file-saver";
+import { writeFieldToROM } from '../lib/memory/HexTools';
+import parse from '../lib/Z2Parser';
 
 export default ({level, onStepChange, location}) => {
-    const [romData] = useAtom(romAtom);
+    const [romData, setRomData] = useAtom(romAtom);
     const [selectedStep, setSelectedStep] = useState(-1);
     const [intervalHandler, setIntervalHandler] = useState(null);
 
@@ -22,15 +23,20 @@ export default ({level, onStepChange, location}) => {
             if (element.collectableObjectNumber) {
                 offset = element._metadata.collectableObjectNumber.offset;
             }
-            items.push({itemNumber: element.collectableObjectNumber || -1, romAddress: offset});
+            items.push({itemNumber: element.collectableObjectNumber || -1, romAddress: offset, element});
         });
         setCollectibleItems(items);
     }, [level.levelElements]);
 
     const updateCollectibleItem = (elementIndex, itemNumber, romAddress) => {
         let copy = [...collectibleItems];
+        let elementCopy = {...copy[elementIndex].element};
+        elementCopy.collectableObjectNumber = itemNumber;
         copy[elementIndex] = {itemNumber, romAddress};
         setCollectibleItems(copy);
+
+        let updatedBytes = writeFieldToROM(elementCopy, "collectableObjectNumber", romData.rawBytes);
+        setRomData(parse(updatedBytes));
     }
 
     let extraContent;
@@ -39,7 +45,8 @@ export default ({level, onStepChange, location}) => {
         extraContent = (
             <div>
                 <h5>Location Data</h5>
-                <KeyValueTable map={{x, y, external, caveSeg, reserved, continent, mapSet, mapNumber, rightEnt, hPosEnt, passThrough, fallInto, _metadata}} />
+                <KeyValueTable 
+                    map={{x, y, external, caveSeg, reserved, continent, mapSet, mapNumber, rightEnt, hPosEnt, passThrough, fallInto, _metadata}} />
             </div>
         )
     }

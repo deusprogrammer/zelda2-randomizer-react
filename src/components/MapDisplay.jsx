@@ -54,6 +54,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
 
                     mapBlocks.push(
                         <div 
+                            key={`${x},${y}`}
                             className={`map-square blinking`} 
                             style={{color, backgroundColor}}
                             onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${found}`)}}
@@ -66,6 +67,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
                 } else {
                     mapBlocks.push(
                         <div 
+                            key={`${x},${y}`}
                             className={`map-square`}
                             style={{color, backgroundColor}}
                             onMouseEnter={() => {setSelectedSquare({id: "", name, x, y: y + 30, items: []})}}

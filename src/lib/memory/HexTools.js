@@ -4,12 +4,11 @@ const LAST_BIT_MASK = 1 >>> 0;
 
 export const writeFieldToROM = (object, field, bytes) => {
     let romDataCopy = new Uint8Array(bytes);
-    let {offset: romAddress, relOffset: fieldRelOffset, fields} = object._metadata[field];
-    let relatedFields = fields.filter(({relOffset, name}) => relOffset === fieldRelOffset);
+    let {offset: romAddress, bitFields} = object._metadata[field];
     
     let byte = 0x0;
-    relatedFields.forEach(({mask, name}) => {
-        let value = object[name];
+    bitFields.forEach(({mask, name}) => {
+        let value = parseInt(object[name]);
         console.log(name + " => " + value.toString(2));
         while ((mask & LAST_BIT_MASK) === 0) {
             mask = mask >> 1;
@@ -19,6 +18,8 @@ export const writeFieldToROM = (object, field, bytes) => {
     });
 
     romDataCopy[romAddress] = byte;
+
+    return romDataCopy;
 }
 
 export const littleEndianConvert = (buffer) => {
