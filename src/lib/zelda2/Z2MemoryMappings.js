@@ -239,7 +239,28 @@ export const OVERWORLD_SPRITE_TYPES = [
     "Water (walkable)",
     "Rock",
     "Spider"
-]
+];
+
+export const OVERWORLD_SPRITE_MAPPING = {
+    "TOWN": 0,
+    "CAVE": 1,
+    "PALACE": 2,
+    "START": 2,
+    "BRIDGE": 3,
+    "DOCK": 3,
+    "DESERT": 4,
+    "GRASS": 5,
+    "FOREST": 6,
+    "SWAMP": 7,
+    "CEMETARY": 8,
+    "PATH": 9,
+    "LAVA": 10,
+    "MOUNTAIN": 11,
+    "WATER": 12,
+    "SHALLOWS": 13,
+    "ROCK": 14,
+    "SPIDER": 15
+}
 
 export const BACKMAP_OFFSET      = 0x8000;
 export const MAP_POINTER_OFFSET1 = 0x8523;

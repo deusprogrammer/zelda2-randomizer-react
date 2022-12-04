@@ -633,9 +633,9 @@ export const explore = (maps, mapSet, mapNumber, explored = []) => {
     let currentMap = maps[mapSet][mapNumber];
     let levelExits = currentMap.exits;
 
-    currentMap.levelElements.forEach(({collectableObjectNumber}) => {
+    currentMap.levelElements.forEach(({collectableObjectNumber, _metadata}) => {
         if (collectableObjectNumber !== undefined) {
-            items.push({name: ITEM_MAP[collectableObjectNumber], number: collectableObjectNumber, mapNumber, mapSet});
+            items.push({name: ITEM_MAP[collectableObjectNumber], number: collectableObjectNumber, mapNumber, mapSet, _metadata: _metadata["collectableObjectNumber"]});
         }
     });
 

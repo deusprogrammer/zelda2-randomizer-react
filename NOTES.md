@@ -1,5 +1,15 @@
 # Notes
 
+## Game Notes
+
+External means to go to a different continent
+
+The map number doesn't matter if the mapset is 0 (world)
+
+The index in the list of locations is what determines where the destination in the new continent is.
+
+In order to change where the element dumps you, you would need to either swap locations or move the x, y of the destination you want.
+
 ## Memory Locations
 
     $0706 - overworld index (0=west hyrule, 1=death mtn/maze island, 2=east hyrule)
