@@ -1,5 +1,27 @@
 # Notes
 
+## Randomization Process (what I have so far)
+
+* RP1: Randomly generate template (unless already defined)
+* RP2: Randomly generate links between isolated areas
+* RP3: Randomly place one item bearing location into each isolation zone
+* RP4: Randomly distribute the remaining locations among the nodes with the exception of ability bearing towns
+* RP5: Required item/spell/ability town distribution
+    * RP5.1: Traverse graph and identify accessible nodes and blocking nodes
+    * RP5.2: Randomly choose a blocked node and an accessible node and place the remedy for the blocking node in it
+        * RP5.2.1 For spells, randomly choose a town.  If the town requires a remedy, recurse and place the remedy.
+        * RP5.2.2 For abilities, place an ability bearing town in an accessible node.  Recurse to place the rememdy to acquire the ability.
+    * RP5.3: Identify other blocked nodes that are now remedied.
+    * PR5.4: Randomly recurse into one of the above nodes and start over at RP7.1
+* RP6: Randomly distribute remaining optional and small items among the remaining item bearing locations
+
+## Randomization Notes: 
+* RP2 and RP3 must choose an accessible link/location for starting isolation zone
+
+* In future when we randomize palaces interiors we will employ the explore() function to determine requirements for entry, item retrieval, and completion.
+
+* Might need to allow for node swapping.
+
 ## Game Notes
 
 External means to go to a different continent
@@ -9,16 +31,6 @@ The map number doesn't matter if the mapset is 0 (world)
 The index in the list of locations is what determines where the destination in the new continent is.
 
 In order to change where the element dumps you, you would need to either swap locations or move the x, y of the destination you want.
-
-## Memory Locations
-
-    $0706 - overworld index (0=west hyrule, 1=death mtn/maze island, 2=east hyrule)
-    $0707 - "world" (0=caves, enemy encounters...; 1=west hyrule towns; 2=east hyrule towns; 3=palace 1,2,5 ; 4=palace 3,4,6 ; 5=great palace)
-
-    $0709 - involved in returning to the over-world while in side-scroll?
-
-    $0748 - area location index (the index of the spot on the overworld that pulled you into the sideview)
-    $0769 - Bank to switch to (other than 0 or 7)
 
 ## 6502 Assembly Notes
 

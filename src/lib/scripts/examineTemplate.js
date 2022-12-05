@@ -1,6 +1,5 @@
 import templateData from '../zelda2/templates/z2-vanilla.v4.template';
-import locationData from '../zelda2/templates/z2-location.v4.meta';
-import { template } from 'lodash';
+import locationData from '../zelda2/templates/z2-location.meta';
 
 let locationTypeMap = {};
 for (let key in locationData) {
@@ -45,19 +44,18 @@ const findConnectionRoots = (templateData) => {
 
 let parentNodes = findConnectionRoots(templateData);
 let traversed = [];
-let isolatedAreas = {};
-for (let parentNode of parentNodes) {
+let i = 0;
+parentNodes.forEach((parentNode) => {
     if (traversed.includes(parentNode)) {
-        continue;
+        return;
     }
     let [nodes, links] = traverse(templateData, parentNode);
-    isolatedAreas[parentNode] = nodes;
     traversed = [...traversed, ...nodes];
-}
+    
+    nodes.forEach(isolatedNode => {
+        templateData[isolatedNode].isolationGroup = i;
+    });
+    i++;
+});
 
-for (let isolatedAreaName in isolatedAreas) {
-    console.log("NODES CONNECTED TO " + templateData[isolatedAreaName].id);
-    for (let nodeName of isolatedAreas[isolatedAreaName]) {
-        console.log("\t" + templateData[nodeName].id);
-    }
-}
+console.log("export default " + JSON.stringify(templateData, null, 4));

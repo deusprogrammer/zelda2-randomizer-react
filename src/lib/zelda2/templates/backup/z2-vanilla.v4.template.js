@@ -21,6 +21,7 @@ export default {
           "y": 60,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link",
           "connections": []
      },
      "NODE2": {
@@ -29,6 +30,7 @@ export default {
           "y": 32,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link",
           "connections": []
      },
      "NODE3": {
@@ -37,6 +39,7 @@ export default {
           "y": 46,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link",
           "connections": []
      },
      "NODE4": {
@@ -45,6 +48,7 @@ export default {
           "y": 41,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link!",
           "connections": [
                "NODE32",
                "NODE5"
@@ -56,6 +60,7 @@ export default {
           "y": 57,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE6"
           ]
@@ -74,6 +79,7 @@ export default {
           "y": 58,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link",
           "connections": []
      },
      "NODE8": {
@@ -82,9 +88,15 @@ export default {
           "y": 54,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "town?",
           "connections": [
                "NODE33"
-          ]
+          ],
+          "connectionRequirements": {
+               "NODE33": [
+                    "HAMMER"
+               ]
+          }
      },
      "NODE9": {
           "id": "JUMP_TOWN",
@@ -92,6 +104,7 @@ export default {
           "y": 36,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "town?",
           "connections": []
      },
      "NODE10": {
@@ -135,7 +148,12 @@ export default {
                "NODE27",
                "NODE38",
                "NODE39"
-          ]
+          ],
+          "connectionRequirements": {
+               "NODE24": [
+                    "HAMMER"
+               ]
+          }
      },
      "NODE13": {
           "id": "MEDICINE_CAVE_FAIRY",
@@ -167,6 +185,7 @@ export default {
           "y": 69,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link",
           "connections": []
      },
      "NODE17": {
@@ -175,6 +194,7 @@ export default {
           "y": 62,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link",
           "connections": []
      },
      "NODE18": {
@@ -246,6 +266,7 @@ export default {
           "y": 96,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link!",
           "connections": []
      },
      "NODE26": {
@@ -276,7 +297,14 @@ export default {
           "y": 89,
           "continent": 0,
           "continentName": "WEST HYRULE",
-          "connections": []
+          "connections": [
+               "NODE29"
+          ],
+          "connectionRequirements": {
+               "NODE29": [
+                    "BAGU_SAUCE | FAIRY"
+               ]
+          },
      },
      "NODE29": {
           "id": "LIFE_TOWN_S",
@@ -344,6 +372,7 @@ export default {
           "y": 96,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link",
           "connections": []
      },
      "NODE37": {
@@ -352,6 +381,7 @@ export default {
           "y": 95,
           "continent": 0,
           "continentName": "WEST HYRULE",
+          "suggestion": "link",
           "connections": []
      },
      "NODE38": {
@@ -427,7 +457,21 @@ export default {
                "NODE78",
                "NODE79",
                "NODE48"
-          ]
+          ],
+          "connectionRequirements": {
+               "NODE48": [
+                    "RECORDER"
+               ],
+               "NODE79": [
+                    "BOOTS"
+               ],
+               "NODE77": [
+                    "BOOTS"
+               ],
+               "NODE78": [
+                    "BOOTS | HAMMER"
+               ]
+          }
      },
      "NODE46": {
           "id": "FIRE_TOWN_CAVE_EXIT",
@@ -435,6 +479,7 @@ export default {
           "y": 52,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "link",
           "connections": []
      },
      "NODE47": {
@@ -443,6 +488,7 @@ export default {
           "y": 48,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "link!",
           "connections": [
                "NODE81",
                "NODE69",
@@ -455,6 +501,7 @@ export default {
           "y": 76,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE49"
           ]
@@ -465,6 +512,7 @@ export default {
           "y": 81,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE50"
           ]
@@ -475,6 +523,7 @@ export default {
           "y": 84,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE59",
                "NODE131",
@@ -509,6 +558,7 @@ export default {
           "y": 78,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "link!",
           "connections": []
      },
      "NODE54": {
@@ -517,6 +567,7 @@ export default {
           "y": 78,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "link",
           "connections": [
                "NODE55"
           ]
@@ -563,6 +614,7 @@ export default {
           "y": 96,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE67",
                "NODE60"
@@ -574,6 +626,7 @@ export default {
           "y": 99,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE68",
                "NODE61"
@@ -585,6 +638,7 @@ export default {
           "y": 86,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE62"
           ]
@@ -595,6 +649,7 @@ export default {
           "y": 77,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "link!",
           "connections": []
      },
      "NODE63": {
@@ -603,6 +658,7 @@ export default {
           "y": 77,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "link!",
           "connections": [
                "NODE64"
           ]
@@ -613,6 +669,7 @@ export default {
           "y": 83,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE65"
           ]
@@ -623,6 +680,7 @@ export default {
           "y": 75,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "link!",
           "connections": []
      },
      "NODE66": {
@@ -631,6 +689,7 @@ export default {
           "y": 75,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "link!",
           "connections": [
                "NODE129"
           ]
@@ -657,6 +716,7 @@ export default {
           "y": 38,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE70"
           ]
@@ -667,6 +727,7 @@ export default {
           "y": 36,
           "continent": 2,
           "continentName": "EAST HYRULE",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE71"
           ]
@@ -1114,6 +1175,7 @@ export default {
           "y": 68,
           "continent": 3,
           "continentName": "MAZE ISLAND",
+          "suggestion": "passthrough!",
           "connections": []
      },
      "NODE121": {
@@ -1122,6 +1184,7 @@ export default {
           "y": 62,
           "continent": 3,
           "continentName": "MAZE ISLAND",
+          "suggestion": "passthrough!",
           "connections": []
      },
      "NODE122": {
@@ -1130,6 +1193,7 @@ export default {
           "y": 58,
           "continent": 3,
           "continentName": "MAZE ISLAND",
+          "suggestion": "passthrough!",
           "connections": []
      },
      "NODE123": {
@@ -1138,6 +1202,7 @@ export default {
           "y": 50,
           "continent": 3,
           "continentName": "MAZE ISLAND",
+          "suggestion": "passthrough!",
           "connections": [
                "NODE124",
                "NODE125",
@@ -1151,6 +1216,7 @@ export default {
           "y": 46,
           "continent": 3,
           "continentName": "MAZE ISLAND",
+          "suggestion": "passthrough!",
           "connections": []
      },
      "NODE125": {
@@ -1159,6 +1225,7 @@ export default {
           "y": 42,
           "continent": 3,
           "continentName": "MAZE ISLAND",
+          "suggestion": "passthrough!",
           "connections": []
      },
      "NODE126": {
@@ -1167,6 +1234,7 @@ export default {
           "y": 49,
           "continent": 3,
           "continentName": "MAZE ISLAND",
+          "suggestion": "passthrough!",
           "connections": []
      },
      "NODE127": {

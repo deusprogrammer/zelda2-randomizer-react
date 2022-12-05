@@ -4244,7 +4244,7 @@ export default {
                "NODE77": [
                     "BOOTS"
                ],
-               "undefined": [
+               "NODE78": [
                     "BOOTS | HAMMER"
                ]
           },
