@@ -100,7 +100,12 @@ export default {
         "suggestion": "town?",
         "connections": [
             "NODE33"
-        ]
+        ],
+        "connectionRequirements": {
+             "NODE33": [
+                  "HAMMER"
+             ]
+        }
     },
     "NODE9": {
         "locationKey": "JUMP_TOWN",
@@ -156,7 +161,12 @@ export default {
             "NODE27",
             "NODE38",
             "NODE39"
-        ]
+        ],
+        "connectionRequirements": {
+             "NODE24": [
+                  "HAMMER"
+             ]
+        }
     },
     "NODE13": {
         "locationKey": "MEDICINE_CAVE_FAIRY",
@@ -318,7 +328,12 @@ export default {
         "continentName": "WEST HYRULE",
         "connections": [
             "NODE29"
-        ]
+        ],
+        "connectionRequirements": {
+             "NODE29": [
+                  "BAGU_SAUCE | FAIRY"
+             ]
+        },
     },
     "NODE29": {
         "locationKey": "LIFE_TOWN_S",
@@ -488,7 +503,21 @@ export default {
             "NODE78",
             "NODE79",
             "NODE48"
-        ]
+        ],
+        "connectionRequirements": {
+             "NODE48": [
+                  "RECORDER"
+             ],
+             "NODE79": [
+                  "BOOTS"
+             ],
+             "NODE77": [
+                  "BOOTS"
+             ],
+             "NODE78": [
+                  "BOOTS | HAMMER"
+             ]
+        }
     },
     "NODE46": {
         "locationKey": "FIRE_TOWN_CAVE_EXIT",

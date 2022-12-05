@@ -8,7 +8,8 @@ const FIELDS_IN_ORDER = [
     "continent",
     "continentName",
     "suggestion",
-    "connections"
+    "connections",
+    "connectionRequirements"
 ];
 
 let newMap = {};

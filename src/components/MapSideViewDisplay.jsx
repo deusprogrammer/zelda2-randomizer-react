@@ -16,8 +16,12 @@ export default ({level, steps}) => {
                 );
             } else {
                 let backgroundColor = "gray";
-                if (mapBlock.solid) {
-                    backgroundColor = "white"
+                if (mapBlock.locked) {
+                    backgroundColor = "yellow";
+                } if (mapBlock.breakable) {
+                    backgroundColor = "purple";
+                } else if (mapBlock.solid) {
+                    backgroundColor = "white";
                 } else if (mapBlock.name === "lava") {
                     backgroundColor = "red";
                 } else if (mapBlock.collectable) {

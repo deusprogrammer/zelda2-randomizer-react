@@ -8,8 +8,8 @@ import { useNavigate } from "react-router";
 
 import saveAsPNG from "../utils/GraphUtils"
 import { romAtom } from "../atoms/rom.atom";
-import graphData from '../lib/zelda2/templates/z2-vanilla.v2.graph';
-import locationData from '../lib/zelda2/templates/z2-vanilla.v2.template';
+import graphData from '../lib/zelda2/templates/z2-vanilla.graph';
+import locationData from '../lib/zelda2/templates/z2-vanilla.template';
 
 import "@react-sigma/core/lib/react-sigma.min.css";
 import { Link } from "react-router-dom";

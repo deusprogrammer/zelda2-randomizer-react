@@ -1,5 +1,5 @@
-import templateData from '../zelda2/templates/z2-vanilla.v3.template';
-import graphData from '../zelda2/templates/z2-vanilla.v3.graph';
+import templateData from '../zelda2/templates/z2-vanilla.template';
+import oldTemplateData from '../zelda2/templates/backups/z2-vanilla.v4.template';
 
 const createVanillaNodeMapping = (graphData, templateData) => {
     let template = {};

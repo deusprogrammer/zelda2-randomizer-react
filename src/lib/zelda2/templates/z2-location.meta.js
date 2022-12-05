@@ -6335,9 +6335,7 @@ export default {
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
-        "items": [
-            "BIG_ITEM"
-        ],
+        "items": [],
         "itemRequirements": [],
         "entryRequirements": [
             "CRYSTALS"
@@ -10086,7 +10084,9 @@ export default {
         ],
         "itemRequirements": [],
         "entryRequirements": [],
-        "completionRequirements": [],
+        "completionRequirements": [
+            "REFLECT"
+        ],
         "links": [],
         "linkRequirements": {},
         "romMetaData": {
