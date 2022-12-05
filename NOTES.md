@@ -4,23 +4,15 @@
 
 * RP1: Randomly generate template (unless already defined)
 * RP2: Randomly generate links between isolated areas
-* RP3: Randomly place one item bearing location into each isolation zone
-* RP4: Randomly distribute the remaining locations among the nodes with the exception of ability bearing towns
-* RP5: Required item/spell/ability town distribution
-    * RP5.1: Traverse graph and identify accessible nodes and blocking nodes
-    * RP5.2: Randomly choose a blocked node and an accessible node and place the remedy for the blocking node in it
-        * RP5.2.1 For spells, randomly choose a town.  If the town requires a remedy, recurse and place the remedy.
-        * RP5.2.2 For abilities, place an ability bearing town in an accessible node.  Recurse to place the rememdy to acquire the ability.
-    * RP5.3: Identify other blocked nodes that are now remedied.
-    * PR5.4: Randomly recurse into one of the above nodes and start over at RP7.1
+* RP3: Randomly distribute locations that bear items and require remedies
+* RP4: Generate a connection graph
+* RP5: Randomly distribute required items/spells/ability towns
+    RP5.1: Start at North Palace (NODE0) and traverse the graph keeping track of all accessible and inaccessible locations.
+    RP5.2: Randomly pick an inaccessible location and it's remedy and place remedy in a random accessible location.
+        RP5.2.1 ???
+    RP5.3: PROFIT
+* RP6: Randomly distribute remaining locations
 * RP6: Randomly distribute remaining optional and small items among the remaining item bearing locations
-
-## Randomization Notes: 
-* RP2 and RP3 must choose an accessible link/location for starting isolation zone
-
-* In future when we randomize palaces interiors we will employ the explore() function to determine requirements for entry, item retrieval, and completion.
-
-* Might need to allow for node swapping.
 
 ## Game Notes
 
