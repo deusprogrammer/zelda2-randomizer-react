@@ -14,6 +14,17 @@
 * RP6: Randomly distribute remaining locations
 * RP6: Randomly distribute remaining optional and small items among the remaining item bearing locations
 
+
+* RP1: Randomly generate template (unless defined).
+* RP2: Randomly and evenly place connecting areas (caves, one way squares).
+* RP3: Randomly place all overworld areas, making sure to evenly distribute item bearing nodes.
+* RP4: From starting point, gather all currently accessible nodes.
+    * RP4.1: Randomly choose an accessible remedy seeking node.
+    * RP4.2: Place remedy within accessible item-bearing nodes.
+    * RP4.3: If remedy resides in a location that itself requires a remedy, recurse into RP4.
+    * RP4.4: Once the node we started with has it's remedy, repeat RP4 with new set of accessible nodes.
+* RP5: Randomly place optional and small items among the remaining item bearing nodes.
+
 ## Game Notes
 
 External means to go to a different continent
