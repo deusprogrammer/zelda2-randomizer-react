@@ -34,7 +34,8 @@
           "continent": 0,
           "continentName": "WEST HYRULE",
           "suggestion": "link",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "PARAPA_CAVE_S"
      },
      "NODE3": {
           "locationKey": "PARAPA_CAVE_S",
@@ -69,8 +70,7 @@
           "suggestion": "passthrough!",
           "connections": [
                "NODE6"
-          ],
-          "mappedLocation": "BUBBLE_CLIFF"
+          ]
      },
      "NODE6": {
           "locationKey": "HEART_CLIFF",
@@ -79,7 +79,8 @@
           "isolationGroup": 1,
           "continent": 0,
           "continentName": "WEST HYRULE",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "FAIRY_CAVE"
      },
      "NODE7": {
           "locationKey": "JUMP_CAVE_N",
@@ -125,8 +126,7 @@
           "isolationGroup": 0,
           "continent": 0,
           "continentName": "WEST HYRULE",
-          "connections": [],
-          "mappedLocation": "BUBBLE_CLIFF"
+          "connections": []
      },
      "NODE11": {
           "locationKey": "FOREST_100P",
@@ -177,8 +177,7 @@
           "isolationGroup": 2,
           "continent": 0,
           "continentName": "WEST HYRULE",
-          "connections": [],
-          "mappedLocation": "LIFE_TOWN_BRIDGE_EW"
+          "connections": []
      },
      "NODE14": {
           "locationKey": "BAGUS_CABIN",
@@ -253,7 +252,7 @@
           "continent": 0,
           "continentName": "WEST HYRULE",
           "connections": [],
-          "mappedLocation": "BUBBLE_CLIFF"
+          "mappedLocation": "LIFE_TOWN_S"
      },
      "NODE22": {
           "locationKey": "RED_JAR_CEM",
@@ -348,8 +347,7 @@
           "continentName": "WEST HYRULE",
           "connections": [
                "NODE37"
-          ],
-          "mappedLocation": "DM_BRIDGE_EXIT_W"
+          ]
      },
      "NODE30": {
           "locationKey": "DM_BRIDGE_EXIT_E",
@@ -369,7 +367,8 @@
           "continentName": "WEST HYRULE",
           "connections": [
                "NODE36"
-          ]
+          ],
+          "mappedLocation": "FAIRY_CAVE"
      },
      "NODE32": {
           "locationKey": "P1",
@@ -387,7 +386,8 @@
           "isolationGroup": 2,
           "continent": 0,
           "continentName": "WEST HYRULE",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "DM_ENTRANCE"
      },
      "NODE34": {
           "locationKey": "P3",
@@ -397,7 +397,7 @@
           "continent": 0,
           "continentName": "WEST HYRULE",
           "connections": [],
-          "mappedLocation": "LIFE_TOWN_BRIDGE_NS"
+          "mappedLocation": "LIFE_TOWN_S"
      },
      "NODE35": {
           "locationKey": "KINGS_TOMB",
@@ -416,8 +416,7 @@
           "continent": 0,
           "continentName": "WEST HYRULE",
           "suggestion": "link",
-          "connections": [],
-          "mappedLocation": "DM_BRIDGE_EXIT_E"
+          "connections": []
      },
      "NODE37": {
           "locationKey": "DM_ENTRANCE",
@@ -427,7 +426,8 @@
           "continent": 0,
           "continentName": "WEST HYRULE",
           "suggestion": "link",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "PARAPA_CAVE_N"
      },
      "NODE38": {
           "locationKey": "LIFE_TOWN_BRIDGE_EW",
@@ -610,8 +610,7 @@
           "isolationGroup": 9,
           "continent": 2,
           "continentName": "EAST HYRULE",
-          "connections": [],
-          "mappedLocation": "WILSON_FENCE_4"
+          "connections": []
      },
      "NODE53": {
           "locationKey": "SPELL_TOWN_CAVE_ENTRANCE",
@@ -633,7 +632,8 @@
           "suggestion": "link",
           "connections": [
                "NODE55"
-          ]
+          ],
+          "mappedLocation": "SPELL_TOWN_CAVE_EXIT"
      },
      "NODE55": {
           "locationKey": "SPELL_TOWN",
@@ -642,8 +642,7 @@
           "isolationGroup": 10,
           "continent": 2,
           "continentName": "EAST HYRULE",
-          "connections": [],
-          "mappedLocation": "DEATH_VALLEY_BATTLE_3"
+          "connections": []
      },
      "NODE56": {
           "locationKey": "THUNDER_TOWN_N_BRIDGE",
@@ -654,7 +653,8 @@
           "continentName": "EAST HYRULE",
           "connections": [
                "NODE80"
-          ]
+          ],
+          "mappedLocation": "DEATH_VALLEY_CAVE_2_EXIT"
      },
      "NODE57": {
           "locationKey": "THUNDER_TOWN_E_BRIDGE",
@@ -746,8 +746,7 @@
           "suggestion": "passthrough!",
           "connections": [
                "NODE65"
-          ],
-          "mappedLocation": "REFLECT_TOWN_CLIFF_2"
+          ]
      },
      "NODE65": {
           "locationKey": "DEATH_VALLEY_CAVE_1_EXIT",
@@ -757,7 +756,8 @@
           "continent": 2,
           "continentName": "EAST HYRULE",
           "suggestion": "link!",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "DEATH_VALLEY_CAVE_2_ENTRANCE"
      },
      "NODE66": {
           "locationKey": "DEATH_VALLEY_CAVE_1_ENTRANCE",
@@ -769,7 +769,8 @@
           "suggestion": "link!",
           "connections": [
                "NODE129"
-          ]
+          ],
+          "mappedLocation": "SPELL_TOWN_CAVE_ENTRANCE"
      },
      "NODE67": {
           "locationKey": "DEATH_VALLEY_RED_JAR",
@@ -800,7 +801,7 @@
           "connections": [
                "NODE70"
           ],
-          "mappedLocation": "REFLECT_TOWN_CLIFF_2"
+          "mappedLocation": "DEATH_VALLEY_CAVE_1_ENTRANCE"
      },
      "NODE70": {
           "locationKey": "REFLECT_TOWN_CLIFF_1",
@@ -848,8 +849,7 @@
           "isolationGroup": 7,
           "continent": 2,
           "continentName": "EAST HYRULE",
-          "connections": [],
-          "mappedLocation": "WILSON_FENCE_4"
+          "connections": []
      },
      "NODE75": {
           "locationKey": "FIRE_TOWN_FOREST_500P_BAG",
@@ -867,7 +867,8 @@
           "isolationGroup": 7,
           "continent": 2,
           "continentName": "EAST HYRULE",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "RAFT_DOCK_E"
      },
      "NODE77": {
           "locationKey": "P5_HEART",
@@ -930,8 +931,7 @@
           "isolationGroup": 13,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": [],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_2"
+          "connections": []
      },
      "NODE84": {
           "locationKey": "CAVE_B_W",
@@ -943,7 +943,7 @@
           "connections": [
                "NODE85"
           ],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_5"
+          "mappedLocation": "CAVE_A"
      },
      "NODE85": {
           "locationKey": "CAVE_D_E",
@@ -964,7 +964,8 @@
           "connections": [
                "NODE87",
                "NODE133"
-          ]
+          ],
+          "mappedLocation": "CAVE_M_E"
      },
      "NODE87": {
           "locationKey": "CAVE_F_W",
@@ -973,8 +974,7 @@
           "isolationGroup": 15,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": [],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_6"
+          "connections": []
      },
      "NODE88": {
           "locationKey": "CAVE_F_E",
@@ -985,8 +985,7 @@
           "continentName": "DEATH MOUNTAIN",
           "connections": [
                "NODE89"
-          ],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_5"
+          ]
      },
      "NODE89": {
           "locationKey": "CAVE_I_S",
@@ -995,7 +994,8 @@
           "isolationGroup": 16,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "ELEVATOR_CAVE_G_W_TR"
      },
      "NODE90": {
           "locationKey": "CAVE_I_N",
@@ -1008,8 +1008,7 @@
                "NODE91",
                "NODE93",
                "NODE94"
-          ],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_6"
+          ]
      },
      "NODE91": {
           "locationKey": "CAVE_M_W",
@@ -1018,7 +1017,8 @@
           "isolationGroup": 17,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "CAVE_L_S"
      },
      "NODE92": {
           "locationKey": "CAVE_M_E",
@@ -1064,8 +1064,7 @@
           "connections": [
                "NODE104",
                "NODE96"
-          ],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_3"
+          ]
      },
      "NODE97": {
           "locationKey": "CAVE_C_E",
@@ -1074,7 +1073,8 @@
           "isolationGroup": 13,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "ELEVATOR_CAVE_H_W_TR"
      },
      "NODE98": {
           "locationKey": "CAVE_C_W",
@@ -1095,7 +1095,7 @@
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
           "connections": [],
-          "mappedLocation": "EAST_HYRULE_BRIDGE"
+          "mappedLocation": "CAVE_L_S"
      },
      "NODE100": {
           "locationKey": "CAVE_E_S",
@@ -1116,7 +1116,7 @@
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
           "connections": [],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_5"
+          "mappedLocation": "ELEVATOR_CAVE_G_W_TR"
      },
      "NODE102": {
           "locationKey": "ELEVATOR_CAVE_H_N_BR",
@@ -1128,8 +1128,7 @@
           "connections": [
                "NODE103",
                "NODE105"
-          ],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_2"
+          ]
      },
      "NODE103": {
           "locationKey": "CAVE_J_W",
@@ -1138,7 +1137,8 @@
           "isolationGroup": 21,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "CAVE_N_S"
      },
      "NODE104": {
           "locationKey": "CAVE_J_E",
@@ -1147,7 +1147,8 @@
           "isolationGroup": 18,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "CAVE_J_W"
      },
      "NODE105": {
           "locationKey": "CAVE_L_S",
@@ -1168,7 +1169,7 @@
           "connections": [
                "NODE107"
           ],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_4"
+          "mappedLocation": "CAVE_P_W"
      },
      "NODE107": {
           "locationKey": "CAVE_O_S",
@@ -1198,7 +1199,7 @@
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
           "connections": [],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_1"
+          "mappedLocation": "CAVE_C_E"
      },
      "NODE110": {
           "locationKey": "CAVE_P_E",
@@ -1209,8 +1210,7 @@
           "continentName": "DEATH MOUNTAIN",
           "connections": [
                "NODE111"
-          ],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_6"
+          ]
      },
      "NODE111": {
           "locationKey": "CAVE_Q_E",
@@ -1219,7 +1219,8 @@
           "isolationGroup": 24,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": []
+          "connections": [],
+          "mappedLocation": "CAVE_M_E"
      },
      "NODE112": {
           "locationKey": "CAVE_Q_W",
@@ -1240,7 +1241,7 @@
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
           "connections": [],
-          "mappedLocation": "EAST_HYRULE_BRIDGE"
+          "mappedLocation": "CAVE_O_S"
      },
      "NODE114": {
           "locationKey": "CAVE_R_S",
@@ -1253,7 +1254,8 @@
                "NODE135",
                "NODE115",
                "NODE116"
-          ]
+          ],
+          "mappedLocation": "CAVE_F_E"
      },
      "NODE115": {
           "locationKey": "HAMMER_CAVE",
@@ -1280,8 +1282,7 @@
           "isolationGroup": 28,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": [],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_5"
+          "connections": []
      },
      "NODE118": {
           "locationKey": "EAST_HYRULE_BRIDGE",
@@ -1410,8 +1411,7 @@
           "isolationGroup": 12,
           "continent": 2,
           "continentName": "EAST HYRULE",
-          "connections": [],
-          "mappedLocation": "WILSON_FENCE_4"
+          "connections": []
      },
      "NODE130": {
           "locationKey": "FIRE_TOWN",
@@ -1464,8 +1464,7 @@
           "isolationGroup": 26,
           "continent": 1,
           "continentName": "DEATH MOUNTAIN",
-          "connections": [],
-          "mappedLocation": "MAZE_ISLAND_FORCED_BATTLE_5"
+          "connections": []
      },
      "NODE136": {
           "locationKey": "CAVE_N_N",
@@ -1476,6 +1475,7 @@
           "continentName": "DEATH MOUNTAIN",
           "connections": [
                "NODE117"
-          ]
+          ],
+          "mappedLocation": "CAVE_L_S"
      }
 }

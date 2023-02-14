@@ -15,10 +15,11 @@ const chooseRandomNode = (nodes) => {
     return nodes[r];
 }
 
+let passThroughAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].links.length > 0 && !locationMetadata[key].passThrough);
 for (let continent = 0; continent < 4; continent++) {
     // Filter out all passthrough areas
-    const passThroughAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].passThrough && locationMetadata[key].worldNumber === continent);
-    const continentNodes = Object.keys(templateData).filter(key => templateData[key].continent === continent);
+    let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent);
+    let continentNodes = Object.keys(templateData).filter(key => templateData[key].continent === continent);
 
     // Separate all nodes into their isolation groups
     const isolationAreas = [];
@@ -38,8 +39,13 @@ for (let continent = 0; continent < 4; continent++) {
         }
 
         let randomNode = chooseRandomNode(nodes);
-        let randomPassthrough = chooseRandomNode(passThroughAreas);
+        let randomPassthrough = chooseRandomNode(localPassThroughAreas);
+        delete passThroughAreas[randomPassthrough];
+        delete localPassThroughAreas[randomPassthrough];
+        delete continentNodes[randomNode];
         templateData[randomNode].mappedLocation = randomPassthrough;
+
+        // TODO Need to ensure that the other end of the cave is placed in another isolation zone
     }
 }
 
