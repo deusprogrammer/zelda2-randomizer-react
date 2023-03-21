@@ -15,11 +15,31 @@ const chooseRandomNode = (nodes) => {
     return nodes[r];
 }
 
+const displayNodeInformation = (templateData, nodes) => {
+    if (!nodes) {
+        return;
+    }
+
+    nodes.forEach((node) => {
+        if (!node) {
+            return;
+        }
+
+        console.log("\t\t\t" + templateData[node].locationKey);
+    });
+}
+
 let passThroughAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].links.length > 0 && !locationMetadata[key].passThrough);
 for (let continent = 0; continent < 4; continent++) {
+    console.log("CONTINENT: " + continent);
+
     // Filter out all passthrough areas
-    let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent);
     let continentNodes = Object.keys(templateData).filter(key => templateData[key].continent === continent);
+    let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => templateData[continentNode].locationKey).includes(locationMetadata[key].links[0]));
+
+    // console.log("LOCAL PASS THROUGHS: " + JSON.stringify(localPassThroughAreas));
+    // console.log("CONTINENT NODES: ");
+    // displayNodeInformation(templateData, continentNodes);
 
     // Separate all nodes into their isolation groups
     const isolationAreas = [];
@@ -32,22 +52,36 @@ for (let continent = 0; continent < 4; continent++) {
         isolationAreas[node.isolationGroup].push(key);
     });
 
+    // console.log("\tISOLATION ZONES: ");
+    // isolationAreas.forEach((nodes, index) => {
+    //     console.log("\t\tISOLATION ZONE " + index);
+    //     displayNodeInformation(templateData, nodes);
+    // });
+
     // RP2 Randomly assign one passthrough to each isolation zone.)
-    for (let nodes of isolationAreas) {
-        if (!nodes) {
+    for (let index in isolationAreas) {
+        let otherIndex = (index + 1) % isolationAreas.length;
+
+        let nodes = isolationAreas[index];
+        let otherNodes = isolationAreas[otherIndex];
+
+        if (!nodes || !otherNodes) {
             continue;
         }
 
         let randomNode = chooseRandomNode(nodes);
+        let otherRandomNode = chooseRandomNode(otherNodes);
         let randomPassthrough = chooseRandomNode(localPassThroughAreas);
         delete passThroughAreas[randomPassthrough];
         delete localPassThroughAreas[randomPassthrough];
         delete continentNodes[randomNode];
+        delete continentNodes[otherRandomNode];
         templateData[randomNode].mappedLocation = randomPassthrough;
+        templateData[otherRandomNode].mappedLocation = locationMetadata[randomPassthrough].links[0];
 
-        // TODO Need to ensure that the other end of the cave is placed in another isolation zone
+        console.log(`\tCONNECTING ${templateData[randomNode].locationKey} to ${templateData[otherRandomNode].locationKey} via ${randomPassthrough} and ${locationMetadata[randomPassthrough].links[0]}`);
     }
 }
 
 // Display first pass
-console.log(JSON.stringify(templateData, null, 5));
+//console.log(JSON.stringify(templateData, null, 5));

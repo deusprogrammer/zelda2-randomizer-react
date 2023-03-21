@@ -2,19 +2,6 @@
 
 ## Randomization Process (what I have so far)
 
-* RP1: Randomly generate template (unless already defined)
-* RP2: Randomly generate links between isolated areas
-* RP3: Randomly distribute locations that bear items and require remedies
-* RP4: Generate a connection graph
-* RP5: Randomly distribute required items/spells/ability towns
-    RP5.1: Start at North Palace (NODE0) and traverse the graph keeping track of all accessible and inaccessible locations.
-    RP5.2: Randomly pick an inaccessible location and it's remedy and place remedy in a random accessible location.
-        RP5.2.1 ???
-    RP5.3: PROFIT
-* RP6: Randomly distribute remaining locations
-* RP6: Randomly distribute remaining optional and small items among the remaining item bearing locations
-
-
 * RP1: Randomly generate template (unless defined).
 * RP2: Randomly and evenly place connecting areas (caves, one way squares).
 * RP3: Randomly place all overworld areas, making sure to evenly distribute item bearing nodes.
@@ -24,6 +11,10 @@
     * RP4.3: If remedy resides in a location that itself requires a remedy, recurse into RP4.
     * RP4.4: Once the node we started with has it's remedy, repeat RP4 with new set of accessible nodes.
 * RP5: Randomly place optional and small items among the remaining item bearing nodes.
+
+## Randomization Notes
+
+Need to ensure that selected passthrough has it's connecting end in another isolation zone
 
 ## Game Notes
 
