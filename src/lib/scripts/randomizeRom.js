@@ -15,7 +15,7 @@ const chooseRandomNode = (nodes) => {
     return nodes[r];
 }
 
-const displayNodeInformation = (templateData, nodes) => {
+const displayNodeInformation = (templateData, nodes, subKey = "id") => {
     if (!nodes) {
         return;
     }
@@ -25,7 +25,7 @@ const displayNodeInformation = (templateData, nodes) => {
             return;
         }
 
-        console.log("\t\t\t" + templateData[node].locationKey);
+        console.log("\t\t\t" + templateData[node][subKey]);
     });
 }
 
@@ -36,6 +36,8 @@ for (let continent = 0; continent < 4; continent++) {
     // Filter out all passthrough areas
     let continentNodes = Object.keys(templateData).filter(key => templateData[key].continent === continent);
     let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => templateData[continentNode].locationKey).includes(locationMetadata[key].links[0]));
+    let largeItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('LARGE_ITEM'));
+    let smallItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('SMALL_ITEM'));
 
     // console.log("LOCAL PASS THROUGHS: " + JSON.stringify(localPassThroughAreas));
     // console.log("CONTINENT NODES: ");
@@ -81,6 +83,35 @@ for (let continent = 0; continent < 4; continent++) {
 
         console.log(`\tCONNECTING ${templateData[randomNode].locationKey} to ${templateData[otherRandomNode].locationKey} via ${randomPassthrough} and ${locationMetadata[randomPassthrough].links[0]}`);
     }
+
+    // RP3 Randomly place item bearing areas in each isolation zone evenly
+    while (largeItemBearingAreas.length > 0) {
+        for (let index in isolationAreas) {
+            console.log("LARGE ITEM BEARING AREAS: " + largeItemBearingAreas.length);
+
+            if (largeItemBearingAreas.length <= 0) {
+                break;
+            }
+
+            let nodes = isolationAreas[index];
+
+            if (!nodes) {
+                continue;
+            }
+
+            let randomNode = chooseRandomNode(nodes);
+            let randomLargeItemArea = chooseRandomNode(largeItemBearingAreas);
+            delete continentNodes[randomNode];
+            largeItemBearingAreas = largeItemBearingAreas.filter(key => key !== randomLargeItemArea);
+            templateData[randomNode].mappedLocation = randomLargeItemArea;
+
+            console.log(`\tPLACING ${randomLargeItemArea} in ${templateData[randomNode].locationKey}`);
+        }
+    }
+
+    // RP4 Randomly place towns
+
+    // RP5 Randomly place continent exits
 }
 
 // Display first pass
