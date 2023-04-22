@@ -87,8 +87,6 @@ for (let continent = 0; continent < 4; continent++) {
     // RP3 Randomly place item bearing areas in each isolation zone evenly
     while (largeItemBearingAreas.length > 0) {
         for (let index in isolationAreas) {
-            console.log("LARGE ITEM BEARING AREAS: " + largeItemBearingAreas.length);
-
             if (largeItemBearingAreas.length <= 0) {
                 break;
             }
