@@ -29,6 +29,15 @@ const displayNodeInformation = (templateData, nodes, subKey = "id") => {
     });
 }
 
+const linkIsInAnotherContinent = (locationMetadata, location) => {
+    if (location.links && location.links.length > 0) {
+        let key = location.links[0];
+        return locationMetadata[key].worldNumber !== location.worldNumber;
+    }
+
+    return false;
+}
+
 let passThroughAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].links.length > 0 && !locationMetadata[key].passThrough);
 for (let continent = 0; continent < 4; continent++) {
     console.log("CONTINENT: " + continent);
@@ -38,10 +47,13 @@ for (let continent = 0; continent < 4; continent++) {
     let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => templateData[continentNode].locationKey).includes(locationMetadata[key].links[0]));
     let largeItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('LARGE_ITEM'));
     let smallItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('SMALL_ITEM'));
+    let continentExits = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && linkIsInAnotherContinent(locationMetadata, locationMetadata[key]));
 
     // console.log("LOCAL PASS THROUGHS: " + JSON.stringify(localPassThroughAreas));
     // console.log("CONTINENT NODES: ");
     // displayNodeInformation(templateData, continentNodes);
+
+    console.log(`CONTINENT EXITS: ${continentExits}`);
 
     // Separate all nodes into their isolation groups
     const isolationAreas = [];
@@ -110,6 +122,13 @@ for (let continent = 0; continent < 4; continent++) {
     // RP4 Randomly place towns
 
     // RP5 Randomly place continent exits
+    for (let exit of continentExits) {
+        let randomNode = chooseRandomNode(continentNodes);
+        delete continentNodes[randomNode];
+        templateData[randomNode].mappedLocation = exit;
+
+        console.log(`\tPLACING EXIT ${exit} in ${templateData[randomNode].locationKey}`);
+    }
 }
 
 // Display first pass
