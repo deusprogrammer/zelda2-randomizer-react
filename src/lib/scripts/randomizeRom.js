@@ -15,19 +15,19 @@ const chooseRandomNode = (nodes) => {
     return nodes[r];
 }
 
-const displayNodeInformation = (templateData, nodes, subKey = "id") => {
-    if (!nodes) {
-        return;
-    }
+// const displayNodeInformation = (templateData, nodes, subKey = "id") => {
+//     if (!nodes) {
+//         return;
+//     }
 
-    nodes.forEach((node) => {
-        if (!node) {
-            return;
-        }
+//     nodes.forEach((node) => {
+//         if (!node) {
+//             return;
+//         }
 
-        console.log("\t\t\t" + templateData[node][subKey]);
-    });
-}
+//         console.log("\t\t\t" + templateData[node][subKey]);
+//     });
+// }
 
 const linkIsInAnotherContinent = (locationMetadata, location) => {
     if (location.links && location.links.length > 0) {
@@ -38,6 +38,7 @@ const linkIsInAnotherContinent = (locationMetadata, location) => {
     return false;
 }
 
+let northPalacePlaced = false;
 let passThroughAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].links.length > 0 && !locationMetadata[key].passThrough);
 for (let continent = 0; continent < 4; continent++) {
     console.log("CONTINENT: " + continent);
@@ -48,10 +49,6 @@ for (let continent = 0; continent < 4; continent++) {
     let largeItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('LARGE_ITEM'));
     let smallItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('SMALL_ITEM'));
     let continentExits = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && linkIsInAnotherContinent(locationMetadata, locationMetadata[key]));
-
-    // console.log("LOCAL PASS THROUGHS: " + JSON.stringify(localPassThroughAreas));
-    // console.log("CONTINENT NODES: ");
-    // displayNodeInformation(templateData, continentNodes);
 
     console.log(`CONTINENT EXITS: ${continentExits}`);
 
@@ -66,11 +63,20 @@ for (let continent = 0; continent < 4; continent++) {
         isolationAreas[node.isolationGroup].push(key);
     });
 
-    // console.log("\tISOLATION ZONES: ");
-    // isolationAreas.forEach((nodes, index) => {
-    //     console.log("\t\tISOLATION ZONE " + index);
-    //     displayNodeInformation(templateData, nodes);
-    // });
+    // RP1 Randomly place North Palace
+    if (!northPalacePlaced) {
+        let randomIsolationZone = Math.floor(Math.random() * isolationAreas.length);
+        let nodes = isolationAreas[randomIsolationZone];
+        let northPalaceNode = chooseRandomNode(nodes);
+
+        isolationAreas[randomIsolationZone] = nodes.filter(key => northPalaceNode !== key);
+        delete continentNodes[northPalaceNode];
+
+        templateData[northPalaceNode].mappedLocation = "NORTH_PALACE";
+        console.log(`\tPLACED NORTH PALACE AT ${templateData[northPalaceNode].locationKey}`);
+
+        northPalacePlaced = true;
+    }
 
     // RP2 Randomly assign one passthrough to each isolation zone.)
     for (let index in isolationAreas) {
@@ -79,19 +85,24 @@ for (let continent = 0; continent < 4; continent++) {
         let nodes = isolationAreas[index];
         let otherNodes = isolationAreas[otherIndex];
 
-        if (!nodes || !otherNodes) {
+        if (!nodes || !otherNodes || localPassThroughAreas.length <= 0) {
             continue;
         }
 
+        // TODO Figure out why connections are being reused over and over again
         let randomNode = chooseRandomNode(nodes);
         let otherRandomNode = chooseRandomNode(otherNodes);
         let randomPassthrough = chooseRandomNode(localPassThroughAreas);
-        delete passThroughAreas[randomPassthrough];
-        delete localPassThroughAreas[randomPassthrough];
-        delete continentNodes[randomNode];
-        delete continentNodes[otherRandomNode];
+
         templateData[randomNode].mappedLocation = randomPassthrough;
         templateData[otherRandomNode].mappedLocation = locationMetadata[randomPassthrough].links[0];
+
+        passThroughAreas = passThroughAreas.filter(key => randomPassthrough !== key && locationMetadata[randomPassthrough].links[0] !== key);
+        localPassThroughAreas = localPassThroughAreas.filter(key => randomPassthrough !== key && locationMetadata[randomPassthrough].links[0] !== key);
+        isolationAreas[index] = nodes.filter(key => randomNode !== key);
+        isolationAreas[otherIndex] = otherNodes.filter(key =>  otherRandomNode !== key);
+        delete continentNodes[randomNode];
+        delete continentNodes[otherRandomNode];
 
         console.log(`\tCONNECTING ${templateData[randomNode].locationKey} to ${templateData[otherRandomNode].locationKey} via ${randomPassthrough} and ${locationMetadata[randomPassthrough].links[0]}`);
     }
@@ -111,8 +122,11 @@ for (let continent = 0; continent < 4; continent++) {
 
             let randomNode = chooseRandomNode(nodes);
             let randomLargeItemArea = chooseRandomNode(largeItemBearingAreas);
-            delete continentNodes[randomNode];
+
             largeItemBearingAreas = largeItemBearingAreas.filter(key => key !== randomLargeItemArea);
+            isolationAreas[index] = nodes.filter(key => randomNode !== key);
+            delete continentNodes[randomNode];
+            
             templateData[randomNode].mappedLocation = randomLargeItemArea;
 
             console.log(`\tPLACING ${randomLargeItemArea} in ${templateData[randomNode].locationKey}`);
