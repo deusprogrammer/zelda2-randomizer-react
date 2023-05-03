@@ -38,6 +38,51 @@ const linkIsInAnotherContinent = (locationMetadata, location) => {
     return false;
 }
 
+const addLinksToPartialTemplate = (templateData, locationMetadata) => {
+    let partialGraph = {};
+    Object.keys(templateData).forEach(key => {
+        let templateNode = templateData[key];
+        let mappedLocation = templateNode.mappedLocation;
+
+        // Translate links and linkRequirements into nodes
+        if (mappedLocation && locationMetadata[mappedLocation]) {
+            templateNode.links = locationMetadata[mappedLocation].links.map(link => {
+                return Object.keys(templateData).find(linkKey => {
+                    if (templateData[linkKey].mappedLocation === link) {
+                        return linkKey;
+                    }
+                })
+            });
+            templateNode.linkRequirements = {};
+            Object.keys(locationMetadata[mappedLocation].linkRequirements).forEach(link => {
+                let nodeId = Object.keys(templateData).find(linkKey => {
+                    if (templateData[linkKey].mappedLocation === link) {
+                        return linkKey;
+                    }
+                });
+                templateNode.linkRequirements[nodeId] = locationMetadata[mappedLocation].linkRequirements[link];
+            })
+        }
+
+        // Double link all connections
+        if (templateNode.connections) {
+            templateNode.connections.forEach(connection => {
+                if (!templateData[connection].connections) {
+                    templateData[connection].connections = [];
+                }
+
+                if (!templateData[connection].connections.includes(key)) {
+                    templateData[connection].connections.push(key);
+                }
+            });
+        }
+
+        partialGraph[key] = templateNode;
+    });
+
+    return partialGraph;
+}
+
 let northPalacePlaced = false;
 let passThroughAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].links.length > 0 && !locationMetadata[key].passThrough);
 for (let continent = 0; continent < 4; continent++) {
@@ -63,7 +108,7 @@ for (let continent = 0; continent < 4; continent++) {
         isolationAreas[node.isolationGroup].push(key);
     });
 
-    // RP1 Randomly place North Palace
+    // Randomly place North Palace
     if (!northPalacePlaced) {
         let randomIsolationZone = Math.floor(Math.random() * isolationAreas.length);
         let nodes = isolationAreas[randomIsolationZone];
@@ -72,13 +117,13 @@ for (let continent = 0; continent < 4; continent++) {
         isolationAreas[randomIsolationZone] = nodes.filter(key => northPalaceNode !== key);
         delete continentNodes[northPalaceNode];
 
-        templateData[northPalaceNode].mappedLocation = "NORTH_PALACE";
-        console.log(`\tPLACED NORTH PALACE AT ${templateData[northPalaceNode].locationKey}`);
+        templateData[northPalaceNode].mappedLocation = "NORTH_CASTLE";
+        console.log(`\tPLACED NORTH CASTLE AT ${templateData[northPalaceNode].locationKey}`);
 
         northPalacePlaced = true;
     }
 
-    // RP2 Randomly assign one passthrough to each isolation zone.)
+    // Randomly assign one passthrough to each isolation zone.)
     for (let index in isolationAreas) {
         let otherIndex = (index + 1) % isolationAreas.length;
 
@@ -107,7 +152,7 @@ for (let continent = 0; continent < 4; continent++) {
         console.log(`\tCONNECTING ${templateData[randomNode].locationKey} to ${templateData[otherRandomNode].locationKey} via ${randomPassthrough} and ${locationMetadata[randomPassthrough].links[0]}`);
     }
 
-    // RP3 Randomly place item bearing areas in each isolation zone evenly
+    // Randomly place item bearing areas in each isolation zone evenly
     while (largeItemBearingAreas.length > 0) {
         for (let index in isolationAreas) {
             if (largeItemBearingAreas.length <= 0) {
@@ -133,9 +178,9 @@ for (let continent = 0; continent < 4; continent++) {
         }
     }
 
-    // RP4 Randomly place towns
+    // Randomly place towns
 
-    // RP5 Randomly place continent exits
+    // Randomly place continent exits
     for (let exit of continentExits) {
         let randomNode = chooseRandomNode(continentNodes);
         delete continentNodes[randomNode];
@@ -145,5 +190,4 @@ for (let continent = 0; continent < 4; continent++) {
     }
 }
 
-// Display first pass
-//console.log(JSON.stringify(templateData, null, 5));
+console.log(JSON.stringify(addLinksToPartialTemplate(templateData, locationMetadata), null, 5));
