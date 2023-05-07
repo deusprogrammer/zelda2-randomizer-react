@@ -120,9 +120,9 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
         accessibleNodes.push(nodeName);
     }
 
-    // console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
+    console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
 
-    if (node.connections) {
+    if (node && node.connections) {
         node.connections.forEach((connectedNode) => {
             // console.log("CONNECTION: " + connectedNode);
             if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
@@ -141,7 +141,7 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
             }
         });
     }
-    if (node.links) {
+    if (node && node.links) {
         node.links.forEach((linkedNode) => {
             // console.log("LINK: " + linkedNode);
             if (node.linkRequirements && node.linkRequirements[linkedNode]) {
@@ -181,7 +181,7 @@ for (let continent = 0; continent < 4; continent++) {
     console.log(`LOCAL PASSTHROUGHS:    ${localPassThroughAreas}`);
 
     // Separate all nodes into their isolation groups
-    const isolationAreas = [];
+    let isolationAreas = [];
     continentNodes.forEach((key) => {
         let node = templateData[key];
         if (!isolationAreas[node.isolationGroup]) {
@@ -190,7 +190,8 @@ for (let continent = 0; continent < 4; continent++) {
 
         isolationAreas[node.isolationGroup].push(key);
     });
-    // console.log("ISOLATION ZONES: " + JSON.stringify(isolationAreas, null, 5));
+    isolationAreas = isolationAreas.filter(index => isolationAreas[index] !== null);
+    console.log("ISOLATION ZONES: " + JSON.stringify(isolationAreas, null, 5));
 
     // Randomly place North Palace
     if (!northPalacePlaced) {
@@ -207,22 +208,32 @@ for (let continent = 0; continent < 4; continent++) {
         northPalacePlaced = true;
     }
 
-    // Randomly assign one passthrough to each isolation zone.
-    for (let index in isolationAreas) {
-        let otherIndex = parseInt(index) + 1;
+    // Create a list of what isolation groups have been connected. 
+    let disconnectedIsolationAreas = [...Array(isolationAreas.length).keys()];
+    let firstConnectedIsolationArea = chooseRandomNode(disconnectedIsolationAreas);
+    disconnectedIsolationAreas = disconnectedIsolationAreas.filter(area => area !== firstConnectedIsolationArea);
+    let connectedIsolationAreas = [firstConnectedIsolationArea];
 
-        if (otherIndex >= isolationAreas.length) {
-            otherIndex = 0;
-        }
+    // Randomly assign links between isolation groups.   
+    while (disconnectedIsolationAreas.length > 0) {
+        let index = chooseRandomNode(connectedIsolationAreas);
+        let otherIndex = chooseRandomNode(disconnectedIsolationAreas);
 
         let nodes = isolationAreas[index];
         let otherNodes = isolationAreas[otherIndex];
 
-        console.log("\tCHECKING ISOLATION AREAS " + index + " AND " + otherIndex);
+        if (isolationAreas[index].length <= 0 || isolationAreas[otherIndex] <= 0) {
+            continue;
+        }
 
-        // TODO Last isolation zone of each continent needs to have a connection to another isolation zone
+        disconnectedIsolationAreas = disconnectedIsolationAreas.filter(area => area !== otherIndex);
+        connectedIsolationAreas.push(otherIndex);
+
+        // console.log("\tCHECKING ISOLATION AREAS " + index + " AND " + otherIndex);
+        // console.log(`\tAREA ${index}:\t` + JSON.stringify(nodes));
+        // console.log(`\tAREA ${otherIndex}:\t` + JSON.stringify(otherNodes));
+
         if (!nodes || !otherNodes || localPassThroughAreas.length <= 0) {
-            // console.log("NO NODES FOUND OR NO CONNECTIONS LEFT!  " + localPassThroughAreas.length);
             continue;
         }
 
