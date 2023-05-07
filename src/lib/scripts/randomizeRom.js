@@ -48,9 +48,11 @@ const addLinksToPartialTemplate = (templateData, locationMetadata) => {
         // Translate links and linkRequirements into nodes
         if (mappedLocation && locationMetadata[mappedLocation]) {
             templateNode.links = locationMetadata[mappedLocation].links.map(link => {
+                console.log("SEARCHING FOR NODE NAME FOR: " + link);
                 return Object.keys(templateData).find(linkKey => {
                     if (templateData[linkKey].mappedLocation === link) {
-                        return linkKey;
+                        console.log("FOUND " + linkKey);
+                        return true;
                     }
                 })
             });
@@ -58,7 +60,7 @@ const addLinksToPartialTemplate = (templateData, locationMetadata) => {
             Object.keys(locationMetadata[mappedLocation].linkRequirements).forEach(link => {
                 let nodeId = Object.keys(templateData).find(linkKey => {
                     if (templateData[linkKey].mappedLocation === link) {
-                        return linkKey;
+                        return true;
                     }
                 });
                 templateNode.linkRequirements[nodeId] = locationMetadata[mappedLocation].linkRequirements[link];
@@ -199,18 +201,17 @@ for (let continent = 0; continent < 4; continent++) {
         northPalacePlaced = true;
     }
 
-    // Randomly assign one passthrough to each isolation zone.)
+    // Randomly assign one passthrough to each isolation zone.
     for (let index in isolationAreas) {
         let otherIndex = (index + 1) % isolationAreas.length;
 
         let nodes = isolationAreas[index];
         let otherNodes = isolationAreas[otherIndex];
 
-        if (!nodes || !otherNodes || localPassThroughAreas.length <= 0) {
+        if (!nodes || !otherNodes || otherIndex === index || localPassThroughAreas.length <= 0) {
             continue;
         }
 
-        // TODO Figure out why connections are being reused over and over again
         let randomNode = chooseRandomNode(nodes);
         let otherRandomNode = chooseRandomNode(otherNodes);
         let randomPassthrough = chooseRandomNode(localPassThroughAreas);
@@ -222,49 +223,51 @@ for (let continent = 0; continent < 4; continent++) {
         localPassThroughAreas = localPassThroughAreas.filter(key => randomPassthrough !== key && locationMetadata[randomPassthrough].links[0] !== key);
         isolationAreas[index] = nodes.filter(key => randomNode !== key);
         isolationAreas[otherIndex] = otherNodes.filter(key =>  otherRandomNode !== key);
-        delete continentNodes[randomNode];
-        delete continentNodes[otherRandomNode];
+        continentNodes = continentNodes.filter(key => randomNode !== key && otherRandomNode !== key);
 
         console.log(`\tCONNECTING ${templateData[randomNode].locationKey} to ${templateData[otherRandomNode].locationKey} via ${randomPassthrough} and ${locationMetadata[randomPassthrough].links[0]}`);
     }
 
     // Randomly place item bearing areas in each isolation zone evenly
-    while (largeItemBearingAreas.length > 0) {
-        for (let index in isolationAreas) {
-            if (largeItemBearingAreas.length <= 0) {
-                break;
-            }
+    // while (largeItemBearingAreas.length > 0) {
+    //     for (let index in isolationAreas) {
+    //         if (largeItemBearingAreas.length <= 0) {
+    //             break;
+    //         }
 
-            let nodes = isolationAreas[index];
+    //         let nodes = isolationAreas[index];
 
-            if (!nodes) {
-                continue;
-            }
+    //         if (!nodes) {
+    //             continue;
+    //         }
 
-            let randomNode = chooseRandomNode(nodes);
-            let randomLargeItemArea = chooseRandomNode(largeItemBearingAreas);
+    //         let randomNode = chooseRandomNode(nodes);
+    //         let randomLargeItemArea = chooseRandomNode(largeItemBearingAreas);
 
-            largeItemBearingAreas = largeItemBearingAreas.filter(key => key !== randomLargeItemArea);
-            isolationAreas[index] = nodes.filter(key => randomNode !== key);
-            delete continentNodes[randomNode];
+    //         largeItemBearingAreas = largeItemBearingAreas.filter(key => key !== randomLargeItemArea);
+    //         isolationAreas[index] = nodes.filter(key => randomNode !== key);
+    //         continentNodes = continentNodes.filter(key => randomNode !== key);
             
-            templateData[randomNode].mappedLocation = randomLargeItemArea;
+    //         templateData[randomNode].mappedLocation = randomLargeItemArea;
 
-            console.log(`\tPLACING ${randomLargeItemArea} in ${templateData[randomNode].locationKey}`);
-        }
-    }
+    //         console.log(`\tPLACING ${randomLargeItemArea} in ${templateData[randomNode].locationKey}`);
+    //     }
+    // }
 
     // Randomly place towns
 
     // Randomly place continent exits
     for (let exit of continentExits) {
         let randomNode = chooseRandomNode(continentNodes);
-        delete continentNodes[randomNode];
+        continentNodes = continentNodes.filter(key => randomNode !== key);
+
         templateData[randomNode].mappedLocation = exit;
 
         console.log(`\tPLACING EXIT ${exit} in ${templateData[randomNode].locationKey}`);
     }
 }
+
+// console.log("TEMPLATE: " + JSON.stringify(templateData, null, 5));
 
 // Double link map
 let partialTemplate = addLinksToPartialTemplate(templateData, locationMetadata);
