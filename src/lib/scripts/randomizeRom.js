@@ -170,7 +170,6 @@ for (let continent = 0; continent < 4; continent++) {
     console.log("CONTINENT: " + continent);
 
     // Filter out all passthrough areas
-    // TODO Why isn't DM_BRIDGE_E and DM_BRIDGE_W not treated as passthroughs?
     let continentNodes = Object.keys(templateData).filter(key => templateData[key].continent === continent);
     let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => templateData[continentNode].locationKey).includes(locationMetadata[key].links[0]));
     let largeItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('LARGE_ITEM'));
@@ -191,7 +190,6 @@ for (let continent = 0; continent < 4; continent++) {
         isolationAreas[node.isolationGroup].push(key);
     });
     isolationAreas = isolationAreas.filter(index => isolationAreas[index] !== null);
-    console.log("ISOLATION ZONES: " + JSON.stringify(isolationAreas, null, 5));
 
     // Randomly place North Palace
     if (!northPalacePlaced) {
@@ -229,9 +227,7 @@ for (let continent = 0; continent < 4; continent++) {
         disconnectedIsolationAreas = disconnectedIsolationAreas.filter(area => area !== otherIndex);
         connectedIsolationAreas.push(otherIndex);
 
-        // console.log("\tCHECKING ISOLATION AREAS " + index + " AND " + otherIndex);
-        // console.log(`\tAREA ${index}:\t` + JSON.stringify(nodes));
-        // console.log(`\tAREA ${otherIndex}:\t` + JSON.stringify(otherNodes));
+        console.log("\tCONNECTING AREAS " + index + " AND " + otherIndex);
 
         if (!nodes || !otherNodes || localPassThroughAreas.length <= 0) {
             continue;
@@ -305,4 +301,11 @@ let northCastleNode = Object.keys(partialTemplate).find(key => {
 
 let [accessibleNodes] = getAccessibleNodes(northCastleNode, partialTemplate);
 
-console.log("Starting accessible locations: " + JSON.stringify(accessibleNodes, null, 5));
+console.log("Starting accessible locations:");
+accessibleNodes.forEach(node => {
+    if (partialTemplate[node]) {
+        console.log(`\t[${node}] ${partialTemplate[node].locationKey}\t=> ${partialTemplate[node].mappedLocation}`);
+    } else {
+        console.log(`\t[${node}]\t\t=>`);
+    }
+});
