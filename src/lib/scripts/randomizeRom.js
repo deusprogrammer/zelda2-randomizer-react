@@ -38,7 +38,6 @@ const linkIsInAnotherContinent = (locationMetadata, location) => {
     return false;
 }
 
-// TODO Fix issue that isn't properly double linking
 const addLinksToPartialTemplate = (templateData, locationMetadata) => {
     let partialGraph = {};
     Object.keys(templateData).forEach(key => {
@@ -126,7 +125,8 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
     if (node.connections) {
         node.connections.forEach((connectedNode) => {
             console.log("CONNECTION: " + connectedNode);
-            if (node.connectionRequirements && node.connectionRequirements != {}) {
+            if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
+                console.log("CONNECTION HAS REQUIREMENTS");
                 let requirements = node.connectionRequirements[connectedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
@@ -134,6 +134,7 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
             } else {
+                console.log("CONNECTION HAS NO REQUIREMENTS");
                 let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
                 newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                 newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
@@ -143,7 +144,8 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
     if (node.links) {
         node.links.forEach((linkedNode) => {
             console.log("LINK: " + linkedNode);
-            if (node.linkRequirements) {
+            if (node.linkRequirements && node.linkRequirements[linkedNode]) {
+                console.log("LINK HAS REQUIREMENTS");
                 let requirements = node.linkRequirements[linkedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
@@ -151,6 +153,7 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
             } else {
+                console.log("LINK HAS NO REQUIREMENTS");
                 let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
                 newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                 newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
@@ -208,6 +211,7 @@ for (let continent = 0; continent < 4; continent++) {
         let nodes = isolationAreas[index];
         let otherNodes = isolationAreas[otherIndex];
 
+        // TODO Last isolation zone of each continent needs to have a connection to another isolation zone
         if (!nodes || !otherNodes || otherIndex === index || localPassThroughAreas.length <= 0) {
             continue;
         }
@@ -216,6 +220,7 @@ for (let continent = 0; continent < 4; continent++) {
         let otherRandomNode = chooseRandomNode(otherNodes);
         let randomPassthrough = chooseRandomNode(localPassThroughAreas);
 
+        // TODO Account for connecting locations that have more than one exit
         templateData[randomNode].mappedLocation = randomPassthrough;
         templateData[otherRandomNode].mappedLocation = locationMetadata[randomPassthrough].links[0];
 
