@@ -38,6 +38,7 @@ const linkIsInAnotherContinent = (locationMetadata, location) => {
     return false;
 }
 
+// TODO Fix issue that isn't properly double linking
 const addLinksToPartialTemplate = (templateData, locationMetadata) => {
     let partialGraph = {};
     Object.keys(templateData).forEach(key => {
@@ -81,6 +82,81 @@ const addLinksToPartialTemplate = (templateData, locationMetadata) => {
     });
 
     return partialGraph;
+}
+
+const checkRequirements = (requirements, items, spells) => {
+    let result = true;
+    requirements.forEach(requirement => {
+        console.log("CHECKING REQUIREMENT " + requirement);
+        let subRequirements = requirement.split("|").map(subRequirement => subRequirement.trim());
+        let subResult = false;
+        subRequirements.forEach(subRequirement => {
+            console.log("CHECKING SUB REQUIREMENT " + subRequirement);
+            subResult = subResult || items.includes(subRequirement) || spells.includes(subRequirement);
+            console.log("SUB RESULT: " + subResult);
+        });
+        result = result && subResult;
+        console.log("RESULT: " + result);
+    });
+
+    return result;
+}
+
+const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visitedNodes=[]) => {
+    if (visitedNodes.includes(nodeName)) {
+        console.log("NODE " + nodeName + " ALREADY VISITED " + JSON.stringify(visitedNodes));
+        return [[], visitedNodes];
+    }
+
+    let node = partialTemplate[nodeName];
+    let accessibleNodes = [];
+
+    if (!visitedNodes.includes(nodeName)) {
+        visitedNodes.push(nodeName);
+    }
+
+    if (!accessibleNodes.includes(nodeName)) {
+        accessibleNodes.push(nodeName);
+    }
+
+    console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
+
+    if (node.connections) {
+        node.connections.forEach((connectedNode) => {
+            console.log("CONNECTION: " + connectedNode);
+            if (node.connectionRequirements && node.connectionRequirements != {}) {
+                let requirements = node.connectionRequirements[connectedNode];
+                if (requirements && checkRequirements(requirements, items, spells)) {
+                    let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
+                    newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
+                    newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
+                }
+            } else {
+                let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
+                newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
+                newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
+            }
+        });
+    }
+    if (node.links) {
+        node.links.forEach((linkedNode) => {
+            console.log("LINK: " + linkedNode);
+            if (node.linkRequirements) {
+                let requirements = node.linkRequirements[linkedNode];
+                if (requirements && checkRequirements(requirements, items, spells)) {
+                    let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
+                    newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
+                    newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
+                }
+            } else {
+                let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
+                newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
+                newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
+            }
+        });
+    }
+
+    return [accessibleNodes, visitedNodes];
 }
 
 let northPalacePlaced = false;
@@ -190,4 +266,14 @@ for (let continent = 0; continent < 4; continent++) {
     }
 }
 
-console.log(JSON.stringify(addLinksToPartialTemplate(templateData, locationMetadata), null, 5));
+// Double link map
+let partialTemplate = addLinksToPartialTemplate(templateData, locationMetadata);
+
+// Find accessible areas
+let northCastleNode = Object.keys(partialTemplate).find(key => {
+    return partialTemplate[key].mappedLocation === "NORTH_CASTLE";
+});
+
+let [accessibleNodes] = getAccessibleNodes(northCastleNode, partialTemplate);
+
+console.log("Starting accessible locations: " + JSON.stringify(accessibleNodes, null, 5));
