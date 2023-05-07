@@ -47,10 +47,10 @@ const addLinksToPartialTemplate = (templateData, locationMetadata) => {
         // Translate links and linkRequirements into nodes
         if (mappedLocation && locationMetadata[mappedLocation]) {
             templateNode.links = locationMetadata[mappedLocation].links.map(link => {
-                console.log("SEARCHING FOR NODE NAME FOR: " + link);
+                // console.log("SEARCHING FOR NODE NAME FOR: " + link);
                 return Object.keys(templateData).find(linkKey => {
                     if (templateData[linkKey].mappedLocation === link) {
-                        console.log("FOUND " + linkKey);
+                        // console.log("FOUND " + linkKey);
                         return true;
                     }
                 })
@@ -88,16 +88,16 @@ const addLinksToPartialTemplate = (templateData, locationMetadata) => {
 const checkRequirements = (requirements, items, spells) => {
     let result = true;
     requirements.forEach(requirement => {
-        console.log("CHECKING REQUIREMENT " + requirement);
+        // console.log("CHECKING REQUIREMENT " + requirement);
         let subRequirements = requirement.split("|").map(subRequirement => subRequirement.trim());
         let subResult = false;
         subRequirements.forEach(subRequirement => {
-            console.log("CHECKING SUB REQUIREMENT " + subRequirement);
+            // console.log("CHECKING SUB REQUIREMENT " + subRequirement);
             subResult = subResult || items.includes(subRequirement) || spells.includes(subRequirement);
-            console.log("SUB RESULT: " + subResult);
+            // console.log("SUB RESULT: " + subResult);
         });
         result = result && subResult;
-        console.log("RESULT: " + result);
+        // console.log("RESULT: " + result);
     });
 
     return result;
@@ -105,7 +105,7 @@ const checkRequirements = (requirements, items, spells) => {
 
 const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visitedNodes=[]) => {
     if (visitedNodes.includes(nodeName)) {
-        console.log("NODE " + nodeName + " ALREADY VISITED " + JSON.stringify(visitedNodes));
+        // console.log("NODE " + nodeName + " ALREADY VISITED " + JSON.stringify(visitedNodes));
         return [[], visitedNodes];
     }
 
@@ -120,13 +120,13 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
         accessibleNodes.push(nodeName);
     }
 
-    console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
+    // console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
 
     if (node.connections) {
         node.connections.forEach((connectedNode) => {
-            console.log("CONNECTION: " + connectedNode);
+            // console.log("CONNECTION: " + connectedNode);
             if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
-                console.log("CONNECTION HAS REQUIREMENTS");
+                // console.log("CONNECTION HAS REQUIREMENTS");
                 let requirements = node.connectionRequirements[connectedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
@@ -134,7 +134,7 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
             } else {
-                console.log("CONNECTION HAS NO REQUIREMENTS");
+                // console.log("CONNECTION HAS NO REQUIREMENTS");
                 let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
                 newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                 newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
@@ -143,9 +143,9 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
     }
     if (node.links) {
         node.links.forEach((linkedNode) => {
-            console.log("LINK: " + linkedNode);
+            // console.log("LINK: " + linkedNode);
             if (node.linkRequirements && node.linkRequirements[linkedNode]) {
-                console.log("LINK HAS REQUIREMENTS");
+                // console.log("LINK HAS REQUIREMENTS");
                 let requirements = node.linkRequirements[linkedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
@@ -153,7 +153,7 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
             } else {
-                console.log("LINK HAS NO REQUIREMENTS");
+                // console.log("LINK HAS NO REQUIREMENTS");
                 let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
                 newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                 newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
@@ -170,13 +170,15 @@ for (let continent = 0; continent < 4; continent++) {
     console.log("CONTINENT: " + continent);
 
     // Filter out all passthrough areas
+    // TODO Why isn't DM_BRIDGE_E and DM_BRIDGE_W not treated as passthroughs?
     let continentNodes = Object.keys(templateData).filter(key => templateData[key].continent === continent);
     let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => templateData[continentNode].locationKey).includes(locationMetadata[key].links[0]));
     let largeItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('LARGE_ITEM'));
     let smallItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('SMALL_ITEM'));
     let continentExits = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && linkIsInAnotherContinent(locationMetadata, locationMetadata[key]));
 
-    console.log(`CONTINENT EXITS: ${continentExits}`);
+    console.log(`CONTINENT EXITS:       ${continentExits}`);
+    console.log(`LOCAL PASSTHROUGHS:    ${localPassThroughAreas}`);
 
     // Separate all nodes into their isolation groups
     const isolationAreas = [];
@@ -188,6 +190,7 @@ for (let continent = 0; continent < 4; continent++) {
 
         isolationAreas[node.isolationGroup].push(key);
     });
+    // console.log("ISOLATION ZONES: " + JSON.stringify(isolationAreas, null, 5));
 
     // Randomly place North Palace
     if (!northPalacePlaced) {
@@ -206,13 +209,20 @@ for (let continent = 0; continent < 4; continent++) {
 
     // Randomly assign one passthrough to each isolation zone.
     for (let index in isolationAreas) {
-        let otherIndex = (index + 1) % isolationAreas.length;
+        let otherIndex = parseInt(index) + 1;
+
+        if (otherIndex >= isolationAreas.length) {
+            otherIndex = 0;
+        }
 
         let nodes = isolationAreas[index];
         let otherNodes = isolationAreas[otherIndex];
 
+        console.log("\tCHECKING ISOLATION AREAS " + index + " AND " + otherIndex);
+
         // TODO Last isolation zone of each continent needs to have a connection to another isolation zone
-        if (!nodes || !otherNodes || otherIndex === index || localPassThroughAreas.length <= 0) {
+        if (!nodes || !otherNodes || localPassThroughAreas.length <= 0) {
+            // console.log("NO NODES FOUND OR NO CONNECTIONS LEFT!  " + localPassThroughAreas.length);
             continue;
         }
 
