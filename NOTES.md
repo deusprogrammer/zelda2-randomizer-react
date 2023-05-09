@@ -21,10 +21,9 @@
 
 * One entry in accessible areas always comes up empty for some reason (no node id, no location key, no mapped location)
 * Sometimes North Palace gets placed in a two node isolation zone which is connected to another two node isolation zone that has a restricted connection to another isolation zone
-    * No room for remedies.
     * For now I simply don't allow the North Palace in a small isolation zone.
-* Sometimes a continent runs out of nodes before it's exits have been placed (see logs).
-    * Most likely due to nodes with multiple exits.
+* Sometimes North Palace gets placed behind a boulder and the game is instantly unwinnable.
+* Sometimes when connecting areas, the connected areas will be exhausted because all of the connected ares are small and have run out of nodes to fill...temporary fix in place but would cause an unwinnable seed.
 
 ## Logs
 

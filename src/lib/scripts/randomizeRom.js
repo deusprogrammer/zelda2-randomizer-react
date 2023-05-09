@@ -247,69 +247,84 @@ for (let continent = 0; continent < 4; continent++) {
     // Randomly assign links between isolation groups.   
     console.log("\tRP1: PLACING CONNECTIONS");
     while (localPassThroughAreas.length > 0) {
-        // Select the random passthrough
-        let randomPassthrough = chooseRandomNode(localPassThroughAreas);
-
-        /**
-         * TODO Alter logic to assign multiple exits if the random passthrough has multiple exits
-         */
+        console.log(`CONNECTED     ${JSON.stringify(connectedIsolationAreas)}`);
+        console.log(`DISCONNECTED  ${JSON.stringify(disconnectedIsolationAreas)}`);
 
         // Choose random isolation groups for entrance and exits
-        let index, otherIndex;
-        if (disconnectedIsolationAreas.length > 0) {
+        let entranceIndex, exitIndex;
+        if (disconnectedIsolationAreas.length > 0 && connectedIsolationAreas.length > 0) {
             // Make sure all nodes are connected before randomly applying connections locally.
-            index = chooseRandomNode(connectedIsolationAreas);
-            otherIndex = chooseRandomNode(disconnectedIsolationAreas);
+            entranceIndex = chooseRandomNode(connectedIsolationAreas);
+            exitIndex = chooseRandomNode(disconnectedIsolationAreas);
+        } else if (disconnectedIsolationAreas.length > 0 && connectedIsolationAreas.length <= 0) {
+            entranceIndex = chooseRandomNode(disconnectedIsolationAreas);
+            exitIndex = chooseRandomNode(disconnectedIsolationAreas);
         } else {
-            index = chooseRandomNode(connectedIsolationAreas);
-            otherIndex = chooseRandomNode(connectedIsolationAreas);
+            entranceIndex = chooseRandomNode(connectedIsolationAreas);
+            exitIndex = chooseRandomNode(connectedIsolationAreas);
         }
     
         // Acquire nodes from random isolation groups for entrance and exits.
-        let nodes = isolationAreas[index];
-        let otherNodes = isolationAreas[otherIndex];
+        let entranceNodes = isolationAreas[entranceIndex];
+        let exitNodes = isolationAreas[exitIndex];
 
         // Choose a random node from each isolation group for entrance and exits
-        let randomNode = chooseRandomNode(nodes);
-        let otherRandomNode = chooseRandomNode(otherNodes);
+        let entranceNode = chooseRandomNode(entranceNodes);
+        let exitNode = chooseRandomNode(exitNodes);
 
-        // Link exit(s)
-        templateData[randomNode].mappedLocation = randomPassthrough;
-        templateData[otherRandomNode].mappedLocation = locationMetadata[randomPassthrough].links[0];
+        // Set entrance and exit
+        let entrance = chooseRandomNode(localPassThroughAreas);
+        let availableExits = locationMetadata[entrance].links.filter(link => localPassThroughAreas.includes(link));
+        let exit = chooseRandomNode(availableExits);
 
-        // Remove used passthroughs
-        passThroughAreas = passThroughAreas.filter(key => randomPassthrough !== key && locationMetadata[randomPassthrough].links[0] !== key);
-        localPassThroughAreas = localPassThroughAreas.filter(key => randomPassthrough !== key && locationMetadata[randomPassthrough].links[0] !== key);
+        if (entrance) {
+            // Set entrance
+            templateData[entranceNode].mappedLocation = entrance;
 
-        /**
-         * TODO END
-         */
-        
-        // Remove nodes from isolation areas
-        isolationAreas[index]       = removeNode(isolationAreas[index], randomNode);
-        isolationAreas[otherIndex]  = removeNode(isolationAreas[otherIndex], otherRandomNode);
+            // Remove used passthroughs
+            passThroughAreas = removeNode(passThroughAreas, entrance);
+            localPassThroughAreas = removeNode(localPassThroughAreas, entrance);
 
-        // Remove the nodes we just chose from the disconnected isolation areas list.
-        disconnectedIsolationAreas = removeNode(disconnectedIsolationAreas, otherIndex);
-        if (!connectedIsolationAreas.includes(otherIndex)) {
-            connectedIsolationAreas.push(otherIndex);
+            // Remove node from continent nodes
+            continentNodes = removeNode(continentNodes, entranceNode);
+
+            // Remove nodes from isolation zones
+            isolationAreas[entranceIndex] = removeNode(isolationAreas[entranceIndex], entranceNode);
+        }
+        if (exit) {
+            templateData[exitNode].mappedLocation = exit;
+
+            // Remove used passthroughs
+            passThroughAreas = removeNode(passThroughAreas, exit);
+            localPassThroughAreas = removeNode(localPassThroughAreas, exit);
+
+            // Remove node from continent nodes
+            continentNodes = removeNode(continentNodes, exitNode);
+
+            // Remove nodes from isolation zones
+            isolationAreas[exitIndex] = removeNode(isolationAreas[exitIndex], exitNode);
+
+            // Remove the nodes we just chose from the disconnected isolation areas list.
+            disconnectedIsolationAreas = removeNode(disconnectedIsolationAreas, exitIndex);
+            if (!connectedIsolationAreas.includes(exitIndex)) {
+                connectedIsolationAreas.push(exitIndex);
+            }
         }
 
         // Remove empty isolation areas
-        if (isolationAreas[index].length <= 0) {
-            connectedIsolationAreas = removeNode(connectedIsolationAreas, index);
+        if (isolationAreas[entranceIndex].length <= 0) {
+            connectedIsolationAreas = removeNode(connectedIsolationAreas, entranceIndex);
         }
-        if (isolationAreas[otherIndex].length <= 0) {
-            connectedIsolationAreas = removeNode(connectedIsolationAreas, otherIndex);
+        if (isolationAreas[exitIndex].length <= 0) {
+            connectedIsolationAreas = removeNode(connectedIsolationAreas, exitIndex);
         }
 
-        // Remove node from continent nodes
-        continentNodes = continentNodes.filter(key => randomNode !== key && otherRandomNode !== key);
-
-        console.log(`\t\tCONNECTING AREAS ${index} AND ${otherIndex}`);
-        console.log(`\t\tCONNECTING       ${templateData[randomNode].locationKey} to ${templateData[otherRandomNode].locationKey} via ${randomPassthrough} and ${locationMetadata[randomPassthrough].links[0]}`);
-        console.log(`\t\tCONNECTED        ${connectedIsolationAreas}`);
-        console.log(`\t\tDISCONNECTED     ${disconnectedIsolationAreas}`);
+        if (entrance && exit) {
+            console.log(`\t\tCONNECTING AREAS ${entranceIndex} AND ${exitIndex}`);
+            console.log(`\t\tCONNECTING       ${templateData[entranceNode].locationKey} to ${templateData[exitNode].locationKey} via ${entrance} and ${exit}`);
+        } else {
+            console.log(`\t\tMAPPING          ${templateData[entranceNode].locationKey} to ${entrance}`);
+        }
     }
 
     // Randomly place continent exits
