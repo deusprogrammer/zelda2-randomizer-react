@@ -75,7 +75,7 @@ const addLinksToPartialTemplate = (templateData, locationMetadata) => {
                     }
                 });
                 templateNode.linkRequirements[nodeId] = locationMetadata[mappedLocation].linkRequirements[link];
-            })
+            });
         }
 
         // Double link all connections
@@ -85,8 +85,17 @@ const addLinksToPartialTemplate = (templateData, locationMetadata) => {
                     templateData[connection].connections = [];
                 }
 
+                if (!templateData[connection].connectionRequirements) {
+                    templateData[connection].connectionRequirements = {};
+                }
+
                 if (!templateData[connection].connections.includes(key)) {
                     templateData[connection].connections.push(key);
+                }
+
+                // Connect back connection requirements
+                if (templateNode.connectionRequirements && connection in templateNode.connectionRequirements) {
+                    templateData[connection].connectionRequirements[key] = templateNode.connectionRequirements[connection];
                 }
             });
         }
@@ -104,12 +113,11 @@ const checkRequirements = (requirements, items, spells) => {
         let subRequirements = requirement.split("|").map(subRequirement => subRequirement.trim());
         let subResult = false;
         subRequirements.forEach(subRequirement => {
-            // console.log("CHECKING SUB REQUIREMENT " + subRequirement);
             subResult = subResult || items.includes(subRequirement) || spells.includes(subRequirement);
-            // console.log("SUB RESULT: " + subResult);
+            console.log("CHECKING SUB REQUIREMENT " + subRequirement + " => " + subResult);
         });
         result = result && subResult;
-        // console.log("RESULT: " + result);
+        console.log("RESULT: " + result);
     });
 
     return result;
@@ -132,13 +140,13 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
         accessibleNodes.push(nodeName);
     }
 
-    // console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
+    console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
 
     if (node && node.connections) {
         node.connections.forEach((connectedNode) => {
-            // console.log("CONNECTION: " + connectedNode);
+            console.log("CONNECTION: " + connectedNode);
             if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
-                // console.log("CONNECTION HAS REQUIREMENTS");
+                console.log("CONNECTION HAS REQUIREMENTS");
                 let requirements = node.connectionRequirements[connectedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
@@ -146,7 +154,7 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
             } else {
-                // console.log("CONNECTION HAS NO REQUIREMENTS");
+                //console.log("CONNECTION HAS NO REQUIREMENTS");
                 let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
                 newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                 newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
@@ -155,9 +163,9 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
     }
     if (node && node.links) {
         node.links.forEach((linkedNode) => {
-            // console.log("LINK: " + linkedNode);
+            console.log("LINK: " + linkedNode);
             if (node.linkRequirements && node.linkRequirements[linkedNode]) {
-                // console.log("LINK HAS REQUIREMENTS");
+                console.log("LINK HAS REQUIREMENTS");
                 let requirements = node.linkRequirements[linkedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
