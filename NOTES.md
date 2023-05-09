@@ -26,6 +26,12 @@ The index in the list of locations is what determines where the destination in t
 
 In order to change where the element dumps you, you would need to either swap locations or move the x, y of the destination you want.
 
+## Bugs
+
+* Randomizer thinks it can connect Death Mountain and Maze Island.
+* Randomizer for some reason misses hammer requirements in some cases like blocked caves and isolation zones.
+    * Seems to be related to reverse linking.
+
 ## 6502 Assembly Notes
 
 ### Registers

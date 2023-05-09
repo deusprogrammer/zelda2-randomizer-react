@@ -163,9 +163,12 @@ export default {
             "NODE39"
         ],
         "connectionRequirements": {
-             "NODE24": [
-                  "HAMMER"
-             ]
+            "NODE24": [
+                "HAMMER"
+            ],
+            "NODE17": [
+                "HAMMER"
+            ]
         }
     },
     "NODE13": {
@@ -326,14 +329,7 @@ export default {
         "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
-        "connections": [
-            "NODE29"
-        ],
-        "connectionRequirements": {
-             "NODE29": [
-                  "BAGU_SAUCE | FAIRY"
-             ]
-        },
+        "connections": [],
     },
     "NODE29": {
         "locationKey": "LIFE_TOWN_S",
@@ -1262,7 +1258,7 @@ export default {
         "x": 40,
         "y": 67,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "connections": [
             "NODE128",
@@ -1277,7 +1273,7 @@ export default {
         "x": 41,
         "y": 58,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "connections": [
             "NODE122",
@@ -1289,7 +1285,7 @@ export default {
         "x": 48,
         "y": 68,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1299,7 +1295,7 @@ export default {
         "x": 45,
         "y": 62,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1309,7 +1305,7 @@ export default {
         "x": 48,
         "y": 58,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1319,7 +1315,7 @@ export default {
         "x": 46,
         "y": 50,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": [
@@ -1334,7 +1330,7 @@ export default {
         "x": 48,
         "y": 46,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1344,7 +1340,7 @@ export default {
         "x": 50,
         "y": 42,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1354,7 +1350,7 @@ export default {
         "x": 51,
         "y": 49,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1364,7 +1360,7 @@ export default {
         "x": 60,
         "y": 58,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "connections": []
     },
@@ -1373,7 +1369,7 @@ export default {
         "x": 57,
         "y": 60,
         "isolationGroup": 27,
-        "continent": 3,
+        "continent": 2,
         "continentName": "MAZE ISLAND",
         "connections": []
     },

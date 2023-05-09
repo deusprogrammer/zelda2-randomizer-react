@@ -3026,7 +3026,7 @@ export default {
           "abilityRequirements": [],
           "spellRequirements": [],
           "items": [
-               "BIG_ITEM"
+               "LARGE_ITEM"
           ],
           "itemRequirements": [],
           "entryRequirements": [],
@@ -3118,7 +3118,7 @@ export default {
           "abilityRequirements": [],
           "spellRequirements": [],
           "items": [
-               "BIG_ITEM"
+               "LARGE_ITEM"
           ],
           "itemRequirements": [],
           "entryRequirements": [],
@@ -3212,7 +3212,7 @@ export default {
           "abilityRequirements": [],
           "spellRequirements": [],
           "items": [
-               "BIG_ITEM"
+               "LARGE_ITEM"
           ],
           "itemRequirements": [],
           "entryRequirements": [],
@@ -5173,8 +5173,8 @@ export default {
           "abilityRequirements": [],
           "spellRequirements": [],
           "items": [
-               "BIG_ITEM",
-               "BIG_ITEM"
+               "LARGE_ITEM",
+               "LARGE_ITEM"
           ],
           "itemRequirements": [
                "SPELL",
@@ -7391,7 +7391,7 @@ export default {
           "abilityRequirements": [],
           "spellRequirements": [],
           "items": [
-               "BIG_ITEM"
+               "LARGE_ITEM"
           ],
           "itemRequirements": [],
           "entryRequirements": [],
@@ -7483,7 +7483,7 @@ export default {
           "abilityRequirements": [],
           "spellRequirements": [],
           "items": [
-               "BIG_ITEM"
+               "LARGE_ITEM"
           ],
           "itemRequirements": [],
           "entryRequirements": [],
@@ -10746,7 +10746,7 @@ export default {
           "abilityRequirements": [],
           "spellRequirements": [],
           "items": [
-               "BIG_ITEM"
+               "LARGE_ITEM"
           ],
           "itemRequirements": [],
           "entryRequirements": [],
@@ -11846,7 +11846,7 @@ export default {
           "abilityRequirements": [],
           "spellRequirements": [],
           "items": [
-               "BIG_ITEM"
+               "LARGE_ITEM"
           ],
           "itemRequirements": [],
           "entryRequirements": [],
@@ -12030,7 +12030,7 @@ export default {
           "abilityRequirements": [],
           "spellRequirements": [],
           "items": [
-               "BIG_ITEM"
+               "LARGE_ITEM"
           ],
           "itemRequirements": [],
           "entryRequirements": [
