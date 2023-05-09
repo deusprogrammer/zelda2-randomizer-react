@@ -114,10 +114,10 @@ const checkRequirements = (requirements, items, spells) => {
         let subResult = false;
         subRequirements.forEach(subRequirement => {
             subResult = subResult || items.includes(subRequirement) || spells.includes(subRequirement);
-            console.log("CHECKING SUB REQUIREMENT " + subRequirement + " => " + subResult);
+            // console.log("CHECKING SUB REQUIREMENT " + subRequirement + " => " + subResult);
         });
         result = result && subResult;
-        console.log("RESULT: " + result);
+        // console.log("RESULT: " + result);
     });
 
     return result;
@@ -140,13 +140,13 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
         accessibleNodes.push(nodeName);
     }
 
-    console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
+    // console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
 
     if (node && node.connections) {
         node.connections.forEach((connectedNode) => {
-            console.log("CONNECTION: " + connectedNode);
+            // console.log("CONNECTION: " + connectedNode);
             if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
-                console.log("CONNECTION HAS REQUIREMENTS");
+                // console.log("CONNECTION HAS REQUIREMENTS");
                 let requirements = node.connectionRequirements[connectedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
@@ -163,9 +163,9 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
     }
     if (node && node.links) {
         node.links.forEach((linkedNode) => {
-            console.log("LINK: " + linkedNode);
+            // console.log("LINK: " + linkedNode);
             if (node.linkRequirements && node.linkRequirements[linkedNode]) {
-                console.log("LINK HAS REQUIREMENTS");
+                // console.log("LINK HAS REQUIREMENTS");
                 let requirements = node.linkRequirements[linkedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
@@ -188,7 +188,7 @@ let northPalaceNode = null;
 let northPalaceIsolationZone = null;
 let firstPass = true;
 let passThroughAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].links.length > 0 && !locationMetadata[key].passThrough);
-for (let continent = 0; continent < 3; continent++) {
+for (let continent = 0; continent < 4; continent++) {
     console.log("CONTINENT: " + continent);
 
     // Filter out all passthrough areas

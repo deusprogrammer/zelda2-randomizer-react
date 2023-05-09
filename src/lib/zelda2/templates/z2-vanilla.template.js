@@ -163,10 +163,13 @@ export default {
             "NODE39"
         ],
         "connectionRequirements": {
-            "NODE24": [
+            "NODE16": [
                 "HAMMER"
             ],
             "NODE17": [
+                "HAMMER"
+            ],
+            "NODE24": [
                 "HAMMER"
             ]
         }
@@ -1003,6 +1006,7 @@ export default {
         "locationKey": "CAVE_M_E",
         "x": 3,
         "y": 59,
+        "isolationGroup": 33,
         "continent": 1,
         "continentName": "DEATH MOUNTAIN",
         "connections": []
@@ -1029,6 +1033,7 @@ export default {
         "locationKey": "ELEVATOR_CAVE_G_W_BR",
         "x": 14,
         "y": 54,
+        "isolationGroup": 32,
         "continent": 1,
         "continentName": "DEATH MOUNTAIN",
         "connections": []
@@ -1257,8 +1262,8 @@ export default {
         "locationKey": "EAST_HYRULE_BRIDGE",
         "x": 40,
         "y": 67,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "connections": [
             "NODE128",
@@ -1272,8 +1277,8 @@ export default {
         "locationKey": "MAZE_ISLAND_MAGIC",
         "x": 41,
         "y": 58,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "connections": [
             "NODE122",
@@ -1284,8 +1289,8 @@ export default {
         "locationKey": "MAZE_ISLAND_FORCED_BATTLE_1",
         "x": 48,
         "y": 68,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1294,8 +1299,8 @@ export default {
         "locationKey": "MAZE_ISLAND_FORCED_BATTLE_2",
         "x": 45,
         "y": 62,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1304,8 +1309,8 @@ export default {
         "locationKey": "MAZE_ISLAND_FORCED_BATTLE_3",
         "x": 48,
         "y": 58,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1314,8 +1319,8 @@ export default {
         "locationKey": "MAZE_ISLAND_FORCED_BATTLE_4",
         "x": 46,
         "y": 50,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": [
@@ -1329,8 +1334,8 @@ export default {
         "locationKey": "MAZE_ISLAND_FORCED_BATTLE_5",
         "x": 48,
         "y": 46,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1339,8 +1344,8 @@ export default {
         "locationKey": "MAZE_ISLAND_FORCED_BATTLE_6",
         "x": 50,
         "y": 42,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1349,8 +1354,8 @@ export default {
         "locationKey": "MAZE_ISLAND_FORCED_BATTLE_7",
         "x": 51,
         "y": 49,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "suggestion": "passthrough!",
         "connections": []
@@ -1359,8 +1364,8 @@ export default {
         "locationKey": "P4",
         "x": 60,
         "y": 58,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "connections": []
     },
@@ -1368,8 +1373,8 @@ export default {
         "locationKey": "MAZE_ISLAND_CHILD",
         "x": 57,
         "y": 60,
-        "isolationGroup": 27,
-        "continent": 2,
+        "isolationGroup": 31,
+        "continent": 3,
         "continentName": "MAZE ISLAND",
         "connections": []
     },
@@ -1422,6 +1427,7 @@ export default {
         "locationKey": "ELEVATOR_CAVE_H_W_TR",
         "x": 10,
         "y": 51,
+        "isolationGroup": 18,
         "continent": 1,
         "continentName": "DEATH MOUNTAIN",
         "connections": []

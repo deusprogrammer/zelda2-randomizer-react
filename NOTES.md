@@ -3,18 +3,27 @@
 ## Randomization Process (what I have so far)
 
 * RP1: Randomly generate template (unless defined).
-* RP2: Randomly and evenly place connecting areas (caves, one way squares).
-* RP3: Randomly place all overworld areas, making sure to evenly distribute item bearing nodes.
-* RP4: From starting point, gather all currently accessible nodes.
-    * RP4.1: Randomly choose an accessible remedy seeking node.
-    * RP4.2: Place remedy within accessible item-bearing nodes.
-    * RP4.3: If remedy resides in a location that itself requires a remedy, recurse into RP4.
-    * RP4.4: Once the node we started with has it's remedy, repeat RP4 with new set of accessible nodes.
-* RP5: Randomly place optional and small items among the remaining item bearing nodes.
+* RP2: Randomly place North Palace somewhere that isn't completely blocked off such as a cave blocked by a rock or an isolation zone with exactly one node.
+* RP3: Randomly connect all isolation zones together.
+* RP4: Randomly place all item bearing areas such that they come before the blocked connection they are a remedy for.
+    * RP4.1: Gather all currently accessible nodes from the start and the blocked connections.
+    * RP4.2: Place item bearing area within the accessible nodes and place remedy for a blocked connection within that node.
+        * RP4.2.1: If remedy is a spell then place the town within accessible nodes.
+        * RP4.2.2: If town requires an item, then place that item within accessible nodes.
+    * RP4.3: Start at RP4.1 again and resume until Grand Palace is accessible and all Palaces are able to be completed.
+* RP5: Randomly place all remaining nodes and items.
 
-## Randomization Notes
+## Change Log
 
-Need to ensure that selected passthrough has it's connecting end in another isolation zone
+5/9/2023 1:00am - Changed maze island continent numbers to 3 on both location metadata and vanilla template
+
+## Bugs
+
+* One entry in accessible areas always comes up empty for some reason (no node id, no location key, no mapped location)
+* Sometimes North Palace gets placed somewhere impossible like Medicine Cave.
+    * Fix is to examine it's accessibility or to simply mark it off limits somehow.
+* Sometimes North Palace gets placed in a two node isolation zone which is connected to another two node isolation zone that has a restricted connection to another isolation zone
+    * No room for remedies.
 
 ## Game Notes
 
@@ -25,12 +34,6 @@ The map number doesn't matter if the mapset is 0 (world)
 The index in the list of locations is what determines where the destination in the new continent is.
 
 In order to change where the element dumps you, you would need to either swap locations or move the x, y of the destination you want.
-
-## Bugs
-
-* Randomizer thinks it can connect Death Mountain and Maze Island.
-* Randomizer for some reason misses hammer requirements in some cases like blocked caves and isolation zones.
-    * Seems to be related to reverse linking.
 
 ## 6502 Assembly Notes
 
@@ -118,16 +121,6 @@ All of the following are 1 bit of the P register
     A   ASL             ; Shift the bit left
         INX             ; Increment X
         BCC A           ; If carry bit is not set, continue
-
-### Notes for issue with missing exit numbers
-
-    ; Loading probably looks something like this
-        STX #$00        ; Initialize X to 0
-    A   LDA $XXXX,X     ; Load a byte from $AAAA + X
-        STA $YYYY,Y     ; Store a byte to $BBBB + X
-        INX             ; Increment X
-        CPX #$C         ; Check to see if $C bytes have been read
-        BEQ A           ; If not complete, jump back to A
 
 ## Code analysis
 
@@ -304,194 +297,3 @@ All of the following are 1 bit of the P register
     I am in world 0 (#$00)
     I am in trophy cave (#$21)
     I am in map page 3 (#$03) (edited)
-
-#### Notes
-
-    ; These two repeat over and over
-    A:0B X:FF Y:01 S:F7 P:nvUBdIZC         $C1DD: 20 30 CF  JSR $CF30
-    A:0B X:FF Y:01 S:F5 P:nvUBdIZC           $CF30: AD 06 07  LDA $0706 Overworld Index = #$00
-    A:00 X:FF Y:01 S:F5 P:nvUBdIZC           $CF33: 0A        ASL
-    A:00 X:FF Y:01 S:F5 P:nvUBdIZc           $CF34: 0A        ASL
-    A:00 X:FF Y:01 S:F5 P:nvUBdIZc           $CF35: 6D 06 07  ADC $0706 Overworld Index = #$00
-    A:00 X:FF Y:01 S:F5 P:nvUBdIZc           $CF38: 6D 07 07  ADC $0707 World = #$00
-    A:00 X:FF Y:01 S:F5 P:nvUBdIZc           $CF3B: 60        RTS (from $CF30) ----------------------------
-    A:00 X:FF Y:01 S:F7 P:nvUBdIZc         $C1E0: C9 01     CMP #$01
-    A:00 X:FF Y:01 S:F7 P:NvUBdIzc         $C1E2: D0 22     BNE $C206
-
-    ...
-
-    A:00 X:FF Y:02 S:F9 P:nvUBdIZc       $D50A: 20 E5 80  JSR $80E5
-    A:00 X:FF Y:02 S:F7 P:nvUBdIZc         $80E5: AD 07 07  LDA $0707 World = #$00
-    A:00 X:FF Y:02 S:F7 P:nvUBdIZc         $80E8: 0D 61 05  ORA $0561 current scene/map index = #$21
-    A:21 X:FF Y:02 S:F7 P:nvUBdIzc         $80EB: 0D 06 07  ORA $0706 Overworld Index = #$00
-    A:21 X:FF Y:02 S:F7 P:nvUBdIzc         $80EE: D0 4F     BNE $813F
-
-    ; THIS SECTION WHERE IT SKIPS MIGHT BE IMPORTANT
-
-    A:21 X:FF Y:02 S:F7 P:nvUBdIzc         $813F: 60        RTS (from $80E5) ----------------------------
-    A:21 X:FF Y:02 S:F9 P:nvUBdIzc       $D50D: 20 47 98  JSR $9847
-    ; End these two
-
-    A:F8 X:09 Y:00 S:F9 P:nvUBdIZc       $CF4F: 20 C9 FF  JSR $FFC9
-    A:F8 X:09 Y:00 S:F7 P:nvUBdIZc         $FFC9: AD 69 07  LDA $0769 Bank Switch = #$01
-    A:01 X:09 Y:00 S:F7 P:nvUBdIzc         $FFCC: 8D 00 E0  STA $E000 = #$FF
-    A:01 X:09 Y:00 S:F7 P:nvUBdIzc         $FFCF: 4A        LSR
-    A:00 X:09 Y:00 S:F7 P:nvUBdIZC         $FFD0: 8D 00 E0  STA $E000 = #$FF
-    A:00 X:09 Y:00 S:F7 P:nvUBdIZC         $FFD3: 4A        LSR
-    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD4: 8D 00 E0  STA $E000 = #$FF
-    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD7: 4A        LSR
-    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFD8: 8D 00 E0  STA $E000 = #$FF
-    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDB: 4A        LSR
-    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDC: 8D 00 E0  STA $E000 = #$FF
-    A:00 X:09 Y:00 S:F7 P:nvUBdIZc         $FFDF: 60        RTS (from $FFC9) ----------------------------
-    A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF52: AD 61 05  LDA $0561 current scene/map index = #$21
-    A:21 X:09 Y:00 S:F9 P:nvUBdIzc       $CF55: AC 07 07  LDY $0707 World = #$00
-    A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF58: D0 06     BNE $CF60
-    A:21 X:09 Y:00 S:F9 P:nvUBdIZc       $CF5A: C9 1D     CMP #$1D
-    A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5C: 90 02     BCC $CF60
-    A:21 X:09 Y:00 S:F9 P:nvUBdIzC       $CF5E: A9 00     LDA #$00
-    A:00 X:09 Y:00 S:F9 P:nvUBdIZC       $CF60: 0A        ASL
-    A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF61: 0A        ASL
-    A:00 X:09 Y:00 S:F9 P:nvUBdIZc       $CF62: 65 3B     ADC $3B = #$03
-    A:03 X:09 Y:00 S:F9 P:nvUBdIzc       $CF64: A8        TAY
-    A:03 X:09 Y:03 S:F9 P:nvUBdIzc       $CF65: B9 FC 6A  LDA $6AFC Room Connectivity Data,Y @ $6AFF Do
-    A:FC X:09 Y:03 S:F9 P:NvUBdIzc       $CF68: 48        PHA
-    A:FC X:09 Y:03 S:F8 P:NvUBdIzc        $CF69: 29 FC     AND #$FC
-    A:FC X:09 Y:03 S:F8 P:NvUBdIzc        $CF6B: C9 FC     CMP #$FC
-    A:FC X:09 Y:03 S:F8 P:nvUBdIZC        $CF6D: D0 43     BNE $CFB2
-    A:FC X:09 Y:03 S:F8 P:nvUBdIZC        $CF6F: 68        PLA
-    A:FC X:09 Y:03 S:F9 P:NvUBdIzC       $CF70: 29 03     AND #$03
-    A:00 X:09 Y:03 S:F9 P:nvUBdIZC       $CF72: 18        CLC
-    A:00 X:09 Y:03 S:F9 P:nvUBdIZc       $CF73: 6D 48 07  ADC $0748 Area Location Index = #$01
-    A:01 X:09 Y:03 S:F9 P:nvUBdIzc       $CF76: 8D 48 07  STA $0748 Area Location Index = #$01
-    A:01 X:09 Y:03 S:F9 P:nvUBdIzc       $CF79: A0 00     LDY #$00
-    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF7B: 8C FF 07  STY $07FF = #$00
-    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF7E: 8C E9 05  STY $05E9 = #$04
-    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF81: A0 90     LDY #$90
-    A:01 X:09 Y:90 S:F9 P:NvUBdIzc       $CF83: 8C 00 40  STY SQ1_VOL = #$91
-    A:01 X:09 Y:90 S:F9 P:NvUBdIzc       $CF86: A9 01     LDA #$01
-    A:01 X:09 Y:90 S:F9 P:nvUBdIzc       $CF88: AC 07 07  LDY $0707 World = #$00
-    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF8B: F0 10     BEQ $CF9D
-    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CF9D: A0 04     LDY #$04
-    A:01 X:09 Y:04 S:F9 P:nvUBdIzc       $CF9F: 8C E9 05  STY $05E9 = #$00
-    A:01 X:09 Y:04 S:F9 P:nvUBdIzc       $CFA2: AC 06 07  LDY $0706 Overworld Index = #$00
-    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CFA5: D0 F3     BNE $CF9A
-    A:01 X:09 Y:00 S:F9 P:nvUBdIZc       $CFA7: AC 61 05  LDY $0561 current scene/map index = #$21
-    A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFAA: D0 EE     BNE $CF9A
-    A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CF9A: 4C F8 CF  JMP $CFF8
-    A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFF8: 8D 36 07  STA $0736 Game Mode/Current State = #$10
-    A:01 X:09 Y:21 S:F9 P:nvUBdIzc       $CFFB: 60        RTS (from $C2CA) ----------------------------
-
-Here are some line by like notes I took to understand the code.
-
-    $CF52 Load current scene/map index into accumulator ($21)
-    $CF55 Load world into Y (#$00)
-    $CF58 If world number was not zero, jump to $CF60
-    $CF5A Compare accumulator with #$1D (29)
-    $CF5C Branch if accumulator is less than #$1D (29) to $CF60
-    $CF5E Load #$0 into accumulator
-    $CF60 Shift left
-    $CF61 Shift left
-    $CF62 Add what is at memory location $3B (#$03) to accumulator
-    $CF64 Transfer accumulator to index Y (TAY)
-    $CF65 Loading room connectivity data into accumulator from $6AFC,Y ($6AFF)
-    $CF68 Push accumulator (room connectivity data) onto the stack
-    $CF69 Mask accumulator with #$FC (0b11111100) (I believe that's the map number)
-    $CF6B Compare with #$FC
-    $CF6D If not equal, branch to $CFB2
-    $CF68 Pull accumulator from the stack
-    $CF70 Mask accumulator with #$03 (0b00000011)
-    $CF72 Clear carry flag
-    $CF73 Add area location index to accumulator
-    $CF76 Store accumulator back to area location index
-    $CF79 Reset Y to 0
-    $CF7B Store Y to $07FF
-    $CF7E Store Y to $05E9
-    $CF81 Load Y with #$90
-    $CF83 Store Y to SQ1_VOL?
-    $CF86 Load accumulator with value #$00
-    $CF88 Load Y with world number
-    $CF8B If world number is zero, branch to $CF9D
-    ...
-    $CF9D Load y with #$04
-    $CF9F Store y to $05E9
-    $CFA2 Load overworld index into Y 
-    $CFA5 If overworld index is not zero, branch back to $CF9A  
-    $CFA7 Load current scene/map index into Y
-    $CFAA If map number is not zero, branch back to $CF9A
-    $CF9A Jump to $CFF8
-    ...
-    $CFF8 Store accumlator (01) to current game mode/current state (which was previously $10)
-
-    $C1A8 PPU Shit
-
-    $C010 Load game mode/current state into accumulator
-    $C013 Compare against #$08
-    $C015 Jump to $C01B if equal
-    $C017 Compare against #$14
-    $C019 Go back to $C010 if not equal
-
-    $D168 Load game mode into accumulator
-    $D16B Compare game mode to value in $0737
-    $D16E Store accumulator into $0737
-    $D171 If game mode not equal to value in $0737 (#$10), then jump to $D18D
-
-    $CCB3 Zero accumulator
-    $CCB5 Store accumulator into return to overworld (#$00)
-    $CCB8 Store accumulator into $075B
-    $CCBB Load area location index (#$01) into Y
-    $CCBE Load accumulator with data at $6A00,Y (Overworld destinations table) $6A01 (Y position)
-    $CCC1 If value loaded wasn't 0, then branch to $CCCC
-    ...
-    $CCCC Mask the accumulator with #$7F (0b01111111)
-    $CCCE Store the accumulator to $73
-    $CCD0 Load accumulator with data at $6A3F,Y ($6A40) (X Position)
-    $CCD3 Mask the accumulator with $3F (0b00111111)
-    $CCD5 Store the accumulator with to $74
-    $CCD7 Load accumulator with data at $6ABD,Y ($6ABE) (World Number)
-    $CCDA Mask the accumulator with $40 (0b01000000)
-    >$CCDC If masking set zero flag, jump to $CCF9
-
-    $CF05 Increment memory by 1 at Game Mode/Current State memory location
-
-    Enter $C010 loop again
-
-    $C07B Some long process involving the PPU
-
-    Back to $D168
-
-    $81A9 Increment game mode/current status
-
-    Enter $C010 loop again
-
-    $C07B Again
-
-    $C19B Some loop incrementing X
-        Rotating right one bit memory at $051A,X ($051A - $0522)
-
-    $D254 Some loop incrementing Y
-        Storing data at $0200,Y ($0204 - $02FC) 4 bytes at a time
-
-    $FFC9 Loading bank switch into accumulator.
-
-    $8C39 Storing accumulator data (#$0C) into ($048C - $0499)
-
-    $FFC9 Again
-
-    $8C39 Storing accumulator data (#$04) into ($049A - $04A1)
-
-    $FFC9 Again
-
-    $8C39 Storing accumulator data (#$0C) into ($04A2 - $04B1)
-
-    $FFC9 Again
-
-    $8C39 Storing accumulator data (#$0C) into ($04B2 - $04BD)
-
-    $FFC9 Again
-
-    $8C39 Storing accumulator data (#$0B) into ($0480 - $048C)
-
-
-    ...does this a lot...
-
