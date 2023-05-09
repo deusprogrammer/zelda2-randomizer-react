@@ -350,6 +350,6 @@ accessibleNodes.forEach(node => {
     if (partialTemplate[node]) {
         console.log(`\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation}`);
     } else {
-        console.log(`\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${''.padEnd(32, ' ')}`);
+        console.log(`\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
     }
 });
