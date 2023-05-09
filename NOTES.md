@@ -408,3 +408,15 @@ All of the following are 1 bit of the P register
     I am in world 0 (#$00)
     I am in trophy cave (#$21)
     I am in map page 3 (#$03) (edited)
+
+## Prototype code for later
+
+        // On the first pass, if the isolation zone of the start is too small, pick a random link without requirements.
+        if (((index === northPalaceIsolationZone && nodes.length <= 2) || (otherIndex === northPalaceIsolationZone  && otherNodes.length <= 2)) && firstPass) {
+            let easyPassthroughs = localPassThroughAreas.filter(passthroughArea =>  {
+                return Object.keys(locationMetadata[passthroughArea].linkRequirements).length === 0;
+            });
+            randomPassthrough = chooseRandomNode(easyPassthroughs);
+            console.log("\tSTARTING AREA TOO SMALL, CHOOSING A REQUIREMENTLESS PASSTHROUGH FROM " + easyPassthroughs);
+            console.log("\tPICKED " + randomPassthrough);
+        }
