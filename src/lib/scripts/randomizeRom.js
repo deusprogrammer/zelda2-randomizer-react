@@ -277,13 +277,13 @@ for (let continent = 0; continent < 4; continent++) {
         templateData[randomNode].mappedLocation = randomPassthrough;
         templateData[otherRandomNode].mappedLocation = locationMetadata[randomPassthrough].links[0];
 
-        /**
-         * TODO END
-         */
-
         // Remove used passthroughs
         passThroughAreas = passThroughAreas.filter(key => randomPassthrough !== key && locationMetadata[randomPassthrough].links[0] !== key);
         localPassThroughAreas = localPassThroughAreas.filter(key => randomPassthrough !== key && locationMetadata[randomPassthrough].links[0] !== key);
+
+        /**
+         * TODO END
+         */
         
         // Remove nodes from isolation areas
         isolationAreas[index]       = removeNode(isolationAreas[index], randomNode);
