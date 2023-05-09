@@ -20,10 +20,121 @@
 ## Bugs
 
 * One entry in accessible areas always comes up empty for some reason (no node id, no location key, no mapped location)
-* Sometimes North Palace gets placed somewhere impossible like Medicine Cave.
-    * Fix is to examine it's accessibility or to simply mark it off limits somehow.
 * Sometimes North Palace gets placed in a two node isolation zone which is connected to another two node isolation zone that has a restricted connection to another isolation zone
     * No room for remedies.
+    * For now I simply don't allow the North Palace in a small isolation zone.
+* Sometimes a continent runs out of nodes before it's exits have been placed (see logs).
+    * Most likely due to nodes with multiple exits.
+
+## Logs
+
+    CONTINENT: 1
+        CONTINENT EXITS:       CAVE_A,CAVE_K
+        LOCAL PASSTHROUGHS:    CAVE_B_E,CAVE_B_W,CAVE_C_E,CAVE_C_W,CAVE_D_E,CAVE_D_W,CAVE_E_N,CAVE_E_S,CAVE_F_E,CAVE_F_W,CAVE_I_N,CAVE_I_S,CAVE_J_E,CAVE_J_W,CAVE_L_N,CAVE_L_S,CAVE_M_E,CAVE_M_W,CAVE_N_N,CAVE_N_S,CAVE_O_N,CAVE_O_S,CAVE_P_E,CAVE_P_W,CAVE_Q_E,CAVE_Q_W,CAVE_R_N,CAVE_R_S,ELEVATOR_CAVE_G_E_BL,ELEVATOR_CAVE_G_E_TL,ELEVATOR_CAVE_G_W_BR,ELEVATOR_CAVE_G_W_TR,ELEVATOR_CAVE_H_D_BL,ELEVATOR_CAVE_H_E_TL,ELEVATOR_CAVE_H_N_BR,ELEVATOR_CAVE_H_W_TR
+        ISOLATION ZONES:
+            ISOLATION 13:	["NODE82","NODE83","NODE97"]
+            ISOLATION 14:	["NODE84","NODE85"]
+            ISOLATION 15:	["NODE86","NODE87","NODE133"]
+            ISOLATION 16:	["NODE88","NODE89"]
+            ISOLATION 17:	["NODE90","NODE91","NODE93","NODE94"]
+            ISOLATION 18:	["NODE96","NODE104","NODE134"]
+            ISOLATION 19:	["NODE98","NODE99"]
+            ISOLATION 20:	["NODE100","NODE101"]
+            ISOLATION 21:	["NODE102","NODE103","NODE105"]
+            ISOLATION 22:	["NODE106","NODE107"]
+            ISOLATION 23:	["NODE108","NODE109"]
+            ISOLATION 24:	["NODE110","NODE111"]
+            ISOLATION 25:	["NODE112","NODE113"]
+            ISOLATION 26:	["NODE114","NODE115","NODE116","NODE135"]
+            ISOLATION 28:	["NODE117","NODE136"]
+            ISOLATION 32:	["NODE95"]
+            ISOLATION 33:	["NODE92"]
+        RP1: PLACING CONNECTIONS
+            CONNECTING AREAS 1 AND 14
+            CONNECTING       CAVE_B_W to CAVE_K via CAVE_C_W and CAVE_C_E
+            CONNECTED        1,14
+            DISCONNECTED     0,2,3,4,5,6,7,8,9,10,11,12,13,15,16
+            CONNECTING AREAS 1 AND 9
+            CONNECTING       CAVE_D_E to CAVE_L_N via CAVE_D_E and CAVE_D_W
+            CONNECTED        14,9
+            DISCONNECTED     0,2,3,4,5,6,7,8,10,11,12,13,15,16
+            CONNECTING AREAS 9 AND 6
+            CONNECTING       CAVE_O_S to CAVE_E_N via ELEVATOR_CAVE_G_E_TL and ELEVATOR_CAVE_G_E_BL
+            CONNECTED        14,6
+            DISCONNECTED     0,2,3,4,5,7,8,10,11,12,13,15,16
+            CONNECTING AREAS 14 AND 0
+            CONNECTING       CAVE_N_N to CAVE_B_E via ELEVATOR_CAVE_H_W_TR and ELEVATOR_CAVE_H_D_BL
+            CONNECTED        6,0
+            DISCONNECTED     2,3,4,5,7,8,10,11,12,13,15,16
+            CONNECTING AREAS 0 AND 5
+            CONNECTING       CAVE_A to CAVE_J_E via CAVE_J_W and CAVE_J_E
+            CONNECTED        6,0,5
+            DISCONNECTED     2,3,4,7,8,10,11,12,13,15,16
+            CONNECTING AREAS 6 AND 16
+            CONNECTING       CAVE_C_W to CAVE_M_E via CAVE_B_E and CAVE_B_W
+            CONNECTED        0,5
+            DISCONNECTED     2,3,4,7,8,10,11,12,13,15
+            CONNECTING AREAS 5 AND 7
+            CONNECTING       ELEVATOR_CAVE_G_W_TR to CAVE_E_S via ELEVATOR_CAVE_H_E_TL and ELEVATOR_CAVE_H_W_TR
+            CONNECTED        0,5,7
+            DISCONNECTED     2,3,4,8,10,11,12,13,15
+            CONNECTING AREAS 5 AND 10
+            CONNECTING       ELEVATOR_CAVE_H_W_TR to CAVE_O_N via CAVE_N_S and CAVE_N_N
+            CONNECTED        0,7,10
+            DISCONNECTED     2,3,4,8,11,12,13,15
+            CONNECTING AREAS 10 AND 15
+            CONNECTING       CAVE_P_W to ELEVATOR_CAVE_G_W_BR via CAVE_Q_E and CAVE_Q_W
+            CONNECTED        0,7
+            DISCONNECTED     2,3,4,8,11,12,13
+            CONNECTING AREAS 0 AND 4
+            CONNECTING       CAVE_C_E to CAVE_M_W via CAVE_I_N and CAVE_I_S
+            CONNECTED        7,4
+            DISCONNECTED     2,3,8,11,12,13
+            CONNECTING AREAS 4 AND 8
+            CONNECTING       ELEVATOR_CAVE_H_E_TL to CAVE_L_S via CAVE_R_S and CAVE_R_N
+            CONNECTED        7,4,8
+            DISCONNECTED     2,3,11,12,13
+            CONNECTING AREAS 8 AND 11
+            CONNECTING       CAVE_J_W to CAVE_P_E via CAVE_L_N and CAVE_L_S
+            CONNECTED        7,4,8,11
+            DISCONNECTED     2,3,12,13
+            CONNECTING AREAS 4 AND 3
+            CONNECTING       ELEVATOR_CAVE_G_E_BL to CAVE_I_S via CAVE_E_N and CAVE_E_S
+            CONNECTED        7,4,8,11,3
+            DISCONNECTED     2,12,13
+            CONNECTING AREAS 8 AND 12
+            CONNECTING       ELEVATOR_CAVE_H_N_BR to CAVE_R_N via CAVE_M_E and CAVE_M_W
+            CONNECTED        7,4,11,3,12
+            DISCONNECTED     2,13
+            CONNECTING AREAS 4 AND 2
+            CONNECTING       CAVE_I_N to CAVE_F_W via CAVE_O_S and CAVE_O_N
+            CONNECTED        7,11,3,12,2
+            DISCONNECTED     13
+            CONNECTING AREAS 7 AND 13
+            CONNECTING       ELEVATOR_CAVE_H_D_BL to HAMMER_CAVE via ELEVATOR_CAVE_G_W_BR and ELEVATOR_CAVE_G_E_BL
+            CONNECTED        11,3,12,2,13
+            DISCONNECTED     
+            CONNECTING AREAS 12 AND 12
+            CONNECTING       CAVE_Q_W to CAVE_Q_W via ELEVATOR_CAVE_G_W_TR and ELEVATOR_CAVE_G_E_BL
+            CONNECTED        11,3,2,13
+            DISCONNECTED     
+            CONNECTING AREAS 13 AND 3
+            CONNECTING       CAVE_R_S to CAVE_F_E via CAVE_F_E and CAVE_F_W
+            CONNECTED        11,2,13
+            DISCONNECTED     
+            CONNECTING AREAS 11 AND 2
+            CONNECTING       CAVE_Q_E to ELEVATOR_CAVE_G_E_TL via CAVE_P_W and CAVE_P_E
+            CONNECTED        2,13
+            DISCONNECTED     
+            CONNECTING AREAS 13 AND 13
+            CONNECTING       CAVE_N_S to DM_MAGIC via ELEVATOR_CAVE_H_N_BR and ELEVATOR_CAVE_H_D_BL
+            CONNECTED        2
+            DISCONNECTED     
+        RP2: PLACING EXITS
+            CONTINENT NODES LEFT: ["NODE86"]
+            RANDOM NODE PICKED FOR EXIT: NODE86
+            PLACING EXIT CAVE_A in CAVE_D_W
+            CONTINENT NODES LEFT: []
 
 ## Game Notes
 

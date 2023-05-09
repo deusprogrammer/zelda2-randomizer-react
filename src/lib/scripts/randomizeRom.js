@@ -19,8 +19,15 @@ const removeNode = (nodes, nodeName) => {
     return nodes.filter(node => node !== nodeName);
 }
 
-const getNodeLocationName = (node) => {
-    return templateData[node] ? templateData[node].locationKey : null;
+const getNodeLocationName = (nodeName) => {
+    return templateData[node] ? templateData[nodeName].locationKey : null;
+}
+
+const getLocationNodeName = (locationName) => {
+    return Object.keys(templateData).find(nodeName => {
+        let node = templateData[nodeName];
+        return node.locationKey === locationName;
+    });
 }
 
 const getNodeMappedLocationName = (node) => {
@@ -198,8 +205,8 @@ for (let continent = 0; continent < 4; continent++) {
     let smallItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('SMALL_ITEM'));
     let continentExits = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && linkIsInAnotherContinent(locationMetadata, locationMetadata[key]));
 
-    console.log(`CONTINENT EXITS:       ${continentExits}`);
-    console.log(`LOCAL PASSTHROUGHS:    ${localPassThroughAreas}`);
+    console.log(`\tCONTINENT EXITS:       ${continentExits}`);
+    console.log(`\tLOCAL PASSTHROUGHS:    ${localPassThroughAreas}`);
 
     // Separate all nodes into their isolation groups
     let isolationAreas = [];
@@ -211,15 +218,17 @@ for (let continent = 0; continent < 4; continent++) {
 
         isolationAreas[node.isolationGroup].push(key);
     });
-    console.log("ISOLATION ZONES:");
+    console.log("\tISOLATION ZONES:");
     isolationAreas.forEach((zone, index) => {
-        console.log(`\tISOLATION ${index}:\t` + JSON.stringify(zone));
+        console.log(`\t\tISOLATION ${index}:\t` + JSON.stringify(zone));
     });
     isolationAreas = isolationAreas.filter(index => isolationAreas[index] !== null);
 
     // Randomly place North Palace
     if (!northPalaceNode) {
-        northPalaceIsolationZone = Math.floor(Math.random() * isolationAreas.length);
+        console.log("\tPLACING NORTH CASTLE");
+        let largeIsolationAreas = isolationAreas.filter(isolationArea => isolationArea.length > 2);
+        northPalaceIsolationZone = Math.floor(Math.random() * largeIsolationAreas.length);
         let nodes = isolationAreas[northPalaceIsolationZone];
         northPalaceNode = chooseRandomNode(nodes);
 
@@ -227,7 +236,7 @@ for (let continent = 0; continent < 4; continent++) {
         continentNodes = removeNode(continentNodes, northPalaceNode);
 
         templateData[northPalaceNode].mappedLocation = "NORTH_CASTLE";
-        console.log(`\tPLACED NORTH CASTLE AT ${templateData[northPalaceNode].locationKey}`);
+        console.log(`\t\tPLACED NORTH CASTLE AT ${templateData[northPalaceNode].locationKey}`);
     }
 
     // Create a list of what isolation groups have been connected. 
@@ -237,37 +246,41 @@ for (let continent = 0; continent < 4; continent++) {
     let connectedIsolationAreas = [firstConnectedIsolationArea];
 
     // Randomly assign links between isolation groups.   
-    while (disconnectedIsolationAreas.length > 0 && localPassThroughAreas.length > 0) {
-        let index = chooseRandomNode(connectedIsolationAreas);
-        let otherIndex = chooseRandomNode(disconnectedIsolationAreas);
+    console.log("\tRP1: PLACING CONNECTIONS");
+    while (localPassThroughAreas.length > 0) {
+        let index, otherIndex;
 
+        // Make sure all nodes are connected before randomly applying connections locally.
+        if (disconnectedIsolationAreas.length > 0) {
+            index = chooseRandomNode(connectedIsolationAreas);
+            otherIndex = chooseRandomNode(disconnectedIsolationAreas);
+        } else {
+            index = chooseRandomNode(connectedIsolationAreas);
+            otherIndex = chooseRandomNode(connectedIsolationAreas);
+        }
+    
         let nodes = isolationAreas[index];
         let otherNodes = isolationAreas[otherIndex];
 
-        if (!nodes || !otherNodes || nodes.length <= 0 || otherNodes.length <= 0) {
-            // console.log(`\tSOMEHOW ${index} or ${otherIndex} is out of nodes or is empty?`);
-            // console.log(JSON.stringify(nodes));
-            // console.log(JSON.stringify(otherNodes));
-            process.exit();
-        }
-
         disconnectedIsolationAreas = removeNode(disconnectedIsolationAreas, otherIndex);
-        connectedIsolationAreas.push(otherIndex);
+        if (!connectedIsolationAreas.includes(otherIndex)) {
+            connectedIsolationAreas.push(otherIndex);
+        }
 
         // Choose random nodes.
         let randomNode = chooseRandomNode(nodes);
         let otherRandomNode = chooseRandomNode(otherNodes);
         let randomPassthrough = chooseRandomNode(localPassThroughAreas);
 
-        // On the first pass, if the isolation zone of the start is too small, pick a random link without requirements.
-        if (((index === northPalaceIsolationZone && nodes.length <= 2) || (otherIndex === northPalaceIsolationZone  && otherNodes.length <= 2)) && firstPass) {
-            let easyPassthroughs = localPassThroughAreas.filter(passthroughArea =>  {
-                return Object.keys(locationMetadata[passthroughArea].linkRequirements).length === 0;
-            });
-            randomPassthrough = chooseRandomNode(easyPassthroughs);
-            console.log("\tSTARTING AREA TOO SMALL, CHOOSING A REQUIREMENTLESS PASSTHROUGH FROM " + easyPassthroughs);
-            console.log("\tPICKED " + randomPassthrough);
-        }
+        // // On the first pass, if the isolation zone of the start is too small, pick a random link without requirements.
+        // if (((index === northPalaceIsolationZone && nodes.length <= 2) || (otherIndex === northPalaceIsolationZone  && otherNodes.length <= 2)) && firstPass) {
+        //     let easyPassthroughs = localPassThroughAreas.filter(passthroughArea =>  {
+        //         return Object.keys(locationMetadata[passthroughArea].linkRequirements).length === 0;
+        //     });
+        //     randomPassthrough = chooseRandomNode(easyPassthroughs);
+        //     console.log("\tSTARTING AREA TOO SMALL, CHOOSING A REQUIREMENTLESS PASSTHROUGH FROM " + easyPassthroughs);
+        //     console.log("\tPICKED " + randomPassthrough);
+        // }
 
         // TODO Account for connecting locations that have more than one exit
         templateData[randomNode].mappedLocation = randomPassthrough;
@@ -295,48 +308,24 @@ for (let continent = 0; continent < 4; continent++) {
         // Clear first pass flag so we don't try to perform special starting area logic.
         firstPass = false;
 
-        console.log(`\tCONNECTING AREAS ${index} AND ${otherIndex}`);
-        console.log(`\tCONNECTING       ${templateData[randomNode].locationKey} to ${templateData[otherRandomNode].locationKey} via ${randomPassthrough} and ${locationMetadata[randomPassthrough].links[0]}`);
-        console.log(`\tCONNECTED        ${connectedIsolationAreas}`);
-        console.log(`\tDISCONNECTED     ${disconnectedIsolationAreas}`);
+        console.log(`\t\tCONNECTING AREAS ${index} AND ${otherIndex}`);
+        console.log(`\t\tCONNECTING       ${templateData[randomNode].locationKey} to ${templateData[otherRandomNode].locationKey} via ${randomPassthrough} and ${locationMetadata[randomPassthrough].links[0]}`);
+        console.log(`\t\tCONNECTED        ${connectedIsolationAreas}`);
+        console.log(`\t\tDISCONNECTED     ${disconnectedIsolationAreas}`);
     }
 
-    // Randomly place item bearing areas in each isolation zone evenly
-    // while (largeItemBearingAreas.length > 0) {
-    //     for (let index in isolationAreas) {
-    //         if (largeItemBearingAreas.length <= 0) {
-    //             break;
-    //         }
-
-    //         let nodes = isolationAreas[index];
-
-    //         if (!nodes) {
-    //             continue;
-    //         }
-
-    //         let randomNode = chooseRandomNode(nodes);
-    //         let randomLargeItemArea = chooseRandomNode(largeItemBearingAreas);
-
-    //         largeItemBearingAreas = largeItemBearingAreas.filter(key => key !== randomLargeItemArea);
-    //         isolationAreas[index] = nodes.filter(key => randomNode !== key);
-    //         continentNodes = continentNodes.filter(key => randomNode !== key);
-            
-    //         templateData[randomNode].mappedLocation = randomLargeItemArea;
-
-    //         console.log(`\tPLACING ${randomLargeItemArea} in ${templateData[randomNode].locationKey}`);
-    //     }
-    // }
-
-    // Randomly place towns
-
     // Randomly place continent exits
+    console.log("\tRP2: PLACING EXITS");
     for (let exit of continentExits) {
+        console.log("\t\tCONTINENT NODES LEFT: " + JSON.stringify(continentNodes));
+
         let randomNode = chooseRandomNode(continentNodes);
         continentNodes = removeNode(continentNodes, randomNode);
 
         templateData[randomNode].mappedLocation = exit;
 
-        console.log(`\tPLACING EXIT ${exit} in ${templateData[randomNode].locationKey}`);
+        console.log("\t\tRANDOM NODE PICKED FOR EXIT: " + randomNode);
+        console.log(`\t\tPLACING EXIT ${exit} in ${templateData[randomNode].locationKey}`);
     }
 }
 
@@ -352,7 +341,7 @@ let northCastleNode = Object.keys(partialTemplate).find(key => {
 
 let [accessibleNodes] = getAccessibleNodes(northCastleNode, partialTemplate);
 
-console.log("Starting accessible locations:");
+console.log("STARTING ACCESSIBLE LOCATIONS:");
 console.log(`\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location\n`);
 accessibleNodes.forEach(node => {
     if (partialTemplate[node]) {
