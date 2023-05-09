@@ -2,7 +2,7 @@
 
 ## Randomization Process (what I have so far)
 
-* RP1: Randomly generate template (unless defined).
+* RP1: Randomly generate template (unless defined like Vanilla or other custom maps).
 * RP2: Randomly place North Palace somewhere that isn't completely blocked off such as a cave blocked by a rock or an isolation zone with exactly one node.
 * RP3: Randomly connect all isolation zones together.
 * RP4: Randomly place all item bearing areas such that they come before the blocked connection they are a remedy for.
