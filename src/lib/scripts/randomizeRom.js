@@ -34,6 +34,10 @@ const getNodeMappedLocationName = (node) => {
     return templateData[node] ? templateData[node].mappedLocation : null;
 }
 
+const getConnectableIsolationZones = (isolationAreaIndexes, isolationAreas) => {
+    return isolationAreaIndexes.filter(index => isolationAreas[index].length > 1);
+}
+
 // const displayNodeInformation = (templateData, nodes, subKey = "id") => {
 //     if (!nodes) {
 //         return;
@@ -256,9 +260,9 @@ for (let continent = 0; continent < 4; continent++) {
             // Make sure all nodes are connected before randomly applying connections locally.
             entranceIndex = chooseRandomNode(connectedIsolationAreas);
             exitIndex = chooseRandomNode(disconnectedIsolationAreas);
-        } else if (disconnectedIsolationAreas.length > 0 && connectedIsolationAreas.length <= 0) {
-            entranceIndex = chooseRandomNode(disconnectedIsolationAreas);
-            exitIndex = chooseRandomNode(disconnectedIsolationAreas);
+        } else if (connectedIsolationAreas.length === 1 && disconnectedIsolationAreas.length > 0) {
+            entranceIndex = chooseRandomNode(connectedIsolationAreas);
+            exitIndex = chooseRandomNode(getConnectableIsolationZones(disconnectedIsolationAreas, isolationAreas));
         } else {
             entranceIndex = chooseRandomNode(connectedIsolationAreas);
             exitIndex = chooseRandomNode(connectedIsolationAreas);
