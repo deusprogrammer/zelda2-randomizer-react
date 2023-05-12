@@ -4409,7 +4409,9 @@ export default {
         "entryRequirements": [],
         "completionRequirements": [],
         "links": [
-            "ELEVATOR_CAVE_G_E_BL"
+            "ELEVATOR_CAVE_G_E_BL",
+            "ELEVATOR_CAVE_G_W_BR",
+            "ELEVATOR_CAVE_G_W_TR"
         ],
         "linkRequirements": {},
         "romMetaData": {
@@ -4495,7 +4497,9 @@ export default {
         "entryRequirements": [],
         "completionRequirements": [],
         "links": [
-            "ELEVATOR_CAVE_G_E_BL"
+            "ELEVATOR_CAVE_G_E_BL",
+            "ELEVATOR_CAVE_G_W_TR",
+            "ELEVATOR_CAVE_G_E_TL"
         ],
         "linkRequirements": {},
         "romMetaData": {
@@ -4581,7 +4585,9 @@ export default {
         "entryRequirements": [],
         "completionRequirements": [],
         "links": [
-            "ELEVATOR_CAVE_G_E_BL"
+            "ELEVATOR_CAVE_G_E_TL",
+            "ELEVATOR_CAVE_G_E_BL",
+            "ELEVATOR_CAVE_G_W_BR"
         ],
         "linkRequirements": {},
         "romMetaData": {
@@ -4844,7 +4850,8 @@ export default {
         "completionRequirements": [],
         "links": [
             "ELEVATOR_CAVE_H_D_BL",
-            "ELEVATOR_CAVE_H_E_TL"
+            "ELEVATOR_CAVE_H_E_TL",
+            "ELEVATOR_CAVE_H_W_TR"
         ],
         "linkRequirements": {},
         "romMetaData": {
@@ -4931,7 +4938,8 @@ export default {
         "completionRequirements": [],
         "links": [
             "ELEVATOR_CAVE_H_D_BL",
-            "ELEVATOR_CAVE_H_E_TL"
+            "ELEVATOR_CAVE_H_E_TL",
+            "ELEVATOR_CAVE_H_N_BR"
         ],
         "linkRequirements": {},
         "romMetaData": {

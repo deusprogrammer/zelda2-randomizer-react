@@ -252,7 +252,7 @@ export default {
         "locationKey": "EX_LIFE_BEACH",
         "x": 38,
         "y": 102,
-        "isolationGroup": 3,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "connections": []
@@ -261,7 +261,7 @@ export default {
         "locationKey": "RED_JAR_CEM",
         "x": 48,
         "y": 92,
-        "isolationGroup": 3,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "connections": []
@@ -270,7 +270,7 @@ export default {
         "locationKey": "RAFT_DOCK_W",
         "x": 61,
         "y": 77,
-        "isolationGroup": 3,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "connections": []
@@ -279,7 +279,7 @@ export default {
         "locationKey": "FAIRY_TOWN",
         "x": 60,
         "y": 75,
-        "isolationGroup": 3,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "connections": [
@@ -295,7 +295,7 @@ export default {
         "locationKey": "FAIRY_CAVE_HOLE",
         "x": 50,
         "y": 96,
-        "isolationGroup": 3,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "suggestion": "link!",
@@ -349,7 +349,7 @@ export default {
         "locationKey": "DM_BRIDGE_EXIT_E",
         "x": 34,
         "y": 97,
-        "isolationGroup": 3,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "connections": []
@@ -396,7 +396,7 @@ export default {
         "locationKey": "KINGS_TOMB",
         "x": 50,
         "y": 88,
-        "isolationGroup": 3,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "connections": []
