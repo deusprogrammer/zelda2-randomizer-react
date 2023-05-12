@@ -211,7 +211,6 @@ for (let continent = 0; continent < 4; continent++) {
     let continentExits = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && linkIsInAnotherContinent(locationMetadata, locationMetadata[key]));
 
     console.log(`\tCONTINENT EXITS:       ${continentExits}`);
-    console.log(`\tLOCAL PASSTHROUGHS:    ${localPassThroughAreas}`);
 
     // Separate all nodes into their isolation groups
     let isolationAreas = [];
@@ -252,7 +251,7 @@ for (let continent = 0; continent < 4; continent++) {
         console.log("\t\tSTARTING NEW PASSTHROUGH");
         console.log("\t\t\tISOLATION ZONES:");
         isolationAreas.forEach((zone, index) => {
-            console.log(`\t\t\t\tISOLATION ${index}:\t` + JSON.stringify(zone));
+            console.log(`\t\t\t\tISOLATION ${index.toString().padStart(2, '')}:\t` + JSON.stringify(zone));
         });
         console.log(`\t\t\tLOCAL PASSES  ${JSON.stringify(localPassThroughAreas)}`);
         console.log(`\t\t\tCONNECTED     ${JSON.stringify(connectedIsolationAreas)}`);
@@ -286,8 +285,6 @@ for (let continent = 0; continent < 4; continent++) {
             connectedIsolationAreas = removeNode(connectedIsolationAreas, entranceIndex);
         }
 
-        console.log(`\t\t\tENTRANCE             ${entrance}`);
-
         // For each exit, select a random isolation zone to connect it to
         let availableExits = locationMetadata[entrance].links;
         availableExits.forEach((exit) => {
@@ -300,9 +297,6 @@ for (let continent = 0; continent < 4; continent++) {
             } else {
                 exitIndex = chooseRandomNode(connectedIsolationAreas);
             }
-
-            console.log(`\t\t\tEXIT                 ${exit}`);
-            console.log(`\t\t\tCONNECTING AREAS     ${entranceIndex} AND ${exitIndex}`);
 
             // Choose a random node from this exit's isolation area
             let exitNodes = isolationAreas[exitIndex];
@@ -332,7 +326,7 @@ for (let continent = 0; continent < 4; continent++) {
                 connectedIsolationAreas = removeNode(connectedIsolationAreas, exitIndex);
             }
 
-            console.log(`\t\t\tCONNECTING       ${templateData[entranceNode].locationKey} to ${templateData[exitNode].locationKey} via ${entrance} and ${exit}`);
+            console.log(`\t\t\tCONNECTING    ${templateData[entranceNode].locationKey} to ${templateData[exitNode].locationKey} via ${entrance} and ${exit}`);
         });
     }
 
