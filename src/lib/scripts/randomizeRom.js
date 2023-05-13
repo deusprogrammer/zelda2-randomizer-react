@@ -10,6 +10,15 @@ const randomSeed = (a) => {
     }
 }
 
+const merge = (list1, list2) => {
+    list2.forEach(element => {
+        if (!list1.includes(element)) {
+            list1.push(element);
+        }
+    });
+    return list1;
+}
+
 const chooseRandomNode = (nodes) => {
     let r = Math.trunc(Math.random() * nodes.length);
     return nodes[r];
@@ -126,18 +135,34 @@ const checkRequirements = (requirements, items, spells) => {
 
     let result = true;
     requirements.forEach(requirement => {
-        console.log("CHECKING REQUIREMENT " + requirement);
+        // console.log("CHECKING REQUIREMENT " + requirement);
         let subRequirements = requirement.split("|").map(subRequirement => subRequirement.trim());
         let subResult = false;
         subRequirements.forEach(subRequirement => {
             subResult = subResult || items.includes(subRequirement) || spells.includes(subRequirement);
-            console.log("CHECKING SUB REQUIREMENT " + subRequirement + " => " + subResult);
+            // console.log("CHECKING SUB REQUIREMENT " + subRequirement + " => " + subResult);
         });
         result = result && subResult;
-        console.log("RESULT: " + result);
+        // console.log("RESULT: " + result);
     });
 
     return result;
+}
+
+const expandRequirements = (requirements) => {
+    if (requirements.length <= 0) {
+        return [];
+    }
+
+    let expanded = [];
+    requirements.forEach(requirement => {
+        let subRequirements = requirement.split("|").map(subRequirement => subRequirement.trim());
+        subRequirements.forEach(subRequirement => {
+            expanded.push(subRequirement);
+        });
+    });
+
+    return expanded;
 }
 
 const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visitedNodes=[]) => {
@@ -212,6 +237,42 @@ const getCompletablePalaces = (accessibleNodes, items=[], spells=[]) => {
     }).map(palaceNode => {
         return getNodeMappedLocationName(palaceNode);
     });
+}
+
+const getCurrentRemedies = (accessibleNodes, items=[], spells=[]) => {
+    console.log("CURRENT REMEDIES");
+    let neededRemedies = [];
+    accessibleNodes.forEach(nodeName => {
+        console.log("\tCHECKING " + nodeName + `[${getNodeMappedLocationName(nodeName)}]`);
+        let node = templateData[nodeName];
+        // Check connection requirements
+        if (node.connections) {
+            node.connections.forEach((connectedNode) => {
+                console.log("\t\tCONNECTION: " + connectedNode);
+                if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
+                    console.log("\t\t\tCONNECTION HAS REQUIREMENTS");
+                    let requirements = node.connectionRequirements[connectedNode];
+                    if (requirements && !checkRequirements(requirements, items, spells)) {
+                        neededRemedies = merge(neededRemedies, expandRequirements(requirements));
+                    }
+                }
+            });
+        }
+        // Check link requirements
+        if (node.links) {
+            node.links.forEach((linkedNode) => {
+                console.log("\t\tLINK: " + linkedNode);
+                if (node.linkRequirements && node.linkRequirements[linkedNode]) {
+                    console.log("\t\t\tLINK HAS REQUIREMENTS");
+                    let requirements = node.linkRequirements[linkedNode];
+                    if (requirements && !checkRequirements(requirements, items, spells)) {
+                        neededRemedies = merge(neededRemedies, expandRequirements(requirements));
+                    }
+                }
+            });
+        }
+    });
+    return neededRemedies.filter(remedy => !items.includes(remedy) && !spells.includes(remedy));
 }
 
 let northPalaceNode = null;
@@ -380,15 +441,15 @@ for (let continent = 0; continent < 4; continent++) {
 // Double link map
 let partialTemplate = addLinksToPartialTemplate(templateData, locationMetadata);
 
-// console.log("TEMPLATE: " + JSON.stringify([partialTemplate], null, 5));
-
-// Find accessible areas
+// Find north castle node
 let northCastleNode = Object.keys(partialTemplate).find(key => {
     return partialTemplate[key].mappedLocation === "NORTH_CASTLE";
 });
 
-let [accessibleNodes] = getAccessibleNodes(northCastleNode, partialTemplate);
+// Find accessible nodes and completable palaces
+let [accessibleNodes]  = getAccessibleNodes(northCastleNode, partialTemplate);
 let completablePalaces = getCompletablePalaces(accessibleNodes);
+let neededRemedies     = getCurrentRemedies(accessibleNodes);
 
 console.log("STARTING ACCESSIBLE LOCATIONS:");
 console.log(`\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location\n`);
@@ -402,3 +463,6 @@ accessibleNodes.forEach(node => {
 
 console.log("STARTING COMPLETABLE PALACES:");
 console.log(JSON.stringify(completablePalaces, null, 5));
+
+console.log("STARTING NEEDED REMEDIES:");
+console.log(JSON.stringify(neededRemedies, null, 5));
