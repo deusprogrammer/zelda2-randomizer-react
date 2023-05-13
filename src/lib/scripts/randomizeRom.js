@@ -49,20 +49,6 @@ const getConnectableIsolationZones = (isolationAreaIndexes, isolationAreas) => {
     });
 }
 
-// const displayNodeInformation = (templateData, nodes, subKey = "id") => {
-//     if (!nodes) {
-//         return;
-//     }
-
-//     nodes.forEach((node) => {
-//         if (!node) {
-//             return;
-//         }
-
-//         console.log("\t\t\t" + templateData[node][subKey]);
-//     });
-// }
-
 const linkIsInAnotherContinent = (locationMetadata, location) => {
     if (location.links && location.links.length > 0) {
         let key = location.links[0];
@@ -81,10 +67,8 @@ const addLinksToPartialTemplate = (templateData, locationMetadata) => {
         // Translate links and linkRequirements into nodes
         if (mappedLocation && locationMetadata[mappedLocation]) {
             templateNode.links = locationMetadata[mappedLocation].links.map(link => {
-                // console.log("SEARCHING FOR NODE NAME FOR: " + link);
                 return Object.keys(templateData).find(linkKey => {
                     if (templateData[linkKey].mappedLocation === link) {
-                        // console.log("FOUND " + linkKey);
                         return true;
                     }
                 })
@@ -135,15 +119,12 @@ const checkRequirements = (requirements, items, spells) => {
 
     let result = true;
     requirements.forEach(requirement => {
-        // console.log("CHECKING REQUIREMENT " + requirement);
         let subRequirements = requirement.split("|").map(subRequirement => subRequirement.trim());
         let subResult = false;
         subRequirements.forEach(subRequirement => {
             subResult = subResult || items.includes(subRequirement) || spells.includes(subRequirement);
-            // console.log("CHECKING SUB REQUIREMENT " + subRequirement + " => " + subResult);
         });
         result = result && subResult;
-        // console.log("RESULT: " + result);
     });
 
     return result;
@@ -167,7 +148,6 @@ const expandRequirements = (requirements) => {
 
 const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visitedNodes=[]) => {
     if (visitedNodes.includes(nodeName)) {
-        // console.log("NODE " + nodeName + " ALREADY VISITED " + JSON.stringify(visitedNodes));
         return [[], visitedNodes];
     }
 
@@ -182,13 +162,9 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
         accessibleNodes.push(nodeName);
     }
 
-    // console.log("CHECKING NODE " + nodeName + "\n" + JSON.stringify(node, null, 5));
-
     if (node && node.connections) {
         node.connections.forEach((connectedNode) => {
-            // console.log("CONNECTION: " + connectedNode);
             if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
-                // console.log("CONNECTION HAS REQUIREMENTS");
                 let requirements = node.connectionRequirements[connectedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
@@ -196,7 +172,6 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
             } else {
-                //console.log("CONNECTION HAS NO REQUIREMENTS");
                 let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, visitedNodes);
                 newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                 newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
@@ -205,9 +180,7 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
     }
     if (node && node.links) {
         node.links.forEach((linkedNode) => {
-            // console.log("LINK: " + linkedNode);
             if (node.linkRequirements && node.linkRequirements[linkedNode]) {
-                // console.log("LINK HAS REQUIREMENTS");
                 let requirements = node.linkRequirements[linkedNode];
                 if (requirements && checkRequirements(requirements, items, spells)) {
                     let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
@@ -215,7 +188,6 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
             } else {
-                // console.log("LINK HAS NO REQUIREMENTS");
                 let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, visitedNodes);
                 newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                 newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
@@ -284,8 +256,8 @@ for (let continent = 0; continent < 4; continent++) {
     // Filter out all passthrough areas
     let continentNodes = Object.keys(templateData).filter(key => templateData[key].continent === continent);
     let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => templateData[continentNode].locationKey).includes(locationMetadata[key].links[0]));
-    let largeItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('LARGE_ITEM'));
-    let smallItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('SMALL_ITEM'));
+    // let largeItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('LARGE_ITEM'));
+    // let smallItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('SMALL_ITEM'));
     let palaces = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].type === 'PALACE');
     let continentExits = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && linkIsInAnotherContinent(locationMetadata, locationMetadata[key]));
 
@@ -438,6 +410,10 @@ for (let continent = 0; continent < 4; continent++) {
     }
 }
 
+/**
+ * TODO LOOP THIS WHOLE SECTION UNTIL ALL PALACES ARE REACHABLE AND COMPLETABLE
+ */
+
 // Double link map
 let partialTemplate = addLinksToPartialTemplate(templateData, locationMetadata);
 
@@ -446,10 +422,16 @@ let northCastleNode = Object.keys(partialTemplate).find(key => {
     return partialTemplate[key].mappedLocation === "NORTH_CASTLE";
 });
 
-// Find accessible nodes and completable palaces
+// Find accessible nodes, completable palaces, and needed remedies to progress
 let [accessibleNodes]  = getAccessibleNodes(northCastleNode, partialTemplate);
 let completablePalaces = getCompletablePalaces(accessibleNodes);
 let neededRemedies     = getCurrentRemedies(accessibleNodes);
+
+// Randomly pick a remedy
+
+// Randomly pick a node within accessible nodes and place an item bearing area there with the needed remedy (or the town and spell)
+
+// If placed remedy is a town needing a remedy itself, pick another random node, and place an item bearing area with that remedy as well
 
 console.log("STARTING ACCESSIBLE LOCATIONS:");
 console.log(`\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location\n`);
@@ -466,3 +448,9 @@ console.log(JSON.stringify(completablePalaces, null, 5));
 
 console.log("STARTING NEEDED REMEDIES:");
 console.log(JSON.stringify(neededRemedies, null, 5));
+
+/**
+ * END TODO
+ */
+
+// Place all other unplaced nodes, small items, and large items
