@@ -208,6 +208,7 @@ for (let continent = 0; continent < 4; continent++) {
     let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => templateData[continentNode].locationKey).includes(locationMetadata[key].links[0]));
     let largeItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('LARGE_ITEM'));
     let smallItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('SMALL_ITEM'));
+    let palaces = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].type === 'PALACE');
     let continentExits = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && linkIsInAnotherContinent(locationMetadata, locationMetadata[key]));
 
     console.log(`\tCONTINENT EXITS:       ${continentExits}`);
@@ -342,6 +343,20 @@ for (let continent = 0; continent < 4; continent++) {
 
         console.log("\t\tRANDOM NODE PICKED FOR EXIT: " + randomNode);
         console.log(`\t\tPLACING EXIT ${exit} in ${templateData[randomNode].locationKey}`);
+    }
+
+    // Randomly place continent exits
+    console.log("\tRP3: PLACING PALACES");
+    for (let palace of palaces) {
+        console.log("\t\tCONTINENT NODES LEFT: " + JSON.stringify(continentNodes));
+
+        let randomNode = chooseRandomNode(continentNodes);
+        continentNodes = removeNode(continentNodes, randomNode);
+
+        templateData[randomNode].mappedLocation = palace;
+
+        console.log("\t\tRANDOM NODE PICKED FOR PALACE: " + randomNode);
+        console.log(`\t\tPLACING PALACE ${palace} in ${templateData[randomNode].locationKey}`);
     }
 }
 
