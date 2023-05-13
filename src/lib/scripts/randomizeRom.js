@@ -39,8 +39,12 @@ const getLocationNodeName = (locationName) => {
     });
 }
 
-const getNodeMappedLocationName = (node) => {
-    return templateData[node] ? templateData[node].mappedLocation : null;
+const getNodeMappedLocationName = (nodeName) => {
+    return templateData[nodeName] ? templateData[nodeName].mappedLocation : null;
+}
+
+const getNodesInSameContinent = (nodeName, nodes) => {
+
 }
 
 const getConnectableIsolationZones = (isolationAreaIndexes, isolationAreas) => {
@@ -428,8 +432,12 @@ let completablePalaces = getCompletablePalaces(accessibleNodes);
 let neededRemedies     = getCurrentRemedies(accessibleNodes);
 
 // Randomly pick a remedy
+let nextRemedy = chooseRandomNode(neededRemedies);
 
-// Randomly pick a node within accessible nodes and place an item bearing area there with the needed remedy (or the town and spell)
+// Randomly pick a node within accessible nodes
+let remedyNode = chooseRandomNode(accessibleNodes);
+
+// Find a item bearing location within the same continent to place in said node
 
 // If placed remedy is a town needing a remedy itself, pick another random node, and place an item bearing area with that remedy as well
 
