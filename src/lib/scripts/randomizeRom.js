@@ -120,17 +120,21 @@ const addLinksToPartialTemplate = (templateData, locationMetadata) => {
 }
 
 const checkRequirements = (requirements, items, spells) => {
+    if (requirements.length <= 0) {
+        return true;
+    }
+
     let result = true;
     requirements.forEach(requirement => {
-        // console.log("CHECKING REQUIREMENT " + requirement);
+        console.log("CHECKING REQUIREMENT " + requirement);
         let subRequirements = requirement.split("|").map(subRequirement => subRequirement.trim());
         let subResult = false;
         subRequirements.forEach(subRequirement => {
             subResult = subResult || items.includes(subRequirement) || spells.includes(subRequirement);
-            // console.log("CHECKING SUB REQUIREMENT " + subRequirement + " => " + subResult);
+            console.log("CHECKING SUB REQUIREMENT " + subRequirement + " => " + subResult);
         });
         result = result && subResult;
-        // console.log("RESULT: " + result);
+        console.log("RESULT: " + result);
     });
 
     return result;
@@ -195,6 +199,19 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], visi
     }
 
     return [accessibleNodes, visitedNodes];
+}
+
+const getCompletablePalaces = (accessibleNodes, items=[], spells=[]) => {
+    return accessibleNodes.filter(node => {
+        let mappedLocation = getNodeMappedLocationName(node);
+        return mappedLocation && locationMetadata[mappedLocation].type === "PALACE";
+    }).filter(palaceNode => {
+        let palaceName = getNodeMappedLocationName(palaceNode);
+        let palace = locationMetadata[palaceName];
+        return palace.completionRequirements && checkRequirements(palace.completionRequirements, items, spells);
+    }).map(palaceNode => {
+        return getNodeMappedLocationName(palaceNode);
+    });
 }
 
 let northPalaceNode = null;
@@ -371,6 +388,7 @@ let northCastleNode = Object.keys(partialTemplate).find(key => {
 });
 
 let [accessibleNodes] = getAccessibleNodes(northCastleNode, partialTemplate);
+let completablePalaces = getCompletablePalaces(accessibleNodes);
 
 console.log("STARTING ACCESSIBLE LOCATIONS:");
 console.log(`\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location\n`);
@@ -381,3 +399,6 @@ accessibleNodes.forEach(node => {
         console.log(`\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
     }
 });
+
+console.log("STARTING COMPLETABLE PALACES:");
+console.log(JSON.stringify(completablePalaces, null, 5));
