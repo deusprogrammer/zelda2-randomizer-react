@@ -19,6 +19,14 @@ const merge = (list1, list2) => {
     return list1;
 }
 
+const isSpell = (remedy) => {
+    return ["SHIELD", "JUMP", "LIFE", "FAIRY", "REFLECT", "FIRE", "SPELL", "THUNDER"].includes(remedy);
+}
+
+const isPalace = (locationName) => {
+    locationMetadata[locationName].type === "PALACE";
+}
+
 const chooseRandomNode = (nodes) => {
     let r = Math.trunc(Math.random() * nodes.length);
     return nodes[r];
@@ -43,8 +51,17 @@ const getNodeMappedLocationName = (nodeName) => {
     return templateData[nodeName] ? templateData[nodeName].mappedLocation : null;
 }
 
-const getNodesInSameContinent = (nodeName, nodes) => {
+const getItemBearingLocationsInSameContinent = (referenceNodeName, completablePalaces) => {
+    let referenceNode = templateData[referenceNodeName];
+    return Object.keys(locationMetadata).filter(locationName => {
+        let location = locationMetadata[locationName];
 
+        if (location.type === "PALACE" && !completablePalaces.includes(locationName)) {
+            return false;
+        }
+
+        return location.worldNumber === referenceNode.continent && location.items && location.items.includes('LARGE_ITEM')
+    });
 }
 
 const getConnectableIsolationZones = (isolationAreaIndexes, isolationAreas) => {
@@ -216,17 +233,17 @@ const getCompletablePalaces = (accessibleNodes, items=[], spells=[]) => {
 }
 
 const getCurrentRemedies = (accessibleNodes, items=[], spells=[]) => {
-    console.log("CURRENT REMEDIES");
+    // console.log("CURRENT REMEDIES");
     let neededRemedies = [];
     accessibleNodes.forEach(nodeName => {
-        console.log("\tCHECKING " + nodeName + `[${getNodeMappedLocationName(nodeName)}]`);
+        // console.log("\tCHECKING " + nodeName + `[${getNodeMappedLocationName(nodeName)}]`);
         let node = templateData[nodeName];
         // Check connection requirements
         if (node.connections) {
             node.connections.forEach((connectedNode) => {
-                console.log("\t\tCONNECTION: " + connectedNode);
+                // console.log("\t\tCONNECTION: " + connectedNode);
                 if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
-                    console.log("\t\t\tCONNECTION HAS REQUIREMENTS");
+                    // console.log("\t\t\tCONNECTION HAS REQUIREMENTS");
                     let requirements = node.connectionRequirements[connectedNode];
                     if (requirements && !checkRequirements(requirements, items, spells)) {
                         neededRemedies = merge(neededRemedies, expandRequirements(requirements));
@@ -237,9 +254,9 @@ const getCurrentRemedies = (accessibleNodes, items=[], spells=[]) => {
         // Check link requirements
         if (node.links) {
             node.links.forEach((linkedNode) => {
-                console.log("\t\tLINK: " + linkedNode);
+                // console.log("\t\tLINK: " + linkedNode);
                 if (node.linkRequirements && node.linkRequirements[linkedNode]) {
-                    console.log("\t\t\tLINK HAS REQUIREMENTS");
+                    // console.log("\t\t\tLINK HAS REQUIREMENTS");
                     let requirements = node.linkRequirements[linkedNode];
                     if (requirements && !checkRequirements(requirements, items, spells)) {
                         neededRemedies = merge(neededRemedies, expandRequirements(requirements));
@@ -431,13 +448,25 @@ let [accessibleNodes]  = getAccessibleNodes(northCastleNode, partialTemplate);
 let completablePalaces = getCompletablePalaces(accessibleNodes);
 let neededRemedies     = getCurrentRemedies(accessibleNodes);
 
-// Randomly pick a remedy
+// Find a item bearing location within the same continent to place a remedy in said node
 let nextRemedy = chooseRandomNode(neededRemedies);
 
-// Randomly pick a node within accessible nodes
-let remedyNode = chooseRandomNode(accessibleNodes);
+if (!isSpell(nextRemedy)) {
+    let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !partialTemplate[node].mappedLocation));
+    let itemBearingLocations = getItemBearingLocationsInSameContinent(remedyNode, accessibleNodes);
+    let randomItemBearingLocation = chooseRandomNode(itemBearingLocations);
+    
+    if (!isPalace(randomItemBearingLocation)) {
+        partialTemplate[remedyNode].mappedLocation = templateData[remedyNode].mappedLocation = randomItemBearingLocation;
+    }
+    partialTemplate[remedyNode].mappedItem = templateData[remedyNode].mappedItem = nextRemedy;
 
-// Find a item bearing location within the same continent to place in said node
+    console.log("REMEDYING:              " + nextRemedy);
+    console.log("ITEM BEARING LOCATIONS: " + JSON.stringify(itemBearingLocations));
+    console.log("PICKED                  " + randomItemBearingLocation);
+} else {
+    console.log("REMEDY IS A SPELL.  NOT IMPLEMENTED YET");
+}
 
 // If placed remedy is a town needing a remedy itself, pick another random node, and place an item bearing area with that remedy as well
 
@@ -445,9 +474,9 @@ console.log("STARTING ACCESSIBLE LOCATIONS:");
 console.log(`\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location\n`);
 accessibleNodes.forEach(node => {
     if (partialTemplate[node]) {
-        console.log(`\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation}`);
+        console.log(`\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} ${partialTemplate[node].mappedItem}`);
     } else {
-        console.log(`\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
+        console.log(`\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
     }
 });
 
