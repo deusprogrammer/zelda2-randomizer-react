@@ -233,17 +233,13 @@ const getCompletablePalaces = (accessibleNodes, items=[], spells=[]) => {
 }
 
 const getCurrentRemedies = (accessibleNodes, items=[], spells=[]) => {
-    // console.log("CURRENT REMEDIES");
     let neededRemedies = [];
     accessibleNodes.forEach(nodeName => {
-        // console.log("\tCHECKING " + nodeName + `[${getNodeMappedLocationName(nodeName)}]`);
         let node = templateData[nodeName];
         // Check connection requirements
         if (node.connections) {
             node.connections.forEach((connectedNode) => {
-                // console.log("\t\tCONNECTION: " + connectedNode);
                 if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
-                    // console.log("\t\t\tCONNECTION HAS REQUIREMENTS");
                     let requirements = node.connectionRequirements[connectedNode];
                     if (requirements && !checkRequirements(requirements, items, spells)) {
                         neededRemedies = merge(neededRemedies, expandRequirements(requirements));
@@ -254,9 +250,7 @@ const getCurrentRemedies = (accessibleNodes, items=[], spells=[]) => {
         // Check link requirements
         if (node.links) {
             node.links.forEach((linkedNode) => {
-                // console.log("\t\tLINK: " + linkedNode);
                 if (node.linkRequirements && node.linkRequirements[linkedNode]) {
-                    // console.log("\t\t\tLINK HAS REQUIREMENTS");
                     let requirements = node.linkRequirements[linkedNode];
                     if (requirements && !checkRequirements(requirements, items, spells)) {
                         neededRemedies = merge(neededRemedies, expandRequirements(requirements));
@@ -267,6 +261,17 @@ const getCurrentRemedies = (accessibleNodes, items=[], spells=[]) => {
     });
     return neededRemedies.filter(remedy => !items.includes(remedy) && !spells.includes(remedy));
 }
+
+const getSpellTown = (spell) => {
+    console.log("SPELL: " + spell);
+    let townLocation = Object.keys(locationMetadata).find(key => {
+        let location = locationMetadata[key];
+
+        return location.spell === spell;
+    });
+
+    return locationMetadata[townLocation];
+};
 
 let northPalaceNode = null;
 let northPalaceIsolationZone = null;
@@ -450,9 +455,8 @@ let neededRemedies     = getCurrentRemedies(accessibleNodes);
 
 // Find a item bearing location within the same continent to place a remedy in said node
 let nextRemedy = chooseRandomNode(neededRemedies);
-
+let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !partialTemplate[node].mappedLocation));
 if (!isSpell(nextRemedy)) {
-    let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !partialTemplate[node].mappedLocation));
     let itemBearingLocations = getItemBearingLocationsInSameContinent(remedyNode, accessibleNodes);
     let randomItemBearingLocation = chooseRandomNode(itemBearingLocations);
     
@@ -462,10 +466,29 @@ if (!isSpell(nextRemedy)) {
     partialTemplate[remedyNode].mappedItem = templateData[remedyNode].mappedItem = nextRemedy;
 
     console.log("REMEDYING:              " + nextRemedy);
-    console.log("ITEM BEARING LOCATIONS: " + JSON.stringify(itemBearingLocations));
     console.log("PICKED                  " + randomItemBearingLocation);
 } else {
-    console.log("REMEDY IS A SPELL.  NOT IMPLEMENTED YET");
+    let spellTown = getSpellTown(nextRemedy);
+    console.log("SPELL TOWN:  " + spellTown.id);
+    console.log("REMEDY NODE: " + remedyNode);
+
+    partialTemplate[remedyNode].mappedLocation = spellTown.id;
+
+    if (spellTown.spellRequirements) {
+        let spellTownRemedy = spellTown.spellRequirements[0];
+        console.log("SPELL NEEDS REMEDY: " + spellTownRemedy);
+        
+        remedyNode = chooseRandomNode(accessibleNodes.filter(node => !partialTemplate[node].mappedLocation));
+        let itemBearingLocations = getItemBearingLocationsInSameContinent(remedyNode, accessibleNodes);
+        let randomItemBearingLocation = chooseRandomNode(itemBearingLocations);
+        
+        if (!isPalace(randomItemBearingLocation)) {
+            partialTemplate[remedyNode].mappedLocation = templateData[remedyNode].mappedLocation = randomItemBearingLocation;
+        }
+        partialTemplate[remedyNode].mappedItem = templateData[remedyNode].mappedItem = spellTown.spellRequirements[0];
+    }
+
+    console.log("REMEDYING:              " + nextRemedy);
 }
 
 // If placed remedy is a town needing a remedy itself, pick another random node, and place an item bearing area with that remedy as well
