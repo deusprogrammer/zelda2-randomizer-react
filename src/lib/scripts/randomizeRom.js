@@ -460,6 +460,7 @@ if (!isSpell(nextRemedy)) {
     let itemBearingLocations = getItemBearingLocationsInSameContinent(remedyNode, accessibleNodes);
     let randomItemBearingLocation = chooseRandomNode(itemBearingLocations);
     
+    // TODO Check if random item bearing location is already placed (specifically SPELL_TOWN since it has 2 items in it)
     if (!isPalace(randomItemBearingLocation)) {
         partialTemplate[remedyNode].mappedLocation = templateData[remedyNode].mappedLocation = randomItemBearingLocation;
     }
@@ -472,12 +473,13 @@ if (!isSpell(nextRemedy)) {
     console.log("SPELL TOWN:  " + spellTown.id);
     console.log("REMEDY NODE: " + remedyNode);
 
+    // TODO Check if remedy resides in a town that is already placed (i.e. towns that have both an ability and a spell or LIFE_TOWN_N and LIFE_TOWN_S since they get placed as connections)
     partialTemplate[remedyNode].mappedLocation = spellTown.id;
 
     if (spellTown.spellRequirements) {
         let spellTownRemedy = spellTown.spellRequirements[0];
         console.log("SPELL NEEDS REMEDY: " + spellTownRemedy);
-        
+
         remedyNode = chooseRandomNode(accessibleNodes.filter(node => !partialTemplate[node].mappedLocation));
         let itemBearingLocations = getItemBearingLocationsInSameContinent(remedyNode, accessibleNodes);
         let randomItemBearingLocation = chooseRandomNode(itemBearingLocations);
