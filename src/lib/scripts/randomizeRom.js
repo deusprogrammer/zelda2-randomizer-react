@@ -309,7 +309,7 @@ const getSpellTown = (spell) => {
 };
 
 const getAbilityTown = (ability) => {
-    console.log("Ability: " + ability);
+    console.log("ABILITY: " + ability);
     let townLocation = Object.keys(locationMetadata).find(key => {
         let location = locationMetadata[key];
 
@@ -408,6 +408,11 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
 
         items.push(nextRemedy);
     } else {                    // If remedy is a spell, then place town with spell and it's remedy item nearby
+        let itemNode = accessibleNodes.find(accessibleNode => partialTemplate[accessibleNode].mappedItems && partialTemplate[accessibleNode].mappedItems.includes(nextRemedy));
+        if (itemNode) {
+            return partialTemplate;
+        }
+
         // Filter out nodes that don't have a mapped location or ones that do that have room for items left
         let availableItemBearingLocations = accessibleNodes.filter(node =>  
             (
@@ -655,7 +660,7 @@ while (completablePalaces.length < 7 && i < 40) {
     console.log("\tNEXT REMEDY:          " + nextRemedy);
 
     console.log("\tACCESSIBLE LOCATIONS:");
-    console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location\n`);
+    console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
     accessibleNodes.forEach(node => {
         if (partialTemplate[node]) {
             console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${partialTemplate[node].mappedItems ? partialTemplate[node].mappedItems : ''}]`);
@@ -688,16 +693,26 @@ console.log(`FINAL REPORT (${i === 40 ? "UNPLAYABLE" : "SUCCESS"})`);
 console.log("\tITEMS:                " + items);
 console.log("\tSPELLS:               " + spells);
 console.log("\tABILITIES:            " + abilities);
-console.log("\tCOMPLETABLE PALACES:  " +completablePalaces);
+console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
 console.log("\tNEEDED REMEDIES:      " + neededRemedies);
-console.log("\tACCESSIBLE LOCATIONS:");
-    console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location\n`);
-    accessibleNodes.forEach(node => {
-        if (partialTemplate[node]) {
-            console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${partialTemplate[node].mappedItems ? partialTemplate[node].mappedItems : ''}]`);
-        } else {
-            console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
-        }
-    });
+console.log(`\tACCESSIBLE LOCATIONS (${Math.trunc(accessibleNodes.length/Object.keys(partialTemplate).length * 100)}%):`);
+console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
+accessibleNodes.forEach(node => {
+    if (partialTemplate[node]) {
+        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${partialTemplate[node].mappedItems ? partialTemplate[node].mappedItems : ''}]`);
+    } else {
+        console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
+    }
+});
+
+console.log(`\tUNACCESSIBLE LOCATIONS:`);
+console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
+Object.keys(partialTemplate).filter(node => !accessibleNodes.includes(node)).forEach(node => {
+    if (partialTemplate[node]) {
+        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${partialTemplate[node].mappedItems ? partialTemplate[node].mappedItems : ''}]`);
+    } else {
+        console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
+    }
+});
 
 // Place all other unplaced nodes, small items, and large items
