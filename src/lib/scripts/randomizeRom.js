@@ -260,7 +260,7 @@ const getCompletablePalaces = (accessibleNodes, items=[], spells=[], abilities=[
         return palace.completionRequirements && checkRequirements(palace.completionRequirements, items, spells, abilities);
     }).map(palaceNode => {
         return getNodeMappedLocationName(palaceNode);
-    });
+    }).sort();
 }
 
 const getCurrentRemedies = (accessibleNodes, items=[], spells=[], abilities=[]) => {
@@ -588,8 +588,14 @@ let isolationAreas = getIsolationZones(0);
 let winnableStartingLocations = [];
 isolationAreas.forEach(isolationAreaNodes => {
     console.log("\tCHECKING ISOLATION ZONE: " + isolationAreaNodes);
-    let isolationAreaWinnableStartingLocations = isolationAreaNodes.filter(isolationAreaNode => {
-        let [accessibleNodes] = getAccessibleNodes(isolationAreaNode, partialTemplate);
+    let isolationAreaWinnableStartingLocations = isolationAreaNodes.filter(isolationAreaNodeName => {
+        // Check to see if node already has a mapped location.
+        let isolationAreaNode = getNodeMappedLocationName(isolationAreaNodeName);
+        if (isolationAreaNode) {
+            return false;
+        }
+
+        let [accessibleNodes] = getAccessibleNodes(isolationAreaNodeName, partialTemplate);
         let availableItemBearingLocations = accessibleNodes.filter(node =>  
             (
                 !partialTemplate[node].mappedLocation &&
