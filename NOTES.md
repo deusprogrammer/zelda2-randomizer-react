@@ -16,6 +16,7 @@
 ## TODO
 
 * Set up remedy placement for MAGIC6 and MAGIC8 and CRYSTALS7
+* Ensure that item locations that have requirements are included in the available locations.  If an item has requirements, handle those in a similar fashion to spell/abilities.
 
 ## Change Log
 
