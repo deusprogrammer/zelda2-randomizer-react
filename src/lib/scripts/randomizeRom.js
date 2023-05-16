@@ -335,7 +335,7 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
     }
 
     // Determine what area and item to place
-    if (isSpell(nextRemedy)) { // If remedy is just an item, then place it within the accessible nodes
+    if (isSpell(nextRemedy)) {
         // Get the spell town for the current needed remedy
         let spellTown = getSpellTown(nextRemedy);
 
@@ -407,11 +407,13 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         partialTemplate[remedyNode].mappedLocation = "BAGUS_CABIN";
 
         items.push(nextRemedy);
-    } else {                    // If remedy is a spell, then place town with spell and it's remedy item nearby
+    } else {
         let itemNode = accessibleNodes.find(accessibleNode => partialTemplate[accessibleNode].mappedItems && partialTemplate[accessibleNode].mappedItems.includes(nextRemedy));
         if (itemNode) {
             return partialTemplate;
         }
+
+        console.log("ITEM: " + nextRemedy);
 
         // Filter out nodes that don't have a mapped location or ones that do that have room for items left
         let availableItemBearingLocations = accessibleNodes.filter(node =>  
@@ -436,21 +438,32 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         }
 
         let itemBearingLocations = getItemBearingLocationsInSameContinent(remedyNode, accessibleNodes);
-        let randomItemBearingLocation = chooseRandomNode(itemBearingLocations);
-        
-        // If location is not a palace, then map node to it because a palace is already mapped
-        if (!isPalace(randomItemBearingLocation)) {
-            partialTemplate[remedyNode].mappedLocation = templateData[remedyNode].mappedLocation = randomItemBearingLocation;
-        }
+        let randomItemBearingLocationName = chooseRandomNode(itemBearingLocations);
+        let randomItemBearingLocation = locationMetadata[randomItemBearingLocationName];
+
+        console.log("LOCATION: " + randomItemBearingLocationName);
 
         // If mapped items isn't initialized for this area, initialize it
         if (!partialTemplate[remedyNode].mappedItems) {
             partialTemplate[remedyNode].mappedItems = templateData[remedyNode].mappedItems = [];
         }
 
+        // If location is already placed, then map node to it because a palace is already mapped
+        if (!partialTemplate[remedyNode].mappedLocation) {
+            partialTemplate[remedyNode].mappedLocation = randomItemBearingLocationName;
+        }
+
         // Map items to chosen location
         partialTemplate[remedyNode].mappedItems.push(nextRemedy);
-        //templateData[remedyNode].mappedItems.push(nextRemedy);
+
+        // If town needs remedy, recurse into place remedies again.
+        if (randomItemBearingLocation.itemRequirements) {
+            console.log("ITEM HAS REQUIREMENTS: ");
+            let itemIndex = partialTemplate[remedyNode].mappedItems.length - 1;
+            let itemRemedy = randomItemBearingLocation.itemRequirements[itemIndex];
+
+            partialTemplate = placeRemedies(itemRemedy, accessibleNodes, partialTemplate);
+        }
 
         items.push(nextRemedy);
     }
