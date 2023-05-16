@@ -320,7 +320,17 @@ const getAbilityTown = (ability) => {
 };
 
 const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
-    if (["CRYSTALS", "MAGIC7", "MAGIC8"].includes(nextRemedy)) {
+    if (!nextRemedy) {
+        return partialTemplate;
+    }
+
+    if (nextRemedy === "MAGIC7") {
+        // TODO Add logic to disperse 7 magic containers
+        console.log("PLACING MAGIC7");
+        return partialTemplate;
+    } else if (nextRemedy === "MAGIC8") {
+        // TODO Add logic to disperse 8 magic containers
+        console.log("PLACING MAGIC8");
         return partialTemplate;
     }
 
@@ -629,18 +639,20 @@ let [accessibleNodes]  = getAccessibleNodes(northCastleNode, partialTemplate, it
 let completablePalaces = getCompletablePalaces(accessibleNodes, items, spells, abilities);
 let neededRemedies     = getCurrentRemedies(accessibleNodes, items, spells, abilities);
 let i = 0;
-while (completablePalaces.length < 7 && i < 20) {
-    console.log("***********************************************************\n");
+while (completablePalaces.length < 7 && i < 40) {
+    console.log("**********************************************************************************************************************");
     console.log("ITERATION " + i);
     console.log("\tITEMS:                " + items);
     console.log("\tSPELLS:               " + spells);
     console.log("\tABILITIES:            " + abilities);
-    console.log("\tCOMPLETABLE PALACES:  " +completablePalaces);
+    console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
     console.log("\tNEEDED REMEDIES:      " + neededRemedies);
 
     // Find a item bearing location within the same continent to place a remedy in said node
-    let nextRemedy = chooseRandomNode(neededRemedies);
+    let nextRemedy = chooseRandomNode(neededRemedies.filter(remedy => remedy !== "CRYSTALS"));
     partialTemplate = placeRemedies(nextRemedy, accessibleNodes, partialTemplate);
+
+    console.log("\tNEXT REMEDY:          " + nextRemedy);
 
     console.log("\tACCESSIBLE LOCATIONS:");
     console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location\n`);
@@ -671,8 +683,8 @@ while (completablePalaces.length < 7 && i < 20) {
     i++;
 }
 
-console.log("***********************************************************\n");
-console.log("FINAL REPORT");
+console.log("**********************************************************************************************************************");
+console.log(`FINAL REPORT (${i === 40 ? "UNPLAYABLE" : "SUCCESS"})`);
 console.log("\tITEMS:                " + items);
 console.log("\tSPELLS:               " + spells);
 console.log("\tABILITIES:            " + abilities);
