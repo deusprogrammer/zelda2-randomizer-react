@@ -3,7 +3,7 @@ export default {
         "locationKey": "NORTH_CASTLE",
         "x": 23,
         "y": 52,
-        "isolationGroup": 0,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "connections": [
@@ -20,7 +20,7 @@ export default {
         "locationKey": "MAGIC_CAVE",
         "x": 16,
         "y": 60,
-        "isolationGroup": 0,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "suggestion": "link",
@@ -30,7 +30,7 @@ export default {
         "locationKey": "TROPHY_CAVE",
         "x": 29,
         "y": 32,
-        "isolationGroup": 0,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "suggestion": "link",
@@ -40,7 +40,7 @@ export default {
         "locationKey": "PARAPA_CAVE_S",
         "x": 55,
         "y": 46,
-        "isolationGroup": 0,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "suggestion": "link",
@@ -84,7 +84,7 @@ export default {
         "locationKey": "JUMP_CAVE_N",
         "x": 1,
         "y": 58,
-        "isolationGroup": 0,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "suggestion": "link",
@@ -94,7 +94,7 @@ export default {
         "locationKey": "SHIELD_TOWN",
         "x": 46,
         "y": 54,
-        "isolationGroup": 0,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "suggestion": "town?",
@@ -111,7 +111,7 @@ export default {
         "locationKey": "JUMP_TOWN",
         "x": 2,
         "y": 36,
-        "isolationGroup": 0,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "suggestion": "town?",
@@ -121,7 +121,7 @@ export default {
         "locationKey": "FOREST_50P",
         "x": 37,
         "y": 42,
-        "isolationGroup": 0,
+        "isolationGroup": 2,
         "continent": 0,
         "continentName": "WEST HYRULE",
         "connections": []
@@ -501,20 +501,24 @@ export default {
             "NODE77",
             "NODE78",
             "NODE79",
-            "NODE48"
+            "NODE48",
+            "NODE81"
         ],
         "connectionRequirements": {
              "NODE48": [
-                  "RECORDER"
+                "RECORDER"
              ],
              "NODE79": [
-                  "BOOTS"
+                "BOOTS"
              ],
              "NODE77": [
-                  "BOOTS"
+                "BOOTS"
              ],
+             "NODE81": [
+                "BOOTS"
+            ],
              "NODE78": [
-                  "BOOTS | HAMMER"
+                "BOOTS | HAMMER"
              ]
         }
     },
@@ -532,7 +536,7 @@ export default {
         "locationKey": "FIRE_TOWN_CAVE_ENTRANCE",
         "x": 27,
         "y": 48,
-        "isolationGroup": 8,
+        "isolationGroup": 7,
         "continent": 2,
         "continentName": "EAST HYRULE",
         "suggestion": "link!",
@@ -782,7 +786,7 @@ export default {
         "locationKey": "REFLECT_TOWN_CLIFF_2",
         "x": 10,
         "y": 38,
-        "isolationGroup": 8,
+        "isolationGroup": 7,
         "continent": 2,
         "continentName": "EAST HYRULE",
         "suggestion": "passthrough!",
@@ -794,7 +798,7 @@ export default {
         "locationKey": "REFLECT_TOWN_CLIFF_1",
         "x": 9,
         "y": 36,
-        "isolationGroup": 8,
+        "isolationGroup": 7,
         "continent": 2,
         "continentName": "EAST HYRULE",
         "suggestion": "passthrough!",
@@ -806,7 +810,7 @@ export default {
         "locationKey": "REFLECT_TOWN",
         "x": 3,
         "y": 33,
-        "isolationGroup": 8,
+        "isolationGroup": 7,
         "continent": 2,
         "continentName": "EAST HYRULE",
         "connections": []
@@ -815,7 +819,7 @@ export default {
         "locationKey": "MAZE_ISLAND_BRIDGE",
         "x": 52,
         "y": 40,
-        "isolationGroup": 8,
+        "isolationGroup": 7,
         "continent": 2,
         "continentName": "EAST HYRULE",
         "connections": []
@@ -893,7 +897,7 @@ export default {
         "locationKey": "DAZZLE_LIFE",
         "x": 48,
         "y": 44,
-        "isolationGroup": 8,
+        "isolationGroup": 7,
         "continent": 2,
         "continentName": "EAST HYRULE",
         "connections": []
@@ -1047,7 +1051,7 @@ export default {
         "continentName": "DEATH MOUNTAIN",
         "connections": [
             "NODE104",
-            "NODE96"
+            "NODE134"
         ]
     },
     "NODE97": {

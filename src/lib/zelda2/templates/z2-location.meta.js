@@ -5398,6 +5398,7 @@ export default {
         "mapNumber": 11,
         "passThrough": false,
         "ability": "DOWNSTAB",
+        "spell": "FAIRY",
         "abilityRequirements": [
             "JUMP"
         ],
@@ -5486,6 +5487,7 @@ export default {
         "mapNumber": 14,
         "passThrough": false,
         "ability": "",
+        "spell": "FIRE",
         "abilityRequirements": [],
         "spellRequirements": [],
         "items": [],
@@ -6347,10 +6349,8 @@ export default {
         "spellRequirements": [],
         "items": [],
         "itemRequirements": [],
-        "entryRequirements": [
-            "CRYSTALS"
-        ],
         "completionRequirements": [
+            "CRYSTALS",
             "THUNDER",
             "DOWNSTAB",
             "HANDY_GLOVE"
@@ -6935,6 +6935,7 @@ export default {
         "mapNumber": 5,
         "passThrough": false,
         "ability": "",
+        "spell": "JUMP",
         "abilityRequirements": [],
         "spellRequirements": [
             "TROPHY"
@@ -7357,6 +7358,7 @@ export default {
         "mapNumber": 8,
         "passThrough": false,
         "ability": "",
+        "spell": "LIFE",
         "abilityRequirements": [],
         "spellRequirements": [],
         "items": [],
@@ -8943,7 +8945,7 @@ export default {
         "abilityRequirements": [],
         "spellRequirements": [],
         "items": [
-            "SMALL_ITEM"
+            "LARGE_ITEM"
         ],
         "itemRequirements": [],
         "entryRequirements": [],
@@ -9785,7 +9787,10 @@ export default {
         ],
         "itemRequirements": [],
         "entryRequirements": [],
-        "completionRequirements": [],
+        "completionRequirements": [
+            "DOWNSTAB",
+            "HANDY_GLOVE"
+        ],
         "links": [],
         "linkRequirements": {},
         "romMetaData": {
@@ -10361,7 +10366,9 @@ export default {
         ],
         "itemRequirements": [],
         "entryRequirements": [],
-        "completionRequirements": [],
+        "completionRequirements": [
+            "JUMP"
+        ],
         "links": [],
         "linkRequirements": {},
         "romMetaData": {
@@ -11006,7 +11013,10 @@ export default {
         ],
         "itemRequirements": [],
         "entryRequirements": [],
-        "completionRequirements": [],
+        "completionRequirements": [
+            "FAIRY",
+            "MAGIC_KEY"
+        ],
         "links": [],
         "linkRequirements": {},
         "romMetaData": {
@@ -12104,6 +12114,7 @@ export default {
         "mapNumber": 17,
         "passThrough": false,
         "ability": "UPSTAB",
+        "spell": "REFLECT",
         "abilityRequirements": [
             "FAIRY"
         ],
@@ -12360,6 +12371,7 @@ export default {
         "mapNumber": 2,
         "passThrough": false,
         "ability": "",
+        "spell": "SHIELD",
         "abilityRequirements": [],
         "spellRequirements": [],
         "items": [],
@@ -12444,6 +12456,7 @@ export default {
         "mapNumber": 18,
         "passThrough": false,
         "ability": "",
+        "spell": "SPELL",
         "abilityRequirements": [],
         "spellRequirements": [],
         "items": [
@@ -12706,6 +12719,7 @@ export default {
         "mapNumber": 23,
         "passThrough": false,
         "ability": "",
+        "spell": "THUNDER",
         "abilityRequirements": [],
         "spellRequirements": [
             "MAGIC8"

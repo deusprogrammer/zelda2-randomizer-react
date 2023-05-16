@@ -17,6 +17,7 @@
 
 * Set up remedy placement for MAGIC6 and MAGIC8 and CRYSTALS7
 * Ensure that item locations that have requirements are included in the available locations.  If an item has requirements, handle those in a similar fashion to spell/abilities.
+* Tertiary remedies are being added twice
 
 ## Change Log
 
@@ -27,6 +28,8 @@
 ## Bugs
 
 * GP is inaccessible rarely (could be due to lack of MAGIC7 and MAGIC 8 placement)
+* Spell town is being mapped twice with two different items.  While the items definitely belong there, it shouldn't be mapped twice.
+* Magic container requirements aren't even being respected in town.
 
 ## Logs
 
