@@ -22,6 +22,7 @@
 * Sometimes North Palace gets placed in a two node isolation zone which is connected to another two node isolation zone that has a restricted connection to another isolation zone
     * For now I simply don't allow the North Palace in a small isolation zone.
 * Sometimes North Palace gets placed behind a boulder and the game is instantly unwinnable.
+* Sometimes North Palace gets placed in a zone with insufficient unmapped locations for us to place items or towns in.
 
 ## Logs
 
