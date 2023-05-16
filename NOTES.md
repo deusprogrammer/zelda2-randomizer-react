@@ -19,10 +19,12 @@
 
 ## Change Log
 
-5/9/2023 1:00am - Changed maze island continent numbers to 3 on both location metadata and vanilla template
-5/16/2023 1:00pm - Filtering winnable locations for North Palace to go so we don't start soft locked
+* 5/9/2023  1:00am - Changed maze island continent numbers to 3 on both location metadata and vanilla template
+* 5/16/2023 1:00pm - Filtering winnable locations for North Palace to go so we don't start soft locked
 
 ## Bugs
+
+* Sometimes certain palaces just aren't accessible
 
 ## Logs
 
