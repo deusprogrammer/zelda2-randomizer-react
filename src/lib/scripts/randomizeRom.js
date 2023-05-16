@@ -597,6 +597,9 @@ for (let continent = 0; continent < 4; continent++) {
 // Double link map
 let partialTemplate = addLinksToPartialTemplate(templateData, locationMetadata);
 
+console.log("TEMPLATE BEFORE ITEMS: ");
+console.log(JSON.stringify(partialTemplate, null, 5));
+
 // Place north castle node in an isolation zone where it a winnable state can be reached
 console.log("PLACING NORTH CASTLE");
 let isolationAreas = getIsolationZones(0);
