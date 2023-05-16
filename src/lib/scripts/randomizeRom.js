@@ -55,6 +55,24 @@ const getLocationNodeName = (locationName) => {
     });
 }
 
+const getContinentNodes = (continent) => {
+    return Object.keys(templateData).filter(key => templateData[key].continent === continent);
+}
+
+const getIsolationZones = (continent) => {
+    let continentNodes = getContinentNodes(continent);
+    let isolationAreas = [];
+    continentNodes.forEach((key) => {
+        let node = templateData[key];
+        if (!isolationAreas[node.isolationGroup]) {
+            isolationAreas[node.isolationGroup] = [];
+        }
+
+        isolationAreas[node.isolationGroup].push(key);
+    });
+    return isolationAreas.filter(index => isolationAreas[index] !== null);
+}
+
 const getNodeMappedLocationName = (nodeName) => {
     return templateData[nodeName] ? templateData[nodeName].mappedLocation : null;
 }
@@ -313,6 +331,11 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         let remedyNode = chooseRandomNode(unmappedNodes);
         console.log("REMEDY NODE: " + remedyNode);
 
+        if (!remedyNode) {
+            console.log("UNABLE TO PLACE REMEDY.  UNWINNABLE SEED.");
+            return partialTemplate;
+        }
+
         // Map node to spell town
         partialTemplate[remedyNode].mappedLocation = spellTown.id;
 
@@ -339,6 +362,11 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !partialTemplate[node].mappedLocation));
         console.log("REMEDY NODE: " + remedyNode);
 
+        if (!remedyNode) {
+            console.log("UNABLE TO PLACE REMEDY.  UNWINNABLE SEED.");
+            return partialTemplate;
+        }
+
         // Map node to spell town
         partialTemplate[remedyNode].mappedLocation = spellTown.id;
 
@@ -354,14 +382,24 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !partialTemplate[node].mappedLocation));
         console.log("REMEDY NODE: " + remedyNode);
 
+        if (!remedyNode) {
+            console.log("UNABLE TO PLACE REMEDY.  UNWINNABLE SEED.");
+            return partialTemplate;
+        }
+
         // Map node to spell town
         partialTemplate[remedyNode].mappedLocation = "BAGUS_CABIN";
     } else {                    // If remedy is a spell, then place town with spell and it's remedy item nearby
         // Filter out nodes that don't have a mapped location or ones that do that have room for items left
         let availableItemBearingLocations = accessibleNodes.filter(node =>  
-            !partialTemplate[node].mappedItems ||
+            (
+                !partialTemplate[node].mappedLocation &&
+                !partialTemplate[node].mappedItems
+            ) 
+            ||
             (
                 partialTemplate[node].mappedLocation &&
+                partialTemplate[node].mappedItems &&
                 partialTemplate[node].mappedItems.length < locationData[partialTemplate[node].mappedLocation].items.length
             )
         );
@@ -369,9 +407,13 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         console.log("AVAILABLE ITEM BEARING LOCATIONS: " + availableItemBearingLocations);
 
         // Pick an accessible node that either has no mapped location or still has room for items
-        let remedyNode = chooseRandomNode(
-            availableItemBearingLocations
-        );
+        let remedyNode = chooseRandomNode(availableItemBearingLocations);
+        console.log("REMEDY NODE: " + remedyNode);
+
+        if (!remedyNode) {
+            console.log("UNABLE TO PLACE REMEDY.  UNWINNABLE SEED.");
+            return partialTemplate;
+        }
 
         let itemBearingLocations = getItemBearingLocationsInSameContinent(remedyNode, accessibleNodes);
         let randomItemBearingLocation = chooseRandomNode(itemBearingLocations);
@@ -397,8 +439,6 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
 }
 
 // Place connections, exits, and palaces for all continents
-let northPalaceNode = null;
-let northPalaceIsolationZone = null;
 let passThroughAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].links.length > 0 && !locationMetadata[key].passThrough);
 for (let continent = 0; continent < 4; continent++) {
     console.log("CONTINENT: " + continent);
@@ -406,43 +446,17 @@ for (let continent = 0; continent < 4; continent++) {
     // Filter out all passthrough areas
     let continentNodes = Object.keys(templateData).filter(key => templateData[key].continent === continent);
     let localPassThroughAreas = passThroughAreas.filter(key => locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => templateData[continentNode].locationKey).includes(locationMetadata[key].links[0]));
-    // let largeItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('LARGE_ITEM'));
-    // let smallItemBearingAreas = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].items && locationMetadata[key].items.includes('SMALL_ITEM'));
     let palaces = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && locationMetadata[key].type === 'PALACE');
     let continentExits = Object.keys(locationMetadata).filter(key => locationMetadata[key].worldNumber === continent && linkIsInAnotherContinent(locationMetadata, locationMetadata[key]));
 
     console.log(`\tCONTINENT EXITS:       ${continentExits}`);
 
     // Separate all nodes into their isolation groups
-    let isolationAreas = [];
-    continentNodes.forEach((key) => {
-        let node = templateData[key];
-        if (!isolationAreas[node.isolationGroup]) {
-            isolationAreas[node.isolationGroup] = [];
-        }
-
-        isolationAreas[node.isolationGroup].push(key);
-    });
-    isolationAreas = isolationAreas.filter(index => isolationAreas[index] !== null);
-
-    // Randomly place North Palace
-    if (!northPalaceNode) {
-        console.log("\tPLACING NORTH CASTLE");
-        let largeIsolationAreas = isolationAreas.filter(isolationArea => isolationArea.length > 2);
-        northPalaceIsolationZone = Math.floor(Math.random() * largeIsolationAreas.length);
-        let nodes = isolationAreas[northPalaceIsolationZone];
-        northPalaceNode = chooseRandomNode(nodes);
-
-        isolationAreas[northPalaceIsolationZone] = nodes.filter(key => northPalaceNode !== key);
-        continentNodes = removeNode(continentNodes, northPalaceNode);
-
-        templateData[northPalaceNode].mappedLocation = "NORTH_CASTLE";
-        console.log(`\t\tPLACED NORTH CASTLE AT ${templateData[northPalaceNode].locationKey}`);
-    }
+    let isolationAreas = getIsolationZones(continent);
 
     // Create a list of what isolation groups have been connected. 
     let disconnectedIsolationAreas = [...Array(isolationAreas.length).keys()];
-    let firstConnectedIsolationArea = northPalaceIsolationZone;
+    let firstConnectedIsolationArea = chooseRandomNode(disconnectedIsolationAreas.filter(disconnectedIsolationArea => isolationAreas[disconnectedIsolationArea].length >= 2));
     disconnectedIsolationAreas = removeNode(disconnectedIsolationAreas, firstConnectedIsolationArea);
     let connectedIsolationAreas = [firstConnectedIsolationArea];
 
@@ -545,7 +559,7 @@ for (let continent = 0; continent < 4; continent++) {
         console.log(`\t\tPLACING EXIT ${exit} in ${templateData[randomNode].locationKey}`);
     }
 
-    // Randomly place continent exits
+    //Randomly place continent exits
     console.log("\tRP3: PLACING PALACES");
     for (let palace of palaces) {
         console.log("\t\tCONTINENT NODES LEFT: " + JSON.stringify(continentNodes));
@@ -566,6 +580,35 @@ for (let continent = 0; continent < 4; continent++) {
 
 // Double link map
 let partialTemplate = addLinksToPartialTemplate(templateData, locationMetadata);
+
+// Place north castle node in an isolation zone where it a winnable state can be reached
+console.log("PLACING NORTH CASTLE");
+let isolationAreas = getIsolationZones(0);
+let winnableStartingLocations = [];
+isolationAreas.forEach(isolationAreaNodes => {
+    console.log("\tCHECKING ISOLATION ZONE: " + isolationAreaNodes);
+    let isolationAreaWinnableStartingLocations = isolationAreaNodes.filter(isolationAreaNode => {
+        let [accessibleNodes] = getAccessibleNodes(isolationAreaNode, partialTemplate);
+        let availableItemBearingLocations = accessibleNodes.filter(node =>  
+            (
+                !partialTemplate[node].mappedLocation &&
+                !partialTemplate[node].mappedItems
+            ) 
+            ||
+            (
+                partialTemplate[node].mappedLocation &&
+                partialTemplate[node].mappedItems &&
+                partialTemplate[node].mappedItems.length < locationData[partialTemplate[node].mappedLocation].items.length
+            )
+        );
+
+        return availableItemBearingLocations.length >= 2;
+    });
+    winnableStartingLocations = [...winnableStartingLocations, ...isolationAreaWinnableStartingLocations];
+});
+let northPalaceNode = chooseRandomNode(winnableStartingLocations);
+partialTemplate[northPalaceNode].mappedLocation = "NORTH_CASTLE";
+console.log(`\tPLACED NORTH CASTLE AT ${templateData[northPalaceNode].locationKey}`);
 
 // Find north castle node
 let northCastleNode = Object.keys(partialTemplate).find(key => {
