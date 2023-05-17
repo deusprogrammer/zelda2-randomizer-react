@@ -27,9 +27,8 @@
 
 ## Bugs
 
-* GP is inaccessible rarely (could be due to lack of MAGIC7 and MAGIC 8 placement)
-* Spell town is being mapped twice with two different items.  While the items definitely belong there, it shouldn't be mapped twice.
-* Magic container requirements aren't even being respected in town.
+* Areas are being mapped twice with two different items.
+* Spell towns being placed in the wrong continent.
 
 ## Logs
 

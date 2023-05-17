@@ -5020,7 +5020,9 @@ export default {
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
-        "items": [],
+        "items": [
+            "SMALL_ITEM"
+        ],
         "itemRequirements": [],
         "entryRequirements": [],
         "completionRequirements": [],
@@ -6038,9 +6040,7 @@ export default {
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
-        "items": [
-            "SMALL_ITEM"
-        ],
+        "items": [],
         "itemRequirements": [],
         "entryRequirements": [],
         "completionRequirements": [],
@@ -9679,9 +9679,7 @@ export default {
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
-        "items": [
-            "SMALL_ITEM"
-        ],
+        "items": [],
         "itemRequirements": [],
         "entryRequirements": [],
         "completionRequirements": [],
@@ -12013,9 +12011,7 @@ export default {
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
-        "items": [
-            "SMALL_ITEM"
-        ],
+        "items": [],
         "itemRequirements": [],
         "entryRequirements": [],
         "completionRequirements": [],
@@ -13077,7 +13073,9 @@ export default {
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
-        "items": [],
+        "items": [
+            "SMALL_ITEM"
+        ],
         "itemRequirements": [],
         "entryRequirements": [],
         "completionRequirements": [],
