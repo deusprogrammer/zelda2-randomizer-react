@@ -434,7 +434,7 @@ const placeRemedies = (nextRemedy, accessibleNodes, graphData) => {
         console.log("PLACING BAGU");
 
         // Pick an accessible node
-        let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !graphData[node].mappedLocation));
+        let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !graphData[node].mappedLocation && graphData[node].continent === 0));
 
         // Map node to Bagu
         graphData[remedyNode].mappedLocation = "BAGUS_CABIN";
