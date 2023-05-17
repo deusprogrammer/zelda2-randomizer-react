@@ -998,7 +998,7 @@ class Z2Randomizer {
 
             if (mappedItems) {
                 let items = explore(romData.sideViewMaps, mapSet, mapNumber);
-                items.forEach(({levelElement}, index) => {
+                items.filter(item => (item.number >= 0 && item.number <= 7) || (item.number >= 14 && item.number <= 15) || (item.number >= 19 && item.number <= 21)).forEach(({levelElement}, index) => {
                     levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index]];
                     randomizedRom = writeFieldToROM(levelElement, 'collectableObjectNumber', randomizedRom);
                 });
