@@ -1,6 +1,8 @@
 import locationMetadata from '../zelda2/templates/z2-location.meta';
 import templateData from '../zelda2/templates/z2-vanilla.template';
 
+import { merge, randomSeed, removeNode, chooseRandomNode } from './util';
+
 class Z2Randomizer {
     graphData = null;
     northCastleNode = null;
@@ -11,24 +13,6 @@ class Z2Randomizer {
     constructor(templateData, locationMetadata) {
         this.templateData = templateData;
         this.locationMetadata = locationMetadata;
-    }
-
-    randomSeed = (a) => {
-        return function() {
-          let t = a += 0x6D2B79F5;
-          t = Math.imul(t ^ t >>> 15, t | 1);
-          t ^= t + Math.imul(t ^ t >>> 7, t | 61);
-          return ((t ^ t >>> 14) >>> 0) / 4294967296;
-        }
-    }
-    
-    merge = (list1, list2) => {
-        list2.forEach(element => {
-            if (!list1.includes(element)) {
-                list1.push(element);
-            }
-        });
-        return list1;
     }
     
     isSpell = (remedy) => {
@@ -45,15 +29,6 @@ class Z2Randomizer {
     
     isPalace = (locationName) => {
         this.locationMetadata[locationName] && this.locationMetadata[locationName].type === "PALACE";
-    }
-    
-    chooseRandomNode = (nodes) => {
-        let r = Math.trunc(Math.random() * nodes.length);
-        return nodes[r];
-    }
-    
-    removeNode = (nodes, nodeName) => {
-        return nodes.filter(node => node !== nodeName);
     }
     
     getNodeLocationName = (nodeName) => {
@@ -311,7 +286,7 @@ class Z2Randomizer {
                     if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
                         let requirements = node.connectionRequirements[connectedNode];
                         if (requirements && !this.checkRequirements(requirements)) {
-                            neededRemedies = this.merge(neededRemedies, this.expandRequirements(requirements));
+                            neededRemedies = merge(neededRemedies, this.expandRequirements(requirements));
                         }
                     }
                 });
@@ -322,14 +297,14 @@ class Z2Randomizer {
                     if (node.linkRequirements && node.linkRequirements[linkedNode]) {
                         let requirements = node.linkRequirements[linkedNode];
                         if (requirements && !this.checkRequirements(requirements)) {
-                            neededRemedies = this.merge(neededRemedies, this.expandRequirements(requirements));
+                            neededRemedies = merge(neededRemedies, this.expandRequirements(requirements));
                         }
                     }
                 });
             }
             // Check completion requirements
             if (node.completionRequirements) {
-                neededRemedies = this.merge(neededRemedies, this.expandRequirements(node.completionRequirements));
+                neededRemedies = merge(neededRemedies, this.expandRequirements(node.completionRequirements));
             }
         });
         return neededRemedies.filter(remedy => !this.items.includes(remedy) && !this.spells.includes(remedy) && !this.abilities.includes(remedy));
@@ -398,7 +373,7 @@ class Z2Randomizer {
             // Check to see if town with ability is already placed
             let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === spellTown.id);
             if (!remedyNode) {
-                remedyNode = this.chooseRandomNode(unmappedNodes);
+                remedyNode = chooseRandomNode(unmappedNodes);
                 this.graphData[remedyNode].mappedLocation = spellTown.id;
             }
             
@@ -424,7 +399,7 @@ class Z2Randomizer {
             // Check to see if town with ability is already placed
             let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === abilityTown.id);
             if (!remedyNode) {
-                remedyNode = this.chooseRandomNode(unmappedNodes);
+                remedyNode = chooseRandomNode(unmappedNodes);
                 this.graphData[remedyNode].mappedLocation = abilityTown.id;   
             }
     
@@ -442,7 +417,7 @@ class Z2Randomizer {
             console.log("PLACING BAGU");
     
             // Pick an accessible node
-            let remedyNode = this.chooseRandomNode(accessibleNodes.filter(node => !this.graphData[node].mappedLocation && this.graphData[node].continent === 0));
+            let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !this.graphData[node].mappedLocation && this.graphData[node].continent === 0));
     
             // Map node to Bagu
             this.graphData[remedyNode].mappedLocation = "BAGUS_CABIN";
@@ -462,7 +437,7 @@ class Z2Randomizer {
             // Pick a random location
             let completablePalaces = this.getCompletablePalaces(accessibleNodes);
             let itemBearingLocations = this.getItemBearingLocations(completablePalaces, accessibleNodes);
-            let randomItemBearingLocationName = this.chooseRandomNode(itemBearingLocations);
+            let randomItemBearingLocationName = chooseRandomNode(itemBearingLocations);
             let randomItemBearingLocation = this.locationMetadata[randomItemBearingLocationName];
             let randomItemBearingLocationContinent = randomItemBearingLocation.worldNumber;
     
@@ -483,7 +458,7 @@ class Z2Randomizer {
                         this.graphData[node].mappedItems.length < this.locationMetadata[this.graphData[node].mappedLocation].items.length
                     ))
                 });
-                remedyNode = this.chooseRandomNode(unmappedNodes);
+                remedyNode = chooseRandomNode(unmappedNodes);
                 this.graphData[remedyNode].mappedLocation = randomItemBearingLocationName;
             }
     
@@ -527,8 +502,8 @@ class Z2Randomizer {
     
             // Create a list of what isolation groups have been connected. 
             let disconnectedIsolationAreas = [...Array(isolationAreas.length).keys()];
-            let firstConnectedIsolationArea = this.chooseRandomNode(disconnectedIsolationAreas.filter(disconnectedIsolationArea => isolationAreas[disconnectedIsolationArea].length >= 2));
-            disconnectedIsolationAreas = this.removeNode(disconnectedIsolationAreas, firstConnectedIsolationArea);
+            let firstConnectedIsolationArea = chooseRandomNode(disconnectedIsolationAreas.filter(disconnectedIsolationArea => isolationAreas[disconnectedIsolationArea].length >= 2));
+            disconnectedIsolationAreas = removeNode(disconnectedIsolationAreas, firstConnectedIsolationArea);
             let connectedIsolationAreas = [firstConnectedIsolationArea];
     
             // Randomly assign links between isolation groups.   
@@ -544,31 +519,31 @@ class Z2Randomizer {
                 console.log(`\t\t\tDISCONNECTED  ${JSON.stringify(disconnectedIsolationAreas)}`);
     
                 // Choose a random isolation zone for the entrance
-                let entranceIndex = this.chooseRandomNode(connectedIsolationAreas);
+                let entranceIndex = chooseRandomNode(connectedIsolationAreas);
     
                 // Choose a random entrance node for the entrance
                 let entranceNodes = isolationAreas[entranceIndex];
-                let entranceNode = this.chooseRandomNode(entranceNodes);
+                let entranceNode = chooseRandomNode(entranceNodes);
     
                 // Choose a random connecting location and collect it's exits
-                let entrance = this.chooseRandomNode(localPassThroughAreas);
+                let entrance = chooseRandomNode(localPassThroughAreas);
                 
                 // Set entrance
                 this.templateData[entranceNode].mappedLocation = entrance;
     
                 // Remove used passthroughs
-                passThroughAreas = this.removeNode(passThroughAreas, entrance);
-                localPassThroughAreas = this.removeNode(localPassThroughAreas, entrance);
+                passThroughAreas = removeNode(passThroughAreas, entrance);
+                localPassThroughAreas = removeNode(localPassThroughAreas, entrance);
     
                 // Remove node from continent nodes
-                continentNodes = this.removeNode(continentNodes, entranceNode);
+                continentNodes = removeNode(continentNodes, entranceNode);
     
                 // Remove nodes from isolation zones
-                isolationAreas[entranceIndex] = this.removeNode(isolationAreas[entranceIndex], entranceNode);
+                isolationAreas[entranceIndex] = removeNode(isolationAreas[entranceIndex], entranceNode);
     
                 // Remove empty entrance isolation area
                 if (isolationAreas[entranceIndex].length <= 0) {
-                    connectedIsolationAreas = this.removeNode(connectedIsolationAreas, entranceIndex);
+                    connectedIsolationAreas = removeNode(connectedIsolationAreas, entranceIndex);
                 }
     
                 // For each exit, select a random isolation zone to connect it to
@@ -577,39 +552,39 @@ class Z2Randomizer {
                     let exitIndex;
                     if (connectedIsolationAreas.length === 1 && disconnectedIsolationAreas.length > 0) {
                         let connectableZones = this.getConnectableIsolationZones(disconnectedIsolationAreas, isolationAreas);
-                        exitIndex = this.chooseRandomNode(connectableZones);
+                        exitIndex = chooseRandomNode(connectableZones);
                     } else if (disconnectedIsolationAreas.length > 0 && connectedIsolationAreas.length > 0) {
-                        exitIndex = this.chooseRandomNode(disconnectedIsolationAreas);
+                        exitIndex = chooseRandomNode(disconnectedIsolationAreas);
                     } else {
-                        exitIndex = this.chooseRandomNode(connectedIsolationAreas);
+                        exitIndex = chooseRandomNode(connectedIsolationAreas);
                     }
     
                     // Choose a random node from this exit's isolation area
                     let exitNodes = isolationAreas[exitIndex];
-                    let exitNode = this.chooseRandomNode(exitNodes);
+                    let exitNode = chooseRandomNode(exitNodes);
     
                     // Set exit
                     this.templateData[exitNode].mappedLocation = exit;
     
                     // Remove used passthroughs
-                    passThroughAreas = this.removeNode(passThroughAreas, exit);
-                    localPassThroughAreas = this.removeNode(localPassThroughAreas, exit);
+                    passThroughAreas = removeNode(passThroughAreas, exit);
+                    localPassThroughAreas = removeNode(localPassThroughAreas, exit);
     
                     // Remove node from continent nodes
-                    continentNodes = this.removeNode(continentNodes, exitNode);
+                    continentNodes = removeNode(continentNodes, exitNode);
     
                     // Remove nodes from isolation zones
-                    isolationAreas[exitIndex] = this.removeNode(isolationAreas[exitIndex], exitNode);
+                    isolationAreas[exitIndex] = removeNode(isolationAreas[exitIndex], exitNode);
     
                     // Remove the nodes we just chose from the disconnected isolation areas list.
-                    disconnectedIsolationAreas = this.removeNode(disconnectedIsolationAreas, exitIndex);
+                    disconnectedIsolationAreas = removeNode(disconnectedIsolationAreas, exitIndex);
                     if (!connectedIsolationAreas.includes(exitIndex)) {
                         connectedIsolationAreas.push(exitIndex);
                     }
     
                     // Remove empty exit isolation area
                     if (isolationAreas[exitIndex].length <= 0) {
-                        connectedIsolationAreas = this.removeNode(connectedIsolationAreas, exitIndex);
+                        connectedIsolationAreas = removeNode(connectedIsolationAreas, exitIndex);
                     }
     
                     console.log(`\t\t\tCONNECTING    ${this.templateData[entranceNode].locationKey} to ${this.templateData[exitNode].locationKey} via ${entrance} and ${exit}`);
@@ -621,8 +596,8 @@ class Z2Randomizer {
             for (let exit of continentExits) {
                 console.log("\t\tCONTINENT NODES LEFT: " + JSON.stringify(continentNodes));
     
-                let randomNode = this.chooseRandomNode(continentNodes);
-                continentNodes = this.removeNode(continentNodes, randomNode);
+                let randomNode = chooseRandomNode(continentNodes);
+                continentNodes = removeNode(continentNodes, randomNode);
     
                 this.templateData[randomNode].mappedLocation = exit;
     
@@ -635,8 +610,8 @@ class Z2Randomizer {
             for (let palace of palaces) {
                 console.log("\t\tCONTINENT NODES LEFT: " + JSON.stringify(continentNodes));
     
-                let randomNode = this.chooseRandomNode(continentNodes);
-                continentNodes = this.removeNode(continentNodes, randomNode);
+                let randomNode = chooseRandomNode(continentNodes);
+                continentNodes = removeNode(continentNodes, randomNode);
     
                 this.templateData[randomNode].mappedLocation = palace;
     
@@ -678,7 +653,7 @@ class Z2Randomizer {
             });
             winnableStartingLocations = [...winnableStartingLocations, ...isolationAreaWinnableStartingLocations];
         });
-        this.northCastleNode = this.chooseRandomNode(winnableStartingLocations);
+        this.northCastleNode = chooseRandomNode(winnableStartingLocations);
         this.graphData[this.northCastleNode].mappedLocation = "NORTH_CASTLE";
         console.log(`\tPLACED NORTH CASTLE AT ${this.graphData[this.northCastleNode].locationKey}`);
     }
@@ -707,7 +682,7 @@ class Z2Randomizer {
             console.log("\tNEEDED REMEDIES:      " + neededRemedies);
 
             // Find a item bearing location within the same continent to place a remedy in said node
-            let nextRemedy = this.chooseRandomNode(neededRemedies.filter(remedy => remedy !== "CRYSTALS"));
+            let nextRemedy = chooseRandomNode(neededRemedies.filter(remedy => remedy !== "CRYSTALS"));
             this.placeRemedies(nextRemedy, accessibleNodes);
 
             console.log("\tNEXT REMEDY:          " + nextRemedy);
@@ -753,9 +728,9 @@ class Z2Randomizer {
         let otherLocations = Object.keys(this.locationMetadata).filter(locationName => !mappedLocations.includes(this.locationMetadata[locationName].id));
         otherNodes.forEach((otherNode) => {
             let node = this.graphData[otherNode];
-            let randomLocation = this.chooseRandomNode(otherLocations.filter(locationName => this.locationMetadata[locationName].worldNumber === node.continent));
+            let randomLocation = chooseRandomNode(otherLocations.filter(locationName => this.locationMetadata[locationName].worldNumber === node.continent));
             node.mappedLocation = randomLocation;
-            otherLocations = this.removeNode(otherLocations, randomLocation);
+            otherLocations = removeNode(otherLocations, randomLocation);
         });
 
         console.log("**********************************************************************************************************************");
