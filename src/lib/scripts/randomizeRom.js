@@ -88,7 +88,8 @@ const getNodeMappedLocationName = (nodeName) => {
     return templateData[nodeName] ? templateData[nodeName].mappedLocation : null;
 }
 
-const getItemBearingLocations = (completablePalaces) => {
+const getItemBearingLocations = (referenceNode, completablePalaces) => {
+    let continent = templateData[referenceNode].continent;
     return Object.keys(locationMetadata).filter(locationName => {
         let location = locationMetadata[locationName];
 
@@ -107,8 +108,9 @@ const getItemBearingLocations = (completablePalaces) => {
         // Naming my conditions to make it easier to read.
         let roomForMoreItems = mappedItems < locationItems;
         let containsItems = locationItems > 0;
+        let inSameContinent = continent === location.worldNumber;
 
-        return roomForMoreItems && containsItems;
+        return inSameContinent && roomForMoreItems && containsItems;
     });
 }
 
@@ -453,20 +455,24 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
             )
         );
 
+        // Pick a random node
+        let remedyNode = chooseRandomNode(unmappedNodes);
+
         // Pick a random location
         let completablePalaces = getCompletablePalaces(accessibleNodes, items, spells, abilities);
-        let itemBearingLocations = getItemBearingLocations(completablePalaces);
+        let itemBearingLocations = getItemBearingLocations(remedyNode, completablePalaces);
         let randomItemBearingLocationName = chooseRandomNode(itemBearingLocations);
         let randomItemBearingLocation = locationMetadata[randomItemBearingLocationName];
 
         console.log("ITEM BEARING LOCATIONS: " + itemBearingLocations);
         console.log("SELECTED LOCATION:      " + randomItemBearingLocationName);
 
-        // If node doesn't already have a mapped location, then map location to it
-        let remedyNode = accessibleNodes.find(node => partialTemplate[node].mappedLocation === randomItemBearingLocation.id);
-        if (!remedyNode) {
-            remedyNode = chooseRandomNode(unmappedNodes);
+        // If the remedy node isn't already mapped then we will map it.
+        let foundNode = accessibleNodes.find(node => partialTemplate[node].mappedLocation === randomItemBearingLocation.id);
+        if (!foundNode && !partialTemplate[remedyNode].mappedLocation) {
             partialTemplate[remedyNode].mappedLocation = randomItemBearingLocationName;
+        } else if (foundNode) {
+            remedyNode = foundNode;
         }
 
         // If mapped items isn't initialized for this area, initialize it
@@ -722,11 +728,22 @@ while (completablePalaces.length < 7 && i < 40) {
     i++;
 }
 
-// Place all other items, abilities, and spells.
-let optionalItems = ["SHIELD", "FIRE", "LIFE", "UPSTAB", "CANDLE", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
-optionalItems.forEach(optionalItem => {
-    partialTemplate = placeRemedies(optionalItem, accessibleNodes, partialTemplate);
-});
+// // Place all other items, abilities, and spells.
+// let optionalItems = ["SHIELD", "FIRE", "LIFE", "UPSTAB", "CANDLE", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
+// optionalItems.forEach(optionalItem => {
+//     partialTemplate = placeRemedies(optionalItem, accessibleNodes, partialTemplate);
+// });
+
+// // Place other nodes
+// let otherNodes = Object.keys(templateData).filter(nodeName => !templateData[nodeName].mappedLocation);
+// let mappedLocations = Object.keys(templateData).map(nodeName => templateData[nodeName].mappedLocation);
+// let otherLocations = Object.keys(locationMetadata).filter(locationName => !mappedLocations.includes(locationMetadata[locationName].id));
+// otherNodes.forEach((otherNode) => {
+//     let node = templateData[otherNode];
+//     let randomLocation = chooseRandomNode(otherLocations.filter(locationName => locationMetadata[locationName].worldNumber === node.continent));
+//     node.mappedLocation = randomLocation;
+//     otherLocations = removeNode(otherLocations, randomLocation);
+// });
 
 console.log("**********************************************************************************************************************");
 console.log(`FINAL REPORT (${i === 40 ? "UNPLAYABLE" : "SUCCESS"})`);
