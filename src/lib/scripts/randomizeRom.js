@@ -335,19 +335,39 @@ const getAbilityTown = (ability) => {
     return locationMetadata[townLocation];
 };
 
+const placeMagicContainers = (nMagicContainers, accessibleNodes, partialTemplate) => {
+    let nMagicContainersAlreadyPlaced = Object.keys(partialTemplate).reduce((acc, nodeName) => {
+        if (!partialTemplate[nodeName].mappedItems) {
+            return acc;
+        }
+
+        partialTemplate[nodeName].mappedItems.forEach(itemName => {
+            if (itemName === "MAGIC_CONTAINER") {
+                acc++;
+            }
+        });
+
+        return acc;
+    }, 0);
+
+    for (let i = nMagicContainersAlreadyPlaced; i < nMagicContainers; i++) {
+        partialTemplate = placeRemedies("MAGIC_CONTAINER", accessibleNodes, partialTemplate);
+    }
+
+    return partialTemplate;
+}
+
 const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
     if (!nextRemedy) {
         return partialTemplate;
     }
 
     if (nextRemedy === "MAGIC7") {
-        // TODO Add logic to disperse 7 magic containers
         console.log("PLACING MAGIC7");
-        return partialTemplate;
+        return placeMagicContainers(7, accessibleNodes, partialTemplate);
     } else if (nextRemedy === "MAGIC8") {
-        // TODO Add logic to disperse 8 magic containers
         console.log("PLACING MAGIC8");
-        return partialTemplate;
+        return placeMagicContainers(8, accessibleNodes, partialTemplate);
     } else if (isSpell(nextRemedy)) {
         console.log("PLACING SPELL " + nextRemedy);
 
@@ -409,7 +429,7 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
     } else {
         console.log("PLACING ITEM " + nextRemedy);
         // Check to see if item is already placed
-        let itemNode = accessibleNodes.find(accessibleNode => partialTemplate[accessibleNode].mappedItems && partialTemplate[accessibleNode].mappedItems.includes(nextRemedy));
+        let itemNode = accessibleNodes.find(accessibleNode => nextRemedy !== "MAGIC_CONTAINER" && partialTemplate[accessibleNode].mappedItems && partialTemplate[accessibleNode].mappedItems.includes(nextRemedy));
         if (itemNode) {
             console.log("ITEM ALREADY PLACED");
             return partialTemplate;
