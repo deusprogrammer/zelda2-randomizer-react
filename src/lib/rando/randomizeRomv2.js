@@ -1,7 +1,14 @@
 import locationMetadata from '../zelda2/templates/z2-location.meta';
 import templateData from '../zelda2/templates/z2-vanilla.template';
 
-import { merge, randomSeed, removeNode } from './util';
+import { deepCopy, merge, randomSeed, removeNode } from './util';
+import { parse } from '../Z2Parser';
+import { writeFieldToROM } from '../memory/HexTools';
+import { explore } from '../zelda2/Z2Utils';
+
+const fs = require('fs');
+
+export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "MEDICINE": 0x13, "TROPHY": 0x14, "CHILD": 0x15};
 
 class Z2Randomizer {
     graphData = null;
@@ -11,7 +18,8 @@ class Z2Randomizer {
     spells = [];
 
     constructor(templateData, locationMetadata, seed=0) {
-        this.templateData = templateData;
+        this.templateData = deepCopy(templateData);
+        this.graphData = deepCopy(templateData);
         this.locationMetadata = locationMetadata;
         this.randomNumberGenerator = randomSeed(seed);
     }
@@ -98,7 +106,16 @@ class Z2Randomizer {
      * @returns 
      */
     getNodeLocationName = (nodeName) => {
-        return this.templateData[node] ? this.templateData[nodeName].locationKey : null;
+        return this.graphData[nodeName] ? this.graphData[nodeName].locationKey : null;
+    }
+    
+    /**
+     * Get a node's coordinates
+     * @param {string} nodeName 
+     * @returns 
+     */
+    getNodeCoordinates = (nodeName) => {
+        return [this.templateData[nodeName].x, this.templateData[nodeName].y];
     }
     
     /**
@@ -107,8 +124,8 @@ class Z2Randomizer {
      * @returns 
      */
     getLocationNodeName = (locationName) => {
-        return Object.keys(this.templateData).find(nodeName => {
-            let node = this.templateData[nodeName];
+        return Object.keys(this.graphData).find(nodeName => {
+            let node = this.graphData[nodeName];
             return node.locationKey === locationName;
         });
     }
@@ -119,8 +136,8 @@ class Z2Randomizer {
      * @returns 
      */
     getMappedLocationNodeName = (locationName) => {
-        return Object.keys(this.templateData).find(nodeName => {
-            let node = this.templateData[nodeName];
+        return Object.keys(this.graphData).find(nodeName => {
+            let node = this.graphData[nodeName];
             return node.mappedLocation === locationName;
         });
     }
@@ -163,7 +180,7 @@ class Z2Randomizer {
      * @returns 
      */
     getContinentNodes = (continent) => {
-        return Object.keys(this.templateData).filter(key => this.templateData[key].continent === continent);
+        return Object.keys(this.graphData).filter(key => this.graphData[key].continent === continent);
     }
     
     /**
@@ -175,7 +192,7 @@ class Z2Randomizer {
         let continentNodes = this.getContinentNodes(continent);
         let isolationAreas = [];
         continentNodes.forEach((key) => {
-            let node = this.templateData[key];
+            let node = this.graphData[key];
             if (!isolationAreas[node.isolationGroup]) {
                 isolationAreas[node.isolationGroup] = [];
             }
@@ -241,16 +258,16 @@ class Z2Randomizer {
      * Create a graph from a connected template
      */
     createGraphData = () => {
-        this.graphData = {};
-        Object.keys(this.templateData).forEach(key => {
-            let templateNode = this.templateData[key];
+        // this.graphData = {};
+        Object.keys(this.graphData).forEach(key => {
+            let templateNode = this.graphData[key];
             let mappedLocation = templateNode.mappedLocation;
     
             // Translate links and linkRequirements into nodes
             if (mappedLocation && this.locationMetadata[mappedLocation]) {
                 templateNode.links = this.locationMetadata[mappedLocation].links.map(link => {
-                    return Object.keys(this.templateData).find(linkKey => {
-                        if (this.templateData[linkKey].mappedLocation === link) {
+                    return Object.keys(this.graphData).find(linkKey => {
+                        if (this.graphData[linkKey].mappedLocation === link) {
                             return true;
                         }
                     })
@@ -258,8 +275,8 @@ class Z2Randomizer {
                 templateNode.linkRequirements = {};
                 templateNode.completionRequirements = this.locationMetadata[mappedLocation].completionRequirements;
                 Object.keys(this.locationMetadata[mappedLocation].linkRequirements).forEach(link => {
-                    let nodeId = Object.keys(this.templateData).find(linkKey => {
-                        if (this.templateData[linkKey].mappedLocation === link) {
+                    let nodeId = Object.keys(this.graphData).find(linkKey => {
+                        if (this.graphData[linkKey].mappedLocation === link) {
                             return true;
                         }
                     });
@@ -270,21 +287,21 @@ class Z2Randomizer {
             // Double link all connections
             if (templateNode.connections) {
                 templateNode.connections.forEach(connection => {
-                    if (!this.templateData[connection].connections) {
-                        this.templateData[connection].connections = [];
+                    if (!this.graphData[connection].connections) {
+                        this.graphData[connection].connections = [];
                     }
     
-                    if (!this.templateData[connection].connectionRequirements) {
-                        this.templateData[connection].connectionRequirements = {};
+                    if (!this.graphData[connection].connectionRequirements) {
+                        this.graphData[connection].connectionRequirements = {};
                     }
     
-                    if (!this.templateData[connection].connections.includes(key)) {
-                        this.templateData[connection].connections.push(key);
+                    if (!this.graphData[connection].connections.includes(key)) {
+                        this.graphData[connection].connections.push(key);
                     }
     
                     // Connect back connection requirements
                     if (templateNode.connectionRequirements && connection in templateNode.connectionRequirements) {
-                        this.templateData[connection].connectionRequirements[key] = templateNode.connectionRequirements[connection];
+                        this.graphData[connection].connectionRequirements[key] = templateNode.connectionRequirements[connection];
                     }
                 });
             }
@@ -651,8 +668,8 @@ class Z2Randomizer {
             console.log("CONTINENT: " + continent);
     
             // Filter out all passthrough areas
-            let continentNodes = Object.keys(this.templateData).filter(key => this.templateData[key].continent === continent);
-            let localPassThroughAreas = passThroughAreas.filter(key => this.locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => this.templateData[continentNode].locationKey).includes(this.locationMetadata[key].links[0]));
+            let continentNodes = Object.keys(this.graphData).filter(key => this.graphData[key].continent === continent);
+            let localPassThroughAreas = passThroughAreas.filter(key => this.locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => this.graphData[continentNode].locationKey).includes(this.locationMetadata[key].links[0]));
             let palaces = Object.keys(this.locationMetadata).filter(key => this.locationMetadata[key].worldNumber === continent && this.locationMetadata[key].type === 'PALACE');
             let continentExits = Object.keys(this.locationMetadata).filter(key => this.locationMetadata[key].worldNumber === continent && this.linkIsInAnotherContinent(this.locationMetadata[key]));
     
@@ -690,7 +707,7 @@ class Z2Randomizer {
                 let entrance = this.chooseRandomNode(localPassThroughAreas);
                 
                 // Set entrance
-                this.templateData[entranceNode].mappedLocation = entrance;
+                this.graphData[entranceNode].mappedLocation = entrance;
     
                 // Remove used passthroughs
                 passThroughAreas = removeNode(passThroughAreas, entrance);
@@ -725,7 +742,7 @@ class Z2Randomizer {
                     let exitNode = this.chooseRandomNode(exitNodes);
     
                     // Set exit
-                    this.templateData[exitNode].mappedLocation = exit;
+                    this.graphData[exitNode].mappedLocation = exit;
     
                     // Remove used passthroughs
                     passThroughAreas = removeNode(passThroughAreas, exit);
@@ -748,7 +765,7 @@ class Z2Randomizer {
                         connectedIsolationAreas = removeNode(connectedIsolationAreas, exitIndex);
                     }
     
-                    console.log(`\t\t\tCONNECTING    ${this.templateData[entranceNode].locationKey} to ${this.templateData[exitNode].locationKey} via ${entrance} and ${exit}`);
+                    console.log(`\t\t\tCONNECTING    ${this.graphData[entranceNode].locationKey} to ${this.graphData[exitNode].locationKey} via ${entrance} and ${exit}`);
                 });
             }
     
@@ -760,10 +777,10 @@ class Z2Randomizer {
                 let randomNode = this.chooseRandomNode(continentNodes);
                 continentNodes = removeNode(continentNodes, randomNode);
     
-                this.templateData[randomNode].mappedLocation = exit;
+                this.graphData[randomNode].mappedLocation = exit;
     
                 console.log("\t\tRANDOM NODE PICKED FOR EXIT: " + randomNode);
-                console.log(`\t\tPLACING EXIT ${exit} in ${this.templateData[randomNode].locationKey}`);
+                console.log(`\t\tPLACING EXIT ${exit} in ${this.graphData[randomNode].locationKey}`);
             }
     
             //Randomly place continent exits
@@ -774,10 +791,10 @@ class Z2Randomizer {
                 let randomNode = this.chooseRandomNode(continentNodes);
                 continentNodes = removeNode(continentNodes, randomNode);
     
-                this.templateData[randomNode].mappedLocation = palace;
+                this.graphData[randomNode].mappedLocation = palace;
     
                 console.log("\t\tRANDOM NODE PICKED FOR PALACE: " + randomNode);
-                console.log(`\t\tPLACING PALACE ${palace} in ${this.templateData[randomNode].locationKey}`);
+                console.log(`\t\tPLACING PALACE ${palace} in ${this.graphData[randomNode].locationKey}`);
             }
         }
     }
@@ -958,6 +975,37 @@ class Z2Randomizer {
     patchRom = (fileName) => {
         // Patch ROM here
         console.log("PATCHING ROM...");
+
+        let rom = fs.readFileSync(fileName);
+        let romData = parse(rom);
+        let randomizedRom = rom;
+
+        // console.log("ROM: " + JSON.stringify(romData, null, 5));
+
+        Object.keys(this.graphData).forEach((nodeName) => {
+            let targetNode = this.graphData[nodeName];
+            let {x, y, continent, mappedLocation, mappedItems} = targetNode;
+            let mappedNode = Object.keys(this.graphData).find(mappedNodeName => this.templateData[mappedNodeName].locationKey === mappedLocation);
+            let {locationKey} = this.templateData[mappedNode];
+            let {mapSet, mapNumber} = this.locationMetadata[mappedLocation];
+
+            let nodeToEdit = romData.overworld[continent].locations[locationKey];
+            nodeToEdit.x = x;
+            nodeToEdit.y = y;
+
+            randomizedRom = writeFieldToROM(nodeToEdit, 'x', randomizedRom);
+            randomizedRom = writeFieldToROM(nodeToEdit, 'y', randomizedRom);
+
+            if (mappedItems) {
+                let items = explore(romData.sideViewMaps, mapSet, mapNumber);
+                items.forEach(({levelElement}, index) => {
+                    levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index]];
+                    randomizedRom = writeFieldToROM(levelElement, 'collectableObjectNumber', randomizedRom);
+                });
+            }
+        });
+
+        fs.writeFileSync("z2-randomized.nes", randomizedRom, "binary");
     }
 }
 

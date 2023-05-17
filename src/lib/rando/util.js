@@ -19,3 +19,7 @@ export const merge = (list1, list2) => {
 export const removeNode = (nodes, nodeName) => {
     return nodes.filter(node => node !== nodeName);
 }
+
+export const deepCopy = (object) => {
+    return JSON.parse(JSON.stringify(object));
+}
