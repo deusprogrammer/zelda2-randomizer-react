@@ -780,7 +780,18 @@ class Z2Randomizer {
         // Place all items and nodes
         this.placeItemsAndNodes();
     }
+
+    patchRom = (fileName) => {
+        // Patch ROM here
+        console.log("PATCHING ROM...");
+    }
+}
+
+if (process.argv.length < 3) {
+    console.error("You must provide a ROM file to patch");
+    process.exit(1);
 }
 
 let randomizer = new Z2Randomizer(templateData, locationMetadata);
 randomizer.randomize();
+randomizer.patchRom(process.argv[2]);
