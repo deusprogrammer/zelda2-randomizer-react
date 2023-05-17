@@ -9,7 +9,6 @@ class Z2Randomizer {
     items = [];
     abilities = [];
     spells = [];
-    randomNumberGenerator = () => {};
 
     constructor(templateData, locationMetadata, seed=0) {
         this.templateData = templateData;
