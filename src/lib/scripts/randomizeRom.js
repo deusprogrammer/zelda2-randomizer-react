@@ -364,10 +364,10 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
 
     if (nextRemedy === "MAGIC7") {
         console.log("PLACING MAGIC7");
-        return placeMagicContainers(7, accessibleNodes, partialTemplate);
+        return placeMagicContainers(3, accessibleNodes, partialTemplate);
     } else if (nextRemedy === "MAGIC8") {
         console.log("PLACING MAGIC8");
-        return placeMagicContainers(8, accessibleNodes, partialTemplate);
+        return placeMagicContainers(4, accessibleNodes, partialTemplate);
     } else if (isSpell(nextRemedy)) {
         console.log("PLACING SPELL " + nextRemedy);
 
