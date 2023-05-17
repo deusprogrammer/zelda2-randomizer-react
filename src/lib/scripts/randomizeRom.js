@@ -92,7 +92,7 @@ const getItemBearingLocations = (completablePalaces) => {
     return Object.keys(locationMetadata).filter(locationName => {
         let location = locationMetadata[locationName];
 
-        if (location.type === "PALACE" && !completablePalaces.includes(locationName)) {
+        if (location.type === "PALACE" && !completablePalaces.includes(locationName) || location.id === "BAGUS_CABIN") {
             return false;
         }
 
@@ -391,7 +391,9 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
             partialTemplate = placeRemedies(spellTownRemedy, accessibleNodes, partialTemplate);
         }
 
-        spells.push(nextRemedy);
+        if (!spells.includes(nextRemedy)) {
+            spells.push(nextRemedy);
+        }
     } else if (isAbility(nextRemedy)) {
         console.log("PLACING ABILITY " + nextRemedy);
 
@@ -415,7 +417,9 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
             partialTemplate = placeRemedies(abilityTownRemedy, accessibleNodes, partialTemplate);
         }
 
-        abilities.push(nextRemedy);
+        if (!abilities.includes(nextRemedy)) {
+            abilities.push(nextRemedy);
+        }
     } else if (isBagu(nextRemedy)) {
         console.log("PLACING BAGU");
 
@@ -429,7 +433,7 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
     } else {
         console.log("PLACING ITEM " + nextRemedy);
         // Check to see if item is already placed
-        let itemNode = accessibleNodes.find(accessibleNode => nextRemedy !== "MAGIC_CONTAINER" && partialTemplate[accessibleNode].mappedItems && partialTemplate[accessibleNode].mappedItems.includes(nextRemedy));
+        let itemNode = accessibleNodes.find(accessibleNode => !["MAGIC_CONTAINER", "HEART_CONTAINER", "1UP", "50PB", "100PB", "200PB", "500PB"].includes(nextRemedy) && partialTemplate[accessibleNode].mappedItems && partialTemplate[accessibleNode].mappedItems.includes(nextRemedy));
         if (itemNode) {
             console.log("ITEM ALREADY PLACED");
             return partialTemplate;
@@ -718,6 +722,12 @@ while (completablePalaces.length < 7 && i < 40) {
     i++;
 }
 
+// Place all other items, abilities, and spells.
+let optionalItems = ["SHIELD", "FIRE", "LIFE", "UPSTAB", "CANDLE", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
+optionalItems.forEach(optionalItem => {
+    partialTemplate = placeRemedies(optionalItem, accessibleNodes, partialTemplate);
+});
+
 console.log("**********************************************************************************************************************");
 console.log(`FINAL REPORT (${i === 40 ? "UNPLAYABLE" : "SUCCESS"})`);
 console.log("\tITEMS:                " + items);
@@ -759,5 +769,3 @@ let counts = Object.keys(partialTemplate).map(location => {
 
 let duplicateLocations = Object.keys(counts).filter(location => counts[location] > 1);
 console.log("\nDUPLICATED LOCATIONS: " + duplicateLocations);
-
-// Place all other unplaced nodes, small items, and large items
