@@ -137,7 +137,7 @@ const linkIsInAnotherContinent = (locationMetadata, location) => {
     return false;
 }
 
-const addLinksToPartialTemplate = (templateData, locationMetadata) => {
+const createGraphData = (templateData, locationMetadata) => {
     let partialGraph = {};
     Object.keys(templateData).forEach(key => {
         let templateNode = templateData[key];
@@ -226,12 +226,12 @@ const expandRequirements = (requirements) => {
     return expanded;
 }
 
-const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], abilities=[], visitedNodes=[]) => {
+const getAccessibleNodes = (nodeName, graphData, items=[], spells=[], abilities=[], visitedNodes=[]) => {
     if (visitedNodes.includes(nodeName)) {
         return [[], visitedNodes];
     }
 
-    let node = partialTemplate[nodeName];
+    let node = graphData[nodeName];
     let accessibleNodes = [];
 
     if (!visitedNodes.includes(nodeName)) {
@@ -247,12 +247,12 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], abil
             if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
                 let requirements = node.connectionRequirements[connectedNode];
                 if (requirements && checkRequirements(requirements, items, spells, abilities)) {
-                    let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, abilities, visitedNodes);
+                    let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, graphData, items, spells, abilities, visitedNodes);
                     newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
             } else {
-                let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, partialTemplate, items, spells, abilities, visitedNodes);
+                let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(connectedNode, graphData, items, spells, abilities, visitedNodes);
                 newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                 newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
             }
@@ -263,12 +263,12 @@ const getAccessibleNodes = (nodeName, partialTemplate, items=[], spells=[], abil
             if (node.linkRequirements && node.linkRequirements[linkedNode]) {
                 let requirements = node.linkRequirements[linkedNode];
                 if (requirements && checkRequirements(requirements, items, spells, abilities)) {
-                    let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, abilities, visitedNodes);
+                    let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, graphData, items, spells, abilities, visitedNodes);
                     newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
             } else {
-                let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, partialTemplate, items, spells, abilities, visitedNodes);
+                let [newAccessibleNodes, newlyVisitedNodes] = getAccessibleNodes(linkedNode, graphData, items, spells, abilities, visitedNodes);
                 newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                 newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
             }
@@ -345,13 +345,13 @@ const getAbilityTown = (ability) => {
     return locationMetadata[townLocation];
 };
 
-const placeMagicContainers = (nMagicContainers, accessibleNodes, partialTemplate) => {
-    let nMagicContainersAlreadyPlaced = Object.keys(partialTemplate).reduce((acc, nodeName) => {
-        if (!partialTemplate[nodeName].mappedItems) {
+const placeMagicContainers = (nMagicContainers, accessibleNodes, graphData) => {
+    let nMagicContainersAlreadyPlaced = Object.keys(graphData).reduce((acc, nodeName) => {
+        if (!graphData[nodeName].mappedItems) {
             return acc;
         }
 
-        partialTemplate[nodeName].mappedItems.forEach(itemName => {
+        graphData[nodeName].mappedItems.forEach(itemName => {
             if (itemName === "MAGIC_CONTAINER") {
                 acc++;
             }
@@ -361,23 +361,23 @@ const placeMagicContainers = (nMagicContainers, accessibleNodes, partialTemplate
     }, 0);
 
     for (let i = nMagicContainersAlreadyPlaced; i < nMagicContainers; i++) {
-        partialTemplate = placeRemedies("MAGIC_CONTAINER", accessibleNodes, partialTemplate);
+        graphData = placeRemedies("MAGIC_CONTAINER", accessibleNodes, graphData);
     }
 
-    return partialTemplate;
+    return graphData;
 }
 
-const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
+const placeRemedies = (nextRemedy, accessibleNodes, graphData) => {
     if (!nextRemedy) {
-        return partialTemplate;
+        return graphData;
     }
 
     if (nextRemedy === "MAGIC7") {
         console.log("PLACING MAGIC7");
-        return placeMagicContainers(3, accessibleNodes, partialTemplate);
+        return placeMagicContainers(3, accessibleNodes, graphData);
     } else if (nextRemedy === "MAGIC8") {
         console.log("PLACING MAGIC8");
-        return placeMagicContainers(4, accessibleNodes, partialTemplate);
+        return placeMagicContainers(4, accessibleNodes, graphData);
     } else if (isSpell(nextRemedy)) {
         console.log("PLACING SPELL " + nextRemedy);
 
@@ -385,20 +385,20 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         let spellTown = getSpellTown(nextRemedy);
 
         // Check if town with spell is already placed
-        let unmappedNodes = accessibleNodes.filter(node => !partialTemplate[node].mappedLocation && spellTown.worldNumber === partialTemplate[node].continent)
+        let unmappedNodes = accessibleNodes.filter(node => !graphData[node].mappedLocation && spellTown.worldNumber === graphData[node].continent)
 
         // Check to see if town with ability is already placed
-        let remedyNode = accessibleNodes.find(node => partialTemplate[node].mappedLocation === spellTown.id);
+        let remedyNode = accessibleNodes.find(node => graphData[node].mappedLocation === spellTown.id);
         if (!remedyNode) {
             remedyNode = chooseRandomNode(unmappedNodes);
-            partialTemplate[remedyNode].mappedLocation = spellTown.id;
+            graphData[remedyNode].mappedLocation = spellTown.id;
         }
         
         // If town needs remedy, recurse into place remedies again.
         if (spellTown.spellRequirements) {
             let spellTownRemedy = spellTown.spellRequirements[0];
 
-            partialTemplate = placeRemedies(spellTownRemedy, accessibleNodes, partialTemplate);
+            graphData = placeRemedies(spellTownRemedy, accessibleNodes, graphData);
         }
 
         if (!spells.includes(nextRemedy)) {
@@ -411,20 +411,20 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         let abilityTown = getAbilityTown(nextRemedy);
 
         // If not placed, place it in a random location
-        let unmappedNodes = accessibleNodes.filter(node => !partialTemplate[node].mappedLocation && abilityTown.worldNumber === partialTemplate[node].continent);
+        let unmappedNodes = accessibleNodes.filter(node => !graphData[node].mappedLocation && abilityTown.worldNumber === graphData[node].continent);
 
         // Check to see if town with ability is already placed
-        let remedyNode = accessibleNodes.find(node => partialTemplate[node].mappedLocation === abilityTown.id);
+        let remedyNode = accessibleNodes.find(node => graphData[node].mappedLocation === abilityTown.id);
         if (!remedyNode) {
             remedyNode = chooseRandomNode(unmappedNodes);
-            partialTemplate[remedyNode].mappedLocation = abilityTown.id;   
+            graphData[remedyNode].mappedLocation = abilityTown.id;   
         }
 
         // If town needs remedy, recurse into place remedies again.
         if (abilityTown.abilityRequirements) {
             let abilityTownRemedy = abilityTown.abilityRequirements[0];
 
-            partialTemplate = placeRemedies(abilityTownRemedy, accessibleNodes, partialTemplate);
+            graphData = placeRemedies(abilityTownRemedy, accessibleNodes, graphData);
         }
 
         if (!abilities.includes(nextRemedy)) {
@@ -434,19 +434,21 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         console.log("PLACING BAGU");
 
         // Pick an accessible node
-        let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !partialTemplate[node].mappedLocation));
+        let remedyNode = chooseRandomNode(accessibleNodes.filter(node => !graphData[node].mappedLocation));
 
-        // Map node to spell town
-        partialTemplate[remedyNode].mappedLocation = "BAGUS_CABIN";
+        // Map node to Bagu
+        graphData[remedyNode].mappedLocation = "BAGUS_CABIN";
+
+        console.log(`PLACING BAGU IN ${remedyNode} (${graphData[remedyNode].locationKey})`);
 
         items.push(nextRemedy);
     } else {
         console.log("PLACING ITEM " + nextRemedy);
         // Check to see if item is already placed
-        let itemNode = accessibleNodes.find(accessibleNode => !["MAGIC_CONTAINER", "HEART_CONTAINER", "1UP", "50PB", "100PB", "200PB", "500PB"].includes(nextRemedy) && partialTemplate[accessibleNode].mappedItems && partialTemplate[accessibleNode].mappedItems.includes(nextRemedy));
+        let itemNode = accessibleNodes.find(accessibleNode => !["MAGIC_CONTAINER", "HEART_CONTAINER", "1UP", "50PB", "100PB", "200PB", "500PB"].includes(nextRemedy) && graphData[accessibleNode].mappedItems && graphData[accessibleNode].mappedItems.includes(nextRemedy));
         if (itemNode) {
             console.log("ITEM ALREADY PLACED");
-            return partialTemplate;
+            return graphData;
         }
 
         // Pick a random location
@@ -457,47 +459,47 @@ const placeRemedies = (nextRemedy, accessibleNodes, partialTemplate) => {
         let randomItemBearingLocationContinent = randomItemBearingLocation.worldNumber;
 
         // If the remedy node isn't already mapped then we will map it.
-        let remedyNode = accessibleNodes.find(node => partialTemplate[node].mappedLocation === randomItemBearingLocation.id);
+        let remedyNode = accessibleNodes.find(node => graphData[node].mappedLocation === randomItemBearingLocation.id);
         if (!remedyNode) {
             // Filter out nodes that don't have a mapped location or ones that do that have room for items left
             let unmappedNodes = accessibleNodes.filter(node => {
-                return partialTemplate[node].continent === randomItemBearingLocationContinent &&
+                return graphData[node].continent === randomItemBearingLocationContinent &&
                 ((
-                    !partialTemplate[node].mappedLocation &&
-                    !partialTemplate[node].mappedItems
+                    !graphData[node].mappedLocation &&
+                    !graphData[node].mappedItems
                 ) 
                 ||
                 (
-                    partialTemplate[node].mappedLocation &&
-                    partialTemplate[node].mappedItems &&
-                    partialTemplate[node].mappedItems.length < locationMetadata[partialTemplate[node].mappedLocation].items.length
+                    graphData[node].mappedLocation &&
+                    graphData[node].mappedItems &&
+                    graphData[node].mappedItems.length < locationMetadata[graphData[node].mappedLocation].items.length
                 ))
             });
             remedyNode = chooseRandomNode(unmappedNodes);
-            partialTemplate[remedyNode].mappedLocation = randomItemBearingLocationName;
+            graphData[remedyNode].mappedLocation = randomItemBearingLocationName;
         }
 
         // If mapped items isn't initialized for this area, initialize it
-        if (!partialTemplate[remedyNode].mappedItems) {
-            partialTemplate[remedyNode].mappedItems = templateData[remedyNode].mappedItems = [];
+        if (!graphData[remedyNode].mappedItems) {
+            graphData[remedyNode].mappedItems = templateData[remedyNode].mappedItems = [];
         }
 
         // Map items to chosen location
-        partialTemplate[remedyNode].mappedItems.push(nextRemedy);
+        graphData[remedyNode].mappedItems.push(nextRemedy);
 
         // If town needs remedy, recurse into place remedies again.
         if (randomItemBearingLocation.itemRequirements && randomItemBearingLocation.itemRequirements.length > 0) {
             console.log("ITEM HAS REQUIREMENTS");
-            let itemIndex = partialTemplate[remedyNode].mappedItems.length - 1;
+            let itemIndex = graphData[remedyNode].mappedItems.length - 1;
             let itemRemedy = randomItemBearingLocation.itemRequirements[itemIndex];
 
-            partialTemplate = placeRemedies(itemRemedy, accessibleNodes, partialTemplate);
+            graphData = placeRemedies(itemRemedy, accessibleNodes, graphData);
         }
 
         items.push(nextRemedy);
     }
 
-    return partialTemplate;
+    return graphData;
 }
 
 // Place connections, exits, and palaces for all continents
@@ -637,7 +639,7 @@ for (let continent = 0; continent < 4; continent++) {
 }
 
 // Double link map
-let partialTemplate = addLinksToPartialTemplate(templateData, locationMetadata);
+let graphData = createGraphData(templateData, locationMetadata);
 
 // Place north castle node in an isolation zone where it a winnable state can be reached
 console.log("PLACING NORTH CASTLE");
@@ -652,17 +654,17 @@ isolationAreas.forEach(isolationAreaNodes => {
             return false;
         }
 
-        let [accessibleNodes] = getAccessibleNodes(isolationAreaNodeName, partialTemplate);
+        let [accessibleNodes] = getAccessibleNodes(isolationAreaNodeName, graphData);
         let availableItemBearingLocations = accessibleNodes.filter(node =>  
             (
-                !partialTemplate[node].mappedLocation &&
-                !partialTemplate[node].mappedItems
+                !graphData[node].mappedLocation &&
+                !graphData[node].mappedItems
             ) 
             ||
             (
-                partialTemplate[node].mappedLocation &&
-                partialTemplate[node].mappedItems &&
-                partialTemplate[node].mappedItems.length < locationMetadata[partialTemplate[node].mappedLocation].items.length
+                graphData[node].mappedLocation &&
+                graphData[node].mappedItems &&
+                graphData[node].mappedItems.length < locationMetadata[graphData[node].mappedLocation].items.length
             )
         );
 
@@ -671,18 +673,18 @@ isolationAreas.forEach(isolationAreaNodes => {
     winnableStartingLocations = [...winnableStartingLocations, ...isolationAreaWinnableStartingLocations];
 });
 let northPalaceNode = chooseRandomNode(winnableStartingLocations);
-partialTemplate[northPalaceNode].mappedLocation = "NORTH_CASTLE";
+graphData[northPalaceNode].mappedLocation = "NORTH_CASTLE";
 console.log(`\tPLACED NORTH CASTLE AT ${templateData[northPalaceNode].locationKey}`);
 
 // Find north castle node
-let northCastleNode = Object.keys(partialTemplate).find(key => {
-    return partialTemplate[key].mappedLocation === "NORTH_CASTLE";
+let northCastleNode = Object.keys(graphData).find(key => {
+    return graphData[key].mappedLocation === "NORTH_CASTLE";
 });
 
 let items = [];
 let spells = [];
 let abilities = [];
-let [accessibleNodes]  = getAccessibleNodes(northCastleNode, partialTemplate, items, spells, abilities);
+let [accessibleNodes]  = getAccessibleNodes(northCastleNode, graphData, items, spells, abilities);
 let completablePalaces = getCompletablePalaces(accessibleNodes, items, spells, abilities);
 let neededRemedies     = getCurrentRemedies(accessibleNodes, items, spells, abilities);
 let i = 0;
@@ -697,15 +699,15 @@ while (completablePalaces.length < 7 && i < 40) {
 
     // Find a item bearing location within the same continent to place a remedy in said node
     let nextRemedy = chooseRandomNode(neededRemedies.filter(remedy => remedy !== "CRYSTALS"));
-    partialTemplate = placeRemedies(nextRemedy, accessibleNodes, partialTemplate);
+    graphData = placeRemedies(nextRemedy, accessibleNodes, graphData);
 
     console.log("\tNEXT REMEDY:          " + nextRemedy);
 
     console.log("\tACCESSIBLE LOCATIONS:");
     console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
     accessibleNodes.forEach(node => {
-        if (partialTemplate[node]) {
-            console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${partialTemplate[node].mappedItems ? partialTemplate[node].mappedItems : ''}]`);
+        if (graphData[node]) {
+            console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${graphData[node].locationKey ? graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${graphData[node].mappedLocation ? graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${graphData[node].mappedItems ? graphData[node].mappedItems : ''}]`);
         } else {
             console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
         }
@@ -724,7 +726,7 @@ while (completablePalaces.length < 7 && i < 40) {
     }
 
     // Find accessible nodes, completable palaces, and needed remedies to progress
-    [accessibleNodes]  = getAccessibleNodes(northCastleNode, partialTemplate, items, spells, abilities);
+    [accessibleNodes]  = getAccessibleNodes(northCastleNode, graphData, items, spells, abilities);
     completablePalaces = getCompletablePalaces(accessibleNodes, items, spells, abilities);
     neededRemedies     = getCurrentRemedies(accessibleNodes, items, spells, abilities);
     i++;
@@ -733,15 +735,15 @@ while (completablePalaces.length < 7 && i < 40) {
 // Place all other items, abilities, and spells.
 let optionalItems = ["SHIELD", "FIRE", "LIFE", "UPSTAB", "CANDLE", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
 optionalItems.forEach(optionalItem => {
-    partialTemplate = placeRemedies(optionalItem, accessibleNodes, partialTemplate);
+    graphData = placeRemedies(optionalItem, accessibleNodes, graphData);
 });
 
 // Place other nodes
-let otherNodes = Object.keys(templateData).filter(nodeName => !templateData[nodeName].mappedLocation);
-let mappedLocations = Object.keys(templateData).map(nodeName => templateData[nodeName].mappedLocation);
+let otherNodes = Object.keys(graphData).filter(nodeName => !graphData[nodeName].mappedLocation);
+let mappedLocations = Object.keys(graphData).map(nodeName => graphData[nodeName].mappedLocation);
 let otherLocations = Object.keys(locationMetadata).filter(locationName => !mappedLocations.includes(locationMetadata[locationName].id));
 otherNodes.forEach((otherNode) => {
-    let node = templateData[otherNode];
+    let node = graphData[otherNode];
     let randomLocation = chooseRandomNode(otherLocations.filter(locationName => locationMetadata[locationName].worldNumber === node.continent));
     node.mappedLocation = randomLocation;
     otherLocations = removeNode(otherLocations, randomLocation);
@@ -754,11 +756,11 @@ console.log("\tSPELLS:               " + spells);
 console.log("\tABILITIES:            " + abilities);
 console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
 console.log("\tNEEDED REMEDIES:      " + neededRemedies);
-console.log(`\tACCESSIBLE LOCATIONS (${Math.trunc(accessibleNodes.length/Object.keys(partialTemplate).length * 100)}%):`);
+console.log(`\tACCESSIBLE LOCATIONS (${Math.trunc(accessibleNodes.length/Object.keys(graphData).length * 100)}%):`);
 console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
 accessibleNodes.forEach(node => {
-    if (partialTemplate[node]) {
-        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${partialTemplate[node].mappedItems ? partialTemplate[node].mappedItems : ''}]`);
+    if (graphData[node]) {
+        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${graphData[node].locationKey ? graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${graphData[node].mappedLocation ? graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${graphData[node].mappedItems ? graphData[node].mappedItems : ''}]`);
     } else {
         console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
     }
@@ -766,16 +768,16 @@ accessibleNodes.forEach(node => {
 
 console.log(`\tUNACCESSIBLE LOCATIONS:`);
 console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
-Object.keys(partialTemplate).filter(node => !accessibleNodes.includes(node)).forEach(node => {
-    if (partialTemplate[node]) {
-        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${partialTemplate[node].mappedItems ? partialTemplate[node].mappedItems : ''}]`);
+Object.keys(graphData).filter(node => !accessibleNodes.includes(node)).forEach(node => {
+    if (graphData[node]) {
+        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${graphData[node].locationKey ? graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${graphData[node].mappedLocation ? graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${graphData[node].mappedItems ? graphData[node].mappedItems : ''}]`);
     } else {
         console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
     }
 });
 
-let counts = Object.keys(partialTemplate).map(location => {
-    return partialTemplate[location].mappedLocation;
+let counts = Object.keys(graphData).map(location => {
+    return graphData[location].mappedLocation;
 }).filter(location => location !== undefined).reduce((previous, current) => {
     if (!previous[current]) {
         previous[current] = 0;
