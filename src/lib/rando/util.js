@@ -16,11 +16,6 @@ export const merge = (list1, list2) => {
     return list1;
 }
 
-export const chooseRandomNode = (nodes) => {
-    let r = Math.trunc(Math.random() * nodes.length);
-    return nodes[r];
-}
-
 export const removeNode = (nodes, nodeName) => {
     return nodes.filter(node => node !== nodeName);
 }
