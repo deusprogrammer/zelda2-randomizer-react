@@ -658,16 +658,7 @@ class Z2Randomizer {
         console.log(`\tPLACED NORTH CASTLE AT ${this.graphData[this.northCastleNode].locationKey}`);
     }
 
-    randomize = () => {
-        // Place connections, palaces and exits
-        this.placeConnectionsPalacesAndExits();
-
-        // Double link map
-        this.createGraphData();
-
-        // Place north castle node in an isolation zone where it a winnable state can be reached
-        this.placeNorthCastle();
-
+    placeItemsAndNodes = () => {
         let [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
         let completablePalaces = this.getCompletablePalaces(accessibleNodes);
         let neededRemedies     = this.getCurrentRemedies(accessibleNodes);
@@ -774,6 +765,20 @@ class Z2Randomizer {
 
         let duplicateLocations = Object.keys(counts).filter(location => counts[location] > 1);
         console.log("\nDUPLICATED LOCATIONS: " + duplicateLocations);
+    }
+
+    randomize = () => {
+        // Place connections, palaces and exits
+        this.placeConnectionsPalacesAndExits();
+
+        // Double link map
+        this.createGraphData();
+
+        // Place north castle node in an isolation zone where it a winnable state can be reached
+        this.placeNorthCastle();
+
+        // Place all items and nodes
+        this.placeItemsAndNodes();
     }
 }
 
