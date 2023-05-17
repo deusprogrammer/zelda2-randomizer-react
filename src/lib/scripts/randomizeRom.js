@@ -55,6 +55,13 @@ const getLocationNodeName = (locationName) => {
     });
 }
 
+const getMappedLocationNodeName = (locationName) => {
+    return Object.keys(templateData).find(nodeName => {
+        let node = templateData[nodeName];
+        return node.mappedLocation === locationName;
+    });
+}
+
 const allCrystalsPlaced = (completablePalaces) => {
     return completablePalaces.length >= 6;
 }
@@ -89,10 +96,19 @@ const getItemBearingLocations = (completablePalaces) => {
             return false;
         }
 
-        let containsItems = location.items && location.items.includes('LARGE_ITEM') || location.items.includes('SMALL_ITEM');
-        let hasRoomForItems = !partialTemplate.mappedItems || partialTemplate.mappedItems.length < partialTemplate.items.length;
+        // Get node that has this location mapped to it.
+        let nodeName = getMappedLocationNodeName(locationName);
+        let node = templateData[nodeName];
 
-        return containsItems && hasRoomForItems;
+        // Get the mapped item count and number of items in the location.
+        let locationItems = location.items.length;
+        let mappedItems   = node && node.mappedItems ? node.mappedItems.length : 0;
+        
+        // Naming my conditions to make it easier to read.
+        let roomForMoreItems = mappedItems < locationItems;
+        let containsItems = locationItems > 0;
+
+        return roomForMoreItems && containsItems;
     });
 }
 
@@ -300,7 +316,6 @@ const getCurrentRemedies = (accessibleNodes, items=[], spells=[], abilities=[]) 
 }
 
 const getSpellTown = (spell) => {
-    console.log("SPELL: " + spell);
     let townLocation = Object.keys(locationMetadata).find(key => {
         let location = locationMetadata[key];
 
@@ -311,7 +326,6 @@ const getSpellTown = (spell) => {
 };
 
 const getAbilityTown = (ability) => {
-    console.log("ABILITY: " + ability);
     let townLocation = Object.keys(locationMetadata).find(key => {
         let location = locationMetadata[key];
 
@@ -656,7 +670,7 @@ while (completablePalaces.length < 7 && i < 40) {
     console.log("\tNEXT REMEDY:          " + nextRemedy);
 
     console.log("\tACCESSIBLE LOCATIONS:");
-    console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
+    console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
     accessibleNodes.forEach(node => {
         if (partialTemplate[node]) {
             console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${partialTemplate[node].mappedItems ? partialTemplate[node].mappedItems : ''}]`);
@@ -692,7 +706,7 @@ console.log("\tABILITIES:            " + abilities);
 console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
 console.log("\tNEEDED REMEDIES:      " + neededRemedies);
 console.log(`\tACCESSIBLE LOCATIONS (${Math.trunc(accessibleNodes.length/Object.keys(partialTemplate).length * 100)}%):`);
-console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
+console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
 accessibleNodes.forEach(node => {
     if (partialTemplate[node]) {
         console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${partialTemplate[node].locationKey ? partialTemplate[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${partialTemplate[node].mappedLocation ? partialTemplate[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${partialTemplate[node].mappedItems ? partialTemplate[node].mappedItems : ''}]`);
@@ -724,8 +738,6 @@ let counts = Object.keys(partialTemplate).map(location => {
 }, {});
 
 let duplicateLocations = Object.keys(counts).filter(location => counts[location] > 1);
-let palacesWithItems   = Object.keys(partialTemplate).filter(node => isPalace(locationMetadata[partialTemplate[node].mappedLocation]) && partialTemplate[node].mappedItems);
 console.log("\nDUPLICATED LOCATIONS: " + duplicateLocations);
-console.log("PALACES WITH ITEMS:     " + palacesWithItems);
 
 // Place all other unplaced nodes, small items, and large items
