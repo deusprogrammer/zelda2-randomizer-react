@@ -57,7 +57,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
                             key={`${x},${y}`}
                             className={`map-square blinking`} 
                             style={{color, backgroundColor}}
-                            onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${found}`)}}
+                            onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}
                             onMouseEnter={() => {setSelectedSquare({id: found, name, x, y: y + 30, items})}}
                             onMouseLeave={() => {setSelectedSquare(null)}}
                         >
