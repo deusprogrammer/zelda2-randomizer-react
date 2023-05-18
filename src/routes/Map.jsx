@@ -4,7 +4,6 @@ import { useAtom } from "jotai";
 import { useNavigate, useParams, useLocation } from "react-router";
 import { romAtom } from "../atoms/rom.atom";
 import MapSideView from "../components/MapSideView";
-import { useState } from 'react';
 import { getLocationByKey, getMap, getMapByKey } from '../lib/zelda2/Z2Utils';
 
 export default () => {

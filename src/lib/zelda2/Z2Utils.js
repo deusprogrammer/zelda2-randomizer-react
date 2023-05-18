@@ -37,7 +37,7 @@ export const HEIGHT_OF_SCREEN = 16;
 
 export const CHARACTER_MAP = {0x32: '*', 0x34: '?', 0x36: '!', 0x9C: ',', 0xCE: '/', 0xCF: '.', 0xF7: 'l', 0xF8: 't', 0xF9: 'm', 0xFC: 'x', 0xFD: '\n', 0xFE: '\n', 0xF4: ' ', 0xF5: ' '};
 
-export const ITEM_MAP      = ["candle", "glove", "raft", "boots", "recorder", "cross", "hammer", "magic key", "key", "", "50p bag", "100p bag", "200p bag", "500p bag", "magic container", "heart container", "blue jar", "red jar", "1up", "medicine", "trophy", "child"];
+export const ITEM_MAP      = ["candle", "glove", "raft", "boots", "recorder", "cross", "hammer", "magic key", "key", "", "50p bag", "100p bag", "200p bag", "500p bag", "magic container", "heart container", "blue jar", "red jar", "1up", "child", "trophy", "medicine"];
 
 export const OVERWORLD_SPRITE_SYMBOLS = [
     {name: "Town", c: "T", color: "white", backgroundColor: "red"},
@@ -583,7 +583,7 @@ export const drawMap = (level, backMaps, steps = -1) => {
 export const getItemType = (item) => {
     let itemType = "SMALL_ITEM";
     if (["CANDLE", "HANDY_GLOVE", "RAFT", "BOOTS", "RECORDER", "CROSS", "HAMMER", "MAGIC_KEY"].includes(item)) {
-        itemType = "BIG_ITEM";
+        itemType = "LARGE_ITEM";
     } else if (item === "BAGU_SAUCE") {
         itemType = "BAGU_SAUCE";
     }
@@ -633,9 +633,10 @@ export const explore = (maps, mapSet, mapNumber, explored = []) => {
     let currentMap = maps[mapSet][mapNumber];
     let levelExits = currentMap.exits;
 
-    currentMap.levelElements.forEach(({collectableObjectNumber, _metadata}) => {
+    currentMap.levelElements.forEach((levelElement) => {
+        let {collectableObjectNumber, _metadata} = levelElement;
         if (collectableObjectNumber !== undefined) {
-            items.push({name: ITEM_MAP[collectableObjectNumber], number: collectableObjectNumber, mapNumber, mapSet, _metadata: _metadata["collectableObjectNumber"]});
+            items.push({name: ITEM_MAP[collectableObjectNumber], levelElement, number: collectableObjectNumber, mapNumber, mapSet, _metadata: _metadata["collectableObjectNumber"]});
         }
     });
 

@@ -14,6 +14,7 @@ export default ({overworld: {locations, worldNumber}}) => {
                 <th>external</th>
                 <th>caveSeg</th>
                 <th>reserved</th>
+                <th>mapSet</th>
                 <th>mapNumber</th>
                 <th>hPosEnt</th>
                 <th>continent</th>
@@ -35,13 +36,14 @@ export default ({overworld: {locations, worldNumber}}) => {
                 }
 
                 return (
-                    <tr key={key} onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${key}`)}}>
+                    <tr key={key} onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapIndex}/${mapNumber}`)}}>
                         <td>{key}</td>
                         <td>{x}</td>
                         <td>{y}</td>
                         <td>{external}</td>
                         <td>{caveSeg}</td>
                         <td>{reserved}</td>
+                        <td>{mapIndex}</td>
                         <td>{mapNumber}</td>
                         <td>{hPosEnt}</td>
                         <td>{continent === 0 && mapSet === 0 ? "self" : WORLD_INDEX_MAPPINGS[continent]}</td>

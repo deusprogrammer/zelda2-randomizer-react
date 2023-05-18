@@ -5,11 +5,13 @@ const LAST_BIT_MASK = 1 >>> 0;
 export const writeFieldToROM = (object, field, bytes) => {
     let romDataCopy = new Uint8Array(bytes);
     let {offset: romAddress, bitFields} = object._metadata[field];
+
+    // console.log("OFFSET: 0x" + romAddress.toString(16));
     
     let byte = 0x0;
     bitFields.forEach(({mask, name}) => {
         let value = parseInt(object[name]);
-        console.log(name + " => " + value.toString(2));
+        // console.log(name + " => " + value.toString(2) + " " + value);
         while ((mask & LAST_BIT_MASK) === 0) {
             mask = mask >> 1;
             value = value << 1;

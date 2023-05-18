@@ -633,7 +633,7 @@ export default {
     "NODE55": {
         "locationKey": "SPELL_TOWN",
         "x": 61,
-        "y": 0,
+        "y": 81,
         "isolationGroup": 10,
         "continent": 2,
         "continentName": "EAST HYRULE",
@@ -887,7 +887,7 @@ export default {
     "NODE80": {
         "locationKey": "P6",
         "x": 45,
-        "y": 0,
+        "y": 102,
         "isolationGroup": 9,
         "continent": 2,
         "continentName": "EAST HYRULE",

@@ -64,7 +64,7 @@ export const parse = (rom) => {
         { 
             locations: mazeIslandMountainHyruleMap, 
             spriteMap: mazeIslandMountainHyruleSpriteMap, 
-            worldNumber: 1, 
+            worldNumber: 3, 
             index: 3 
         }
     ];

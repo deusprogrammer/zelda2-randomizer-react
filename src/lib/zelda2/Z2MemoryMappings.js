@@ -284,7 +284,7 @@ export const MAP_POINTER_BANK_OFFSETS1 = [
 
 export const MAP_POINTER_BANK_OFFSETS2 = [
     toFileAddr(MAP_POINTER_OFFSET2, 1),
-    toFileAddr(MAP_POINTER_OFFSET1, 2),
+    toFileAddr(MAP_POINTER_OFFSET2, 2),
     toFileAddr(MAP_POINTER_OFFSET2, 3),
     toFileAddr(MAP_POINTER_OFFSET2, 4),
     toFileAddr(MAP_POINTER_OFFSET2, 5),
