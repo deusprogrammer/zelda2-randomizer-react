@@ -976,6 +976,7 @@ export class Z2Randomizer {
 
         // console.log("ROM: " + JSON.stringify(romData, null, 5));
 
+        // Set locations and items
         Object.keys(this.graphData).forEach((nodeName) => {
             let targetNode = this.graphData[nodeName];
             let {x, y, continent, mappedLocation, mappedItems} = targetNode;
@@ -989,6 +990,11 @@ export class Z2Randomizer {
 
             randomizedRom = writeFieldToROM(nodeToEdit, 'x', randomizedRom);
             randomizedRom = writeFieldToROM(nodeToEdit, 'y', randomizedRom);
+
+            if (["P6", "GP"].includes(mappedLocation)) {
+                nodeToEdit.external = 1;
+                randomizedRom = writeFieldToROM(nodeToEdit, 'external', randomizedRom);
+            }
 
             if (mappedItems) {
                 let items = explore(romData.sideViewMaps, mapSet, mapNumber);
