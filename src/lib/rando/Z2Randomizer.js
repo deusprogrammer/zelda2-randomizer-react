@@ -991,7 +991,7 @@ export class Z2Randomizer {
             randomizedRom = writeFieldToROM(nodeToEdit, 'x', randomizedRom);
             randomizedRom = writeFieldToROM(nodeToEdit, 'y', randomizedRom);
 
-            if (["P6", "GP"].includes(mappedLocation)) {
+            if (["P6", "SPELL_TOWN"].includes(mappedLocation)) {
                 nodeToEdit.external = 1;
                 randomizedRom = writeFieldToROM(nodeToEdit, 'external', randomizedRom);
             }
