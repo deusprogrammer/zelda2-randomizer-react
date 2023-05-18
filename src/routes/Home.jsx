@@ -101,7 +101,7 @@ export default () => {
                 
                 <h3>Maze Island</h3>
                 <h4>Data</h4>
-                <MapData overworld={romData.overworld[3]} continent={1} />
+                <MapData overworld={romData.overworld[3]} continent={3} />
                 <h4>Map</h4>
                 <MapDisplay id="map-3" maps={romData.sideViewMaps} overworld={romData.overworld[3]} />
             </div>
