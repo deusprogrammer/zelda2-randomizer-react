@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from "react-router";
 import { Link } from 'react-router-dom';
 import { useAtom } from 'jotai';
@@ -9,8 +9,13 @@ import MapDisplay from '../components/MapDisplay';
 import { romAtom } from '../atoms/rom.atom';
 import KeyValueTable from '../components/KeyValueTable';
 import FileSaver from 'file-saver';
+import { Z2Randomizer } from '../lib/rando/Z2Randomizer';
+
+import z2VanillaTemplate from '../lib/zelda2/templates/z2-vanilla.template';
+import z2LocationMeta from '../lib/zelda2/templates/z2-location.meta';
 
 export default () => {
+    const [ seed, setSeed ] = useState(0);
     const [ romData, setRomData ] = useAtom(romAtom);
     const { pathname } = useLocation();
 
@@ -28,6 +33,19 @@ export default () => {
         });
 
         fr.readAsArrayBuffer(file);
+    }
+
+    const randomizeRom = () => {
+        try {
+            let randomizer = new Z2Randomizer(z2VanillaTemplate, z2LocationMeta, seed);
+            randomizer.randomize();
+            let patchedRom = randomizer.patchRom(romData.rawBytes);
+            setRomData(parse(patchedRom));
+        } catch (e) {
+            alert("Our apologies...this seed has caused an error.  Please report the seed value to the developer to aid them in troubleshooting.");
+            console.error(e);
+            setRomData(null);
+        }
     }
 
     useEffect(() => {
@@ -63,6 +81,18 @@ export default () => {
                     <Link to={`${process.env.PUBLIC_URL}/hex`}><button>Hex Viewer</button></Link><br/>
                     <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link><br/>
                     <h4>ROM</h4>
+
+                    <input type="number" value={seed} onChange={({target: {value}}) => {setSeed(value)}} />
+                    <button onClick={() => {
+                        setSeed(Math.trunc(Math.random() * (Math.pow(2, 32) - 1)));
+                    }}>
+                        Generate Seed
+                    </button><br />
+                    <button onClick={() => {
+                        randomizeRom();
+                    }}>
+                        Randomize ROM (Alpha)
+                    </button><br />
                     <button onClick={() => {
                         let file = new File([romData.rawBytes], "Zelda 2.modified.nes", {type: "application/octet-stream"});
                         FileSaver.saveAs(file);
