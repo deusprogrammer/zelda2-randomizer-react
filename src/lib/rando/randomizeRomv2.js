@@ -8,7 +8,7 @@ import { explore } from '../zelda2/Z2Utils';
 
 const fs = require('fs');
 
-export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "MEDICINE": 0x13, "TROPHY": 0x14, "CHILD": 0x15};
+export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
 
 class Z2Randomizer {
     graphData = null;
@@ -67,7 +67,7 @@ class Z2Randomizer {
      * @param {string} locationName 
      */
     isPalace = (locationName) => {
-        this.locationMetadata[locationName] && this.locationMetadata[locationName].type === "PALACE";
+        return this.locationMetadata[locationName] && this.locationMetadata[locationName].type === "PALACE";
     }
 
     /**
@@ -998,8 +998,12 @@ class Z2Randomizer {
 
             if (mappedItems) {
                 let items = explore(romData.sideViewMaps, mapSet, mapNumber);
-                items.filter(item => (item.number >= 0 && item.number <= 7) || (item.number >= 14 && item.number <= 15) || (item.number >= 19 && item.number <= 21)).forEach(({levelElement}, index) => {
-                    levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index]];
+                let index = 0;
+                items.forEach(({levelElement}) => {
+                    if (this.isPalace(mappedLocation) && levelElement.collectableObjectNumber > 0x5) {
+                        return;
+                    }
+                    levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index++]];
                     randomizedRom = writeFieldToROM(levelElement, 'collectableObjectNumber', randomizedRom);
                 });
             }
