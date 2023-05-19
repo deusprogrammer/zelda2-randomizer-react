@@ -1,7 +1,8 @@
 import { deepCopy, merge, randomSeed, removeNode } from './util';
 import { parse } from '../Z2Parser';
 import { writeFieldToROM } from '../memory/HexTools';
-import { explore } from '../zelda2/Z2Utils';
+import { explore, printSpriteMap } from '../zelda2/Z2Utils';
+import { OVERWORLD_SPRITE_MAPPING } from '../zelda2/Z2MemoryMappings';
 
 export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
 
@@ -963,6 +964,51 @@ export class Z2Randomizer {
         this.placeItemsAndNodes();
     }
 
+    rerenderContinentSpriteMap = (spriteMap, continent) => {
+        let mapBlocks = [];
+        let i = 0;
+        for (let sprite of spriteMap) {
+            for (let j = 0; j < sprite.length + 1; j++) {
+                mapBlocks.push(
+                    sprite.type
+                );
+            }
+        }
+
+        console.log("MAP BLOCKS: " + mapBlocks.length);
+
+        Object.keys(this.graphData).filter(nodeName => this.graphData[nodeName].continent === continent).forEach(nodeName => {
+            let node = this.graphData[nodeName];
+            let {x, y} = node;
+            let {type} = this.locationMetadata[node.mappedLocation];
+
+            if (OVERWORLD_SPRITE_MAPPING[type] === undefined) {
+                console.log(`INVALID NODE TYPE AT ${node.mappedLocation}: ${type}`);
+            }
+
+            mapBlocks[(y - 30) * 64 + x] = OVERWORLD_SPRITE_MAPPING[type];
+        })
+
+        let currentBlockType = null;
+        let run = 0;
+        let compressedMap = mapBlocks.reduce((accum, mapBlock) => {
+            if (currentBlockType !== mapBlock) {
+                if (currentBlockType !== null) {
+                    accum.push({type: currentBlockType, length: run - 1});
+                }
+                run = 0;
+                currentBlockType = mapBlock;
+            }
+            run++;
+
+            return accum;
+        }, []);
+
+        printSpriteMap(compressedMap);
+
+        return compressedMap;
+    }
+
     /**
      * Patch the ROM with the graph
      * @param {string} fileName 
@@ -973,8 +1019,6 @@ export class Z2Randomizer {
 
         let romData = parse(rom);
         let randomizedRom = rom;
-
-        // console.log("ROM: " + JSON.stringify(romData, null, 5));
 
         // Set locations and items
         Object.keys(this.graphData).forEach((nodeName) => {
@@ -1008,6 +1052,11 @@ export class Z2Randomizer {
                 });
             }
         });
+
+        for (let continent = 0; continent < 4; continent++) {
+            let spriteMapRender = this.rerenderContinentSpriteMap(romData.overworld[continent].spriteMap, continent);
+            // Write compressed sprite map back to rom
+        }
 
         return randomizedRom;
     }
