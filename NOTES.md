@@ -27,8 +27,7 @@
 
 ## Bugs
 
-* Areas are being mapped twice with two different items.
-* Spell towns being placed in the wrong continent.
+* Acquiring certain items causes the first continent to corrupt. 
 
 ## Logs
 
