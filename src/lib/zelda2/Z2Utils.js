@@ -141,18 +141,20 @@ export const SUB_OP_MAP = {
 }
 
 export const printSpriteMap = (mapObject) => {
-    let i = 0;
-    for (let sprite of mapObject) {
-        for (let j = 0; j < sprite.length + 1; j++) {
-            if (i++ % 64 === 0) {
-                console.log();
+    if (process) {
+        let i = 0;
+        for (let sprite of mapObject) {
+            for (let j = 0; j < sprite.length + 1; j++) {
+                if (i++ % 64 === 0) {
+                    console.log();
+                }
+        
+                let c = OVERWORLD_SPRITE_SYMBOLS_ASCII[sprite.type];
+                process.stdout.write(c ? c : ' ');
             }
-    
-            let c = OVERWORLD_SPRITE_SYMBOLS_ASCII[sprite.type];
-            process.stdout.write(c ? c : ' ');
         }
+        console.log();
     }
-    console.log();
 }
 
 export const readUint16 = (buffer, offset) => {
