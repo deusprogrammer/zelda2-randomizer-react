@@ -3,6 +3,51 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AsciiTable from "../utils/AsciiTable";
 
+const AddressCalculator = ({onGo}) => {
+    const [ramAddress, setRamAddress] = useState('0x0');
+    const [bank, setBank] = useState(1);
+    const [romAddress, setRomAddress] = useState('0x0');
+
+    const updateRamAddress = (ramAddress) => {
+        setRamAddress(ramAddress);
+
+        if (!isNaN(ramAddress)) {
+            setRomAddress(('0x' + Math.abs((ramAddress - 0x8000) + 0x4000 * (bank - 1) + 0x10).toString(16)));
+        }
+    }
+
+    const updateBank = (bank) => {
+        setBank(bank);
+
+        if (!isNaN(ramAddress)) {
+            setRomAddress(('0x' + Math.abs((ramAddress - 0x8000) + 0x4000 * (bank - 1) + 0x10).toString(16)));
+        }
+    }
+
+    return (
+        <div>
+            <label>RAM Address</label>
+            <input type="text" value={ramAddress} onChange={({target: {value}}) => {updateRamAddress(value)}} />
+            &nbsp;
+            <label>Bank</label>
+            <select type="text" value={bank} onChange={({target: {value}}) => {updateBank(value)}}>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+            </select>
+            &nbsp;=&nbsp;
+            <span>
+                ROM Address {romAddress}
+            </span>
+            {onGo ? <button onClick={() => onGo(romAddress.toString(16))}>Go</button> : null}
+        </div>
+    )
+}
+
 export default ({bytes}) => {
     const [page, setPage] = useState(0);
     const [data, setData] = useState();
@@ -51,6 +96,8 @@ export default ({bytes}) => {
                 <h2>Hex Viewer</h2>
                 <h3>File Selection</h3>
                 <input type="file" onChange={onFileLoad} />
+                <h3>Address Calculator</h3>
+                <AddressCalculator />
             </div>
         );
     } else {
@@ -66,6 +113,8 @@ export default ({bytes}) => {
                     <label>Go To:</label><input type="text" onChange={(e) => {go(e.target.value)}} value={searchValue} /><br />
                     <button onClick={() => {setPage(page - 1)}} disabled={page === 0}>Prev</button>0x{(page * 512).toString(16).padStart(4, "0")} - 0x{((page + 1) * 512).toString(16).padStart(4, "0")}<button onClick={() => {setPage(page + 1)}}>Next</button>
                 </div>
+                <h3>Address Calculator</h3>
+                <AddressCalculator onGo={go} />
                 <h3>Memory</h3>
                 <div className="flex row center">
                     <div className="hex-view bigger">

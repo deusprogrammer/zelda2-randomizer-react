@@ -2,6 +2,22 @@ import { getValueFromMap }  from "../Utils";
 
 const LAST_BIT_MASK = 1 >>> 0;
 
+export const writeBytesToRom = (romAddress, rom, bytes) => {
+    for (let i = 0; i < bytes.length; i++) {
+        console.log(`WRITING 0x${bytes[i].toString(16)} TO 0x${romAddress.toString(16)}`);
+        rom[romAddress + i] = bytes[i];
+    }
+
+    return rom;
+}
+
+export const writeByteToRom = (romAddress, rom, byte) => {
+    console.log(`WRITING 0x${byte.toString(16)} TO 0x${romAddress.toString(16)}`);
+    rom[romAddress] = byte;
+
+    return rom;
+}
+
 export const writeFieldToROM = (object, field, bytes) => {
     let romDataCopy = new Uint8Array(bytes);
     let {offset: romAddress, bitFields} = object._metadata[field];
@@ -22,6 +38,36 @@ export const writeFieldToROM = (object, field, bytes) => {
     romDataCopy[romAddress] = byte;
 
     return romDataCopy;
+}
+
+export const writeObjectToROM = (object, fieldMappings, romAddress, bytes) => {
+    let romDataCopy = new Uint8Array(bytes);
+
+    fieldMappings = fieldMappings.sort((a, b) => {
+        return a.relOffset - b.relOffset;
+    });
+
+    let currentRelOffset = 0x0;
+    let bytesWritten = 0;
+    let bitFields = fieldMappings.filter(({relOffset}) => relOffset === currentRelOffset);
+    while (bitFields.length > 0) {
+        let byte = 0x0;
+        bitFields.forEach(({mask, name}) => {
+            let value = parseInt(object[name]);
+            while ((mask & LAST_BIT_MASK) === 0) {
+                mask = mask >> 1;
+                value = value << 1;
+            }
+            byte += value;
+        });
+        bytesWritten++;
+        currentRelOffset++;
+        
+        romDataCopy[romAddress++] = byte;
+        bitFields = fieldMappings.filter(({relOffset}) => relOffset === currentRelOffset);
+    } 
+
+    return [romDataCopy, bytesWritten];
 }
 
 export const littleEndianConvert = (buffer) => {

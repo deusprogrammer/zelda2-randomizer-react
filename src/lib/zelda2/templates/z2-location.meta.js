@@ -1,7 +1,7 @@
 export default {
     "BAGUS_CABIN": {
         "id": "BAGUS_CABIN",
-        "type": "TOWN",
+        "type": "FOREST",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 4,
@@ -9670,7 +9670,7 @@ export default {
     },
     "P2_RED_JAR": {
         "id": "P2_RED_JAR",
-        "type": "OTHER",
+        "type": "SWAMP",
         "continent": 0,
         "worldNumber": 0,
         "mapSet": 0,

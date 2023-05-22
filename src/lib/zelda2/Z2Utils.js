@@ -58,6 +58,76 @@ export const OVERWORLD_SPRITE_SYMBOLS = [
     {name: "Spider", c: "*", color: "white", backgroundColor: "red"}
 ]
 
+export const OVERWORLD_SPRITE_SYMBOLS_ASCII = [
+    "T",
+    "C",
+    "P",
+    "=",
+    ".",
+    ",",
+    ":",
+    "s",
+    "+",
+    " ",
+    ">",
+    "^",
+    "~",
+    "~",
+    "O",
+    "*"
+]
+
+let textMappings = {
+    '*': 0x32,
+    '?': 0x34,
+    '!': 0x36,
+    ',': 0x9C,
+    '/': 0xCE,
+    '.': 0xCF,
+    '0': 0xD0,
+    '1': 0xD1,
+    '2': 0xD2,
+    '3': 0xD3,
+    '4': 0xD4,
+    '5': 0xD5,
+    '6': 0xD6,
+    '7': 0xD7,
+    '8': 0xD8,
+    '9': 0xD9,
+    'A': 0xDA,
+    'B': 0xDB,
+    'C': 0xDC,
+    'D': 0xDD,
+    'E': 0xDE,
+    'F': 0xDF,
+    'G': 0xE0,
+    'H': 0xE1,
+    'I': 0xE2,
+    'J': 0xE3,
+    'K': 0xE4,
+    'L': 0xE5,
+    'M': 0xE6,
+    'N': 0xE7,
+    'O': 0xE8,
+    'P': 0xE9,
+    'Q': 0xEA,
+    'R': 0xEB,
+    'S': 0xEC,
+    'T': 0xED,
+    'U': 0xEE,
+    'V': 0xEF,
+    'W': 0xF0,
+    'X': 0xF1,
+    'Y': 0xF2,
+    'Z': 0xF3,
+    ' ': 0xF4,
+    'l': 0xF7,
+    '†': 0xF8,
+    'm': 0xF9,
+    'x': 0xFC,
+    '\n': 0xFF
+}
+
 export const DRAWING_OP = {
     0xD: "CHANGE FLOOR LEVEL",
     0xE: "SKIP",
@@ -68,6 +138,21 @@ export const SUB_OP_MAP = {
     F: "FLOOR",
     C: "CEILING",
     W: "WALL"
+}
+
+export const printSpriteMap = (mapObject) => {
+    let i = 0;
+    for (let sprite of mapObject) {
+        for (let j = 0; j < sprite.length + 1; j++) {
+            if (i++ % 64 === 0) {
+                console.log();
+            }
+    
+            let c = OVERWORLD_SPRITE_SYMBOLS_ASCII[sprite.type];
+            process.stdout.write(c ? c : ' ');
+        }
+    }
+    console.log();
 }
 
 export const readUint16 = (buffer, offset) => {
@@ -314,6 +399,14 @@ export const z2BytesToString = (bytes) => {
     }
 
     return text;
+}
+
+export const stringToZ2Bytes = (s) => {
+    let bytes = [];
+    for (let i = 0; i < s.length; i++) {
+        bytes.push(textMappings[s.charAt(i)]);
+    }
+    return bytes;
 }
 
 export const extractTextData = (buffer) => {
@@ -621,7 +714,9 @@ export const createVanillaNodeMapping = (graphData, mapData) => {
 export const isDigiShakeRando = (rom) => {
     let creditsLine2 = extractTextDataFromOffset(rom, DIGISHAKE_CREDIT_OFFSET);
 
-    return creditsLine2.trim() === "DIGSHAKE";
+    console.log("CREDITS: " + creditsLine2);
+
+    return creditsLine2.trim() === "DIGSHAKE" || creditsLine2.trim() === "TKOS";
 }
 
 export const explore = (maps, mapSet, mapNumber, explored = []) => {
