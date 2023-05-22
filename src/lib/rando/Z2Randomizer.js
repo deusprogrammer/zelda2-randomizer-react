@@ -964,6 +964,146 @@ export class Z2Randomizer {
         this.placeItemsAndNodes();
     }
 
+    extendMapSize = (rom) => {
+        console.log("Extending map size");
+
+        /** Write generalized loop function
+            cd98: 4cc6cd        JMP $cdc6       # jump past our implanted loop
+
+            cd9b: a000          LDY #$00              # Initialize start index
+            cd9d: b102          LDA ($02,Y)           # load from source
+            cd9f: 9120          STA ($20,Y)           # store to dest
+            cda1: c8            INY
+            cda2: 10f9          BPL $f9 (target=cd9d) # do it 128 times
+            cda4: ca            DEX                   # decrement counter
+            cda5: f00e          BEQ $0e (target=cdb5) # done yet?
+            cda7: b102          LDA ($02,Y)           # load from source
+            cda9: 9120          STA ($20,Y)           # store to dest
+            cdab: c8            INY
+            cdac: d0f9          BNE $f9 (target=cda7) # 128 more times
+            cdae: e603          INC $03               # increment source pointer
+            cdb0: e621          INC $21               # increment dest pointer
+            cdb2: ca            DEX                   # decrement counter
+            cdb3: d0e8          BNE $e8 (target=cd9d) # not done? do it again.
+            cdb5: 60            RTS                   # return to caller
+
+            # Fill with NOPs all the way to $cdc6
+            cdb6: ea            NOP
+        */
+
+        rom = writeBytesToRom(0x1cda8, rom, [
+            0x4c, 0xc6, 0xcd, 
+            0xa0, 0x00, 
+            0xb1, 0x02, 
+            0x91, 0x20, 
+            0xc8, 
+            0x10, 0xf9, 
+            0xca, 
+            0xf0, 0x0e, 
+            0xb1, 0x02, 
+            0x91, 0x20, 
+            0xc8, 
+            0xd0, 0xf9, 
+            0xe6, 0x03, 
+            0xe6, 0x21, 
+            0xca, 
+            0xd0, 0xe8, 
+            0x60
+        ]);
+        for (let address = 0x1cdc6; address < 0x1cdd6; address++) {
+            rom = writeByteToRom(address, rom, 0xea);
+        }
+
+        /** Copy overworld to RAM
+            cdc6: ae0607        LDX $0706       # load overworld number into X
+            cdc9: bd27cd        LDA $cd27,X     # overworld to map pointer offset
+            cdcc: aa            TAX             # into index X
+            cdcd: bd0885        LDA $8508,X     # put ROM pointer into $02-$03
+            cdd0: 8502          STA $02
+            cdd2: bd0985        LDA $8509,X
+            cdd5: 8503          STA $03
+
+            cdd7: a900          LDA #$00        # put destination $7c00 into $20-$21
+            cdd9: 8520          STA $20
+            cddb: a97c          LDA #$7c
+            cddd: 8521          STA $21
+            cddf: a207          LDX #$07        # 7 half-pages == 896 bytes
+            cde1: 209bcd        JSR $cd9b       # copy
+        */
+        rom = writeBytesToRom(0x1cdd6, rom, [
+            0xae, 0x06, 0x07, 
+            0xbd, 0x27, 0xcd,   // This is changed in Digshake's code for some reason.
+            0xaa, 
+            0xbd, 0x08, 0x85, 
+            0x85, 0x02, 
+            0xbd, 0x09, 0x85, 
+            0x85, 0x03,
+
+            0xa9, 0x00,
+            0x85, 0x20,
+            0xa9, 0x7c,
+            0x85, 0x21,
+            0xa2, 0x07,
+            0x20, 0x9b, 0xcd
+        ]);
+
+        /** Copy enemy list to RAM
+            cde4: a9a0          LDA #$a0        # load source $88a0 into $02-$03
+            cde6: 8502          STA $02
+            cde8: a988          LDA #$88
+            cdea: 8503          STA $03
+            cdec: a970          LDA #$70        # load dest $7000 into $20-$21 (address
+            cdee: 8521          STA $21         #   $20 should still be 0)
+            cdf0: a208          LDX #$08        # 8 half-pages == 1024 bytes
+            cdf2: 209bcd        JSR $cd9b       # copy
+        */
+
+        rom = writeBytesToRom(0x1cdf4, rom, [
+            0xa9, 0xa0, 
+            0x85, 0x02, 
+            0xa9, 0x88, 
+            0x85, 0x03, 
+            0xa9, 0x70, 
+            0x85, 0x21, 
+            0xa2, 0x08, 
+            0x20, 0x9b, 0xcd]);
+
+        /** Redirect map to be loaded from a different location
+            cdd7: a900          LDA #$00        # put destination $7a00 into $20-$21
+            cdd9: 8520          STA $20
+            cddb: a97a          LDA #$7a
+            cddd: 8521          STA $21
+            cddf: a20b          LDX #$0b        # 11 half-pages == 1408 bytes
+            cde1: 209bcd        JSR $cd9b       # copy
+         */
+
+        rom = writeBytesToRom(0x1cde7, rom, [
+            0xa9, 0x00, 
+            0x85, 0x20, 
+            0xa9, 0x7a, 
+            0x85, 0x21, 
+            0xa2, 0x0b, 
+            0x20, 0x9b, 0xcd
+        ]);
+        rom = writeByteToRom(0x808, rom, 0x7a);
+
+        // Modify the map pointers
+        rom = writeBytesToRom(0x4518, rom, [
+            0x70, 0xb4 
+        ]);
+        rom = writeBytesToRom(0x451a, rom, [
+            0xf0, 0xb9 
+        ]);
+        rom = writeBytesToRom(0x8518, rom, [
+            0x70, 0xb4 
+        ]);
+        rom = writeBytesToRom(0x851a, rom, [
+            0xf0, 0xb9 
+        ]);
+
+        return rom;
+    }
+
     compressSpriteMap = (spriteMap, continent) => {
         let mapBlocks = [];
         let i = 0;
@@ -1009,173 +1149,6 @@ export class Z2Randomizer {
         console.log("COMPRESSED MAP SIZE: " + compressedMap.length);
 
         return compressedMap;
-    }
-
-    getBytes = (start, end, rom) => {
-        let bytes = [];
-        for(let i = start; i < end; i++)
-        {
-            bytes[i - start] = rom[i];
-        }
-        return bytes;
-    }
-    
-    extendMapSize = (rom) => {
-        // // Hacky fix for palace connections
-        // rom = writeByteToRom(0x1074A, rom, 0xFC);
-        // rom = writeByteToRom(0x1477D, rom, 0xFC);
-
-        // // Hacky fix for new kasuto
-
-        // rom = writeByteToRom(0x8660, rom, 0x51);
-        // rom = writeByteToRom(0x924D, rom, 0x00);
-        
-        // // Hack fix for palace 6
-        // rom = writeByteToRom(0x8664, rom, 0xE6);
-       
-        // // Fix for extra battle scene
-        // rom = writeByteToRom(0x8645, rom, 0x00);
-
-        // // Disable hold over head animation
-        // rom = writeByteToRom(0x1E54C, rom, 0x00);
-
-        // // Make text go fast
-        // rom = writeByteToRom(0xF75E, rom, 0x00);
-        // rom = writeByteToRom(0xF667, rom, 0x00);
-        // rom = writeByteToRom(0xF625, rom, 0x00);
-
-        // // Fix soft lock
-        // rom = writeByteToRom(0x1E19A, rom, 0x20);
-        // rom = writeByteToRom(0x1E19B, rom, 0xAA);
-        // rom = writeByteToRom(0x1E19C, rom, 0xFE);
-
-        // rom = writeByteToRom(0x1FEBA, rom, 0xEE);
-        // rom = writeByteToRom(0x1FEBB, rom, 0x26);
-        // rom = writeByteToRom(0x1FEBC, rom, 0x07);
-        // rom = writeByteToRom(0x1FEBD, rom, 0xAD);
-        // rom = writeByteToRom(0x1FEBE, rom, 0x4C);
-        // rom = writeByteToRom(0x1FEBF, rom, 0x07);
-        // rom = writeByteToRom(0x1FEC0, rom, 0xC9);
-        // rom = writeByteToRom(0x1FEC1, rom, 0x02);
-        // rom = writeByteToRom(0x1FEC2, rom, 0xF0);
-        // rom = writeByteToRom(0x1FEC3, rom, 0x05);
-        // rom = writeByteToRom(0x1FEC4, rom, 0xA2);
-        // rom = writeByteToRom(0x1FEC5, rom, 0x00);
-        // rom = writeByteToRom(0x1FEC6, rom, 0x8E);
-        // rom = writeByteToRom(0x1FEC7, rom, 0x4C);
-        // rom = writeByteToRom(0x1FEC8, rom, 0x07);
-        // rom = writeByteToRom(0x1FEC9, rom, 0x60);
-
-        console.log("Extending map size");
-        //Implements CF's map size hack:
-        //https://github.com/cfrantz/z2doc/wiki/bigger-overworlds
-
-        /** cd9b: a000          LDY #$00              # Initialize start index
-            cd9d: b102          LDA ($02,Y)           # load from source
-            cd9f: 9120          STA ($20,Y)           # store to dest
-            cda1: c8            INY
-            cda2: 10f9          BPL $f9 (target=cd9d) # do it 128 times
-            cda4: ca            DEX                   # decrement counter
-            cda5: f00e          BEQ $0e (target=cdb5) # done yet?
-            cda7: b102          LDA ($02,Y)           # load from source
-            cda9: 9120          STA ($20,Y)           # store to dest
-            cdab: c8            INY
-            cdac: d0f9          BNE $f9 (target=cda7) # 128 more times
-            cdae: e603          INC $03               # increment source pointer
-            cdb0: e621          INC $21               # increment dest pointer
-            cdb2: ca            DEX                   # decrement counter
-            cdb3: d0e8          BNE $e8 (target=cd9d) # not done? do it again.
-            cdb5: 60            RTS                   # return to caller
-        */
-
-        rom = writeBytesToRom(0x1cda8, rom, [0x4c, 0xc6, 0xcd, 0xa0, 0x00, 0xb1, 0x02, 0x91, 0x20, 0xc8, 0x10, 0xf9, 0xca, 0xf0, 0x0e, 0xb1, 0x02, 0x91, 0x20, 0xc8, 0xd0, 0xf9, 0xe6, 0x03, 0xe6, 0x21, 0xca, 0xd0, 0xe8, 0x60]);
-
-        //# Fill with NOPs all the way to $cdc6
-        for (let address = 0x1cdc6; address < 0x1cdd6; address++) {
-            rom = writeByteToRom(address, rom, 0xea);
-        }
-
-        /** cdc6: ae0607        LDX $0706       # load overworld number into X
-            cdc9: bd27cd        LDA $cd27,X     # overworld to map pointer offset
-            cdcc: aa            TAX             # into index X
-            cdcd: bd0885        LDA $8508,X     # put ROM pointer into $02-$03
-            cdd0: 8502          STA $02
-            cdd2: bd0985        LDA $8509,X
-            cdd5: 8503          STA $03
-        */
-        rom = writeBytesToRom(0x1cdd6, rom, [0xae, 0x06, 0x07, 0xbd, 0x27, 0xcd, 0xaa, 0xbd, 0x08, 0x85, 0x85, 0x02, 0xbd, 0x09, 0x85, 0x85, 0x03]);
-
-        /** cdd7: a900          LDA #$00        # put destination $7c00 into $20-$21
-            cdd9: 8520          STA $20
-            cddb: a97c          LDA #$7a
-            cddd: 8521          STA $21
-            cddf: a207          LDX #$07        # 7 half-pages == 896 bytes
-            cde1: 209bcd        JSR $cd9b       # copy
-        */
-
-        rom = writeBytesToRom(0x1cde7, rom, [0xa9, 0x00, 0x85, 0x20, 0xa9, 0x7c, 0x85, 0x21, 0xa2, 0x07, 0x20, 0x9b, 0xcd]);
-
-        /** cde4: a9a0          LDA #$a0        # load source $88a0 into $02-$03
-            cde6: 8502          STA $02
-            cde8: a988          LDA #$88
-            cdea: 8503          STA $03
-            cdec: a970          LDA #$70        # load dest $7000 into $20-$21 (address
-            cdee: 8521          STA $21         #   $20 should still be 0)
-            cdf0: a208          LDX #$08        # 8 half-pages == 1024 bytes
-            cdf2: 209bcd        JSR $cd9b       # copy
-        */
-
-        rom = writeBytesToRom(0x1cdf4, rom, [0xa9, 0xa0, 0x85, 0x02, 0xa9, 0x88, 0x85, 0x03, 0xa9, 0x70, 0x85, 0x21, 0xa2, 0x08, 0x20, 0x9b, 0xcd]);
-
-        rom = writeByteToRom(0x808, rom, 0x7a);
-
-        // rom = writeBytesToRom(0x87b3, rom, [ 0xea, 0xea, 0xea ]);
-        // rom = writeBytesToRom(0x47ba, rom, [ 0xea, 0xea, 0xea ]);
-        // rom = writeBytesToRom(0x1e02e,rom, [ 0xea, 0xea, 0xea ]);
-
-        // rom = writeBytesToRom(0x4518, rom, [ 0x70, 0xb4 ]); //west
-        // rom = writeBytesToRom(0x451a, rom, [ 0xf0, 0xb9 ]); //dm
-        // rom = writeBytesToRom(0x8518, rom, [ 0x70, 0xb4 ]); //east
-        // rom = writeBytesToRom(0x851a, rom, [ 0xf0, 0xb9 ]); //maze island
-
-        // rom = writeBytesToRom(0x1FFF0, rom, [0x01, 0x01, 0x02, 0x02, 0x00, 0x10, 0x20, 0x20, 0x30, 0x30, 0x30, 0x30, 0x40, 0x50, 0x60, 0x60, 0x30]);
-
-        // /*
-        //     * cd4a: ad0607        LDA $0706     # Get overworld number
-        //     cd4d: 0a            ASL A         # times 4
-        //     cd4e: 0a            ASL A
-        //     cd4f: 0d0a07        ORA $070a     # plus previous overworld number
-        //     cd52: a8            TAY           # into index Y
-        //     cd53: b9e0ff        LDA $ffe0,Y   # load bank from lookup table
-        //     cd56: 8d6907        STA $0769     # store in bank-to-switch-to
-        //     cd59: 8d6907        STA $0769
-        //     cd5c: 20ccff        JSR $ffcc     # load bank
-        //     cd5f: ade0bf        LDA $bfe0     # load pseudo-bank
-        // */
-        // rom = writeBytesToRom(0x1cd5a, rom, [0xad, 0x06, 0x07, 0xea, 0xea, 0xea, 0xea, 0xea, 0xa8, 0xb9, 0xe0, 0xff, 0x8d, 0x69, 0x07, 0x8d, 0x69, 0x07, 0x020, 0xcc, 0xff]);
-
-        // rom = writeBytesToRom(0x1cd94, rom, [ 0xa8, 0xb9, 0xf1, 0xff, 0x0a, 0xa8 ]);
-        // rom = writeBytesToRom(0x1c516, rom, [ 0xa8, 0xb9, 0xf1, 0xff, 0x0a, 0xa8 ]);
-        // rom = writeBytesToRom(0x20001, rom, [ 0x00, 0x02, 0x00, 0x02 ]);
-        // rom = writeBytesToRom(0x1ce43, rom, [ 0xe4, 0xff ]);
-
-        // //update item memory locations:
-        // rom = writeBytesToRom(0x1f310, rom, this.getBytes(0x1c275, 0x1c295, rom));
-        // rom = writeBytesToRom(0x1f330, rom, [ 0x60, 0x06, 0x60, 0x06, 0x80, 0x06, 0xa0, 0x06, 0xc0, 0x06 ]);
-        // rom = writeBytesToRom(0x1c2c9, rom, [ 0x00, 0xF3 ]);
-        // rom = writeBytesToRom(0x1c2ce, rom, [ 0x01, 0xF3 ]);
-
-        // //fix raft check
-        // rom = writeBytesToRom(0x5b2, rom, [ 0xea, 0xea ]);
-
-        // Allow height of map to be 75
-        // rom = writeByteToRom(0x835, rom, 0x60);
-        // rom = writeByteToRom(0x933, rom, 0x60);
-        // rom = writeByteToRom(0xc3A, rom, 0x60);
-        // rom = writeByteToRom(0x43ed, rom, 0x60);
-        // rom = writeByteToRom(0x83ed, rom, 0x60);
-
-        return rom;
     }
 
     /**
