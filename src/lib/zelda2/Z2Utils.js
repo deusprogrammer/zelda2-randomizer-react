@@ -161,30 +161,32 @@ export const readUint16 = (buffer, offset) => {
 }
 
 export const printDebugMap = (mapObject) => {
-    let legend = {};
-    Object.keys(mapObject).forEach((key, index) => {
-        legend[key] = index;
-    })
+    if (process) {
+        let legend = {};
+        Object.keys(mapObject).forEach((key, index) => {
+            legend[key] = index;
+        })
 
-    console.box("Legend");
-    console.table(legend);
+        console.box("Legend");
+        console.table(legend);
 
-    console.log();
-    for (let y = 0; y < 82; y++) {
-        for (let x = 0; x < 82; x++) {
-            let found = Object.keys(mapObject).find(key => {
-                return mapObject[key].x === x && mapObject[key].y - 29 === y
-            });
-    
-            if (Object.keys(mapObject).includes(found)) {
-                process.stdout.write(legend[found].toString().padStart(2, "0"));
-            } else {
-                process.stdout.write("  ");
+        console.log();
+        for (let y = 0; y < 82; y++) {
+            for (let x = 0; x < 82; x++) {
+                let found = Object.keys(mapObject).find(key => {
+                    return mapObject[key].x === x && mapObject[key].y - 29 === y
+                });
+        
+                if (Object.keys(mapObject).includes(found)) {
+                    process.stdout.write(legend[found].toString().padStart(2, "0"));
+                } else {
+                    process.stdout.write("  ");
+                }
             }
+            console.log("\n");
         }
-        console.log("\n");
+        console.log();
     }
-    console.log();
 }
 
 export const extractWestHyruleMapLocations = (buffer) => {
