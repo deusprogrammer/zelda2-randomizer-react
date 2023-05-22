@@ -1130,8 +1130,8 @@ export class Z2Randomizer {
         let currentBlockType = null;
         let run = 0;
         let compressedMap = [];
-        mapBlocks.forEach(mapBlock => {
-            if (currentBlockType !== mapBlock || run === 0xF) {
+        mapBlocks.forEach((mapBlock, index) => {
+            if (currentBlockType !== mapBlock || run === 0xF || index % 64 === 0) {
                 if (currentBlockType !== null) {
                     compressedMap.push({type: currentBlockType, length: run - 1});
                 }

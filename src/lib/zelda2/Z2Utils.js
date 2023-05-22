@@ -141,7 +141,7 @@ export const SUB_OP_MAP = {
 }
 
 export const printSpriteMap = (mapObject) => {
-    if (process) {
+    if (typeof process !== 'undefined') {
         let i = 0;
         for (let sprite of mapObject) {
             for (let j = 0; j < sprite.length + 1; j++) {
@@ -163,7 +163,7 @@ export const readUint16 = (buffer, offset) => {
 }
 
 export const printDebugMap = (mapObject) => {
-    if (process) {
+    if (typeof process !== 'undefined') {
         let legend = {};
         Object.keys(mapObject).forEach((key, index) => {
             legend[key] = index;
