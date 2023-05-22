@@ -2,7 +2,7 @@ import { deepCopy, merge, randomSeed, removeNode } from './util';
 import { parse } from '../Z2Parser';
 import { writeByteToRom, writeBytesToRom, writeFieldToROM, writeObjectToROM } from '../memory/HexTools';
 import { explore, printSpriteMap, stringToZ2Bytes } from '../zelda2/Z2Utils';
-import { DIGISHAKE_CREDIT_OFFSET, OVERWORLD_SPRITE_MAPPING, RANDO_MAP_OFFSETS, VANILLA_MAP_OFFSETS } from '../zelda2/Z2MemoryMappings';
+import { DIGISHAKE_CREDIT_OFFSET, OVERWORLD_SPRITE_MAPPING, OVERWORLD_SPRITE_TYPES, RANDO_MAP_OFFSETS, VANILLA_MAP_OFFSETS } from '../zelda2/Z2MemoryMappings';
 
 export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
 
@@ -18,6 +18,15 @@ export class Z2Randomizer {
         this.graphData = deepCopy(templateData);
         this.locationMetadata = locationMetadata;
         this.randomNumberGenerator = randomSeed(seed);
+    }
+
+    getBytes = (start, end, rom) =>
+    {
+        let bytes = [];
+        for(let i = start; i < end; i++) {
+            bytes[i - start] = rom[i];
+        }
+        return bytes;
     }
 
     /**
@@ -1101,6 +1110,25 @@ export class Z2Randomizer {
             0xf0, 0xb9 
         ]);
 
+        rom = writeBytesToRom(0x1fff0, rom, [ 0x01, 0x01, 0x02, 0x02, 0x00, 0x10, 0x20, 0x20, 0x30, 0x30, 0x30, 0x30, 0x40, 0x50, 0x60, 0x60, 0x30 ]);
+
+        rom = writeBytesToRom(0x1cd5a, rom, [ 0xad, 0x06, 0x07, 0xea, 0xea, 0xea, 0xea, 0xea, 0xa8, 0xb9, 0xe0, 0xff, 0x8d, 0x69, 0x07, 0x8d, 0x69, 0x07, 0x020, 0xcc, 0xff ]);
+
+        rom = writeBytesToRom(0x1cd94, rom, [ 0xa8, 0xb9, 0xf1, 0xff, 0x0a, 0xa8 ]);
+        rom = writeBytesToRom(0x1c516, rom, [ 0xa8, 0xb9, 0xf1, 0xff, 0x0a, 0xa8 ]);
+        rom = writeBytesToRom(0x20001, rom, [ 0x00, 0x02, 0x00, 0x02 ]);
+        rom = writeBytesToRom(0x1ce43, rom, [ 0xe4, 0xff ]);
+        //put(0x1cdd2, new byte[] { 0xf0, 0xff });
+
+        //update item memory locations:
+        rom = writeBytesToRom(0x1f310, rom, this.getBytes(0x1c275, 0x1c295, rom));
+        rom = writeBytesToRom(0x1f330, rom, [ 0x60, 0x06, 0x60, 0x06, 0x80, 0x06, 0xa0, 0x06, 0xc0, 0x06 ]);
+        rom = writeBytesToRom(0x1c2c9, rom, [ 0x00, 0xF3 ]);
+        rom = writeBytesToRom(0x1c2ce, rom, [ 0x01, 0xF3 ]);
+
+        //fix raft check
+        rom = writeBytesToRom(0x5b2, rom, [ 0xea, 0xea ]);
+
         return rom;
     }
 
@@ -1165,6 +1193,16 @@ export class Z2Randomizer {
         // Extend map size and write map.
         randomizedRom = this.extendMapSize(randomizedRom);
 
+        // Change continent number back for maze island
+        Object.keys(this.locationMetadata).forEach(key => {
+            let worldNumber = this.locationMetadata[key].worldNumber;
+            this.locationMetadata[key].worldNumber = worldNumber === 3 ? 1 : worldNumber;
+        });
+        Object.keys(this.graphData).forEach(key => {
+            let continent = this.graphData[key].continent;
+            this.graphData[key].continent = continent === 3 ? 1 : continent;
+        });
+
         // Set locations and items
         Object.keys(this.graphData).forEach((nodeName) => {
             let targetNode = this.graphData[nodeName];
@@ -1201,8 +1239,6 @@ export class Z2Randomizer {
         for (let continent = 0; continent < 4; continent++) {
             let compressedMap = this.compressSpriteMap(romData.overworld[continent].spriteMap, continent);
             let mapOffset = RANDO_MAP_OFFSETS[continent];
-
-            console.log("MAP OFFSET: 0x" + mapOffset.toString(16));
 
             compressedMap.forEach(blockRun => {
                 let bytesWritten = 0;
