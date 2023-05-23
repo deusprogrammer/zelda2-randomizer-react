@@ -1026,6 +1026,8 @@ export class Z2Randomizer {
         rom.extendMapSize();
         rom.miscPatches();
         rom.disablePalaceTurningToStone();
+        rom.disableFlashing();
+        rom.upAController();
 
         // Set locations and items
         Object.keys(this.graphData).forEach((nodeName) => {

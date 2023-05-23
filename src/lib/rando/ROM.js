@@ -10,12 +10,23 @@ export class ROM {
         this.rom = rom;
     }
 
+    /**
+     * Assemble byte list from assembly code and write to rom address
+     * @param {number} romAddress 
+     * @param {string} asmCode 
+     * @returns 
+     */
     writeAsmToROM = (romAddress, asmCode) => {
         let bytes = assembleCode(asmCode);
         console.log(bytes.map(byte => `0x${byte.toString(16)}`));
         return this.writeBytesToROM(romAddress, bytes);
     }
     
+    /**
+     * Write multiple bytes to the given rom address
+     * @param {number} romAddress 
+     * @param {Array} bytes 
+     */
     writeBytesToROM = (romAddress, bytes) => {
         for (let i = 0; i < bytes.length; i++) {
             console.log(`WRITING 0x${bytes[i].toString(16)} TO 0x${romAddress.toString(16)}`);
@@ -23,19 +34,27 @@ export class ROM {
         }
     }
     
+    /**
+     * Writes a single byte to the given rom address
+     * @param {number} romAddress 
+     * @param {number} byte 
+     */
     writeByteToROM = (romAddress, byte) => {
         console.log(`WRITING 0x${byte.toString(16)} TO 0x${romAddress.toString(16)}`);
         this.rom[romAddress] = byte;
     }
     
+    /**
+     * Write field to rom (gets rom address from object metadata)
+     * @param {object} object 
+     * @param {string} field 
+     */
     writeFieldToROM = (object, field) => {
-        
         let {offset: romAddress, bitFields} = object._metadata[field];
         
         let byte = 0x0;
         bitFields.forEach(({mask, name}) => {
             let value = parseInt(object[name]);
-            // console.log(name + " => " + value.toString(2) + " " + value);
             while ((mask & LAST_BIT_MASK) === 0) {
                 mask = mask >> 1;
                 value = value << 1;
@@ -46,6 +65,13 @@ export class ROM {
         this.rom[romAddress] = byte;
     }
     
+    /**
+     * Write object to rom address
+     * @param {object} object 
+     * @param {object} fieldMappings 
+     * @param {number} romAddress 
+     * @returns 
+     */
     writeObjectToROM = (object, fieldMappings, romAddress) => {
         fieldMappings = fieldMappings.sort((a, b) => {
             return a.relOffset - b.relOffset;
@@ -74,44 +100,61 @@ export class ROM {
         return bytesWritten;
     }
 
-    getRom = () => {
-        return this.rom;
-    }
-
     /**
      * Apply various qol improvements (lifted from digshake's randomizer)
      */
     miscPatches = () => {
         //Hacky fix for palace connections
-        this.writeByteToROM(0x1074A, 0xFC);
-        this.writeByteToROM(0x1477D, 0xFC);
+        this.writeByteToROM(0x1074a, 0xfc);
+        this.writeByteToROM(0x1477d, 0xfc);
 
         //Hacky fix for new kasuto
         this.writeByteToROM(0x8660, 0x51);
         this.writeByteToROM(0x924D, 0x00);
         
         //Hack fix for palace 6
-        this.writeByteToROM(0x8664, 0xE6);
+        this.writeByteToROM(0x8664, 0xe6);
        
         //Fix for extra battle scene
         this.writeByteToROM(0x8645, 0x00);
 
         //Disable hold over head animation
-        this.writeByteToROM(0x1E54C, 0x0);
+        this.writeByteToROM(0x1e54c, 0x0);
 
         //Make text go fast
-        this.writeByteToROM(0xF75E, 0x00);
-        this.writeByteToROM(0xF625, 0x00);
-        this.writeByteToROM(0xF667, 0x00);
+        this.writeByteToROM(0xf75e, 0x00);
+        this.writeByteToROM(0xf625, 0x00);
+        this.writeByteToROM(0xf667, 0x00);
     }
 
     /**
-     * Disable palaces turning to stone by placing nop slides over the instructions
+     * Disable palaces turning to stone by placing nop slides over the instructions  (lifted from digshake's randomizer)
      */
     disablePalaceTurningToStone = () => {
         this.writeBytesToROM(0x87b3, [ 0xea, 0xea, 0xea ]);
         this.writeBytesToROM(0x47ba, [ 0xea, 0xea, 0xea ]);
         this.writeBytesToROM(0x1e02e, [ 0xea, 0xea, 0xea ]);
+    }
+
+    /**
+     * Change reset button combo to be on controller one (lifted from digshake's randomizer)
+     */
+    upAController = () => {
+        this.writeByteToROM(0x21b0, 0xf7);
+        this.writeByteToROM(0x21b2, 0x28);
+        this.writeByteToROM(0x21ee, 0xf7);
+        this.writeByteToROM(0x21f0, 0x28);
+    }
+
+    /**
+     * Disable flashing because it's annoying and can hurt people (lifted from digshake's randomizer)
+     */
+    disableFlashing = () => {
+        this.writeByteToROM(0x2a01,  0x12);
+        this.writeByteToROM(0x2a02,  0x12);
+        this.writeByteToROM(0x2a03,  0x12);
+        this.writeByteToROM(0x1c9fA, 0x16);
+        this.writeByteToROM(0x1c9fc, 0x16);
     }
 
     /**
@@ -198,5 +241,13 @@ export class ROM {
         this.writeBytesToROM(0x851a, [  // Maze Island
             0xf0, 0xb9 
         ]);
+    }
+
+    /**
+     * Get the rom bytes
+     * @returns 
+     */
+    getRom = () => {
+        return this.rom;
     }
 }
