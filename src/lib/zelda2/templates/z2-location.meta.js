@@ -12802,7 +12802,9 @@ export default {
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
-        "items": [],
+        "items": [
+            "SMALL_ITEM"
+        ],
         "itemRequirements": [],
         "entryRequirements": [],
         "completionRequirements": [],
