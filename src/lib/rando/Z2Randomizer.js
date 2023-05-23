@@ -1122,7 +1122,7 @@ export class Z2Randomizer {
         rom.replaceText("I AM\nERROR.", "I FARTED.");
         rom.replaceText("I CAN GIVE\nYOU MOST\nPOWERFUL\nMAGIC.", "I CAN GIVE\nYOU\nDIARRHEA.");
         rom.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB,\nIDIOT");
-        rom.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH.\nSNOOGINS.");
+        rom.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH\nSNOOGINS.");
         
         return rom.getRom();
     }
