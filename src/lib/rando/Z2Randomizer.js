@@ -1048,6 +1048,33 @@ export class Z2Randomizer {
             }
 
             if (mappedItems) {
+                // Hacky fix for spell town...more like SMELL town
+                if (["SPELL_TOWN"].includes(mappedLocation)) {
+                    const SPELL_TOWN_MAGIC_CONTAINER = 46;
+                    const SPELL_TOWN_MAGIC_KEY = 47;
+                    let item1 = ITEM_MAP[mappedItems[0]];
+                    let item2 = ITEM_MAP[mappedItems[1]];
+
+                    let sideViewMaps1 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_CONTAINER];
+                    let sideViewMaps2 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_KEY];
+
+                    let levelElement1 = sideViewMaps1.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
+                    levelElement1.collectableObjectNumber = item1;
+                    let levelElement2 = sideViewMaps2.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
+                    levelElement2.collectableObjectNumber = item2;
+
+                    if (item1) {
+                        rom.writeFieldToROM(levelElement1, 'collectableObjectNumber');
+                    }
+                    if (item2) {
+                        rom.writeFieldToROM(levelElement2, 'collectableObjectNumber');
+                    }
+
+                    console.log("WRITING SPELL TOWN ITEMS: " + mappedItems[0] + " " + mappedItems[1]);
+
+                    return;
+                }
+
                 let items = explore(romData.sideViewMaps, mapSet, mapNumber);
                 let index = 0;
                 items.forEach(({levelElement}) => {
