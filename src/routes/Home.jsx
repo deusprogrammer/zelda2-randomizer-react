@@ -20,8 +20,8 @@ export default () => {
     const [ romData, setRomData ] = useAtom(romAtom);
     const { pathname } = useLocation();
 
-    const parseRom = (romData) => {
-        setRomData(parse(romData, "VANILLA"));
+    const parseRom = (rom) => {
+        setRomData(parse(rom));
     }
 
     const onFileLoad = (event) => {
@@ -41,9 +41,9 @@ export default () => {
             let randomizer = new Z2Randomizer(z2VanillaTemplate, z2LocationMeta, seed);
             randomizer.randomize();
             let patchedRom = randomizer.patchRom(romData.rawBytes);
-            setRomData(parse(patchedRom));
+            parseRom(patchedRom);
         } catch (e) {
-            alert(`Our apologies...this seed has caused an error.  Please report the seed value to the developer to aid them in troubleshooting.  Seed number: ${seed}G`);
+            alert(`Our apologies...this seed has caused an error.  Please report the seed value to the developer to aid them in troubleshooting.\n\nSeed number: ${seed}`);
             console.error(e);
             setRomData(null);
         }
@@ -75,7 +75,7 @@ export default () => {
                 <h3>ROM Data</h3>
                 <KeyValueTable showHex={false} editable={false} map={{
                     "Randomizer Version": RANDOMIZER_VERSION,
-                    "ROM Version": romData.isDigiShake ? 'Extended' : 'Vanilla'
+                    "ROM Version": romData.isExtendedRom ? 'Extended' : 'Vanilla'
                 }} />
                 <h3>Actions</h3>
                 <div className="data-div">

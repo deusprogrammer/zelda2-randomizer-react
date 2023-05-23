@@ -1049,6 +1049,11 @@ export class Z2Randomizer {
                 rom.writeFieldToROM(nodeToEdit, 'external');
             }
 
+            if (["DM_BRIDGE_EXIT_E", "DM_BRIDGE_EXIT_W", "MAZE_ISLAND_BRIDGE", "EAST_HYRULE_BRIDGE"].includes(mappedLocation)) {
+                nodeToEdit.passThrough = 0;
+                rom.writeFieldToROM(nodeToEdit, 'passThrough');
+            }
+
             if (mappedItems) {
                 // Hacky fix for spell town...more like SMELL town
                 if (["SPELL_TOWN"].includes(mappedLocation)) {

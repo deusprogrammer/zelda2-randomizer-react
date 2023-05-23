@@ -11,15 +11,15 @@ import {
     extractMazeIslandSpriteMap,
     extractMazeIslandMapLocations,
     extractTextData,
-    isDigiShakeRando,
+    isExtended,
     combineLevelData
 } from './zelda2/Z2Utils';
 
 
 export const parse = (rom) => {
-    let isDigiShake = isDigiShakeRando(rom);
+    let isExtendedRom = isExtended(rom);
 
-    let mode = isDigiShake ? "RANDO" : "VANILLA";
+    let mode = isExtendedRom ? "RANDO" : "VANILLA";
 
     let nesHeaders = extractNESHeaders(rom);
     let nesOffsets = calculateNESOffsets(nesHeaders);
@@ -75,7 +75,7 @@ export const parse = (rom) => {
         overworld,
         sideViewMaps,
         textData,
-        isDigiShake,
+        isExtendedRom,
         rawBytes: rom
     }
 }

@@ -733,12 +733,8 @@ export const createVanillaNodeMapping = (graphData, mapData) => {
     return template;
 }
 
-export const isDigiShakeRando = (rom) => {
-    let creditsLine2 = extractTextDataFromOffset(rom, DIGISHAKE_CREDIT_OFFSET);
-
-    console.log("CREDITS: " + creditsLine2);
-
-    return creditsLine2.trim() === "DIGSHAKE" || creditsLine2.trim() === "TKOS";
+export const isExtended = (rom) => {
+    return rom[0x808] === 0x7a
 }
 
 export const explore = (maps, mapSet, mapNumber, explored = []) => {
