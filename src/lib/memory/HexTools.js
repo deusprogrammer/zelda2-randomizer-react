@@ -1,8 +1,13 @@
 import { getValueFromMap }  from "../Utils";
+import { assembleCode } from "./assembler";
 
 const LAST_BIT_MASK = 1 >>> 0;
 
-export const writeBytesToRom = (romAddress, rom, bytes) => {
+export const writeAsmToROM = (romAddress, rom, asmCode) => {
+    return writeBytesToROM(romAddress, rom, assembleCode(asmCode));
+}
+
+export const writeBytesToROM = (romAddress, rom, bytes) => {
     for (let i = 0; i < bytes.length; i++) {
         console.log(`WRITING 0x${bytes[i].toString(16)} TO 0x${romAddress.toString(16)}`);
         rom[romAddress + i] = bytes[i];
@@ -11,7 +16,7 @@ export const writeBytesToRom = (romAddress, rom, bytes) => {
     return rom;
 }
 
-export const writeByteToRom = (romAddress, rom, byte) => {
+export const writeByteToROM = (romAddress, rom, byte) => {
     console.log(`WRITING 0x${byte.toString(16)} TO 0x${romAddress.toString(16)}`);
     rom[romAddress] = byte;
 
@@ -21,8 +26,6 @@ export const writeByteToRom = (romAddress, rom, byte) => {
 export const writeFieldToROM = (object, field, bytes) => {
     let romDataCopy = new Uint8Array(bytes);
     let {offset: romAddress, bitFields} = object._metadata[field];
-
-    // console.log("OFFSET: 0x" + romAddress.toString(16));
     
     let byte = 0x0;
     bitFields.forEach(({mask, name}) => {
