@@ -1,5 +1,5 @@
 import parse from "../Z2Parser";
-import { assembleCode } from "../memory/assembler";
+import { assembleCode } from "../memory/Assembler";
 import { stringToZ2Bytes } from "../zelda2/Z2Utils";
 
 const LAST_BIT_MASK = 1 >>> 0;

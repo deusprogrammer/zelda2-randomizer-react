@@ -1,5 +1,5 @@
 import { getValueFromMap }  from "../Utils";
-import { assembleCode } from "./assembler";
+import { assembleCode } from "./Assembler";
 
 const LAST_BIT_MASK = 1 >>> 0;
 

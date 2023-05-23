@@ -42,7 +42,7 @@ export default () => {
             let patchedRom = randomizer.patchRom(romData.rawBytes);
             setRomData(parse(patchedRom));
         } catch (e) {
-            alert("Our apologies...this seed has caused an error.  Please report the seed value to the developer to aid them in troubleshooting.");
+            alert(`Our apologies...this seed has caused an error.  Please report the seed value to the developer to aid them in troubleshooting.  Seed number: ${seed}G`);
             console.error(e);
             setRomData(null);
         }
