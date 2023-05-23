@@ -5851,9 +5851,7 @@ export default {
         "ability": "",
         "abilityRequirements": [],
         "spellRequirements": [],
-        "items": [
-            "SMALL_ITEM"
-        ],
+        "items": [],
         "itemRequirements": [],
         "entryRequirements": [],
         "completionRequirements": [],
