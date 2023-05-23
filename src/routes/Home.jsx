@@ -13,6 +13,7 @@ import { Z2Randomizer } from '../lib/rando/Z2Randomizer';
 
 import z2VanillaTemplate from '../lib/zelda2/templates/z2-vanilla.template';
 import z2LocationMeta from '../lib/zelda2/templates/z2-location.meta';
+import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
@@ -73,7 +74,8 @@ export default () => {
                 <h2>ROM Details</h2>
                 <h3>ROM Data</h3>
                 <KeyValueTable showHex={false} editable={false} map={{
-                    Version: romData.isDigiShake ? 'DigiShake Randomizer' : 'Vanilla'
+                    "Randomizer Version": RANDOMIZER_VERSION,
+                    "ROM Version": romData.isDigiShake ? 'Extended' : 'Vanilla'
                 }} />
                 <h3>Actions</h3>
                 <div className="data-div">
@@ -101,15 +103,6 @@ export default () => {
                     </button><br />
                     <button onClick={() => {setRomData(null)}}>Close ROM</button>
                 </div>
-
-                {!isDigiShake ? 
-                <>
-                    <h3>Graph</h3>
-                    <div style={{textAlign: "center"}}>
-                        <Link to={`${process.env.PUBLIC_URL}/graph`}>Vanilla Graph Test</Link>
-                    </div>
-                </> : null}
-
 
                 <h3>West Hyrule</h3>
                 <h4>Data</h4>
