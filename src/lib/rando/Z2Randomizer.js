@@ -1,8 +1,9 @@
 import { deepCopy, merge, randomSeed, removeNode } from './util';
 import { parse } from '../Z2Parser';
-import { writeByteToRom, writeBytesToRom, writeFieldToROM, writeObjectToROM } from '../memory/HexTools';
+import { writeByteToROM, writeBytesToROM, writeFieldToROM, writeObjectToROM } from '../memory/HexTools';
 import { explore, printSpriteMap, stringToZ2Bytes } from '../zelda2/Z2Utils';
 import { DIGISHAKE_CREDIT_OFFSET, OVERWORLD_SPRITE_MAPPING, RANDO_MAP_OFFSETS, VANILLA_MAP_OFFSETS } from '../zelda2/Z2MemoryMappings';
+import { ROM } from './ROM';
 
 export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
 
@@ -964,146 +965,6 @@ export class Z2Randomizer {
         this.placeItemsAndNodes();
     }
 
-    extendMapSize = (rom) => {
-        console.log("Extending map size");
-
-        /** Write generalized loop function
-            cd98: 4cc6cd        JMP $cdc6       # jump past our implanted loop
-
-            cd9b: a000          LDY #$00              # Initialize start index
-            cd9d: b102          LDA ($02,Y)           # load from source
-            cd9f: 9120          STA ($20,Y)           # store to dest
-            cda1: c8            INY
-            cda2: 10f9          BPL $f9 (target=cd9d) # do it 128 times
-            cda4: ca            DEX                   # decrement counter
-            cda5: f00e          BEQ $0e (target=cdb5) # done yet?
-            cda7: b102          LDA ($02,Y)           # load from source
-            cda9: 9120          STA ($20,Y)           # store to dest
-            cdab: c8            INY
-            cdac: d0f9          BNE $f9 (target=cda7) # 128 more times
-            cdae: e603          INC $03               # increment source pointer
-            cdb0: e621          INC $21               # increment dest pointer
-            cdb2: ca            DEX                   # decrement counter
-            cdb3: d0e8          BNE $e8 (target=cd9d) # not done? do it again.
-            cdb5: 60            RTS                   # return to caller
-
-            # Fill with NOPs all the way to $cdc6
-            cdb6: ea            NOP
-        */
-
-        rom = writeBytesToRom(0x1cda8, rom, [
-            0x4c, 0xc6, 0xcd, 
-            0xa0, 0x00, 
-            0xb1, 0x02, 
-            0x91, 0x20, 
-            0xc8, 
-            0x10, 0xf9, 
-            0xca, 
-            0xf0, 0x0e, 
-            0xb1, 0x02, 
-            0x91, 0x20, 
-            0xc8, 
-            0xd0, 0xf9, 
-            0xe6, 0x03, 
-            0xe6, 0x21, 
-            0xca, 
-            0xd0, 0xe8, 
-            0x60
-        ]);
-        for (let address = 0x1cdc6; address < 0x1cdd6; address++) {
-            rom = writeByteToRom(address, rom, 0xea);
-        }
-
-        /** Copy overworld to RAM
-            cdc6: ae0607        LDX $0706       # load overworld number into X
-            cdc9: bd27cd        LDA $cd27,X     # overworld to map pointer offset
-            cdcc: aa            TAX             # into index X
-            cdcd: bd0885        LDA $8508,X     # put ROM pointer into $02-$03
-            cdd0: 8502          STA $02
-            cdd2: bd0985        LDA $8509,X
-            cdd5: 8503          STA $03
-
-            cdd7: a900          LDA #$00        # put destination $7c00 into $20-$21
-            cdd9: 8520          STA $20
-            cddb: a97c          LDA #$7c
-            cddd: 8521          STA $21
-            cddf: a207          LDX #$07        # 7 half-pages == 896 bytes
-            cde1: 209bcd        JSR $cd9b       # copy
-        */
-        rom = writeBytesToRom(0x1cdd6, rom, [
-            0xae, 0x06, 0x07, 
-            0xbd, 0x27, 0xcd,   // This is changed in Digshake's code for some reason.
-            0xaa, 
-            0xbd, 0x08, 0x85, 
-            0x85, 0x02, 
-            0xbd, 0x09, 0x85, 
-            0x85, 0x03,
-
-            0xa9, 0x00,
-            0x85, 0x20,
-            0xa9, 0x7c,
-            0x85, 0x21,
-            0xa2, 0x07,
-            0x20, 0x9b, 0xcd
-        ]);
-
-        /** Copy enemy list to RAM
-            cde4: a9a0          LDA #$a0        # load source $88a0 into $02-$03
-            cde6: 8502          STA $02
-            cde8: a988          LDA #$88
-            cdea: 8503          STA $03
-            cdec: a970          LDA #$70        # load dest $7000 into $20-$21 (address
-            cdee: 8521          STA $21         #   $20 should still be 0)
-            cdf0: a208          LDX #$08        # 8 half-pages == 1024 bytes
-            cdf2: 209bcd        JSR $cd9b       # copy
-        */
-
-        rom = writeBytesToRom(0x1cdf4, rom, [
-            0xa9, 0xa0, 
-            0x85, 0x02, 
-            0xa9, 0x88, 
-            0x85, 0x03, 
-            0xa9, 0x70, 
-            0x85, 0x21, 
-            0xa2, 0x08, 
-            0x20, 0x9b, 0xcd]);
-
-        /** Redirect map to be loaded from a different location
-            cdd7: a900          LDA #$00        # put destination $7a00 into $20-$21
-            cdd9: 8520          STA $20
-            cddb: a97a          LDA #$7a
-            cddd: 8521          STA $21
-            cddf: a20b          LDX #$0b        # 11 half-pages == 1408 bytes
-            cde1: 209bcd        JSR $cd9b       # copy
-         */
-
-        rom = writeBytesToRom(0x1cde7, rom, [
-            0xa9, 0x00, 
-            0x85, 0x20, 
-            0xa9, 0x7a, 
-            0x85, 0x21, 
-            0xa2, 0x0b, 
-            0x20, 0x9b, 0xcd
-        ]);
-        rom = writeByteToRom(0x808, rom, 0x7a);
-
-        // Modify the map pointers
-        rom = writeBytesToRom(0x4518, rom, [
-            0x70, 0xb4 
-        ]);
-        rom = writeBytesToRom(0x451a, rom, [
-            0xf0, 0xb9 
-        ]);
-        rom = writeBytesToRom(0x8518, rom, [
-            0x70, 0xb4 
-        ]);
-        rom = writeBytesToRom(0x851a, rom, [
-            0xf0, 0xb9 
-        ]);
-
-        return rom;
-    }
-
     compressSpriteMap = (spriteMap, continent) => {
         let mapBlocks = [];
         let i = 0;
@@ -1155,15 +1016,15 @@ export class Z2Randomizer {
      * Patch the ROM with the graph
      * @param {string} fileName 
      */
-    patchRom = (rom) => {
+    patchRom = (romBytes) => {
         // Patch ROM here
         console.log("PATCHING ROM...");
 
-        let romData = parse(rom);
-        let randomizedRom = rom;
+        let romData = parse(romBytes);
+        let rom = new ROM(romBytes);
 
         // Extend map size and write map.
-        randomizedRom = this.extendMapSize(randomizedRom);
+        rom.extendMapSize(rom);
 
         // Set locations and items
         Object.keys(this.graphData).forEach((nodeName) => {
@@ -1177,12 +1038,12 @@ export class Z2Randomizer {
             nodeToEdit.x = x;
             nodeToEdit.y = y;
 
-            randomizedRom = writeFieldToROM(nodeToEdit, 'x', randomizedRom);
-            randomizedRom = writeFieldToROM(nodeToEdit, 'y', randomizedRom);
+            rom.writeFieldToROM(nodeToEdit, 'x');
+            rom.writeFieldToROM(nodeToEdit, 'y');
 
             if (["P6", "SPELL_TOWN"].includes(mappedLocation)) {
                 nodeToEdit.external = 1;
-                randomizedRom = writeFieldToROM(nodeToEdit, 'external', randomizedRom);
+                rom.writeFieldToROM(nodeToEdit, 'external');
             }
 
             if (mappedItems) {
@@ -1193,7 +1054,7 @@ export class Z2Randomizer {
                         return;
                     }
                     levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index++]];
-                    randomizedRom = writeFieldToROM(levelElement, 'collectableObjectNumber', randomizedRom);
+                    rom.writeFieldToROM(levelElement, 'collectableObjectNumber');
                 });
             }
         });
@@ -1206,7 +1067,7 @@ export class Z2Randomizer {
 
             compressedMap.forEach(blockRun => {
                 let bytesWritten = 0;
-                [randomizedRom, bytesWritten] = writeObjectToROM(blockRun, [
+                bytesWritten = rom.writeObjectToROM(blockRun, [
                         {
                             name: 'length',
                             relOffset: 0x0,
@@ -1217,15 +1078,15 @@ export class Z2Randomizer {
                             relOffset: 0x0,
                             mask: 0b00001111
                         }
-                    ], mapOffset, randomizedRom);
+                    ], mapOffset);
                 mapOffset += bytesWritten;
             });
         }
 
         // Sign the ROM
         let signature = stringToZ2Bytes("TKOS\n");
-        randomizedRom = writeBytesToRom(DIGISHAKE_CREDIT_OFFSET, randomizedRom, signature);
+        rom.writeBytesToROM(DIGISHAKE_CREDIT_OFFSET, signature);
 
-        return randomizedRom;
+        return rom.getRom();
     }
 }
