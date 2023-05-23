@@ -1,4 +1,6 @@
+import parse from "../Z2Parser";
 import { assembleCode } from "../memory/assembler";
+import { stringToZ2Bytes } from "../zelda2/Z2Utils";
 
 const LAST_BIT_MASK = 1 >>> 0;
 
@@ -8,6 +10,7 @@ export class ROM {
 
     constructor(rom) {
         this.rom = rom;
+        this.romData = parse(rom);
     }
 
     /**
@@ -249,5 +252,16 @@ export class ROM {
      */
     getRom = () => {
         return this.rom;
+    }
+
+    /**
+     * Replace game text with new text
+     * @param {string} oldText 
+     * @param {string} newText 
+     */
+    replaceText = (oldText, newText) => {
+        let {offset, size} = this.romData.textData.find(({text}) => text === oldText);
+        let replacement = stringToZ2Bytes(newText.slice(0, size - 1) + "\0");
+        this.writeBytesToROM(offset, replacement);
     }
 }

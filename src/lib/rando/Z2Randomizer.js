@@ -1113,10 +1113,17 @@ export class Z2Randomizer {
             });
         }
 
-        // Sign the ROM
-        let signature = stringToZ2Bytes("TKOS\n");
-        rom.writeBytesToROM(DIGISHAKE_CREDIT_OFFSET, signature);
+        console.log("TEXT DATA: " + JSON.stringify(romData.textData, null, 5));
 
+        // Sign the ROM.
+        let signature = stringToZ2Bytes("TKOS\0");
+        rom.writeBytesToROM(DIGISHAKE_CREDIT_OFFSET, signature);
+        
+        rom.replaceText("I AM\nERROR.", "I FARTED.");
+        rom.replaceText("I CAN GIVE\nYOU MOST\nPOWERFUL\nMAGIC.", "I CAN GIVE\nYOU\nDIARRHEA.");
+        rom.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB,\nIDIOT");
+        rom.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH.\nSNOOGINS.");
+        
         return rom.getRom();
     }
 }

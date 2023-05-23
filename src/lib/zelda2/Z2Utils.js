@@ -35,8 +35,6 @@ const {
 export const WIDTH_OF_SCREEN  = 16;
 export const HEIGHT_OF_SCREEN = 16;
 
-export const CHARACTER_MAP = {0x32: '*', 0x34: '?', 0x36: '!', 0x9C: ',', 0xCE: '/', 0xCF: '.', 0xF7: 'l', 0xF8: 't', 0xF9: 'm', 0xFC: 'x', 0xFD: '\n', 0xFE: '\n', 0xF4: ' ', 0xF5: ' '};
-
 export const ITEM_MAP      = ["candle", "glove", "raft", "boots", "recorder", "cross", "hammer", "magic key", "key", "", "50p bag", "100p bag", "200p bag", "500p bag", "magic container", "heart container", "blue jar", "red jar", "1up", "child", "trophy", "medicine"];
 
 export const OVERWORLD_SPRITE_SYMBOLS = [
@@ -77,7 +75,26 @@ export const OVERWORLD_SPRITE_SYMBOLS_ASCII = [
     "*"
 ]
 
-let textMappings = {
+export const Z2_TO_STR_CHARACTER_MAP = 
+{
+    0x32: '*', 
+    0x34: '?', 
+    0x36: '!', 
+    0x9C: ',', 
+    0xCE: '/', 
+    0xCF: '.', 
+    0xF7: 'l', 
+    0xF8: 't', 
+    0xF9: 'm', 
+    0xFC: 'x', 
+    0xFD: '\n', 
+    0xFE: '\n', 
+    0xF4: ' ', 
+    0xF5: ' '
+};
+
+
+const STR_TO_Z2_CHARACTER_MAP = {
     '*': 0x32,
     '?': 0x34,
     '!': 0x36,
@@ -125,7 +142,8 @@ let textMappings = {
     '†': 0xF8,
     'm': 0xF9,
     'x': 0xFC,
-    '\n': 0xFF
+    '\n': 0xFD,
+    '\0': 0xFF
 }
 
 export const DRAWING_OP = {
@@ -396,7 +414,7 @@ export const z2BytesToString = (bytes) => {
         } else if (h >= 0xDA && h <= 0xF3) {
             c = String.fromCharCode('A'.charCodeAt(0) + (h - 0xDA));
         }else {
-            c = CHARACTER_MAP[h];
+            c = Z2_TO_STR_CHARACTER_MAP[h];
         }
 
         text += c;
@@ -408,7 +426,7 @@ export const z2BytesToString = (bytes) => {
 export const stringToZ2Bytes = (s) => {
     let bytes = [];
     for (let i = 0; i < s.length; i++) {
-        bytes.push(textMappings[s.charAt(i)]);
+        bytes.push(STR_TO_Z2_CHARACTER_MAP[s.charAt(i)]);
     }
     return bytes;
 }
@@ -432,7 +450,7 @@ export const extractTextData = (buffer) => {
         } else if (h >= 0xDA && h <= 0xF3) {
             c = String.fromCharCode('A'.charCodeAt(0) + (h - 0xDA));
         }else {
-            c = CHARACTER_MAP[h];
+            c = Z2_TO_STR_CHARACTER_MAP[h];
         }
 
         text += c;
@@ -451,7 +469,7 @@ export const extractTextDataFromOffset = (rom, offset) => {
         } else if (h >= 0xDA && h <= 0xF3) {
             c = String.fromCharCode('A'.charCodeAt(0) + (h - 0xDA));
         }else {
-            c = CHARACTER_MAP[h];
+            c = Z2_TO_STR_CHARACTER_MAP[h];
         }
 
         text += c;
