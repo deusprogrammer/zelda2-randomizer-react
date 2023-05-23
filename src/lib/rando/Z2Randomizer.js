@@ -1,6 +1,5 @@
 import { deepCopy, merge, randomSeed, removeNode } from './util';
 import { parse } from '../Z2Parser';
-import { writeByteToROM, writeBytesToROM, writeFieldToROM, writeObjectToROM } from '../memory/HexTools';
 import { explore, printSpriteMap, stringToZ2Bytes } from '../zelda2/Z2Utils';
 import { DIGISHAKE_CREDIT_OFFSET, OVERWORLD_SPRITE_MAPPING, RANDO_MAP_OFFSETS, VANILLA_MAP_OFFSETS } from '../zelda2/Z2MemoryMappings';
 import { ROM } from './ROM';
@@ -1023,8 +1022,10 @@ export class Z2Randomizer {
         let romData = parse(romBytes);
         let rom = new ROM(romBytes);
 
-        // Extend map size and write map.
-        rom.extendMapSize(rom);
+        // Apply various patches
+        rom.extendMapSize();
+        rom.miscPatches();
+        rom.disablePalaceTurningToStone();
 
         // Set locations and items
         Object.keys(this.graphData).forEach((nodeName) => {

@@ -78,6 +78,45 @@ export class ROM {
         return this.rom;
     }
 
+    /**
+     * Apply various qol improvements (lifted from digshake's randomizer)
+     */
+    miscPatches = () => {
+        //Hacky fix for palace connections
+        this.writeByteToROM(0x1074A, 0xFC);
+        this.writeByteToROM(0x1477D, 0xFC);
+
+        //Hacky fix for new kasuto
+        this.writeByteToROM(0x8660, 0x51);
+        this.writeByteToROM(0x924D, 0x00);
+        
+        //Hack fix for palace 6
+        this.writeByteToROM(0x8664, 0xE6);
+       
+        //Fix for extra battle scene
+        this.writeByteToROM(0x8645, 0x00);
+
+        //Disable hold over head animation
+        this.writeByteToROM(0x1E54C, 0x0);
+
+        //Make text go fast
+        this.writeByteToROM(0xF75E, 0x00);
+        this.writeByteToROM(0xF625, 0x00);
+        this.writeByteToROM(0xF667, 0x00);
+    }
+
+    /**
+     * Disable palaces turning to stone by placing nop slides over the instructions
+     */
+    disablePalaceTurningToStone = () => {
+        this.writeBytesToROM(0x87b3, [ 0xea, 0xea, 0xea ]);
+        this.writeBytesToROM(0x47ba, [ 0xea, 0xea, 0xea ]);
+        this.writeBytesToROM(0x1e02e, [ 0xea, 0xea, 0xea ]);
+    }
+
+    /**
+     * Extend the map using the hack developed by cfrantz
+     */
     extendMapSize = () => {
         console.log("Extending map size");
 
