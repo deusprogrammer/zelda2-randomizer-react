@@ -22,9 +22,9 @@ export class ROM {
         let kidSprite = [];
 
         for (let i = 0; i < 32; i++) {
-            medSprite[i] = ROMData.getByte(0x23310 + i);
-            trophySprite[i] = ROMData.getByte(0x232f0 + i);
-            kidSprite[i] = ROMData.getByte(0x25310 + i);
+            medSprite[i] = this.rom[0x23310 + i];
+            trophySprite[i] = this.rom[0x232f0 + i];
+            kidSprite[i] = this.rom[0x25310 + i];
         }
 
         return {
