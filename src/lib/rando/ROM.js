@@ -14,6 +14,27 @@ export class ROM {
     }
 
     /**
+     * Get spell town item sprites so we can transplant them where they are needed.
+     */
+    getSpellTownItemSprites = () => {
+        let medSprite = [];
+        let trophySprite = [];
+        let kidSprite = [];
+
+        for (let i = 0; i < 32; i++) {
+            medSprite[i] = ROMData.getByte(0x23310 + i);
+            trophySprite[i] = ROMData.getByte(0x232f0 + i);
+            kidSprite[i] = ROMData.getByte(0x25310 + i);
+        }
+
+        return {
+            medSprite,
+            trophySprite,
+            kidSprite
+        }
+    }
+
+    /**
      * Assemble byte list from assembly code and write to rom address
      * @param {number} romAddress 
      * @param {string} asmCode 
@@ -128,6 +149,10 @@ export class ROM {
         this.writeByteToROM(0xf75e, 0x00);
         this.writeByteToROM(0xf625, 0x00);
         this.writeByteToROM(0xf667, 0x00);
+
+        // Disable magic requirements (for now)
+        this.writeByteToROM(0xf539, 0xc9);
+        this.writeByteToROM(0xf53a, 0x0);
     }
 
     /**

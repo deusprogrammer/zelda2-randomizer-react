@@ -2,6 +2,15 @@ export const toFileAddr = (ramAddress, bank) => {
     return (ramAddress - 0x8000) + (bank * 0x4000) + 0x10;
 }
 
+export const PALACE_PALETTE_LOCATIONS = [
+    0x29AD0,
+    0x2BAD0,
+    0x33AD0,
+    0x35AD0,
+    0x37AD0,
+    0x39AD0
+];
+
 export const LEVEL_EXIT_MAPPING = [
     {
         name: 'mapNumber',
