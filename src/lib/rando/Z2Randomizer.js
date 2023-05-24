@@ -1031,29 +1031,45 @@ export class Z2Randomizer {
 
         // Set locations and items
         Object.keys(this.graphData).forEach((nodeName) => {
+            // Gather all needed information from our location metadata and template
             let targetNode = this.graphData[nodeName];
             let {x, y, continent, mappedLocation, mappedItems} = targetNode;
+            let {mapSet, mapNumber} = this.locationMetadata[mappedLocation];
             let mappedNode = Object.keys(this.graphData).find(mappedNodeName => this.templateData[mappedNodeName].locationKey === mappedLocation);
             let {locationKey} = this.templateData[mappedNode];
-            let {mapSet, mapNumber} = this.locationMetadata[mappedLocation];
 
+            // Acquire the node we are editting
             let nodeToEdit = romData.overworld[continent].locations[locationKey];
+
+            // Modify the x and y position of the area
             nodeToEdit.x = x;
             nodeToEdit.y = y;
-
             rom.writeFieldToROM(nodeToEdit, 'x');
             rom.writeFieldToROM(nodeToEdit, 'y');
 
-            if (["P6", "SPELL_TOWN"].includes(mappedLocation)) {
-                nodeToEdit.external = 1;
-                rom.writeFieldToROM(nodeToEdit, 'external');
+            // Apply corrections based on special areas
+            switch (mappedLocation) {
+                case "P6":
+                case "SPELL_TOWN":
+                    nodeToEdit.external = 1;
+                    rom.writeFieldToROM(nodeToEdit, 'external');
+                    break;
+                case "DM_BRIDGE_EXIT_E":
+                case "DM_BRIDGE_EXIT_W":
+                case "MAZE_ISLAND_BRIDGE":
+                case "EAST_HYRULE_BRIDGE":
+                case "RAFT_DOCK_E":
+                case "RAFT_DOCK_W":
+                    // Disable passthrough on these areas (yeah the docks don't have this issue, so sue me I'm lazy)
+                    nodeToEdit.passThrough = 0;
+                    rom.writeFieldToROM(nodeToEdit, 'passThrough');
+
+                    // Correct continent exits for bridges
+                    rom.correctContinentExitLocations(mappedLocation, x, y);
+                    break;
             }
 
-            if (["DM_BRIDGE_EXIT_E", "DM_BRIDGE_EXIT_W", "MAZE_ISLAND_BRIDGE", "EAST_HYRULE_BRIDGE"].includes(mappedLocation)) {
-                nodeToEdit.passThrough = 0;
-                rom.writeFieldToROM(nodeToEdit, 'passThrough');
-            }
-
+            // Set item locations
             if (mappedItems) {
                 // Hacky fix for spell town...more like SMELL town
                 if (["SPELL_TOWN"].includes(mappedLocation)) {
@@ -1082,9 +1098,11 @@ export class Z2Randomizer {
                     return;
                 }
 
+                // For all other items explore the local and look for where items would go.
                 let items = explore(romData.sideViewMaps, mapSet, mapNumber);
                 let index = 0;
                 items.forEach(({levelElement}) => {
+                    // If we are in a palace, ignore everything but the big item
                     if (this.isPalace(mappedLocation) && levelElement.collectableObjectNumber > 0x5) {
                         return;
                     }
@@ -1094,6 +1112,7 @@ export class Z2Randomizer {
             }
         });
         
+        // Compress each sprite map and write it to memory
         for (let continent = 0; continent < 4; continent++) {
             let compressedMap = this.compressSpriteMap(romData.overworld[continent].spriteMap, continent);
             let mapOffset = RANDO_MAP_OFFSETS[continent];
@@ -1118,16 +1137,25 @@ export class Z2Randomizer {
             });
         }
 
-        console.log("TEXT DATA: " + JSON.stringify(romData.textData, null, 5));
-
         // Sign the ROM.
         let signature = stringToZ2Bytes("TKOS\0");
         rom.writeBytesToROM(DIGISHAKE_CREDIT_OFFSET, signature);
         
+        // Do some fun text replacements
         rom.replaceText("I AM\nERROR.", "I FARTED.");
         rom.replaceText("I CAN GIVE\nYOU MOST\nPOWERFUL\nMAGIC.", "I CAN GIVE\nYOU\nDIARRHEA.");
-        rom.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB,\nIDIOT");
+        rom.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB\nIDIOT.");
         rom.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH\nSNOOGINS.");
+        rom.replaceText("JUMP IN A\nHOLE IN\nTHE PALACE\nIF YOU GO.", "DIVE INTO\nTHE GRAND\nPALACUSSY.");
+        rom.replaceText("THIS MAGIC\nWORD WILL\nGIVE YOU\nPOWER.", "DO NOT SAY\nTHIS WORD\nIN CHURCH.");
+        rom.replaceText("BAGU IS MY\nNAME. SHOW\nMY NOTE TO\nRIVER MAN.", "YOU ARE\nHERE FOR\nBAGU SAUCE?");
+        rom.replaceText("YOU KNOW\nBAGU? THEN\nI CAN HELP\nYOU CROSS.", "DUDE!\nBAGU SAUCE!\nPASTA TIME!");
+        rom.replaceText("I CANNOT\nHELP YOU\nANYMORE.\nGO NOW.", "DUDE...\nGTFO.");
+        rom.replaceText("THIS MAGIC\nWILL MAKE\nYOUR SWORD\nSHOOT FIRE", "THIS MAGIC\nIS ALMOST\nUSELESS.");
+        rom.replaceText("WHEN YOU\nJUMP PRESS\nUP TO STAB.", "USE THIS\nTO STAB BATS.");
+        rom.replaceText("DO YOU\nHAVE THE\n7 MAGIC\nCONTAINERS", "U MID BRO.");
+        rom.replaceText("YOU\nDESERVE\nMY HELP.\nFOLLOW ME.", "OH GOD!\nA MAN!\nFINALLY!");
+        rom.replaceText("THERE IS\nA SECRET\nAT EDGE\nOF TOWN.", "I CHANGED\nMY DRESS.\nSEGS?");
         
         return rom.getRom();
     }

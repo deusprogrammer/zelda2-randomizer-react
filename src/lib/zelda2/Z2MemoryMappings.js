@@ -2,6 +2,25 @@ export const toFileAddr = (ramAddress, bank) => {
     return (ramAddress - 0x8000) + (bank * 0x4000) + 0x10;
 }
 
+export const CONTINENT_EXIT_MAPPINGS = {
+    RAFT_DOCK_W: {
+        x: 0x538,
+        y: 0x53A
+    },
+    RAFT_DOCK_E: {
+        x: 0x539,
+        y: 0x53B
+    }, 
+    MAZE_ISLAND_BRIDGE: {
+        x: 0x565,
+        y: 0x567
+    },
+    EAST_HYRULE_BRIDGE: {
+        x: 0x564,
+        y: 0x566
+    }
+}
+
 export const PALACE_PALETTE_LOCATIONS = [
     0x29AD0,
     0x2BAD0,

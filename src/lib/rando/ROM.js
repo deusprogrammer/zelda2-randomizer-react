@@ -1,5 +1,6 @@
 import parse from "../Z2Parser";
 import { assembleCode } from "../memory/Assembler";
+import { CONTINENT_EXIT_MAPPINGS } from "../zelda2/Z2MemoryMappings";
 import { stringToZ2Bytes } from "../zelda2/Z2Utils";
 
 const LAST_BIT_MASK = 1 >>> 0;
@@ -32,6 +33,23 @@ export class ROM {
             trophySprite,
             kidSprite
         }
+    }
+
+    /**
+     * Correct the location of docks and maze island bridges
+     * @param {*} westDock 
+     * @param {*} eastDock 
+     * @param {*} mazeIslandBridge 
+     * @param {*} eastHyruleBridge 
+     */
+    correctContinentExitLocations = (location, x, y) => {
+        if (!CONTINENT_EXIT_MAPPINGS[location]) {
+            return;
+        }
+
+        let romAddresses = CONTINENT_EXIT_MAPPINGS[location];
+        this.writeByteToROM(romAddresses.x, x);
+        this.writeByteToROM(romAddresses.y, y);
     }
 
     /**
@@ -285,6 +303,7 @@ export class ROM {
      * @param {string} newText 
      */
     replaceText = (oldText, newText) => {
+        console.log("OLD TEXT: " + oldText);
         let {offset, size} = this.romData.textData.find(({text}) => text === oldText);
         let replacement = stringToZ2Bytes(newText.slice(0, size - 1) + "\0");
         this.writeBytesToROM(offset, replacement);

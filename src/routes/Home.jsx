@@ -14,6 +14,8 @@ import { Z2Randomizer } from '../lib/rando/Z2Randomizer';
 import z2VanillaTemplate from '../lib/zelda2/templates/z2-vanilla.template';
 import z2LocationMeta from '../lib/zelda2/templates/z2-location.meta';
 import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
+import TextData from '../components/TextData';
+import { toast } from 'react-toastify';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
@@ -42,6 +44,7 @@ export default () => {
             randomizer.randomize();
             let patchedRom = randomizer.patchRom(romData.rawBytes);
             parseRom(patchedRom);
+            toast("ROM randomized.  Click download current rom to get patched rom.", {type: "info"});
         } catch (e) {
             alert(`Our apologies...this seed has caused an error.  Please report the seed value to the developer to aid them in troubleshooting.\n\nSeed number: ${seed}`);
             console.error(e);
@@ -145,6 +148,9 @@ export default () => {
                 <MapData overworld={romData.overworld[3]} continent={3} />
                 <h4>Map</h4>
                 <MapDisplay id="map-3" maps={romData.sideViewMaps} overworld={romData.overworld[3]} />
+
+                <h3>Text Data</h3>
+                <TextData textData={romData.textData} />
             </div>
         );
     }
