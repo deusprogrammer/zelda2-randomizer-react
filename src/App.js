@@ -18,7 +18,7 @@ const App = () => {
 
     return (
         <div>
-            <h1>Zelda 2 Rando</h1>
+            <h1>Zelda 2 Randomizer JS</h1>
             <ToastContainer />
             <Router>
                 <Routes>
