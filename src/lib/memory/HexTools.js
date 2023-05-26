@@ -3,6 +3,12 @@ import { assembleCode } from "./Assembler";
 
 const LAST_BIT_MASK = 1 >>> 0;
 
+export const copyUint8Array = (src) => {
+    var dst = new ArrayBuffer(src.byteLength);
+    new Uint8Array(dst).set(new Uint8Array(src));
+    return dst;
+}
+
 export const writeAsmToROM = (romAddress, rom, asmCode) => {
     return writeBytesToROM(romAddress, rom, assembleCode(asmCode));
 }

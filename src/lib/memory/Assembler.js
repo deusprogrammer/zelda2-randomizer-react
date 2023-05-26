@@ -753,20 +753,20 @@ const parseLine = (line) => {
     });
 
     if (!type) {
-        console.log("NO TYPE");
+        // console.log("NO TYPE");
         return [];
     }
 
     let [, op, ...bytes] = opPatterns[type].exec(line);
 
     if (!op || !opCodes[op]) {
-        console.log("NO OP " + op);
+        // console.log("NO OP " + op);
         return [];
     }
 
     let opHex = !opCodes[op].hex ? opCodes[op].variants[type].hex : opCodes[op].hex;
     bytes = bytes.map(byte => byte ? parseInt(byte, 16) : null).filter(byte => byte !== null);
-    console.log(`${op} ${type.padEnd(16)} [0x${opHex.toString(16)}] ${bytes.map(byte => "0x" + byte.toString(16))}`);
+    // console.log(`${op} ${type.padEnd(16)} [0x${opHex.toString(16)}] ${bytes.map(byte => "0x" + byte.toString(16))}`);
 
     if (bytes.length === 1) {
         return [opHex, ...bytes];

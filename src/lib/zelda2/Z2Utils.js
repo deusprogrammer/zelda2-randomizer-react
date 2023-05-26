@@ -743,6 +743,10 @@ export const explore = (maps, mapSet, mapNumber, explored = []) => {
         return [];
     }
 
+    if (!maps[mapSet] || !maps[mapSet][mapNumber]) {
+        return [];
+    }
+
     let currentMap = maps[mapSet][mapNumber];
     let levelExits = currentMap.exits;
 
