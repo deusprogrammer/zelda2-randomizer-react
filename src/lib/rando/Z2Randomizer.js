@@ -1,7 +1,7 @@
 import { deepCopy, merge, randomSeed, removeNode } from './util';
 import { parse } from '../Z2Parser';
 import { explore, printSpriteMap, stringToZ2Bytes } from '../zelda2/Z2Utils';
-import { CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, RANDO_MAP_OFFSETS } from '../zelda2/Z2MemoryMappings';
+import { CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RANDO_MAP_OFFSETS } from '../zelda2/Z2MemoryMappings';
 import { ROM } from './ROM';
 
 export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
@@ -1022,7 +1022,7 @@ export class Z2Randomizer {
         let romData = parse(romBytes);
         let rom = new ROM(romBytes);
 
-        let spellItemSpriteData = rom.getSpellTownItemSprites();
+        // let spellItemSpriteData = rom.getSpellTownItemSprites();
 
         // Apply various patches
         rom.extendMapSize();
@@ -1030,6 +1030,7 @@ export class Z2Randomizer {
         rom.disablePalaceTurningToStone();
         rom.disableFlashing();
         rom.upAController();
+        rom.fixPalaceHeartSprite();
 
         // Set locations and items
         Object.keys(this.graphData).forEach((nodeName) => {
@@ -1231,28 +1232,26 @@ export class Z2Randomizer {
             });
         }
 
-        rom.fixPalaceHeartSprite();
-
         // Sign the ROM.
         let signature = stringToZ2Bytes("TKOS\0");
         rom.writeBytesToROM(CREDITS_OFFSET, signature);
         
         // Do some fun text replacements
-        rom.replaceText("I AM\nERROR.", "I FARTED.");
-        rom.replaceText("I CAN GIVE\nYOU MOST\nPOWERFUL\nMAGIC.", "I CAN GIVE\nYOU\nDIARRHEA.");
-        rom.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB\nIDIOT.");
-        rom.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH\nSNOOGINS.");
-        rom.replaceText("JUMP IN A\nHOLE IN\nTHE PALACE\nIF YOU GO.", "LEAP INTO\nTHE\nPALACUSSY.");
-        rom.replaceText("THIS MAGIC\nWORD WILL\nGIVE YOU\nPOWER.", "DO NOT SAY\nTHIS WORD\nIN CHURCH.");
-        rom.replaceText("BAGU IS MY\nNAME. SHOW\nMY NOTE TO\nRIVER MAN.", "YOU ARE\nHERE FOR\nBAGU SAUCE?");
-        rom.replaceText("ONLY TOWN\nFOLK MAY\nCROSS THIS\nRIVER!", "I WISH\nI HAD\nBAGU SAUCE.");
-        rom.replaceText("YOU KNOW\nBAGU? THEN\nI CAN HELP\nYOU CROSS.", "DUDE!\nBAGU SAUCE!\nPASTA TIME!");
-        rom.replaceText("I CANNOT\nHELP YOU\nANYMORE.\nGO NOW.", "DUDE...\nGTFO.");
-        rom.replaceText("THIS MAGIC\nWILL MAKE\nYOUR SWORD\nSHOOT FIRE", "THIS MAGIC\nIS ALMOST\nUSELESS.");
-        rom.replaceText("WHEN YOU\nJUMP PRESS\nUP TO STAB.", "USE THIS\nTO STAB BATS.");
-        rom.replaceText("DO YOU\nHAVE THE\n7 MAGIC\nCONTAINERS", "U MID BRO.");
-        rom.replaceText("YOU\nDESERVE\nMY HELP.\nFOLLOW ME.", "OH GOD!\nA MAN!\nFINALLY!");
-        rom.replaceText("THERE IS\nA SECRET\nAT EDGE\nOF TOWN.", "I CHANGED\nMY DRESS.\nSEGS?");
+        // rom.replaceText("I AM\nERROR.", "I FARTED.");
+        // rom.replaceText("I CAN GIVE\nYOU MOST\nPOWERFUL\nMAGIC.", "I CAN GIVE\nYOU\nDIARRHEA.");
+        // rom.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB\nIDIOT.");
+        // rom.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH\nSNOOGINS.");
+        // rom.replaceText("JUMP IN A\nHOLE IN\nTHE PALACE\nIF YOU GO.", "LEAP INTO\nTHE\nPALACUSSY.");
+        // rom.replaceText("THIS MAGIC\nWORD WILL\nGIVE YOU\nPOWER.", "DO NOT SAY\nTHIS WORD\nIN CHURCH.");
+        // rom.replaceText("BAGU IS MY\nNAME. SHOW\nMY NOTE TO\nRIVER MAN.", "YOU ARE\nHERE FOR\nBAGU SAUCE?");
+        // rom.replaceText("ONLY TOWN\nFOLK MAY\nCROSS THIS\nRIVER!", "I WISH\nI HAD\nBAGU SAUCE.");
+        // rom.replaceText("YOU KNOW\nBAGU? THEN\nI CAN HELP\nYOU CROSS.", "DUDE!\nBAGU SAUCE!\nPASTA TIME!");
+        // rom.replaceText("I CANNOT\nHELP YOU\nANYMORE.\nGO NOW.", "DUDE...\nGTFO.");
+        // rom.replaceText("THIS MAGIC\nWILL MAKE\nYOUR SWORD\nSHOOT FIRE", "THIS MAGIC\nIS ALMOST\nUSELESS.");
+        // rom.replaceText("WHEN YOU\nJUMP PRESS\nUP TO STAB.", "USE THIS\nTO STAB BATS.");
+        // rom.replaceText("DO YOU\nHAVE THE\n7 MAGIC\nCONTAINERS", "U MID BRO.");
+        // rom.replaceText("YOU\nDESERVE\nMY HELP.\nFOLLOW ME.", "OH GOD!\nA MAN!\nFINALLY!");
+        // rom.replaceText("THERE IS\nA SECRET\nAT EDGE\nOF TOWN.", "I CHANGED\nMY DRESS.\nSEGS?");
         
         return rom.getRom();
     }

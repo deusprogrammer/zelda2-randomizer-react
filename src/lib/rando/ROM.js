@@ -80,7 +80,7 @@ export class ROM {
      */
     writeAsmToROM = (romAddress, asmCode) => {
         let bytes = assembleCode(asmCode);
-        console.log(bytes.map(byte => `0x${byte.toString(16)}`));
+        // console.log(bytes.map(byte => `0x${byte.toString(16)}`));
         return this.writeBytesToROM(romAddress, bytes);
     }
     
@@ -91,7 +91,6 @@ export class ROM {
      */
     writeBytesToROM = (romAddress, bytes) => {
         for (let i = 0; i < bytes.length; i++) {
-            console.log(`WRITING 0x${bytes[i].toString(16)} TO 0x${romAddress.toString(16)}`);
             this.rom[romAddress + i] = bytes[i];
         }
     }
@@ -102,7 +101,6 @@ export class ROM {
      * @param {number} byte 
      */
     writeByteToROM = (romAddress, byte) => {
-        console.log(`WRITING 0x${byte.toString(16)} TO 0x${romAddress.toString(16)}`);
         this.rom[romAddress] = byte;
     }
     
@@ -227,7 +225,7 @@ export class ROM {
      * Extend the map using the hack developed by cfrantz
      */
     extendMapSize = () => {
-        console.log("Extending map size");
+        // console.log("Extending map size");
 
         // Write code to create generalized loop function and NOP slide.
         this.writeAsmToROM(0x1cda8, `
@@ -323,7 +321,7 @@ export class ROM {
      * @param {string} newText 
      */
     replaceText = (oldText, newText) => {
-        console.log("OLD TEXT: " + oldText);
+        // console.log("OLD TEXT: " + oldText);
         let {offset, size} = this.romData.textData.find(({text}) => text === oldText);
         let replacement = stringToZ2Bytes(newText.slice(0, size - 1) + "\0");
         this.writeBytesToROM(offset, replacement);
