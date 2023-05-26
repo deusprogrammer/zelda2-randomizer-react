@@ -15,6 +15,26 @@ export class ROM {
     }
 
     /**
+     * Fix sprites for palaces
+     * @returns 
+     */
+    fixPalaceHeartSprite = () => {
+        // TODO Clean this up and store memory locations in a cleaner fashion.
+        // Write heart container to all 7 palaces sprites
+        for (let i = 0; i < 64; i++)
+        {
+            let heartByte = this.rom[0x27810 + i];
+            this.writeByteToROM(0x29810 + i, heartByte);
+            this.writeByteToROM(0x2B810 + i, heartByte);
+            this.writeByteToROM(0x2D810 + i, heartByte);
+            this.writeByteToROM(0x33810 + i, heartByte);
+            this.writeByteToROM(0x35810 + i, heartByte);
+            this.writeByteToROM(0x37810 + i, heartByte);
+            this.writeByteToROM(0x39810 + i, heartByte);
+        }   
+    }
+    
+    /**
      * Get spell town item sprites so we can transplant them where they are needed.
      */
     getSpellTownItemSprites = () => {
@@ -29,9 +49,9 @@ export class ROM {
         }
 
         return {
-            medSprite,
-            trophySprite,
-            kidSprite
+            MEDICINE: medSprite,
+            TROPHY: trophySprite,
+            CHILD: kidSprite
         }
     }
 

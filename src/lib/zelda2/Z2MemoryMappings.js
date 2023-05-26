@@ -21,14 +21,14 @@ export const CONTINENT_EXIT_MAPPINGS = {
     }
 }
 
-export const PALACE_PALETTE_LOCATIONS = [
-    0x29AD0,
-    0x2BAD0,
-    0x33AD0,
-    0x35AD0,
-    0x37AD0,
-    0x39AD0
-];
+export const PALACE_PALETTE_LOCATIONS = {
+    P1: 0x29AD0,
+    P2: 0x2BAD0,
+    P3: 0x33AD0,
+    P4: 0x35AD0,
+    P5: 0x37AD0,
+    P6: 0x39AD0
+};
 
 export const LEVEL_EXIT_MAPPING = [
     {
@@ -1232,4 +1232,4 @@ export const RANDO_MAP_OFFSETS = [
 export const TEXT_DATA_OFFSET = 0xE390;
 export const TEXT_DATA_LENGTH = 0xEFCC - 0xE390;
 
-export const DIGISHAKE_CREDIT_OFFSET = 0x15384;
+export const CREDITS_OFFSET = 0x15384;
