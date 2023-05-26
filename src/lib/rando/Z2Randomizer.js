@@ -1006,8 +1006,6 @@ export class Z2Randomizer {
 
         printSpriteMap(compressedMap);
 
-        console.log("COMPRESSED MAP SIZE: " + compressedMap.length);
-
         return compressedMap;
     }
 
@@ -1134,6 +1132,7 @@ export class Z2Randomizer {
                         break;
                     }
                     if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
+                        console.log("SPELL TOWN ITEM IN SPELL TOWN (no relation)");
                         rom.writeBytesToROM(paletteLocation, spriteLocation);
                         rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
                     }
@@ -1144,8 +1143,6 @@ export class Z2Randomizer {
                     if (item2) {
                         rom.writeFieldToROM(levelElement2, 'collectableObjectNumber');
                     }
-
-                    console.log("WRITING SPELL TOWN ITEMS: " + mappedItems[0] + " " + mappedItems[1]);
 
                     return;
                 }
@@ -1162,14 +1159,27 @@ export class Z2Randomizer {
                     // Fix spell item sprite for palaces and out of continent locations
                     if (this.isPalace(mappedLocation)) {
                         let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
-                        let spriteLocation = spellItemSpriteData[mappedItems[index]];
-                        if (spriteLocation) {
-                            rom.writeBytesToROM(palacePaletteLocation, spriteLocation);
-                            rom.writeBytesToROM(0x1eeb7, [0xAD, 0xAD]);
+                        let spriteData = spellItemSpriteData[mappedItems[index]];
+                        let patchRomAddress;
+                        switch(mappedItems[index]) {
+                            case "CHILD":
+                                patchRomAddress = 0x1eeb5;
+                                break;
+                            case "TROPHY":
+                                patchRomAddress = 0x1eeb7;
+                                break;
+                            case "MEDICINE":
+                                patchRomAddress = 0x1eeb9;
+                                break;
+                            }
+                        if (spriteData && palacePaletteLocation) {
+                            console.log("SPELL TOWN ITEM IN PALACE")
+                            rom.writeBytesToROM(palacePaletteLocation, spriteData);
+                            rom.writeBytesToROM(patchRomAddress, [0xAD, 0xAD]);
                         }
                     } else {
                         let paletteLocation;
-                        let spriteLocation = spellItemSpriteData[mappedItems[index]];
+                        let spriteData = spellItemSpriteData[mappedItems[index]];
                         let patchRomAddress, patchValue;
                         switch(mappedItems[index]) {
                         case "CHILD":
@@ -1195,8 +1205,9 @@ export class Z2Randomizer {
                             break;
                         }
 
-                        if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                            rom.writeBytesToROM(0x23570, spriteLocation);
+                        if (paletteLocation && spriteData && patchRomAddress && patchValue) {
+                            console.log("SPELL TOWN ITEM DIFFERENT CONTINENT");
+                            rom.writeBytesToROM(paletteLocation, spriteData);
                             rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
                         }
                     }
@@ -1211,8 +1222,6 @@ export class Z2Randomizer {
         for (let continent = 0; continent < 4; continent++) {
             let compressedMap = this.compressSpriteMap(romData.overworld[continent].spriteMap, continent);
             let mapOffset = RANDO_MAP_OFFSETS[continent];
-
-            console.log("MAP OFFSET: 0x" + mapOffset.toString(16));
 
             compressedMap.forEach(blockRun => {
                 let bytesWritten = 0;
