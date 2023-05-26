@@ -1022,7 +1022,7 @@ export class Z2Randomizer {
         let romData = parse(romBytes);
         let rom = new ROM(romBytes);
 
-        // let spellItemSpriteData = rom.getSpellTownItemSprites();
+        let spellItemSpriteData = rom.getSpellTownItemSprites();
 
         // Apply various patches
         rom.extendMapSize();
@@ -1090,53 +1090,53 @@ export class Z2Randomizer {
                     levelElement2.collectableObjectNumber = item2;
 
                     // Fix spell item sprite for spell town
-                    // let paletteLocation;
-                    // let spriteLocation = spellItemSpriteData[item1];
-                    // let patchRomAddress, patchValue;
-                    // switch(item1) {
-                    // case "CHILD":
-                    //     paletteLocation = 0x23570;
-                    //     patchRomAddress = 0x1eeb5;
-                    //     patchValue = 0x25;
-                    //     break;
-                    // case "TROPHY":
-                    //     paletteLocation = 0x27250;
-                    //     patchRomAddress = 0x1eeb7;
-                    //     patchValue = 0x21;
-                    //     break;
-                    // case "MEDICINE":
-                    //     paletteLocation = 0x27230;
-                    //     patchRomAddress = 0x1eeb9;
-                    //     patchValue = 0x23;
-                    //     break;
-                    // }
-                    // if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                    //     rom.writeBytesToROM(paletteLocation, spriteLocation);
-                    //     rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                    // }
-                    // spriteLocation = spellItemSpriteData[item2];
-                    // patchRomAddress = patchValue = null;
-                    // switch(item2) {
-                    // case "CHILD":
-                    //     paletteLocation = 0x23570;
-                    //     patchRomAddress = 0x1eeb5;
-                    //     patchValue = 0x25;
-                    //     break;
-                    // case "TROPHY":
-                    //     paletteLocation = 0x27250;
-                    //     patchRomAddress = 0x1eeb7;
-                    //     patchValue = 0x21;
-                    //     break;
-                    // case "MEDICINE":
-                    //     paletteLocation = 0x27230;
-                    //     patchRomAddress = 0x1eeb9;
-                    //     patchValue = 0x23;
-                    //     break;
-                    // }
-                    // if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                    //     rom.writeBytesToROM(paletteLocation, spriteLocation);
-                    //     rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                    // }
+                    let paletteLocation;
+                    let spriteLocation = spellItemSpriteData[item1];
+                    let patchRomAddress, patchValue;
+                    switch(item1) {
+                    case "CHILD":
+                        paletteLocation = 0x23570;
+                        patchRomAddress = 0x1eeb5;
+                        patchValue = 0x25;
+                        break;
+                    case "TROPHY":
+                        paletteLocation = 0x27250;
+                        patchRomAddress = 0x1eeb7;
+                        patchValue = 0x21;
+                        break;
+                    case "MEDICINE":
+                        paletteLocation = 0x27230;
+                        patchRomAddress = 0x1eeb9;
+                        patchValue = 0x23;
+                        break;
+                    }
+                    if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
+                        rom.writeBytesToROM(paletteLocation, spriteLocation);
+                        rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
+                    }
+                    spriteLocation = spellItemSpriteData[item2];
+                    patchRomAddress = patchValue = null;
+                    switch(item2) {
+                    case "CHILD":
+                        paletteLocation = 0x23570;
+                        patchRomAddress = 0x1eeb5;
+                        patchValue = 0x25;
+                        break;
+                    case "TROPHY":
+                        paletteLocation = 0x27250;
+                        patchRomAddress = 0x1eeb7;
+                        patchValue = 0x21;
+                        break;
+                    case "MEDICINE":
+                        paletteLocation = 0x27230;
+                        patchRomAddress = 0x1eeb9;
+                        patchValue = 0x23;
+                        break;
+                    }
+                    if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
+                        rom.writeBytesToROM(paletteLocation, spriteLocation);
+                        rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
+                    }
 
                     if (item1) {
                         rom.writeFieldToROM(levelElement1, 'collectableObjectNumber');
@@ -1160,46 +1160,46 @@ export class Z2Randomizer {
                     }
 
                     // Fix spell item sprite for palaces and out of continent locations
-                    // if (this.isPalace(mappedLocation)) {
-                    //     let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
-                    //     let spriteLocation = spellItemSpriteData[mappedItems[index]];
-                    //     if (spriteLocation) {
-                    //         rom.writeBytesToROM(palacePaletteLocation, spriteLocation);
-                    //         rom.writeBytesToROM(0x1eeb7, [0xAD, 0xAD]);
-                    //     }
-                    // } else {
-                    //     let paletteLocation;
-                    //     let spriteLocation = spellItemSpriteData[mappedItems[index]];
-                    //     let patchRomAddress, patchValue;
-                    //     switch(mappedItems[index]) {
-                    //     case "CHILD":
-                    //         if (continent !== 3) {
-                    //             paletteLocation = 0x23570;
-                    //             patchRomAddress = 0x1eeb5;
-                    //             patchValue = 0x57;
-                    //         }
-                    //         break;
-                    //     case "TROPHY":
-                    //         if (continent !== 0) {
-                    //             paletteLocation = 0x25410;
-                    //             patchRomAddress = 0x1eeb7;
-                    //             patchValue = 0x41;
-                    //         }
-                    //         break;
-                    //     case "MEDICINE":
-                    //         if (continent !== 0) {
-                    //             paletteLocation = 0x25430;
-                    //             patchRomAddress = 0x1eeb9;
-                    //             patchValue = 0x43;
-                    //         }
-                    //         break;
-                    //     }
+                    if (this.isPalace(mappedLocation)) {
+                        let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
+                        let spriteLocation = spellItemSpriteData[mappedItems[index]];
+                        if (spriteLocation) {
+                            rom.writeBytesToROM(palacePaletteLocation, spriteLocation);
+                            rom.writeBytesToROM(0x1eeb7, [0xAD, 0xAD]);
+                        }
+                    } else {
+                        let paletteLocation;
+                        let spriteLocation = spellItemSpriteData[mappedItems[index]];
+                        let patchRomAddress, patchValue;
+                        switch(mappedItems[index]) {
+                        case "CHILD":
+                            if (continent !== 3) {
+                                paletteLocation = 0x23570;
+                                patchRomAddress = 0x1eeb5;
+                                patchValue = 0x57;
+                            }
+                            break;
+                        case "TROPHY":
+                            if (continent !== 0) {
+                                paletteLocation = 0x25410;
+                                patchRomAddress = 0x1eeb7;
+                                patchValue = 0x41;
+                            }
+                            break;
+                        case "MEDICINE":
+                            if (continent !== 0) {
+                                paletteLocation = 0x25430;
+                                patchRomAddress = 0x1eeb9;
+                                patchValue = 0x43;
+                            }
+                            break;
+                        }
 
-                    //     if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                    //         rom.writeBytesToROM(0x23570, spriteLocation);
-                    //         rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                    //     }
-                    // }
+                        if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
+                            rom.writeBytesToROM(0x23570, spriteLocation);
+                            rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
+                        }
+                    }
 
                     levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index++]];
                     rom.writeFieldToROM(levelElement, 'collectableObjectNumber');
@@ -1237,21 +1237,21 @@ export class Z2Randomizer {
         rom.writeBytesToROM(CREDITS_OFFSET, signature);
         
         // Do some fun text replacements
-        // rom.replaceText("I AM\nERROR.", "I FARTED.");
-        // rom.replaceText("I CAN GIVE\nYOU MOST\nPOWERFUL\nMAGIC.", "I CAN GIVE\nYOU\nDIARRHEA.");
-        // rom.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB\nIDIOT.");
-        // rom.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH\nSNOOGINS.");
-        // rom.replaceText("JUMP IN A\nHOLE IN\nTHE PALACE\nIF YOU GO.", "LEAP INTO\nTHE\nPALACUSSY.");
-        // rom.replaceText("THIS MAGIC\nWORD WILL\nGIVE YOU\nPOWER.", "DO NOT SAY\nTHIS WORD\nIN CHURCH.");
-        // rom.replaceText("BAGU IS MY\nNAME. SHOW\nMY NOTE TO\nRIVER MAN.", "YOU ARE\nHERE FOR\nBAGU SAUCE?");
-        // rom.replaceText("ONLY TOWN\nFOLK MAY\nCROSS THIS\nRIVER!", "I WISH\nI HAD\nBAGU SAUCE.");
-        // rom.replaceText("YOU KNOW\nBAGU? THEN\nI CAN HELP\nYOU CROSS.", "DUDE!\nBAGU SAUCE!\nPASTA TIME!");
-        // rom.replaceText("I CANNOT\nHELP YOU\nANYMORE.\nGO NOW.", "DUDE...\nGTFO.");
-        // rom.replaceText("THIS MAGIC\nWILL MAKE\nYOUR SWORD\nSHOOT FIRE", "THIS MAGIC\nIS ALMOST\nUSELESS.");
-        // rom.replaceText("WHEN YOU\nJUMP PRESS\nUP TO STAB.", "USE THIS\nTO STAB BATS.");
-        // rom.replaceText("DO YOU\nHAVE THE\n7 MAGIC\nCONTAINERS", "U MID BRO.");
-        // rom.replaceText("YOU\nDESERVE\nMY HELP.\nFOLLOW ME.", "OH GOD!\nA MAN!\nFINALLY!");
-        // rom.replaceText("THERE IS\nA SECRET\nAT EDGE\nOF TOWN.", "I CHANGED\nMY DRESS.\nSEGS?");
+        rom.replaceText("I AM\nERROR.", "I FARTED.");
+        rom.replaceText("I CAN GIVE\nYOU MOST\nPOWERFUL\nMAGIC.", "I CAN GIVE\nYOU\nDIARRHEA.");
+        rom.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB\nIDIOT.");
+        rom.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH\nSNOOGINS.");
+        rom.replaceText("JUMP IN A\nHOLE IN\nTHE PALACE\nIF YOU GO.", "LEAP INTO\nTHE\nPALACUSSY.");
+        rom.replaceText("THIS MAGIC\nWORD WILL\nGIVE YOU\nPOWER.", "DO NOT SAY\nTHIS WORD\nIN CHURCH.");
+        rom.replaceText("BAGU IS MY\nNAME. SHOW\nMY NOTE TO\nRIVER MAN.", "YOU ARE\nHERE FOR\nBAGU SAUCE?");
+        rom.replaceText("ONLY TOWN\nFOLK MAY\nCROSS THIS\nRIVER!", "I WISH\nI HAD\nBAGU SAUCE.");
+        rom.replaceText("YOU KNOW\nBAGU? THEN\nI CAN HELP\nYOU CROSS.", "DUDE!\nBAGU SAUCE!\nPASTA TIME!");
+        rom.replaceText("I CANNOT\nHELP YOU\nANYMORE.\nGO NOW.", "DUDE...\nGTFO.");
+        rom.replaceText("THIS MAGIC\nWILL MAKE\nYOUR SWORD\nSHOOT FIRE", "THIS MAGIC\nIS ALMOST\nUSELESS.");
+        rom.replaceText("WHEN YOU\nJUMP PRESS\nUP TO STAB.", "USE THIS\nTO STAB BATS.");
+        rom.replaceText("DO YOU\nHAVE THE\n7 MAGIC\nCONTAINERS", "U MID BRO.");
+        rom.replaceText("YOU\nDESERVE\nMY HELP.\nFOLLOW ME.", "OH GOD!\nA MAN!\nFINALLY!");
+        rom.replaceText("THERE IS\nA SECRET\nAT EDGE\nOF TOWN.", "I CHANGED\nMY DRESS.\nSEGS?");
         
         return rom.getRom();
     }

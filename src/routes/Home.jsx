@@ -16,9 +16,11 @@ import z2LocationMeta from '../lib/zelda2/templates/z2-location.meta';
 import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 import TextData from '../components/TextData';
 import { toast } from 'react-toastify';
+import { copyUint8Array } from '../lib/memory/HexTools';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
+    const [ cleanRom, setCleanRom ] = useState(null);
     const [ romData, setRomData ] = useAtom(romAtom);
     const { pathname } = useLocation();
 
@@ -32,6 +34,7 @@ export default () => {
         let file = event.target.files[0];
         
         fr.addEventListener("load", ({target: {result}}) => {
+            setCleanRom(new Uint8Array(result));
             parseRom(new Uint8Array(result));
         });
 
@@ -42,8 +45,10 @@ export default () => {
         try {
             let randomizer = new Z2Randomizer(z2VanillaTemplate, z2LocationMeta, seed);
             randomizer.randomize();
-            let patchedRom = randomizer.patchRom(romData.rawBytes);
+
+            let patchedRom = randomizer.patchRom(new Uint8Array(cleanRom));
             parseRom(patchedRom);
+
             toast("ROM randomized.  Click download current rom to get patched rom.", {type: "info"});
         } catch (e) {
             alert(`Our apologies...this seed has caused an error.  Please report the seed value to the developer to aid them in troubleshooting.\n\nSeed number: ${seed}`);
