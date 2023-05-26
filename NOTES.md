@@ -27,7 +27,7 @@
 
 ## Bugs
 
-* Acquiring certain items causes the first continent to corrupt. 
+* Bad seed to investigate 982159377
 
 ## Logs
 

@@ -19,6 +19,7 @@ import { toast } from 'react-toastify';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
+    const [ cleanRom, setCleanRom ] = useState(null);
     const [ romData, setRomData ] = useAtom(romAtom);
     const { pathname } = useLocation();
 
@@ -33,6 +34,7 @@ export default () => {
         
         fr.addEventListener("load", ({target: {result}}) => {
             parseRom(new Uint8Array(result));
+            setCleanRom(new Uint8Array(result));
         });
 
         fr.readAsArrayBuffer(file);
@@ -42,7 +44,7 @@ export default () => {
         try {
             let randomizer = new Z2Randomizer(z2VanillaTemplate, z2LocationMeta, seed);
             randomizer.randomize();
-            let patchedRom = randomizer.patchRom(romData.rawBytes);
+            let patchedRom = randomizer.patchRom([...cleanRom]);
             parseRom(patchedRom);
             toast("ROM randomized.  Click download current rom to get patched rom.", {type: "info"});
         } catch (e) {
