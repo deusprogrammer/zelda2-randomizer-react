@@ -10,7 +10,7 @@ if (process.argv.length < 3) {
     process.exit(1);
 }
 
-let randomizer = new Z2Randomizer(templateData, locationMetadata);
+let randomizer = new Z2Randomizer(templateData, locationMetadata, 0);
 randomizer.randomize();
 let rom = fs.readFileSync(process.argv[2]);
 let randomizedRom = randomizer.patchRom(rom);

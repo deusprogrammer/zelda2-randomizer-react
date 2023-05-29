@@ -20,6 +20,38 @@ export class Z2Randomizer {
         this.randomNumberGenerator = randomSeed(seed);
     }
 
+    isNodeMappedOrNotFull = (node) => {
+        let mappedLocationItemCapacity = this.getMappedLocationItemCapacity(node);
+        let mappedLocationItemCount = this.getNodeItemCount(node);
+
+        let noMappedLocationOrItem = !this.graphData[node].mappedLocation && !this.graphData[node].mappedItems;
+        let stillRoomForItem = mappedLocationItemCount < mappedLocationItemCapacity;
+
+        let hasMappedLocation = this.graphData[node].mappedLocation && this.graphData[node].mappedItems;
+        let hasMappedLocationButStillRoomForItem =  hasMappedLocation && stillRoomForItem;
+
+        return noMappedLocationOrItem || hasMappedLocationButStillRoomForItem;
+    }
+
+    /**
+     * 
+     * @param {string} node 
+     * @returns item capacity in given location
+     */
+    getMappedLocationItemCapacity = (node) => {
+        let mappedLocationData = this.locationMetadata[this.graphData[node].mappedLocation];
+        return mappedLocationData && mappedLocationData.items ? mappedLocationData.items.length : 0;
+    }
+
+    /**
+     * 
+     * @param {string} node 
+     * @returns number of items in node
+     */
+    getNodeItemCount = (node) => {
+        return this.graphData[node].mappedItems ? this.graphData[node].mappedItems.length : 0;
+    }
+
     /**
      * Choose a random node from a list deterministically based on seed
      * @param {Array} nodes 
@@ -205,10 +237,23 @@ export class Z2Randomizer {
      * @returns 
      */
     getAccessibleItemBearingLocations = (completablePalaces, accessibleNodes) => {
+        let accessibleNodesPerContinent = accessibleNodes.reduce((acc, node) => {
+            let continent = this.graphData[node].continent;
+
+            if (!acc[continent]) {
+                acc[continent] = 0;
+            }
+
+            if (this.isNodeMappedOrNotFull(node)) {
+                acc[continent]++;
+            }
+
+            return acc;
+        }, []);
         let accessibleContinents = accessibleNodes.reduce((acc, node) => {
             let continent = this.graphData[node].continent;
     
-            if (!acc.includes(continent)) {
+            if (!acc.includes(continent) && accessibleNodesPerContinent[continent] > 0) {
                 acc.push(continent);
             }
     
@@ -617,18 +662,10 @@ export class Z2Randomizer {
             if (!remedyNode) {
                 // Filter out nodes that don't have a mapped location or ones that do that have room for items left
                 let unmappedNodes = accessibleNodes.filter(node => {
-                    return this.graphData[node].continent === randomItemBearingLocationContinent &&
-                    ((
-                        !this.graphData[node].mappedLocation &&
-                        !this.graphData[node].mappedItems
-                    ) 
-                    ||
-                    (
-                        this.graphData[node].mappedLocation &&
-                        this.graphData[node].mappedItems &&
-                        this.graphData[node].mappedItems.length < this.locationMetadata[this.graphData[node].mappedLocation].items.length
-                    ))
+                    let onSameContinent = this.graphData[node].continent === randomItemBearingLocationContinent;
+                    return onSameContinent && this.isNodeMappedOrNotFull(node);
                 });
+
                 remedyNode = this.chooseRandomNode(unmappedNodes);
                 this.graphData[remedyNode].mappedLocation = randomItemBearingLocationName;
             }
