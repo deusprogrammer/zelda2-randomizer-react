@@ -109,7 +109,7 @@ export default () => {
                     <Link to={`${process.env.PUBLIC_URL}/hex`}><button>Hex Viewer</button></Link><br/>
                     <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link><br/>
                     <h4>ROM</h4>
-                    <input type="number" value={seed} onChange={({target: {value}}) => {setSeed(value)}} />
+                    <input type="number" value={seed} onChange={({target: {value}}) => {setSeed(parseInt(value))}} />
                     <button onClick={() => {
                         setSeed(Math.trunc(Math.random() * (Math.pow(2, 32) - 1)));
                     }}>
@@ -121,7 +121,7 @@ export default () => {
                         Randomize ROM (Alpha)
                     </button><br />
                     <button onClick={() => {
-                        let file = new File([romData.rawBytes], "Zelda 2.modified.nes", {type: "application/octet-stream"});
+                        let file = new File([romData.rawBytes], `Z2RA${seed}.nes`, {type: "application/octet-stream"});
                         FileSaver.saveAs(file);
                     }}>
                         Download Current ROM

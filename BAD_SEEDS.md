@@ -2264,3 +2264,11 @@ Thunder being placed extremely early on when there is no room to place magic con
 ## Error Cause
 
 There is no accessible place in the continent to place FAIRY TOWN
+
+# Seed 3937187246, 2456416108
+
+## Logs
+
+## Error Cause
+
+Iteration 0 is one of the rare impossible configurations where there isn't room for the needed remedy.

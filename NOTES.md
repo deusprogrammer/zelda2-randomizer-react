@@ -27,10 +27,8 @@
 
 ## Bugs
 
-* Bad seed to investigate: 982159377
-* Seed with unaccessible areas that still manages to be completable: 3336633821
-* Seed to test child in palace: 891419
 * Some seeds are generated with more than one item in places that should only have one
+* Some seeds start in impossible situations
 
 ## Logs
 

@@ -541,157 +541,6 @@ export class Z2Randomizer {
     };
     
     /**
-     * Places magic containers up to a maximum of nMagicContainers in accessible nodes
-     * @param {number} nMagicContainers 
-     * @param {Array} accessibleNodes 
-     */
-    placeMagicContainers = (nMagicContainers, accessibleNodes) => {
-        let nMagicContainersAlreadyPlaced = Object.keys(this.graphData).reduce((acc, nodeName) => {
-            if (!this.graphData[nodeName].mappedItems) {
-                return acc;
-            }
-    
-            this.graphData[nodeName].mappedItems.forEach(itemName => {
-                if (itemName === "MAGIC_CONTAINER") {
-                    acc++;
-                }
-            });
-    
-            return acc;
-        }, 0);
-    
-        for (let i = nMagicContainersAlreadyPlaced; i < nMagicContainers; i++) {
-            this.placeRemedies("MAGIC_CONTAINER", accessibleNodes);
-        }
-    };
-    
-    /**
-     * Places a remedy or remedies in accessible nodes
-     * @param {string} nextRemedy 
-     * @param {Array} accessibleNodes 
-     */
-    placeRemedies = (nextRemedy, accessibleNodes) => {
-        if (!nextRemedy) {
-            return;
-        }
-    
-        if (nextRemedy === "MAGIC7") {
-            console.log("PLACING MAGIC7");
-            return this.placeMagicContainers(3, accessibleNodes);
-        } else if (nextRemedy === "MAGIC8") {
-            console.log("PLACING MAGIC8");
-            return this.placeMagicContainers(4, accessibleNodes);
-        } else if (this.isSpell(nextRemedy)) {
-            console.log("PLACING SPELL " + nextRemedy);
-    
-            // Get the spell town for the current needed remedy
-            let spellTown = this.getSpellTown(nextRemedy);
-    
-            // Check if town with spell is already placed
-            let unmappedNodes = accessibleNodes.filter(node => !this.graphData[node].mappedLocation && spellTown.worldNumber === this.graphData[node].continent)
-    
-            // Check to see if town with ability is already placed
-            let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === spellTown.id);
-            if (!remedyNode) {
-                remedyNode = this.chooseRandomNode(unmappedNodes);
-                this.graphData[remedyNode].mappedLocation = spellTown.id;
-            }
-            
-            // If town needs remedy, recurse into place remedies again.
-            if (spellTown.spellRequirements) {
-                let spellTownRemedy = spellTown.spellRequirements[0];
-    
-                this.placeRemedies(spellTownRemedy, accessibleNodes);
-            }
-    
-            this.addSpell(nextRemedy);
-        } else if (this.isAbility(nextRemedy)) {
-            console.log("PLACING ABILITY " + nextRemedy);
-    
-            // Get the ability town for the current needed remedy
-            let abilityTown = this.getAbilityTown(nextRemedy);
-    
-            // If not placed, place it in a random location
-            let unmappedNodes = accessibleNodes.filter(node => !this.graphData[node].mappedLocation && abilityTown.worldNumber === this.graphData[node].continent);
-    
-            // Check to see if town with ability is already placed
-            let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === abilityTown.id);
-            if (!remedyNode) {
-                remedyNode = this.chooseRandomNode(unmappedNodes);
-                this.graphData[remedyNode].mappedLocation = abilityTown.id;   
-            }
-    
-            // If town needs remedy, recurse into place remedies again.
-            if (abilityTown.abilityRequirements) {
-                let abilityTownRemedy = abilityTown.abilityRequirements[0];
-    
-                this.placeRemedies(abilityTownRemedy, accessibleNodes);
-            }
-    
-            this.addAbility(nextRemedy);
-        } else if (this.isBagu(nextRemedy)) {
-            console.log("PLACING BAGU");
-    
-            // Pick an accessible node
-            let remedyNode = this.chooseRandomNode(accessibleNodes.filter(node => !this.graphData[node].mappedLocation && this.graphData[node].continent === 0));
-    
-            // Map node to Bagu
-            this.graphData[remedyNode].mappedLocation = "BAGUS_CABIN";
-    
-            console.log(`PLACING BAGU IN ${remedyNode} (${this.graphData[remedyNode].locationKey})`);
-    
-            this.addItem(nextRemedy);
-        } else {
-            console.log("PLACING ITEM " + nextRemedy);
-            // Check to see if item is already placed
-            let itemNode = accessibleNodes.find(accessibleNode => !["MAGIC_CONTAINER", "HEART_CONTAINER", "1UP", "50PB", "100PB", "200PB", "500PB"].includes(nextRemedy) && this.graphData[accessibleNode].mappedItems && this.graphData[accessibleNode].mappedItems.includes(nextRemedy));
-            if (itemNode) {
-                console.log("ITEM ALREADY PLACED");
-                return;
-            }
-    
-            // Pick a random location
-            let completablePalaces = this.getCompletablePalaces(accessibleNodes);
-            let itemBearingLocations = this.getAccessibleItemBearingLocations(completablePalaces, accessibleNodes);
-            let randomItemBearingLocationName = this.chooseRandomNode(itemBearingLocations);
-            let randomItemBearingLocation = this.locationMetadata[randomItemBearingLocationName];
-            let randomItemBearingLocationContinent = randomItemBearingLocation.worldNumber;
-    
-            // If the remedy node isn't already mapped then we will map it.
-            let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === randomItemBearingLocation.id);
-            if (!remedyNode) {
-                // Filter out nodes that don't have a mapped location or ones that do that have room for items left
-                let unmappedNodes = accessibleNodes.filter(node => {
-                    let onSameContinent = this.graphData[node].continent === randomItemBearingLocationContinent;
-                    return onSameContinent && this.isNodeMappedOrNotFull(node);
-                });
-
-                remedyNode = this.chooseRandomNode(unmappedNodes);
-                this.graphData[remedyNode].mappedLocation = randomItemBearingLocationName;
-            }
-    
-            // If mapped items isn't initialized for this area, initialize it
-            if (!this.graphData[remedyNode].mappedItems) {
-                this.graphData[remedyNode].mappedItems = this.graphData[remedyNode].mappedItems = [];
-            }
-    
-            // Map items to chosen location
-            this.graphData[remedyNode].mappedItems.push(nextRemedy);
-    
-            // If town needs remedy, recurse into place remedies again.
-            if (randomItemBearingLocation.itemRequirements && randomItemBearingLocation.itemRequirements.length > 0) {
-                console.log("ITEM HAS REQUIREMENTS");
-                let itemIndex = this.graphData[remedyNode].mappedItems.length - 1;
-                let itemRemedy = randomItemBearingLocation.itemRequirements[itemIndex];
-    
-                this.placeRemedies(itemRemedy, accessibleNodes);
-            }
-    
-            this.addItem(nextRemedy);
-        }
-    }
-    
-    /**
      * Place connections between isolation groups and place palaces and continent exits
      */
     placeConnectionsPalacesAndExits = () => {
@@ -872,6 +721,265 @@ export class Z2Randomizer {
         console.log(`\tPLACED NORTH CASTLE AT ${this.graphData[this.northCastleNode].locationKey}`);
     }
 
+    getMagicContainersAlreadyPlaced = () => {
+        return Object.keys(this.graphData).reduce((acc, nodeName) => {
+            if (!this.graphData[nodeName].mappedItems) {
+                return acc;
+            }
+    
+            this.graphData[nodeName].mappedItems.forEach(itemName => {
+                if (itemName === "MAGIC_CONTAINER") {
+                    acc++;
+                }
+            });
+    
+            return acc;
+        }, 0);
+    }
+
+    /**
+     * Places magic containers up to a maximum of nMagicContainers in accessible nodes
+     * @param {number} nMagicContainers 
+     * @param {Array} accessibleNodes 
+     */
+    placeMagicContainers = (nMagicContainers, accessibleNodes) => {
+        let nMagicContainersAlreadyPlaced = this.getMagicContainersAlreadyPlaced();
+    
+        for (let i = nMagicContainersAlreadyPlaced; i < nMagicContainers; i++) {
+            this.placeRemedies("MAGIC_CONTAINER", accessibleNodes);
+        }
+    };
+
+    /**
+     * Places a remedy or remedies in accessible nodes
+     * @param {string} nextRemedy 
+     * @param {Array} accessibleNodes 
+     */
+    placeRemedies = (nextRemedy, accessibleNodes) => {
+        if (!nextRemedy) {
+            return;
+        }
+    
+        if (nextRemedy === "MAGIC7") {
+            console.log("PLACING MAGIC7");
+            return this.placeMagicContainers(3, accessibleNodes);
+        } else if (nextRemedy === "MAGIC8") {
+            console.log("PLACING MAGIC8");
+            return this.placeMagicContainers(4, accessibleNodes);
+        } else if (this.isSpell(nextRemedy)) {
+            console.log("PLACING SPELL " + nextRemedy);
+    
+            // Get the spell town for the current needed remedy
+            let spellTown = this.getSpellTown(nextRemedy);
+    
+            // Check if town with spell is already placed
+            let unmappedNodes = accessibleNodes.filter(node => !this.graphData[node].mappedLocation && spellTown.worldNumber === this.graphData[node].continent)
+    
+            // Check to see if town with ability is already placed
+            let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === spellTown.id);
+            if (!remedyNode) {
+                remedyNode = this.chooseRandomNode(unmappedNodes);
+                this.graphData[remedyNode].mappedLocation = spellTown.id;
+            }
+            
+            // If town needs remedy, recurse into place remedies again.
+            if (spellTown.spellRequirements) {
+                let spellTownRemedy = spellTown.spellRequirements[0];
+    
+                this.placeRemedies(spellTownRemedy, accessibleNodes);
+            }
+    
+            this.addSpell(nextRemedy);
+        } else if (this.isAbility(nextRemedy)) {
+            console.log("PLACING ABILITY " + nextRemedy);
+    
+            // Get the ability town for the current needed remedy
+            let abilityTown = this.getAbilityTown(nextRemedy);
+    
+            // If not placed, place it in a random location
+            let unmappedNodes = accessibleNodes.filter(node => !this.graphData[node].mappedLocation && abilityTown.worldNumber === this.graphData[node].continent);
+    
+            // Check to see if town with ability is already placed
+            let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === abilityTown.id);
+            if (!remedyNode) {
+                remedyNode = this.chooseRandomNode(unmappedNodes);
+                this.graphData[remedyNode].mappedLocation = abilityTown.id;   
+            }
+    
+            // If town needs remedy, recurse into place remedies again.
+            if (abilityTown.abilityRequirements) {
+                let abilityTownRemedy = abilityTown.abilityRequirements[0];
+    
+                this.placeRemedies(abilityTownRemedy, accessibleNodes);
+            }
+    
+            this.addAbility(nextRemedy);
+        } else if (this.isBagu(nextRemedy)) {
+            console.log("PLACING BAGU");
+    
+            // Pick an accessible node
+            let remedyNode = this.chooseRandomNode(accessibleNodes.filter(node => !this.graphData[node].mappedLocation && this.graphData[node].continent === 0));
+    
+            // Map node to Bagu
+            this.graphData[remedyNode].mappedLocation = "BAGUS_CABIN";
+    
+            console.log(`PLACING BAGU IN ${remedyNode} (${this.graphData[remedyNode].locationKey})`);
+    
+            this.addItem(nextRemedy);
+        } else {
+            console.log("PLACING ITEM " + nextRemedy);
+            // Check to see if item is already placed
+            let itemNode = accessibleNodes.find(accessibleNode => !["MAGIC_CONTAINER", "HEART_CONTAINER", "1UP", "50PB", "100PB", "200PB", "500PB"].includes(nextRemedy) && this.graphData[accessibleNode].mappedItems && this.graphData[accessibleNode].mappedItems.includes(nextRemedy));
+            if (itemNode) {
+                console.log("ITEM ALREADY PLACED");
+                return;
+            }
+    
+            // Pick a random location
+            let completablePalaces = this.getCompletablePalaces(accessibleNodes);
+            let itemBearingLocations = this.getAccessibleItemBearingLocations(completablePalaces, accessibleNodes);
+            let randomItemBearingLocationName = this.chooseRandomNode(itemBearingLocations);
+            let randomItemBearingLocation = this.locationMetadata[randomItemBearingLocationName];
+            let randomItemBearingLocationContinent = randomItemBearingLocation.worldNumber;
+    
+            // If the remedy node isn't already mapped then we will map it.
+            let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === randomItemBearingLocation.id);
+            if (!remedyNode) {
+                // Filter out nodes that don't have a mapped location or ones that do that have room for items left
+                let unmappedNodes = accessibleNodes.filter(node => {
+                    let onSameContinent = this.graphData[node].continent === randomItemBearingLocationContinent;
+                    return onSameContinent && this.isNodeMappedOrNotFull(node);
+                });
+
+                remedyNode = this.chooseRandomNode(unmappedNodes);
+                this.graphData[remedyNode].mappedLocation = randomItemBearingLocationName;
+            }
+    
+            // If mapped items isn't initialized for this area, initialize it
+            if (!this.graphData[remedyNode].mappedItems) {
+                this.graphData[remedyNode].mappedItems = this.graphData[remedyNode].mappedItems = [];
+            }
+    
+            // Map items to chosen location
+            this.graphData[remedyNode].mappedItems.push(nextRemedy);
+    
+            // If town needs remedy, recurse into place remedies again.
+            if (randomItemBearingLocation.itemRequirements && randomItemBearingLocation.itemRequirements.length > 0) {
+                console.log("ITEM HAS REQUIREMENTS");
+                let itemIndex = this.graphData[remedyNode].mappedItems.length - 1;
+                let itemRemedy = randomItemBearingLocation.itemRequirements[itemIndex];
+    
+                this.placeRemedies(itemRemedy, accessibleNodes);
+            }
+    
+            this.addItem(nextRemedy);
+        }
+    }
+
+    /**
+     * Places a remedy or remedies in accessible nodes
+     * @param {string} nextRemedy 
+     * @param {Array} accessibleNodes 
+     */
+    getNodeCountNeededForRemedy = (nextRemedy, accessibleNodes) => {
+        let count = 0;
+        let sameContinentCount = 0;
+        if (!nextRemedy) {
+            return [0,0];
+        }
+    
+        if (nextRemedy === "MAGIC5") {
+            let containersPlaced = this.getMagicContainersAlreadyPlaced();
+            return [Math.max(1 - containersPlaced, 0), 0];
+        } else if (nextRemedy === "MAGIC6") {
+            let containersPlaced = this.getMagicContainersAlreadyPlaced();
+            return [Math.max(2 - containersPlaced, 0), 0];
+        } else if (nextRemedy === "MAGIC7") {
+            let containersPlaced = this.getMagicContainersAlreadyPlaced();
+            return [Math.max(3 - containersPlaced, 0), 0];
+        } else if (nextRemedy === "MAGIC8") {
+            let containersPlaced = this.getMagicContainersAlreadyPlaced();
+            return [Math.max(4 - containersPlaced, 0), 0];
+        } else if (this.isSpell(nextRemedy)) {
+            // Get the spell town for the current needed remedy
+            let spellTown = this.getSpellTown(nextRemedy);
+
+            // Check to see if town with ability is already placed
+            let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === spellTown.id);
+            if (!remedyNode) {
+                sameContinentCount++;
+            }
+            
+            // If town needs remedy, recurse into place remedies again.
+            if (spellTown.spellRequirements) {
+                let spellTownRemedy = spellTown.spellRequirements[0];
+    
+                let [recurseCount, recurseSameContinentCount] = this.getNodeCountNeededForRemedy(spellTownRemedy, accessibleNodes);
+                count += recurseCount;
+                sameContinentCount += recurseSameContinentCount;
+            }
+
+            return [count, sameContinentCount];
+        } else if (this.isAbility(nextRemedy)) {
+            // Get the ability town for the current needed remedy
+            let abilityTown = this.getAbilityTown(nextRemedy);
+
+            // Check to see if town with ability is already placed
+            let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === abilityTown.id);
+            if (!remedyNode) {
+                sameContinentCount++;
+            }
+    
+            // If town needs remedy, recurse into place remedies again.
+            if (abilityTown.abilityRequirements) {
+                let abilityTownRemedy = abilityTown.abilityRequirements[0];
+    
+                let [recurseCount, recurseSameContinentCount] = this.getNodeCountNeededForRemedy(abilityTownRemedy, accessibleNodes);
+                count += recurseCount;
+                sameContinentCount += recurseSameContinentCount;
+            }
+    
+            return [count, sameContinentCount];
+        } else if (this.isBagu(nextRemedy)) {
+            return [0, 1];
+        } else {
+            let itemNode = accessibleNodes.find(accessibleNode => !["MAGIC_CONTAINER", "HEART_CONTAINER", "1UP", "50PB", "100PB", "200PB", "500PB"].includes(nextRemedy) && this.graphData[accessibleNode].mappedItems && this.graphData[accessibleNode].mappedItems.includes(nextRemedy));
+            if (itemNode) {
+                console.log("ITEM ALREADY PLACED");
+                return [0, 0];
+            }
+
+            return [1, 0];
+        }
+    }
+
+    /**
+     * Places a remedy or remedies in accessible nodes
+     * @param {string} nextRemedy 
+     * @param {Array} accessibleNodes 
+     */
+    isRemedyPlaceable = (nextRemedy, accessibleNodes) => {
+        if (!nextRemedy) {
+            return false;
+        }
+
+        let continent = -1;
+        if (this.isSpell(nextRemedy)) {
+            let spellTown = this.getSpellTown(nextRemedy);
+            continent = spellTown.continent;
+        } else if (this.isAbility(nextRemedy)) {
+            let abilityTown = this.getAbilityTown(nextRemedy);
+            continent = abilityTown.continent;
+        }
+
+        let [count, sameContinentCount] = this.getNodeCountNeededForRemedy(nextRemedy, accessibleNodes);
+        let unmappedLocations = accessibleNodes.filter(node => !this.graphData[node].mappedLocation).length;
+        let unmappedContinentalLocations = accessibleNodes.filter(node => !this.graphData[node].mappedLocation && this.graphData[node].continent === continent).length;
+        unmappedContinentalLocations = unmappedContinentalLocations ? unmappedContinentalLocations : 0;
+        console.log("REMEDY " + nextRemedy + " COUNTS: " + count + " <= " + unmappedLocations + " " + sameContinentCount + " <= " + unmappedContinentalLocations);
+        return unmappedLocations >= count && unmappedContinentalLocations >= sameContinentCount;
+    }
+
     /**
      * Place all items and nodes in such a way that the game is beatable
      */
@@ -879,21 +987,15 @@ export class Z2Randomizer {
         let [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
         let completablePalaces = this.getCompletablePalaces(accessibleNodes);
         let neededRemedies     = this.getCurrentRemedies(accessibleNodes);
-        let i = 0;
-        while (completablePalaces.length < 7 && i < 40) {
+        try {
+            let i = 0;
             console.log("**********************************************************************************************************************");
-            console.log("ITERATION " + i);
+            console.log("INITIAL STATE");
             console.log("\tITEMS:                " + this.items);
             console.log("\tSPELLS:               " + this.spells);
             console.log("\tABILITIES:            " + this.abilities);
             console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
-            console.log("\tNEEDED REMEDIES:      " + neededRemedies);
-
-            // Find a item bearing location within the same continent to place a remedy in said node
-            let nextRemedy = this.chooseRandomNode(neededRemedies.filter(remedy => remedy !== "CRYSTALS" && remedy !== "THUNDER"));
-            this.placeRemedies(nextRemedy, accessibleNodes);
-
-            console.log("\tNEXT REMEDY:          " + nextRemedy);
+            console.log("\tNEEDED REMEDIES:      " + neededRemedies.filter(remedy => remedy !== "CRYSTALS").map(remedy => `${remedy}: ${this.isRemedyPlaceable(remedy, accessibleNodes)}`));
 
             console.log("\tACCESSIBLE LOCATIONS:");
             console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
@@ -905,83 +1007,119 @@ export class Z2Randomizer {
                 }
             });
 
-            if (completablePalaces.length >= 6 && !this.items.includes("CRYSTALS")) {
-                this.items.push("CRYSTALS");
+            while (completablePalaces.length < 7 && i < 40) {
+                console.log("**********************************************************************************************************************");
+                console.log("ITERATION " + i);
+                console.log("\tITEMS:                " + this.items);
+                console.log("\tSPELLS:               " + this.spells);
+                console.log("\tABILITIES:            " + this.abilities);
+                console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
+                console.log("\tNEEDED REMEDIES:      " + neededRemedies.filter(remedy => remedy !== "CRYSTALS").map(remedy => `${remedy}:${this.isRemedyPlaceable(remedy, accessibleNodes)}`));
+
+                // Find a item bearing location within the same continent to place a remedy in said node
+                let nextRemedy = this.chooseRandomNode(neededRemedies.filter(remedy => remedy !== "CRYSTALS" && this.isRemedyPlaceable(remedy, accessibleNodes)));
+                this.placeRemedies(nextRemedy, accessibleNodes);
+
+                console.log("\tNEXT REMEDY:          " + nextRemedy);
+
+                console.log("\tACCESSIBLE LOCATIONS:");
+                console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
+                accessibleNodes.forEach(node => {
+                    if (this.graphData[node]) {
+                        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
+                    } else {
+                        console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
+                    }
+                });
+
+                console.log(`\tUNACCESSIBLE LOCATIONS:`);
+                console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
+                Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node)).forEach(node => {
+                    if (this.graphData[node]) {
+                        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
+                    } else {
+                        console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
+                    }
+                });
+
+                if (completablePalaces.length >= 6 && !this.items.includes("CRYSTALS")) {
+                    this.items.push("CRYSTALS");
+                }
+
+                if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 7 && !this.items.includes("MAGIC7")) {
+                    this.items.push("MAGIC7");
+                }
+
+                if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 8 && !this.items.includes("MAGIC8")) {
+                    this.items.push("MAGIC8");
+                }
+
+                // Find accessible nodes, completable palaces, and needed remedies to progress
+                [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
+                completablePalaces = this.getCompletablePalaces(accessibleNodes);
+                neededRemedies     = this.getCurrentRemedies(accessibleNodes);
+                i++;
             }
 
-            if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 7 && !this.items.includes("MAGIC7")) {
-                this.items.push("MAGIC7");
-            }
+            // Place all other items, abilities, and spells.
+            let optionalItems = ["SHIELD", "FIRE", "LIFE", "THUNDER", "UPSTAB", "CANDLE", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
+            optionalItems.forEach(optionalItem => {
+                this.placeRemedies(optionalItem, accessibleNodes);
+            });
 
-            if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 8 && !this.items.includes("MAGIC8")) {
-                this.items.push("MAGIC8");
-            }
+            // Place other nodes
+            let otherNodes = Object.keys(this.graphData).filter(nodeName => !this.graphData[nodeName].mappedLocation);
+            let mappedLocations = Object.keys(this.graphData).map(nodeName => this.graphData[nodeName].mappedLocation);
+            let otherLocations = Object.keys(this.locationMetadata).filter(locationName => !mappedLocations.includes(this.locationMetadata[locationName].id));
+            otherNodes.forEach((otherNode) => {
+                let node = this.graphData[otherNode];
+                let randomLocation = this.chooseRandomNode(otherLocations.filter(locationName => this.locationMetadata[locationName].worldNumber === node.continent));
+                node.mappedLocation = randomLocation;
+                otherLocations = removeNode(otherLocations, randomLocation);
+            });
+        } finally {
+            console.log("**********************************************************************************************************************");
+            console.log(`FINAL REPORT`);
+            console.log("\tITEMS:                " + this.items);
+            console.log("\tSPELLS:               " + this.spells);
+            console.log("\tABILITIES:            " + this.abilities);
+            console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
+            console.log("\tNEEDED REMEDIES:      " + neededRemedies);
+            console.log(`\tACCESSIBLE LOCATIONS (${Math.trunc(accessibleNodes.length/Object.keys(this.graphData).length * 100)}%):`);
+            console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
+            accessibleNodes.forEach(node => {
+                if (this.graphData[node]) {
+                    console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
+                } else {
+                    console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
+                }
+            });
 
-            // Find accessible nodes, completable palaces, and needed remedies to progress
-            [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
-            completablePalaces = this.getCompletablePalaces(accessibleNodes);
-            neededRemedies     = this.getCurrentRemedies(accessibleNodes);
-            i++;
+            console.log(`\tUNACCESSIBLE LOCATIONS:`);
+            console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
+            Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node)).forEach(node => {
+                if (this.graphData[node]) {
+                    console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
+                } else {
+                    console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
+                }
+            });
+
+            let counts = Object.keys(this.graphData).map(location => {
+                return this.graphData[location].mappedLocation;
+            }).filter(location => location !== undefined).reduce((previous, current) => {
+                if (!previous[current]) {
+                    previous[current] = 0;
+                }
+
+                previous[current]++;
+
+                return previous;
+            }, {});
+
+            let duplicateLocations = Object.keys(counts).filter(location => counts[location] > 1);
+            console.log("\nDUPLICATED LOCATIONS: " + duplicateLocations);
         }
-
-        // Place all other items, abilities, and spells.
-        let optionalItems = ["SHIELD", "FIRE", "LIFE", "THUNDER", "UPSTAB", "CANDLE", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
-        optionalItems.forEach(optionalItem => {
-            this.placeRemedies(optionalItem, accessibleNodes);
-        });
-
-        // Place other nodes
-        let otherNodes = Object.keys(this.graphData).filter(nodeName => !this.graphData[nodeName].mappedLocation);
-        let mappedLocations = Object.keys(this.graphData).map(nodeName => this.graphData[nodeName].mappedLocation);
-        let otherLocations = Object.keys(this.locationMetadata).filter(locationName => !mappedLocations.includes(this.locationMetadata[locationName].id));
-        otherNodes.forEach((otherNode) => {
-            let node = this.graphData[otherNode];
-            let randomLocation = this.chooseRandomNode(otherLocations.filter(locationName => this.locationMetadata[locationName].worldNumber === node.continent));
-            node.mappedLocation = randomLocation;
-            otherLocations = removeNode(otherLocations, randomLocation);
-        });
-
-        console.log("**********************************************************************************************************************");
-        console.log(`FINAL REPORT (${i === 40 ? "UNPLAYABLE" : "SUCCESS"})`);
-        console.log("\tITEMS:                " + this.items);
-        console.log("\tSPELLS:               " + this.spells);
-        console.log("\tABILITIES:            " + this.abilities);
-        console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
-        console.log("\tNEEDED REMEDIES:      " + neededRemedies);
-        console.log(`\tACCESSIBLE LOCATIONS (${Math.trunc(accessibleNodes.length/Object.keys(this.graphData).length * 100)}%):`);
-        console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
-        accessibleNodes.forEach(node => {
-            if (this.graphData[node]) {
-                console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
-            } else {
-                console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
-            }
-        });
-
-        console.log(`\tUNACCESSIBLE LOCATIONS:`);
-        console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
-        Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node)).forEach(node => {
-            if (this.graphData[node]) {
-                console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
-            } else {
-                console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
-            }
-        });
-
-        let counts = Object.keys(this.graphData).map(location => {
-            return this.graphData[location].mappedLocation;
-        }).filter(location => location !== undefined).reduce((previous, current) => {
-            if (!previous[current]) {
-                previous[current] = 0;
-            }
-
-            previous[current]++;
-
-            return previous;
-        }, {});
-
-        let duplicateLocations = Object.keys(counts).filter(location => counts[location] > 1);
-        console.log("\nDUPLICATED LOCATIONS: " + duplicateLocations);
     }
 
     /**
