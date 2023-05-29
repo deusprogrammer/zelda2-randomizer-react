@@ -890,7 +890,7 @@ export class Z2Randomizer {
             console.log("\tNEEDED REMEDIES:      " + neededRemedies);
 
             // Find a item bearing location within the same continent to place a remedy in said node
-            let nextRemedy = this.chooseRandomNode(neededRemedies.filter(remedy => remedy !== "CRYSTALS"));
+            let nextRemedy = this.chooseRandomNode(neededRemedies.filter(remedy => remedy !== "CRYSTALS" && remedy !== "THUNDER"));
             this.placeRemedies(nextRemedy, accessibleNodes);
 
             console.log("\tNEXT REMEDY:          " + nextRemedy);
@@ -925,7 +925,7 @@ export class Z2Randomizer {
         }
 
         // Place all other items, abilities, and spells.
-        let optionalItems = ["SHIELD", "FIRE", "LIFE", "UPSTAB", "CANDLE", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
+        let optionalItems = ["SHIELD", "FIRE", "LIFE", "THUNDER", "UPSTAB", "CANDLE", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
         optionalItems.forEach(optionalItem => {
             this.placeRemedies(optionalItem, accessibleNodes);
         });
