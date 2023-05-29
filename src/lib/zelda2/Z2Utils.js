@@ -29,8 +29,7 @@ const {
     DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING,
     TEXT_DATA_OFFSET,
     TEXT_DATA_LENGTH,
-    BACKMAP_POINTER_BANK_OFFSETS,
-    DIGISHAKE_CREDIT_OFFSET} = require("./Z2MemoryMappings");
+    BACKMAP_POINTER_BANK_OFFSETS} = require("./Z2MemoryMappings");
 
 export const WIDTH_OF_SCREEN  = 16;
 export const HEIGHT_OF_SCREEN = 16;
