@@ -1,0 +1,2266 @@
+# Seed 891039772
+
+## Logs
+
+    CONTINENT: 0
+    Z2Randomizer.js:672 	CONTINENT EXITS:       DM_ENTRANCE,DM_EXIT,RAFT_DOCK_W
+    Z2Randomizer.js:684 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE4","NODE5","NODE6","NODE32"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE26","NODE34"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE29","NODE37"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE31","NODE36"]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","FAIRY_CAVE","FAIRY_CAVE_HOLE","JUMP_CAVE_N","JUMP_CAVE_S","LIFE_TOWN_N","LIFE_TOWN_S","PARAPA_CAVE_N","PARAPA_CAVE_S"]
+    Z2Randomizer.js:692 			CONNECTED     [3]
+    Z2Randomizer.js:693 			DISCONNECTED  [0,1,2,4]
+    Z2Randomizer.js:764 			CONNECTING    LIFE_TOWN_S to P1 via FAIRY_CAVE_HOLE and FAIRY_CAVE
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE4","NODE5","NODE6"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE26","NODE34"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE37"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE31","NODE36"]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","JUMP_CAVE_N","JUMP_CAVE_S","LIFE_TOWN_N","LIFE_TOWN_S","PARAPA_CAVE_N","PARAPA_CAVE_S"]
+    Z2Randomizer.js:692 			CONNECTED     [3,0]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,2,4]
+    Z2Randomizer.js:764 			CONNECTING    PARAPA_CAVE_N to DM_BRIDGE_EXIT_W via JUMP_CAVE_S and JUMP_CAVE_N
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE5","NODE6"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE26","NODE34"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE37"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE36"]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","LIFE_TOWN_N","LIFE_TOWN_S","PARAPA_CAVE_N","PARAPA_CAVE_S"]
+    Z2Randomizer.js:692 			CONNECTED     [3,0,4]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,2]
+    Z2Randomizer.js:764 			CONNECTING    DM_EXIT to LIFE_TOWN_FAIRY via LIFE_TOWN_N and LIFE_TOWN_S
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE5","NODE6"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE26","NODE34"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE37"]
+    Z2Randomizer.js:689 				ISOLATION 4:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","PARAPA_CAVE_N","PARAPA_CAVE_S"]
+    Z2Randomizer.js:692 			CONNECTED     [3,0,1]
+    Z2Randomizer.js:693 			DISCONNECTED  [2]
+    Z2Randomizer.js:764 			CONNECTING    HEART_CLIFF to FAIRY_CAVE via DM_BRIDGE_EXIT_W and DM_BRIDGE_EXIT_E
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE5"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE34"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE37"]
+    Z2Randomizer.js:689 				ISOLATION 4:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["PARAPA_CAVE_N","PARAPA_CAVE_S"]
+    Z2Randomizer.js:692 			CONNECTED     [3,0,1,2]
+    Z2Randomizer.js:693 			DISCONNECTED  []
+    Z2Randomizer.js:764 			CONNECTING    CAVE_200P to DM_ENTRANCE via PARAPA_CAVE_S and PARAPA_CAVE_N
+    Z2Randomizer.js:769 	RP2: PLACING EXITS
+    Z2Randomizer.js:771 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE2","NODE3","NODE5","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE34","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:778 		RANDOM NODE PICKED FOR EXIT: NODE30
+    Z2Randomizer.js:779 		PLACING EXIT DM_ENTRANCE in DM_BRIDGE_EXIT_E
+    Z2Randomizer.js:771 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE2","NODE3","NODE5","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE33","NODE34","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:778 		RANDOM NODE PICKED FOR EXIT: NODE5
+    Z2Randomizer.js:779 		PLACING EXIT DM_EXIT in BUBBLE_CLIFF
+    Z2Randomizer.js:771 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE33","NODE34","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:778 		RANDOM NODE PICKED FOR EXIT: NODE11
+    Z2Randomizer.js:779 		PLACING EXIT RAFT_DOCK_W in FOREST_100P
+    Z2Randomizer.js:783 	RP3: PLACING PALACES
+    Z2Randomizer.js:785 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE33","NODE34","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:792 		RANDOM NODE PICKED FOR PALACE: NODE22
+    Z2Randomizer.js:793 		PLACING PALACE P1 in RED_JAR_CEM
+    Z2Randomizer.js:785 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE19","NODE20","NODE21","NODE23","NODE24","NODE25","NODE27","NODE28","NODE33","NODE34","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:792 		RANDOM NODE PICKED FOR PALACE: NODE13
+    Z2Randomizer.js:793 		PLACING PALACE P2 in MEDICINE_CAVE_FAIRY
+    Z2Randomizer.js:785 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE12","NODE14","NODE15","NODE16","NODE17","NODE19","NODE20","NODE21","NODE23","NODE24","NODE25","NODE27","NODE28","NODE33","NODE34","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:792 		RANDOM NODE PICKED FOR PALACE: NODE23
+    Z2Randomizer.js:793 		PLACING PALACE P3 in RAFT_DOCK_W
+    Z2Randomizer.js:664 CONTINENT: 1
+    Z2Randomizer.js:672 	CONTINENT EXITS:       CAVE_A,CAVE_K
+    Z2Randomizer.js:684 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:689 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:689 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:689 				ISOLATION 16:	["NODE92"]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [2]
+    Z2Randomizer.js:693 			DISCONNECTED  [0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+    Z2Randomizer.js:764 			CONNECTING    CAVE_D_W to CAVE_B_E via CAVE_B_E and CAVE_B_W
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE82","NODE97"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE87","NODE133"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:689 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:689 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:689 				ISOLATION 16:	["NODE92"]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [2,0]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+    Z2Randomizer.js:764 			CONNECTING    CAVE_A to CAVE_N_N via ELEVATOR_CAVE_G_E_TL and ELEVATOR_CAVE_G_E_BL
+    Z2Randomizer.js:764 			CONNECTING    CAVE_A to CAVE_M_E via ELEVATOR_CAVE_G_E_TL and ELEVATOR_CAVE_G_W_BR
+    Z2Randomizer.js:764 			CONNECTING    CAVE_A to CAVE_J_E via ELEVATOR_CAVE_G_E_TL and ELEVATOR_CAVE_G_W_TR
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE97"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE87","NODE133"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:689 				ISOLATION 5:	["NODE96","NODE134"]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:689 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [2,0,14,5]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,3,4,6,7,8,9,10,11,12,13,15]
+    Z2Randomizer.js:764 			CONNECTING    CAVE_F_W to CAVE_L_S via CAVE_R_N and CAVE_R_S
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE97"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:689 				ISOLATION 5:	["NODE96","NODE134"]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102","NODE103"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:689 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [2,0,14,5,8]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,3,4,6,7,9,10,11,12,13,15]
+    Z2Randomizer.js:764 			CONNECTING    CAVE_C_E to CAVE_L_N via CAVE_J_E and CAVE_J_W
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:689 				ISOLATION 5:	["NODE96","NODE134"]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102","NODE103"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:689 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [2,14,5,8,9]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,3,4,6,7,10,11,12,13,15]
+    Z2Randomizer.js:764 			CONNECTING    ELEVATOR_CAVE_G_W_TR to ELEVATOR_CAVE_G_W_BR via CAVE_P_E and CAVE_P_W
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:689 				ISOLATION 5:	["NODE134"]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102","NODE103"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_Q_E","CAVE_Q_W","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [2,14,5,8,9]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,3,4,6,7,10,11,12,13]
+    Z2Randomizer.js:764 			CONNECTING    ELEVATOR_CAVE_G_E_TL to HAMMER_CAVE via CAVE_C_W and CAVE_C_E
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:689 				ISOLATION 5:	["NODE134"]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102","NODE103"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_Q_E","CAVE_Q_W","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [14,5,8,9,13]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,3,4,6,7,10,11,12]
+    Z2Randomizer.js:764 			CONNECTING    ELEVATOR_CAVE_H_W_TR to CAVE_R_N via CAVE_Q_W and CAVE_Q_E
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:689 				ISOLATION 5:	[]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102","NODE103"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [14,8,9,13,12]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,3,4,6,7,10,11]
+    Z2Randomizer.js:764 			CONNECTING    CAVE_Q_W to CAVE_C_W via CAVE_I_N and CAVE_I_S
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:689 				ISOLATION 5:	[]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102","NODE103"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	[]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [14,8,9,13,6]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,3,4,7,10,11]
+    Z2Randomizer.js:764 			CONNECTING    CAVE_J_W to ELEVATOR_CAVE_H_E_TL via CAVE_M_E and CAVE_M_W
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93"]
+    Z2Randomizer.js:689 				ISOLATION 5:	[]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	[]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE116","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_L_N","CAVE_L_S","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [14,8,9,13,6,4]
+    Z2Randomizer.js:693 			DISCONNECTED  [1,3,7,10,11]
+    Z2Randomizer.js:764 			CONNECTING    DM_MAGIC to CAVE_B_W via CAVE_D_E and CAVE_D_W
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93"]
+    Z2Randomizer.js:689 				ISOLATION 5:	[]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	[]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_L_N","CAVE_L_S","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [14,8,9,13,6,4,1]
+    Z2Randomizer.js:693 			DISCONNECTED  [3,7,10,11]
+    Z2Randomizer.js:764 			CONNECTING    CAVE_K to ELEVATOR_CAVE_H_D_BL via CAVE_L_S and CAVE_L_N
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93"]
+    Z2Randomizer.js:689 				ISOLATION 5:	[]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	["NODE100"]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	[]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	[]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:692 			CONNECTED     [8,9,13,6,4,1,7]
+    Z2Randomizer.js:693 			DISCONNECTED  [3,10,11]
+    Z2Randomizer.js:764 			CONNECTING    CAVE_E_S to CAVE_P_W via ELEVATOR_CAVE_H_N_BR and ELEVATOR_CAVE_H_D_BL
+    Z2Randomizer.js:764 			CONNECTING    CAVE_E_S to CAVE_F_E via ELEVATOR_CAVE_H_N_BR and ELEVATOR_CAVE_H_E_TL
+    Z2Randomizer.js:764 			CONNECTING    CAVE_E_S to CAVE_P_E via ELEVATOR_CAVE_H_N_BR and ELEVATOR_CAVE_H_W_TR
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93"]
+    Z2Randomizer.js:689 				ISOLATION 5:	[]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	[]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	[]
+    Z2Randomizer.js:689 				ISOLATION 13:	["NODE114","NODE135"]
+    Z2Randomizer.js:689 				ISOLATION 14:	[]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S"]
+    Z2Randomizer.js:692 			CONNECTED     [8,9,13,6,4,1,10,3,11]
+    Z2Randomizer.js:693 			DISCONNECTED  []
+    Z2Randomizer.js:764 			CONNECTING    CAVE_N_S to CAVE_R_S via CAVE_N_S and CAVE_N_N
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93"]
+    Z2Randomizer.js:689 				ISOLATION 5:	[]
+    Z2Randomizer.js:689 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:689 				ISOLATION 7:	[]
+    Z2Randomizer.js:689 				ISOLATION 8:	["NODE102"]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	[]
+    Z2Randomizer.js:689 				ISOLATION 13:	[]
+    Z2Randomizer.js:689 				ISOLATION 14:	[]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_O_N","CAVE_O_S"]
+    Z2Randomizer.js:692 			CONNECTED     [8,9,6,4,1,10,3,11]
+    Z2Randomizer.js:693 			DISCONNECTED  []
+    Z2Randomizer.js:764 			CONNECTING    CAVE_E_N to ELEVATOR_CAVE_H_N_BR via CAVE_O_S and CAVE_O_N
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE85"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93"]
+    Z2Randomizer.js:689 				ISOLATION 5:	[]
+    Z2Randomizer.js:689 				ISOLATION 6:	[]
+    Z2Randomizer.js:689 				ISOLATION 7:	[]
+    Z2Randomizer.js:689 				ISOLATION 8:	[]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	["NODE108"]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	[]
+    Z2Randomizer.js:689 				ISOLATION 13:	[]
+    Z2Randomizer.js:689 				ISOLATION 14:	[]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W"]
+    Z2Randomizer.js:692 			CONNECTED     [9,4,1,10,3,11]
+    Z2Randomizer.js:693 			DISCONNECTED  []
+    Z2Randomizer.js:764 			CONNECTING    CAVE_D_E to CAVE_O_N via CAVE_E_S and CAVE_E_N
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	[]
+    Z2Randomizer.js:689 				ISOLATION 1:	[]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE89"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE90","NODE91","NODE93"]
+    Z2Randomizer.js:689 				ISOLATION 5:	[]
+    Z2Randomizer.js:689 				ISOLATION 6:	[]
+    Z2Randomizer.js:689 				ISOLATION 7:	[]
+    Z2Randomizer.js:689 				ISOLATION 8:	[]
+    Z2Randomizer.js:689 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:689 				ISOLATION 10:	[]
+    Z2Randomizer.js:689 				ISOLATION 11:	["NODE111"]
+    Z2Randomizer.js:689 				ISOLATION 12:	[]
+    Z2Randomizer.js:689 				ISOLATION 13:	[]
+    Z2Randomizer.js:689 				ISOLATION 14:	[]
+    Z2Randomizer.js:689 				ISOLATION 15:	[]
+    Z2Randomizer.js:689 				ISOLATION 16:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["CAVE_F_E","CAVE_F_W"]
+    Z2Randomizer.js:692 			CONNECTED     [9,4,3,11]
+    Z2Randomizer.js:693 			DISCONNECTED  []
+    Z2Randomizer.js:764 			CONNECTING    CAVE_M_W to CAVE_I_S via CAVE_F_W and CAVE_F_E
+    Z2Randomizer.js:769 	RP2: PLACING EXITS
+    Z2Randomizer.js:771 		CONTINENT NODES LEFT: ["NODE90","NODE93","NODE107","NODE111"]
+    Z2Randomizer.js:778 		RANDOM NODE PICKED FOR EXIT: NODE93
+    Z2Randomizer.js:779 		PLACING EXIT CAVE_A in ELEVATOR_CAVE_G_E_BL
+    Z2Randomizer.js:771 		CONTINENT NODES LEFT: ["NODE90","NODE107","NODE111"]
+    Z2Randomizer.js:778 		RANDOM NODE PICKED FOR EXIT: NODE107
+    Z2Randomizer.js:779 		PLACING EXIT CAVE_K in CAVE_O_S
+    Z2Randomizer.js:783 	RP3: PLACING PALACES
+    Z2Randomizer.js:664 CONTINENT: 2
+    Z2Randomizer.js:672 	CONTINENT EXITS:       MAZE_ISLAND_BRIDGE,RAFT_DOCK_E
+    Z2Randomizer.js:684 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE54","NODE55"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE63","NODE64","NODE65"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE66","NODE129"]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_1_ENTRANCE","DEATH_VALLEY_CAVE_1_EXIT","DEATH_VALLEY_CAVE_2_ENTRANCE","DEATH_VALLEY_CAVE_2_EXIT","FIRE_TOWN_CAVE_ENTRANCE","FIRE_TOWN_CAVE_EXIT","SPELL_TOWN_CAVE_ENTRANCE","SPELL_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:692 			CONNECTED     [4]
+    Z2Randomizer.js:693 			DISCONNECTED  [0,1,2,3]
+    Z2Randomizer.js:764 			CONNECTING    DEATH_VALLEY_CAVE_1_ENTRANCE to SPELL_TOWN_CAVE_EXIT via FIRE_TOWN_CAVE_ENTRANCE and FIRE_TOWN_CAVE_EXIT
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE55"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE63","NODE64","NODE65"]
+    Z2Randomizer.js:689 				ISOLATION 4:	["NODE129"]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_1_ENTRANCE","DEATH_VALLEY_CAVE_1_EXIT","DEATH_VALLEY_CAVE_2_ENTRANCE","DEATH_VALLEY_CAVE_2_EXIT","SPELL_TOWN_CAVE_ENTRANCE","SPELL_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:692 			CONNECTED     [4,2]
+    Z2Randomizer.js:693 			DISCONNECTED  [0,1,3]
+    Z2Randomizer.js:764 			CONNECTING    GP to DEATH_VALLEY_CAVE_2_EXIT via SPELL_TOWN_CAVE_EXIT and SPELL_TOWN_CAVE_ENTRANCE
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:689 				ISOLATION 2:	["NODE55"]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE64","NODE65"]
+    Z2Randomizer.js:689 				ISOLATION 4:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_1_ENTRANCE","DEATH_VALLEY_CAVE_1_EXIT","DEATH_VALLEY_CAVE_2_ENTRANCE","DEATH_VALLEY_CAVE_2_EXIT"]
+    Z2Randomizer.js:692 			CONNECTED     [2,3]
+    Z2Randomizer.js:693 			DISCONNECTED  [0,1]
+    Z2Randomizer.js:764 			CONNECTING    SPELL_TOWN to THUNDER_TOWN_N_BRIDGE via DEATH_VALLEY_CAVE_2_ENTRANCE and DEATH_VALLEY_CAVE_2_EXIT
+    Z2Randomizer.js:686 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:687 			ISOLATION ZONES:
+    Z2Randomizer.js:689 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:689 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:689 				ISOLATION 2:	[]
+    Z2Randomizer.js:689 				ISOLATION 3:	["NODE64","NODE65"]
+    Z2Randomizer.js:689 				ISOLATION 4:	[]
+    Z2Randomizer.js:691 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_1_ENTRANCE","DEATH_VALLEY_CAVE_1_EXIT"]
+    Z2Randomizer.js:692 			CONNECTED     [3,1]
+    Z2Randomizer.js:693 			DISCONNECTED  [0]
+    Z2Randomizer.js:764 			CONNECTING    DEATH_VALLEY_BATTLE_3 to MAZE_ISLAND_BRIDGE via DEATH_VALLEY_CAVE_1_ENTRANCE and DEATH_VALLEY_CAVE_1_EXIT
+    Z2Randomizer.js:769 	RP2: PLACING EXITS
+    Z2Randomizer.js:771 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE47","NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE65","NODE67","NODE68","NODE69","NODE70","NODE71","NODE73","NODE74","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:778 		RANDOM NODE PICKED FOR EXIT: NODE61
+    Z2Randomizer.js:779 		PLACING EXIT MAZE_ISLAND_BRIDGE in DEATH_VALLEY_BATTLE_2
+    Z2Randomizer.js:771 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE47","NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE57","NODE58","NODE59","NODE60","NODE62","NODE65","NODE67","NODE68","NODE69","NODE70","NODE71","NODE73","NODE74","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:778 		RANDOM NODE PICKED FOR EXIT: NODE77
+    Z2Randomizer.js:779 		PLACING EXIT RAFT_DOCK_E in P5_HEART
+    Z2Randomizer.js:783 	RP3: PLACING PALACES
+    Z2Randomizer.js:785 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE47","NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE57","NODE58","NODE59","NODE60","NODE62","NODE65","NODE67","NODE68","NODE69","NODE70","NODE71","NODE73","NODE74","NODE75","NODE76","NODE78","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:792 		RANDOM NODE PICKED FOR PALACE: NODE50
+    Z2Randomizer.js:793 		PLACING PALACE GP in WILSON_FENCE_3
+    Z2Randomizer.js:785 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE47","NODE48","NODE49","NODE51","NODE52","NODE53","NODE57","NODE58","NODE59","NODE60","NODE62","NODE65","NODE67","NODE68","NODE69","NODE70","NODE71","NODE73","NODE74","NODE75","NODE76","NODE78","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:792 		RANDOM NODE PICKED FOR PALACE: NODE68
+    Z2Randomizer.js:793 		PLACING PALACE P5 in DEATH_VALLEY_500P_BAG
+    Z2Randomizer.js:785 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE47","NODE48","NODE49","NODE51","NODE52","NODE53","NODE57","NODE58","NODE59","NODE60","NODE62","NODE65","NODE67","NODE69","NODE70","NODE71","NODE73","NODE74","NODE75","NODE76","NODE78","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:792 		RANDOM NODE PICKED FOR PALACE: NODE131
+    Z2Randomizer.js:793 		PLACING PALACE P6 in THUNDER_TOWN_SWAMP_LIFE
+    Z2Randomizer.js:664 CONTINENT: 3
+    Z2Randomizer.js:672 	CONTINENT EXITS:       EAST_HYRULE_BRIDGE
+    Z2Randomizer.js:684 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:769 	RP2: PLACING EXITS
+    Z2Randomizer.js:771 		CONTINENT NODES LEFT: ["NODE118","NODE119","NODE120","NODE121","NODE122","NODE123","NODE124","NODE125","NODE126","NODE127","NODE128"]
+    Z2Randomizer.js:778 		RANDOM NODE PICKED FOR EXIT: NODE126
+    Z2Randomizer.js:779 		PLACING EXIT EAST_HYRULE_BRIDGE in MAZE_ISLAND_FORCED_BATTLE_7
+    Z2Randomizer.js:783 	RP3: PLACING PALACES
+    Z2Randomizer.js:785 		CONTINENT NODES LEFT: ["NODE118","NODE119","NODE120","NODE121","NODE122","NODE123","NODE124","NODE125","NODE127","NODE128"]
+    Z2Randomizer.js:792 		RANDOM NODE PICKED FOR PALACE: NODE120
+    Z2Randomizer.js:793 		PLACING PALACE P4 in MAZE_ISLAND_FORCED_BATTLE_1
+    Z2Randomizer.js:803 PLACING NORTH CASTLE
+    Z2Randomizer.js:807 	CHECKING ISOLATION ZONE: NODE4,NODE5,NODE6,NODE32
+    Z2Randomizer.js:807 	CHECKING ISOLATION ZONE: NODE0,NODE1,NODE2,NODE3,NODE7,NODE8,NODE9,NODE10,NODE11,NODE12,NODE13,NODE14,NODE15,NODE16,NODE17,NODE18,NODE19,NODE20,NODE21,NODE22,NODE23,NODE24,NODE25,NODE27,NODE28,NODE30,NODE33,NODE35,NODE38,NODE39,NODE40,NODE41,NODE42,NODE43,NODE44
+    Z2Randomizer.js:807 	CHECKING ISOLATION ZONE: NODE26,NODE34
+    Z2Randomizer.js:807 	CHECKING ISOLATION ZONE: NODE29,NODE37
+    Z2Randomizer.js:807 	CHECKING ISOLATION ZONE: NODE31,NODE36
+    Z2Randomizer.js:835 	PLACED NORTH CASTLE AT FAIRY_TOWN
+    Z2Randomizer.js:847 **********************************************************************************************************************
+    Z2Randomizer.js:848 ITERATION 0
+    Z2Randomizer.js:849 	ITEMS:                
+    Z2Randomizer.js:850 	SPELLS:               
+    Z2Randomizer.js:851 	ABILITIES:            
+    Z2Randomizer.js:852 	COMPLETABLE PALACES:  P1
+    Z2Randomizer.js:853 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,HANDY_GLOVE,FAIRY,RAFT,JUMP
+    Z2Randomizer.js:600 PLACING ITEM RAFT
+    Z2Randomizer.js:859 	NEXT REMEDY:          RAFT
+    Z2Randomizer.js:861 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:862 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:865 		NODE24           FAIRY_TOWN                       NORTH_CASTLE                     []
+    Z2Randomizer.js:865 		NODE23           RAFT_DOCK_W                      P3                               []
+    Z2Randomizer.js:865 		NODE35           KINGS_TOMB                                                        []
+    Z2Randomizer.js:865 		NODE22           RED_JAR_CEM                      P1                               []
+    Z2Randomizer.js:865 		NODE25           FAIRY_CAVE_HOLE                                                   []
+    Z2Randomizer.js:865 		NODE21           EX_LIFE_BEACH                                                     []
+    Z2Randomizer.js:865 		NODE30           DM_BRIDGE_EXIT_E                 DM_ENTRANCE                      []
+    Z2Randomizer.js:865 		NODE93           ELEVATOR_CAVE_G_E_BL             CAVE_A                           []
+    Z2Randomizer.js:865 		NODE90           CAVE_I_N                                                          []
+    Z2Randomizer.js:865 		NODE91           CAVE_M_W                         CAVE_F_W                         []
+    Z2Randomizer.js:865 		NODE89           CAVE_I_S                         CAVE_F_E                         []
+    Z2Randomizer.js:865 		NODE88           CAVE_F_E                         ELEVATOR_CAVE_H_E_TL             []
+    Z2Randomizer.js:865 		NODE110          CAVE_P_E                         ELEVATOR_CAVE_H_W_TR             []
+    Z2Randomizer.js:865 		NODE111          CAVE_Q_E                                                          []
+    Z2Randomizer.js:865 		NODE109          CAVE_P_W                         ELEVATOR_CAVE_H_D_BL             []
+    Z2Randomizer.js:865 		NODE108          CAVE_O_N                         CAVE_E_N                         []
+    Z2Randomizer.js:865 		NODE85           CAVE_D_E                         CAVE_E_S                         []
+    Z2Randomizer.js:865 		NODE84           CAVE_B_W                         CAVE_D_W                         []
+    Z2Randomizer.js:865 		NODE116          DM_MAGIC                         CAVE_D_E                         []
+    Z2Randomizer.js:865 		NODE114          CAVE_R_S                         CAVE_N_N                         []
+    Z2Randomizer.js:865 		NODE135          CAVE_N_S                         CAVE_N_S                         []
+    Z2Randomizer.js:865 		NODE115          HAMMER_CAVE                      CAVE_C_E                         []
+    Z2Randomizer.js:865 		NODE133          ELEVATOR_CAVE_G_E_TL             CAVE_C_W                         []
+    Z2Randomizer.js:865 		NODE86           CAVE_D_W                         CAVE_B_E                         []
+    Z2Randomizer.js:865 		NODE87           CAVE_F_W                         CAVE_R_N                         []
+    Z2Randomizer.js:865 		NODE105          CAVE_L_S                         CAVE_R_S                         []
+    Z2Randomizer.js:865 		NODE102          ELEVATOR_CAVE_H_N_BR             CAVE_O_N                         []
+    Z2Randomizer.js:865 		NODE103          CAVE_J_W                         CAVE_M_E                         []
+    Z2Randomizer.js:865 		NODE94           ELEVATOR_CAVE_H_E_TL             CAVE_M_W                         []
+    Z2Randomizer.js:865 		NODE99           CAVE_E_N                         CAVE_O_S                         []
+    Z2Randomizer.js:865 		NODE98           CAVE_C_W                         CAVE_I_S                         []
+    Z2Randomizer.js:865 		NODE112          CAVE_Q_W                         CAVE_I_N                         []
+    Z2Randomizer.js:865 		NODE113          CAVE_R_N                         CAVE_Q_E                         []
+    Z2Randomizer.js:865 		NODE134          ELEVATOR_CAVE_H_W_TR             CAVE_Q_W                         []
+    Z2Randomizer.js:865 		NODE96           ELEVATOR_CAVE_G_W_TR             CAVE_P_E                         []
+    Z2Randomizer.js:865 		NODE104          CAVE_J_E                         ELEVATOR_CAVE_G_W_TR             []
+    Z2Randomizer.js:865 		NODE82           CAVE_A                           ELEVATOR_CAVE_G_E_TL             []
+    Z2Randomizer.js:865 		NODE83           CAVE_B_E                         CAVE_B_W                         []
+    Z2Randomizer.js:865 		NODE97           CAVE_C_E                         CAVE_J_E                         []
+    Z2Randomizer.js:865 		NODE106          CAVE_L_N                         CAVE_J_W                         []
+    Z2Randomizer.js:865 		NODE107          CAVE_O_S                         CAVE_K                           []
+    Z2Randomizer.js:865 		NODE5            BUBBLE_CLIFF                     DM_EXIT                          []
+    Z2Randomizer.js:865 		NODE6            HEART_CLIFF                      DM_BRIDGE_EXIT_W                 []
+    Z2Randomizer.js:865 		NODE26           FAIRY_CAVE                       DM_BRIDGE_EXIT_E                 []
+    Z2Randomizer.js:865 		NODE34           P3                                                                []
+    Z2Randomizer.js:865 		NODE4            PARAPA_CAVE_N                    JUMP_CAVE_S                      []
+    Z2Randomizer.js:865 		NODE32           P1                               FAIRY_CAVE                       []
+    Z2Randomizer.js:865 		NODE29           LIFE_TOWN_S                      FAIRY_CAVE_HOLE                  []
+    Z2Randomizer.js:865 		NODE37           DM_ENTRANCE                      PARAPA_CAVE_N                    []
+    Z2Randomizer.js:865 		NODE18           CAVE_200P                        PARAPA_CAVE_S                    []
+    Z2Randomizer.js:865 		NODE12           JUMP_CAVE_S                                                       []
+    Z2Randomizer.js:865 		NODE13           MEDICINE_CAVE_FAIRY              P2                               []
+    Z2Randomizer.js:865 		NODE15           EX_LIFE_SWAMP_1                                                   []
+    Z2Randomizer.js:865 		NODE14           BAGUS_CABIN                                                       []
+    Z2Randomizer.js:865 		NODE40           LOST_WOODS_1                                                      []
+    Z2Randomizer.js:865 		NODE41           LOST_WOODS_2                                                      []
+    Z2Randomizer.js:865 		NODE42           LOST_WOODS_3                                                      []
+    Z2Randomizer.js:865 		NODE43           LOST_WOODS_4                                                      []
+    Z2Randomizer.js:865 		NODE44           LOST_WOODS_5                                                      []
+    Z2Randomizer.js:865 		NODE33           P2                                                                []
+    Z2Randomizer.js:865 		NODE19           P2_RED_JAR                                                        []
+    Z2Randomizer.js:865 		NODE20           RED_JAR_SWAMP                    CAVE_200P                        [RAFT]
+    Z2Randomizer.js:865 		NODE27           LIFE_TOWN_BRIDGE_NS                                               []
+    Z2Randomizer.js:865 		NODE28           LIFE_TOWN_N                                                       []
+    Z2Randomizer.js:865 		NODE38           LIFE_TOWN_BRIDGE_EW                                               []
+    Z2Randomizer.js:865 		NODE11           FOREST_100P                      RAFT_DOCK_W                      []
+    Z2Randomizer.js:865 		NODE39           LIFE_TOWN_FAIRY                  LIFE_TOWN_S                      []
+    Z2Randomizer.js:865 		NODE31           DM_BRIDGE_EXIT_W                 JUMP_CAVE_N                      []
+    Z2Randomizer.js:865 		NODE36           DM_EXIT                          LIFE_TOWN_N                      []
+    Z2Randomizer.js:865 		NODE136          CAVE_N_N                         ELEVATOR_CAVE_G_E_BL             []
+    Z2Randomizer.js:865 		NODE117          CAVE_K                           CAVE_L_S                         []
+    Z2Randomizer.js:865 		NODE101          ELEVATOR_CAVE_H_D_BL             CAVE_L_N                         []
+    Z2Randomizer.js:865 		NODE100          CAVE_E_S                         ELEVATOR_CAVE_H_N_BR             []
+    Z2Randomizer.js:865 		NODE92           CAVE_M_E                         ELEVATOR_CAVE_G_W_BR             []
+    Z2Randomizer.js:865 		NODE95           ELEVATOR_CAVE_G_W_BR             CAVE_P_W                         []
+    Z2Randomizer.js:847 **********************************************************************************************************************
+    Z2Randomizer.js:848 ITERATION 1
+    Z2Randomizer.js:849 	ITEMS:                RAFT
+    Z2Randomizer.js:850 	SPELLS:               
+    Z2Randomizer.js:851 	ABILITIES:            
+    Z2Randomizer.js:852 	COMPLETABLE PALACES:  P1
+    Z2Randomizer.js:853 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,HANDY_GLOVE,FAIRY,BOOTS,JUMP
+    Z2Randomizer.js:540 PLACING SPELL JUMP
+    Z2Randomizer.js:600 PLACING ITEM TROPHY
+    react_devtools_backend_compact.js:2367 TypeError: Cannot set properties of undefined (setting 'mappedLocation')
+        at e.placeRemedies (Z2Randomizer.js:633:44)
+        at e.placeRemedies (Z2Randomizer.js:559:22)
+        at e.placeItemsAndNodes (Z2Randomizer.js:857:18)
+        at e.randomize (Z2Randomizer.js:964:14)
+        at Home.jsx:47:24
+        at onClick (Home.jsx:119:25)
+        at Object.Me (react-dom.production.min.js:54:317)
+        at Ve (react-dom.production.min.js:54:471)
+        at react-dom.production.min.js:55:35
+        at Pr (react-dom.production.min.js:105:68)
+
+## Error Cause
+
+Trying to place an item in a continent that has only one accessible node and that node is already full or mapped.
+
+# Seed 2764438199
+
+## Logs
+
+    CONTINENT: 0
+    Z2Randomizer.js:709 	CONTINENT EXITS:       DM_ENTRANCE,DM_EXIT,RAFT_DOCK_W
+    Z2Randomizer.js:721 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5","NODE6","NODE32"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE26","NODE34"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE29","NODE37"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE31","NODE36"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","FAIRY_CAVE","FAIRY_CAVE_HOLE","JUMP_CAVE_N","JUMP_CAVE_S","LIFE_TOWN_N","LIFE_TOWN_S","PARAPA_CAVE_N","PARAPA_CAVE_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,2,3]
+    Z2Randomizer.js:801 			CONNECTING    DM_BRIDGE_EXIT_W to P3 via PARAPA_CAVE_S and PARAPA_CAVE_N
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5","NODE6","NODE32"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE26"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE29","NODE37"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE36"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","FAIRY_CAVE","FAIRY_CAVE_HOLE","JUMP_CAVE_N","JUMP_CAVE_S","LIFE_TOWN_N","LIFE_TOWN_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4,2]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,3]
+    Z2Randomizer.js:801 			CONNECTING    DM_EXIT to EX_LIFE_BEACH via DM_BRIDGE_EXIT_W and DM_BRIDGE_EXIT_E
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5","NODE6","NODE32"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE26"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE29","NODE37"]
+    Z2Randomizer.js:726 				ISOLATION 4:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["FAIRY_CAVE","FAIRY_CAVE_HOLE","JUMP_CAVE_N","JUMP_CAVE_S","LIFE_TOWN_N","LIFE_TOWN_S"]
+    Z2Randomizer.js:729 			CONNECTED     [2,1]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,3]
+    Z2Randomizer.js:801 			CONNECTING    RED_JAR_SWAMP to P1 via LIFE_TOWN_N and LIFE_TOWN_S
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5","NODE6"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE26"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE29","NODE37"]
+    Z2Randomizer.js:726 				ISOLATION 4:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["FAIRY_CAVE","FAIRY_CAVE_HOLE","JUMP_CAVE_N","JUMP_CAVE_S"]
+    Z2Randomizer.js:729 			CONNECTED     [2,1,0]
+    Z2Randomizer.js:730 			DISCONNECTED  [3]
+    Z2Randomizer.js:801 			CONNECTING    HEART_CLIFF to DM_ENTRANCE via JUMP_CAVE_N and JUMP_CAVE_S
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE26"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE29"]
+    Z2Randomizer.js:726 				ISOLATION 4:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["FAIRY_CAVE","FAIRY_CAVE_HOLE"]
+    Z2Randomizer.js:729 			CONNECTED     [2,1,0,3]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    LIFE_TOWN_S to FAIRY_CAVE_HOLE via FAIRY_CAVE and FAIRY_CAVE_HOLE
+    Z2Randomizer.js:806 	RP2: PLACING EXITS
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE2","NODE3","NODE4","NODE5","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE22","NODE23","NODE24","NODE26","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE39
+    Z2Randomizer.js:816 		PLACING EXIT DM_ENTRANCE in LIFE_TOWN_FAIRY
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE2","NODE3","NODE4","NODE5","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE22","NODE23","NODE24","NODE26","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE16
+    Z2Randomizer.js:816 		PLACING EXIT DM_EXIT in MEDICINE_CAVE
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE2","NODE3","NODE4","NODE5","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE17","NODE18","NODE19","NODE22","NODE23","NODE24","NODE26","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE2
+    Z2Randomizer.js:816 		PLACING EXIT RAFT_DOCK_W in TROPHY_CAVE
+    Z2Randomizer.js:820 	RP3: PLACING PALACES
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE3","NODE4","NODE5","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE17","NODE18","NODE19","NODE22","NODE23","NODE24","NODE26","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE23
+    Z2Randomizer.js:830 		PLACING PALACE P1 in RAFT_DOCK_W
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE3","NODE4","NODE5","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE17","NODE18","NODE19","NODE22","NODE24","NODE26","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE4
+    Z2Randomizer.js:830 		PLACING PALACE P2 in PARAPA_CAVE_N
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE0","NODE1","NODE3","NODE5","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE17","NODE18","NODE19","NODE22","NODE24","NODE26","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE0
+    Z2Randomizer.js:830 		PLACING PALACE P3 in NORTH_CASTLE
+    Z2Randomizer.js:701 CONTINENT: 1
+    Z2Randomizer.js:709 	CONTINENT EXITS:       CAVE_A,CAVE_K
+    Z2Randomizer.js:721 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	["NODE92"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [4]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,2,3,5,6,7,8,9,10,11,12,13,14,15,16]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_I_N to CAVE_N_N via ELEVATOR_CAVE_H_E_TL and ELEVATOR_CAVE_H_W_TR
+    Z2Randomizer.js:801 			CONNECTING    CAVE_I_N to CAVE_D_W via ELEVATOR_CAVE_H_E_TL and ELEVATOR_CAVE_H_N_BR
+    Z2Randomizer.js:801 			CONNECTING    CAVE_I_N to CAVE_M_E via ELEVATOR_CAVE_H_E_TL and ELEVATOR_CAVE_H_D_BL
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,2]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,3,5,6,7,8,9,10,11,12,13,15]
+    Z2Randomizer.js:801 			CONNECTING    ELEVATOR_CAVE_H_E_TL to CAVE_O_S via CAVE_N_S and CAVE_N_N
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91","NODE93"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,2,9]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,3,5,6,7,8,10,11,12,13,15]
+    Z2Randomizer.js:801 			CONNECTING    ELEVATOR_CAVE_G_E_BL to DM_MAGIC via CAVE_O_N and CAVE_O_S
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,2,9,13]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,3,5,6,7,8,10,11,12,15]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_F_W to CAVE_A via ELEVATOR_CAVE_G_W_BR and ELEVATOR_CAVE_G_E_BL
+    Z2Randomizer.js:801 			CONNECTING    CAVE_F_W to CAVE_D_E via ELEVATOR_CAVE_G_W_BR and ELEVATOR_CAVE_G_W_TR
+    Z2Randomizer.js:801 			CONNECTING    CAVE_F_W to CAVE_E_S via ELEVATOR_CAVE_G_W_BR and ELEVATOR_CAVE_G_E_TL
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE101"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,2,9,13,0,1,7]
+    Z2Randomizer.js:730 			DISCONNECTED  [3,5,6,8,10,11,12,15]
+    Z2Randomizer.js:801 			CONNECTING    ELEVATOR_CAVE_H_D_BL to ELEVATOR_CAVE_G_W_BR via CAVE_C_E and CAVE_C_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,2,9,13,0,1]
+    Z2Randomizer.js:730 			DISCONNECTED  [3,5,6,8,10,11,12]
+    Z2Randomizer.js:801 			CONNECTING    ELEVATOR_CAVE_G_E_TL to CAVE_R_N via CAVE_I_N and CAVE_I_S
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,9,13,0,1,12]
+    Z2Randomizer.js:730 			DISCONNECTED  [3,5,6,8,10,11]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_L_N to ELEVATOR_CAVE_G_W_TR via CAVE_P_E and CAVE_P_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,13,0,1,12,5]
+    Z2Randomizer.js:730 			DISCONNECTED  [3,6,8,10,11]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_R_S to CAVE_F_E via CAVE_J_E and CAVE_J_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE115","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,13,0,1,12,5,3]
+    Z2Randomizer.js:730 			DISCONNECTED  [6,8,10,11]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_N_S to CAVE_P_E via CAVE_D_W and CAVE_D_E
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE115"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,13,0,1,12,5,3,11]
+    Z2Randomizer.js:730 			DISCONNECTED  [6,8,10]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_Q_E to CAVE_E_N via CAVE_Q_W and CAVE_Q_E
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	[]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE115"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,13,0,1,12,5,3,6]
+    Z2Randomizer.js:730 			DISCONNECTED  [8,10]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_I_S to CAVE_J_W via CAVE_B_E and CAVE_B_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	[]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE91"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	[]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE115"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [4,14,13,0,1,12,5,6,8]
+    Z2Randomizer.js:730 			DISCONNECTED  [10]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_M_W to CAVE_O_N via CAVE_E_N and CAVE_E_S
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	[]
+    Z2Randomizer.js:726 				ISOLATION 4:	[]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	[]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE115"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_F_E","CAVE_F_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [14,13,0,1,12,5,6,8,10]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    CAVE_K to HAMMER_CAVE via CAVE_F_E and CAVE_F_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	[]
+    Z2Randomizer.js:726 				ISOLATION 4:	[]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	[]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	[]
+    Z2Randomizer.js:726 				ISOLATION 14:	[]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [0,1,12,5,6,8,10]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    CAVE_L_S to ELEVATOR_CAVE_H_N_BR via CAVE_L_N and CAVE_L_S
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	[]
+    Z2Randomizer.js:726 				ISOLATION 4:	[]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	[]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	[]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	[]
+    Z2Randomizer.js:726 				ISOLATION 14:	[]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_M_E","CAVE_M_W","CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [0,1,12,5,6,10]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    CAVE_C_E to CAVE_Q_W via CAVE_M_E and CAVE_M_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE83"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	[]
+    Z2Randomizer.js:726 				ISOLATION 4:	[]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	[]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	[]
+    Z2Randomizer.js:726 				ISOLATION 12:	[]
+    Z2Randomizer.js:726 				ISOLATION 13:	[]
+    Z2Randomizer.js:726 				ISOLATION 14:	[]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_R_N","CAVE_R_S"]
+    Z2Randomizer.js:729 			CONNECTED     [0,1,5,6,10]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    CAVE_C_W to ELEVATOR_CAVE_H_W_TR via CAVE_R_N and CAVE_R_S
+    Z2Randomizer.js:806 	RP2: PLACING EXITS
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE83","NODE84","NODE104","NODE109"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE104
+    Z2Randomizer.js:816 		PLACING EXIT CAVE_A in CAVE_J_E
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE83","NODE84","NODE109"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE109
+    Z2Randomizer.js:816 		PLACING EXIT CAVE_K in CAVE_P_W
+    Z2Randomizer.js:820 	RP3: PLACING PALACES
+    Z2Randomizer.js:701 CONTINENT: 2
+    Z2Randomizer.js:709 	CONTINENT EXITS:       MAZE_ISLAND_BRIDGE,RAFT_DOCK_E
+    Z2Randomizer.js:721 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE54","NODE55"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE63","NODE64","NODE65"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE66","NODE129"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_1_ENTRANCE","DEATH_VALLEY_CAVE_1_EXIT","DEATH_VALLEY_CAVE_2_ENTRANCE","DEATH_VALLEY_CAVE_2_EXIT","FIRE_TOWN_CAVE_ENTRANCE","FIRE_TOWN_CAVE_EXIT","SPELL_TOWN_CAVE_ENTRANCE","SPELL_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:729 			CONNECTED     [0]
+    Z2Randomizer.js:730 			DISCONNECTED  [1,2,3,4]
+    Z2Randomizer.js:801 			CONNECTING    FIRE_TOWN_RED_JAR to DEATH_VALLEY_BATTLE_3 via DEATH_VALLEY_CAVE_1_ENTRANCE and DEATH_VALLEY_CAVE_1_EXIT
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE54","NODE55"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE63","NODE65"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE66","NODE129"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_2_ENTRANCE","DEATH_VALLEY_CAVE_2_EXIT","FIRE_TOWN_CAVE_ENTRANCE","FIRE_TOWN_CAVE_EXIT","SPELL_TOWN_CAVE_ENTRANCE","SPELL_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:729 			CONNECTED     [0,3]
+    Z2Randomizer.js:730 			DISCONNECTED  [1,2,4]
+    Z2Randomizer.js:801 			CONNECTING    FIRE_TOWN_CAVE_EXIT to DEATH_VALLEY_RED_JAR via FIRE_TOWN_CAVE_EXIT and FIRE_TOWN_CAVE_ENTRANCE
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE45","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE54","NODE55"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE63","NODE65"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE66","NODE129"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_2_ENTRANCE","DEATH_VALLEY_CAVE_2_EXIT","SPELL_TOWN_CAVE_ENTRANCE","SPELL_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:729 			CONNECTED     [0,3,1]
+    Z2Randomizer.js:730 			DISCONNECTED  [2,4]
+    Z2Randomizer.js:801 			CONNECTING    DEATH_VALLEY_BATTLE_1 to DEATH_VALLEY_CAVE_1_ENTRANCE via DEATH_VALLEY_CAVE_2_ENTRANCE and DEATH_VALLEY_CAVE_2_EXIT
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE45","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE61","NODE62","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE54","NODE55"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE63","NODE65"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE129"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["SPELL_TOWN_CAVE_ENTRANCE","SPELL_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:729 			CONNECTED     [0,3,1,4]
+    Z2Randomizer.js:730 			DISCONNECTED  [2]
+    Z2Randomizer.js:801 			CONNECTING    REFLECT_TOWN to SPELL_TOWN via SPELL_TOWN_CAVE_ENTRANCE and SPELL_TOWN_CAVE_EXIT
+    Z2Randomizer.js:806 	RP2: PLACING EXITS
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE45","NODE47","NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE54","NODE56","NODE57","NODE58","NODE59","NODE61","NODE62","NODE63","NODE65","NODE68","NODE69","NODE70","NODE72","NODE73","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE129","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE51
+    Z2Randomizer.js:816 		PLACING EXIT MAZE_ISLAND_BRIDGE in P6_HEART
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE45","NODE47","NODE48","NODE49","NODE50","NODE52","NODE53","NODE54","NODE56","NODE57","NODE58","NODE59","NODE61","NODE62","NODE63","NODE65","NODE68","NODE69","NODE70","NODE72","NODE73","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE129","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE72
+    Z2Randomizer.js:816 		PLACING EXIT RAFT_DOCK_E in MAZE_ISLAND_BRIDGE
+    Z2Randomizer.js:820 	RP3: PLACING PALACES
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE45","NODE47","NODE48","NODE49","NODE50","NODE52","NODE53","NODE54","NODE56","NODE57","NODE58","NODE59","NODE61","NODE62","NODE63","NODE65","NODE68","NODE69","NODE70","NODE73","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE129","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE47
+    Z2Randomizer.js:830 		PLACING PALACE GP in FIRE_TOWN_CAVE_ENTRANCE
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE45","NODE48","NODE49","NODE50","NODE52","NODE53","NODE54","NODE56","NODE57","NODE58","NODE59","NODE61","NODE62","NODE63","NODE65","NODE68","NODE69","NODE70","NODE73","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE129","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE65
+    Z2Randomizer.js:830 		PLACING PALACE P5 in DEATH_VALLEY_CAVE_1_EXIT
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE45","NODE48","NODE49","NODE50","NODE52","NODE53","NODE54","NODE56","NODE57","NODE58","NODE59","NODE61","NODE62","NODE63","NODE68","NODE69","NODE70","NODE73","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE129","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE79
+    Z2Randomizer.js:830 		PLACING PALACE P6 in P5
+    Z2Randomizer.js:701 CONTINENT: 3
+    Z2Randomizer.js:709 	CONTINENT EXITS:       EAST_HYRULE_BRIDGE
+    Z2Randomizer.js:721 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:806 	RP2: PLACING EXITS
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE118","NODE119","NODE120","NODE121","NODE122","NODE123","NODE124","NODE125","NODE126","NODE127","NODE128"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE127
+    Z2Randomizer.js:816 		PLACING EXIT EAST_HYRULE_BRIDGE in P4
+    Z2Randomizer.js:820 	RP3: PLACING PALACES
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE118","NODE119","NODE120","NODE121","NODE122","NODE123","NODE124","NODE125","NODE126","NODE128"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE118
+    Z2Randomizer.js:830 		PLACING PALACE P4 in EAST_HYRULE_BRIDGE
+    Z2Randomizer.js:840 PLACING NORTH CASTLE
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE4,NODE5,NODE6,NODE32
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE0,NODE1,NODE2,NODE3,NODE7,NODE8,NODE9,NODE10,NODE11,NODE12,NODE13,NODE14,NODE15,NODE16,NODE17,NODE18,NODE19,NODE20,NODE21,NODE22,NODE23,NODE24,NODE25,NODE27,NODE28,NODE30,NODE33,NODE35,NODE38,NODE39,NODE40,NODE41,NODE42,NODE43,NODE44
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE26,NODE34
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE29,NODE37
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE31,NODE36
+    Z2Randomizer.js:872 	PLACED NORTH CASTLE AT PARAPA_CAVE_S
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 0
+    Z2Randomizer.js:886 	ITEMS:                
+    Z2Randomizer.js:887 	SPELLS:               
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      DOWNSTAB,HANDY_GLOVE,RAFT,HAMMER
+    Z2Randomizer.js:645 PLACING ITEM HANDY_GLOVE
+    Z2Randomizer.js:896 	NEXT REMEDY:          HANDY_GLOVE
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE3            PARAPA_CAVE_S                    NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE0            NORTH_CASTLE                     P3                               []
+    Z2Randomizer.js:902 		NODE1            MAGIC_CAVE                                                        []
+    Z2Randomizer.js:902 		NODE2            TROPHY_CAVE                      RAFT_DOCK_W                      []
+    Z2Randomizer.js:902 		NODE7            JUMP_CAVE_N                      HEART_CLIFF                      [HANDY_GLOVE]
+    Z2Randomizer.js:902 		NODE8            SHIELD_TOWN                                                       []
+    Z2Randomizer.js:902 		NODE9            JUMP_TOWN                                                         []
+    Z2Randomizer.js:902 		NODE10           FOREST_50P                                                        []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 1
+    Z2Randomizer.js:886 	ITEMS:                HANDY_GLOVE
+    Z2Randomizer.js:887 	SPELLS:               
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      DOWNSTAB,RAFT,HAMMER
+    Z2Randomizer.js:609 PLACING ABILITY DOWNSTAB
+    Z2Randomizer.js:585 PLACING SPELL JUMP
+    Z2Randomizer.js:645 PLACING ITEM TROPHY
+    Z2Randomizer.js:896 	NEXT REMEDY:          DOWNSTAB
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE3            PARAPA_CAVE_S                    NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE0            NORTH_CASTLE                     P3                               []
+    Z2Randomizer.js:902 		NODE1            MAGIC_CAVE                       JUMP_TOWN                        []
+    Z2Randomizer.js:902 		NODE2            TROPHY_CAVE                      RAFT_DOCK_W                      []
+    Z2Randomizer.js:902 		NODE7            JUMP_CAVE_N                      HEART_CLIFF                      [HANDY_GLOVE]
+    Z2Randomizer.js:902 		NODE8            SHIELD_TOWN                                                       []
+    Z2Randomizer.js:902 		NODE9            JUMP_TOWN                        FOREST_50P                       [TROPHY]
+    Z2Randomizer.js:902 		NODE10           FOREST_50P                       FAIRY_TOWN                       []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 2
+    Z2Randomizer.js:886 	ITEMS:                HANDY_GLOVE,TROPHY
+    Z2Randomizer.js:887 	SPELLS:               JUMP
+    Z2Randomizer.js:888 	ABILITIES:            DOWNSTAB
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P3
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      RAFT,HAMMER
+    Z2Randomizer.js:645 PLACING ITEM RAFT
+    Z2Randomizer.js:896 	NEXT REMEDY:          RAFT
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE3            PARAPA_CAVE_S                    NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE0            NORTH_CASTLE                     P3                               []
+    Z2Randomizer.js:902 		NODE1            MAGIC_CAVE                       JUMP_TOWN                        []
+    Z2Randomizer.js:902 		NODE2            TROPHY_CAVE                      RAFT_DOCK_W                      []
+    Z2Randomizer.js:902 		NODE7            JUMP_CAVE_N                      HEART_CLIFF                      [HANDY_GLOVE]
+    Z2Randomizer.js:902 		NODE8            SHIELD_TOWN                      CAVE_200P                        [RAFT]
+    Z2Randomizer.js:902 		NODE9            JUMP_TOWN                        FOREST_50P                       [TROPHY]
+    Z2Randomizer.js:902 		NODE10           FOREST_50P                       FAIRY_TOWN                       []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 3
+    Z2Randomizer.js:886 	ITEMS:                HANDY_GLOVE,TROPHY,RAFT
+    Z2Randomizer.js:887 	SPELLS:               JUMP
+    Z2Randomizer.js:888 	ABILITIES:            DOWNSTAB
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P3
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      CRYSTALS,THUNDER,BOOTS,HAMMER
+    Z2Randomizer.js:585 PLACING SPELL THUNDER
+    Z2Randomizer.js:582 PLACING MAGIC8
+    4Z2Randomizer.js:645 PLACING ITEM MAGIC_CONTAINER
+
+## Error Cause
+
+Thunder being placed extremely early on when there is no room to place magic containers
+
+# Seed 42294917
+
+## Logs
+
+    CONTINENT: 0
+    Z2Randomizer.js:709 	CONTINENT EXITS:       DM_ENTRANCE,DM_EXIT,RAFT_DOCK_W
+    Z2Randomizer.js:721 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5","NODE6","NODE32"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE38","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE26","NODE34"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE29","NODE37"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE31","NODE36"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","FAIRY_CAVE","FAIRY_CAVE_HOLE","JUMP_CAVE_N","JUMP_CAVE_S","LIFE_TOWN_N","LIFE_TOWN_S","PARAPA_CAVE_N","PARAPA_CAVE_S"]
+    Z2Randomizer.js:729 			CONNECTED     [3]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,2,4]
+    Z2Randomizer.js:801 			CONNECTING    LIFE_TOWN_S to LIFE_TOWN_BRIDGE_EW via LIFE_TOWN_N and LIFE_TOWN_S
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5","NODE6","NODE32"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE26","NODE34"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE37"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE31","NODE36"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","FAIRY_CAVE","FAIRY_CAVE_HOLE","JUMP_CAVE_N","JUMP_CAVE_S","PARAPA_CAVE_N","PARAPA_CAVE_S"]
+    Z2Randomizer.js:729 			CONNECTED     [3,1]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,2,4]
+    Z2Randomizer.js:801 			CONNECTING    DM_ENTRANCE to P3 via PARAPA_CAVE_S and PARAPA_CAVE_N
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5","NODE6","NODE32"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE1","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE26"]
+    Z2Randomizer.js:726 				ISOLATION 3:	[]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE31","NODE36"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","FAIRY_CAVE","FAIRY_CAVE_HOLE","JUMP_CAVE_N","JUMP_CAVE_S"]
+    Z2Randomizer.js:729 			CONNECTED     [1,2]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,4]
+    Z2Randomizer.js:801 			CONNECTING    MAGIC_CAVE to P1 via FAIRY_CAVE_HOLE and FAIRY_CAVE
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5","NODE6"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE26"]
+    Z2Randomizer.js:726 				ISOLATION 3:	[]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE31","NODE36"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W","JUMP_CAVE_N","JUMP_CAVE_S"]
+    Z2Randomizer.js:729 			CONNECTED     [1,2,0]
+    Z2Randomizer.js:730 			DISCONNECTED  [4]
+    Z2Randomizer.js:801 			CONNECTING    FAIRY_CAVE to DM_EXIT via JUMP_CAVE_N and JUMP_CAVE_S
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE4","NODE5","NODE6"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE0","NODE2","NODE3","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE33","NODE35","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	[]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE31"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DM_BRIDGE_EXIT_E","DM_BRIDGE_EXIT_W"]
+    Z2Randomizer.js:729 			CONNECTED     [1,0,4]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    P2_RED_JAR to PARAPA_CAVE_N via DM_BRIDGE_EXIT_W and DM_BRIDGE_EXIT_E
+    Z2Randomizer.js:806 	RP2: PLACING EXITS
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE0","NODE2","NODE3","NODE5","NODE6","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE31","NODE33","NODE35","NODE39","NODE40","NODE41","NODE42","NODE43","NODE44"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE43
+    Z2Randomizer.js:816 		PLACING EXIT DM_ENTRANCE in LOST_WOODS_4
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE0","NODE2","NODE3","NODE5","NODE6","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE31","NODE33","NODE35","NODE39","NODE40","NODE41","NODE42","NODE44"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE40
+    Z2Randomizer.js:816 		PLACING EXIT DM_EXIT in LOST_WOODS_1
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE0","NODE2","NODE3","NODE5","NODE6","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE30","NODE31","NODE33","NODE35","NODE39","NODE41","NODE42","NODE44"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE30
+    Z2Randomizer.js:816 		PLACING EXIT RAFT_DOCK_W in DM_BRIDGE_EXIT_E
+    Z2Randomizer.js:820 	RP3: PLACING PALACES
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE0","NODE2","NODE3","NODE5","NODE6","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE27","NODE28","NODE31","NODE33","NODE35","NODE39","NODE41","NODE42","NODE44"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE24
+    Z2Randomizer.js:830 		PLACING PALACE P1 in FAIRY_TOWN
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE0","NODE2","NODE3","NODE5","NODE6","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE20","NODE21","NODE22","NODE23","NODE25","NODE27","NODE28","NODE31","NODE33","NODE35","NODE39","NODE41","NODE42","NODE44"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE33
+    Z2Randomizer.js:830 		PLACING PALACE P2 in P2
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE0","NODE2","NODE3","NODE5","NODE6","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15","NODE16","NODE17","NODE18","NODE20","NODE21","NODE22","NODE23","NODE25","NODE27","NODE28","NODE31","NODE35","NODE39","NODE41","NODE42","NODE44"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE35
+    Z2Randomizer.js:830 		PLACING PALACE P3 in KINGS_TOMB
+    Z2Randomizer.js:701 CONTINENT: 1
+    Z2Randomizer.js:709 	CONTINENT EXITS:       CAVE_A,CAVE_K
+    Z2Randomizer.js:721 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE96","NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE100","NODE101"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	["NODE92"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_L_N","CAVE_L_S","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [7]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,2,3,4,5,6,8,9,10,11,12,13,14,15,16]
+    Z2Randomizer.js:801 			CONNECTING    ELEVATOR_CAVE_H_D_BL to ELEVATOR_CAVE_G_W_TR via CAVE_L_N and CAVE_L_S
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE104","NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE100"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE102","NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	["NODE92"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","CAVE_R_N","CAVE_R_S","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [7,5]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,2,3,4,6,8,9,10,11,12,13,14,15,16]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_J_E to ELEVATOR_CAVE_H_N_BR via CAVE_R_S and CAVE_R_N
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE84","NODE85"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE100"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE103","NODE105"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	["NODE92"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_E_N","CAVE_E_S","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [7,5,8]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,2,3,4,6,9,10,11,12,13,14,15,16]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_L_S to CAVE_B_W via CAVE_E_S and CAVE_E_N
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE85"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE98","NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE100"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE103"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE106","NODE107"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	["NODE92"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","ELEVATOR_CAVE_G_E_BL","ELEVATOR_CAVE_G_E_TL","ELEVATOR_CAVE_G_W_BR","ELEVATOR_CAVE_G_W_TR","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [7,5,8,1]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,2,3,4,6,9,10,11,12,13,14,15,16]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_D_E to CAVE_L_N via ELEVATOR_CAVE_G_E_BL and ELEVATOR_CAVE_G_W_BR
+    Z2Randomizer.js:801 			CONNECTING    CAVE_D_E to CAVE_C_W via ELEVATOR_CAVE_G_E_BL and ELEVATOR_CAVE_G_W_TR
+    Z2Randomizer.js:801 			CONNECTING    CAVE_D_E to CAVE_M_E via ELEVATOR_CAVE_G_E_BL and ELEVATOR_CAVE_G_E_TL
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE83","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	["NODE100"]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE103"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_M_E","CAVE_M_W","CAVE_N_N","CAVE_N_S","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [7,5,8,9,6]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,2,3,4,10,11,12,13,14,15]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_E_S to CAVE_B_E via CAVE_N_S and CAVE_N_N
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE82","NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE103"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112","NODE113"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE116","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	["NODE95"]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_M_E","CAVE_M_W","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W","ELEVATOR_CAVE_H_D_BL","ELEVATOR_CAVE_H_E_TL","ELEVATOR_CAVE_H_N_BR","ELEVATOR_CAVE_H_W_TR"]
+    Z2Randomizer.js:729 			CONNECTED     [5,8,9,6,0]
+    Z2Randomizer.js:730 			DISCONNECTED  [2,3,4,10,11,12,13,14,15]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_A to CAVE_R_N via ELEVATOR_CAVE_H_W_TR and ELEVATOR_CAVE_H_D_BL
+    Z2Randomizer.js:801 			CONNECTING    CAVE_A to ELEVATOR_CAVE_G_W_BR via ELEVATOR_CAVE_H_W_TR and ELEVATOR_CAVE_H_E_TL
+    Z2Randomizer.js:801 			CONNECTING    CAVE_A to DM_MAGIC via ELEVATOR_CAVE_H_W_TR and ELEVATOR_CAVE_H_N_BR
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE103"]
+    Z2Randomizer.js:726 				ISOLATION 9:	["NODE107"]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE117","NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_M_E","CAVE_M_W","CAVE_O_N","CAVE_O_S","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [5,8,9,6,0,12,13]
+    Z2Randomizer.js:730 			DISCONNECTED  [2,3,4,10,11,14]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_O_S to CAVE_K via CAVE_O_S and CAVE_O_N
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE87","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE103"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE115","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_D_E","CAVE_D_W","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [5,8,6,0,12,13,14]
+    Z2Randomizer.js:730 			DISCONNECTED  [2,3,4,10,11]
+    Z2Randomizer.js:801 			CONNECTING    HAMMER_CAVE to CAVE_F_W via CAVE_D_W and CAVE_D_E
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88","NODE89"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	["NODE134"]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE103"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_F_E","CAVE_F_W","CAVE_I_N","CAVE_I_S","CAVE_J_E","CAVE_J_W","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [5,8,6,0,12,13,14,2]
+    Z2Randomizer.js:730 			DISCONNECTED  [3,4,10,11]
+    Z2Randomizer.js:801 			CONNECTING    ELEVATOR_CAVE_H_W_TR to CAVE_I_S via CAVE_I_S and CAVE_I_N
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE86","NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE91","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	[]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE103"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_F_E","CAVE_F_W","CAVE_J_E","CAVE_J_W","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [8,6,0,12,13,14,2,3]
+    Z2Randomizer.js:730 			DISCONNECTED  [4,10,11]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_D_W to CAVE_M_W via CAVE_J_W and CAVE_J_E
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	[]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	["NODE103"]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE110","NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_B_E","CAVE_B_W","CAVE_C_E","CAVE_C_W","CAVE_F_E","CAVE_F_W","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [8,6,0,12,13,14,2,3,4]
+    Z2Randomizer.js:730 			DISCONNECTED  [10,11]
+    Z2Randomizer.js:801 			CONNECTING    CAVE_J_W to CAVE_P_E via CAVE_B_E and CAVE_B_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE93","NODE94"]
+    Z2Randomizer.js:726 				ISOLATION 5:	[]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	[]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE108","NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_C_E","CAVE_C_W","CAVE_F_E","CAVE_F_W","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [6,0,12,13,14,2,3,4,11]
+    Z2Randomizer.js:730 			DISCONNECTED  [10]
+    Z2Randomizer.js:801 			CONNECTING    ELEVATOR_CAVE_H_E_TL to CAVE_O_N via CAVE_C_E and CAVE_C_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE97"]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE93"]
+    Z2Randomizer.js:726 				ISOLATION 5:	[]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	[]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE114","NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_F_E","CAVE_F_W","CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [6,0,12,13,14,2,3,4,11,10]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    CAVE_R_S to CAVE_C_E via CAVE_F_E and CAVE_F_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	[]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE93"]
+    Z2Randomizer.js:726 				ISOLATION 5:	[]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	[]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	["NODE111"]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	["NODE136"]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_M_E","CAVE_M_W","CAVE_P_E","CAVE_P_W","CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [6,12,13,14,2,3,4,11,10]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    CAVE_Q_E to CAVE_N_N via CAVE_P_E and CAVE_P_W
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	[]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE133"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE93"]
+    Z2Randomizer.js:726 				ISOLATION 5:	[]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	[]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	["NODE109"]
+    Z2Randomizer.js:726 				ISOLATION 11:	[]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	[]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_M_E","CAVE_M_W","CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [6,12,13,2,3,4,10]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    ELEVATOR_CAVE_G_E_TL to CAVE_P_W via CAVE_M_W and CAVE_M_E
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	[]
+    Z2Randomizer.js:726 				ISOLATION 1:	[]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE88"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE90","NODE93"]
+    Z2Randomizer.js:726 				ISOLATION 5:	[]
+    Z2Randomizer.js:726 				ISOLATION 6:	["NODE99"]
+    Z2Randomizer.js:726 				ISOLATION 7:	[]
+    Z2Randomizer.js:726 				ISOLATION 8:	[]
+    Z2Randomizer.js:726 				ISOLATION 9:	[]
+    Z2Randomizer.js:726 				ISOLATION 10:	[]
+    Z2Randomizer.js:726 				ISOLATION 11:	[]
+    Z2Randomizer.js:726 				ISOLATION 12:	["NODE112"]
+    Z2Randomizer.js:726 				ISOLATION 13:	["NODE135"]
+    Z2Randomizer.js:726 				ISOLATION 14:	[]
+    Z2Randomizer.js:726 				ISOLATION 15:	[]
+    Z2Randomizer.js:726 				ISOLATION 16:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["CAVE_Q_E","CAVE_Q_W"]
+    Z2Randomizer.js:729 			CONNECTED     [6,12,13,3,4]
+    Z2Randomizer.js:730 			DISCONNECTED  []
+    Z2Randomizer.js:801 			CONNECTING    CAVE_Q_W to CAVE_E_N via CAVE_Q_W and CAVE_Q_E
+    Z2Randomizer.js:806 	RP2: PLACING EXITS
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE88","NODE90","NODE93","NODE135"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE88
+    Z2Randomizer.js:816 		PLACING EXIT CAVE_A in CAVE_F_E
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE90","NODE93","NODE135"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE135
+    Z2Randomizer.js:816 		PLACING EXIT CAVE_K in CAVE_N_S
+    Z2Randomizer.js:820 	RP3: PLACING PALACES
+    Z2Randomizer.js:701 CONTINENT: 2
+    Z2Randomizer.js:709 	CONTINENT EXITS:       MAZE_ISLAND_BRIDGE,RAFT_DOCK_E
+    Z2Randomizer.js:721 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE54","NODE55"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE63","NODE64","NODE65"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE66","NODE129"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_1_ENTRANCE","DEATH_VALLEY_CAVE_1_EXIT","DEATH_VALLEY_CAVE_2_ENTRANCE","DEATH_VALLEY_CAVE_2_EXIT","FIRE_TOWN_CAVE_ENTRANCE","FIRE_TOWN_CAVE_EXIT","SPELL_TOWN_CAVE_ENTRANCE","SPELL_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:729 			CONNECTED     [4]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,2,3]
+    Z2Randomizer.js:801 			CONNECTING    DEATH_VALLEY_CAVE_1_ENTRANCE to SPELL_TOWN via DEATH_VALLEY_CAVE_1_EXIT and DEATH_VALLEY_CAVE_1_ENTRANCE
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE69","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:726 				ISOLATION 2:	["NODE54"]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE63","NODE64","NODE65"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE129"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_2_ENTRANCE","DEATH_VALLEY_CAVE_2_EXIT","FIRE_TOWN_CAVE_ENTRANCE","FIRE_TOWN_CAVE_EXIT","SPELL_TOWN_CAVE_ENTRANCE","SPELL_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:729 			CONNECTED     [4,2]
+    Z2Randomizer.js:730 			DISCONNECTED  [0,1,3]
+    Z2Randomizer.js:801 			CONNECTING    SPELL_TOWN_CAVE_EXIT to REFLECT_TOWN_CLIFF_2 via SPELL_TOWN_CAVE_ENTRANCE and SPELL_TOWN_CAVE_EXIT
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE63","NODE64","NODE65"]
+    Z2Randomizer.js:726 				ISOLATION 4:	["NODE129"]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["DEATH_VALLEY_CAVE_2_ENTRANCE","DEATH_VALLEY_CAVE_2_EXIT","FIRE_TOWN_CAVE_ENTRANCE","FIRE_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:729 			CONNECTED     [4,0]
+    Z2Randomizer.js:730 			DISCONNECTED  [1,3]
+    Z2Randomizer.js:801 			CONNECTING    GP to DEATH_VALLEY_CAVE_1_EXIT via DEATH_VALLEY_CAVE_2_ENTRANCE and DEATH_VALLEY_CAVE_2_EXIT
+    Z2Randomizer.js:723 		STARTING NEW PASSTHROUGH
+    Z2Randomizer.js:724 			ISOLATION ZONES:
+    Z2Randomizer.js:726 				ISOLATION 0:	["NODE45","NODE46","NODE47","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE81","NODE130"]
+    Z2Randomizer.js:726 				ISOLATION 1:	["NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE56","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE67","NODE68","NODE80","NODE131","NODE132"]
+    Z2Randomizer.js:726 				ISOLATION 2:	[]
+    Z2Randomizer.js:726 				ISOLATION 3:	["NODE63","NODE64"]
+    Z2Randomizer.js:726 				ISOLATION 4:	[]
+    Z2Randomizer.js:728 			LOCAL PASSES  ["FIRE_TOWN_CAVE_ENTRANCE","FIRE_TOWN_CAVE_EXIT"]
+    Z2Randomizer.js:729 			CONNECTED     [0,3]
+    Z2Randomizer.js:730 			DISCONNECTED  [1]
+    Z2Randomizer.js:801 			CONNECTING    DEATH_VALLEY_CAVE_2_EXIT to THUNDER_TOWN_N_BRIDGE via FIRE_TOWN_CAVE_EXIT and FIRE_TOWN_CAVE_ENTRANCE
+    Z2Randomizer.js:806 	RP2: PLACING EXITS
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE47","NODE48","NODE49","NODE50","NODE51","NODE52","NODE53","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE64","NODE67","NODE68","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE53
+    Z2Randomizer.js:816 		PLACING EXIT MAZE_ISLAND_BRIDGE in SPELL_TOWN_CAVE_ENTRANCE
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE47","NODE48","NODE49","NODE50","NODE51","NODE52","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE64","NODE67","NODE68","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE47
+    Z2Randomizer.js:816 		PLACING EXIT RAFT_DOCK_E in FIRE_TOWN_CAVE_ENTRANCE
+    Z2Randomizer.js:820 	RP3: PLACING PALACES
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE48","NODE49","NODE50","NODE51","NODE52","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE64","NODE67","NODE68","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE77","NODE78","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE78
+    Z2Randomizer.js:830 		PLACING PALACE GP in P5_500P_BAG
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE48","NODE49","NODE50","NODE51","NODE52","NODE57","NODE58","NODE59","NODE60","NODE61","NODE62","NODE64","NODE67","NODE68","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE77","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE59
+    Z2Randomizer.js:830 		PLACING PALACE P5 in WILSON_FENCE_4
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE45","NODE46","NODE48","NODE49","NODE50","NODE51","NODE52","NODE57","NODE58","NODE60","NODE61","NODE62","NODE64","NODE67","NODE68","NODE70","NODE71","NODE72","NODE73","NODE74","NODE75","NODE76","NODE77","NODE79","NODE80","NODE81","NODE130","NODE131","NODE132"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE68
+    Z2Randomizer.js:830 		PLACING PALACE P6 in DEATH_VALLEY_500P_BAG
+    Z2Randomizer.js:701 CONTINENT: 3
+    Z2Randomizer.js:709 	CONTINENT EXITS:       EAST_HYRULE_BRIDGE
+    Z2Randomizer.js:721 	RP1: PLACING CONNECTIONS
+    Z2Randomizer.js:806 	RP2: PLACING EXITS
+    Z2Randomizer.js:808 		CONTINENT NODES LEFT: ["NODE118","NODE119","NODE120","NODE121","NODE122","NODE123","NODE124","NODE125","NODE126","NODE127","NODE128"]
+    Z2Randomizer.js:815 		RANDOM NODE PICKED FOR EXIT: NODE127
+    Z2Randomizer.js:816 		PLACING EXIT EAST_HYRULE_BRIDGE in P4
+    Z2Randomizer.js:820 	RP3: PLACING PALACES
+    Z2Randomizer.js:822 		CONTINENT NODES LEFT: ["NODE118","NODE119","NODE120","NODE121","NODE122","NODE123","NODE124","NODE125","NODE126","NODE128"]
+    Z2Randomizer.js:829 		RANDOM NODE PICKED FOR PALACE: NODE119
+    Z2Randomizer.js:830 		PLACING PALACE P4 in MAZE_ISLAND_MAGIC
+    Z2Randomizer.js:840 PLACING NORTH CASTLE
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE4,NODE5,NODE6,NODE32
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE0,NODE1,NODE2,NODE3,NODE7,NODE8,NODE9,NODE10,NODE11,NODE12,NODE13,NODE14,NODE15,NODE16,NODE17,NODE18,NODE19,NODE20,NODE21,NODE22,NODE23,NODE24,NODE25,NODE27,NODE28,NODE30,NODE33,NODE35,NODE38,NODE39,NODE40,NODE41,NODE42,NODE43,NODE44
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE26,NODE34
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE29,NODE37
+    Z2Randomizer.js:844 	CHECKING ISOLATION ZONE: NODE31,NODE36
+    Z2Randomizer.js:872 	PLACED NORTH CASTLE AT RAFT_DOCK_W
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 0
+    Z2Randomizer.js:886 	ITEMS:                
+    Z2Randomizer.js:887 	SPELLS:               
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P1
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,HANDY_GLOVE,RAFT
+    Z2Randomizer.js:645 PLACING ITEM RAFT
+    Z2Randomizer.js:896 	NEXT REMEDY:          RAFT
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE23           RAFT_DOCK_W                      NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE24           FAIRY_TOWN                       P1                               []
+    Z2Randomizer.js:902 		NODE35           KINGS_TOMB                       P3                               []
+    Z2Randomizer.js:902 		NODE22           RED_JAR_CEM                      EX_LIFE_SWAMP_1                  [RAFT]
+    Z2Randomizer.js:902 		NODE25           FAIRY_CAVE_HOLE                                                   []
+    Z2Randomizer.js:902 		NODE21           EX_LIFE_BEACH                                                     []
+    Z2Randomizer.js:902 		NODE30           DM_BRIDGE_EXIT_E                 RAFT_DOCK_W                      []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 1
+    Z2Randomizer.js:886 	ITEMS:                RAFT
+    Z2Randomizer.js:887 	SPELLS:               
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P1
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,HANDY_GLOVE,BOOTS,JUMP,FAIRY,MAGIC_KEY,REFLECT,RECORDER
+    Z2Randomizer.js:585 PLACING SPELL JUMP
+    Z2Randomizer.js:645 PLACING ITEM TROPHY
+    Z2Randomizer.js:896 	NEXT REMEDY:          JUMP
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE23           RAFT_DOCK_W                      NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE24           FAIRY_TOWN                       P1                               []
+    Z2Randomizer.js:902 		NODE35           KINGS_TOMB                       P3                               []
+    Z2Randomizer.js:902 		NODE22           RED_JAR_CEM                      EX_LIFE_SWAMP_1                  [RAFT]
+    Z2Randomizer.js:902 		NODE25           FAIRY_CAVE_HOLE                  JUMP_TOWN                        []
+    Z2Randomizer.js:902 		NODE21           EX_LIFE_BEACH                    MEDICINE_CAVE                    [TROPHY]
+    Z2Randomizer.js:902 		NODE30           DM_BRIDGE_EXIT_E                 RAFT_DOCK_W                      []
+    Z2Randomizer.js:902 		NODE47           FIRE_TOWN_CAVE_ENTRANCE          RAFT_DOCK_E                      []
+    Z2Randomizer.js:902 		NODE81           DAZZLE_LIFE                                                       []
+    Z2Randomizer.js:902 		NODE69           REFLECT_TOWN_CLIFF_2             SPELL_TOWN_CAVE_EXIT             []
+    Z2Randomizer.js:902 		NODE70           REFLECT_TOWN_CLIFF_1                                              []
+    Z2Randomizer.js:902 		NODE71           REFLECT_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE54           SPELL_TOWN_CAVE_EXIT             SPELL_TOWN_CAVE_ENTRANCE         []
+    Z2Randomizer.js:902 		NODE55           SPELL_TOWN                       DEATH_VALLEY_CAVE_1_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE66           DEATH_VALLEY_CAVE_1_ENTRANCE     DEATH_VALLEY_CAVE_1_EXIT         []
+    Z2Randomizer.js:902 		NODE129          GP                               DEATH_VALLEY_CAVE_2_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE65           DEATH_VALLEY_CAVE_1_EXIT         DEATH_VALLEY_CAVE_2_EXIT         []
+    Z2Randomizer.js:902 		NODE64           DEATH_VALLEY_BATTLE_3                                             []
+    Z2Randomizer.js:902 		NODE63           DEATH_VALLEY_CAVE_2_EXIT         FIRE_TOWN_CAVE_EXIT              []
+    Z2Randomizer.js:902 		NODE56           THUNDER_TOWN_N_BRIDGE            FIRE_TOWN_CAVE_ENTRANCE          []
+    Z2Randomizer.js:902 		NODE80           P6                                                                []
+    Z2Randomizer.js:902 		NODE50           WILSON_FENCE_3                                                    []
+    Z2Randomizer.js:902 		NODE59           WILSON_FENCE_4                   P5                               []
+    Z2Randomizer.js:902 		NODE67           DEATH_VALLEY_RED_JAR                                              []
+    Z2Randomizer.js:902 		NODE60           DEATH_VALLEY_BATTLE_1                                             []
+    Z2Randomizer.js:902 		NODE68           DEATH_VALLEY_500P_BAG            P6                               []
+    Z2Randomizer.js:902 		NODE61           DEATH_VALLEY_BATTLE_2                                             []
+    Z2Randomizer.js:902 		NODE62           DEATH_VALLEY_CAVE_2_ENTRANCE                                      []
+    Z2Randomizer.js:902 		NODE131          THUNDER_TOWN_SWAMP_LIFE                                           []
+    Z2Randomizer.js:902 		NODE132          THUNDER_TOWN_CAVE_500P_BAG                                        []
+    Z2Randomizer.js:902 		NODE57           THUNDER_TOWN_E_BRIDGE                                             []
+    Z2Randomizer.js:902 		NODE58           THUNDER_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE53           SPELL_TOWN_CAVE_ENTRANCE         MAZE_ISLAND_BRIDGE               []
+    Z2Randomizer.js:902 		NODE127          P4                               EAST_HYRULE_BRIDGE               []
+    Z2Randomizer.js:902 		NODE123          MAZE_ISLAND_FORCED_BATTLE_4                                       []
+    Z2Randomizer.js:902 		NODE124          MAZE_ISLAND_FORCED_BATTLE_5                                       []
+    Z2Randomizer.js:902 		NODE125          MAZE_ISLAND_FORCED_BATTLE_6                                       []
+    Z2Randomizer.js:902 		NODE126          MAZE_ISLAND_FORCED_BATTLE_7                                       []
+    Z2Randomizer.js:902 		NODE119          MAZE_ISLAND_MAGIC                P4                               []
+    Z2Randomizer.js:902 		NODE122          MAZE_ISLAND_FORCED_BATTLE_3                                       []
+    Z2Randomizer.js:902 		NODE118          EAST_HYRULE_BRIDGE                                                []
+    Z2Randomizer.js:902 		NODE128          MAZE_ISLAND_CHILD                                                 []
+    Z2Randomizer.js:902 		NODE120          MAZE_ISLAND_FORCED_BATTLE_1                                       []
+    Z2Randomizer.js:902 		NODE121          MAZE_ISLAND_FORCED_BATTLE_2                                       []
+    Z2Randomizer.js:902 		NODE52           P6_500P_BAG                                                       []
+    Z2Randomizer.js:902 		NODE51           P6_HEART                                                          []
+    Z2Randomizer.js:902 		NODE49           WILSON_FENCE_2                                                    []
+    Z2Randomizer.js:902 		NODE48           WILSON_FENCE_1                                                    []
+    Z2Randomizer.js:902 		NODE72           MAZE_ISLAND_BRIDGE                                                []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 2
+    Z2Randomizer.js:886 	ITEMS:                RAFT,TROPHY
+    Z2Randomizer.js:887 	SPELLS:               JUMP
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P1,P5
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,HANDY_GLOVE,BOOTS,FAIRY,MAGIC_KEY,REFLECT,RECORDER
+    Z2Randomizer.js:645 PLACING ITEM RECORDER
+    Z2Randomizer.js:896 	NEXT REMEDY:          RECORDER
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE23           RAFT_DOCK_W                      NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE24           FAIRY_TOWN                       P1                               []
+    Z2Randomizer.js:902 		NODE35           KINGS_TOMB                       P3                               []
+    Z2Randomizer.js:902 		NODE22           RED_JAR_CEM                      EX_LIFE_SWAMP_1                  [RAFT]
+    Z2Randomizer.js:902 		NODE25           FAIRY_CAVE_HOLE                  JUMP_TOWN                        []
+    Z2Randomizer.js:902 		NODE21           EX_LIFE_BEACH                    MEDICINE_CAVE                    [TROPHY]
+    Z2Randomizer.js:902 		NODE30           DM_BRIDGE_EXIT_E                 RAFT_DOCK_W                      []
+    Z2Randomizer.js:902 		NODE47           FIRE_TOWN_CAVE_ENTRANCE          RAFT_DOCK_E                      []
+    Z2Randomizer.js:902 		NODE81           DAZZLE_LIFE                                                       []
+    Z2Randomizer.js:902 		NODE69           REFLECT_TOWN_CLIFF_2             SPELL_TOWN_CAVE_EXIT             []
+    Z2Randomizer.js:902 		NODE70           REFLECT_TOWN_CLIFF_1                                              []
+    Z2Randomizer.js:902 		NODE71           REFLECT_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE54           SPELL_TOWN_CAVE_EXIT             SPELL_TOWN_CAVE_ENTRANCE         []
+    Z2Randomizer.js:902 		NODE55           SPELL_TOWN                       DEATH_VALLEY_CAVE_1_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE66           DEATH_VALLEY_CAVE_1_ENTRANCE     DEATH_VALLEY_CAVE_1_EXIT         []
+    Z2Randomizer.js:902 		NODE129          GP                               DEATH_VALLEY_CAVE_2_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE65           DEATH_VALLEY_CAVE_1_EXIT         DEATH_VALLEY_CAVE_2_EXIT         []
+    Z2Randomizer.js:902 		NODE64           DEATH_VALLEY_BATTLE_3            THUNDER_TOWN_SWAMP_LIFE          [RECORDER]
+    Z2Randomizer.js:902 		NODE63           DEATH_VALLEY_CAVE_2_EXIT         FIRE_TOWN_CAVE_EXIT              []
+    Z2Randomizer.js:902 		NODE56           THUNDER_TOWN_N_BRIDGE            FIRE_TOWN_CAVE_ENTRANCE          []
+    Z2Randomizer.js:902 		NODE80           P6                                                                []
+    Z2Randomizer.js:902 		NODE50           WILSON_FENCE_3                                                    []
+    Z2Randomizer.js:902 		NODE59           WILSON_FENCE_4                   P5                               []
+    Z2Randomizer.js:902 		NODE67           DEATH_VALLEY_RED_JAR                                              []
+    Z2Randomizer.js:902 		NODE60           DEATH_VALLEY_BATTLE_1                                             []
+    Z2Randomizer.js:902 		NODE68           DEATH_VALLEY_500P_BAG            P6                               []
+    Z2Randomizer.js:902 		NODE61           DEATH_VALLEY_BATTLE_2                                             []
+    Z2Randomizer.js:902 		NODE62           DEATH_VALLEY_CAVE_2_ENTRANCE                                      []
+    Z2Randomizer.js:902 		NODE131          THUNDER_TOWN_SWAMP_LIFE                                           []
+    Z2Randomizer.js:902 		NODE132          THUNDER_TOWN_CAVE_500P_BAG                                        []
+    Z2Randomizer.js:902 		NODE57           THUNDER_TOWN_E_BRIDGE                                             []
+    Z2Randomizer.js:902 		NODE58           THUNDER_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE53           SPELL_TOWN_CAVE_ENTRANCE         MAZE_ISLAND_BRIDGE               []
+    Z2Randomizer.js:902 		NODE127          P4                               EAST_HYRULE_BRIDGE               []
+    Z2Randomizer.js:902 		NODE123          MAZE_ISLAND_FORCED_BATTLE_4                                       []
+    Z2Randomizer.js:902 		NODE124          MAZE_ISLAND_FORCED_BATTLE_5                                       []
+    Z2Randomizer.js:902 		NODE125          MAZE_ISLAND_FORCED_BATTLE_6                                       []
+    Z2Randomizer.js:902 		NODE126          MAZE_ISLAND_FORCED_BATTLE_7                                       []
+    Z2Randomizer.js:902 		NODE119          MAZE_ISLAND_MAGIC                P4                               []
+    Z2Randomizer.js:902 		NODE122          MAZE_ISLAND_FORCED_BATTLE_3                                       []
+    Z2Randomizer.js:902 		NODE118          EAST_HYRULE_BRIDGE                                                []
+    Z2Randomizer.js:902 		NODE128          MAZE_ISLAND_CHILD                                                 []
+    Z2Randomizer.js:902 		NODE120          MAZE_ISLAND_FORCED_BATTLE_1                                       []
+    Z2Randomizer.js:902 		NODE121          MAZE_ISLAND_FORCED_BATTLE_2                                       []
+    Z2Randomizer.js:902 		NODE52           P6_500P_BAG                                                       []
+    Z2Randomizer.js:902 		NODE51           P6_HEART                                                          []
+    Z2Randomizer.js:902 		NODE49           WILSON_FENCE_2                                                    []
+    Z2Randomizer.js:902 		NODE48           WILSON_FENCE_1                                                    []
+    Z2Randomizer.js:902 		NODE72           MAZE_ISLAND_BRIDGE                                                []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 3
+    Z2Randomizer.js:886 	ITEMS:                RAFT,TROPHY,RECORDER
+    Z2Randomizer.js:887 	SPELLS:               JUMP
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P1,P5
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,HANDY_GLOVE,BOOTS,FAIRY,MAGIC_KEY,REFLECT
+    Z2Randomizer.js:645 PLACING ITEM BOOTS
+    Z2Randomizer.js:896 	NEXT REMEDY:          BOOTS
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE23           RAFT_DOCK_W                      NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE24           FAIRY_TOWN                       P1                               []
+    Z2Randomizer.js:902 		NODE35           KINGS_TOMB                       P3                               []
+    Z2Randomizer.js:902 		NODE22           RED_JAR_CEM                      EX_LIFE_SWAMP_1                  [RAFT]
+    Z2Randomizer.js:902 		NODE25           FAIRY_CAVE_HOLE                  JUMP_TOWN                        []
+    Z2Randomizer.js:902 		NODE21           EX_LIFE_BEACH                    MEDICINE_CAVE                    [TROPHY]
+    Z2Randomizer.js:902 		NODE30           DM_BRIDGE_EXIT_E                 RAFT_DOCK_W                      []
+    Z2Randomizer.js:902 		NODE47           FIRE_TOWN_CAVE_ENTRANCE          RAFT_DOCK_E                      []
+    Z2Randomizer.js:902 		NODE81           DAZZLE_LIFE                                                       []
+    Z2Randomizer.js:902 		NODE69           REFLECT_TOWN_CLIFF_2             SPELL_TOWN_CAVE_EXIT             []
+    Z2Randomizer.js:902 		NODE70           REFLECT_TOWN_CLIFF_1                                              []
+    Z2Randomizer.js:902 		NODE71           REFLECT_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE54           SPELL_TOWN_CAVE_EXIT             SPELL_TOWN_CAVE_ENTRANCE         []
+    Z2Randomizer.js:902 		NODE55           SPELL_TOWN                       DEATH_VALLEY_CAVE_1_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE66           DEATH_VALLEY_CAVE_1_ENTRANCE     DEATH_VALLEY_CAVE_1_EXIT         []
+    Z2Randomizer.js:902 		NODE129          GP                               DEATH_VALLEY_CAVE_2_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE65           DEATH_VALLEY_CAVE_1_EXIT         DEATH_VALLEY_CAVE_2_EXIT         []
+    Z2Randomizer.js:902 		NODE64           DEATH_VALLEY_BATTLE_3            THUNDER_TOWN_SWAMP_LIFE          [RECORDER]
+    Z2Randomizer.js:902 		NODE63           DEATH_VALLEY_CAVE_2_EXIT         FIRE_TOWN_CAVE_EXIT              []
+    Z2Randomizer.js:902 		NODE56           THUNDER_TOWN_N_BRIDGE            FIRE_TOWN_CAVE_ENTRANCE          []
+    Z2Randomizer.js:902 		NODE80           P6                                                                []
+    Z2Randomizer.js:902 		NODE50           WILSON_FENCE_3                                                    []
+    Z2Randomizer.js:902 		NODE59           WILSON_FENCE_4                   P5                               []
+    Z2Randomizer.js:902 		NODE67           DEATH_VALLEY_RED_JAR                                              []
+    Z2Randomizer.js:902 		NODE60           DEATH_VALLEY_BATTLE_1                                             []
+    Z2Randomizer.js:902 		NODE68           DEATH_VALLEY_500P_BAG            P6                               []
+    Z2Randomizer.js:902 		NODE61           DEATH_VALLEY_BATTLE_2                                             []
+    Z2Randomizer.js:902 		NODE62           DEATH_VALLEY_CAVE_2_ENTRANCE                                      []
+    Z2Randomizer.js:902 		NODE131          THUNDER_TOWN_SWAMP_LIFE                                           []
+    Z2Randomizer.js:902 		NODE132          THUNDER_TOWN_CAVE_500P_BAG                                        []
+    Z2Randomizer.js:902 		NODE57           THUNDER_TOWN_E_BRIDGE                                             []
+    Z2Randomizer.js:902 		NODE58           THUNDER_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE53           SPELL_TOWN_CAVE_ENTRANCE         MAZE_ISLAND_BRIDGE               []
+    Z2Randomizer.js:902 		NODE127          P4                               EAST_HYRULE_BRIDGE               []
+    Z2Randomizer.js:902 		NODE123          MAZE_ISLAND_FORCED_BATTLE_4                                       []
+    Z2Randomizer.js:902 		NODE124          MAZE_ISLAND_FORCED_BATTLE_5                                       []
+    Z2Randomizer.js:902 		NODE125          MAZE_ISLAND_FORCED_BATTLE_6                                       []
+    Z2Randomizer.js:902 		NODE126          MAZE_ISLAND_FORCED_BATTLE_7      MAZE_ISLAND_MAGIC                [BOOTS]
+    Z2Randomizer.js:902 		NODE119          MAZE_ISLAND_MAGIC                P4                               []
+    Z2Randomizer.js:902 		NODE122          MAZE_ISLAND_FORCED_BATTLE_3                                       []
+    Z2Randomizer.js:902 		NODE118          EAST_HYRULE_BRIDGE                                                []
+    Z2Randomizer.js:902 		NODE128          MAZE_ISLAND_CHILD                                                 []
+    Z2Randomizer.js:902 		NODE120          MAZE_ISLAND_FORCED_BATTLE_1                                       []
+    Z2Randomizer.js:902 		NODE121          MAZE_ISLAND_FORCED_BATTLE_2                                       []
+    Z2Randomizer.js:902 		NODE52           P6_500P_BAG                                                       []
+    Z2Randomizer.js:902 		NODE51           P6_HEART                                                          []
+    Z2Randomizer.js:902 		NODE49           WILSON_FENCE_2                                                    []
+    Z2Randomizer.js:902 		NODE48           WILSON_FENCE_1                                                    []
+    Z2Randomizer.js:902 		NODE45           RAFT_DOCK_E                                                       []
+    Z2Randomizer.js:902 		NODE75           FIRE_TOWN_FOREST_500P_BAG                                         []
+    Z2Randomizer.js:902 		NODE76           FIRE_TOWN_FAIRY                                                   []
+    Z2Randomizer.js:902 		NODE130          FIRE_TOWN                                                         []
+    Z2Randomizer.js:902 		NODE73           FIRE_TOWN_CAVE_500P_BAG                                           []
+    Z2Randomizer.js:902 		NODE46           FIRE_TOWN_CAVE_EXIT                                               []
+    Z2Randomizer.js:902 		NODE74           FIRE_TOWN_RED_JAR                                                 []
+    Z2Randomizer.js:902 		NODE72           MAZE_ISLAND_BRIDGE                                                []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 4
+    Z2Randomizer.js:886 	ITEMS:                RAFT,TROPHY,RECORDER,BOOTS
+    Z2Randomizer.js:887 	SPELLS:               JUMP
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P1,P5
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,HANDY_GLOVE,CRYSTALS,THUNDER,FAIRY,MAGIC_KEY,REFLECT
+    Z2Randomizer.js:585 PLACING SPELL REFLECT
+    Z2Randomizer.js:645 PLACING ITEM CHILD
+    Z2Randomizer.js:896 	NEXT REMEDY:          REFLECT
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE23           RAFT_DOCK_W                      NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE24           FAIRY_TOWN                       P1                               []
+    Z2Randomizer.js:902 		NODE35           KINGS_TOMB                       P3                               []
+    Z2Randomizer.js:902 		NODE22           RED_JAR_CEM                      EX_LIFE_SWAMP_1                  [RAFT]
+    Z2Randomizer.js:902 		NODE25           FAIRY_CAVE_HOLE                  JUMP_TOWN                        []
+    Z2Randomizer.js:902 		NODE21           EX_LIFE_BEACH                    MEDICINE_CAVE                    [TROPHY]
+    Z2Randomizer.js:902 		NODE30           DM_BRIDGE_EXIT_E                 RAFT_DOCK_W                      []
+    Z2Randomizer.js:902 		NODE47           FIRE_TOWN_CAVE_ENTRANCE          RAFT_DOCK_E                      []
+    Z2Randomizer.js:902 		NODE81           DAZZLE_LIFE                                                       []
+    Z2Randomizer.js:902 		NODE45           RAFT_DOCK_E                                                       []
+    Z2Randomizer.js:902 		NODE75           FIRE_TOWN_FOREST_500P_BAG                                         []
+    Z2Randomizer.js:902 		NODE76           FIRE_TOWN_FAIRY                                                   []
+    Z2Randomizer.js:902 		NODE130          FIRE_TOWN                        REFLECT_TOWN                     []
+    Z2Randomizer.js:902 		NODE73           FIRE_TOWN_CAVE_500P_BAG                                           []
+    Z2Randomizer.js:902 		NODE46           FIRE_TOWN_CAVE_EXIT              DEATH_VALLEY_500P_BAG            [CHILD]
+    Z2Randomizer.js:902 		NODE74           FIRE_TOWN_RED_JAR                                                 []
+    Z2Randomizer.js:902 		NODE77           P5_HEART                                                          []
+    Z2Randomizer.js:902 		NODE78           P5_500P_BAG                      GP                               []
+    Z2Randomizer.js:902 		NODE79           P5                                                                []
+    Z2Randomizer.js:902 		NODE48           WILSON_FENCE_1                                                    []
+    Z2Randomizer.js:902 		NODE49           WILSON_FENCE_2                                                    []
+    Z2Randomizer.js:902 		NODE50           WILSON_FENCE_3                                                    []
+    Z2Randomizer.js:902 		NODE59           WILSON_FENCE_4                   P5                               []
+    Z2Randomizer.js:902 		NODE67           DEATH_VALLEY_RED_JAR                                              []
+    Z2Randomizer.js:902 		NODE60           DEATH_VALLEY_BATTLE_1                                             []
+    Z2Randomizer.js:902 		NODE68           DEATH_VALLEY_500P_BAG            P6                               []
+    Z2Randomizer.js:902 		NODE61           DEATH_VALLEY_BATTLE_2                                             []
+    Z2Randomizer.js:902 		NODE62           DEATH_VALLEY_CAVE_2_ENTRANCE                                      []
+    Z2Randomizer.js:902 		NODE131          THUNDER_TOWN_SWAMP_LIFE                                           []
+    Z2Randomizer.js:902 		NODE132          THUNDER_TOWN_CAVE_500P_BAG                                        []
+    Z2Randomizer.js:902 		NODE56           THUNDER_TOWN_N_BRIDGE            FIRE_TOWN_CAVE_ENTRANCE          []
+    Z2Randomizer.js:902 		NODE80           P6                                                                []
+    Z2Randomizer.js:902 		NODE63           DEATH_VALLEY_CAVE_2_EXIT         FIRE_TOWN_CAVE_EXIT              []
+    Z2Randomizer.js:902 		NODE64           DEATH_VALLEY_BATTLE_3            THUNDER_TOWN_SWAMP_LIFE          [RECORDER]
+    Z2Randomizer.js:902 		NODE65           DEATH_VALLEY_CAVE_1_EXIT         DEATH_VALLEY_CAVE_2_EXIT         []
+    Z2Randomizer.js:902 		NODE129          GP                               DEATH_VALLEY_CAVE_2_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE66           DEATH_VALLEY_CAVE_1_ENTRANCE     DEATH_VALLEY_CAVE_1_EXIT         []
+    Z2Randomizer.js:902 		NODE55           SPELL_TOWN                       DEATH_VALLEY_CAVE_1_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE54           SPELL_TOWN_CAVE_EXIT             SPELL_TOWN_CAVE_ENTRANCE         []
+    Z2Randomizer.js:902 		NODE69           REFLECT_TOWN_CLIFF_2             SPELL_TOWN_CAVE_EXIT             []
+    Z2Randomizer.js:902 		NODE70           REFLECT_TOWN_CLIFF_1                                              []
+    Z2Randomizer.js:902 		NODE71           REFLECT_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE57           THUNDER_TOWN_E_BRIDGE                                             []
+    Z2Randomizer.js:902 		NODE58           THUNDER_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE53           SPELL_TOWN_CAVE_ENTRANCE         MAZE_ISLAND_BRIDGE               []
+    Z2Randomizer.js:902 		NODE127          P4                               EAST_HYRULE_BRIDGE               []
+    Z2Randomizer.js:902 		NODE123          MAZE_ISLAND_FORCED_BATTLE_4                                       []
+    Z2Randomizer.js:902 		NODE124          MAZE_ISLAND_FORCED_BATTLE_5                                       []
+    Z2Randomizer.js:902 		NODE125          MAZE_ISLAND_FORCED_BATTLE_6                                       []
+    Z2Randomizer.js:902 		NODE126          MAZE_ISLAND_FORCED_BATTLE_7      MAZE_ISLAND_MAGIC                [BOOTS]
+    Z2Randomizer.js:902 		NODE119          MAZE_ISLAND_MAGIC                P4                               []
+    Z2Randomizer.js:902 		NODE122          MAZE_ISLAND_FORCED_BATTLE_3                                       []
+    Z2Randomizer.js:902 		NODE118          EAST_HYRULE_BRIDGE                                                []
+    Z2Randomizer.js:902 		NODE128          MAZE_ISLAND_CHILD                                                 []
+    Z2Randomizer.js:902 		NODE120          MAZE_ISLAND_FORCED_BATTLE_1                                       []
+    Z2Randomizer.js:902 		NODE121          MAZE_ISLAND_FORCED_BATTLE_2                                       []
+    Z2Randomizer.js:902 		NODE52           P6_500P_BAG                                                       []
+    Z2Randomizer.js:902 		NODE51           P6_HEART                                                          []
+    Z2Randomizer.js:902 		NODE72           MAZE_ISLAND_BRIDGE                                                []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 5
+    Z2Randomizer.js:886 	ITEMS:                RAFT,TROPHY,RECORDER,BOOTS,CHILD
+    Z2Randomizer.js:887 	SPELLS:               JUMP,REFLECT
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P1,P4,P5
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,HANDY_GLOVE,CRYSTALS,THUNDER,FAIRY,MAGIC_KEY
+    Z2Randomizer.js:645 PLACING ITEM MAGIC_KEY
+    Z2Randomizer.js:896 	NEXT REMEDY:          MAGIC_KEY
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE23           RAFT_DOCK_W                      NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE24           FAIRY_TOWN                       P1                               []
+    Z2Randomizer.js:902 		NODE35           KINGS_TOMB                       P3                               []
+    Z2Randomizer.js:902 		NODE22           RED_JAR_CEM                      EX_LIFE_SWAMP_1                  [RAFT]
+    Z2Randomizer.js:902 		NODE25           FAIRY_CAVE_HOLE                  JUMP_TOWN                        []
+    Z2Randomizer.js:902 		NODE21           EX_LIFE_BEACH                    MEDICINE_CAVE                    [TROPHY]
+    Z2Randomizer.js:902 		NODE30           DM_BRIDGE_EXIT_E                 RAFT_DOCK_W                      []
+    Z2Randomizer.js:902 		NODE47           FIRE_TOWN_CAVE_ENTRANCE          RAFT_DOCK_E                      []
+    Z2Randomizer.js:902 		NODE81           DAZZLE_LIFE                                                       []
+    Z2Randomizer.js:902 		NODE45           RAFT_DOCK_E                                                       []
+    Z2Randomizer.js:902 		NODE75           FIRE_TOWN_FOREST_500P_BAG                                         []
+    Z2Randomizer.js:902 		NODE76           FIRE_TOWN_FAIRY                                                   []
+    Z2Randomizer.js:902 		NODE130          FIRE_TOWN                        REFLECT_TOWN                     []
+    Z2Randomizer.js:902 		NODE73           FIRE_TOWN_CAVE_500P_BAG                                           []
+    Z2Randomizer.js:902 		NODE46           FIRE_TOWN_CAVE_EXIT              DEATH_VALLEY_500P_BAG            [CHILD]
+    Z2Randomizer.js:902 		NODE74           FIRE_TOWN_RED_JAR                                                 []
+    Z2Randomizer.js:902 		NODE77           P5_HEART                                                          []
+    Z2Randomizer.js:902 		NODE78           P5_500P_BAG                      GP                               []
+    Z2Randomizer.js:902 		NODE79           P5                                                                []
+    Z2Randomizer.js:902 		NODE48           WILSON_FENCE_1                                                    []
+    Z2Randomizer.js:902 		NODE49           WILSON_FENCE_2                                                    []
+    Z2Randomizer.js:902 		NODE50           WILSON_FENCE_3                                                    []
+    Z2Randomizer.js:902 		NODE59           WILSON_FENCE_4                   P5                               [MAGIC_KEY]
+    Z2Randomizer.js:902 		NODE67           DEATH_VALLEY_RED_JAR                                              []
+    Z2Randomizer.js:902 		NODE60           DEATH_VALLEY_BATTLE_1                                             []
+    Z2Randomizer.js:902 		NODE68           DEATH_VALLEY_500P_BAG            P6                               []
+    Z2Randomizer.js:902 		NODE61           DEATH_VALLEY_BATTLE_2                                             []
+    Z2Randomizer.js:902 		NODE62           DEATH_VALLEY_CAVE_2_ENTRANCE                                      []
+    Z2Randomizer.js:902 		NODE131          THUNDER_TOWN_SWAMP_LIFE                                           []
+    Z2Randomizer.js:902 		NODE132          THUNDER_TOWN_CAVE_500P_BAG                                        []
+    Z2Randomizer.js:902 		NODE56           THUNDER_TOWN_N_BRIDGE            FIRE_TOWN_CAVE_ENTRANCE          []
+    Z2Randomizer.js:902 		NODE80           P6                                                                []
+    Z2Randomizer.js:902 		NODE63           DEATH_VALLEY_CAVE_2_EXIT         FIRE_TOWN_CAVE_EXIT              []
+    Z2Randomizer.js:902 		NODE64           DEATH_VALLEY_BATTLE_3            THUNDER_TOWN_SWAMP_LIFE          [RECORDER]
+    Z2Randomizer.js:902 		NODE65           DEATH_VALLEY_CAVE_1_EXIT         DEATH_VALLEY_CAVE_2_EXIT         []
+    Z2Randomizer.js:902 		NODE129          GP                               DEATH_VALLEY_CAVE_2_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE66           DEATH_VALLEY_CAVE_1_ENTRANCE     DEATH_VALLEY_CAVE_1_EXIT         []
+    Z2Randomizer.js:902 		NODE55           SPELL_TOWN                       DEATH_VALLEY_CAVE_1_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE54           SPELL_TOWN_CAVE_EXIT             SPELL_TOWN_CAVE_ENTRANCE         []
+    Z2Randomizer.js:902 		NODE69           REFLECT_TOWN_CLIFF_2             SPELL_TOWN_CAVE_EXIT             []
+    Z2Randomizer.js:902 		NODE70           REFLECT_TOWN_CLIFF_1                                              []
+    Z2Randomizer.js:902 		NODE71           REFLECT_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE57           THUNDER_TOWN_E_BRIDGE                                             []
+    Z2Randomizer.js:902 		NODE58           THUNDER_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE53           SPELL_TOWN_CAVE_ENTRANCE         MAZE_ISLAND_BRIDGE               []
+    Z2Randomizer.js:902 		NODE127          P4                               EAST_HYRULE_BRIDGE               []
+    Z2Randomizer.js:902 		NODE123          MAZE_ISLAND_FORCED_BATTLE_4                                       []
+    Z2Randomizer.js:902 		NODE124          MAZE_ISLAND_FORCED_BATTLE_5                                       []
+    Z2Randomizer.js:902 		NODE125          MAZE_ISLAND_FORCED_BATTLE_6                                       []
+    Z2Randomizer.js:902 		NODE126          MAZE_ISLAND_FORCED_BATTLE_7      MAZE_ISLAND_MAGIC                [BOOTS]
+    Z2Randomizer.js:902 		NODE119          MAZE_ISLAND_MAGIC                P4                               []
+    Z2Randomizer.js:902 		NODE122          MAZE_ISLAND_FORCED_BATTLE_3                                       []
+    Z2Randomizer.js:902 		NODE118          EAST_HYRULE_BRIDGE                                                []
+    Z2Randomizer.js:902 		NODE128          MAZE_ISLAND_CHILD                                                 []
+    Z2Randomizer.js:902 		NODE120          MAZE_ISLAND_FORCED_BATTLE_1                                       []
+    Z2Randomizer.js:902 		NODE121          MAZE_ISLAND_FORCED_BATTLE_2                                       []
+    Z2Randomizer.js:902 		NODE52           P6_500P_BAG                                                       []
+    Z2Randomizer.js:902 		NODE51           P6_HEART                                                          []
+    Z2Randomizer.js:902 		NODE72           MAZE_ISLAND_BRIDGE                                                []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 6
+    Z2Randomizer.js:886 	ITEMS:                RAFT,TROPHY,RECORDER,BOOTS,CHILD,MAGIC_KEY
+    Z2Randomizer.js:887 	SPELLS:               JUMP,REFLECT
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P1,P4,P5
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,HANDY_GLOVE,CRYSTALS,THUNDER,FAIRY
+    Z2Randomizer.js:645 PLACING ITEM HANDY_GLOVE
+    Z2Randomizer.js:896 	NEXT REMEDY:          HANDY_GLOVE
+    Z2Randomizer.js:898 	ACCESSIBLE LOCATIONS:
+    Z2Randomizer.js:899 		Node             Node Location                    Mapped Location                  Mapped Items
+    Z2Randomizer.js:902 		NODE23           RAFT_DOCK_W                      NORTH_CASTLE                     []
+    Z2Randomizer.js:902 		NODE24           FAIRY_TOWN                       P1                               []
+    Z2Randomizer.js:902 		NODE35           KINGS_TOMB                       P3                               []
+    Z2Randomizer.js:902 		NODE22           RED_JAR_CEM                      EX_LIFE_SWAMP_1                  [RAFT]
+    Z2Randomizer.js:902 		NODE25           FAIRY_CAVE_HOLE                  JUMP_TOWN                        []
+    Z2Randomizer.js:902 		NODE21           EX_LIFE_BEACH                    MEDICINE_CAVE                    [TROPHY]
+    Z2Randomizer.js:902 		NODE30           DM_BRIDGE_EXIT_E                 RAFT_DOCK_W                      []
+    Z2Randomizer.js:902 		NODE47           FIRE_TOWN_CAVE_ENTRANCE          RAFT_DOCK_E                      []
+    Z2Randomizer.js:902 		NODE81           DAZZLE_LIFE                                                       []
+    Z2Randomizer.js:902 		NODE45           RAFT_DOCK_E                                                       []
+    Z2Randomizer.js:902 		NODE75           FIRE_TOWN_FOREST_500P_BAG                                         []
+    Z2Randomizer.js:902 		NODE76           FIRE_TOWN_FAIRY                                                   []
+    Z2Randomizer.js:902 		NODE130          FIRE_TOWN                        REFLECT_TOWN                     []
+    Z2Randomizer.js:902 		NODE73           FIRE_TOWN_CAVE_500P_BAG                                           []
+    Z2Randomizer.js:902 		NODE46           FIRE_TOWN_CAVE_EXIT              DEATH_VALLEY_500P_BAG            [CHILD]
+    Z2Randomizer.js:902 		NODE74           FIRE_TOWN_RED_JAR                                                 []
+    Z2Randomizer.js:902 		NODE77           P5_HEART                                                          []
+    Z2Randomizer.js:902 		NODE78           P5_500P_BAG                      GP                               []
+    Z2Randomizer.js:902 		NODE79           P5                                                                []
+    Z2Randomizer.js:902 		NODE48           WILSON_FENCE_1                                                    []
+    Z2Randomizer.js:902 		NODE49           WILSON_FENCE_2                                                    []
+    Z2Randomizer.js:902 		NODE50           WILSON_FENCE_3                                                    []
+    Z2Randomizer.js:902 		NODE59           WILSON_FENCE_4                   P5                               [MAGIC_KEY]
+    Z2Randomizer.js:902 		NODE67           DEATH_VALLEY_RED_JAR                                              []
+    Z2Randomizer.js:902 		NODE60           DEATH_VALLEY_BATTLE_1                                             []
+    Z2Randomizer.js:902 		NODE68           DEATH_VALLEY_500P_BAG            P6                               []
+    Z2Randomizer.js:902 		NODE61           DEATH_VALLEY_BATTLE_2                                             []
+    Z2Randomizer.js:902 		NODE62           DEATH_VALLEY_CAVE_2_ENTRANCE                                      []
+    Z2Randomizer.js:902 		NODE131          THUNDER_TOWN_SWAMP_LIFE                                           []
+    Z2Randomizer.js:902 		NODE132          THUNDER_TOWN_CAVE_500P_BAG                                        []
+    Z2Randomizer.js:902 		NODE56           THUNDER_TOWN_N_BRIDGE            FIRE_TOWN_CAVE_ENTRANCE          []
+    Z2Randomizer.js:902 		NODE80           P6                                                                []
+    Z2Randomizer.js:902 		NODE63           DEATH_VALLEY_CAVE_2_EXIT         FIRE_TOWN_CAVE_EXIT              []
+    Z2Randomizer.js:902 		NODE64           DEATH_VALLEY_BATTLE_3            THUNDER_TOWN_SWAMP_LIFE          [RECORDER]
+    Z2Randomizer.js:902 		NODE65           DEATH_VALLEY_CAVE_1_EXIT         DEATH_VALLEY_CAVE_2_EXIT         []
+    Z2Randomizer.js:902 		NODE129          GP                               DEATH_VALLEY_CAVE_2_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE66           DEATH_VALLEY_CAVE_1_ENTRANCE     DEATH_VALLEY_CAVE_1_EXIT         []
+    Z2Randomizer.js:902 		NODE55           SPELL_TOWN                       DEATH_VALLEY_CAVE_1_ENTRANCE     []
+    Z2Randomizer.js:902 		NODE54           SPELL_TOWN_CAVE_EXIT             SPELL_TOWN_CAVE_ENTRANCE         []
+    Z2Randomizer.js:902 		NODE69           REFLECT_TOWN_CLIFF_2             SPELL_TOWN_CAVE_EXIT             []
+    Z2Randomizer.js:902 		NODE70           REFLECT_TOWN_CLIFF_1                                              []
+    Z2Randomizer.js:902 		NODE71           REFLECT_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE57           THUNDER_TOWN_E_BRIDGE            P5_HEART                         [HANDY_GLOVE]
+    Z2Randomizer.js:902 		NODE58           THUNDER_TOWN                                                      []
+    Z2Randomizer.js:902 		NODE53           SPELL_TOWN_CAVE_ENTRANCE         MAZE_ISLAND_BRIDGE               []
+    Z2Randomizer.js:902 		NODE127          P4                               EAST_HYRULE_BRIDGE               []
+    Z2Randomizer.js:902 		NODE123          MAZE_ISLAND_FORCED_BATTLE_4                                       []
+    Z2Randomizer.js:902 		NODE124          MAZE_ISLAND_FORCED_BATTLE_5                                       []
+    Z2Randomizer.js:902 		NODE125          MAZE_ISLAND_FORCED_BATTLE_6                                       []
+    Z2Randomizer.js:902 		NODE126          MAZE_ISLAND_FORCED_BATTLE_7      MAZE_ISLAND_MAGIC                [BOOTS]
+    Z2Randomizer.js:902 		NODE119          MAZE_ISLAND_MAGIC                P4                               []
+    Z2Randomizer.js:902 		NODE122          MAZE_ISLAND_FORCED_BATTLE_3                                       []
+    Z2Randomizer.js:902 		NODE118          EAST_HYRULE_BRIDGE                                                []
+    Z2Randomizer.js:902 		NODE128          MAZE_ISLAND_CHILD                                                 []
+    Z2Randomizer.js:902 		NODE120          MAZE_ISLAND_FORCED_BATTLE_1                                       []
+    Z2Randomizer.js:902 		NODE121          MAZE_ISLAND_FORCED_BATTLE_2                                       []
+    Z2Randomizer.js:902 		NODE52           P6_500P_BAG                                                       []
+    Z2Randomizer.js:902 		NODE51           P6_HEART                                                          []
+    Z2Randomizer.js:902 		NODE72           MAZE_ISLAND_BRIDGE                                                []
+    Z2Randomizer.js:884 **********************************************************************************************************************
+    Z2Randomizer.js:885 ITERATION 7
+    Z2Randomizer.js:886 	ITEMS:                RAFT,TROPHY,RECORDER,BOOTS,CHILD,MAGIC_KEY,HANDY_GLOVE
+    Z2Randomizer.js:887 	SPELLS:               JUMP,REFLECT
+    Z2Randomizer.js:888 	ABILITIES:            
+    Z2Randomizer.js:889 	COMPLETABLE PALACES:  P1,P4,P5
+    Z2Randomizer.js:890 	NEEDED REMEDIES:      HAMMER,DOWNSTAB,CRYSTALS,THUNDER,FAIRY
+    Z2Randomizer.js:585 PLACING SPELL FAIRY
+    react_devtools_backend_compact.js:2367 TypeError: Cannot set properties of undefined (setting 'mappedLocation')
+        at f.placeRemedies (Z2Randomizer.js:597:44)
+        at f.placeItemsAndNodes (Z2Randomizer.js:894:18)
+        at f.randomize (Z2Randomizer.js:1001:14)
+        at Home.jsx:47:24
+        at onClick (Home.jsx:119:25)
+        at Object.Me (react-dom.production.min.js:54:317)
+        at Ve (react-dom.production.min.js:54:471)
+        at react-dom.production.min.js:55:35
+        at Pr (react-dom.production.min.js:105:68)
+        at Fr (react-dom.production.min.js:106:380)
+
+## Error Cause
+
+There is no accessible place in the continent to place FAIRY TOWN
