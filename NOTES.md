@@ -14,6 +14,10 @@
     * RP5.3: Start at RP4.1 again and resume until Grand Palace is accessible and all Palaces are able to be completed.
 * RP6: Randomly place all remaining nodes and items.
 
+## Next Feature
+
+* Randomize enemy placement, xp, and drops
+
 ## TODO
 
 * Randomize terrain
