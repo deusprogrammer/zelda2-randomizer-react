@@ -985,6 +985,7 @@ export class Z2Randomizer {
      */
     placeItemsAndNodes = () => {
         let [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
+        let inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
         let completablePalaces = this.getCompletablePalaces(accessibleNodes);
         let neededRemedies     = this.getCurrentRemedies(accessibleNodes);
         try {
@@ -1007,7 +1008,7 @@ export class Z2Randomizer {
                 }
             });
 
-            while (completablePalaces.length < 7 && i < 40) {
+            while (completablePalaces.length < 7  && i < 40) {
                 console.log("**********************************************************************************************************************");
                 console.log("ITERATION " + i);
                 console.log("\tITEMS:                " + this.items);
@@ -1017,10 +1018,14 @@ export class Z2Randomizer {
                 console.log("\tNEEDED REMEDIES:      " + neededRemedies.filter(remedy => remedy !== "CRYSTALS").map(remedy => `${remedy}:${this.isRemedyPlaceable(remedy, accessibleNodes)}`));
 
                 // Find a item bearing location within the same continent to place a remedy in said node
-                let nextRemedy = this.chooseRandomNode(neededRemedies.filter(remedy => remedy !== "CRYSTALS" && this.isRemedyPlaceable(remedy, accessibleNodes)));
+                let placeableRemedies = neededRemedies.filter(remedy => remedy !== "CRYSTALS" && this.isRemedyPlaceable(remedy, accessibleNodes));
+                let nextRemedy = this.chooseRandomNode(placeableRemedies);
                 this.placeRemedies(nextRemedy, accessibleNodes);
 
                 console.log("\tNEXT REMEDY:          " + nextRemedy);
+                if (!nextRemedy) {
+                    break;
+                }
 
                 console.log("\tACCESSIBLE LOCATIONS:");
                 console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
@@ -1034,7 +1039,7 @@ export class Z2Randomizer {
 
                 console.log(`\tUNACCESSIBLE LOCATIONS:`);
                 console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
-                Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node)).forEach(node => {
+                inaccessibleNodes.forEach(node => {
                     if (this.graphData[node]) {
                         console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
                     } else {
@@ -1056,9 +1061,14 @@ export class Z2Randomizer {
 
                 // Find accessible nodes, completable palaces, and needed remedies to progress
                 [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
+                inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
                 completablePalaces = this.getCompletablePalaces(accessibleNodes);
                 neededRemedies     = this.getCurrentRemedies(accessibleNodes);
                 i++;
+            }
+
+            if (inaccessibleNodes.length > 0) {
+                throw new Error("Unable to place all nodes");
             }
 
             // Place all other items, abilities, and spells.
