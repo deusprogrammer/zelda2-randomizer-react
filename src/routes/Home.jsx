@@ -16,7 +16,6 @@ import z2LocationMeta from '../lib/zelda2/templates/z2-location.meta';
 import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 import TextData from '../components/TextData';
 import { toast } from 'react-toastify';
-import { copyUint8Array } from '../lib/memory/HexTools';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
@@ -87,13 +86,30 @@ export default () => {
                 <div>
                     <h2>What is Zelda 2 Randomizer JS?</h2>
                         <p>Zelda 2 Randomizer JS is a web based alternative randomizer for...well...Zelda 2.  Our goal is to make a one stop shop for all things Zelda 2 randomizer including a seed bank that can spit out generated randomized roms and even act as a scoreboard.</p>
+                    <h2>Features</h2>
+                    <ul>
+                        <li>One pass deterministic randomization</li>
+                    </ul>
+                    <h2>Current Support</h2>
+                    <ul>
+                        <li>Vanilla overworld location shuffling</li>
+                        <li>Item shuffling</li>
+                    </ul>
+                    <h2>Coming Soon</h2>
+                    <ul>
+                        <li>Encounter shuffling</li>
+                        <li>XP shuffling</li>
+                        <li>Drop shuffling</li>
+                        <li>Enemy/Enemy Generator Shuffling</li>
+                        <li>Palace room shuffling</li>
+                        <li>Town spell shuffling</li>
+                        <li>Random terrain generation</li>
+                    </ul>
                     <h2>FAQ</h2>
                     <h3>Why Make a New One?</h3>
                     <p>Aside from the above reasons, I wanted to explore alternative randomization strategies and map rendering that I think will be much faster and more efficient than the current randomizer.  But mainly I wanted to make a randomizer you don't need to download onto your computer.</p>
                     <h3>Why doesn't X work?</h3>
                     <p>This is still very much a work in progress.  We still have many bugs to squash, but the randomizer is spitting out winnable seeds for the most part with albeit limited randomization.</p>
-                    <h3>What currently works?</h3>
-                    <p>Right now the randomizer only generates a vanilla map with shuffled locations and items.  No enemies, xp, palace rooms, etc are shuffled YET...but they will be.</p>
                     <h3>What's up with all the spoilers?</h3>
                     <p>These are currently in place only to aid in troubleshooting.  These tools are not meant to be a cheating device for the other randomizer.  So don't be a cheater...the only person you are lying to is yourself.  This feature will be locked down to administrators at a later date to allow for tournament organizers to validate a seed is beatable before giving it to the players.</p>
                 </div>
