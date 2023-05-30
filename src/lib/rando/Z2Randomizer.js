@@ -5,7 +5,7 @@ import { CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RAN
 import { ROM } from './ROM';
 
 export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
-const REMEDY_LIST = ["SHIELD", "JUMP", "LIFE", "FAIRY", "FIRE", "REFLECT", "SPELL", "THUNDER", "DOWNSTAB", "UPSTAB", "CANDLE", "HANDY_GLOVE", "RAFT", "HAMMER", "BOOTS", "RECORDER", "MAGIC_KEY", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
+const REMEDY_LIST = ["SHIELD", "JUMP", "LIFE", "FAIRY", "FIRE", "REFLECT", "SPELL", "THUNDER", "DOWNSTAB", "UPSTAB", "CANDLE", "HANDY_GLOVE", "RAFT", "HAMMER", "BOOTS", "RECORDER", "MAGIC_KEY", "CROSS", "BAGU_SAUCE", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP"];
 
 export class Z2Randomizer {
     graphData = null;
@@ -745,9 +745,11 @@ export class Z2Randomizer {
      */
     placeMagicContainers = (nMagicContainers, accessibleNodes) => {
         let nMagicContainersAlreadyPlaced = this.getMagicContainersAlreadyPlaced();
-    
-        for (let i = nMagicContainersAlreadyPlaced; i < nMagicContainers; i++) {
+        console.log("MAGIC TO PLACE: " + nMagicContainers);
+        while (nMagicContainersAlreadyPlaced < nMagicContainers) {
+            console.log("MAGIC PLACED:   " + nMagicContainersAlreadyPlaced);
             this.placeRemedies("MAGIC_CONTAINER", accessibleNodes);
+            nMagicContainersAlreadyPlaced = this.getMagicContainersAlreadyPlaced();
         }
     };
 
@@ -839,6 +841,8 @@ export class Z2Randomizer {
             // Pick a random location
             let completablePalaces = this.getCompletablePalaces(accessibleNodes);
             let itemBearingLocations = this.getAccessibleItemBearingLocations(completablePalaces, accessibleNodes);
+            console.log("ITEM BEARING LOCATIONS: " + itemBearingLocations.length);
+
             let randomItemBearingLocationName = this.chooseRandomNode(itemBearingLocations);
             let randomItemBearingLocation = this.locationMetadata[randomItemBearingLocationName];
             let randomItemBearingLocationContinent = randomItemBearingLocation.worldNumber;
