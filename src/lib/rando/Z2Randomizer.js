@@ -1491,7 +1491,7 @@ export class Z2Randomizer {
         rom.replaceText("YOU KNOW\nBAGU? THEN\nI CAN HELP\nYOU CROSS.", "DUDE!\nBAGU SAUCE!\nPASTA TIME!");
         rom.replaceText("I CANNOT\nHELP YOU\nANYMORE.\nGO NOW.", "DUDE...\nGTFO.");
         rom.replaceText("THIS MAGIC\nWILL MAKE\nYOUR SWORD\nSHOOT FIRE", "THIS MAGIC\nIS ALMOST\nUSELESS.");
-        rom.replaceText("WHEN YOU\nJUMP PRESS\nUP TO STAB.", "USE THIS\nTO STAB BATS.");
+        rom.replaceText("WHEN YOU\nJUMP PRESS\nUP TO STAB.", "USE THIS\nTO STAB\nBATS.");
         rom.replaceText("DO YOU\nHAVE THE\n7 MAGIC\nCONTAINERS", "U MID BRO.");
         rom.replaceText("YOU\nDESERVE\nMY HELP.\nFOLLOW ME.", "OH GOD!\nA MAN!\nFINALLY!");
         rom.replaceText("THERE IS\nA SECRET\nAT EDGE\nOF TOWN.", "I CHANGED\nMY DRESS.\nSEGS?");

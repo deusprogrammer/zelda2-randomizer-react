@@ -41,9 +41,14 @@ export default () => {
         fr.readAsArrayBuffer(file);
     }
 
-    const randomizeRom = () => {
+    const randomizeRom = (generateSeed=false) => {
         try {
-            let randomizer = new Z2Randomizer(z2VanillaTemplate, z2LocationMeta, seed);
+            let newSeed = seed;
+            if (generateSeed) {
+                newSeed = Math.trunc(Math.random() * (Math.pow(2, 32) - 1));
+                setSeed(newSeed);
+            }
+            let randomizer = new Z2Randomizer(z2VanillaTemplate, z2LocationMeta, newSeed);
             randomizer.randomize();
 
             let patchedRom = randomizer.patchRom(new Uint8Array(cleanRom));
@@ -114,6 +119,11 @@ export default () => {
                         setSeed(Math.trunc(Math.random() * (Math.pow(2, 32) - 1)));
                     }}>
                         Generate Seed
+                    </button><br />
+                    <button onClick={() => {
+                        randomizeRom(true);
+                    }}>
+                        Randomize ROM with New Seed (Alpha)
                     </button><br />
                     <button onClick={() => {
                         randomizeRom();
