@@ -1417,21 +1417,21 @@ export class Z2Randomizer {
                         let patchRomAddress, patchValue;
                         switch(mappedItems[index]) {
                         case "CHILD":
-                            if (continent !== 3) {
+                            if (continent < 2) {
                                 paletteLocation = 0x23570;
                                 patchRomAddress = 0x1eeb5;
                                 patchValue = 0x57;
                             }
                             break;
                         case "TROPHY":
-                            if (continent !== 0) {
+                            if (continent > 1) {
                                 paletteLocation = 0x25410;
                                 patchRomAddress = 0x1eeb7;
                                 patchValue = 0x41;
                             }
                             break;
                         case "MEDICINE":
-                            if (continent !== 0) {
+                            if (continent > 1) {
                                 paletteLocation = 0x25430;
                                 patchRomAddress = 0x1eeb9;
                                 patchValue = 0x43;
