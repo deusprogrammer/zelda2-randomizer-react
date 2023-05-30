@@ -5,6 +5,7 @@ import { CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RAN
 import { ROM } from './ROM';
 
 export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
+const REMEDY_LIST = ["SHIELD", "JUMP", "LIFE", "FAIRY", "FIRE", "REFLECT", "SPELL", "THUNDER", "DOWNSTAB", "UPSTAB", "CANDLE", "HANDY_GLOVE", "RAFT", "HAMMER", "BOOTS", "RECORDER", "MAGIC_KEY", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
 
 export class Z2Randomizer {
     graphData = null;
@@ -458,14 +459,14 @@ export class Z2Randomizer {
      * @param {Array} accessibleNodes 
      * @returns 
      */
-    getCompletablePalaces = (accessibleNodes) => {
+    getCompletablePalaces = (accessibleNodes, items=this.items, spells=this.spells, abilities=this.abilities) => {
         return accessibleNodes.filter(node => {
             let mappedLocation = this.getNodeMappedLocationName(node);
             return mappedLocation && this.locationMetadata[mappedLocation].type === "PALACE";
         }).filter(palaceNode => {
             let palaceName = this.getNodeMappedLocationName(palaceNode);
             let palace = this.locationMetadata[palaceName];
-            return palace.completionRequirements && this.checkRequirements(palace.completionRequirements);
+            return palace.completionRequirements && this.checkRequirements(palace.completionRequirements, items, spells, abilities);
         }).map(palaceNode => {
             return this.getNodeMappedLocationName(palaceNode);
         }).sort();
@@ -976,25 +977,31 @@ export class Z2Randomizer {
         let unmappedLocations = accessibleNodes.filter(node => !this.graphData[node].mappedLocation).length;
         let unmappedContinentalLocations = accessibleNodes.filter(node => !this.graphData[node].mappedLocation && this.graphData[node].continent === continent).length;
         unmappedContinentalLocations = unmappedContinentalLocations ? unmappedContinentalLocations : 0;
-        console.log("REMEDY " + nextRemedy + " COUNTS: " + count + " <= " + unmappedLocations + " " + sameContinentCount + " <= " + unmappedContinentalLocations);
         return unmappedLocations >= count && unmappedContinentalLocations >= sameContinentCount;
     }
 
-    getPlaceableRemedies = (accessibleNodes) => {
+    /**
+     * Gets all remedies that are placable or useful
+     * @param {Array} accessibleNodes 
+     * @returns 
+     */
+    getPlaceableRemedies = (accessibleNodes, completablePalaces) => {
         let neededRemedies = this.getCurrentRemedies(accessibleNodes).filter(remedy => remedy !== "CRYSTALS" && this.isRemedyPlaceable(remedy, accessibleNodes));
         return neededRemedies.filter(remedy => {
-            let newlyAccessibleNodes;
+            let newlyAccessibleNodes, newlyCompletablePalaces;
             if (this.isSpell(remedy)) {
                 [newlyAccessibleNodes] = this.getAccessibleNodes(this.northCastleNode, this.items, [...this.spells, remedy], this.abilities);
+                newlyCompletablePalaces = this.getCompletablePalaces(accessibleNodes, this.items, [...this.spells, remedy], this.abilities);
             } else if (this.isAbility(remedy)) {
                 [newlyAccessibleNodes] =  this.getAccessibleNodes(this.northCastleNode, this.items, this.spells, [...this.abilities, remedy]);
+                newlyCompletablePalaces = this.getCompletablePalaces(accessibleNodes, this.items, this.spells, [...this.abilities, remedy]);
             } else {
                 [newlyAccessibleNodes] = this.getAccessibleNodes(this.northCastleNode, [...this.items, remedy], this.spells, this.abilities);
+                newlyCompletablePalaces = this.getCompletablePalaces(accessibleNodes, [...this.items, remedy], this.spells, this.abilities);
             }
 
-            console.log(`${newlyAccessibleNodes.length} > ${accessibleNodes.length}`);
-            return newlyAccessibleNodes.length > accessibleNodes.length;
-        })
+            return newlyAccessibleNodes.length > accessibleNodes.length || newlyCompletablePalaces.length > completablePalaces.length;
+        });
     }
 
     /**
@@ -1004,7 +1011,7 @@ export class Z2Randomizer {
         let [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
         let inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
         let completablePalaces = this.getCompletablePalaces(accessibleNodes);
-        let neededRemedies     = this.getPlaceableRemedies(accessibleNodes);
+        let neededRemedies     = this.getPlaceableRemedies(accessibleNodes, completablePalaces);
         try {
             let i = 0;
             console.log("**********************************************************************************************************************");
@@ -1026,6 +1033,7 @@ export class Z2Randomizer {
             });
 
             while (completablePalaces.length < 7  && i < 40) {
+                let nextRemedy = this.chooseRandomNode(neededRemedies);
                 console.log("**********************************************************************************************************************");
                 console.log("ITERATION " + i);
                 console.log("\tITEMS:                " + this.items);
@@ -1033,15 +1041,13 @@ export class Z2Randomizer {
                 console.log("\tABILITIES:            " + this.abilities);
                 console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
                 console.log("\tNEEDED REMEDIES:      " + neededRemedies.filter(remedy => remedy !== "CRYSTALS").map(remedy => `${remedy}:${this.isRemedyPlaceable(remedy, accessibleNodes)}`));
-
-                // Find a item bearing location within the same continent to place a remedy in said node
-                let nextRemedy = this.chooseRandomNode(neededRemedies);
-                this.placeRemedies(nextRemedy, accessibleNodes);
-
                 console.log("\tNEXT REMEDY:          " + nextRemedy);
+
                 if (!nextRemedy) {
                     break;
                 }
+
+                this.placeRemedies(nextRemedy, accessibleNodes);
 
                 console.log("\tACCESSIBLE LOCATIONS:");
                 console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
@@ -1079,7 +1085,7 @@ export class Z2Randomizer {
                 [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
                 inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
                 completablePalaces = this.getCompletablePalaces(accessibleNodes);
-                neededRemedies     = this.getPlaceableRemedies(accessibleNodes);
+                neededRemedies     = this.getPlaceableRemedies(accessibleNodes, completablePalaces);
                 i++;
             }
 
@@ -1088,7 +1094,7 @@ export class Z2Randomizer {
             }
 
             // Place all other items, abilities, and spells.
-            let optionalItems = ["SHIELD", "FIRE", "LIFE", "THUNDER", "UPSTAB", "CANDLE", "CROSS", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP", "BAGU_SAUCE"];
+            let optionalItems = REMEDY_LIST.filter(remedy => !(this.items.includes(remedy) || this.spells.includes(remedy) || this.abilities.includes(remedy)));
             optionalItems.forEach(optionalItem => {
                 this.placeRemedies(optionalItem, accessibleNodes);
             });
