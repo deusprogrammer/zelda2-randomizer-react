@@ -2,33 +2,36 @@
 
 ## Randomization Process (what I have so far)
 
-* RP1: Randomly generate template (unless defined like Vanilla or other custom maps).
-* RP2: Randomly place North Palace somewhere that isn't completely blocked off such as a cave blocked by a rock or an isolation zone with exactly one node.
-* RP3: Randomly connect all isolation zones together.
-* RP4: Randomly place all item bearing areas such that they come before the blocked connection they are a remedy for.
-    * RP4.1: Gather all currently accessible nodes from the start and the blocked connections.
-    * RP4.2: Place item bearing area within the accessible nodes and place remedy for a blocked connection within that node.
-        * RP4.2.1: If remedy is a spell then place the town within accessible nodes.
-        * RP4.2.2: If town requires an item, then place that item within accessible nodes.
-    * RP4.3: Start at RP4.1 again and resume until Grand Palace is accessible and all Palaces are able to be completed.
-* RP5: Randomly place all remaining nodes and items.
+* RP1: Randomly generate terrain (unless defined like Vanilla or other custom maps).
+* RP2: Randomly generate template from terrain (unless defined like Vanilla or other custom maps).
+* RP3: Randomly place North Palace somewhere that isn't completely blocked off such as a cave blocked by a rock or an isolation zone with exactly one node.
+* RP4: Randomly connect all isolation zones together.
+* RP5: Randomly place all item bearing areas such that they come before the blocked connection they are a remedy for.
+    * RP5.1: Gather all currently accessible nodes from the start and the blocked connections.
+    * RP5.2: Place item bearing area within the accessible nodes and place remedy for a blocked connection within that node.
+        * RP5.2.1: If remedy is a spell then place the town within accessible nodes.
+        * RP5.2.2: If town requires an item, then place that item within accessible nodes.
+    * RP5.3: Start at RP4.1 again and resume until Grand Palace is accessible and all Palaces are able to be completed.
+* RP6: Randomly place all remaining nodes and items.
 
 ## TODO
 
-* Set up remedy placement for MAGIC6 and MAGIC8 and CRYSTALS7
-* Ensure that item locations that have requirements are included in the available locations.  If an item has requirements, handle those in a similar fashion to spell/abilities.
-* Tertiary remedies are being added twice
+* Randomize terrain
+* Randomize enemy placement
+* Randomize spell placements
+* Randomize palace layouts
 
 ## Change Log
 
 * 5/9/2023  1:00am - Changed maze island continent numbers to 3 on both location metadata and vanilla template
 * 5/16/2023 1:00pm - Filtering winnable locations for North Palace to go so we don't start soft locked
 * 5/16/2023 2:49pm - Discovered that north palace was overwriting locations
+* 5/29/2023 8:38pm - Placement working most of the time now 
 
 ## Bugs
 
 * Some seeds are generated with more than one item in places that should only have one
-* Some seeds start in impossible situations
+* Some seeds start in impossible situations (Seed 3496194489 for example)
 
 ## Logs
 

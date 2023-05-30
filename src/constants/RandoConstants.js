@@ -1,1 +1,1 @@
-export const RANDOMIZER_VERSION = "1.3.2a";
+export const RANDOMIZER_VERSION = "1.4.0a";
