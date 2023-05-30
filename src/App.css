@@ -266,6 +266,10 @@ input[type=file] {
     color: white;
 }
 
+li {
+    list-style-type: none;
+}
+
 @keyframes blink-animation {
     to {
         opacity: 0;
