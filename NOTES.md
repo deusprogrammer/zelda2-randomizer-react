@@ -32,6 +32,7 @@
 
 * Some seeds are generated with more than one item in places that should only have one
 * Some seeds start in impossible situations (Seed 3496194489 for example)
+* Some seeds fail to place items at the end (Seed 1499888227 for example)
 
 ## Logs
 

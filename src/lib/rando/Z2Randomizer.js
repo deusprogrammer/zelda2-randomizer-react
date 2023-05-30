@@ -713,7 +713,7 @@ export class Z2Randomizer {
                     )
                 );
 
-                return availableItemBearingLocations.length >= 2;
+                return availableItemBearingLocations.length >= 3;
             });
             winnableStartingLocations = [...winnableStartingLocations, ...isolationAreaWinnableStartingLocations];
         });
@@ -1000,6 +1000,9 @@ export class Z2Randomizer {
                 newlyCompletablePalaces = this.getCompletablePalaces(accessibleNodes, [...this.items, remedy], this.spells, this.abilities);
             }
 
+            console.log(`NODES WITH ${remedy}:   ${accessibleNodes.length} => ${newlyAccessibleNodes.length}`);
+            console.log(`PALACES WITH ${remedy}: ${completablePalaces.length} => ${newlyCompletablePalaces.length}`);
+
             return newlyAccessibleNodes.length > accessibleNodes.length || newlyCompletablePalaces.length > completablePalaces.length;
         });
     }
@@ -1043,6 +1046,18 @@ export class Z2Randomizer {
                 console.log("\tNEEDED REMEDIES:      " + neededRemedies.filter(remedy => remedy !== "CRYSTALS").map(remedy => `${remedy}:${this.isRemedyPlaceable(remedy, accessibleNodes)}`));
                 console.log("\tNEXT REMEDY:          " + nextRemedy);
 
+                if (completablePalaces.length >= 6 && !this.items.includes("CRYSTALS")) {
+                    this.items.push("CRYSTALS");
+                }
+
+                if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 7 && !this.items.includes("MAGIC7")) {
+                    this.items.push("MAGIC7");
+                }
+
+                if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 8 && !this.items.includes("MAGIC8")) {
+                    this.items.push("MAGIC8");
+                }
+
                 if (!nextRemedy) {
                     break;
                 }
@@ -1069,18 +1084,6 @@ export class Z2Randomizer {
                     }
                 });
 
-                if (completablePalaces.length >= 6 && !this.items.includes("CRYSTALS")) {
-                    this.items.push("CRYSTALS");
-                }
-
-                if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 7 && !this.items.includes("MAGIC7")) {
-                    this.items.push("MAGIC7");
-                }
-
-                if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 8 && !this.items.includes("MAGIC8")) {
-                    this.items.push("MAGIC8");
-                }
-
                 // Find accessible nodes, completable palaces, and needed remedies to progress
                 [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
                 inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
@@ -1089,6 +1092,7 @@ export class Z2Randomizer {
                 i++;
             }
 
+            // Check if all nodes are accessible
             if (inaccessibleNodes.length > 0) {
                 throw new Error("Unable to place all nodes");
             }
@@ -1096,8 +1100,23 @@ export class Z2Randomizer {
             // Place all other items, abilities, and spells.
             let optionalItems = REMEDY_LIST.filter(remedy => !(this.items.includes(remedy) || this.spells.includes(remedy) || this.abilities.includes(remedy)));
             optionalItems.forEach(optionalItem => {
-                this.placeRemedies(optionalItem, accessibleNodes);
+                try {
+                    this.placeRemedies(optionalItem, accessibleNodes);
+                } catch(error) {
+                    console.trace("Can't place anymore items");
+                }
             });
+
+            // Check for crystals once more
+            completablePalaces = this.getCompletablePalaces(accessibleNodes);
+            if (completablePalaces.length >= 6 && !this.items.includes("CRYSTALS")) {
+                this.items.push("CRYSTALS");
+            }
+
+            // Check that all palaces are completeable
+            if (this.getCompletablePalaces(accessibleNodes).length < 7) {
+                throw new Error("All palaces aren't completeable");
+            }
 
             // Place other nodes
             let otherNodes = Object.keys(this.graphData).filter(nodeName => !this.graphData[nodeName].mappedLocation);
@@ -1110,6 +1129,10 @@ export class Z2Randomizer {
                 otherLocations = removeNode(otherLocations, randomLocation);
             });
         } finally {
+            [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
+            inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
+            completablePalaces = this.getCompletablePalaces(accessibleNodes);
+            neededRemedies     = this.getPlaceableRemedies(accessibleNodes, completablePalaces);
             console.log("**********************************************************************************************************************");
             console.log(`FINAL REPORT`);
             console.log("\tITEMS:                " + this.items);
