@@ -356,7 +356,7 @@ export class Z2Randomizer {
      * @param {Array} requirements 
      * @returns 
      */
-    checkRequirements = (requirements) => {
+    checkRequirements = (requirements, items=this.items, spells=this.spells, abilities=this.abilities) => {
         if (requirements.length <= 0) {
             return true;
         }
@@ -366,7 +366,7 @@ export class Z2Randomizer {
             let subRequirements = requirement.split("|").map(subRequirement => subRequirement.trim());
             let subResult = false;
             subRequirements.forEach(subRequirement => {
-                subResult = subResult || this.items.includes(subRequirement) || this.spells.includes(subRequirement) || this.abilities.includes(subRequirement);
+                subResult = subResult || items.includes(subRequirement) || spells.includes(subRequirement) || abilities.includes(subRequirement);
             });
             result = result && subResult;
         });
@@ -401,7 +401,7 @@ export class Z2Randomizer {
      * @param {Array} visitedNodes 
      * @returns 
      */
-    getAccessibleNodes = (nodeName, visitedNodes=[]) => {
+    getAccessibleNodes = (nodeName, items=this.items, spells=this.spells, abilities=this.abilities, visitedNodes=[]) => {
         if (visitedNodes.includes(nodeName)) {
             return [[], visitedNodes];
         }
@@ -421,13 +421,13 @@ export class Z2Randomizer {
             node.connections.forEach((connectedNode) => {
                 if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
                     let requirements = node.connectionRequirements[connectedNode];
-                    if (requirements && this.checkRequirements(requirements)) {
-                        let [newAccessibleNodes, newlyVisitedNodes] = this.getAccessibleNodes(connectedNode, visitedNodes);
+                    if (requirements && this.checkRequirements(requirements, items, spells, abilities)) {
+                        let [newAccessibleNodes, newlyVisitedNodes] = this.getAccessibleNodes(connectedNode, items, spells, abilities, visitedNodes);
                         newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                         newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                     }
                 } else {
-                    let [newAccessibleNodes, newlyVisitedNodes] = this.getAccessibleNodes(connectedNode, visitedNodes);
+                    let [newAccessibleNodes, newlyVisitedNodes] = this.getAccessibleNodes(connectedNode, items, spells, abilities, visitedNodes);
                     newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
@@ -437,13 +437,13 @@ export class Z2Randomizer {
             node.links.forEach((linkedNode) => {
                 if (node.linkRequirements && node.linkRequirements[linkedNode]) {
                     let requirements = node.linkRequirements[linkedNode];
-                    if (requirements && this.checkRequirements(requirements)) {
-                        let [newAccessibleNodes, newlyVisitedNodes] = this.getAccessibleNodes(linkedNode, visitedNodes);
+                    if (requirements && this.checkRequirements(requirements, items, spells, abilities)) {
+                        let [newAccessibleNodes, newlyVisitedNodes] = this.getAccessibleNodes(linkedNode, items, spells, abilities, visitedNodes);
                         newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                         newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                     }
                 } else {
-                    let [newAccessibleNodes, newlyVisitedNodes] = this.getAccessibleNodes(linkedNode, visitedNodes);
+                    let [newAccessibleNodes, newlyVisitedNodes] = this.getAccessibleNodes(linkedNode, items, spells, abilities, visitedNodes);
                     newAccessibleNodes.forEach(newNode => {if (!accessibleNodes.includes(newNode)) accessibleNodes.push(newNode)});
                     newlyVisitedNodes.forEach(newNode => {if (!visitedNodes.includes(newNode)) visitedNodes.push(newNode)});
                 }
@@ -980,6 +980,23 @@ export class Z2Randomizer {
         return unmappedLocations >= count && unmappedContinentalLocations >= sameContinentCount;
     }
 
+    getPlaceableRemedies = (accessibleNodes) => {
+        let neededRemedies = this.getCurrentRemedies(accessibleNodes).filter(remedy => remedy !== "CRYSTALS" && this.isRemedyPlaceable(remedy, accessibleNodes));
+        return neededRemedies.filter(remedy => {
+            let newlyAccessibleNodes;
+            if (this.isSpell(remedy)) {
+                [newlyAccessibleNodes] = this.getAccessibleNodes(this.northCastleNode, this.items, [...this.spells, remedy], this.abilities);
+            } else if (this.isAbility(remedy)) {
+                [newlyAccessibleNodes] =  this.getAccessibleNodes(this.northCastleNode, this.items, this.spells, [...this.abilities, remedy]);
+            } else {
+                [newlyAccessibleNodes] = this.getAccessibleNodes(this.northCastleNode, [...this.items, remedy], this.spells, this.abilities);
+            }
+
+            console.log(`${newlyAccessibleNodes.length} > ${accessibleNodes.length}`);
+            return newlyAccessibleNodes.length > accessibleNodes.length;
+        })
+    }
+
     /**
      * Place all items and nodes in such a way that the game is beatable
      */
@@ -987,7 +1004,7 @@ export class Z2Randomizer {
         let [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
         let inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
         let completablePalaces = this.getCompletablePalaces(accessibleNodes);
-        let neededRemedies     = this.getCurrentRemedies(accessibleNodes);
+        let neededRemedies     = this.getPlaceableRemedies(accessibleNodes);
         try {
             let i = 0;
             console.log("**********************************************************************************************************************");
@@ -1018,8 +1035,7 @@ export class Z2Randomizer {
                 console.log("\tNEEDED REMEDIES:      " + neededRemedies.filter(remedy => remedy !== "CRYSTALS").map(remedy => `${remedy}:${this.isRemedyPlaceable(remedy, accessibleNodes)}`));
 
                 // Find a item bearing location within the same continent to place a remedy in said node
-                let placeableRemedies = neededRemedies.filter(remedy => remedy !== "CRYSTALS" && this.isRemedyPlaceable(remedy, accessibleNodes));
-                let nextRemedy = this.chooseRandomNode(placeableRemedies);
+                let nextRemedy = this.chooseRandomNode(neededRemedies);
                 this.placeRemedies(nextRemedy, accessibleNodes);
 
                 console.log("\tNEXT REMEDY:          " + nextRemedy);
@@ -1063,7 +1079,7 @@ export class Z2Randomizer {
                 [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
                 inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
                 completablePalaces = this.getCompletablePalaces(accessibleNodes);
-                neededRemedies     = this.getCurrentRemedies(accessibleNodes);
+                neededRemedies     = this.getPlaceableRemedies(accessibleNodes);
                 i++;
             }
 
