@@ -16,6 +16,7 @@ import z2LocationMeta from '../lib/zelda2/templates/z2-location.meta';
 import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 import TextData from '../components/TextData';
 import { toast } from 'react-toastify';
+import { ROM } from '../lib/rando/ROM';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
@@ -48,9 +49,10 @@ export default () => {
                 setSeed(newSeed);
             }
             let randomizer = new Z2Randomizer(z2VanillaTemplate, z2LocationMeta, newSeed);
-            randomizer.randomize();
+            let graph = randomizer.randomize();
 
-            let patchedRom = randomizer.patchRom(new Uint8Array(cleanRom));
+            let rom = new ROM(new Uint8Array(cleanRom));
+            let patchedRom = rom.patchRom(graph);
             parseRom(patchedRom);
 
             toast("ROM randomized.  Click download current rom to get patched rom.", {type: "info"});
