@@ -16,17 +16,35 @@ export class Z2Randomizer {
         this.randomNumberGenerator = randomSeed(seed);
     }
 
-    isNodeMappedOrNotFull = (node) => {
+    /**
+     * Check node to see if it is either unmapped or still has room
+     * @param {string} node 
+     * @returns 
+     */
+    isNodeUnmappedOrNotFull = (node) => {
         let mappedLocationItemCapacity = this.getMappedLocationItemCapacity(node);
         let mappedLocationItemCount = this.getNodeItemCount(node);
 
         let noMappedLocationOrItem = !this.graphData[node].mappedLocation && !this.graphData[node].mappedItems;
         let stillRoomForItem = mappedLocationItemCount < mappedLocationItemCapacity;
 
-        let hasMappedLocation = this.graphData[node].mappedLocation && this.graphData[node].mappedItems;
-        let hasMappedLocationButStillRoomForItem =  hasMappedLocation && stillRoomForItem;
+        let hasMappedLocationAndItems = this.graphData[node].mappedLocation && this.graphData[node].mappedItems;
+        let hasMappedLocationButStillRoomForItem =  hasMappedLocationAndItems && stillRoomForItem;
 
         return noMappedLocationOrItem || hasMappedLocationButStillRoomForItem;
+    }
+
+    /**
+     * Get nodes that are available to have an item placed in them
+     * @param {Array} accessibleNodes 
+     * @param {number} continent 
+     * @returns 
+     */
+    getAvailableNodes = (accessibleNodes, continent) => {
+        return accessibleNodes.filter(node => {
+            let onSameContinent = this.graphData[node].continent === continent;
+            return onSameContinent && !this.graphData[node].mappedLocation;
+        });
     }
 
     /**
@@ -240,7 +258,7 @@ export class Z2Randomizer {
                 acc[continent] = 0;
             }
 
-            if (this.isNodeMappedOrNotFull(node)) {
+            if (this.isNodeUnmappedOrNotFull(node)) {
                 acc[continent]++;
             }
 
@@ -267,12 +285,12 @@ export class Z2Randomizer {
             let node = this.graphData[nodeName];
     
             // Get the mapped item count and number of items in the location.
-            let locationItems = location.items.length;
-            let mappedItems   = node && node.mappedItems ? node.mappedItems.length : 0;
+            let itemCapacity = location && location.items ? location.items.length : 0;
+            let itemCount    = node && node.mappedItems ? node.mappedItems.length : 0;
             
             // Naming my conditions to make it easier to read.
-            let roomForMoreItems = mappedItems < locationItems;
-            let containsItems = locationItems > 0;
+            let roomForMoreItems = itemCount < itemCapacity;
+            let containsItems = itemCapacity > 0;
             let withinAccessibleContinents = accessibleContinents.includes(location.worldNumber);
     
             return roomForMoreItems && containsItems && withinAccessibleContinents;
@@ -543,11 +561,15 @@ export class Z2Randomizer {
         // Place connections, exits, and palaces for all continents
         let passThroughAreas = Object.keys(this.locationMetadata).filter(key => this.locationMetadata[key].links.length > 0 && !this.locationMetadata[key].passThrough);
         for (let continent = 0; continent < 4; continent++) {
+            console.log("CONTINENT: " + continent);
+    
             // Filter out all passthrough areas
             let continentNodes = Object.keys(this.graphData).filter(key => this.graphData[key].continent === continent);
             let localPassThroughAreas = passThroughAreas.filter(key => this.locationMetadata[key].worldNumber === continent && continentNodes.map(continentNode => this.graphData[continentNode].locationKey).includes(this.locationMetadata[key].links[0]));
             let palaces = Object.keys(this.locationMetadata).filter(key => this.locationMetadata[key].worldNumber === continent && this.locationMetadata[key].type === 'PALACE');
             let continentExits = Object.keys(this.locationMetadata).filter(key => this.locationMetadata[key].worldNumber === continent && this.linkIsInAnotherContinent(this.locationMetadata[key]));
+    
+            console.log(`\tCONTINENT EXITS:       ${continentExits}`);
     
             // Separate all nodes into their isolation groups
             let isolationAreas = this.getIsolationZones(continent);
@@ -558,8 +580,18 @@ export class Z2Randomizer {
             disconnectedIsolationAreas = removeNode(disconnectedIsolationAreas, firstConnectedIsolationArea);
             let connectedIsolationAreas = [firstConnectedIsolationArea];
     
-            // Randomly assign links between isolation groups.
+            // Randomly assign links between isolation groups.   
+            console.log("\tRP1: PLACING CONNECTIONS");
             while (localPassThroughAreas.length > 0) {
+                console.log("\t\tSTARTING NEW PASSTHROUGH");
+                console.log("\t\t\tISOLATION ZONES:");
+                isolationAreas.forEach((zone, index) => {
+                    console.log(`\t\t\t\tISOLATION ${index.toString().padStart(2, '')}:\t` + JSON.stringify(zone));
+                });
+                console.log(`\t\t\tLOCAL PASSES  ${JSON.stringify(localPassThroughAreas)}`);
+                console.log(`\t\t\tCONNECTED     ${JSON.stringify(connectedIsolationAreas)}`);
+                console.log(`\t\t\tDISCONNECTED  ${JSON.stringify(disconnectedIsolationAreas)}`);
+    
                 // Choose a random isolation zone for the entrance
                 let entranceIndex = this.chooseRandomNode(connectedIsolationAreas);
     
@@ -628,23 +660,37 @@ export class Z2Randomizer {
                     if (isolationAreas[exitIndex].length <= 0) {
                         connectedIsolationAreas = removeNode(connectedIsolationAreas, exitIndex);
                     }
+    
+                    console.log(`\t\t\tCONNECTING    ${this.graphData[entranceNode].locationKey} to ${this.graphData[exitNode].locationKey} via ${entrance} and ${exit}`);
                 });
             }
     
             // Randomly place continent exits
+            console.log("\tRP2: PLACING EXITS");
             for (let exit of continentExits) {
+                console.log("\t\tCONTINENT NODES LEFT: " + JSON.stringify(continentNodes));
+    
                 let randomNode = this.chooseRandomNode(continentNodes);
                 continentNodes = removeNode(continentNodes, randomNode);
     
                 this.graphData[randomNode].mappedLocation = exit;
+    
+                console.log("\t\tRANDOM NODE PICKED FOR EXIT: " + randomNode);
+                console.log(`\t\tPLACING EXIT ${exit} in ${this.graphData[randomNode].locationKey}`);
             }
     
             //Randomly place continent exits
+            console.log("\tRP3: PLACING PALACES");
             for (let palace of palaces) {
+                console.log("\t\tCONTINENT NODES LEFT: " + JSON.stringify(continentNodes));
+    
                 let randomNode = this.chooseRandomNode(continentNodes);
                 continentNodes = removeNode(continentNodes, randomNode);
     
                 this.graphData[randomNode].mappedLocation = palace;
+    
+                console.log("\t\tRANDOM NODE PICKED FOR PALACE: " + randomNode);
+                console.log(`\t\tPLACING PALACE ${palace} in ${this.graphData[randomNode].locationKey}`);
             }
         }
     }
@@ -654,9 +700,11 @@ export class Z2Randomizer {
      */
     placeNorthCastle = () => {
         // Place north castle node in an isolation zone where it a winnable state can be reached
+        console.log("PLACING NORTH CASTLE");
         let isolationAreas = this.getIsolationZones(0);
         let winnableStartingLocations = [];
         isolationAreas.forEach(isolationAreaNodes => {
+            console.log("\tCHECKING ISOLATION ZONE: " + isolationAreaNodes);
             let isolationAreaWinnableStartingLocations = isolationAreaNodes.filter(isolationAreaNodeName => {
                 // Check to see if node already has a mapped location.
                 let isolationAreaNode = this.getNodeMappedLocationName(isolationAreaNodeName);
@@ -684,6 +732,7 @@ export class Z2Randomizer {
         });
         this.northCastleNode = this.chooseRandomNode(winnableStartingLocations);
         this.graphData[this.northCastleNode].mappedLocation = "NORTH_CASTLE";
+        console.log(`\tPLACED NORTH CASTLE AT ${this.graphData[this.northCastleNode].locationKey}`);
     }
 
     getMagicContainersAlreadyPlaced = () => {
@@ -709,7 +758,9 @@ export class Z2Randomizer {
      */
     placeMagicContainers = (nMagicContainers, accessibleNodes) => {
         let nMagicContainersAlreadyPlaced = this.getMagicContainersAlreadyPlaced();
+        console.log("MAGIC TO PLACE: " + nMagicContainers);
         while (nMagicContainersAlreadyPlaced < nMagicContainers) {
+            console.log("MAGIC PLACED:   " + nMagicContainersAlreadyPlaced);
             this.placeRemedies("MAGIC_CONTAINER", accessibleNodes);
             nMagicContainersAlreadyPlaced = this.getMagicContainersAlreadyPlaced();
         }
@@ -726,14 +777,20 @@ export class Z2Randomizer {
         }
     
         if (nextRemedy === "MAGIC5") {
+            console.log("PLACING MAGIC5");
             return this.placeMagicContainers(1, accessibleNodes);
         } else if (nextRemedy === "MAGIC6") {
+            console.log("PLACING MAGIC6");
             return this.placeMagicContainers(2, accessibleNodes);
         } else if (nextRemedy === "MAGIC7") {
+            console.log("PLACING MAGIC7");
             return this.placeMagicContainers(3, accessibleNodes);
         } else if (nextRemedy === "MAGIC8") {
+            console.log("PLACING MAGIC8");
             return this.placeMagicContainers(4, accessibleNodes);
         } else if (this.isSpell(nextRemedy)) {
+            console.log("PLACING SPELL " + nextRemedy);
+    
             // Get the spell town for the current needed remedy
             let spellTown = this.getSpellTown(nextRemedy);
     
@@ -756,6 +813,8 @@ export class Z2Randomizer {
     
             this.addSpell(nextRemedy);
         } else if (this.isAbility(nextRemedy)) {
+            console.log("PLACING ABILITY " + nextRemedy);
+    
             // Get the ability town for the current needed remedy
             let abilityTown = this.getAbilityTown(nextRemedy);
     
@@ -778,36 +837,39 @@ export class Z2Randomizer {
     
             this.addAbility(nextRemedy);
         } else if (this.isBagu(nextRemedy)) {
+            console.log("PLACING BAGU");
+    
             // Pick an accessible node
             let remedyNode = this.chooseRandomNode(accessibleNodes.filter(node => !this.graphData[node].mappedLocation && this.graphData[node].continent === 0));
     
             // Map node to Bagu
             this.graphData[remedyNode].mappedLocation = "BAGUS_CABIN";
     
+            console.log(`PLACING BAGU IN ${remedyNode} (${this.graphData[remedyNode].locationKey})`);
+    
             this.addItem(nextRemedy);
         } else {
+            console.log("PLACING ITEM " + nextRemedy);
             // Check to see if item is already placed
             let itemNode = accessibleNodes.find(accessibleNode => !["MAGIC_CONTAINER", "HEART_CONTAINER", "1UP", "50PB", "100PB", "200PB", "500PB"].includes(nextRemedy) && this.graphData[accessibleNode].mappedItems && this.graphData[accessibleNode].mappedItems.includes(nextRemedy));
             if (itemNode) {
+                console.log("ITEM ALREADY PLACED");
                 return;
             }
     
             // Pick a random location
             let completablePalaces = this.getCompletablePalaces(accessibleNodes);
             let itemBearingLocations = this.getAccessibleItemBearingLocations(completablePalaces, accessibleNodes);
-
             let randomItemBearingLocationName = this.chooseRandomNode(itemBearingLocations);
             let randomItemBearingLocation = this.locationMetadata[randomItemBearingLocationName];
             let randomItemBearingLocationContinent = randomItemBearingLocation.worldNumber;
     
-            // If the remedy node isn't already mapped then we will map it.
+            // Check to see if location we picked is already mapped
             let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === randomItemBearingLocation.id);
+
+            // If it's not already mapped, then find an accessible node and place it there
             if (!remedyNode) {
-                // Filter out nodes that don't have a mapped location or ones that do that have room for items left
-                let unmappedNodes = accessibleNodes.filter(node => {
-                    let onSameContinent = this.graphData[node].continent === randomItemBearingLocationContinent;
-                    return onSameContinent && this.isNodeMappedOrNotFull(node);
-                });
+                let unmappedNodes = this.getAvailableNodes(accessibleNodes, randomItemBearingLocationContinent);
 
                 remedyNode = this.chooseRandomNode(unmappedNodes);
                 this.graphData[remedyNode].mappedLocation = randomItemBearingLocationName;
@@ -902,6 +964,7 @@ export class Z2Randomizer {
         } else {
             let itemNode = accessibleNodes.find(accessibleNode => !["MAGIC_CONTAINER", "HEART_CONTAINER", "1UP", "50PB", "100PB", "200PB", "500PB"].includes(nextRemedy) && this.graphData[accessibleNode].mappedItems && this.graphData[accessibleNode].mappedItems.includes(nextRemedy));
             if (itemNode) {
+                console.log("ITEM ALREADY PLACED");
                 return [0, 0];
             }
 
@@ -967,31 +1030,31 @@ export class Z2Randomizer {
         let inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
         let completablePalaces = this.getCompletablePalaces(accessibleNodes);
         let neededRemedies     = this.getPlaceableRemedies(accessibleNodes, completablePalaces);
-        let nextRemedy         = this.chooseRandomNode(neededRemedies);
+        let nextRemedy = this.chooseRandomNode(neededRemedies);
         try {
             while (nextRemedy && completablePalaces.length < 7) {
-                
-
-                // Add pseudo remedies
+                // Set pseudoitems
                 if (completablePalaces.length >= 6 && !this.items.includes("CRYSTALS")) {
                     this.items.push("CRYSTALS");
                 }
+
                 if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 7 && !this.items.includes("MAGIC7")) {
                     this.items.push("MAGIC7");
                 }
+
                 if (this.items.filter(item => item === "MAGIC_CONTAINER").length >= 8 && !this.items.includes("MAGIC8")) {
                     this.items.push("MAGIC8");
                 }
 
+                // Place remedies
                 this.placeRemedies(nextRemedy, accessibleNodes);
-
 
                 // Find accessible nodes, completable palaces, and needed remedies to progress
                 [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
                 inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
                 completablePalaces = this.getCompletablePalaces(accessibleNodes);
                 neededRemedies     = this.getPlaceableRemedies(accessibleNodes, completablePalaces);
-                nextRemedy         = this.chooseRandomNode(neededRemedies);
+                nextRemedy = this.chooseRandomNode(neededRemedies);
             }
 
             // Check if all nodes are accessible
@@ -1073,6 +1136,9 @@ export class Z2Randomizer {
 
                 return previous;
             }, {});
+
+            let duplicateLocations = Object.keys(counts).filter(location => counts[location] > 1);
+            console.log("\nDUPLICATED LOCATIONS: " + duplicateLocations);
         }
     }
 
