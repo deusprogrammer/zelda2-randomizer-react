@@ -1,12 +1,13 @@
 import parse from "../Z2Parser";
 import { assembleCode } from "../memory/Assembler";
 import { CONTINENT_EXIT_MAPPINGS, CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RANDO_MAP_OFFSETS } from "../zelda2/Z2MemoryMappings";
-import { ITEM_MAP, printSpriteMap, stringToZ2Bytes } from "../zelda2/Z2Utils";
+import { printSpriteMap, stringToZ2Bytes } from "../zelda2/Z2Utils";
 import itemMetaData from '../zelda2/templates/z2-items.meta';
 import vanillaMapData from '../zelda2/templates/z2-vanilla.map';
 import locationMetadata from '../zelda2/templates/z2-location.meta';
 
 const LAST_BIT_MASK = 1 >>> 0;
+const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
 
 export class ROM {
     rom;
@@ -420,6 +421,8 @@ export class ROM {
             // Set item locations
             if (mappedItems) {
                 itemMetaData[mappedLocation].forEach((romOffset, index) => {
+                    romOffset = parseInt(romOffset, 16);
+                    
                     // Fix sprite data
                     if (["P1", "P2", "P3", "P4", "P5", "P6", "GP"].includes(mappedLocation)) {
                         let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
@@ -498,6 +501,8 @@ export class ROM {
                         }
                     }
 
+                    console.log(`${mappedLocation}: 0x${romOffset.toString(16)} = ${mappedItems[index]} (0x${ITEM_MAP[mappedItems[index]].toString(16)})`);
+
                     // Patch the rom location with the new item
                     this.writeByteToROM(romOffset, ITEM_MAP[mappedItems[index]]);
                 });
@@ -506,7 +511,7 @@ export class ROM {
         
         // Compress each sprite map and write it to memory
         for (let continent = 0; continent < 4; continent++) {
-            let compressedMap = this.patchSpriteMap(vanillaMapData, continent, graphData);
+            let compressedMap = this.patchSpriteMap(vanillaMapData[continent], continent, graphData);
             let mapOffset = RANDO_MAP_OFFSETS[continent];
 
             compressedMap.forEach(blockRun => {
