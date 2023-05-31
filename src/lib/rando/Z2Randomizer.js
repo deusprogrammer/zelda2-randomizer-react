@@ -3,6 +3,7 @@ import { parse } from '../Z2Parser';
 import { explore, printSpriteMap, stringToZ2Bytes } from '../zelda2/Z2Utils';
 import { CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RANDO_MAP_OFFSETS } from '../zelda2/Z2MemoryMappings';
 import { ROM } from './ROM';
+import itemMetaData from '../zelda2/templates/z2-items.meta';
 
 export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
 const REMEDY_LIST = ["SHIELD", "JUMP", "LIFE", "FAIRY", "FIRE", "REFLECT", "SPELL", "THUNDER", "DOWNSTAB", "UPSTAB", "CANDLE", "HANDY_GLOVE", "RAFT", "HAMMER", "BOOTS", "RECORDER", "MAGIC_KEY", "CROSS", "BAGU_SAUCE", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP"];
@@ -1308,18 +1309,18 @@ export class Z2Randomizer {
             if (mappedItems) {
                 // Hacky fix for spell town...more like SMELL town
                 if (["SPELL_TOWN"].includes(mappedLocation)) {
-                    const SPELL_TOWN_MAGIC_CONTAINER = 46;
-                    const SPELL_TOWN_MAGIC_KEY = 47;
+                    // const SPELL_TOWN_MAGIC_CONTAINER = 46;
+                    // const SPELL_TOWN_MAGIC_KEY = 47;
                     let item1 = ITEM_MAP[mappedItems[0]];
                     let item2 = ITEM_MAP[mappedItems[1]];
 
-                    let sideViewMaps1 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_CONTAINER];
-                    let sideViewMaps2 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_KEY];
+                    // let sideViewMaps1 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_CONTAINER];
+                    // let sideViewMaps2 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_KEY];
 
-                    let levelElement1 = sideViewMaps1.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
-                    levelElement1.collectableObjectNumber = item1;
-                    let levelElement2 = sideViewMaps2.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
-                    levelElement2.collectableObjectNumber = item2;
+                    // let levelElement1 = sideViewMaps1.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
+                    // levelElement1.collectableObjectNumber = item1;
+                    // let levelElement2 = sideViewMaps2.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
+                    // levelElement2.collectableObjectNumber = item2;
 
                     // Fix spell item sprite for spell town
                     let paletteLocation;
@@ -1366,30 +1367,26 @@ export class Z2Randomizer {
                         break;
                     }
                     if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                        console.log("SPELL TOWN ITEM IN SPELL TOWN (no relation)");
                         rom.writeBytesToROM(paletteLocation, spriteLocation);
                         rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
                     }
 
-                    if (item1) {
-                        rom.writeFieldToROM(levelElement1, 'collectableObjectNumber');
-                    }
-                    if (item2) {
-                        rom.writeFieldToROM(levelElement2, 'collectableObjectNumber');
-                    }
+                    // if (item1) {
+                    //     rom.writeFieldToROM(levelElement1, 'collectableObjectNumber');
+                    // }
+                    // if (item2) {
+                    //     rom.writeFieldToROM(levelElement2, 'collectableObjectNumber');
+                    // }
 
                     return;
                 }
 
-                // For all other items explore the local and look for where items would go.
-                let items = explore(romData.sideViewMaps, mapSet, mapNumber);
-                let index = 0;
-                items.forEach(({levelElement}) => {
-                    // If we are in a palace, ignore everything but the big item
-                    if (this.isPalace(mappedLocation) && levelElement.collectableObjectNumber > 0x5) {
-                        return;
-                    }
+                let items = itemMetaData[mappedLocation];
 
+                // For all other items explore the local and look for where items would go.
+                // let items = explore(romData.sideViewMaps, mapSet, mapNumber);
+                let index = 0;
+                items.forEach(romOffset => {
                     // Fix spell item sprite for palaces and out of continent locations
                     if (this.isPalace(mappedLocation)) {
                         let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
@@ -1407,7 +1404,6 @@ export class Z2Randomizer {
                                 break;
                             }
                         if (spriteData && palacePaletteLocation) {
-                            console.log("SPELL TOWN ITEM IN PALACE")
                             rom.writeBytesToROM(palacePaletteLocation, spriteData);
                             rom.writeBytesToROM(patchRomAddress, [0xAD, 0xAD]);
                         }
@@ -1440,14 +1436,14 @@ export class Z2Randomizer {
                         }
 
                         if (paletteLocation && spriteData && patchRomAddress && patchValue) {
-                            console.log("SPELL TOWN ITEM DIFFERENT CONTINENT");
                             rom.writeBytesToROM(paletteLocation, spriteData);
                             rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
                         }
                     }
 
-                    levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index++]];
-                    rom.writeFieldToROM(levelElement, 'collectableObjectNumber');
+                    // levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index++]];
+                    // rom.writeFieldToROM(levelElement, 'collectableObjectNumber');
+                    rom.writeByteToROM(romOffset, ITEM_MAP[mappedItems[index++]]);
                 });
             }
         });
