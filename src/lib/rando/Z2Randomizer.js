@@ -1307,87 +1307,8 @@ export class Z2Randomizer {
 
             // Set item locations
             if (mappedItems) {
-                // Hacky fix for spell town...more like SMELL town
-                if (["SPELL_TOWN"].includes(mappedLocation)) {
-                    // const SPELL_TOWN_MAGIC_CONTAINER = 46;
-                    // const SPELL_TOWN_MAGIC_KEY = 47;
-                    let item1 = ITEM_MAP[mappedItems[0]];
-                    let item2 = ITEM_MAP[mappedItems[1]];
-
-                    // let sideViewMaps1 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_CONTAINER];
-                    // let sideViewMaps2 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_KEY];
-
-                    // let levelElement1 = sideViewMaps1.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
-                    // levelElement1.collectableObjectNumber = item1;
-                    // let levelElement2 = sideViewMaps2.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
-                    // levelElement2.collectableObjectNumber = item2;
-
-                    // Fix spell item sprite for spell town
-                    let paletteLocation;
-                    let spriteLocation = spellItemSpriteData[item1];
-                    let patchRomAddress, patchValue;
-                    switch(item1) {
-                    case "CHILD":
-                        paletteLocation = 0x23570;
-                        patchRomAddress = 0x1eeb5;
-                        patchValue = 0x25;
-                        break;
-                    case "TROPHY":
-                        paletteLocation = 0x27250;
-                        patchRomAddress = 0x1eeb7;
-                        patchValue = 0x21;
-                        break;
-                    case "MEDICINE":
-                        paletteLocation = 0x27230;
-                        patchRomAddress = 0x1eeb9;
-                        patchValue = 0x23;
-                        break;
-                    }
-                    if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                        rom.writeBytesToROM(paletteLocation, spriteLocation);
-                        rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                    }
-                    spriteLocation = spellItemSpriteData[item2];
-                    patchRomAddress = patchValue = null;
-                    switch(item2) {
-                    case "CHILD":
-                        paletteLocation = 0x23570;
-                        patchRomAddress = 0x1eeb5;
-                        patchValue = 0x25;
-                        break;
-                    case "TROPHY":
-                        paletteLocation = 0x27250;
-                        patchRomAddress = 0x1eeb7;
-                        patchValue = 0x21;
-                        break;
-                    case "MEDICINE":
-                        paletteLocation = 0x27230;
-                        patchRomAddress = 0x1eeb9;
-                        patchValue = 0x23;
-                        break;
-                    }
-                    if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                        rom.writeBytesToROM(paletteLocation, spriteLocation);
-                        rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                    }
-
-                    // if (item1) {
-                    //     rom.writeFieldToROM(levelElement1, 'collectableObjectNumber');
-                    // }
-                    // if (item2) {
-                    //     rom.writeFieldToROM(levelElement2, 'collectableObjectNumber');
-                    // }
-
-                    return;
-                }
-
-                let items = itemMetaData[mappedLocation];
-
-                // For all other items explore the local and look for where items would go.
-                // let items = explore(romData.sideViewMaps, mapSet, mapNumber);
-                let index = 0;
-                items.forEach(romOffset => {
-                    // Fix spell item sprite for palaces and out of continent locations
+                itemMetaData[mappedLocation].forEach((romOffset, index) => {
+                    // Fix sprite data
                     if (this.isPalace(mappedLocation)) {
                         let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
                         let spriteData = spellItemSpriteData[mappedItems[index]];
@@ -1406,6 +1327,31 @@ export class Z2Randomizer {
                         if (spriteData && palacePaletteLocation) {
                             rom.writeBytesToROM(palacePaletteLocation, spriteData);
                             rom.writeBytesToROM(patchRomAddress, [0xAD, 0xAD]);
+                        }
+                    } else if (mappedLocation === "SPELL_TOWN") {
+                        let paletteLocation;
+                        let spriteLocation = spellItemSpriteData[mappedItems[index]];
+                        let patchRomAddress, patchValue;
+                        switch(mappedItems[index]) {
+                        case "CHILD":
+                            paletteLocation = 0x23570;
+                            patchRomAddress = 0x1eeb5;
+                            patchValue = 0x25;
+                            break;
+                        case "TROPHY":
+                            paletteLocation = 0x27250;
+                            patchRomAddress = 0x1eeb7;
+                            patchValue = 0x21;
+                            break;
+                        case "MEDICINE":
+                            paletteLocation = 0x27230;
+                            patchRomAddress = 0x1eeb9;
+                            patchValue = 0x23;
+                            break;
+                        }
+                        if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
+                            rom.writeBytesToROM(paletteLocation, spriteLocation);
+                            rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
                         }
                     } else {
                         let paletteLocation;
@@ -1434,16 +1380,14 @@ export class Z2Randomizer {
                             }
                             break;
                         }
-
                         if (paletteLocation && spriteData && patchRomAddress && patchValue) {
                             rom.writeBytesToROM(paletteLocation, spriteData);
                             rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
                         }
                     }
 
-                    // levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index++]];
-                    // rom.writeFieldToROM(levelElement, 'collectableObjectNumber');
-                    rom.writeByteToROM(romOffset, ITEM_MAP[mappedItems[index++]]);
+                    // Patch the rom location with the new item
+                    rom.writeByteToROM(romOffset, ITEM_MAP[mappedItems[index]]);
                 });
             }
         });
