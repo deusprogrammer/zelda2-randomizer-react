@@ -1,9 +1,13 @@
 import parse from "../Z2Parser";
 import { assembleCode } from "../memory/Assembler";
-import { CONTINENT_EXIT_MAPPINGS } from "../zelda2/Z2MemoryMappings";
-import { stringToZ2Bytes } from "../zelda2/Z2Utils";
+import { CONTINENT_EXIT_MAPPINGS, CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RANDO_MAP_OFFSETS } from "../zelda2/Z2MemoryMappings";
+import { printSpriteMap, stringToZ2Bytes } from "../zelda2/Z2Utils";
+import itemMetaData from '../zelda2/templates/z2-items.meta';
+import vanillaMapData from '../zelda2/templates/z2-vanilla.map';
+import locationMetadata from '../zelda2/templates/z2-location.meta';
 
 const LAST_BIT_MASK = 1 >>> 0;
+const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
 
 export class ROM {
     rom;
@@ -308,14 +312,6 @@ export class ROM {
     }
 
     /**
-     * Get the rom bytes
-     * @returns 
-     */
-    getRom = () => {
-        return this.rom;
-    }
-
-    /**
      * Replace game text with new text
      * @param {string} oldText 
      * @param {string} newText 
@@ -325,5 +321,236 @@ export class ROM {
         let {offset, size} = this.romData.textData.find(({text}) => text === oldText);
         let replacement = stringToZ2Bytes(newText.slice(0, size - 1) + "\0");
         this.writeBytesToROM(offset, replacement);
+    }
+
+    /**
+     * Modify and compress map
+     * @param {Array} spriteMap 
+     * @param {number} continent 
+     * @returns 
+     */
+    patchSpriteMap = (mapBlocks, continent, graphData) => {
+        // Write data to expanded map
+        Object.keys(graphData).filter(nodeName => graphData[nodeName].continent === continent).forEach(nodeName => {
+            let node = graphData[nodeName];
+            let {x, y} = node;
+            let {type} = locationMetadata[node.mappedLocation];
+            mapBlocks[(y - 30) * 64 + x] = OVERWORLD_SPRITE_MAPPING[type];
+        })
+
+        // Recompress map to store
+        let currentBlockType = null;
+        let run = 0;
+        let compressedMap = [];
+        mapBlocks.forEach((mapBlock, index) => {
+            if (currentBlockType !== mapBlock || run === 0xF || index % 64 === 0) {
+                if (currentBlockType !== null) {
+                    compressedMap.push({type: currentBlockType, length: run - 1});
+                }
+                run = 0;
+                currentBlockType = mapBlock;
+            }
+            run++;
+        });
+        if (run > 0) {
+            compressedMap.push({type: currentBlockType, length: run - 1});
+        }
+
+        printSpriteMap(compressedMap);
+
+        return compressedMap;
+    }
+
+    /**
+     * Patch the ROM with the graph
+     * @param {string} fileName 
+     */
+    patchRom = (graphData) => {
+        // Patch ROM here
+        console.log("PATCHING ROM...");
+
+        let spellItemSpriteData = this.getSpellTownItemSprites();
+
+        // Apply various patches
+        this.extendMapSize();
+        this.miscPatches();
+        this.disablePalaceTurningToStone();
+        this.disableFlashing();
+        this.upAController();
+        this.fixPalaceHeartSprite();
+
+        // Set locations and items
+        Object.keys(graphData).forEach((nodeName) => {
+            // Gather all needed information from our location metadata and template
+            let targetNode = graphData[nodeName];
+            let {x, y, continent, mappedLocation, mappedItems} = targetNode;
+            let mappedNode = Object.keys(graphData).find(mappedNodeName => graphData[mappedNodeName].locationKey === mappedLocation);
+            let {locationKey} = graphData[mappedNode];
+
+            // Acquire the node we are editting
+            let nodeToEdit = this.romData.overworld[continent].locations[locationKey];
+
+            // Modify the x and y position of the area
+            nodeToEdit.x = x;
+            nodeToEdit.y = y;
+            this.writeFieldToROM(nodeToEdit, 'x');
+            this.writeFieldToROM(nodeToEdit, 'y');
+
+            // Apply corrections based on special areas
+            switch (mappedLocation) {
+                case "P6":
+                case "SPELL_TOWN":
+                    nodeToEdit.external = 1;
+                    this.writeFieldToROM(nodeToEdit, 'external');
+                    break;
+                case "DM_BRIDGE_EXIT_E":
+                case "DM_BRIDGE_EXIT_W":
+                case "MAZE_ISLAND_BRIDGE":
+                case "EAST_HYRULE_BRIDGE":
+                case "RAFT_DOCK_E":
+                case "RAFT_DOCK_W":
+                    // Disable passthrough on these areas (yeah the docks don't have this issue, so sue me I'm lazy)
+                    nodeToEdit.passThrough = 0;
+                    this.writeFieldToROM(nodeToEdit, 'passThrough');
+
+                    // Correct continent exits for bridges
+                    this.correctContinentExitLocations(mappedLocation, x, y);
+                    break;
+            }
+
+            // Set item locations
+            if (mappedItems) {
+                itemMetaData[mappedLocation].forEach((romOffset, index) => {
+                    romOffset = parseInt(romOffset, 16);
+                    
+                    // Fix sprite data
+                    if (["P1", "P2", "P3", "P4", "P5", "P6", "GP"].includes(mappedLocation)) {
+                        let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
+                        let spriteData = spellItemSpriteData[mappedItems[index]];
+                        let patchRomAddress;
+                        switch(mappedItems[index]) {
+                            case "CHILD":
+                                patchRomAddress = 0x1eeb5;
+                                break;
+                            case "TROPHY":
+                                patchRomAddress = 0x1eeb7;
+                                break;
+                            case "MEDICINE":
+                                patchRomAddress = 0x1eeb9;
+                                break;
+                            }
+                        if (spriteData && palacePaletteLocation) {
+                            this.writeBytesToROM(palacePaletteLocation, spriteData);
+                            this.writeBytesToROM(patchRomAddress, [0xAD, 0xAD]);
+                        }
+                    } else if (mappedLocation === "SPELL_TOWN") {
+                        let paletteLocation;
+                        let spriteLocation = spellItemSpriteData[mappedItems[index]];
+                        let patchRomAddress, patchValue;
+                        switch(mappedItems[index]) {
+                        case "CHILD":
+                            paletteLocation = 0x23570;
+                            patchRomAddress = 0x1eeb5;
+                            patchValue = 0x25;
+                            break;
+                        case "TROPHY":
+                            paletteLocation = 0x27250;
+                            patchRomAddress = 0x1eeb7;
+                            patchValue = 0x21;
+                            break;
+                        case "MEDICINE":
+                            paletteLocation = 0x27230;
+                            patchRomAddress = 0x1eeb9;
+                            patchValue = 0x23;
+                            break;
+                        }
+                        if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
+                            this.writeBytesToROM(paletteLocation, spriteLocation);
+                            this.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
+                        }
+                    } else {
+                        let paletteLocation;
+                        let spriteData = spellItemSpriteData[mappedItems[index]];
+                        let patchRomAddress, patchValue;
+                        switch(mappedItems[index]) {
+                        case "CHILD":
+                            if (continent < 2) {
+                                paletteLocation = 0x23570;
+                                patchRomAddress = 0x1eeb5;
+                                patchValue = 0x57;
+                            }
+                            break;
+                        case "TROPHY":
+                            if (continent > 1) {
+                                paletteLocation = 0x25410;
+                                patchRomAddress = 0x1eeb7;
+                                patchValue = 0x41;
+                            }
+                            break;
+                        case "MEDICINE":
+                            if (continent > 1) {
+                                paletteLocation = 0x25430;
+                                patchRomAddress = 0x1eeb9;
+                                patchValue = 0x43;
+                            }
+                            break;
+                        }
+                        if (paletteLocation && spriteData && patchRomAddress && patchValue) {
+                            this.writeBytesToROM(paletteLocation, spriteData);
+                            this.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
+                        }
+                    }
+
+                    // Patch the rom location with the new item
+                    this.writeByteToROM(romOffset, ITEM_MAP[mappedItems[index]]);
+                });
+            }
+        });
+        
+        // Compress each sprite map and write it to memory
+        for (let continent = 0; continent < 4; continent++) {
+            let compressedMap = this.patchSpriteMap(vanillaMapData[continent], continent, graphData);
+            let mapOffset = RANDO_MAP_OFFSETS[continent];
+
+            compressedMap.forEach(blockRun => {
+                let bytesWritten = 0;
+                bytesWritten = this.writeObjectToROM(blockRun, [
+                        {
+                            name: 'length',
+                            relOffset: 0x0,
+                            mask: 0b11110000
+                        },
+                        {
+                            name: 'type',
+                            relOffset: 0x0,
+                            mask: 0b00001111
+                        }
+                    ], mapOffset);
+                mapOffset += bytesWritten;
+            });
+        }
+
+        // Sign the ROM.
+        let signature = stringToZ2Bytes("TKOS\0");
+        this.writeBytesToROM(CREDITS_OFFSET, signature);
+        
+        // Do some fun text replacements
+        this.replaceText("I AM\nERROR.", "I FARTED.");
+        this.replaceText("I CAN GIVE\nYOU MOST\nPOWERFUL\nMAGIC.", "I CAN GIVE\nYOU\nDIARRHEA.");
+        this.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB\nIDIOT.");
+        this.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH\nSNOOGINS.");
+        this.replaceText("JUMP IN A\nHOLE IN\nTHE PALACE\nIF YOU GO.", "LEAP INTO\nTHE\nPALACUSSY.");
+        this.replaceText("THIS MAGIC\nWORD WILL\nGIVE YOU\nPOWER.", "DO NOT SAY\nTHIS WORD\nIN CHURCH.");
+        this.replaceText("BAGU IS MY\nNAME. SHOW\nMY NOTE TO\nRIVER MAN.", "YOU ARE\nHERE FOR\nBAGU SAUCE?");
+        this.replaceText("ONLY TOWN\nFOLK MAY\nCROSS THIS\nRIVER!", "I WISH\nI HAD\nBAGU SAUCE.");
+        this.replaceText("YOU KNOW\nBAGU? THEN\nI CAN HELP\nYOU CROSS.", "DUDE!\nBAGU SAUCE!\nPASTA TIME!");
+        this.replaceText("I CANNOT\nHELP YOU\nANYMORE.\nGO NOW.", "DUDE...\nGTFO.");
+        this.replaceText("THIS MAGIC\nWILL MAKE\nYOUR SWORD\nSHOOT FIRE", "THIS MAGIC\nIS ALMOST\nUSELESS.");
+        this.replaceText("WHEN YOU\nJUMP PRESS\nUP TO STAB.", "USE THIS\nTO STAB\nBATS.");
+        this.replaceText("DO YOU\nHAVE THE\n7 MAGIC\nCONTAINERS", "U MID BRO.");
+        this.replaceText("YOU\nDESERVE\nMY HELP.\nFOLLOW ME.", "OH GOD!\nA MAN!\nFINALLY!");
+        this.replaceText("THERE IS\nA SECRET\nAT EDGE\nOF TOWN.", "I CHANGED\nMY DRESS.\nSEGS?");
+        
+        return this.rom;
     }
 }

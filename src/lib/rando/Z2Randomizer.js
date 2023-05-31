@@ -1,10 +1,5 @@
 import { deepCopy, merge, randomSeed, removeNode } from './util';
-import { parse } from '../Z2Parser';
-import { explore, printSpriteMap, stringToZ2Bytes } from '../zelda2/Z2Utils';
-import { CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RANDO_MAP_OFFSETS } from '../zelda2/Z2MemoryMappings';
-import { ROM } from './ROM';
 
-export const ITEM_MAP = {"CANDLE": 0x0, "HANDY_GLOVE": 0x1, "RAFT": 0x2, "BOOTS": 0x3, "RECORDER": 0x4, "CROSS": 0x5, "HAMMER": 0x6, "MAGIC_KEY": 0x7, "KEY": 0x8, "": 0x9, "50PB": 0xA, "100PB": 0xB, "200PB": 0xC, "500PB": 0xD, "MAGIC_CONTAINER": 0xE, "HEART_CONTAINER": 0xF, "BLUE_JAR": 0x10, "RED_JAR": 0x11, "1UP": 0x12, "CHILD": 0x13, "TROPHY": 0x14, "MEDICINE": 0x15};
 const REMEDY_LIST = ["SHIELD", "JUMP", "LIFE", "FAIRY", "FIRE", "REFLECT", "SPELL", "THUNDER", "DOWNSTAB", "UPSTAB", "CANDLE", "HANDY_GLOVE", "RAFT", "HAMMER", "BOOTS", "RECORDER", "MAGIC_KEY", "CROSS", "BAGU_SAUCE", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "HEART_CONTAINER", "50PB", "100PB", "200PB", "500PB", "500PB", "500PB", "500PB", "500PB", "500PB", "1UP", "1UP", "1UP", "1UP"];
 
 export class Z2Randomizer {
@@ -21,17 +16,35 @@ export class Z2Randomizer {
         this.randomNumberGenerator = randomSeed(seed);
     }
 
-    isNodeMappedOrNotFull = (node) => {
+    /**
+     * Check node to see if it is either unmapped or still has room
+     * @param {string} node 
+     * @returns 
+     */
+    isNodeUnmappedOrNotFull = (node) => {
         let mappedLocationItemCapacity = this.getMappedLocationItemCapacity(node);
         let mappedLocationItemCount = this.getNodeItemCount(node);
 
         let noMappedLocationOrItem = !this.graphData[node].mappedLocation && !this.graphData[node].mappedItems;
         let stillRoomForItem = mappedLocationItemCount < mappedLocationItemCapacity;
 
-        let hasMappedLocation = this.graphData[node].mappedLocation && this.graphData[node].mappedItems;
-        let hasMappedLocationButStillRoomForItem =  hasMappedLocation && stillRoomForItem;
+        let hasMappedLocationAndItems = this.graphData[node].mappedLocation && this.graphData[node].mappedItems;
+        let hasMappedLocationButStillRoomForItem =  hasMappedLocationAndItems && stillRoomForItem;
 
         return noMappedLocationOrItem || hasMappedLocationButStillRoomForItem;
+    }
+
+    /**
+     * Get nodes that are available to have an item placed in them
+     * @param {Array} accessibleNodes 
+     * @param {number} continent 
+     * @returns 
+     */
+    getAvailableNodes = (accessibleNodes, continent) => {
+        return accessibleNodes.filter(node => {
+            let onSameContinent = this.graphData[node].continent === continent;
+            return onSameContinent && !this.graphData[node].mappedLocation;
+        });
     }
 
     /**
@@ -245,7 +258,7 @@ export class Z2Randomizer {
                 acc[continent] = 0;
             }
 
-            if (this.isNodeMappedOrNotFull(node)) {
+            if (this.isNodeUnmappedOrNotFull(node)) {
                 acc[continent]++;
             }
 
@@ -272,12 +285,12 @@ export class Z2Randomizer {
             let node = this.graphData[nodeName];
     
             // Get the mapped item count and number of items in the location.
-            let locationItems = location.items.length;
-            let mappedItems   = node && node.mappedItems ? node.mappedItems.length : 0;
+            let itemCapacity = location && location.items ? location.items.length : 0;
+            let itemCount    = node && node.mappedItems ? node.mappedItems.length : 0;
             
             // Naming my conditions to make it easier to read.
-            let roomForMoreItems = mappedItems < locationItems;
-            let containsItems = locationItems > 0;
+            let roomForMoreItems = itemCount < itemCapacity;
+            let containsItems = itemCapacity > 0;
             let withinAccessibleContinents = accessibleContinents.includes(location.worldNumber);
     
             return roomForMoreItems && containsItems && withinAccessibleContinents;
@@ -763,7 +776,13 @@ export class Z2Randomizer {
             return;
         }
     
-        if (nextRemedy === "MAGIC7") {
+        if (nextRemedy === "MAGIC5") {
+            console.log("PLACING MAGIC5");
+            return this.placeMagicContainers(1, accessibleNodes);
+        } else if (nextRemedy === "MAGIC6") {
+            console.log("PLACING MAGIC6");
+            return this.placeMagicContainers(2, accessibleNodes);
+        } else if (nextRemedy === "MAGIC7") {
             console.log("PLACING MAGIC7");
             return this.placeMagicContainers(3, accessibleNodes);
         } else if (nextRemedy === "MAGIC8") {
@@ -841,20 +860,16 @@ export class Z2Randomizer {
             // Pick a random location
             let completablePalaces = this.getCompletablePalaces(accessibleNodes);
             let itemBearingLocations = this.getAccessibleItemBearingLocations(completablePalaces, accessibleNodes);
-            console.log("ITEM BEARING LOCATIONS: " + itemBearingLocations.length);
-
             let randomItemBearingLocationName = this.chooseRandomNode(itemBearingLocations);
             let randomItemBearingLocation = this.locationMetadata[randomItemBearingLocationName];
             let randomItemBearingLocationContinent = randomItemBearingLocation.worldNumber;
     
-            // If the remedy node isn't already mapped then we will map it.
+            // Check to see if location we picked is already mapped
             let remedyNode = accessibleNodes.find(node => this.graphData[node].mappedLocation === randomItemBearingLocation.id);
+
+            // If it's not already mapped, then find an accessible node and place it there
             if (!remedyNode) {
-                // Filter out nodes that don't have a mapped location or ones that do that have room for items left
-                let unmappedNodes = accessibleNodes.filter(node => {
-                    let onSameContinent = this.graphData[node].continent === randomItemBearingLocationContinent;
-                    return onSameContinent && this.isNodeMappedOrNotFull(node);
-                });
+                let unmappedNodes = this.getAvailableNodes(accessibleNodes, randomItemBearingLocationContinent);
 
                 remedyNode = this.chooseRandomNode(unmappedNodes);
                 this.graphData[remedyNode].mappedLocation = randomItemBearingLocationName;
@@ -870,7 +885,6 @@ export class Z2Randomizer {
     
             // If town needs remedy, recurse into place remedies again.
             if (randomItemBearingLocation.itemRequirements && randomItemBearingLocation.itemRequirements.length > 0) {
-                console.log("ITEM HAS REQUIREMENTS");
                 let itemIndex = this.graphData[remedyNode].mappedItems.length - 1;
                 let itemRemedy = randomItemBearingLocation.itemRequirements[itemIndex];
     
@@ -1004,9 +1018,6 @@ export class Z2Randomizer {
                 newlyCompletablePalaces = this.getCompletablePalaces(accessibleNodes, [...this.items, remedy], this.spells, this.abilities);
             }
 
-            console.log(`NODES WITH ${remedy}:   ${accessibleNodes.length} => ${newlyAccessibleNodes.length}`);
-            console.log(`PALACES WITH ${remedy}: ${completablePalaces.length} => ${newlyCompletablePalaces.length}`);
-
             return newlyAccessibleNodes.length > accessibleNodes.length || newlyCompletablePalaces.length > completablePalaces.length;
         });
     }
@@ -1019,37 +1030,10 @@ export class Z2Randomizer {
         let inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
         let completablePalaces = this.getCompletablePalaces(accessibleNodes);
         let neededRemedies     = this.getPlaceableRemedies(accessibleNodes, completablePalaces);
+        let nextRemedy = this.chooseRandomNode(neededRemedies);
         try {
-            let i = 0;
-            console.log("**********************************************************************************************************************");
-            console.log("INITIAL STATE");
-            console.log("\tITEMS:                " + this.items);
-            console.log("\tSPELLS:               " + this.spells);
-            console.log("\tABILITIES:            " + this.abilities);
-            console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
-            console.log("\tNEEDED REMEDIES:      " + neededRemedies.filter(remedy => remedy !== "CRYSTALS").map(remedy => `${remedy}: ${this.isRemedyPlaceable(remedy, accessibleNodes)}`));
-
-            console.log("\tACCESSIBLE LOCATIONS:");
-            console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
-            accessibleNodes.forEach(node => {
-                if (this.graphData[node]) {
-                    console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
-                } else {
-                    console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
-                }
-            });
-
-            while (completablePalaces.length < 7  && i < 40) {
-                let nextRemedy = this.chooseRandomNode(neededRemedies);
-                console.log("**********************************************************************************************************************");
-                console.log("ITERATION " + i);
-                console.log("\tITEMS:                " + this.items);
-                console.log("\tSPELLS:               " + this.spells);
-                console.log("\tABILITIES:            " + this.abilities);
-                console.log("\tCOMPLETABLE PALACES:  " + completablePalaces);
-                console.log("\tNEEDED REMEDIES:      " + neededRemedies.filter(remedy => remedy !== "CRYSTALS").map(remedy => `${remedy}:${this.isRemedyPlaceable(remedy, accessibleNodes)}`));
-                console.log("\tNEXT REMEDY:          " + nextRemedy);
-
+            while (nextRemedy && completablePalaces.length < 7) {
+                // Set pseudoitems
                 if (completablePalaces.length >= 6 && !this.items.includes("CRYSTALS")) {
                     this.items.push("CRYSTALS");
                 }
@@ -1062,38 +1046,15 @@ export class Z2Randomizer {
                     this.items.push("MAGIC8");
                 }
 
-                if (!nextRemedy) {
-                    break;
-                }
-
+                // Place remedies
                 this.placeRemedies(nextRemedy, accessibleNodes);
-
-                console.log("\tACCESSIBLE LOCATIONS:");
-                console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} ${'Mapped Location'.padEnd(32, ' ')} Mapped Items`);
-                accessibleNodes.forEach(node => {
-                    if (this.graphData[node]) {
-                        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
-                    } else {
-                        console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
-                    }
-                });
-
-                console.log(`\tUNACCESSIBLE LOCATIONS:`);
-                console.log(`\t\t${'Node'.padEnd(16, ' ')} ${'Node Location'.padEnd(32, ' ')} Mapped Location`);
-                inaccessibleNodes.forEach(node => {
-                    if (this.graphData[node]) {
-                        console.log(`\t\t${node ? node.padEnd(16, ' ') : ''.padEnd(16, ' ')} ${this.graphData[node].locationKey ? this.graphData[node].locationKey.padEnd(32, ' ') : ''.padEnd(32, ' ') } ${this.graphData[node].mappedLocation ? this.graphData[node].mappedLocation.padEnd(32, ' ') :' '.padEnd(32, ' ')} [${this.graphData[node].mappedItems ? this.graphData[node].mappedItems : ''}]`);
-                    } else {
-                        console.log(`\t\t${node ? node.padEnd(16, '-') : ''.padEnd(16, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')} ${''.padEnd(32, '-')}`);
-                    }
-                });
 
                 // Find accessible nodes, completable palaces, and needed remedies to progress
                 [accessibleNodes]  = this.getAccessibleNodes(this.northCastleNode);
                 inaccessibleNodes  = Object.keys(this.graphData).filter(node => !accessibleNodes.includes(node));
                 completablePalaces = this.getCompletablePalaces(accessibleNodes);
                 neededRemedies     = this.getPlaceableRemedies(accessibleNodes, completablePalaces);
-                i++;
+                nextRemedy = this.chooseRandomNode(neededRemedies);
             }
 
             // Check if all nodes are accessible
@@ -1196,306 +1157,7 @@ export class Z2Randomizer {
 
         // Place all items and nodes
         this.placeItemsAndNodes();
-    }
 
-    compressSpriteMap = (spriteMap, continent) => {
-        let mapBlocks = [];
-        let i = 0;
-        for (let sprite of spriteMap) {
-            for (let j = 0; j < sprite.length + 1; j++) {
-                mapBlocks.push(
-                    sprite.type
-                );
-            }
-        }
-
-        Object.keys(this.graphData).filter(nodeName => this.graphData[nodeName].continent === continent).forEach(nodeName => {
-            let node = this.graphData[nodeName];
-            let {x, y} = node;
-            let {type} = this.locationMetadata[node.mappedLocation];
-
-            if (OVERWORLD_SPRITE_MAPPING[type] === undefined) {
-                console.log(`INVALID NODE TYPE AT ${node.mappedLocation}: ${type}`);
-            }
-
-            mapBlocks[(y - 30) * 64 + x] = OVERWORLD_SPRITE_MAPPING[type];
-        })
-
-        let currentBlockType = null;
-        let run = 0;
-        let compressedMap = [];
-        mapBlocks.forEach((mapBlock, index) => {
-            if (currentBlockType !== mapBlock || run === 0xF || index % 64 === 0) {
-                if (currentBlockType !== null) {
-                    compressedMap.push({type: currentBlockType, length: run - 1});
-                }
-                run = 0;
-                currentBlockType = mapBlock;
-            }
-            run++;
-        });
-        if (run > 0) {
-            compressedMap.push({type: currentBlockType, length: run - 1});
-        }
-
-        printSpriteMap(compressedMap);
-
-        return compressedMap;
-    }
-
-    /**
-     * Patch the ROM with the graph
-     * @param {string} fileName 
-     */
-    patchRom = (romBytes) => {
-        // Patch ROM here
-        console.log("PATCHING ROM...");
-
-        let romData = parse(romBytes);
-        let rom = new ROM(romBytes);
-
-        let spellItemSpriteData = rom.getSpellTownItemSprites();
-
-        // Apply various patches
-        rom.extendMapSize();
-        rom.miscPatches();
-        rom.disablePalaceTurningToStone();
-        rom.disableFlashing();
-        rom.upAController();
-        rom.fixPalaceHeartSprite();
-
-        // Set locations and items
-        Object.keys(this.graphData).forEach((nodeName) => {
-            // Gather all needed information from our location metadata and template
-            let targetNode = this.graphData[nodeName];
-            let {x, y, continent, mappedLocation, mappedItems} = targetNode;
-            let {mapSet, mapNumber} = this.locationMetadata[mappedLocation];
-            let mappedNode = Object.keys(this.graphData).find(mappedNodeName => this.templateData[mappedNodeName].locationKey === mappedLocation);
-            let {locationKey} = this.templateData[mappedNode];
-
-            // Acquire the node we are editting
-            let nodeToEdit = romData.overworld[continent].locations[locationKey];
-
-            // Modify the x and y position of the area
-            nodeToEdit.x = x;
-            nodeToEdit.y = y;
-            rom.writeFieldToROM(nodeToEdit, 'x');
-            rom.writeFieldToROM(nodeToEdit, 'y');
-
-            // Apply corrections based on special areas
-            switch (mappedLocation) {
-                case "P6":
-                case "SPELL_TOWN":
-                    nodeToEdit.external = 1;
-                    rom.writeFieldToROM(nodeToEdit, 'external');
-                    break;
-                case "DM_BRIDGE_EXIT_E":
-                case "DM_BRIDGE_EXIT_W":
-                case "MAZE_ISLAND_BRIDGE":
-                case "EAST_HYRULE_BRIDGE":
-                case "RAFT_DOCK_E":
-                case "RAFT_DOCK_W":
-                    // Disable passthrough on these areas (yeah the docks don't have this issue, so sue me I'm lazy)
-                    nodeToEdit.passThrough = 0;
-                    rom.writeFieldToROM(nodeToEdit, 'passThrough');
-
-                    // Correct continent exits for bridges
-                    rom.correctContinentExitLocations(mappedLocation, x, y);
-                    break;
-            }
-
-            // Set item locations
-            if (mappedItems) {
-                // Hacky fix for spell town...more like SMELL town
-                if (["SPELL_TOWN"].includes(mappedLocation)) {
-                    const SPELL_TOWN_MAGIC_CONTAINER = 46;
-                    const SPELL_TOWN_MAGIC_KEY = 47;
-                    let item1 = ITEM_MAP[mappedItems[0]];
-                    let item2 = ITEM_MAP[mappedItems[1]];
-
-                    let sideViewMaps1 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_CONTAINER];
-                    let sideViewMaps2 = romData.sideViewMaps[mapSet][SPELL_TOWN_MAGIC_KEY];
-
-                    let levelElement1 = sideViewMaps1.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
-                    levelElement1.collectableObjectNumber = item1;
-                    let levelElement2 = sideViewMaps2.levelElements.find(({collectableObjectNumber}) => collectableObjectNumber);
-                    levelElement2.collectableObjectNumber = item2;
-
-                    // Fix spell item sprite for spell town
-                    let paletteLocation;
-                    let spriteLocation = spellItemSpriteData[item1];
-                    let patchRomAddress, patchValue;
-                    switch(item1) {
-                    case "CHILD":
-                        paletteLocation = 0x23570;
-                        patchRomAddress = 0x1eeb5;
-                        patchValue = 0x25;
-                        break;
-                    case "TROPHY":
-                        paletteLocation = 0x27250;
-                        patchRomAddress = 0x1eeb7;
-                        patchValue = 0x21;
-                        break;
-                    case "MEDICINE":
-                        paletteLocation = 0x27230;
-                        patchRomAddress = 0x1eeb9;
-                        patchValue = 0x23;
-                        break;
-                    }
-                    if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                        rom.writeBytesToROM(paletteLocation, spriteLocation);
-                        rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                    }
-                    spriteLocation = spellItemSpriteData[item2];
-                    patchRomAddress = patchValue = null;
-                    switch(item2) {
-                    case "CHILD":
-                        paletteLocation = 0x23570;
-                        patchRomAddress = 0x1eeb5;
-                        patchValue = 0x25;
-                        break;
-                    case "TROPHY":
-                        paletteLocation = 0x27250;
-                        patchRomAddress = 0x1eeb7;
-                        patchValue = 0x21;
-                        break;
-                    case "MEDICINE":
-                        paletteLocation = 0x27230;
-                        patchRomAddress = 0x1eeb9;
-                        patchValue = 0x23;
-                        break;
-                    }
-                    if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                        console.log("SPELL TOWN ITEM IN SPELL TOWN (no relation)");
-                        rom.writeBytesToROM(paletteLocation, spriteLocation);
-                        rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                    }
-
-                    if (item1) {
-                        rom.writeFieldToROM(levelElement1, 'collectableObjectNumber');
-                    }
-                    if (item2) {
-                        rom.writeFieldToROM(levelElement2, 'collectableObjectNumber');
-                    }
-
-                    return;
-                }
-
-                // For all other items explore the local and look for where items would go.
-                let items = explore(romData.sideViewMaps, mapSet, mapNumber);
-                let index = 0;
-                items.forEach(({levelElement}) => {
-                    // If we are in a palace, ignore everything but the big item
-                    if (this.isPalace(mappedLocation) && levelElement.collectableObjectNumber > 0x5) {
-                        return;
-                    }
-
-                    // Fix spell item sprite for palaces and out of continent locations
-                    if (this.isPalace(mappedLocation)) {
-                        let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
-                        let spriteData = spellItemSpriteData[mappedItems[index]];
-                        let patchRomAddress;
-                        switch(mappedItems[index]) {
-                            case "CHILD":
-                                patchRomAddress = 0x1eeb5;
-                                break;
-                            case "TROPHY":
-                                patchRomAddress = 0x1eeb7;
-                                break;
-                            case "MEDICINE":
-                                patchRomAddress = 0x1eeb9;
-                                break;
-                            }
-                        if (spriteData && palacePaletteLocation) {
-                            console.log("SPELL TOWN ITEM IN PALACE")
-                            rom.writeBytesToROM(palacePaletteLocation, spriteData);
-                            rom.writeBytesToROM(patchRomAddress, [0xAD, 0xAD]);
-                        }
-                    } else {
-                        let paletteLocation;
-                        let spriteData = spellItemSpriteData[mappedItems[index]];
-                        let patchRomAddress, patchValue;
-                        switch(mappedItems[index]) {
-                        case "CHILD":
-                            if (continent < 2) {
-                                paletteLocation = 0x23570;
-                                patchRomAddress = 0x1eeb5;
-                                patchValue = 0x57;
-                            }
-                            break;
-                        case "TROPHY":
-                            if (continent > 1) {
-                                paletteLocation = 0x25410;
-                                patchRomAddress = 0x1eeb7;
-                                patchValue = 0x41;
-                            }
-                            break;
-                        case "MEDICINE":
-                            if (continent > 1) {
-                                paletteLocation = 0x25430;
-                                patchRomAddress = 0x1eeb9;
-                                patchValue = 0x43;
-                            }
-                            break;
-                        }
-
-                        if (paletteLocation && spriteData && patchRomAddress && patchValue) {
-                            console.log("SPELL TOWN ITEM DIFFERENT CONTINENT");
-                            rom.writeBytesToROM(paletteLocation, spriteData);
-                            rom.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                        }
-                    }
-
-                    levelElement.collectableObjectNumber = ITEM_MAP[mappedItems[index++]];
-                    rom.writeFieldToROM(levelElement, 'collectableObjectNumber');
-                });
-            }
-        });
-        
-        // Compress each sprite map and write it to memory
-        for (let continent = 0; continent < 4; continent++) {
-            let compressedMap = this.compressSpriteMap(romData.overworld[continent].spriteMap, continent);
-            let mapOffset = RANDO_MAP_OFFSETS[continent];
-
-            compressedMap.forEach(blockRun => {
-                let bytesWritten = 0;
-                bytesWritten = rom.writeObjectToROM(blockRun, [
-                        {
-                            name: 'length',
-                            relOffset: 0x0,
-                            mask: 0b11110000
-                        },
-                        {
-                            name: 'type',
-                            relOffset: 0x0,
-                            mask: 0b00001111
-                        }
-                    ], mapOffset);
-                mapOffset += bytesWritten;
-            });
-        }
-
-        // Sign the ROM.
-        let signature = stringToZ2Bytes("TKOS\0");
-        rom.writeBytesToROM(CREDITS_OFFSET, signature);
-        
-        // Do some fun text replacements
-        rom.replaceText("I AM\nERROR.", "I FARTED.");
-        rom.replaceText("I CAN GIVE\nYOU MOST\nPOWERFUL\nMAGIC.", "I CAN GIVE\nYOU\nDIARRHEA.");
-        rom.replaceText("WHEN YOU\nJUMP PRESS\nDOWNWARD\nTO STAB.", "PRESS DOWN\nTO STAB\nIDIOT.");
-        rom.replaceText("IF ALL\nELSE FAILS\nUSE FIRE.", "I AM\nKEVIN SMITH\nSNOOGINS.");
-        rom.replaceText("JUMP IN A\nHOLE IN\nTHE PALACE\nIF YOU GO.", "LEAP INTO\nTHE\nPALACUSSY.");
-        rom.replaceText("THIS MAGIC\nWORD WILL\nGIVE YOU\nPOWER.", "DO NOT SAY\nTHIS WORD\nIN CHURCH.");
-        rom.replaceText("BAGU IS MY\nNAME. SHOW\nMY NOTE TO\nRIVER MAN.", "YOU ARE\nHERE FOR\nBAGU SAUCE?");
-        rom.replaceText("ONLY TOWN\nFOLK MAY\nCROSS THIS\nRIVER!", "I WISH\nI HAD\nBAGU SAUCE.");
-        rom.replaceText("YOU KNOW\nBAGU? THEN\nI CAN HELP\nYOU CROSS.", "DUDE!\nBAGU SAUCE!\nPASTA TIME!");
-        rom.replaceText("I CANNOT\nHELP YOU\nANYMORE.\nGO NOW.", "DUDE...\nGTFO.");
-        rom.replaceText("THIS MAGIC\nWILL MAKE\nYOUR SWORD\nSHOOT FIRE", "THIS MAGIC\nIS ALMOST\nUSELESS.");
-        rom.replaceText("WHEN YOU\nJUMP PRESS\nUP TO STAB.", "USE THIS\nTO STAB\nBATS.");
-        rom.replaceText("DO YOU\nHAVE THE\n7 MAGIC\nCONTAINERS", "U MID BRO.");
-        rom.replaceText("YOU\nDESERVE\nMY HELP.\nFOLLOW ME.", "OH GOD!\nA MAN!\nFINALLY!");
-        rom.replaceText("THERE IS\nA SECRET\nAT EDGE\nOF TOWN.", "I CHANGED\nMY DRESS.\nSEGS?");
-        
-        return rom.getRom();
+        return this.graphData;
     }
 }
