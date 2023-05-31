@@ -49,7 +49,7 @@ export default {
     ],
     "SPELL_TOWN": [
          "0xdb8c",
-         "0xdb8c"
+         "0xdb95"
     ],
     "P6_500P_BAG": [
          "0x8e2d"
