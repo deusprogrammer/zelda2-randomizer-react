@@ -501,8 +501,6 @@ export class ROM {
                         }
                     }
 
-                    console.log(`${mappedLocation}: 0x${romOffset.toString(16)} = ${mappedItems[index]} (0x${ITEM_MAP[mappedItems[index]].toString(16)})`);
-
                     // Patch the rom location with the new item
                     this.writeByteToROM(romOffset, ITEM_MAP[mappedItems[index]]);
                 });
