@@ -16,6 +16,28 @@ export class ROM {
     constructor(rom) {
         this.rom = rom;
         this.romData = parse(rom);
+        this.spellItemSpriteData = this.getSpellTownItemSprites();
+    }
+
+    /**
+     * Get spell town item sprites so we can transplant them where they are needed.
+     */
+    getSpellTownItemSprites = () => {
+        let medSprite = [];
+        let trophySprite = [];
+        let kidSprite = [];
+
+        for (let i = 0; i < 32; i++) {
+            medSprite[i] = this.rom[0x23310 + i];
+            trophySprite[i] = this.rom[0x232f0 + i];
+            kidSprite[i] = this.rom[0x25310 + i];
+        }
+
+        return {
+            MEDICINE: medSprite,
+            TROPHY: trophySprite,
+            CHILD: kidSprite
+        }
     }
 
     /**
@@ -37,25 +59,82 @@ export class ROM {
             this.writeByteToROM(0x39810 + i, heartByte);
         }   
     }
-    
-    /**
-     * Get spell town item sprites so we can transplant them where they are needed.
-     */
-    getSpellTownItemSprites = () => {
-        let medSprite = [];
-        let trophySprite = [];
-        let kidSprite = [];
 
-        for (let i = 0; i < 32; i++) {
-            medSprite[i] = this.rom[0x23310 + i];
-            trophySprite[i] = this.rom[0x232f0 + i];
-            kidSprite[i] = this.rom[0x25310 + i];
-        }
-
-        return {
-            MEDICINE: medSprite,
-            TROPHY: trophySprite,
-            CHILD: kidSprite
+    fixSpellTownSprites = (mappedLocation, mappedItem, continent) => {
+        // Fix sprite data
+        let spriteData = this.spellItemSpriteData[mappedItem];
+        if (["P1", "P2", "P3", "P4", "P5", "P6", "GP"].includes(mappedLocation)) {
+            let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
+            let patchRomAddress;
+            switch(mappedItem) {
+                case "CHILD":
+                    patchRomAddress = 0x1eeb5;
+                    break;
+                case "TROPHY":
+                    patchRomAddress = 0x1eeb7;
+                    break;
+                case "MEDICINE":
+                    patchRomAddress = 0x1eeb9;
+                    break;
+                }
+            if (spriteData && palacePaletteLocation) {
+                this.writeBytesToROM(palacePaletteLocation, spriteData);
+                this.writeBytesToROM(patchRomAddress, [0xAD, 0xAD]);
+            }
+        } else if (mappedLocation === "SPELL_TOWN") {
+            let paletteLocation;
+            let patchRomAddress, patchValue;
+            switch(mappedItem) {
+            case "CHILD":
+                paletteLocation = 0x23570;
+                patchRomAddress = 0x1eeb5;
+                patchValue = 0x25;
+                break;
+            case "TROPHY":
+                paletteLocation = 0x27250;
+                patchRomAddress = 0x1eeb7;
+                patchValue = 0x21;
+                break;
+            case "MEDICINE":
+                paletteLocation = 0x27230;
+                patchRomAddress = 0x1eeb9;
+                patchValue = 0x23;
+                break;
+            }
+            if (paletteLocation && spriteData && patchRomAddress && patchValue) {
+                this.writeBytesToROM(paletteLocation, spriteData);
+                this.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
+            }
+        } else {
+            let paletteLocation;
+            let patchRomAddress, patchValue;
+            switch(mappedItem) {
+            case "CHILD":
+                if (continent < 2) {
+                    paletteLocation = 0x23570;
+                    patchRomAddress = 0x1eeb5;
+                    patchValue = 0x57;
+                }
+                break;
+            case "TROPHY":
+                if (continent > 1) {
+                    paletteLocation = 0x25410;
+                    patchRomAddress = 0x1eeb7;
+                    patchValue = 0x41;
+                }
+                break;
+            case "MEDICINE":
+                if (continent > 1) {
+                    paletteLocation = 0x25430;
+                    patchRomAddress = 0x1eeb9;
+                    patchValue = 0x43;
+                }
+                break;
+            }
+            if (paletteLocation && spriteData && patchRomAddress && patchValue) {
+                this.writeBytesToROM(paletteLocation, spriteData);
+                this.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
+            }
         }
     }
 
@@ -196,7 +275,7 @@ export class ROM {
     }
 
     /**
-     * Disable palaces turning to stone by placing nop slides over the instructions  (lifted from digshake's randomizer)
+     * Disable palaces turning to stone by placing nop slides over the instructions (lifted from digshake's randomizer)
      */
     disablePalaceTurningToStone = () => {
         this.writeBytesToROM(0x87b3, [ 0xea, 0xea, 0xea ]);
@@ -369,8 +448,6 @@ export class ROM {
         // Patch ROM here
         console.log("PATCHING ROM...");
 
-        let spellItemSpriteData = this.getSpellTownItemSprites();
-
         // Apply various patches
         this.extendMapSize();
         this.miscPatches();
@@ -421,88 +498,12 @@ export class ROM {
             // Set item locations
             if (mappedItems) {
                 itemMetaData[mappedLocation].forEach((romOffset, index) => {
-                    romOffset = parseInt(romOffset, 16);
-                    
-                    // Fix sprite data
-                    if (["P1", "P2", "P3", "P4", "P5", "P6", "GP"].includes(mappedLocation)) {
-                        let palacePaletteLocation = PALACE_PALETTE_LOCATIONS[mappedLocation];
-                        let spriteData = spellItemSpriteData[mappedItems[index]];
-                        let patchRomAddress;
-                        switch(mappedItems[index]) {
-                            case "CHILD":
-                                patchRomAddress = 0x1eeb5;
-                                break;
-                            case "TROPHY":
-                                patchRomAddress = 0x1eeb7;
-                                break;
-                            case "MEDICINE":
-                                patchRomAddress = 0x1eeb9;
-                                break;
-                            }
-                        if (spriteData && palacePaletteLocation) {
-                            this.writeBytesToROM(palacePaletteLocation, spriteData);
-                            this.writeBytesToROM(patchRomAddress, [0xAD, 0xAD]);
-                        }
-                    } else if (mappedLocation === "SPELL_TOWN") {
-                        let paletteLocation;
-                        let spriteLocation = spellItemSpriteData[mappedItems[index]];
-                        let patchRomAddress, patchValue;
-                        switch(mappedItems[index]) {
-                        case "CHILD":
-                            paletteLocation = 0x23570;
-                            patchRomAddress = 0x1eeb5;
-                            patchValue = 0x25;
-                            break;
-                        case "TROPHY":
-                            paletteLocation = 0x27250;
-                            patchRomAddress = 0x1eeb7;
-                            patchValue = 0x21;
-                            break;
-                        case "MEDICINE":
-                            paletteLocation = 0x27230;
-                            patchRomAddress = 0x1eeb9;
-                            patchValue = 0x23;
-                            break;
-                        }
-                        if (paletteLocation && spriteLocation && patchRomAddress && patchValue) {
-                            this.writeBytesToROM(paletteLocation, spriteLocation);
-                            this.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                        }
-                    } else {
-                        let paletteLocation;
-                        let spriteData = spellItemSpriteData[mappedItems[index]];
-                        let patchRomAddress, patchValue;
-                        switch(mappedItems[index]) {
-                        case "CHILD":
-                            if (continent < 2) {
-                                paletteLocation = 0x23570;
-                                patchRomAddress = 0x1eeb5;
-                                patchValue = 0x57;
-                            }
-                            break;
-                        case "TROPHY":
-                            if (continent > 1) {
-                                paletteLocation = 0x25410;
-                                patchRomAddress = 0x1eeb7;
-                                patchValue = 0x41;
-                            }
-                            break;
-                        case "MEDICINE":
-                            if (continent > 1) {
-                                paletteLocation = 0x25430;
-                                patchRomAddress = 0x1eeb9;
-                                patchValue = 0x43;
-                            }
-                            break;
-                        }
-                        if (paletteLocation && spriteData && patchRomAddress && patchValue) {
-                            this.writeBytesToROM(paletteLocation, spriteData);
-                            this.writeBytesToROM(patchRomAddress, [patchValue, patchValue]);
-                        }
-                    }
-
                     // Patch the rom location with the new item
+                    romOffset = parseInt(romOffset, 16);
                     this.writeByteToROM(romOffset, ITEM_MAP[mappedItems[index]]);
+
+                    // Correct spell town iteam
+                    this.fixSpellTownSprites(mappedLocation, mappedItems[index], continent);
                 });
             }
         });
