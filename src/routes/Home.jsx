@@ -17,10 +17,12 @@ import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 import TextData from '../components/TextData';
 import { toast } from 'react-toastify';
 import { ROM } from '../lib/rando/ROM';
+import { generateContinent } from '../lib/rando/TerrainGenerator';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
     const [ cleanRom, setCleanRom ] = useState(null);
+    const [ terrain, setTerrain ] = useState([]);
     const [ romData, setRomData ] = useAtom(romAtom);
     const { pathname } = useLocation();
 
@@ -60,6 +62,11 @@ export default () => {
             alert(`Our apologies...this seed has caused an error.  Please report the seed value to the developer to aid them in troubleshooting.\n\nSeed number: ${seed}`);
             console.error(e);
         }
+    }
+
+    const generateTerrain = () => {
+        let compressedMap = generateContinent(0);
+        setTerrain(compressedMap);
     }
 
     useEffect(() => {
@@ -114,6 +121,9 @@ export default () => {
                     <p>This is still very much a work in progress.  We still have many bugs to squash, but the randomizer is spitting out winnable seeds for the most part with albeit limited randomization.</p>
                     <h3>What's up with all the spoilers?</h3>
                     <p>These are currently in place only to aid in troubleshooting.  These tools are not meant to be a cheating device for the other randomizer.  So don't be a cheater...the only person you are lying to is yourself.  This feature will be locked down to administrators at a later date to allow for tournament organizers to validate a seed is beatable before giving it to the players.</p>
+                    <h2>Random Terrain Test</h2>
+                    <button onClick={() => generateTerrain()}>Generate Terrain</button>
+                    <MapDisplay overworld={{spriteMap: terrain, locations: [], worldNumber: 0}} maps={[]} />
                 </div>
             </div>
         );

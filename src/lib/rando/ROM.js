@@ -139,11 +139,11 @@ export class ROM {
     }
 
     /**
-     * Correct the location of docks and maze island bridges
-     * @param {*} westDock 
-     * @param {*} eastDock 
-     * @param {*} mazeIslandBridge 
-     * @param {*} eastHyruleBridge 
+     * Correct dock and bridge locations
+     * @param {string} location 
+     * @param {number} x 
+     * @param {number} y 
+     * @returns 
      */
     correctContinentExitLocations = (location, x, y) => {
         if (!CONTINENT_EXIT_MAPPINGS[location]) {
@@ -408,7 +408,7 @@ export class ROM {
      * @param {number} continent 
      * @returns 
      */
-    patchSpriteMap = (mapBlocks, continent, graphData) => {
+    compressMap = (mapBlocks, continent, graphData) => {
         // Write data to expanded map
         Object.keys(graphData).filter(nodeName => graphData[nodeName].continent === continent).forEach(nodeName => {
             let node = graphData[nodeName];
@@ -510,7 +510,7 @@ export class ROM {
         
         // Compress each sprite map and write it to memory
         for (let continent = 0; continent < 4; continent++) {
-            let compressedMap = this.patchSpriteMap(vanillaMapData[continent], continent, graphData);
+            let compressedMap = this.compressMap(vanillaMapData[continent], continent, graphData);
             let mapOffset = RANDO_MAP_OFFSETS[continent];
 
             compressedMap.forEach(blockRun => {

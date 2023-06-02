@@ -38,6 +38,21 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
                     return locations[key].x === x && locations[key].y - 30 === y
                 });
         
+                if (!sprite.type) {
+                    mapBlocks.push(
+                        <div 
+                            key={`${x},${y}`}
+                            className={`map-square`}
+                            style={{color: "white", backgroundColor: "white"}}
+                            onMouseEnter={() => {setSelectedSquare({id: "", name: "Unknown", x, y: y + 30, items: []})}}
+                            onMouseLeave={() => {setSelectedSquare(null)}}
+                        >
+                            {' '}
+                        </div>
+                    );
+                    continue;
+                }
+
                 let {name, c, backgroundColor, color} = OVERWORLD_SPRITE_SYMBOLS[sprite.type];
 
                 if (found) {
