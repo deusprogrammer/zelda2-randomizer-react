@@ -17,7 +17,7 @@ import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 import TextData from '../components/TextData';
 import { toast } from 'react-toastify';
 import { ROM } from '../lib/rando/ROM';
-import { generateContinent } from '../lib/rando/TerrainGenerator';
+import { generateContinent, generateContinentCelluar } from '../lib/rando/TerrainGenerator';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
@@ -65,7 +65,7 @@ export default () => {
     }
 
     const generateTerrain = () => {
-        let compressedMap = generateContinent(0);
+        let compressedMap = generateContinentCelluar(64, 64);
         setTerrain(compressedMap);
     }
 

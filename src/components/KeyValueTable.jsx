@@ -40,12 +40,15 @@ export default ({map, keyMap, showHex, editable}) => {
 
     return (
         <table className="data-table striped row-labeled">
-            <tr>
-                <th>Key</th>
-                <th>Value</th>
-                {showHex ? <th>ROM Address</th> : null}
-            </tr>
-            { Object.keys(mapCache).filter(key => !key.startsWith("_")).map((key) => {
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                    {showHex ? <th>ROM Address</th> : null}
+                </tr>
+            </thead>
+            <tbody>
+                { Object.keys(mapCache).filter(key => !key.startsWith("_")).map((key) => {
                     let value = mapCache[key];
                     return (
                         <tr key={key}>
@@ -61,6 +64,7 @@ export default ({map, keyMap, showHex, editable}) => {
                         </tr>
                     )
                 })}
+            </tbody>
         </table>
     )
 }
