@@ -1,13 +1,17 @@
+const DESERT = 0x4;
 const GRASS = 0x5;
+const FOREST = 0x6;
+const SWAMP = 0x7;
+const CEMETARY = 0x8;
 const MOUNTAIN = 0xb;
 const WATER = 0xd;
-const FOREST = 0x6;
-const DESERT = 0x4;
 
-const GRASS_RATE = 0.45;
-const WATER_RATE = 0.20;
-const FOREST_RATE = 0.20;
 const DESERT_RATE = 0.20;
+const GRASS_RATE = 0.45;
+const FOREST_RATE = 0.20;
+const SWAMP_RATE = 0.25;
+const CEMETARY_RATE = 0.25;
+const WATER_RATE = 0.20;
 
 class Cell {
   type;
@@ -31,7 +35,7 @@ const createEmptyMatrix = (width, height) => {
   for (let i = 0; i < height; i++) {
     let row = [];
     for (let j = 0; j < width; j++) {
-      row.push(new Cell(MOUNTAIN));
+      row.push(new Cell(GRASS));
     }
     terrain.push(row);
   }
@@ -39,74 +43,21 @@ const createEmptyMatrix = (width, height) => {
   return terrain;
 };
 
-// TODO Generalize
-// NOTES: higher numbers of passes will cause more growth.
-// NOTES: higher live neighbor requirements cause fewer mountains for the first phase.
-export const generateContinentCelluar = (width, height) => {
-    // Place mountains and grass
-    let terrain = [];
-    for (let i = 0; i < height; i++) {
-        let row = [];
-        for (let j = 0; j < width; j++) {
-            if (Math.random() < GRASS_RATE) {
-                row.push(new Cell(GRASS));
-            } else {
-                row.push(new Cell(MOUNTAIN));
-            }
-        }
-        terrain.push(row);
-    }
-    for (
-        let pass = 0;
-        pass < 3;
-        pass++
-    ) {
-        let workingTerrain = createEmptyMatrix(width, height);
-        for (let i = 0; i < terrain.length; i++) {
-            for (let j = 0; j < terrain[0].length; j++) {
-                let liveNeighbors = 0;
-
-                for (let m = i - 1; m <= i + 1; m++) {
-                    for (let l = j - 1; l <= j + 1; l++) {
-                        if (
-                            m < 0 ||
-                            l < 0 ||
-                            l >= terrain[0].length ||
-                            m >= terrain.length
-                        ) {
-                            continue;
-                        }
-
-                        if (terrain[l][m].getType() === MOUNTAIN) {
-                            liveNeighbors++;
-                        }
-                    }
-                }
-
-                if (liveNeighbors > 4) {
-                    workingTerrain[i][j] = new Cell(GRASS);
-                } else {
-                    workingTerrain[i][j] = new Cell(MOUNTAIN);
-                }
-            }
-        }
-        terrain = workingTerrain;
-    }
-
+const placeAndGrow = (type, placeIn, ignore, rate, passes, liveNeighborsThreshold, terrain) => {
     // Place some water in the grassy areas
-    for (let i = 0; i < height; i++) {
-        for (let j = 0; j < width; j++) {
-            if (terrain[i][j].getType() === GRASS && Math.random() < WATER_RATE) {
-                terrain[i][j] = new Cell(WATER);
+    for (let i = 0; i < terrain.length; i++) {
+        for (let j = 0; j < terrain[0].length; j++) {
+            if (terrain[i][j].getType() === placeIn && Math.random() < rate) {
+                terrain[i][j] = new Cell(type);
             }
         }
     }
     for (
         let pass = 0;
-        pass < 3;
+        pass < passes;
         pass++
     ) {
-        let workingTerrain = createEmptyMatrix(width, height);
+        let workingTerrain = createEmptyMatrix(terrain.length, terrain[0].length);
         for (let i = 0; i < terrain.length; i++) {
             for (let j = 0; j < terrain[0].length; j++) {
                 let liveNeighbors = 0;
@@ -122,126 +73,40 @@ export const generateContinentCelluar = (width, height) => {
                             continue;
                         }
 
-                        if (terrain[l][m].getType() === WATER) {
+                        if (terrain[l][m].getType() === type) {
                             liveNeighbors++;
                         }
                     }
                 }
 
-                if (terrain[i][j].getType() === MOUNTAIN) {
+                if (ignore.includes(terrain[i][j].getType())) {
                     workingTerrain[i][j] = new Cell(terrain[i][j].getType());
                     continue;
                 }
 
-                if (liveNeighbors > 2) {
-                    workingTerrain[i][j] = new Cell(WATER);
+                if (liveNeighbors > liveNeighborsThreshold) {
+                    workingTerrain[i][j] = new Cell(type);
                 } else {
-                    workingTerrain[i][j] = new Cell(GRASS);
+                    workingTerrain[i][j] = new Cell(placeIn);
                 }
             }
         }
         terrain = workingTerrain;
     }
 
-    // Place some forests in the grassy areas
-    for (let i = 0; i < height; i++) {
-        for (let j = 0; j < width; j++) {
-            if (terrain[i][j].getType() === GRASS && Math.random() < FOREST_RATE) {
-                terrain[i][j] = new Cell(FOREST);
-            }
-        }
-    }
-    for (
-        let pass = 0;
-        pass < 3;
-        pass++
-    ) {
-        let workingTerrain = createEmptyMatrix(width, height);
-        for (let i = 0; i < terrain.length; i++) {
-            for (let j = 0; j < terrain[0].length; j++) {
-                let liveNeighbors = 0;
+    return terrain;
+}
 
-                for (let m = i - 1; m <= i + 1; m++) {
-                    for (let l = j - 1; l <= j + 1; l++) {
-                        if (
-                            m < 0 ||
-                            l < 0 ||
-                            l >= terrain[0].length ||
-                            m >= terrain.length
-                        ) {
-                            continue;
-                        }
+export const generateContinentCelluar = (width, height) => {
+    // TODO Randomly choose the number of passes, live neighbor threshold, and rate for each.
 
-                        if (terrain[l][m].getType() === FOREST) {
-                            liveNeighbors++;
-                        }
-                    }
-                }
-
-                if ([MOUNTAIN, WATER].includes(terrain[i][j].getType())) {
-                    workingTerrain[i][j] = new Cell(terrain[i][j].getType());
-                    continue;
-                }
-
-                if (liveNeighbors > 2) {
-                    workingTerrain[i][j] = new Cell(FOREST);
-                } else {
-                    workingTerrain[i][j] = new Cell(GRASS);
-                }
-            }
-        }
-        terrain = workingTerrain;
-    }
-
-    // Place some deserts in the grassy areas
-    for (let i = 0; i < height; i++) {
-        for (let j = 0; j < width; j++) {
-            if (terrain[i][j].getType() === GRASS && Math.random() < DESERT_RATE) {
-                terrain[i][j] = new Cell(DESERT);
-            }
-        }
-    }
-    for (
-        let pass = 0;
-        pass < 3;
-        pass++
-    ) {
-        let workingTerrain = createEmptyMatrix(width, height);
-        for (let i = 0; i < terrain.length; i++) {
-            for (let j = 0; j < terrain[0].length; j++) {
-                let liveNeighbors = 0;
-
-                for (let m = i - 1; m <= i + 1; m++) {
-                    for (let l = j - 1; l <= j + 1; l++) {
-                        if (
-                            m < 0 ||
-                            l < 0 ||
-                            l >= terrain[0].length ||
-                            m >= terrain.length
-                        ) {
-                            continue;
-                        }
-
-                        if (terrain[l][m].getType() === DESERT) {
-                            liveNeighbors++;
-                        }
-                    }
-                }
-
-                if ([MOUNTAIN, WATER, FOREST].includes(terrain[i][j].getType())) {
-                    workingTerrain[i][j] = new Cell(terrain[i][j].getType());
-                    continue;
-                }
-
-                if (liveNeighbors > 2) {
-                    workingTerrain[i][j] = new Cell(DESERT);
-                } else {
-                    workingTerrain[i][j] = new Cell(GRASS);
-                }
-            }
-        }
-        terrain = workingTerrain;
-    }
+    let terrain = createEmptyMatrix(width, height);
+    terrain = placeAndGrow(MOUNTAIN, GRASS, [], GRASS_RATE, 3, 4, terrain);
+    terrain = placeAndGrow(WATER, GRASS, [MOUNTAIN], WATER_RATE, 3, 2, terrain);
+    terrain = placeAndGrow(FOREST, GRASS, [MOUNTAIN, WATER], FOREST_RATE, 3, 2, terrain);
+    terrain = placeAndGrow(DESERT, GRASS, [MOUNTAIN, WATER, FOREST], DESERT_RATE, 3, 2, terrain);
+    terrain = placeAndGrow(SWAMP, GRASS, [MOUNTAIN, WATER, FOREST, DESERT], SWAMP_RATE, 4, 2, terrain);
+    terrain = placeAndGrow(CEMETARY, GRASS, [MOUNTAIN, WATER, FOREST, DESERT, SWAMP], CEMETARY_RATE, 4, 2, terrain);
 
     let mapBlocks = terrain.flat().map(({ type }) => type);
 
