@@ -17,12 +17,10 @@ import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 import TextData from '../components/TextData';
 import { toast } from 'react-toastify';
 import { ROM } from '../lib/rando/ROM';
-import { generateContinent, generateContinentCelluar } from '../lib/rando/TerrainGenerator';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
     const [ cleanRom, setCleanRom ] = useState(null);
-    const [ terrain, setTerrain ] = useState([]);
     const [ romData, setRomData ] = useAtom(romAtom);
     const { pathname } = useLocation();
 
@@ -64,11 +62,6 @@ export default () => {
         }
     }
 
-    const generateTerrain = () => {
-        let compressedMap = generateContinentCelluar(64, 64);
-        setTerrain(compressedMap);
-    }
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
@@ -91,6 +84,7 @@ export default () => {
                     <h3>Tools</h3>
                     <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link>
                     <Link to={`${process.env.PUBLIC_URL}/hex`}><button>Hex Viewer</button></Link>
+                    <Link to={`${process.env.PUBLIC_URL}/terrain`}><button>Terrain Generator Test</button></Link>
                 </div>
                 <div>
                     <h2>What is Zelda 2 Randomizer JS?</h2>
@@ -121,9 +115,6 @@ export default () => {
                     <p>This is still very much a work in progress.  We still have many bugs to squash, but the randomizer is spitting out winnable seeds for the most part with albeit limited randomization.</p>
                     <h3>What's up with all the spoilers?</h3>
                     <p>These are currently in place only to aid in troubleshooting.  These tools are not meant to be a cheating device for the other randomizer.  So don't be a cheater...the only person you are lying to is yourself.  This feature will be locked down to administrators at a later date to allow for tournament organizers to validate a seed is beatable before giving it to the players.</p>
-                    <h2>Random Terrain Test</h2>
-                    <button onClick={() => generateTerrain()}>Generate Terrain</button>
-                    <MapDisplay overworld={{spriteMap: terrain, locations: [], worldNumber: 0}} maps={[]} />
                 </div>
             </div>
         );
