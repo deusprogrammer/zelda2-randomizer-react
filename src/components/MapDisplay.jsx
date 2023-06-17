@@ -21,7 +21,7 @@ const OVERWORLD_SPRITE_SYMBOLS = [
     {name: "Spider", c: "*", color: "white", backgroundColor: "red"}
 ]
 
-export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
+export default ({maps, overworld: {locations, spriteMap, worldNumber}, terrainCells}) => {
     const [selectedSquare, setSelectedSquare] = useState("");
     const navigate = useNavigate();
 
@@ -37,6 +37,11 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
                 let found = Object.keys(locations).find(key => {
                     return locations[key].x === x && locations[key].y - 30 === y
                 });
+
+                let isolationZone = 0;
+                if (terrainCells && terrainCells[y][x]) {
+                    isolationZone = terrainCells[y][x].isolationZone;
+                }
         
                 if (!sprite.type) {
                     mapBlocks.push(
@@ -73,7 +78,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
                             className={`map-square blinking`} 
                             style={{color, backgroundColor}}
                             onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}
-                            onMouseEnter={() => {setSelectedSquare({id: found, name, x, y: y + 30, items})}}
+                            onMouseEnter={() => {setSelectedSquare({id: found, name, x, y: y + 30, isolationZone, items})}}
                             onMouseLeave={() => {setSelectedSquare(null)}}
                         >
                             {c}
@@ -85,7 +90,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
                             key={`${x},${y}`}
                             className={`map-square`}
                             style={{color, backgroundColor}}
-                            onMouseEnter={() => {setSelectedSquare({id: "", name, x, y: y + 30, items: []})}}
+                            onMouseEnter={() => {setSelectedSquare({id: "", name, x, y: y + 30, isolationZone, items: []})}}
                             onMouseLeave={() => {setSelectedSquare(null)}}
                         >
                             {c}
@@ -102,7 +107,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}}) => {
         <div>
             {selectedSquare ? 
                 <div style={{display: "inline-block", position: "fixed", top: "0px", left: "0px", padding: "20px", backgroundColor: "gray", color: "white"}}>
-                    <h6>{selectedSquare.id}[{selectedSquare.name}]({selectedSquare.x}, {selectedSquare.y})</h6>
+                    <h6>{selectedSquare.id}[{selectedSquare.name}]({selectedSquare.x}, {selectedSquare.y}) ISO: {selectedSquare.isolationZone}</h6>
                     {selectedSquare.items.filter(item => (item.number >= 0 && item.number <= 7) || (item.number >= 14 && item.number <= 15) || (item.number >= 19 && item.number <= 21)).map(item => <div>{item.name}</div>)}
                 </div>
                 : null

@@ -2,20 +2,30 @@ import {useState } from 'react';
 import MapDisplay from '../components/MapDisplay';
 
 import { generateContinentCelluar } from '../lib/rando/TerrainGenerator';
+import IsolationZoneMap from '../components/IsolationZoneMap';
 
 export default () => {
     const [ terrain, setTerrain ] = useState([]);
+    const [ cells, setCells ] = useState(null);
 
     const generateTerrain = () => {
-        let compressedMap = generateContinentCelluar(64, 64);
+        let [compressedMap, terrainCells, isolationZones] = generateContinentCelluar(64, 64);
         setTerrain(compressedMap);
+        setCells(terrainCells);
     }
 
     return (
         <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
             <h2>Random Terrain Test</h2>
             <button onClick={() => generateTerrain()}>Generate Terrain</button>
-            <MapDisplay overworld={{spriteMap: terrain, locations: [], worldNumber: 0}} maps={[]} />
+            { cells ?
+                <>
+                    <h3>Terrain Map</h3>
+                    <MapDisplay overworld={{spriteMap: terrain, locations: [], worldNumber: 0}} maps={[]} terrainCells={cells} />
+                    <h3>Isolation Zone Map</h3>
+                    <IsolationZoneMap terrainCells={cells} />
+                </> : null
+            }
         </div>
     );
 }

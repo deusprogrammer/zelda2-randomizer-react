@@ -14,19 +14,69 @@ const CEMETARY_RATE = 0.25;
 const WATER_RATE = 0.20;
 
 class Cell {
-  type;
+    type;
+    x;
+    y;
+    isolationZone;
 
-  constructor(type) {
-    this.type = type;
-  }
+    constructor(type) {
+        this.type = type;
+    }
 
-  getType = () => {
-    return this.type;
-  };
+    getType = () => {
+        return this.type;
+    };
 
-  setType = (type) => {
-    this.type = type;
-  };
+    setType = (type) => {
+        this.type = type;
+    };
+
+    setLocation = (x, y, isolationZone) => {
+        this.x = x;
+        this.y = y;
+        this.isolationZone = isolationZone;
+    }
+}
+
+const floodFill = (x, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone = []) => {
+    if (visitedNodes.includes(`${x},${y}`)) {
+        return [];
+    }
+
+    visitedNodes.push(`${x},${y}`);
+
+    if (
+        x < 0 || x >= terrain.length || 
+        y < 0 || y >= terrain[0].length ||
+        blockingTypes.includes(terrain[y][x].getType())
+    ) {
+        return [];
+    }
+
+    terrain[y][x].setLocation(x, y + 30, isolationZoneNumber);
+    isolationZone.push(terrain[y][x]);
+
+    floodFill(x + 1, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone);
+    floodFill(x - 1, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone);
+    floodFill(x, y + 1, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone);
+    floodFill(x, y - 1, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone);
+
+    return isolationZone;
+}
+
+const findIsolationZones = (blockingTypes, terrain) => {
+    let isolationZones = [];
+    let visitedNodes = [];
+    for (let y = 0; y < terrain.length; y++) {
+        for (let x = 0; x < terrain[0].length; x++) {
+            let isolationZone = floodFill(x, y, blockingTypes, terrain, visitedNodes, isolationZones.length);
+            if (isolationZone.length > 0) {
+                isolationZones.push(isolationZone);
+            }
+        }
+    }
+
+    return isolationZones;
 }
 
 const createEmptyMatrix = (width, height) => {
@@ -108,6 +158,11 @@ export const generateContinentCelluar = (width, height) => {
     terrain = placeAndGrow(SWAMP, GRASS, [MOUNTAIN, WATER, FOREST, DESERT], SWAMP_RATE, 4, 2, terrain);
     terrain = placeAndGrow(CEMETARY, GRASS, [MOUNTAIN, WATER, FOREST, DESERT, SWAMP], CEMETARY_RATE, 4, 2, terrain);
 
+    let isolationZones = findIsolationZones([MOUNTAIN, WATER], terrain);
+
+    console.log("ISOLATION ZONE COUNT: " + isolationZones.length);
+    console.log(JSON.stringify(isolationZones, null, 5));
+
     let mapBlocks = terrain.flat().map(({ type }) => type);
 
     let currentBlockType = null;
@@ -127,5 +182,5 @@ export const generateContinentCelluar = (width, height) => {
         compressedMap.push({ type: currentBlockType, length: run - 1 });
     }
 
-    return compressedMap;
+    return [compressedMap, terrain, isolationZones];
 };
