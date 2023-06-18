@@ -54,7 +54,7 @@ export default ({terrainCells}) => {
                     <div 
                         key={`iso-${x},${y}`}
                         className={`map-square`}
-                        style={{backgroundColor: ISOLATION_ZONE_COLORS[terrainCells[y][x].isolationZone], color: "white"}}
+                        style={{backgroundColor: "black", color: "white"}}
                     >
                         {terrainCells[y][x].isolationZone}
                     </div>
