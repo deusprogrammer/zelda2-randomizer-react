@@ -7,11 +7,13 @@ import IsolationZoneMap from '../components/IsolationZoneMap';
 export default () => {
     const [ terrain, setTerrain ] = useState([]);
     const [ cells, setCells ] = useState(null);
+    const [ mountainBorders, setMountainBorders] = useState(null);
 
     const generateTerrain = () => {
-        let [compressedMap, terrainCells, isolationZones] = generateContinentCelluar(64, 64);
+        let [compressedMap, terrainCells, isolationZones, mountainBorders] = generateContinentCelluar(64, 64);
         setTerrain(compressedMap);
         setCells(terrainCells);
+        setMountainBorders(mountainBorders)
     }
 
     return (
@@ -21,7 +23,7 @@ export default () => {
             { cells ?
                 <>
                     <h3>Terrain Map</h3>
-                    <MapDisplay overworld={{spriteMap: terrain, locations: [], worldNumber: 0}} maps={[]} terrainCells={cells} />
+                    <MapDisplay overworld={{spriteMap: terrain, locations: [], worldNumber: 0}} maps={[]} terrainCells={cells} mountainBorders={mountainBorders} />
                     <h3>Isolation Zone Map</h3>
                     <IsolationZoneMap terrainCells={cells} />
                 </> : null

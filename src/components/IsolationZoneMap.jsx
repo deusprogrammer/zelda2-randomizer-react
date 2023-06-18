@@ -52,6 +52,7 @@ export default ({terrainCells}) => {
                 mapBlocks.push(
                     <div 
                         className={`map-square`}
+                        onClick={() => {alert(terrainCells[y][x].isolationZone)}}
                         style={{backgroundColor: ISOLATION_ZONE_COLORS[terrainCells[y][x].isolationZone]}}
                     >
                     </div>

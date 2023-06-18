@@ -13,6 +13,8 @@ const SWAMP_RATE = 0.25;
 const CEMETARY_RATE = 0.25;
 const WATER_RATE = 0.20;
 
+const ISOLATION_ZONE_MIN_SIZE = 20;
+
 class Cell {
     type;
     x;
@@ -64,6 +66,35 @@ const floodFill = (x, y, blockingTypes, terrain, visitedNodes, isolationZoneNumb
     return isolationZone;
 }
 
+const findSurroundingWallType = (x, y, blockingTypes, terrain, visitedNodes = []) => {
+    console.log(`SEARCHING ${x},${y}`);
+    
+    if (visitedNodes.includes(`${x},${y}`)) {
+        return null;
+    }
+
+    visitedNodes.push(`${x},${y}`);
+
+    if (
+        x < 0 || x >= terrain.length || 
+        y < 0 || y >= terrain[0].length
+    ) {
+        return null;
+    }
+
+    console.log(`${terrain[y][x].getType()} AT ${x}, ${y}`);
+
+    if (blockingTypes.includes(terrain[y][x].getType())) {
+        console.log(`FOUND A BLOCKER ${terrain[y][x].getType()}`);
+        return terrain[y][x].getType();
+    }
+
+    return  findSurroundingWallType(x + 1, y, blockingTypes, terrain, visitedNodes) ||
+            findSurroundingWallType(x - 1, y, blockingTypes, terrain, visitedNodes) ||
+            findSurroundingWallType(x, y + 1, blockingTypes, terrain, visitedNodes) ||
+            findSurroundingWallType(x, y - 1, blockingTypes, terrain, visitedNodes);
+}
+
 const findIsolationZones = (blockingTypes, terrain) => {
     let isolationZones = [];
     let visitedNodes = [];
@@ -92,6 +123,54 @@ const createEmptyMatrix = (width, height) => {
 
   return terrain;
 };
+
+const isNeighborNonblocking = (x, y, terrain, blockingTypes, otherBlockingTypes) => {
+    if (
+        x < 0 || x >= terrain.length || 
+        y < 0 || y >= terrain[0].length
+    ) {
+        return false;
+    }
+
+    if (!blockingTypes.includes(terrain[y][x].getType()) && !otherBlockingTypes.includes(terrain[y][x].getType())) {
+        return true;
+    }
+
+    return false;
+}
+
+const findBorders = (blockingTypes, otherBlockingTypes, terrain) => {
+    let borders = [];
+    for (let x = 0; x < terrain.length; x++) {
+        for (let y = 0; y < terrain[0].length; y++) {
+            let block = terrain[y][x];
+            let isolationZones = new Set();
+            if (blockingTypes.includes(block.getType())) {
+                if (isNeighborNonblocking(x + 1, y, terrain, blockingTypes, otherBlockingTypes)) {
+                    isolationZones.add(terrain[y][x + 1].isolationZone);
+                }
+
+                if (isNeighborNonblocking(x - 1, y, terrain, blockingTypes, otherBlockingTypes)) {
+                    isolationZones.add(terrain[y][x - 1].isolationZone);
+                }
+
+                if (isNeighborNonblocking(x, y + 1, terrain, blockingTypes, otherBlockingTypes)) {
+                    isolationZones.add(terrain[y + 1][x].isolationZone);
+                }
+
+                if (isNeighborNonblocking(x, y - 1, terrain, blockingTypes, otherBlockingTypes)) {
+                    isolationZones.add(terrain[y - 1][x].isolationZone);
+                }
+
+                if (isolationZones.size > 0) {
+                    borders.push({x, y: y + 30, isolationZones: Array.from(isolationZones)});
+                }
+            }           
+        }
+    }
+
+    return borders;
+}
 
 const placeAndGrow = (type, placeIn, ignore, rate, passes, liveNeighborsThreshold, terrain) => {
     // Place some water in the grassy areas
@@ -148,8 +227,7 @@ const placeAndGrow = (type, placeIn, ignore, rate, passes, liveNeighborsThreshol
 }
 
 export const generateContinentCelluar = (width, height) => {
-    // TODO Randomly choose the number of passes, live neighbor threshold, and rate for each.
-
+    // Create the terrain
     let terrain = createEmptyMatrix(width, height);
     terrain = placeAndGrow(MOUNTAIN, GRASS, [], GRASS_RATE, 3, 4, terrain);
     terrain = placeAndGrow(WATER, GRASS, [MOUNTAIN], WATER_RATE, 3, 2, terrain);
@@ -158,13 +236,28 @@ export const generateContinentCelluar = (width, height) => {
     terrain = placeAndGrow(SWAMP, GRASS, [MOUNTAIN, WATER, FOREST, DESERT], SWAMP_RATE, 4, 2, terrain);
     terrain = placeAndGrow(CEMETARY, GRASS, [MOUNTAIN, WATER, FOREST, DESERT, SWAMP], CEMETARY_RATE, 4, 2, terrain);
 
+    // Detect the isolation zones
     let isolationZones = findIsolationZones([MOUNTAIN, WATER], terrain);
 
-    console.log("ISOLATION ZONE COUNT: " + isolationZones.length);
-    console.log(JSON.stringify(isolationZones, null, 5));
+    // Fill in small isolation zones
+    isolationZones.filter(isolationZone => isolationZone.length < ISOLATION_ZONE_MIN_SIZE).forEach((isolationZone) => {
+        let {x, y} = isolationZone[0];
+        let wallType = findSurroundingWallType(x, y - 30, [MOUNTAIN, WATER], terrain);
+        isolationZone.forEach(({x, y}) => {
+            terrain[y - 30][x].setType(wallType);
+            terrain[y - 30][x].setLocation(x, y);
+        });
+    });
 
+    // Detect mountains that can have caves placed in them
+    let mountainBorders = findBorders([MOUNTAIN], [WATER], terrain);
+
+    console.log(JSON.stringify(mountainBorders, null, 5));
+
+    // Flatten the map
     let mapBlocks = terrain.flat().map(({ type }) => type);
 
+    // RLE the map
     let currentBlockType = null;
     let run = 0;
     let compressedMap = [];
@@ -182,5 +275,5 @@ export const generateContinentCelluar = (width, height) => {
         compressedMap.push({ type: currentBlockType, length: run - 1 });
     }
 
-    return [compressedMap, terrain, isolationZones];
+    return [compressedMap, terrain, isolationZones, mountainBorders];
 };

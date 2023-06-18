@@ -21,7 +21,7 @@ const OVERWORLD_SPRITE_SYMBOLS = [
     {name: "Spider", c: "*", color: "white", backgroundColor: "red"}
 ]
 
-export default ({maps, overworld: {locations, spriteMap, worldNumber}, terrainCells}) => {
+export default ({maps, overworld: {locations, spriteMap, worldNumber}, terrainCells, mountainBorders}) => {
     const [selectedSquare, setSelectedSquare] = useState("");
     const navigate = useNavigate();
 
@@ -60,6 +60,15 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}, terrainCe
 
                 let {name, c, backgroundColor, color} = OVERWORLD_SPRITE_SYMBOLS[sprite.type];
 
+                let hasBorder; 
+                let border = '1px solid black';
+                if (mountainBorders) {
+                    hasBorder = mountainBorders.find(({x: x1, y: y1}) => x === x1 && y === y1 - 30);
+                    if (hasBorder) {
+                        border = '1px solid yellow';
+                    }
+                }
+
                 if (found) {
                     let {mapNumber, mapSet, continent} = locations[found];
                     if (mapSet === 0 && continent === 0) {      // Overworld
@@ -76,7 +85,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}, terrainCe
                         <div 
                             key={`${x},${y}`}
                             className={`map-square blinking`} 
-                            style={{color, backgroundColor}}
+                            style={{color, backgroundColor, border}}
                             onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}
                             onMouseEnter={() => {setSelectedSquare({id: found, name, x, y: y + 30, isolationZone, items})}}
                             onMouseLeave={() => {setSelectedSquare(null)}}
@@ -89,7 +98,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}, terrainCe
                         <div 
                             key={`${x},${y}`}
                             className={`map-square`}
-                            style={{color, backgroundColor}}
+                            style={{color, backgroundColor, border}}
                             onMouseEnter={() => {setSelectedSquare({id: "", name, x, y: y + 30, isolationZone, items: []})}}
                             onMouseLeave={() => {setSelectedSquare(null)}}
                         >
