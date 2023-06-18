@@ -41,20 +41,22 @@ export default ({terrainCells}) => {
                 if (terrainCells[y][x].isolationZone === undefined) {
                     mapBlocks.push(
                         <div 
+                            key={`iso-${x},${y}`}
                             className={`map-square`}
                             style={{color: "black"}}
                         >
-                            X
+                            {terrainCells[y][x].getType() === 0xb ? `X` : `~`}
                         </div>
                     );
                     continue;
                 }
                 mapBlocks.push(
                     <div 
+                        key={`iso-${x},${y}`}
                         className={`map-square`}
-                        onClick={() => {alert(terrainCells[y][x].isolationZone)}}
-                        style={{backgroundColor: ISOLATION_ZONE_COLORS[terrainCells[y][x].isolationZone]}}
+                        style={{backgroundColor: ISOLATION_ZONE_COLORS[terrainCells[y][x].isolationZone], color: "white"}}
                     >
+                        {terrainCells[y][x].isolationZone}
                     </div>
                 );
             }

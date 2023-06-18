@@ -1,33 +1,30 @@
-import parse from '../Z2Parser';
-import graphData from '../zelda2/templates/z2-vanilla.v2.graph';
-import fs from 'fs';
+import templateData from '../zelda2/templates/z2-vanilla.template';
 
-let romFile = process.argv[2];
-let rom = fs.readFileSync(romFile);
-let romData = parse(rom);
-
-const mapNames = [
-    "WEST HYRULE",
-    "DEATH MOUNTAIN",
-    "EAST HYRULE",
-    "MAZE ISLAND"
-]
-
-const createVanillaNodeMapping = (graphData, mapData) => {
-    let mapping = {};
-    let template = {};
-    Object.keys(graphData).forEach((nodeName, i) => {
-        mapping[nodeName] = `NODE${i}`;
-    });
-    Object.keys(graphData).forEach((nodeName, i) => {
-        let {id, renderData: {map}} = graphData[nodeName];
-
-        let {x, y} = mapData[map][id] || {x: 0, y: 0};
-
-        template[`NODE${i}`] = {id, x, y, map, mapName: mapNames[map]};
-    });
-    return template;
+const getType = (locationKey) => {
+    if (locationKey.includes("CAVE") && locationKey !== "FAIRY_CAVE_HOLE") {
+        return "CAVE";
+    } else if (locationKey.includes("BRIDGE") || locationKey.includes("DOCK") || locationKey === "P5_HEART") {
+        return "WATER";
+    } else if (locationKey.includes("FOREST") || locationKey.includes("WOODS") || locationKey.includes("BAGU") || locationKey.endsWith("FAIRY")) {
+        return "FOREST";
+    } else if (locationKey.includes("DEATH_VALLEY")) {
+        return "LAVA";
+    } else if (locationKey.includes("BEACH") || locationKey.includes("DAZZLE") || locationKey === "P5_500P_BAG") {
+        return "DESERT";
+    } else if (locationKey.includes("SWAMP")) {
+        return "SWAMP";
+    } else if (locationKey.includes("CEM") || locationKey.includes("TOMB") || locationKey === "FAIRY_CAVE_HOLE") {
+        return "CEMETARY";
+    } else {
+        return "ANY";
+    }
 }
 
-let corrected = createVanillaNodeMapping(graphData, romData.mapData);
-console.log(JSON.stringify(corrected, null, 5));
+const correctTemplate = (graphData) => {
+    Object.keys(graphData).forEach((nodeName) => {
+        graphData[nodeName].type = getType(graphData[nodeName].locationKey);
+    });
+}
+
+correctTemplate(templateData);
+console.log(JSON.stringify(templateData, null, 5));

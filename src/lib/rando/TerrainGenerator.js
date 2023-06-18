@@ -48,7 +48,7 @@ const floodFill = (x, y, blockingTypes, terrain, visitedNodes, isolationZoneNumb
     visitedNodes.push(`${x},${y}`);
 
     if (
-        x < 0 || x >= terrain.length || 
+        x < 0 || x >= terrain.length ||
         y < 0 || y >= terrain[0].length ||
         blockingTypes.includes(terrain[y][x].getType())
     ) {
@@ -67,8 +67,6 @@ const floodFill = (x, y, blockingTypes, terrain, visitedNodes, isolationZoneNumb
 }
 
 const findSurroundingWallType = (x, y, blockingTypes, terrain, visitedNodes = []) => {
-    console.log(`SEARCHING ${x},${y}`);
-    
     if (visitedNodes.includes(`${x},${y}`)) {
         return null;
     }
@@ -76,23 +74,20 @@ const findSurroundingWallType = (x, y, blockingTypes, terrain, visitedNodes = []
     visitedNodes.push(`${x},${y}`);
 
     if (
-        x < 0 || x >= terrain.length || 
+        x < 0 || x >= terrain.length ||
         y < 0 || y >= terrain[0].length
     ) {
         return null;
     }
 
-    console.log(`${terrain[y][x].getType()} AT ${x}, ${y}`);
-
     if (blockingTypes.includes(terrain[y][x].getType())) {
-        console.log(`FOUND A BLOCKER ${terrain[y][x].getType()}`);
         return terrain[y][x].getType();
     }
 
-    return  findSurroundingWallType(x + 1, y, blockingTypes, terrain, visitedNodes) ||
-            findSurroundingWallType(x - 1, y, blockingTypes, terrain, visitedNodes) ||
-            findSurroundingWallType(x, y + 1, blockingTypes, terrain, visitedNodes) ||
-            findSurroundingWallType(x, y - 1, blockingTypes, terrain, visitedNodes);
+    return findSurroundingWallType(x + 1, y, blockingTypes, terrain, visitedNodes) ||
+        findSurroundingWallType(x - 1, y, blockingTypes, terrain, visitedNodes) ||
+        findSurroundingWallType(x, y + 1, blockingTypes, terrain, visitedNodes) ||
+        findSurroundingWallType(x, y - 1, blockingTypes, terrain, visitedNodes);
 }
 
 const findIsolationZones = (blockingTypes, terrain) => {
@@ -111,22 +106,22 @@ const findIsolationZones = (blockingTypes, terrain) => {
 }
 
 const createEmptyMatrix = (width, height) => {
-  // Initialize matrix
-  let terrain = [];
-  for (let i = 0; i < height; i++) {
-    let row = [];
-    for (let j = 0; j < width; j++) {
-      row.push(new Cell(GRASS));
+    // Initialize matrix
+    let terrain = [];
+    for (let i = 0; i < height; i++) {
+        let row = [];
+        for (let j = 0; j < width; j++) {
+            row.push(new Cell(GRASS));
+        }
+        terrain.push(row);
     }
-    terrain.push(row);
-  }
 
-  return terrain;
+    return terrain;
 };
 
 const isNeighborNonblocking = (x, y, terrain, blockingTypes, otherBlockingTypes) => {
     if (
-        x < 0 || x >= terrain.length || 
+        x < 0 || x >= terrain.length ||
         y < 0 || y >= terrain[0].length
     ) {
         return false;
@@ -163,13 +158,51 @@ const findBorders = (blockingTypes, otherBlockingTypes, terrain) => {
                 }
 
                 if (isolationZones.size > 0) {
-                    borders.push({x, y: y + 30, isolationZones: Array.from(isolationZones)});
+                    borders.push({ x, y: y + 30, isolationZones: Array.from(isolationZones) });
                 }
-            }           
+            }
         }
     }
 
     return borders;
+}
+
+const findSoftConnections = (isolationZone, x, y, terrain, hardBlockers, softBlockers, connections = {}, visitedNodes = [], blockerStack = []) => {
+    blockerStack = [...blockerStack];
+
+    if (visitedNodes.includes(`${x},${y}`)) {
+        return [];
+    }
+
+    visitedNodes.push(`${x},${y}`);
+
+    if (
+        x < 0 || x >= terrain.length ||
+        y < 0 || y >= terrain[0].length ||
+        hardBlockers.includes(terrain[y][x].getType())
+    ) {
+        return [];
+    }
+
+    if (softBlockers.includes(terrain[y][x].getType())) {
+        if (!blockerStack.includes(terrain[y][x].getType())) {
+            blockerStack.push(terrain[y][x].getType());
+        }
+    }
+
+    if (isolationZone != terrain[y][x].isolationZone && terrain[y][x].isolationZone !== undefined) {
+        if (blockerStack.length > 0 && (!connections[`${isolationZone}:${terrain[y][x].isolationZone}`] || blockerStack.length < connections[`${isolationZone}:${terrain[y][x].isolationZone}`].length)) {
+            connections[`${isolationZone}:${terrain[y][x].isolationZone}`] = {from: isolationZone, to: terrain[y][x].isolationZone, blockers: blockerStack};
+        }
+        return connections;
+    }
+
+    findSoftConnections(isolationZone, x + 1, y, terrain, hardBlockers, softBlockers, connections, visitedNodes, blockerStack);
+    findSoftConnections(isolationZone, x - 1, y, terrain, hardBlockers, softBlockers, connections, visitedNodes, blockerStack);
+    findSoftConnections(isolationZone, x, y + 1, terrain, hardBlockers, softBlockers, connections, visitedNodes, blockerStack);
+    findSoftConnections(isolationZone, x, y - 1, terrain, hardBlockers, softBlockers, connections, visitedNodes, blockerStack);
+
+    return connections;
 }
 
 const placeAndGrow = (type, placeIn, ignore, rate, passes, liveNeighborsThreshold, terrain) => {
@@ -241,9 +274,9 @@ export const generateContinentCelluar = (width, height) => {
 
     // Fill in small isolation zones
     isolationZones.filter(isolationZone => isolationZone.length < ISOLATION_ZONE_MIN_SIZE).forEach((isolationZone) => {
-        let {x, y} = isolationZone[0];
+        let { x, y } = isolationZone[0];
         let wallType = findSurroundingWallType(x, y - 30, [MOUNTAIN, WATER], terrain);
-        isolationZone.forEach(({x, y}) => {
+        isolationZone.forEach(({ x, y }) => {
             terrain[y - 30][x].setType(wallType);
             terrain[y - 30][x].setLocation(x, y);
         });
@@ -252,7 +285,16 @@ export const generateContinentCelluar = (width, height) => {
     // Detect mountains that can have caves placed in them
     let mountainBorders = findBorders([MOUNTAIN], [WATER], terrain);
 
-    console.log(JSON.stringify(mountainBorders, null, 5));
+    // Filter out small isolation zones we already filled in
+    isolationZones = isolationZones.filter(isolationZone => isolationZone.length >= ISOLATION_ZONE_MIN_SIZE);
+
+    // Find connections
+    let connections = {};
+    isolationZones.forEach((isolationZone) => {
+        let { x, y, isolationZone: index } = isolationZone[0];
+        findSoftConnections(index, x, y - 30, terrain, [MOUNTAIN], [WATER], connections);
+    });
+    connections = Object.values(connections);
 
     // Flatten the map
     let mapBlocks = terrain.flat().map(({ type }) => type);
@@ -263,11 +305,11 @@ export const generateContinentCelluar = (width, height) => {
     let compressedMap = [];
     mapBlocks.forEach((mapBlock, index) => {
         if (currentBlockType !== mapBlock || run === 0xf || index % 64 === 0) {
-        if (currentBlockType !== null) {
-            compressedMap.push({ type: currentBlockType, length: run - 1 });
-        }
-        run = 0;
-        currentBlockType = mapBlock;
+            if (currentBlockType !== null) {
+                compressedMap.push({ type: currentBlockType, length: run - 1 });
+            }
+            run = 0;
+            currentBlockType = mapBlock;
         }
         run++;
     });
@@ -275,5 +317,5 @@ export const generateContinentCelluar = (width, height) => {
         compressedMap.push({ type: currentBlockType, length: run - 1 });
     }
 
-    return [compressedMap, terrain, isolationZones, mountainBorders];
+    return [compressedMap, terrain, isolationZones, mountainBorders, connections];
 };
