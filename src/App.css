@@ -87,6 +87,7 @@ body * {
     color: white;
     align-items: center;
     justify-content: center;
+    font-size: 0.5rem;
 }
 
 .map-container .map-square:hover {
