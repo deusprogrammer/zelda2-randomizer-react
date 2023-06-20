@@ -55,7 +55,7 @@ class Cell {
     }
 }
 
-const floodFill = (x, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isHard, isolationZone = []) => {
+const floodFill = (x, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isHard = false, isolationZone = []) => {
     if (visitedNodes.includes(`${x},${y}`)) {
         return [];
     }
@@ -110,7 +110,7 @@ const findSurroundingWallType = (x, y, blockingTypes, terrain, visitedNodes = []
         findSurroundingWallType(x, y - 1, blockingTypes, terrain, visitedNodes);
 }
 
-const findIsolationZones = (blockingTypes, terrain, isHard) => {
+const findIsolationZones = (blockingTypes, terrain, isHard = false) => {
     let isolationZones = [];
     let visitedNodes = [];
     for (let y = 0; y < terrain.length; y++) {
@@ -417,6 +417,7 @@ export const generateTemplate = (continents) => {
 
         let biggest = 0;
         let adjustment = 0;
+        let total = 0;
         nodesPerZone.forEach((nodeCount, index) => {
             if (nodeCount < 2) {
                 adjustment += nodeCount - 2;
@@ -425,8 +426,9 @@ export const generateTemplate = (continents) => {
             if (nodesPerZone[biggest] < nodesPerZone[index]) {
                 biggest = index;
             }
+            total++;
         });
-        nodesPerZone[biggest] += adjustment;
+        nodesPerZone[biggest] += adjustment + (continentNodes.length - total);
 
         console.log("NODES PER ZONE: " + JSON.stringify(nodesPerZone));
 

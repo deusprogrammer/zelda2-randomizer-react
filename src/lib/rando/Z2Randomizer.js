@@ -300,7 +300,7 @@ export class Z2Randomizer {
      * @param {number} continent
      * @returns
      */
-    getIsolationZones = (continent) => {
+    getIsolationZones = (continent, isHard = false) => {
         let continentNodes = this.getContinentNodes(continent);
         let isolationAreas = [];
         continentNodes.forEach((key) => {
