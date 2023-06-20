@@ -1,9 +1,12 @@
+import vanillaTemplate from '../zelda2/templates/z2-vanilla.template';
+
 const DESERT = 0x4;
 const GRASS = 0x5;
 const FOREST = 0x6;
 const SWAMP = 0x7;
 const CEMETARY = 0x8;
 const MOUNTAIN = 0xb;
+const DEEP_WATER = 0xc;
 const WATER = 0xd;
 
 const DESERT_RATE = 0.20;
@@ -15,11 +18,16 @@ const WATER_RATE = 0.20;
 
 const ISOLATION_ZONE_MIN_SIZE = 20;
 
+const REMEDY_MAP = {
+    0xd: "BOOTS"
+}
+
 class Cell {
     type;
     x;
     y;
     isolationZone;
+    hardIsolationZone;
 
     constructor(type) {
         this.type = type;
@@ -33,14 +41,21 @@ class Cell {
         this.type = type;
     };
 
-    setLocation = (x, y, isolationZone) => {
+    setLocation = (x, y) => {
         this.x = x;
         this.y = y;
+    }
+
+    setIsolationZone = (isolationZone) => {
         this.isolationZone = isolationZone;
+    }
+
+    setHardIsolationZone = (isolationZone) => {
+        this.hardIsolationZone = isolationZone;
     }
 }
 
-const floodFill = (x, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone = []) => {
+const floodFill = (x, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isHard, isolationZone = []) => {
     if (visitedNodes.includes(`${x},${y}`)) {
         return [];
     }
@@ -55,13 +70,18 @@ const floodFill = (x, y, blockingTypes, terrain, visitedNodes, isolationZoneNumb
         return [];
     }
 
-    terrain[y][x].setLocation(x, y + 30, isolationZoneNumber);
+    terrain[y][x].setLocation(x, y + 30);
+    if (isHard) {
+        terrain[y][x].setHardIsolationZone(isolationZoneNumber);
+    } else {
+        terrain[y][x].setIsolationZone(isolationZoneNumber);
+    }
     isolationZone.push(terrain[y][x]);
 
-    floodFill(x + 1, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone);
-    floodFill(x - 1, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone);
-    floodFill(x, y + 1, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone);
-    floodFill(x, y - 1, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isolationZone);
+    floodFill(x + 1, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isHard, isolationZone);
+    floodFill(x - 1, y, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isHard, isolationZone);
+    floodFill(x, y + 1, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isHard, isolationZone);
+    floodFill(x, y - 1, blockingTypes, terrain, visitedNodes, isolationZoneNumber, isHard, isolationZone);
 
     return isolationZone;
 }
@@ -90,12 +110,12 @@ const findSurroundingWallType = (x, y, blockingTypes, terrain, visitedNodes = []
         findSurroundingWallType(x, y - 1, blockingTypes, terrain, visitedNodes);
 }
 
-const findIsolationZones = (blockingTypes, terrain) => {
+const findIsolationZones = (blockingTypes, terrain, isHard) => {
     let isolationZones = [];
     let visitedNodes = [];
     for (let y = 0; y < terrain.length; y++) {
         for (let x = 0; x < terrain[0].length; x++) {
-            let isolationZone = floodFill(x, y, blockingTypes, terrain, visitedNodes, isolationZones.length);
+            let isolationZone = floodFill(x, y, blockingTypes, terrain, visitedNodes, isolationZones.length, isHard);
             if (isolationZone.length > 0) {
                 isolationZones.push(isolationZone);
             }
@@ -259,46 +279,7 @@ const placeAndGrow = (type, placeIn, ignore, rate, passes, liveNeighborsThreshol
     return terrain;
 }
 
-export const generateContinentCelluar = (width, height) => {
-    // Create the terrain
-    let terrain = createEmptyMatrix(width, height);
-    terrain = placeAndGrow(MOUNTAIN, GRASS, [], GRASS_RATE, 3, 4, terrain);
-    terrain = placeAndGrow(WATER, GRASS, [MOUNTAIN], WATER_RATE, 3, 2, terrain);
-    terrain = placeAndGrow(FOREST, GRASS, [MOUNTAIN, WATER], FOREST_RATE, 3, 2, terrain);
-    terrain = placeAndGrow(DESERT, GRASS, [MOUNTAIN, WATER, FOREST], DESERT_RATE, 3, 2, terrain);
-    terrain = placeAndGrow(SWAMP, GRASS, [MOUNTAIN, WATER, FOREST, DESERT], SWAMP_RATE, 4, 2, terrain);
-    terrain = placeAndGrow(CEMETARY, GRASS, [MOUNTAIN, WATER, FOREST, DESERT, SWAMP], CEMETARY_RATE, 4, 2, terrain);
-
-    // Detect the isolation zones
-    let isolationZones = findIsolationZones([MOUNTAIN, WATER], terrain);
-
-    // Fill in small isolation zones
-    isolationZones.filter(isolationZone => isolationZone.length < ISOLATION_ZONE_MIN_SIZE).forEach((isolationZone) => {
-        let { x, y } = isolationZone[0];
-        let wallType = findSurroundingWallType(x, y - 30, [MOUNTAIN, WATER], terrain);
-        isolationZone.forEach(({ x, y }) => {
-            terrain[y - 30][x].setType(wallType);
-            terrain[y - 30][x].setLocation(x, y);
-        });
-    });
-
-    // Detect mountains that can have caves placed in them
-    let mountainBorders = findBorders([MOUNTAIN], [WATER], terrain);
-
-    // Filter out small isolation zones we already filled in
-    isolationZones = isolationZones.filter(isolationZone => isolationZone.length >= ISOLATION_ZONE_MIN_SIZE);
-
-    // Find connections
-    let connections = {};
-    isolationZones.forEach((isolationZone) => {
-        let { x, y, isolationZone: index } = isolationZone[0];
-        findSoftConnections(index, x, y - 30, terrain, [MOUNTAIN], [WATER], connections);
-    });
-    connections = Object.values(connections);
-
-    // Flatten the map
-    let mapBlocks = terrain.flat().map(({ type }) => type);
-
+export const compressMap = (mapBlocks) => {
     // RLE the map
     let currentBlockType = null;
     let run = 0;
@@ -317,5 +298,201 @@ export const generateContinentCelluar = (width, height) => {
         compressedMap.push({ type: currentBlockType, length: run - 1 });
     }
 
-    return [compressedMap, terrain, isolationZones, mountainBorders, connections];
+    return compressedMap;
+}
+
+export const generateContinentCelluar = (width, height) => {
+    // Create the terrain
+    let terrain = createEmptyMatrix(width, height);
+    terrain = placeAndGrow(MOUNTAIN, GRASS, [], GRASS_RATE, 3, 4, terrain);
+    terrain = placeAndGrow(WATER, GRASS, [MOUNTAIN], WATER_RATE, 3, 2, terrain);
+    terrain = placeAndGrow(FOREST, GRASS, [MOUNTAIN, WATER], FOREST_RATE, 3, 2, terrain);
+    terrain = placeAndGrow(DESERT, GRASS, [MOUNTAIN, WATER, FOREST], DESERT_RATE, 3, 2, terrain);
+    terrain = placeAndGrow(SWAMP, GRASS, [MOUNTAIN, WATER, FOREST, DESERT], SWAMP_RATE, 4, 2, terrain);
+    terrain = placeAndGrow(CEMETARY, GRASS, [MOUNTAIN, WATER, FOREST, DESERT, SWAMP], CEMETARY_RATE, 4, 2, terrain);
+
+    // Detect the isolation zones
+    let isolationZones = findIsolationZones([MOUNTAIN, DEEP_WATER, WATER], terrain);
+    findIsolationZones([MOUNTAIN, DEEP_WATER], terrain, true);
+
+    // Fill in small isolation zones
+    let undersizedIsolationZones = [];
+    isolationZones.filter(isolationZone => isolationZone.length < ISOLATION_ZONE_MIN_SIZE).forEach((isolationZone) => {
+        let { x, y, isolationZone: isolationZoneNumber } = isolationZone[0];
+        undersizedIsolationZones.push(isolationZoneNumber);
+        let wallType = findSurroundingWallType(x, y - 30, [MOUNTAIN, WATER], terrain);
+        isolationZone.forEach(({ x, y }) => {
+            terrain[y - 30][x].setType(wallType);
+            terrain[y - 30][x].setLocation(x, y);
+            terrain[y - 30][x].setIsolationZone(undefined);
+            terrain[y - 30][x].setHardIsolationZone(undefined);
+        });
+    });
+
+    // Detect mountains that can have caves placed in them
+    let mountainBorders = findBorders([MOUNTAIN], [WATER], terrain);
+
+    // Filter out small isolation zones we already filled in
+    isolationZones = isolationZones.filter(isolationZone => isolationZone.length >= ISOLATION_ZONE_MIN_SIZE);
+
+    // Normalize isolationZone numbers
+    isolationZones.forEach(((isolationZone, index) => {
+        isolationZones[index] = isolationZone.map(block => {
+            return {
+                ...block,
+                normalizedIsolationZone: index
+            }
+        })
+    }));
+
+    // Find connections
+    let connections = {};
+    isolationZones.forEach((isolationZone) => {
+        let { x, y, isolationZone: index } = isolationZone[0];
+        findSoftConnections(index, x, y - 30, terrain, [MOUNTAIN], [WATER], connections);
+    });
+
+    // Clean up connections
+    let toDelete = [];
+    Object.keys(connections).forEach(key => {
+        let {to, from} = connections[key];
+
+        // If to delete already contains this entry, don't delete it's counterpart
+        if (toDelete.includes(key)) {
+            return;
+        }
+
+        toDelete.push(`${to}:${from}`);
+    });
+    toDelete.forEach((keyToDelete) => {
+        delete connections[keyToDelete];
+    })
+
+    // Turn object into an array
+    connections = Object.values(connections);
+
+    // Flatten the map
+    let mapBlocks = terrain.flat().map(({ type }) => type);
+
+    return {mapBlocks, terrain, isolationZones, mountainBorders, connections};
 };
+
+const reorderMapKeys = (map, order) => {
+    let newMap = {};
+    order.forEach(key => {
+        newMap[key] = map[key];
+    });
+
+    return newMap;
+}
+
+const chooseRandomNode = (nodes) => {
+    // let r = Math.trunc(Math.random() * nodes.length);
+    let r = Math.trunc(Math.random() * nodes.length);
+    return nodes[r];
+};
+
+export const removeNode = (nodes, nodeName) => {
+    return nodes.filter(node => node !== nodeName);
+}
+
+export const generateTemplate = (continents) => {
+    let template = {...vanillaTemplate};
+    continents.forEach(({isolationZones, connections}, continentIndex) => {
+        // Skip Death Mountain and Maze Island for now
+        if (continentIndex === 1 || continentIndex === 3) {
+            return;
+        }
+
+        let continentNodes = Object.keys(template).filter(nodeName => template[nodeName].continent === continentIndex);
+
+        // Normalize zone sizes
+        let nodesPerZone = [];
+        let totalSize = isolationZones.reduce((acc, isolationZone) => {
+            return acc + isolationZone.length;
+        }, 0);
+        isolationZones.forEach((isolationZone, zoneIndex) => {
+            nodesPerZone[zoneIndex] = Math.round(isolationZone.length / totalSize * continentNodes.length);
+        });
+
+        let biggest = 0;
+        let adjustment = 0;
+        nodesPerZone.forEach((nodeCount, index) => {
+            if (nodeCount < 2) {
+                adjustment += nodeCount - 2;
+                nodesPerZone[index] = 2;
+            }
+            if (nodesPerZone[biggest] < nodesPerZone[index]) {
+                biggest = index;
+            }
+        });
+        nodesPerZone[biggest] += adjustment;
+
+        console.log("NODES PER ZONE: " + JSON.stringify(nodesPerZone));
+
+        // Randomly place nodes among the isolation zones based on their size, connecting nodes within each zone.
+        let firstLocations = {};
+        isolationZones.forEach((isolationZone) => {
+            let softIsolationZone = isolationZone[0].isolationZone;
+            let normalizedZoneIndex = isolationZone[0].normalizedIsolationZone;
+            let numberOfNodesToPlace = nodesPerZone[normalizedZoneIndex];
+
+            console.log("ISOLATION ZONE: " + softIsolationZone);
+
+            for (let i = 0; i < numberOfNodesToPlace && isolationZone.length > 0 && continentNodes.length > 0; i++) {
+                let randomContinentNode = chooseRandomNode(continentNodes);
+                let {x, y, hardIsolationZone} = chooseRandomNode(isolationZone);
+
+                // Remove nodes
+                continentNodes = removeNode(continentNodes, randomContinentNode);
+                isolationZone = isolationZone.filter(({x: x1, y: y1}) => x !== x1 && y !== y1);
+
+                // Initialize connections and requirements
+                template[randomContinentNode].connections = [];
+                template[randomContinentNode].connectionRequirements = {};
+
+                if (!randomContinentNode) {
+                    continue;
+                }
+
+                // If first location, set.  Otherwise, connect to first location.
+                if (!firstLocations[softIsolationZone]) {
+                    firstLocations[softIsolationZone] = randomContinentNode;
+                } else {
+                    template[firstLocations[softIsolationZone]].connections.push(randomContinentNode);
+                }
+
+                // Update the x and y
+                template[randomContinentNode] = reorderMapKeys({
+                    ...template[randomContinentNode],
+                    softIsolationZone,
+                    isolationGroup: hardIsolationZone,
+                    x,
+                    y,
+                    renderData: {
+                        area: continentIndex === 0 ? 0 : 1,
+                        subArea: 0
+                    }
+                }, ["locationKey", "type", "x", "y", "isolationGroup", "softIsolationZone", "continent", "continentName", "connections", "connectionRequirements", "renderData"]);
+            }
+        });
+
+        // Generate limited connections between isolation zones using connections data.  Only one node needs to be connected between zones.
+        console.log("FIRST LOCATIONS: " + JSON.stringify(firstLocations, null, 5));
+        connections.forEach(({to, from, blockers}) => {
+            let fromLocation = firstLocations[from];
+            let toLocation = firstLocations[to];
+
+            // If the from or the to doesn't exist, it means it was filled in already.
+            if (!fromLocation || !toLocation) {
+                return;
+            }
+
+            let requirements = blockers.map(blocker => REMEDY_MAP[blocker]).join("|");
+            template[fromLocation].connections.push(toLocation);
+            template[fromLocation].connectionRequirements[toLocation] = requirements;
+        });
+    });
+
+    return template;
+}

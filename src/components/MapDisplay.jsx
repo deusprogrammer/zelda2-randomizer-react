@@ -70,7 +70,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}, terrainCe
                 }
 
                 if (found) {
-                    let {mapNumber, mapSet, continent} = locations[found];
+                    let {mapNumber, mapSet, continent, locationKey} = locations[found];
                     if (mapSet === 0 && continent === 0) {      // Overworld
                         mapSet = worldNumber;
                     } else if (mapSet === 1 || mapSet === 2) {  // Towns
@@ -87,7 +87,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}, terrainCe
                             className={`map-square blinking`} 
                             style={{color, backgroundColor, border}}
                             onClick={() => {navigate(`${process.env.PUBLIC_URL}/maps/${mapSet}/${mapNumber}`)}}
-                            onMouseEnter={() => {setSelectedSquare({id: found, name, x, y: y + 30, isolationZone, items})}}
+                            onMouseEnter={() => {setSelectedSquare({id: found, name: locationKey || name, x, y: y + 30, isolationZone, items})}}
                             onMouseLeave={() => {setSelectedSquare(null)}}
                         >
                             {c}

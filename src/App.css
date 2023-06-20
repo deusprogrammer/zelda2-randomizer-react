@@ -288,3 +288,11 @@ li {
         bottom: 0px;
     }
 }
+
+.sigma-container {
+    border: 1px solid black;
+}
+
+.sigma-container > canvas {
+    left: 0px;
+}

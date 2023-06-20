@@ -444,7 +444,7 @@ export class ROM {
      * Patch the ROM with the graph
      * @param {string} fileName 
      */
-    patchRom = (graphData) => {
+    patchRom = (graphData, mapData) => {
         // Patch ROM here
         console.log("PATCHING ROM...");
 
