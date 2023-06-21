@@ -10,15 +10,15 @@ import { romAtom } from '../atoms/rom.atom';
 import KeyValueTable from '../components/KeyValueTable';
 import FileSaver from 'file-saver';
 import { Z2Randomizer } from '../lib/rando/Z2Randomizer';
-import { generateContinentCelluar, generateTemplate } from '../lib/rando/TerrainGenerator';
+import { TerrainGenerator } from '../lib/rando/TerrainGenerator';
 
-import z2VanillaTemplate from '../lib/zelda2/templates/z2-vanilla.template';
 import z2LocationMeta from '../lib/zelda2/templates/z2-location.meta';
-import z2VanillaMap from '../lib/zelda2/templates/z2-vanilla.map';
+import z2VanillaTemplate from '../lib/zelda2/templates/z2-vanilla.template';
 import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 import TextData from '../components/TextData';
 import { toast } from 'react-toastify';
 import { ROM } from '../lib/rando/ROM';
+import z2VanillaMap from '../lib/zelda2/templates/z2-vanilla.map';
 
 export default () => {
     const [ seed, setSeed ] = useState(0);
@@ -43,40 +43,38 @@ export default () => {
         fr.readAsArrayBuffer(file);
     }
 
-    const randomizeRom = (generateSeed=false) => {
-        try {
-            let newSeed = seed;
-            if (generateSeed) {
-                newSeed = Math.trunc(Math.random() * (Math.pow(2, 32) - 1));
-                setSeed(newSeed);
-            }
-            let westHyrule = generateContinentCelluar(64, 64);
-            let eastHyrule = generateContinentCelluar(64, 64);
-
-            z2VanillaMap[0] = westHyrule.mapBlocks;
-            z2VanillaMap[2] = eastHyrule.mapBlocks;
-
-            // Template test
-            let continents = [];
-            continents.push(westHyrule);
-            continents.push({});
-            continents.push(eastHyrule);
-            continents.push({});
-
-            let template = generateTemplate(continents);
-
-            let randomizer = new Z2Randomizer(template, z2LocationMeta, newSeed);
-            let graph = randomizer.randomize();
-
-            let rom = new ROM(new Uint8Array(cleanRom));
-            let patchedRom = rom.patchRom(graph, z2VanillaMap);
-            parseRom(patchedRom);
-
-            toast("ROM randomized.  Click download current rom to get patched rom.", {type: "info"});
-        } catch (e) {
-            alert(`Our apologies...this seed has caused an error.  Please report the seed value to the developer to aid them in troubleshooting.\n\nSeed number: ${seed}`);
-            console.error(e);
+    const randomizeRom = (generateSeed=false, generateTerrain=false) => {
+        let newSeed = seed;
+        if (generateSeed) {
+            newSeed = Math.trunc(Math.random() * (Math.pow(2, 32) - 1));
+            setSeed(newSeed);
         }
+        
+        toast.promise(new Promise((resolve, reject) => {
+            setTimeout(() => {
+                try {
+                    let template = z2VanillaTemplate;
+                    let maps = z2VanillaMap;
+                    if (generateTerrain) {
+                        let terrainGenerator = new TerrainGenerator(newSeed);
+                        ({template, maps} = terrainGenerator.generateContinents());
+                    }
+            
+                    let randomizer = new Z2Randomizer(template, z2LocationMeta, newSeed);
+                    let graph = randomizer.randomize();
+                    let rom = new ROM(new Uint8Array(cleanRom));
+                    let patchedRom = rom.patchRom(graph, maps);
+                    parseRom(patchedRom);
+                    resolve();
+                } catch (e) {
+                    reject();
+                }
+            }, 500);
+        }), {
+            pending: "Randomizing ROM...",
+            success: "Randomization Successful!  Click 'Download Current ROM' to receive your randomized seed.",
+            error: "Failed to generate ROM.  Please note the seed number and give it to one of our administrators."
+        })
     }
 
     useEffect(() => {
@@ -159,12 +157,22 @@ export default () => {
                     <button onClick={() => {
                         randomizeRom(true);
                     }}>
-                        Randomize ROM with New Seed (Alpha)
+                        Randomize ROM with New Seed (Vanilla Overworld)
+                    </button><br />
+                    <button onClick={() => {
+                        randomizeRom(true, true);
+                    }}>
+                        Randomize ROM with New Seed (Randomized Overworld)
                     </button><br />
                     <button onClick={() => {
                         randomizeRom();
                     }}>
-                        Randomize ROM (Alpha)
+                        Randomize ROM (Vanilla Overworld)
+                    </button><br />
+                    <button onClick={() => {
+                        randomizeRom(false, true);
+                    }}>
+                        Randomize ROM (Randomized Overworld)
                     </button><br />
                     <button onClick={() => {
                         let file = new File([romData.rawBytes], `Z2RA${seed}.nes`, {type: "application/octet-stream"});

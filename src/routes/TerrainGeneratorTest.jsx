@@ -1,7 +1,7 @@
 import {useState } from 'react';
 import MapDisplay from '../components/MapDisplay';
 
-import { compressMap, generateContinentCelluar, generateTemplate } from '../lib/rando/TerrainGenerator';
+import { TerrainGenerator, compressMap } from '../lib/rando/TerrainGenerator';
 import IsolationZoneMap from '../components/IsolationZoneMap';
 import Graph from '../components/Graph';
 
@@ -16,25 +16,14 @@ export default () => {
     const [ template, setTemplate ] = useState({});
 
     const generateTerrain = () => {
-        let westHyrule = generateContinentCelluar(64, 64);
-        let eastHyrule = generateContinentCelluar(64, 64);
+        let terrainGenerator = new TerrainGenerator(Math.random() * (Math.pow(2, 32) - 1));
+        let {continents, maps, template} = terrainGenerator.generateContinents();
 
-        let {mapBlocks} = westHyrule;
-        westHyrule.compressedMap = compressMap(mapBlocks);
-        ({mapBlocks} = eastHyrule);
-        eastHyrule.compressedMap = compressMap(mapBlocks);
+        continents[0].compressedMap = compressMap(maps[0]);
+        continents[2].compressedMap = compressMap(maps[2]);
 
-        setWestHyrule(westHyrule);
-        setEastHyrule(eastHyrule);
-
-        // Template test
-        let continents = [];
-        continents.push(westHyrule);
-        continents.push({});
-        continents.push(eastHyrule);
-        continents.push({});
-
-        let template = generateTemplate(continents);
+        setWestHyrule(continents[0]);
+        setEastHyrule(continents[2]);
         setTemplate(template);
     }
 

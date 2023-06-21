@@ -434,8 +434,6 @@ export class ROM {
             compressedMap.push({type: currentBlockType, length: run - 1});
         }
 
-        printSpriteMap(compressedMap);
-
         return compressedMap;
     }
 
