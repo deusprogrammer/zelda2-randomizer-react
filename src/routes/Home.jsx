@@ -10,9 +10,11 @@ import { romAtom } from '../atoms/rom.atom';
 import KeyValueTable from '../components/KeyValueTable';
 import FileSaver from 'file-saver';
 import { Z2Randomizer } from '../lib/rando/Z2Randomizer';
+import { generateContinentCelluar, generateTemplate } from '../lib/rando/TerrainGenerator';
 
 import z2VanillaTemplate from '../lib/zelda2/templates/z2-vanilla.template';
 import z2LocationMeta from '../lib/zelda2/templates/z2-location.meta';
+import z2VanillaMap from '../lib/zelda2/templates/z2-vanilla.map';
 import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 import TextData from '../components/TextData';
 import { toast } from 'react-toastify';
@@ -48,11 +50,26 @@ export default () => {
                 newSeed = Math.trunc(Math.random() * (Math.pow(2, 32) - 1));
                 setSeed(newSeed);
             }
-            let randomizer = new Z2Randomizer(z2VanillaTemplate, z2LocationMeta, newSeed);
+            let westHyrule = generateContinentCelluar(64, 64);
+            let eastHyrule = generateContinentCelluar(64, 64);
+
+            z2VanillaMap[0] = westHyrule.mapBlocks;
+            z2VanillaMap[2] = eastHyrule.mapBlocks;
+
+            // Template test
+            let continents = [];
+            continents.push(westHyrule);
+            continents.push({});
+            continents.push(eastHyrule);
+            continents.push({});
+
+            let template = generateTemplate(continents);
+
+            let randomizer = new Z2Randomizer(template, z2LocationMeta, newSeed);
             let graph = randomizer.randomize();
 
             let rom = new ROM(new Uint8Array(cleanRom));
-            let patchedRom = rom.patchRom(graph);
+            let patchedRom = rom.patchRom(graph, z2VanillaMap);
             parseRom(patchedRom);
 
             toast("ROM randomized.  Click download current rom to get patched rom.", {type: "info"});

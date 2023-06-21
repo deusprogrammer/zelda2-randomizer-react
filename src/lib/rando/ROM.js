@@ -3,7 +3,6 @@ import { assembleCode } from "../memory/Assembler";
 import { CONTINENT_EXIT_MAPPINGS, CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RANDO_MAP_OFFSETS } from "../zelda2/Z2MemoryMappings";
 import { printSpriteMap, stringToZ2Bytes } from "../zelda2/Z2Utils";
 import itemMetaData from '../zelda2/templates/z2-items.meta';
-import vanillaMapData from '../zelda2/templates/z2-vanilla.map';
 import locationMetadata from '../zelda2/templates/z2-location.meta';
 
 const LAST_BIT_MASK = 1 >>> 0;
@@ -510,7 +509,7 @@ export class ROM {
         
         // Compress each sprite map and write it to memory
         for (let continent = 0; continent < 4; continent++) {
-            let compressedMap = this.compressMap(vanillaMapData[continent], continent, graphData);
+            let compressedMap = this.compressMap(mapData[continent], continent, graphData);
             let mapOffset = RANDO_MAP_OFFSETS[continent];
 
             compressedMap.forEach(blockRun => {

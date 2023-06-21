@@ -340,6 +340,26 @@ export const LEVEL_EXITS_BANK_OFFSETS2 = [
 export const WEST_HYRULE_MAP_RANDO_OFFSET      = 0x7480;
 export const WEST_HYRULE_MAP_VANILLA_OFFSET    = 0x506C;
 export const WEST_HYRULE_MAP_LENGTH            = 0x538C - 0x506C;
+export const EXTENDED_MAP_LENGTH               = 0x7f80 - 0x7a00;
+
+export const WEST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING = {
+    size: EXTENDED_MAP_LENGTH,
+    elements: {
+        size: 0x01,
+        fields: [
+            {
+                name: 'length',
+                relOffset: 0x0,
+                mask: 0b11110000
+            },
+            {
+                name: 'type',
+                relOffset: 0x0,
+                mask: 0b00001111
+            }
+        ]
+    }
+}
 
 export const WEST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
     size: WEST_HYRULE_MAP_LENGTH,
@@ -550,6 +570,25 @@ export const WEST_HYRULE_LOCATION_MAPPINGS = {
 export const DEATH_MOUNTAIN_MAP_RANDO_OFFSET = 0x7A00;
 export const DEATH_MOUNTAIN_MAP_VANILLA_OFFSET = 0x665C;
 export const DEATH_MOUNTAIN_MAP_LENGTH = 0x6942 - 0x665C;
+
+export const DEATH_MOUNTAIN_OVERWORLD_EXTENDED_SPRITE_MAPPING = {
+    size: EXTENDED_MAP_LENGTH,
+    elements: {
+        size: 0x01,
+        fields: [
+            {
+                name: 'length',
+                relOffset: 0x0,
+                mask: 0b11110000
+            },
+            {
+                name: 'type',
+                relOffset: 0x0,
+                mask: 0b00001111
+            }
+        ]
+    }
+}
 
 export const DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING = {
     size: WEST_HYRULE_MAP_LENGTH,
@@ -781,6 +820,25 @@ export const MAZE_ISLAND_MAP_RANDO_OFFSET = 0xBA00;
 export const MAZE_ISLAND_MAP_VANILLA_OFFSET = 0xA65C;
 export const MAZE_ISLAND_MAP_LENGTH = 0xA942 - 0xA65C;
 
+export const MAZE_ISLAND_OVERWORLD_EXTENDED_SPRITE_MAPPING = {
+    size: EXTENDED_MAP_LENGTH,
+    elements: {
+        size: 0x01,
+        fields: [
+            {
+                name: 'length',
+                relOffset: 0x0,
+                mask: 0b11110000
+            },
+            {
+                name: 'type',
+                relOffset: 0x0,
+                mask: 0b00001111
+            }
+        ]
+    }
+}
+
 export const MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING = {
     size: WEST_HYRULE_MAP_LENGTH,
     elements: {
@@ -1010,6 +1068,25 @@ export const MAZE_ISLAND_LOCATION_MAPPINGS = {
 export const EAST_HYRULE_MAP_RANDO_OFFSET      = 0xB480;
 export const EAST_HYRULE_MAP_VANILLA_OFFSET    = 0x9056;
 export const EAST_HYRULE_MAP_LENGTH            = 0x936F - 0x9056;
+
+export const EAST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING = {
+    size: EXTENDED_MAP_LENGTH,
+    elements: {
+        size: 0x01,
+        fields: [
+            {
+                name: 'length',
+                relOffset: 0x0,
+                mask: 0b11110000
+            },
+            {
+                name: 'type',
+                relOffset: 0x0,
+                mask: 0b00001111
+            }
+        ]
+    }
+}
 
 export const EAST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
     size: EAST_HYRULE_MAP_LENGTH,

@@ -29,7 +29,11 @@ const {
     DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING,
     TEXT_DATA_OFFSET,
     TEXT_DATA_LENGTH,
-    BACKMAP_POINTER_BANK_OFFSETS} = require("./Z2MemoryMappings");
+    BACKMAP_POINTER_BANK_OFFSETS,
+    WEST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING,
+    EAST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING,
+    DEATH_MOUNTAIN_OVERWORLD_EXTENDED_SPRITE_MAPPING,
+    MAZE_ISLAND_OVERWORLD_EXTENDED_SPRITE_MAPPING} = require("./Z2MemoryMappings");
 
 export const WIDTH_OF_SCREEN  = 16;
 export const HEIGHT_OF_SCREEN = 16;
@@ -225,35 +229,43 @@ export const extractMazeIslandMapLocations = (buffer) => {
 }
 
 export const extractWestHyruleSpriteMap = (buffer, mode) => {
+    let spriteMapping = WEST_HYRULE_OVERWORLD_SPRITE_MAPPING;
     let offset = WEST_HYRULE_MAP_VANILLA_OFFSET;
     if (mode === "RANDO") {
         offset = WEST_HYRULE_MAP_RANDO_OFFSET;
+        spriteMapping = WEST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING
     }
-    return extractElements(WEST_HYRULE_OVERWORLD_SPRITE_MAPPING, buffer, offset);
+    return extractElements(spriteMapping, buffer, offset);
 }
 
 export const extractEastHyruleSpriteMap = (buffer, mode) => {
+    let spriteMapping = WEST_HYRULE_OVERWORLD_SPRITE_MAPPING;
     let offset = EAST_HYRULE_MAP_VANILLA_OFFSET;
     if (mode === "RANDO") {
         offset = EAST_HYRULE_MAP_RANDO_OFFSET;
+        spriteMapping = EAST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING
     }
-    return extractElements(EAST_HYRULE_OVERWORLD_SPRITE_MAPPING, buffer, offset);
+    return extractElements(spriteMapping, buffer, offset);
 }
 
 export const extractDeathMountainSpriteMap = (buffer, mode) => {
+    let spriteMapping = DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING;
     let offset = DEATH_MOUNTAIN_MAP_VANILLA_OFFSET;
     if (mode === "RANDO") {
         offset = DEATH_MOUNTAIN_MAP_RANDO_OFFSET;
+        spriteMapping = DEATH_MOUNTAIN_OVERWORLD_EXTENDED_SPRITE_MAPPING;
     }
-    return extractElements(DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING, buffer, offset);
+    return extractElements(spriteMapping, buffer, offset);
 }
 
 export const extractMazeIslandSpriteMap = (buffer, mode) => {
+    let spriteMapping = MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING;
     let offset = MAZE_ISLAND_MAP_VANILLA_OFFSET;
     if (mode === "RANDO") {
         offset = MAZE_ISLAND_MAP_RANDO_OFFSET;
+        spriteMapping = MAZE_ISLAND_OVERWORLD_EXTENDED_SPRITE_MAPPING;
     }
-    return extractElements(MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING, buffer, offset);
+    return extractElements(spriteMapping, buffer, offset);
 }
 
 export const extractSideViewMapData = (buffer) => {
