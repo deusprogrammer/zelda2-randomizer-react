@@ -21,13 +21,14 @@ sideViewMaps.forEach((mapSet, mapSetIndex) => {
                 y,
                 xUpper,
                 xLower,
+                mapSet: mapSetIndex,
+                mapNumber,
                 enemyNumber,
                 name,
                 offset: _metadata.enemyNumber.offset,
                 mask: 0b111111
             });
             Object.keys(exits).filter(exit => !exit.startsWith("_") && exit !== "editable").forEach((exit) => {
-                console.log("EXIT: " + exit);
                 let {mapNumber, _metadata} = exits[exit];
                 enemyMetaData[key].exits[exit.replace("Exit", "")] = {
                     mapNumber,
