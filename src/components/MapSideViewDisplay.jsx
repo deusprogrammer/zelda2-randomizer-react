@@ -1,18 +1,38 @@
 import { useNavigate } from "react-router";
 import { drawMap } from "../lib/zelda2/Z2Utils"
 
-export default ({level, steps}) => {
+export default ({level, steps, enemyData}) => {
     const navigate = useNavigate();
 
-    let {exits: levelExitData, mapSetNumber: mapSet} = level;
+    let {exits: levelExitData, mapSetNumber: mapSet, header} = level;
 
     const drawSideView = (level, steps) => {
         let mapBuffer = drawMap(level, null, steps);
         let mapBlocks = [];
-        mapBuffer.forEach((mapBlock) => {
+        mapBuffer.forEach((mapBlock, index) => {
+            let x = index % (16 * (header.widthOfLevelInScreens + 1));
+            let y = Math.floor(index / (16 * (header.widthOfLevelInScreens + 1)));
+
+            let found = enemyData.enemies.find(({x: x1, y: y1}) => {
+                if (y1 === 0) {
+                    y1 = 1;
+                } else {
+                    y1 += 2;
+                }
+
+                return x === x1 && y === y1;
+            });
+
+            console.log(`${x}, ${y}`);
+            let border = null;
+            if (found) {
+                border = "1px solid yellow";
+                console.log("FOUND");
+            }
+
             if (!mapBlock || mapBlock.clear) {
                 mapBlocks.push(
-                    <div className="side-view-block" />
+                    <div className="side-view-block" style={{border}} />
                 );
             } else {
                 let backgroundColor = "gray";
@@ -28,7 +48,7 @@ export default ({level, steps}) => {
                     backgroundColor = "green";
                 }
                 mapBlocks.push(
-                    <div className="side-view-block" style={{backgroundColor}} />
+                    <div className="side-view-block" style={{backgroundColor, border}} />
                 );
             }
         });

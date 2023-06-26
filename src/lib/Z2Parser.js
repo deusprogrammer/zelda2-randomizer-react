@@ -12,7 +12,8 @@ import {
     extractMazeIslandMapLocations,
     extractTextData,
     isExtended,
-    combineLevelData
+    combineLevelData,
+    extractMapEnemyData
 } from './zelda2/Z2Utils';
 
 
@@ -37,8 +38,9 @@ export const parse = (rom) => {
     let mazeIslandMountainHyruleSpriteMap = extractMazeIslandSpriteMap(rom, mode);
 
     let sideViewMaps = extractSideViewMapData(rom);
+    let enemyData = extractMapEnemyData(rom);
     let levelExits = extractLevelExits(rom);
-    sideViewMaps = combineLevelData(sideViewMaps, levelExits);
+    sideViewMaps = combineLevelData(sideViewMaps, levelExits, enemyData);
 
     let textData = extractTextData(rom);
 
@@ -74,6 +76,7 @@ export const parse = (rom) => {
         nesOffsets,
         overworld,
         sideViewMaps,
+        enemyData,
         textData,
         isExtendedRom,
         rawBytes: rom

@@ -74,6 +74,46 @@ export const LEVEL_EXIT_BLOCK = {
     }
 }
 
+// Bytes for enemy data:
+// 0 -
+// 	....xxxx = X coordinate (in tiles)
+// 	xxxx.... = Y coordinate (in tiles)
+// 		Y coordinate 0 maps to row 1, otherwise maps to row 2+x
+// 1 -
+// 	xx...... = Upper bits of X coordinate
+// 	..xxxxxx = Enemy number (0-63)
+
+export const ENEMY_HEADER_MAPPING = [
+    {
+        name: 'sizeOfEnemy',
+        relOffset: 0x00,
+        mask: 0b11111111
+    }
+];
+
+export const ENEMY_DATA_MAPPING = [
+    {
+        name: 'xLower',
+        relOffset: 0x00,
+        mask: 0b00001111
+    },
+    {
+        name: 'xUpper',
+        relOffset: 0x01,
+        mask: 0b11000000
+    },
+    {
+        name: 'y',
+        relOffset: 0x00,
+        mask: 0b11110000
+    },
+    {
+        name: "enemyNumber",
+        relOffset: 0x01,
+        mask: 0b00111111
+    }
+];
+
 export const LEVEL_HEADER_MAPPING = [
     {
         name: 'sizeOfLevel',
@@ -290,9 +330,11 @@ export const OVERWORLD_SPRITE_MAPPING = {
     "SPIDER": 15
 }
 
-export const BACKMAP_OFFSET      = 0x8000;
-export const MAP_POINTER_OFFSET1 = 0x8523;
-export const MAP_POINTER_OFFSET2 = 0xA000;
+export const BACKMAP_OFFSET         = 0x8000;
+export const MAP_POINTER_OFFSET1    = 0x8523;
+export const MAP_POINTER_OFFSET2    = 0xA000;
+export const ENEMY_POINTER_OFFSET1  = 0x85A1;
+export const ENEMY_POINTER_OFFSET2  = 0xA07E;
 
 export const BACKMAP_POINTER_BANK_OFFSETS = [
     toFileAddr(BACKMAP_OFFSET, 1),
@@ -316,6 +358,22 @@ export const MAP_POINTER_BANK_OFFSETS2 = [
     toFileAddr(MAP_POINTER_OFFSET2, 3),
     toFileAddr(MAP_POINTER_OFFSET2, 4),
     toFileAddr(MAP_POINTER_OFFSET2, 5),
+];
+
+export const ENEMY_POINTER_BANK_OFFSETS1 = [
+    toFileAddr(ENEMY_POINTER_OFFSET1, 1),
+    toFileAddr(ENEMY_POINTER_OFFSET1, 2),
+    toFileAddr(ENEMY_POINTER_OFFSET1, 3),
+    toFileAddr(ENEMY_POINTER_OFFSET1, 4),
+    toFileAddr(ENEMY_POINTER_OFFSET1, 5),
+];
+
+export const ENEMY_POINTER_BANK_OFFSETS2 = [
+    toFileAddr(ENEMY_POINTER_OFFSET2, 1),
+    toFileAddr(ENEMY_POINTER_OFFSET2, 2),
+    toFileAddr(ENEMY_POINTER_OFFSET2, 3),
+    toFileAddr(ENEMY_POINTER_OFFSET2, 4),
+    toFileAddr(ENEMY_POINTER_OFFSET2, 5),
 ];
 
 export const LEVEL_EXITS_OFFSET1 = 0x871B;

@@ -1,6 +1,6 @@
 const { hexExtractor, extractElements, hexArrayExtractor, littleEndianConvert, extractFields, maskBits } = require("../memory/HexTools");
 const { create2D, hLine2D, vLine2D, plot2D, rectangle2D, layer2D } = require("../Utils");
-const { LARGE_OBJECT_SETS, SMALL_OBJECTS } = require("./Z2Data");
+const { LARGE_OBJECT_SETS, SMALL_OBJECTS, ENEMY_MAPPINGS } = require("./Z2Data");
 const { 
     toFileAddr,
     WEST_HYRULE_LOCATION_MAPPINGS, 
@@ -33,7 +33,11 @@ const {
     WEST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING,
     EAST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING,
     DEATH_MOUNTAIN_OVERWORLD_EXTENDED_SPRITE_MAPPING,
-    MAZE_ISLAND_OVERWORLD_EXTENDED_SPRITE_MAPPING} = require("./Z2MemoryMappings");
+    MAZE_ISLAND_OVERWORLD_EXTENDED_SPRITE_MAPPING,
+    ENEMY_POINTER_BANK_OFFSETS1,
+    ENEMY_HEADER_MAPPING,
+    ENEMY_DATA_MAPPING,
+    ENEMY_POINTER_BANK_OFFSETS2} = require("./Z2MemoryMappings");
 
 export const WIDTH_OF_SCREEN  = 16;
 export const HEIGHT_OF_SCREEN = 16;
@@ -327,6 +331,61 @@ export const extractSideViewMapData = (buffer) => {
     return mapSets;
 }
 
+export const extractMapEnemyData = (buffer) => {
+    let mapEnemies = [];
+    for (let bank = 0; bank < 5; bank++) {
+        let enemies = [];
+        let offset = ENEMY_POINTER_BANK_OFFSETS1[bank];
+        for (let i = 0; i < 63; i++, offset += 0x2) {
+            let enemyPointer = readUint16(buffer, offset);
+            let pointerOffset = enemyPointer - 0x7000;
+            enemyPointer = toFileAddr(0x88A0 + pointerOffset, bank + 1);
+
+            let header = extractFields(ENEMY_HEADER_MAPPING, buffer, enemyPointer);
+            let enemyElements = [];
+            let read = 0x1;
+            while (read < header.sizeOfEnemy) {
+                let enemyObject = extractFields(ENEMY_DATA_MAPPING, buffer, enemyPointer + read);
+                read += 2;
+                enemyObject.x = (enemyObject.xUpper << 4) + enemyObject.xLower;
+                enemyObject.name = ENEMY_MAPPINGS[mapEnemies.length][enemyObject.enemyNumber];
+                enemyElements.push(enemyObject);
+            }
+            enemies.push({header, enemies: enemyElements, mapSetNumber: mapEnemies.length, offset: enemyPointer});
+        }
+
+        mapEnemies.push(enemies);
+
+        if (bank === 2 || bank === 4) {
+            continue;
+        }
+        
+        enemies = [];
+        offset = ENEMY_POINTER_BANK_OFFSETS2[bank];
+        for (let i = 0; i < 63; i++, offset += 0x2) {
+            let enemyPointer = readUint16(buffer, offset);
+            let pointerOffset = enemyPointer - 0x7000;
+            enemyPointer = toFileAddr(0x88A0 + pointerOffset, bank + 1);
+            
+            let header = extractFields(ENEMY_HEADER_MAPPING, buffer, enemyPointer);
+            let enemyElements = [];
+            let read = 0x1;
+            while (read < header.sizeOfLevel) {
+                let enemyObject = extractFields(ENEMY_DATA_MAPPING, buffer, enemyPointer + read);
+                read += 2;
+                enemyObject.x = (enemyObject.xUpper << 6) + enemyObject.xLower;
+                enemyObject.name = ENEMY_MAPPINGS[mapEnemies.length][enemyObject.enemyNumber];
+                enemyElements.push(enemyObject);
+            }
+            enemies.push({header, enemies: enemyElements, mapSetNumber: mapEnemies.length, offset: enemyPointer});
+        }
+
+        mapEnemies.push(enemies);
+    }
+
+    return mapEnemies;
+}
+
 export const extractBackMapData = (buffer) => {
     let mapSets = [];
     for (let bank = 0; bank < 5; bank++) {
@@ -399,17 +458,19 @@ export const extractLevelExits = (buffer) => {
     return mapSets;
 }
 
-export const combineLevelData = (sideViewMapSets, levelExits) => {
+export const combineLevelData = (sideViewMapSets, levelExits, enemyData) => {
     return sideViewMapSets.map((sideViewMapSet, i) => {
-        return createLevelData(sideViewMapSet, levelExits[i]);
+        return createLevelData(sideViewMapSet, levelExits[i], enemyData[i]);
     });
 }
 
-export const createLevelData = (sideViewMapSet, levelExits) => {
+export const createLevelData = (sideViewMapSet, levelExits, enemyData) => {
     return sideViewMapSet.map((sideViewMap, i) => {
         let exits = levelExits[i];
+        let enemies = enemyData[i];
         return {
             ...sideViewMap,
+            enemyData: enemies,
             exits
         };
     });
