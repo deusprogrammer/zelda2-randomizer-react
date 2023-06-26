@@ -14,6 +14,7 @@ import { TerrainGenerator } from '../lib/rando/TerrainGenerator';
 
 import z2LocationMeta from '../lib/zelda2/templates/z2-location.meta';
 import z2VanillaTemplate from '../lib/zelda2/templates/z2-vanilla.template';
+import z2VanillaLevels from '../lib/zelda2/templates/z2-vanilla.levels';
 import { RANDOMIZER_VERSION } from '../constants/RandoConstants';
 import TextData from '../components/TextData';
 import { toast } from 'react-toastify';
@@ -60,13 +61,16 @@ export default () => {
                         ({template, maps} = terrainGenerator.generateContinents());
                     }
             
-                    let randomizer = new Z2Randomizer(template, z2LocationMeta, newSeed);
-                    let graph = randomizer.randomize();
+                    let randomizer = new Z2Randomizer(template, z2LocationMeta, z2VanillaLevels, newSeed);
+                    let graph = randomizer.randomizeLocationsAndItems();
+                    let levels = randomizer.randomizeEnemiesAndPalaces();
+                    console.log(JSON.stringify(levels, null, 5));
                     let rom = new ROM(new Uint8Array(cleanRom));
                     let patchedRom = rom.patchRom(graph, maps);
                     parseRom(patchedRom);
                     resolve();
                 } catch (e) {
+                    console.error(e);
                     reject();
                 }
             }, 500);

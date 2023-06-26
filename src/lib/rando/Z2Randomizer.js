@@ -1,3 +1,5 @@
+import { ENEMY_MAPPINGS } from "../zelda2/Z2Data";
+import { ENEMY_DATA_MAPPING } from "../zelda2/Z2MemoryMappings";
 import { deepCopy, merge, randomSeed, removeNode } from "./util";
 
 const REMEDY_LIST = [
@@ -51,11 +53,13 @@ export class Z2Randomizer {
     abilities = [];
     spells = [];
     options = {};
+    levels = {};
 
-    constructor(templateData, locationMetadata, seed = 0, options = DEFAULT_OPTIONS) {
+    constructor(templateData, locationMetadata, levels, seed = 0, options = DEFAULT_OPTIONS) {
         this.templateData = deepCopy(templateData);
         this.graphData = deepCopy(templateData);
         this.locationMetadata = locationMetadata;
+        this.levels = deepCopy(levels);
         this.randomNumberGenerator = randomSeed(seed);
         this.options = options;
     }
@@ -1645,7 +1649,7 @@ export class Z2Randomizer {
     /**
      * Create a random graph such that the game is winnable
      */
-    randomize = () => {
+    randomizeLocationsAndItems = () => {
         // Place connections, palaces and exits
         this.placeConnectionsPalacesAndExits();
 
@@ -1660,4 +1664,26 @@ export class Z2Randomizer {
 
         return this.graphData;
     };
+
+    randomizeEnemiesAndPalaces = () => {
+        Object.keys(this.levels).forEach((key) => {
+            let {enemies} = this.levels[key];
+            enemies.forEach((enemy, index) => {
+                if ([4].includes(enemy.mapSet)) {
+                    return;
+                }
+
+                if ([5, 6, 7].includes(enemy.mapSet) && [0x20, 0x21, 0x22, 0x23].includes(enemy.enemyNumber)) {
+
+                }
+
+                this.levels[key].enemies[index] = {
+                    ...enemy,
+                    enemyNumber: this.chooseRandomNode(Object.keys(ENEMY_MAPPINGS[enemy.mapSet]))
+                }
+            })
+        })
+
+        return this.levels;
+    }
 }

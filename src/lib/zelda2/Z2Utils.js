@@ -370,10 +370,11 @@ export const extractMapEnemyData = (buffer) => {
             let header = extractFields(ENEMY_HEADER_MAPPING, buffer, enemyPointer);
             let enemyElements = [];
             let read = 0x1;
-            while (read < header.sizeOfLevel) {
+
+            while (read < header.sizeOfEnemy) {
                 let enemyObject = extractFields(ENEMY_DATA_MAPPING, buffer, enemyPointer + read);
                 read += 2;
-                enemyObject.x = (enemyObject.xUpper << 6) + enemyObject.xLower;
+                enemyObject.x = (enemyObject.xUpper << 4) + enemyObject.xLower;
                 enemyObject.name = ENEMY_MAPPINGS[mapEnemies.length][enemyObject.enemyNumber];
                 enemyElements.push(enemyObject);
             }

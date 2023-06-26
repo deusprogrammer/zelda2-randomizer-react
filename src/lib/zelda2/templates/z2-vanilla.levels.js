@@ -1,4499 +1,3 @@
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
-EXIT: leftExit
-EXIT: downExit
-EXIT: upExit
-EXIT: rightExit
 export default {
      "0:1": {
           "enemies": [
@@ -4502,6 +6,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 1,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 18718,
@@ -4512,6 +18,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 1,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 18720,
@@ -4545,6 +53,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 2,
                     "enemyNumber": 11,
                     "name": "Bubble generator",
                     "offset": 18724,
@@ -4555,6 +65,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 0,
+                    "mapNumber": 2,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18726,
@@ -4565,6 +77,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 2,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18728,
@@ -4575,6 +89,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 2,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18730,
@@ -4585,6 +101,8 @@ export default {
                     "y": 5,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 2,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18732,
@@ -4595,6 +113,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 2,
                     "enemyNumber": 11,
                     "name": "Bubble generator",
                     "offset": 18734,
@@ -4628,6 +148,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 4,
                     "enemyNumber": 21,
                     "name": "Red Moblin",
                     "offset": 18738,
@@ -4638,6 +160,8 @@ export default {
                     "y": 2,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 4,
                     "enemyNumber": 22,
                     "name": "Blue Moblin",
                     "offset": 18740,
@@ -4648,6 +172,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 4,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18742,
@@ -4681,6 +207,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 5,
                     "enemyNumber": 11,
                     "name": "Bubble generator",
                     "offset": 18746,
@@ -4691,6 +219,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 0,
+                    "mapNumber": 5,
                     "enemyNumber": 24,
                     "name": "Red Diara",
                     "offset": 18748,
@@ -4701,6 +231,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 5,
                     "enemyNumber": 11,
                     "name": "Bubble generator",
                     "offset": 18750,
@@ -4734,6 +266,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 6,
                     "enemyNumber": 11,
                     "name": "Bubble generator",
                     "offset": 18754,
@@ -4744,6 +278,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 6,
                     "enemyNumber": 11,
                     "name": "Bubble generator",
                     "offset": 18756,
@@ -4777,6 +313,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 7,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18612,
@@ -4810,6 +348,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 8,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18612,
@@ -4843,6 +383,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18616,
@@ -4853,6 +395,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18618,
@@ -4863,6 +407,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 0,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18620,
@@ -4873,6 +419,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18622,
@@ -4883,6 +431,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 9,
                     "enemyNumber": 26,
                     "name": "Red Goryia",
                     "offset": 18624,
@@ -4916,6 +466,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 10,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18628,
@@ -4926,6 +478,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 0,
+                    "mapNumber": 10,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18630,
@@ -4936,6 +490,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 10,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18632,
@@ -4946,6 +502,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 10,
                     "enemyNumber": 26,
                     "name": "Red Goryia",
                     "offset": 18634,
@@ -4956,6 +514,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 10,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18636,
@@ -4989,6 +549,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 11,
                     "enemyNumber": 7,
                     "name": "Ache",
                     "offset": 18640,
@@ -4999,6 +561,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 11,
                     "enemyNumber": 7,
                     "name": "Ache",
                     "offset": 18642,
@@ -5009,6 +573,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 11,
                     "enemyNumber": 10,
                     "name": "Acheman",
                     "offset": 18644,
@@ -5042,6 +608,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 12,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18648,
@@ -5052,6 +620,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 12,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18650,
@@ -5062,6 +632,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 12,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18652,
@@ -5072,6 +644,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 12,
                     "enemyNumber": 25,
                     "name": "Orange Goryia",
                     "offset": 18654,
@@ -5082,6 +656,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 0,
+                    "mapNumber": 12,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18656,
@@ -5092,6 +668,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 12,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18658,
@@ -5125,6 +703,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 14,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 18970,
@@ -5135,6 +715,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 14,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18972,
@@ -5145,6 +727,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 14,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18974,
@@ -5155,6 +739,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 14,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18976,
@@ -5165,6 +751,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 14,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18978,
@@ -5175,6 +763,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 14,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 18980,
@@ -5208,6 +798,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 15,
                     "enemyNumber": 23,
                     "name": "Orange Diara",
                     "offset": 19038,
@@ -5218,6 +810,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 15,
                     "enemyNumber": 24,
                     "name": "Red Diara",
                     "offset": 19040,
@@ -5228,6 +822,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 0,
+                    "mapNumber": 15,
                     "enemyNumber": 24,
                     "name": "Red Diara",
                     "offset": 19042,
@@ -5261,6 +857,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 16,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 18662,
@@ -5271,6 +869,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 16,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18664,
@@ -5281,6 +881,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 16,
                     "enemyNumber": 27,
                     "name": "Blue Goryia",
                     "offset": 18666,
@@ -5291,6 +893,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 16,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18668,
@@ -5324,6 +928,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 18,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18672,
@@ -5334,6 +940,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 18,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18674,
@@ -5344,6 +952,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 18,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18676,
@@ -5354,6 +964,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 18,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18678,
@@ -5387,6 +999,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 19,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 18662,
@@ -5397,6 +1011,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 19,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18664,
@@ -5407,6 +1023,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 19,
                     "enemyNumber": 27,
                     "name": "Blue Goryia",
                     "offset": 18666,
@@ -5417,6 +1035,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 19,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 18668,
@@ -5450,6 +1070,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 20,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 18984,
@@ -5460,6 +1082,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 20,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 18986,
@@ -5493,6 +1117,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 21,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18990,
@@ -5503,6 +1129,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 21,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18992,
@@ -5513,6 +1141,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 21,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18994,
@@ -5523,6 +1153,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 21,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18996,
@@ -5533,6 +1165,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 21,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18998,
@@ -5566,6 +1200,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 22,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19002,
@@ -5576,6 +1212,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 22,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19004,
@@ -5586,6 +1224,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 22,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19006,
@@ -5596,6 +1236,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 22,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19008,
@@ -5606,6 +1248,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 22,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19010,
@@ -5639,6 +1283,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 23,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19014,
@@ -5649,6 +1295,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 23,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19016,
@@ -5659,6 +1307,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 23,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19018,
@@ -5669,6 +1319,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 23,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19020,
@@ -5679,6 +1331,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 23,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19022,
@@ -5712,6 +1366,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 24,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18616,
@@ -5722,6 +1378,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 24,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18618,
@@ -5732,6 +1390,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 0,
+                    "mapNumber": 24,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18620,
@@ -5742,6 +1402,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 24,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18622,
@@ -5752,6 +1414,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 24,
                     "enemyNumber": 26,
                     "name": "Red Goryia",
                     "offset": 18624,
@@ -5785,6 +1449,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 25,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18616,
@@ -5795,6 +1461,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 25,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18618,
@@ -5805,6 +1473,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 0,
+                    "mapNumber": 25,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18620,
@@ -5815,6 +1485,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 25,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18622,
@@ -5825,6 +1497,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 25,
                     "enemyNumber": 26,
                     "name": "Red Goryia",
                     "offset": 18624,
@@ -5858,6 +1532,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 29,
                     "enemyNumber": 12,
                     "name": "Rock Generator",
                     "offset": 18772,
@@ -5868,6 +1544,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 29,
                     "enemyNumber": 12,
                     "name": "Rock Generator",
                     "offset": 18774,
@@ -5901,6 +1579,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 30,
                     "enemyNumber": 12,
                     "name": "Rock Generator",
                     "offset": 18834,
@@ -5911,6 +1591,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 30,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18836,
@@ -5921,6 +1603,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 30,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18838,
@@ -5931,6 +1615,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 30,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18840,
@@ -5941,6 +1627,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 30,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18842,
@@ -5951,6 +1639,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 30,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18844,
@@ -5961,6 +1651,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 30,
                     "enemyNumber": 12,
                     "name": "Rock Generator",
                     "offset": 18846,
@@ -5994,6 +1686,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 31,
                     "enemyNumber": 12,
                     "name": "Rock Generator",
                     "offset": 18834,
@@ -6004,6 +1698,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 31,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18836,
@@ -6014,6 +1710,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 31,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18838,
@@ -6024,6 +1722,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 31,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18840,
@@ -6034,6 +1734,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 31,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18842,
@@ -6044,6 +1746,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 31,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18844,
@@ -6054,6 +1758,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 31,
                     "enemyNumber": 12,
                     "name": "Rock Generator",
                     "offset": 18846,
@@ -6087,6 +1793,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 32,
                     "enemyNumber": 12,
                     "name": "Rock Generator",
                     "offset": 18834,
@@ -6097,6 +1805,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 32,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18836,
@@ -6107,6 +1817,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 32,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18838,
@@ -6117,6 +1829,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 32,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18840,
@@ -6127,6 +1841,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 32,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18842,
@@ -6137,6 +1853,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 32,
                     "enemyNumber": 32,
                     "name": "Geldarm",
                     "offset": 18844,
@@ -6147,6 +1865,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 32,
                     "enemyNumber": 12,
                     "name": "Rock Generator",
                     "offset": 18846,
@@ -6180,6 +1900,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 33,
                     "enemyNumber": 26,
                     "name": "Red Goryia",
                     "offset": 18690,
@@ -6190,6 +1912,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 33,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18692,
@@ -6200,6 +1924,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 33,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18694,
@@ -6210,6 +1936,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 33,
                     "enemyNumber": 7,
                     "name": "Ache",
                     "offset": 18696,
@@ -6243,6 +1971,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 0,
+                    "mapNumber": 34,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18792,
@@ -6253,6 +1983,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 34,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 18794,
@@ -6263,6 +1995,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 34,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18796,
@@ -6273,6 +2007,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 34,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 18798,
@@ -6283,6 +2019,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 34,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 18800,
@@ -6316,6 +2054,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 35,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18858,
@@ -6326,6 +2066,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 35,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18860,
@@ -6336,6 +2078,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 35,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18862,
@@ -6346,6 +2090,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 35,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18864,
@@ -6379,6 +2125,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 36,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18858,
@@ -6389,6 +2137,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 36,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18860,
@@ -6399,6 +2149,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 36,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18862,
@@ -6409,6 +2161,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 36,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18864,
@@ -6442,6 +2196,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 37,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18858,
@@ -6452,6 +2208,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 37,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18860,
@@ -6462,6 +2220,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 37,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18862,
@@ -6472,6 +2232,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 37,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18864,
@@ -6505,6 +2267,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 38,
                     "enemyNumber": 25,
                     "name": "Orange Goryia",
                     "offset": 18714,
@@ -6538,6 +2302,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 39,
                     "enemyNumber": 33,
                     "name": "Dumb Moblin Generator",
                     "offset": 18814,
@@ -6548,6 +2314,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 39,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 18816,
@@ -6558,6 +2326,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 39,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 18818,
@@ -6568,6 +2338,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 39,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 18820,
@@ -6578,6 +2350,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 39,
                     "enemyNumber": 33,
                     "name": "Dumb Moblin Generator",
                     "offset": 18822,
@@ -6611,6 +2385,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 40,
                     "enemyNumber": 21,
                     "name": "Red Moblin",
                     "offset": 18930,
@@ -6621,6 +2397,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 40,
                     "enemyNumber": 14,
                     "name": "Blue Deeler",
                     "offset": 18932,
@@ -6631,6 +2409,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 40,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 18934,
@@ -6641,6 +2421,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 40,
                     "enemyNumber": 14,
                     "name": "Blue Deeler",
                     "offset": 18936,
@@ -6651,6 +2433,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 40,
                     "enemyNumber": 21,
                     "name": "Red Moblin",
                     "offset": 18938,
@@ -6684,6 +2468,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 41,
                     "enemyNumber": 21,
                     "name": "Red Moblin",
                     "offset": 18930,
@@ -6694,6 +2480,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 41,
                     "enemyNumber": 14,
                     "name": "Blue Deeler",
                     "offset": 18932,
@@ -6704,6 +2492,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 41,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 18934,
@@ -6714,6 +2504,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 41,
                     "enemyNumber": 14,
                     "name": "Blue Deeler",
                     "offset": 18936,
@@ -6724,6 +2516,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 41,
                     "enemyNumber": 21,
                     "name": "Red Moblin",
                     "offset": 18938,
@@ -6757,6 +2551,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 42,
                     "enemyNumber": 21,
                     "name": "Red Moblin",
                     "offset": 18930,
@@ -6767,6 +2563,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 42,
                     "enemyNumber": 14,
                     "name": "Blue Deeler",
                     "offset": 18932,
@@ -6777,6 +2575,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 42,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 18934,
@@ -6787,6 +2587,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 42,
                     "enemyNumber": 14,
                     "name": "Blue Deeler",
                     "offset": 18936,
@@ -6797,6 +2599,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 42,
                     "enemyNumber": 21,
                     "name": "Red Moblin",
                     "offset": 18938,
@@ -6830,6 +2634,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 0,
+                    "mapNumber": 43,
                     "enemyNumber": 7,
                     "name": "Ache",
                     "offset": 18682,
@@ -6840,6 +2646,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 43,
                     "enemyNumber": 7,
                     "name": "Ache",
                     "offset": 18684,
@@ -6850,6 +2658,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 43,
                     "enemyNumber": 7,
                     "name": "Ache",
                     "offset": 18686,
@@ -6883,6 +2693,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 44,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18954,
@@ -6893,6 +2705,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 44,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18956,
@@ -6903,6 +2717,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 44,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18958,
@@ -6913,6 +2729,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 44,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18960,
@@ -6923,6 +2741,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 44,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18962,
@@ -6933,6 +2753,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 44,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18964,
@@ -6943,6 +2765,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 44,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 18966,
@@ -6976,6 +2800,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 45,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 19045,
@@ -6986,6 +2812,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 45,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 19047,
@@ -6996,6 +2824,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 45,
                     "enemyNumber": 28,
                     "name": "Lowder",
                     "offset": 19049,
@@ -7006,6 +2836,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 45,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 19051,
@@ -7016,6 +2848,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 0,
+                    "mapNumber": 45,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 19053,
@@ -7026,6 +2860,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 45,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 19055,
@@ -7059,6 +2895,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 46,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19058,
@@ -7069,6 +2907,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 46,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19060,
@@ -7079,6 +2919,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 46,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19062,
@@ -7089,6 +2931,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 46,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19064,
@@ -7099,6 +2943,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 46,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19066,
@@ -7109,6 +2955,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 46,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19068,
@@ -7119,6 +2967,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 0,
+                    "mapNumber": 46,
                     "enemyNumber": 31,
                     "name": "Megmet",
                     "offset": 19070,
@@ -7152,6 +3002,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 47,
                     "enemyNumber": 18,
                     "name": "Red Octorock (Moving and Jumping)",
                     "offset": 18904,
@@ -7162,6 +3014,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 47,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18906,
@@ -7172,6 +3026,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 47,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18908,
@@ -7182,6 +3038,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 47,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18910,
@@ -7192,6 +3050,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 47,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18912,
@@ -7225,6 +3085,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 48,
                     "enemyNumber": 18,
                     "name": "Red Octorock (Moving and Jumping)",
                     "offset": 18904,
@@ -7235,6 +3097,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 48,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18906,
@@ -7245,6 +3109,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 48,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18908,
@@ -7255,6 +3121,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 48,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18910,
@@ -7265,6 +3133,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 48,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18912,
@@ -7298,6 +3168,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 49,
                     "enemyNumber": 18,
                     "name": "Red Octorock (Moving and Jumping)",
                     "offset": 18904,
@@ -7308,6 +3180,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 49,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18906,
@@ -7318,6 +3192,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 49,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18908,
@@ -7328,6 +3204,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 49,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18910,
@@ -7338,6 +3216,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 49,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18912,
@@ -7371,6 +3251,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 50,
                     "enemyNumber": 18,
                     "name": "Red Octorock (Moving and Jumping)",
                     "offset": 18904,
@@ -7381,6 +3263,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 50,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18906,
@@ -7391,6 +3275,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 50,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18908,
@@ -7401,6 +3287,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 50,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18910,
@@ -7411,6 +3299,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 50,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18912,
@@ -7444,6 +3334,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 51,
                     "enemyNumber": 1,
                     "name": "Red Jar",
                     "offset": 19079,
@@ -7477,6 +3369,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18874,
@@ -7487,6 +3381,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18876,
@@ -7497,6 +3393,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18878,
@@ -7507,6 +3405,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18880,
@@ -7517,6 +3417,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18882,
@@ -7527,6 +3429,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18884,
@@ -7537,6 +3441,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18886,
@@ -7547,6 +3453,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18888,
@@ -7580,6 +3488,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18874,
@@ -7590,6 +3500,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18876,
@@ -7600,6 +3512,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18878,
@@ -7610,6 +3524,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18880,
@@ -7620,6 +3536,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18882,
@@ -7630,6 +3548,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18884,
@@ -7640,6 +3560,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18886,
@@ -7650,6 +3572,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18888,
@@ -7683,6 +3607,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18874,
@@ -7693,6 +3619,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18876,
@@ -7703,6 +3631,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18878,
@@ -7713,6 +3643,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18880,
@@ -7723,6 +3655,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18882,
@@ -7733,6 +3667,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18884,
@@ -7743,6 +3679,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18886,
@@ -7753,6 +3691,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18888,
@@ -7786,6 +3726,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 0,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18874,
@@ -7796,6 +3738,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 0,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18876,
@@ -7806,6 +3750,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18878,
@@ -7816,6 +3762,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18880,
@@ -7826,6 +3774,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 0,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18882,
@@ -7836,6 +3786,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18884,
@@ -7846,6 +3798,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 0,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18886,
@@ -7856,6 +3810,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 18888,
@@ -7889,6 +3845,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 0,
+                    "mapNumber": 56,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18760,
@@ -7899,6 +3857,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 0,
+                    "mapNumber": 56,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18762,
@@ -7909,6 +3869,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 56,
                     "enemyNumber": 27,
                     "name": "Blue Goryia",
                     "offset": 18764,
@@ -7919,6 +3881,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 0,
+                    "mapNumber": 56,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18766,
@@ -7929,6 +3893,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 56,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 18768,
@@ -7962,6 +3928,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 57,
                     "enemyNumber": 1,
                     "name": "Red Jar",
                     "offset": 19073,
@@ -7972,6 +3940,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 57,
                     "enemyNumber": 1,
                     "name": "Red Jar",
                     "offset": 19075,
@@ -8005,6 +3975,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 58,
                     "enemyNumber": 1,
                     "name": "Red Jar",
                     "offset": 19073,
@@ -8015,6 +3987,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 0,
+                    "mapNumber": 58,
                     "enemyNumber": 1,
                     "name": "Red Jar",
                     "offset": 19075,
@@ -8048,6 +4022,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 59,
                     "enemyNumber": 18,
                     "name": "Red Octorock (Moving and Jumping)",
                     "offset": 18904,
@@ -8058,6 +4034,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 59,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18906,
@@ -8068,6 +4046,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 59,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18908,
@@ -8078,6 +4058,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 59,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18910,
@@ -8088,6 +4070,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 59,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18912,
@@ -8121,6 +4105,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 60,
                     "enemyNumber": 18,
                     "name": "Red Octorock (Moving and Jumping)",
                     "offset": 18904,
@@ -8131,6 +4117,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 60,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18906,
@@ -8141,6 +4129,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 60,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18908,
@@ -8151,6 +4141,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 60,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18910,
@@ -8161,6 +4153,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 60,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18912,
@@ -8194,6 +4188,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 61,
                     "enemyNumber": 18,
                     "name": "Red Octorock (Moving and Jumping)",
                     "offset": 18904,
@@ -8204,6 +4200,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 61,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18906,
@@ -8214,6 +4212,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 61,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18908,
@@ -8224,6 +4224,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 61,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18910,
@@ -8234,6 +4236,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 61,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18912,
@@ -8267,6 +4271,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 0,
+                    "mapNumber": 62,
                     "enemyNumber": 18,
                     "name": "Red Octorock (Moving and Jumping)",
                     "offset": 18904,
@@ -8277,6 +4283,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 0,
+                    "mapNumber": 62,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18906,
@@ -8287,6 +4295,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 0,
+                    "mapNumber": 62,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18908,
@@ -8297,6 +4307,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 0,
+                    "mapNumber": 62,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18910,
@@ -8307,6 +4319,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 0,
+                    "mapNumber": 62,
                     "enemyNumber": 17,
                     "name": "Red Octoroc (Jumping Only)",
                     "offset": 18912,
@@ -8333,6 +4347,3374 @@ export default {
                }
           }
      },
+     "1:1": {
+          "enemies": [
+               {
+                    "x": 9,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19084,
+                    "mask": 63
+               },
+               {
+                    "x": 11,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19086,
+                    "mask": 63
+               },
+               {
+                    "x": 13,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19088,
+                    "mask": 63
+               },
+               {
+                    "x": 20,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 4,
+                    "mapSet": 1,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19090,
+                    "mask": 63
+               },
+               {
+                    "x": 28,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19092,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 1,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19094,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19096,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19098,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25100
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25101
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25102
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25103
+               }
+          }
+     },
+     "1:2": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19101,
+                    "mask": 63
+               },
+               {
+                    "x": 12,
+                    "y": 5,
+                    "xUpper": 0,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19103,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 2,
+                    "enemyNumber": 21,
+                    "name": "Red Moblin",
+                    "offset": 19105,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19107,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 2,
+                    "enemyNumber": 21,
+                    "name": "Red Moblin",
+                    "offset": 19109,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19111,
+                    "mask": 63
+               },
+               {
+                    "x": 52,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 4,
+                    "mapSet": 1,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19113,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25104
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25105
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25106
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25107
+               }
+          }
+     },
+     "1:3": {
+          "enemies": [
+               {
+                    "x": 12,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19116,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19118,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19120,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 3,
+                    "enemyNumber": 27,
+                    "name": "Blue Goryia",
+                    "offset": 19122,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19124,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 4,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 1,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19126,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19128,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25108
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25109
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25110
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25111
+               }
+          }
+     },
+     "1:4": {
+          "enemies": [
+               {
+                    "x": 11,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19146,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19148,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19150,
+                    "mask": 63
+               },
+               {
+                    "x": 35,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19152,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19154,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25112
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25113
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25114
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25115
+               }
+          }
+     },
+     "1:5": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 5,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 19157,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 5,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 19159,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25116
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25117
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25118
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25119
+               }
+          }
+     },
+     "1:6": {
+          "enemies": [
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19177,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19179,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19181,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19183,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19185,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19187,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25120
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25121
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25122
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25123
+               }
+          }
+     },
+     "1:7": {
+          "enemies": [
+               {
+                    "x": 13,
+                    "y": 2,
+                    "xUpper": 0,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 7,
+                    "enemyNumber": 22,
+                    "name": "Blue Moblin",
+                    "offset": 19190,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 7,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19192,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 7,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19194,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 7,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19196,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25124
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25125
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25126
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25127
+               }
+          }
+     },
+     "1:8": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 8,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 19208,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 8,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 19210,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25128
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25129
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25130
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25131
+               }
+          }
+     },
+     "1:9": {
+          "enemies": [
+               {
+                    "x": 21,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 1,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19226,
+                    "mask": 63
+               },
+               {
+                    "x": 25,
+                    "y": 3,
+                    "xUpper": 1,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 9,
+                    "enemyNumber": 1,
+                    "name": "Red Jar",
+                    "offset": 19228,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19230,
+                    "mask": 63
+               },
+               {
+                    "x": 33,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 1,
+                    "mapSet": 1,
+                    "mapNumber": 9,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19232,
+                    "mask": 63
+               },
+               {
+                    "x": 43,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19234,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25132
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25133
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25134
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25135
+               }
+          }
+     },
+     "1:10": {
+          "enemies": [
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19237,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19239,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19241,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19243,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19245,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19247,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25136
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25137
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25138
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25139
+               }
+          }
+     },
+     "1:11": {
+          "enemies": [
+               {
+                    "x": 8,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 11,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 19250,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 11,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 19252,
+                    "mask": 63
+               },
+               {
+                    "x": 12,
+                    "y": 5,
+                    "xUpper": 0,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 11,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19254,
+                    "mask": 63
+               },
+               {
+                    "x": 18,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 2,
+                    "mapSet": 1,
+                    "mapNumber": 11,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 19256,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 0,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 11,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 19258,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 11,
+                    "enemyNumber": 27,
+                    "name": "Blue Goryia",
+                    "offset": 19260,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25140
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25141
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25142
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25143
+               }
+          }
+     },
+     "1:12": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 19263,
+                    "mask": 63
+               },
+               {
+                    "x": 21,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 1,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 19265,
+                    "mask": 63
+               },
+               {
+                    "x": 30,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 12,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19267,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 1,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 19269,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 19271,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 12,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19273,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 1,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 19275,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25144
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25145
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25146
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25147
+               }
+          }
+     },
+     "1:13": {
+          "enemies": [
+               {
+                    "x": 6,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 13,
+                    "enemyNumber": 1,
+                    "name": "Red Jar",
+                    "offset": 19278,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 13,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19280,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 13,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19282,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 13,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19284,
+                    "mask": 63
+               },
+               {
+                    "x": 34,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 2,
+                    "mapSet": 1,
+                    "mapNumber": 13,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19286,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 13,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19288,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 1,
+                    "mapNumber": 13,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19290,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25148
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25149
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25150
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25151
+               }
+          }
+     },
+     "1:14": {
+          "enemies": [
+               {
+                    "x": 18,
+                    "y": 3,
+                    "xUpper": 1,
+                    "xLower": 2,
+                    "mapSet": 1,
+                    "mapNumber": 14,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19351,
+                    "mask": 63
+               },
+               {
+                    "x": 28,
+                    "y": 3,
+                    "xUpper": 1,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 14,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19353,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 1,
+                    "mapNumber": 14,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19355,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 14,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19357,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25152
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25153
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25154
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25155
+               }
+          }
+     },
+     "1:15": {
+          "enemies": [
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 15,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19308,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 0,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 1,
+                    "mapNumber": 15,
+                    "enemyNumber": 10,
+                    "name": "Acheman",
+                    "offset": 19310,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 15,
+                    "enemyNumber": 28,
+                    "name": "Lowder",
+                    "offset": 19312,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 15,
+                    "enemyNumber": 28,
+                    "name": "Lowder",
+                    "offset": 19314,
+                    "mask": 63
+               },
+               {
+                    "x": 56,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 15,
+                    "enemyNumber": 10,
+                    "name": "Acheman",
+                    "offset": 19316,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25156
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25157
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25158
+               },
+               "right": {
+                    "mapNumber": 16,
+                    "offset": 25159
+               }
+          }
+     },
+     "1:16": {
+          "enemies": [
+               {
+                    "x": 24,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 16,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19324,
+                    "mask": 63
+               },
+               {
+                    "x": 25,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 16,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19326,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 16,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19328,
+                    "mask": 63
+               },
+               {
+                    "x": 35,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 16,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19330,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 16,
+                    "enemyNumber": 28,
+                    "name": "Lowder",
+                    "offset": 19332,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 16,
+                    "enemyNumber": 28,
+                    "name": "Lowder",
+                    "offset": 19334,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 1,
+                    "mapNumber": 16,
+                    "enemyNumber": 28,
+                    "name": "Lowder",
+                    "offset": 19336,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 15,
+                    "offset": 25160
+               },
+               "down": {
+                    "mapNumber": 19,
+                    "offset": 25161
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25162
+               },
+               "right": {
+                    "mapNumber": 17,
+                    "offset": 25163
+               }
+          }
+     },
+     "1:17": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19293,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19295,
+                    "mask": 63
+               },
+               {
+                    "x": 21,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 1,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19297,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 17,
+                    "enemyNumber": 1,
+                    "name": "Red Jar",
+                    "offset": 19299,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19301,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19303,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 1,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19305,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 16,
+                    "offset": 25164
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25165
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25166
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25167
+               }
+          }
+     },
+     "1:18": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19293,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19295,
+                    "mask": 63
+               },
+               {
+                    "x": 21,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 1,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19297,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 18,
+                    "enemyNumber": 1,
+                    "name": "Red Jar",
+                    "offset": 19299,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19301,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19303,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 1,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19305,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25168
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25169
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25170
+               },
+               "right": {
+                    "mapNumber": 19,
+                    "offset": 25171
+               }
+          }
+     },
+     "1:19": {
+          "enemies": [
+               {
+                    "x": 13,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 19,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 19339,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 19,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19341,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 19,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 19343,
+                    "mask": 63
+               },
+               {
+                    "x": 59,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 19,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19345,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 18,
+                    "offset": 25172
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25173
+               },
+               "up": {
+                    "mapNumber": 16,
+                    "offset": 25174
+               },
+               "right": {
+                    "mapNumber": 20,
+                    "offset": 25175
+               }
+          }
+     },
+     "1:20": {
+          "enemies": [
+               {
+                    "x": 32,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 20,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 19348,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 19,
+                    "offset": 25176
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25177
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25178
+               },
+               "right": {
+                    "mapNumber": 21,
+                    "offset": 25179
+               }
+          }
+     },
+     "1:21": {
+          "enemies": [
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 21,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19319,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 21,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19321,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 20,
+                    "offset": 25180
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25181
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25182
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25183
+               }
+          }
+     },
+     "1:22": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 22,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 19157,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 22,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 19159,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25184
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25185
+               },
+               "up": {
+                    "mapNumber": 23,
+                    "offset": 25186
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25187
+               }
+          }
+     },
+     "1:23": {
+          "enemies": [
+               {
+                    "x": 26,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 23,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19162,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 23,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19164,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 23,
+                    "enemyNumber": 31,
+                    "name": "Megmet",
+                    "offset": 19166,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 23,
+                    "enemyNumber": 28,
+                    "name": "Lowder",
+                    "offset": 19168,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 23,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 19170,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 23,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 19172,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 1,
+                    "mapNumber": 23,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19174,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25188
+               },
+               "down": {
+                    "mapNumber": 22,
+                    "offset": 25189
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25190
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25191
+               }
+          }
+     },
+     "1:24": {
+          "enemies": [
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 24,
+                    "enemyNumber": 28,
+                    "name": "Lowder",
+                    "offset": 19199,
+                    "mask": 63
+               },
+               {
+                    "x": 25,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 24,
+                    "enemyNumber": 26,
+                    "name": "Red Goryia",
+                    "offset": 19201,
+                    "mask": 63
+               },
+               {
+                    "x": 28,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 24,
+                    "enemyNumber": 28,
+                    "name": "Lowder",
+                    "offset": 19203,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 24,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19205,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25192
+               },
+               "down": {
+                    "mapNumber": 25,
+                    "offset": 25193
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25194
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25195
+               }
+          }
+     },
+     "1:25": {
+          "enemies": [
+               {
+                    "x": 9,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 25,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 19213,
+                    "mask": 63
+               },
+               {
+                    "x": 11,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 25,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19215,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 25,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 19217,
+                    "mask": 63
+               },
+               {
+                    "x": 17,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 1,
+                    "mapSet": 1,
+                    "mapNumber": 25,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19219,
+                    "mask": 63
+               },
+               {
+                    "x": 20,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 4,
+                    "mapSet": 1,
+                    "mapNumber": 25,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 19221,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 1,
+                    "mapNumber": 25,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19223,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25196
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25197
+               },
+               "up": {
+                    "mapNumber": 24,
+                    "offset": 25198
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25199
+               }
+          }
+     },
+     "1:29": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 29,
+                    "enemyNumber": 12,
+                    "name": "Rock Generator",
+                    "offset": 19480,
+                    "mask": 63
+               },
+               {
+                    "x": 10,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19482,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19484,
+                    "mask": 63
+               },
+               {
+                    "x": 26,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19486,
+                    "mask": 63
+               },
+               {
+                    "x": 33,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 1,
+                    "mapSet": 1,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19488,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19490,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 29,
+                    "enemyNumber": 12,
+                    "name": "Rock Generator",
+                    "offset": 19492,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:30": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 30,
+                    "enemyNumber": 12,
+                    "name": "Rock Generator",
+                    "offset": 19480,
+                    "mask": 63
+               },
+               {
+                    "x": 10,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19482,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19484,
+                    "mask": 63
+               },
+               {
+                    "x": 26,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19486,
+                    "mask": 63
+               },
+               {
+                    "x": 33,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 1,
+                    "mapSet": 1,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19488,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "name": "Geldarm",
+                    "offset": 19490,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 30,
+                    "enemyNumber": 12,
+                    "name": "Rock Generator",
+                    "offset": 19492,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:34": {
+          "enemies": [
+               {
+                    "x": 14,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 34,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19360,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 34,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19362,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 34,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19364,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 34,
+                    "enemyNumber": 18,
+                    "name": "Red Octorock (Moving and Jumping)",
+                    "offset": 19366,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 1,
+                    "mapNumber": 34,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19368,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:35": {
+          "enemies": [
+               {
+                    "x": 23,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 7,
+                    "mapSet": 1,
+                    "mapNumber": 35,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19371,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 35,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19373,
+                    "mask": 63
+               },
+               {
+                    "x": 42,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 35,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19375,
+                    "mask": 63
+               },
+               {
+                    "x": 52,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 4,
+                    "mapSet": 1,
+                    "mapNumber": 35,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19377,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:37": {
+          "enemies": [
+               {
+                    "x": 40,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 37,
+                    "enemyNumber": 27,
+                    "name": "Blue Goryia",
+                    "offset": 19453,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:38": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19395,
+                    "mask": 63
+               },
+               {
+                    "x": 24,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19397,
+                    "mask": 63
+               },
+               {
+                    "x": 28,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 12,
+                    "mapSet": 1,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19399,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19401,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 1,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19403,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:39": {
+          "enemies": [
+               {
+                    "x": 7,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 7,
+                    "mapSet": 1,
+                    "mapNumber": 39,
+                    "enemyNumber": 21,
+                    "name": "Red Moblin",
+                    "offset": 19456,
+                    "mask": 63
+               },
+               {
+                    "x": 11,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 39,
+                    "enemyNumber": 14,
+                    "name": "Blue Deeler",
+                    "offset": 19458,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 39,
+                    "enemyNumber": 13,
+                    "name": "Red Deeler",
+                    "offset": 19460,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 1,
+                    "mapNumber": 39,
+                    "enemyNumber": 14,
+                    "name": "Blue Deeler",
+                    "offset": 19462,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 39,
+                    "enemyNumber": 21,
+                    "name": "Red Moblin",
+                    "offset": 19464,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:40": {
+          "enemies": [
+               {
+                    "x": 7,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 7,
+                    "mapSet": 1,
+                    "mapNumber": 40,
+                    "enemyNumber": 21,
+                    "name": "Red Moblin",
+                    "offset": 19456,
+                    "mask": 63
+               },
+               {
+                    "x": 11,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 1,
+                    "mapNumber": 40,
+                    "enemyNumber": 14,
+                    "name": "Blue Deeler",
+                    "offset": 19458,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 40,
+                    "enemyNumber": 13,
+                    "name": "Red Deeler",
+                    "offset": 19460,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 1,
+                    "mapNumber": 40,
+                    "enemyNumber": 14,
+                    "name": "Blue Deeler",
+                    "offset": 19462,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 40,
+                    "enemyNumber": 21,
+                    "name": "Red Moblin",
+                    "offset": 19464,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:47": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 47,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19406,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 47,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19408,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 1,
+                    "mapNumber": 47,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19410,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 1,
+                    "mapNumber": 47,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19412,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:48": {
+          "enemies": [
+               {
+                    "x": 22,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 1,
+                    "mapNumber": 48,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19415,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 1,
+                    "mapNumber": 48,
+                    "enemyNumber": 23,
+                    "name": "Orange Diara",
+                    "offset": 19417,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:49": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 49,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 19420,
+                    "mask": 63
+               },
+               {
+                    "x": 24,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 49,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19422,
+                    "mask": 63
+               },
+               {
+                    "x": 26,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 49,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19424,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 49,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19426,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 49,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19428,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:50": {
+          "enemies": [
+               {
+                    "x": 13,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 50,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19431,
+                    "mask": 63
+               },
+               {
+                    "x": 15,
+                    "y": 2,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 50,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19433,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 50,
+                    "enemyNumber": 1,
+                    "name": "Red Jar",
+                    "offset": 19435,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 50,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19437,
+                    "mask": 63
+               },
+               {
+                    "x": 42,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 50,
+                    "enemyNumber": 17,
+                    "name": "Red Octoroc (Jumping Only)",
+                    "offset": 19439,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 50,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19441,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:51": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 1,
+                    "mapNumber": 51,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19444,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 1,
+                    "mapNumber": 51,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19446,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 51,
+                    "enemyNumber": 24,
+                    "name": "Red Diara",
+                    "offset": 19448,
+                    "mask": 63
+               },
+               {
+                    "x": 57,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 51,
+                    "enemyNumber": 20,
+                    "name": "Orange Moblin",
+                    "offset": 19450,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:52": {
+          "enemies": [
+               {
+                    "x": 2,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 2,
+                    "mapSet": 1,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19504,
+                    "mask": 63
+               },
+               {
+                    "x": 8,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19506,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19508,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19510,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19512,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19514,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19516,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19518,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
+     "1:53": {
+          "enemies": [
+               {
+                    "x": 2,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 2,
+                    "mapSet": 1,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19504,
+                    "mask": 63
+               },
+               {
+                    "x": 8,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 8,
+                    "mapSet": 1,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19506,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19508,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 1,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19510,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 1,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19512,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 1,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19514,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 1,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19516,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 1,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 19518,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 25096
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 25097
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 25098
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 25099
+               }
+          }
+     },
      "2:0": {
           "enemies": [
                {
@@ -8340,6 +7722,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 0,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 35240,
@@ -8350,6 +7734,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 0,
                     "enemyNumber": 24,
                     "name": "Basilisk",
                     "offset": 35242,
@@ -8360,6 +7746,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 0,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 35244,
@@ -8393,6 +7781,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 1,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 35266,
@@ -8403,6 +7793,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 1,
                     "enemyNumber": 24,
                     "name": "Basilisk",
                     "offset": 35268,
@@ -8413,6 +7805,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 1,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 35270,
@@ -8446,6 +7840,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 2,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35344,
@@ -8456,6 +7852,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 2,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35346,
@@ -8466,6 +7864,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 2,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35348,
@@ -8476,6 +7876,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 2,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35350,
@@ -8509,6 +7911,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 3,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35354,
@@ -8519,6 +7923,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 3,
                     "enemyNumber": 24,
                     "name": "Basilisk",
                     "offset": 35356,
@@ -8529,6 +7935,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 3,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35358,
@@ -8539,6 +7947,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 3,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35360,
@@ -8572,6 +7982,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 4,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35364,
@@ -8582,6 +7994,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 4,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35366,
@@ -8592,6 +8006,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 4,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35368,
@@ -8602,6 +8018,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 4,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35370,
@@ -8635,6 +8053,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 5,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35374,
@@ -8645,6 +8065,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 5,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35376,
@@ -8655,6 +8077,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 5,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35378,
@@ -8665,6 +8089,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 5,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35380,
@@ -8675,6 +8101,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 5,
                     "enemyNumber": 29,
                     "name": "Boulder Tossing Lizalfos",
                     "offset": 35382,
@@ -8685,6 +8113,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 5,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35384,
@@ -8718,6 +8148,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 6,
                     "enemyNumber": 11,
                     "name": "Bubble Generator",
                     "offset": 35252,
@@ -8728,6 +8160,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 6,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35254,
@@ -8738,6 +8172,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 6,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35256,
@@ -8748,6 +8184,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 6,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35258,
@@ -8758,6 +8196,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 6,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35260,
@@ -8768,6 +8208,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 6,
                     "enemyNumber": 11,
                     "name": "Bubble Generator",
                     "offset": 35262,
@@ -8801,6 +8243,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 8,
                     "enemyNumber": 10,
                     "name": "Acheman",
                     "offset": 35290,
@@ -8811,6 +8255,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 8,
                     "enemyNumber": 10,
                     "name": "Acheman",
                     "offset": 35292,
@@ -8821,6 +8267,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 8,
                     "enemyNumber": 10,
                     "name": "Acheman",
                     "offset": 35294,
@@ -8831,6 +8279,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 8,
                     "enemyNumber": 24,
                     "name": "Basilisk",
                     "offset": 35296,
@@ -8864,6 +8314,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 9,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35300,
@@ -8874,6 +8326,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 9,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35302,
@@ -8907,6 +8361,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 10,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35503,
@@ -8940,6 +8396,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 11,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35306,
@@ -8950,6 +8408,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 11,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35308,
@@ -8960,6 +8420,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 11,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35310,
@@ -8970,6 +8432,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 11,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35312,
@@ -9003,6 +8467,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 12,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35330,
@@ -9036,6 +8502,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 13,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35322,
@@ -9046,6 +8514,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 13,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35324,
@@ -9056,6 +8526,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 13,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35326,
@@ -9089,6 +8561,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 14,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35316,
@@ -9099,6 +8573,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 2,
+                    "mapNumber": 14,
                     "enemyNumber": 26,
                     "name": "Red Lizalfo",
                     "offset": 35318,
@@ -9132,6 +8608,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 16,
                     "enemyNumber": 28,
                     "name": "Blue Lizalfo",
                     "offset": 35416,
@@ -9142,6 +8620,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 16,
                     "enemyNumber": 26,
                     "name": "Red Lizalfo",
                     "offset": 35418,
@@ -9175,6 +8655,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 17,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35406,
@@ -9185,6 +8667,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 17,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35408,
@@ -9195,6 +8679,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 17,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35410,
@@ -9205,6 +8691,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 17,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35412,
@@ -9238,6 +8726,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 18,
                     "enemyNumber": 28,
                     "name": "Blue Lizalfo",
                     "offset": 35334,
@@ -9248,6 +8738,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 18,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35336,
@@ -9281,6 +8773,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 19,
                     "enemyNumber": 28,
                     "name": "Blue Lizalfo",
                     "offset": 35450,
@@ -9291,6 +8785,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 19,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35452,
@@ -9324,6 +8820,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 20,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35422,
@@ -9334,6 +8832,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 20,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35424,
@@ -9344,6 +8844,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 20,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35426,
@@ -9354,6 +8856,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 20,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35428,
@@ -9364,6 +8868,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 20,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35430,
@@ -9374,6 +8880,8 @@ export default {
                     "y": 2,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 20,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35432,
@@ -9384,6 +8892,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 20,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35434,
@@ -9417,6 +8927,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 34,
                     "offset": 42406,
                     "mask": 63
@@ -9426,6 +8938,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 14,
                     "name": "Blue Deeler",
                     "offset": 42408,
@@ -9436,6 +8950,8 @@ export default {
                     "y": 13,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 42410,
@@ -9446,6 +8962,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 32,
                     "offset": 42412,
                     "mask": 63
@@ -9455,6 +8973,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 8,
                     "name": "???",
                     "offset": 42414,
@@ -9465,6 +8985,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 55,
                     "offset": 42416,
                     "mask": 63
@@ -9474,6 +8996,8 @@ export default {
                     "y": 13,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 42418,
@@ -9484,6 +9008,8 @@ export default {
                     "y": 13,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 2,
                     "name": "Locked Door",
                     "offset": 42420,
@@ -9494,6 +9020,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 49,
                     "offset": 42422,
                     "mask": 63
@@ -9503,6 +9031,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 49,
                     "offset": 42424,
                     "mask": 63
@@ -9512,6 +9042,8 @@ export default {
                     "y": 13,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 12,
                     "name": "Rock Generator (messed up link-doll sprite in east hyrule)",
                     "offset": 42426,
@@ -9522,6 +9054,8 @@ export default {
                     "y": 10,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 45,
                     "offset": 42428,
                     "mask": 63
@@ -9531,6 +9065,8 @@ export default {
                     "y": 9,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 45,
                     "offset": 42430,
                     "mask": 63
@@ -9540,6 +9076,8 @@ export default {
                     "y": 13,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42432,
@@ -9550,6 +9088,8 @@ export default {
                     "y": 10,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 42434,
@@ -9560,6 +9100,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 17,
                     "name": "Blue Octoroc (Jumping Only)",
                     "offset": 42436,
@@ -9570,6 +9112,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42438,
@@ -9580,6 +9124,8 @@ export default {
                     "y": 14,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 42440,
@@ -9590,6 +9136,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 42442,
@@ -9600,6 +9148,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42444,
@@ -9610,6 +9160,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42446,
                     "mask": 63
@@ -9619,6 +9171,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 42448,
@@ -9629,6 +9183,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 16,
                     "name": "Bago Bago",
                     "offset": 42450,
@@ -9639,6 +9195,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 36,
                     "offset": 42452,
                     "mask": 63
@@ -9648,6 +9206,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42454,
                     "mask": 63
@@ -9657,6 +9217,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42456,
@@ -9667,6 +9229,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 2,
                     "name": "Locked Door",
                     "offset": 42458,
@@ -9677,6 +9241,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42460,
                     "mask": 63
@@ -9686,6 +9252,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 38,
                     "offset": 42462,
                     "mask": 63
@@ -9695,6 +9263,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42464,
                     "mask": 63
@@ -9704,6 +9274,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42466,
@@ -9714,6 +9286,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 42468,
@@ -9724,6 +9298,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 16,
                     "name": "Bago Bago",
                     "offset": 42470,
@@ -9734,6 +9310,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 42472,
@@ -9744,6 +9322,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42474,
                     "mask": 63
@@ -9753,6 +9333,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 42476,
@@ -9763,6 +9345,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 16,
                     "name": "Bago Bago",
                     "offset": 42478,
@@ -9773,6 +9357,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 34,
                     "offset": 42480,
                     "mask": 63
@@ -9782,6 +9368,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42482,
                     "mask": 63
@@ -9791,6 +9379,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42484,
@@ -9801,6 +9391,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 10,
                     "name": "Acheman",
                     "offset": 42486,
@@ -9811,6 +9403,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42488,
                     "mask": 63
@@ -9820,6 +9414,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 42490,
@@ -9830,6 +9426,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 16,
                     "name": "Bago Bago",
                     "offset": 42492,
@@ -9840,6 +9438,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 34,
                     "offset": 42494,
                     "mask": 63
@@ -9849,6 +9449,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42496,
                     "mask": 63
@@ -9858,6 +9460,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42498,
@@ -9868,6 +9472,8 @@ export default {
                     "y": 3,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 42500,
@@ -9878,6 +9484,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 42502,
@@ -9888,6 +9496,8 @@ export default {
                     "y": 14,
                     "xUpper": 0,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 42504,
@@ -9898,6 +9508,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 42506,
@@ -9908,6 +9520,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42508,
@@ -9918,6 +9532,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42510,
                     "mask": 63
@@ -9927,6 +9543,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 2,
                     "name": "Locked Door",
                     "offset": 42512,
@@ -9937,6 +9555,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 16,
                     "name": "Bago Bago",
                     "offset": 42514,
@@ -9947,6 +9567,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 34,
                     "offset": 42516,
                     "mask": 63
@@ -9956,6 +9578,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 50,
                     "offset": 42518,
                     "mask": 63
@@ -9965,6 +9589,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42520,
@@ -9975,6 +9601,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 42522,
@@ -9985,6 +9613,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42524,
                     "mask": 63
@@ -9994,6 +9624,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 2,
                     "name": "Locked Door",
                     "offset": 42526,
@@ -10004,6 +9636,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 16,
                     "name": "Bago Bago",
                     "offset": 42528,
@@ -10014,6 +9648,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 32,
                     "offset": 42530,
                     "mask": 63
@@ -10023,6 +9659,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 50,
                     "offset": 42532,
                     "mask": 63
@@ -10032,6 +9670,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42534,
@@ -10042,6 +9682,8 @@ export default {
                     "y": 3,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 26,
                     "name": "Red Lizalfo",
                     "offset": 42536,
@@ -10052,6 +9694,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 42538,
@@ -10062,6 +9706,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 42540,
@@ -10072,6 +9718,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 32,
                     "offset": 42542,
                     "mask": 63
@@ -10081,6 +9729,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 42544,
@@ -10091,6 +9741,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42546,
                     "mask": 63
@@ -10100,6 +9752,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 32,
                     "offset": 42548,
                     "mask": 63
@@ -10109,6 +9763,8 @@ export default {
                     "y": 14,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 1,
                     "name": "Red Magic Jar",
                     "offset": 42550,
@@ -10119,6 +9775,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 32,
                     "offset": 42552,
                     "mask": 63
@@ -10128,6 +9786,8 @@ export default {
                     "y": 14,
                     "xUpper": 3,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 42554,
@@ -10138,6 +9798,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 32,
                     "offset": 42556,
                     "mask": 63
@@ -10147,6 +9809,8 @@ export default {
                     "y": 14,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 33,
                     "offset": 42558,
                     "mask": 63
@@ -10156,6 +9820,8 @@ export default {
                     "y": 14,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 1,
                     "name": "Red Magic Jar",
                     "offset": 42560,
@@ -10166,6 +9832,8 @@ export default {
                     "y": 14,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 1,
                     "name": "Red Magic Jar",
                     "offset": 42562,
@@ -10176,6 +9844,8 @@ export default {
                     "y": 14,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 17,
                     "name": "Blue Octoroc (Jumping Only)",
                     "offset": 42564,
@@ -10186,6 +9856,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42566,
@@ -10196,6 +9868,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42568,
                     "mask": 63
@@ -10205,6 +9879,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 42570,
@@ -10215,6 +9891,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 16,
                     "name": "Bago Bago",
                     "offset": 42572,
@@ -10225,6 +9903,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 32,
                     "offset": 42574,
                     "mask": 63
@@ -10234,6 +9914,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42576,
                     "mask": 63
@@ -10243,6 +9925,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 8,
                     "name": "???",
                     "offset": 42578,
@@ -10253,6 +9937,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 16,
                     "name": "Bago Bago",
                     "offset": 42580,
@@ -10263,6 +9949,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 34,
                     "offset": 42582,
                     "mask": 63
@@ -10272,6 +9960,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 48,
                     "offset": 42584,
                     "mask": 63
@@ -10281,6 +9971,8 @@ export default {
                     "y": 3,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 42586,
@@ -10291,6 +9983,8 @@ export default {
                     "y": 8,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 59,
                     "offset": 42588,
                     "mask": 63
@@ -10300,6 +9994,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 60,
                     "offset": 42590,
                     "mask": 63
@@ -10309,6 +10005,8 @@ export default {
                     "y": 15,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 60,
                     "offset": 42592,
                     "mask": 63
@@ -10318,6 +10016,8 @@ export default {
                     "y": 15,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 43,
                     "offset": 42594,
                     "mask": 63
@@ -10327,6 +10027,8 @@ export default {
                     "y": 15,
                     "xUpper": 3,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 60,
                     "offset": 42596,
                     "mask": 63
@@ -10336,6 +10038,8 @@ export default {
                     "y": 8,
                     "xUpper": 3,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 59,
                     "offset": 42598,
                     "mask": 63
@@ -10345,6 +10049,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 60,
                     "offset": 42600,
                     "mask": 63
@@ -10354,6 +10060,8 @@ export default {
                     "y": 15,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 12,
                     "name": "Rock Generator (messed up link-doll sprite in east hyrule)",
                     "offset": 42602,
@@ -10364,6 +10072,8 @@ export default {
                     "y": 15,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 42604,
@@ -10374,6 +10084,8 @@ export default {
                     "y": 15,
                     "xUpper": 3,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 60,
                     "offset": 42606,
                     "mask": 63
@@ -10383,6 +10095,8 @@ export default {
                     "y": 9,
                     "xUpper": 3,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 59,
                     "offset": 42608,
                     "mask": 63
@@ -10392,6 +10106,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 60,
                     "offset": 42610,
                     "mask": 63
@@ -10401,6 +10117,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 42612,
@@ -10411,6 +10129,8 @@ export default {
                     "y": 15,
                     "xUpper": 3,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 59,
                     "offset": 42614,
                     "mask": 63
@@ -10420,6 +10140,8 @@ export default {
                     "y": 8,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 21,
                     "enemyNumber": 60,
                     "offset": 42616,
                     "mask": 63
@@ -10452,6 +10174,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 22,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35026,
@@ -10462,6 +10186,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 22,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35028,
@@ -10472,6 +10198,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 22,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35030,
@@ -10505,6 +10233,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 23,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35392,
@@ -10515,6 +10245,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 4,
+                    "mapSet": 2,
+                    "mapNumber": 23,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35394,
@@ -10525,6 +10257,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 23,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35396,
@@ -10535,6 +10269,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 23,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35398,
@@ -10545,6 +10281,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 23,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35400,
@@ -10555,6 +10293,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 23,
                     "enemyNumber": 18,
                     "name": "Blue Octorock (Moving and Jumping)",
                     "offset": 35402,
@@ -10588,6 +10328,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 24,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35456,
@@ -10598,6 +10340,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 24,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35458,
@@ -10608,6 +10352,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 24,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35460,
@@ -10618,6 +10364,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 24,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35462,
@@ -10628,6 +10376,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 24,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35464,
@@ -10638,6 +10388,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 24,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35466,
@@ -10671,6 +10423,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 25,
                     "enemyNumber": 26,
                     "name": "Red Lizalfo",
                     "offset": 35470,
@@ -10681,6 +10435,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 25,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35472,
@@ -10691,6 +10447,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 25,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35474,
@@ -10701,6 +10459,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 25,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35476,
@@ -10711,6 +10471,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 25,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35478,
@@ -10721,6 +10483,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 25,
                     "enemyNumber": 26,
                     "name": "Red Lizalfo",
                     "offset": 35480,
@@ -10754,6 +10518,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 26,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35484,
@@ -10764,6 +10530,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 26,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35486,
@@ -10774,6 +10542,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 26,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35488,
@@ -10784,6 +10554,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 26,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35490,
@@ -10794,6 +10566,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 26,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35492,
@@ -10804,6 +10578,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 26,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35494,
@@ -10837,6 +10613,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 29,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 34996,
@@ -10847,6 +10625,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 29,
                     "enemyNumber": 17,
                     "name": "Blue Octoroc (Jumping Only)",
                     "offset": 34998,
@@ -10857,6 +10637,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 29,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35000,
@@ -10867,6 +10649,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 29,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35002,
@@ -10877,6 +10661,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 29,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35004,
@@ -10887,6 +10673,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 29,
                     "enemyNumber": 17,
                     "name": "Blue Octoroc (Jumping Only)",
                     "offset": 35006,
@@ -10897,6 +10685,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 29,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35008,
@@ -10907,6 +10697,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 29,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35010,
@@ -10940,6 +10732,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 30,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35074,
@@ -10950,6 +10744,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 30,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35076,
@@ -10983,6 +10779,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 31,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35074,
@@ -10993,6 +10791,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 31,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35076,
@@ -11026,6 +10826,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 32,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35074,
@@ -11036,6 +10838,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 32,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35076,
@@ -11069,6 +10873,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 33,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35130,
@@ -11079,6 +10885,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 33,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35132,
@@ -11089,6 +10897,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 33,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35134,
@@ -11099,6 +10909,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 33,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35136,
@@ -11109,6 +10921,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 33,
                     "enemyNumber": 22,
                     "name": "Leever",
                     "offset": 35138,
@@ -11142,6 +10956,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 34,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35026,
@@ -11152,6 +10968,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 34,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35028,
@@ -11162,6 +10980,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 34,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35030,
@@ -11195,6 +11015,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 35,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35090,
@@ -11205,6 +11027,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 35,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 35092,
@@ -11215,6 +11039,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 35,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 35094,
@@ -11225,6 +11051,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 35,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35096,
@@ -11235,6 +11063,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 35,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 35098,
@@ -11245,6 +11075,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 35,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35100,
@@ -11278,6 +11110,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 36,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35090,
@@ -11288,6 +11122,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 36,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 35092,
@@ -11298,6 +11134,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 36,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 35094,
@@ -11308,6 +11146,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 36,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35096,
@@ -11318,6 +11158,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 36,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 35098,
@@ -11328,6 +11170,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 36,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35100,
@@ -11361,6 +11205,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 37,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35090,
@@ -11371,6 +11217,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 37,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 35092,
@@ -11381,6 +11229,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 37,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 35094,
@@ -11391,6 +11241,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 37,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35096,
@@ -11401,6 +11253,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 37,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 35098,
@@ -11411,6 +11265,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 37,
                     "enemyNumber": 20,
                     "name": "Tektite",
                     "offset": 35100,
@@ -11444,6 +11300,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 38,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35142,
@@ -11454,6 +11312,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 38,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35144,
@@ -11464,6 +11324,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 38,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35146,
@@ -11474,6 +11336,8 @@ export default {
                     "y": 2,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 2,
+                    "mapNumber": 38,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35148,
@@ -11507,6 +11371,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 2,
+                    "mapNumber": 39,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35040,
@@ -11517,6 +11383,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 39,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35042,
@@ -11527,6 +11395,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 39,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35044,
@@ -11537,6 +11407,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 2,
+                    "mapNumber": 39,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35046,
@@ -11547,6 +11419,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 39,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35048,
@@ -11557,6 +11431,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 39,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35050,
@@ -11590,6 +11466,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 40,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35112,
@@ -11600,6 +11478,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 40,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 35114,
@@ -11610,6 +11490,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 40,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35116,
@@ -11620,6 +11502,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 40,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 35118,
@@ -11653,6 +11537,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 41,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35112,
@@ -11663,6 +11549,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 41,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 35114,
@@ -11673,6 +11561,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 41,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35116,
@@ -11683,6 +11573,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 41,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 35118,
@@ -11716,6 +11608,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 42,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35112,
@@ -11726,6 +11620,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 42,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 35114,
@@ -11736,6 +11632,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 42,
                     "enemyNumber": 27,
                     "name": "Orange Lizalfo",
                     "offset": 35116,
@@ -11746,6 +11644,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 42,
                     "enemyNumber": 13,
                     "name": "Red Deeler",
                     "offset": 35118,
@@ -11779,6 +11679,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 44,
                     "enemyNumber": 26,
                     "name": "Red Lizalfo",
                     "offset": 35152,
@@ -11812,6 +11714,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 2,
+                    "mapNumber": 45,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 35388,
@@ -11845,6 +11749,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 47,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35156,
@@ -11855,6 +11761,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 47,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35158,
@@ -11865,6 +11773,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 47,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35160,
@@ -11875,6 +11785,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 47,
                     "enemyNumber": 23,
                     "name": "Boon",
                     "offset": 35162,
@@ -11885,6 +11797,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 47,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35164,
@@ -11895,6 +11809,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 47,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35166,
@@ -11905,6 +11821,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 47,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35168,
@@ -11938,6 +11856,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 48,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35156,
@@ -11948,6 +11868,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 48,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35158,
@@ -11958,6 +11880,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 48,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35160,
@@ -11968,6 +11892,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 48,
                     "enemyNumber": 23,
                     "name": "Boon",
                     "offset": 35162,
@@ -11978,6 +11904,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 48,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35164,
@@ -11988,6 +11916,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 48,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35166,
@@ -11998,6 +11928,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 48,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35168,
@@ -12031,6 +11963,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 49,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35156,
@@ -12041,6 +11975,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 49,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35158,
@@ -12051,6 +11987,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 49,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35160,
@@ -12061,6 +11999,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 49,
                     "enemyNumber": 23,
                     "name": "Boon",
                     "offset": 35162,
@@ -12071,6 +12011,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 49,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35164,
@@ -12081,6 +12023,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 49,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35166,
@@ -12091,6 +12035,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 49,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35168,
@@ -12124,6 +12070,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 50,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35156,
@@ -12134,6 +12082,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 50,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35158,
@@ -12144,6 +12094,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 50,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35160,
@@ -12154,6 +12106,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 50,
                     "enemyNumber": 23,
                     "name": "Boon",
                     "offset": 35162,
@@ -12164,6 +12118,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 50,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35164,
@@ -12174,6 +12130,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 2,
+                    "mapNumber": 50,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35166,
@@ -12184,6 +12142,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 50,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35168,
@@ -12217,6 +12177,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 51,
                     "enemyNumber": 23,
                     "name": "Boon",
                     "offset": 35210,
@@ -12250,6 +12212,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35180,
@@ -12260,6 +12224,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35182,
@@ -12270,6 +12236,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35184,
@@ -12280,6 +12248,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35186,
@@ -12290,6 +12260,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35188,
@@ -12300,6 +12272,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35190,
@@ -12310,6 +12284,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35192,
@@ -12320,6 +12296,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 52,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35194,
@@ -12353,6 +12331,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35180,
@@ -12363,6 +12343,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35182,
@@ -12373,6 +12355,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35184,
@@ -12383,6 +12367,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35186,
@@ -12393,6 +12379,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35188,
@@ -12403,6 +12391,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35190,
@@ -12413,6 +12403,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35192,
@@ -12423,6 +12415,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35194,
@@ -12456,6 +12450,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35180,
@@ -12466,6 +12462,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35182,
@@ -12476,6 +12474,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35184,
@@ -12486,6 +12486,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35186,
@@ -12496,6 +12498,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35188,
@@ -12506,6 +12510,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35190,
@@ -12516,6 +12522,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35192,
@@ -12526,6 +12534,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 54,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35194,
@@ -12559,6 +12569,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35180,
@@ -12569,6 +12581,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35182,
@@ -12579,6 +12593,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35184,
@@ -12589,6 +12605,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35186,
@@ -12599,6 +12617,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35188,
@@ -12609,6 +12629,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35190,
@@ -12619,6 +12641,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35192,
@@ -12629,6 +12653,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35194,
@@ -12662,6 +12688,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 56,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35180,
@@ -12672,6 +12700,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 56,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35182,
@@ -12682,6 +12712,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 2,
+                    "mapNumber": 56,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35184,
@@ -12692,6 +12724,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 56,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35186,
@@ -12702,6 +12736,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 56,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35188,
@@ -12712,6 +12748,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 2,
+                    "mapNumber": 56,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35190,
@@ -12722,6 +12760,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 56,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35192,
@@ -12732,6 +12772,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 56,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35194,
@@ -12765,6 +12807,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 57,
                     "enemyNumber": 1,
                     "name": "Red Magic Jar",
                     "offset": 35497,
@@ -12798,6 +12842,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 58,
                     "enemyNumber": 1,
                     "name": "Red Magic Jar",
                     "offset": 35497,
@@ -12831,6 +12877,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 59,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35214,
@@ -12841,6 +12889,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 59,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35216,
@@ -12851,6 +12901,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 59,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35218,
@@ -12861,6 +12913,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 59,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35220,
@@ -12871,6 +12925,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 59,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35222,
@@ -12881,6 +12937,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 59,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35224,
@@ -12914,6 +12972,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 5,
+                    "mapSet": 2,
+                    "mapNumber": 60,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35214,
@@ -12924,6 +12984,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 2,
+                    "mapNumber": 60,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35216,
@@ -12934,6 +12996,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 2,
+                    "mapNumber": 60,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35218,
@@ -12944,6 +13008,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 2,
+                    "mapNumber": 60,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35220,
@@ -12954,6 +13020,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 2,
+                    "mapNumber": 60,
                     "enemyNumber": 21,
                     "name": "Eye",
                     "offset": 35222,
@@ -12964,6 +13032,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 2,
+                    "mapNumber": 60,
                     "enemyNumber": 6,
                     "name": "Moa",
                     "offset": 35224,
@@ -12997,6 +13067,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 2,
+                    "mapNumber": 61,
                     "enemyNumber": 25,
                     "name": "Scorpion",
                     "offset": 35248,
@@ -13030,6 +13102,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 2,
+                    "mapNumber": 62,
                     "enemyNumber": 1,
                     "name": "Red Magic Jar",
                     "offset": 35500,
@@ -13056,6 +13130,3338 @@ export default {
                }
           }
      },
+     "3:1": {
+          "enemies": [
+               {
+                    "x": 9,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "offset": 35508,
+                    "mask": 63
+               },
+               {
+                    "x": 11,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "offset": 35510,
+                    "mask": 63
+               },
+               {
+                    "x": 13,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "offset": 35512,
+                    "mask": 63
+               },
+               {
+                    "x": 20,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 4,
+                    "mapSet": 3,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "offset": 35514,
+                    "mask": 63
+               },
+               {
+                    "x": 28,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "offset": 35516,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 3,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "offset": 35518,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "offset": 35520,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 1,
+                    "enemyNumber": 31,
+                    "offset": 35522,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41484
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41485
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41486
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41487
+               }
+          }
+     },
+     "3:2": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35525,
+                    "mask": 63
+               },
+               {
+                    "x": 12,
+                    "y": 5,
+                    "xUpper": 0,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35527,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 2,
+                    "enemyNumber": 21,
+                    "name": "Eye",
+                    "offset": 35529,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35531,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 2,
+                    "enemyNumber": 21,
+                    "name": "Eye",
+                    "offset": 35533,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35535,
+                    "mask": 63
+               },
+               {
+                    "x": 52,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 4,
+                    "mapSet": 3,
+                    "mapNumber": 2,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35537,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41488
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41489
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41490
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41491
+               }
+          }
+     },
+     "3:3": {
+          "enemies": [
+               {
+                    "x": 12,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35540,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35542,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35544,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 3,
+                    "enemyNumber": 27,
+                    "name": "Orange Lizalfo",
+                    "offset": 35546,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35548,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 4,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 3,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35550,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 3,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35552,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41492
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41493
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41494
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41495
+               }
+          }
+     },
+     "3:4": {
+          "enemies": [
+               {
+                    "x": 11,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35570,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35572,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35574,
+                    "mask": 63
+               },
+               {
+                    "x": 35,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35576,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 4,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35578,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41496
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41497
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41498
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41499
+               }
+          }
+     },
+     "3:5": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 5,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 35581,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 5,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 35583,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41500
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41501
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41502
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41503
+               }
+          }
+     },
+     "3:6": {
+          "enemies": [
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35601,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35603,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35605,
+                    "mask": 63
+               },
+               {
+                    "x": 25,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35607,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35609,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35611,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35613,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 6,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35615,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41504
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41505
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41506
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41507
+               }
+          }
+     },
+     "3:7": {
+          "enemies": [
+               {
+                    "x": 13,
+                    "y": 2,
+                    "xUpper": 0,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 7,
+                    "enemyNumber": 22,
+                    "name": "Leever",
+                    "offset": 35618,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 7,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35620,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 7,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35622,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 7,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35624,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41508
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41509
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41510
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41511
+               }
+          }
+     },
+     "3:8": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 8,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 35636,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 8,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 35638,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41512
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41513
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41514
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41515
+               }
+          }
+     },
+     "3:9": {
+          "enemies": [
+               {
+                    "x": 21,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 3,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35654,
+                    "mask": 63
+               },
+               {
+                    "x": 25,
+                    "y": 3,
+                    "xUpper": 1,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 9,
+                    "enemyNumber": 1,
+                    "name": "Red Magic Jar",
+                    "offset": 35656,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35658,
+                    "mask": 63
+               },
+               {
+                    "x": 33,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 1,
+                    "mapSet": 3,
+                    "mapNumber": 9,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35660,
+                    "mask": 63
+               },
+               {
+                    "x": 35,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35662,
+                    "mask": 63
+               },
+               {
+                    "x": 43,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35664,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41516
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41517
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41518
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41519
+               }
+          }
+     },
+     "3:10": {
+          "enemies": [
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35667,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35669,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35671,
+                    "mask": 63
+               },
+               {
+                    "x": 25,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35673,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35675,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35677,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35679,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 10,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35681,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41520
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41521
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41522
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41523
+               }
+          }
+     },
+     "3:11": {
+          "enemies": [
+               {
+                    "x": 8,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 11,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 35684,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 11,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 35686,
+                    "mask": 63
+               },
+               {
+                    "x": 12,
+                    "y": 5,
+                    "xUpper": 0,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 11,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35688,
+                    "mask": 63
+               },
+               {
+                    "x": 18,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 2,
+                    "mapSet": 3,
+                    "mapNumber": 11,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 35690,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 0,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 11,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 35692,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 11,
+                    "enemyNumber": 27,
+                    "name": "Orange Lizalfo",
+                    "offset": 35694,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41524
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41525
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41526
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41527
+               }
+          }
+     },
+     "3:12": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 35697,
+                    "mask": 63
+               },
+               {
+                    "x": 21,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 3,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 35699,
+                    "mask": 63
+               },
+               {
+                    "x": 30,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 12,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35701,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 3,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 35703,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 35705,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 12,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35707,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 3,
+                    "mapNumber": 12,
+                    "enemyNumber": 5,
+                    "name": "Bit (red)",
+                    "offset": 35709,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41528
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41529
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41530
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41531
+               }
+          }
+     },
+     "3:13": {
+          "enemies": [
+               {
+                    "x": 6,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 13,
+                    "enemyNumber": 1,
+                    "name": "Red Magic Jar",
+                    "offset": 35712,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 13,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35714,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 13,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35716,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 13,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35718,
+                    "mask": 63
+               },
+               {
+                    "x": 34,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 2,
+                    "mapSet": 3,
+                    "mapNumber": 13,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35720,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 13,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35722,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 3,
+                    "mapNumber": 13,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35724,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41532
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41533
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41534
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41535
+               }
+          }
+     },
+     "3:14": {
+          "enemies": [
+               {
+                    "x": 18,
+                    "y": 3,
+                    "xUpper": 1,
+                    "xLower": 2,
+                    "mapSet": 3,
+                    "mapNumber": 14,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35785,
+                    "mask": 63
+               },
+               {
+                    "x": 28,
+                    "y": 3,
+                    "xUpper": 1,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 14,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35787,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 3,
+                    "mapNumber": 14,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35789,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 14,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35791,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41536
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41537
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41538
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41539
+               }
+          }
+     },
+     "3:15": {
+          "enemies": [
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 15,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35742,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 0,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 3,
+                    "mapNumber": 15,
+                    "enemyNumber": 10,
+                    "name": "Acheman",
+                    "offset": 35744,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 15,
+                    "enemyNumber": 28,
+                    "name": "Blue Lizalfo",
+                    "offset": 35746,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 15,
+                    "enemyNumber": 28,
+                    "name": "Blue Lizalfo",
+                    "offset": 35748,
+                    "mask": 63
+               },
+               {
+                    "x": 56,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 15,
+                    "enemyNumber": 10,
+                    "name": "Acheman",
+                    "offset": 35750,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41540
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41541
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41542
+               },
+               "right": {
+                    "mapNumber": 16,
+                    "offset": 41543
+               }
+          }
+     },
+     "3:16": {
+          "enemies": [
+               {
+                    "x": 24,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 16,
+                    "enemyNumber": 31,
+                    "offset": 35758,
+                    "mask": 63
+               },
+               {
+                    "x": 25,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 16,
+                    "enemyNumber": 31,
+                    "offset": 35760,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 16,
+                    "enemyNumber": 31,
+                    "offset": 35762,
+                    "mask": 63
+               },
+               {
+                    "x": 35,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 16,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35764,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 16,
+                    "enemyNumber": 28,
+                    "name": "Blue Lizalfo",
+                    "offset": 35766,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 16,
+                    "enemyNumber": 28,
+                    "name": "Blue Lizalfo",
+                    "offset": 35768,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 3,
+                    "mapNumber": 16,
+                    "enemyNumber": 28,
+                    "name": "Blue Lizalfo",
+                    "offset": 35770,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 15,
+                    "offset": 41544
+               },
+               "down": {
+                    "mapNumber": 19,
+                    "offset": 41545
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41546
+               },
+               "right": {
+                    "mapNumber": 17,
+                    "offset": 41547
+               }
+          }
+     },
+     "3:17": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35727,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35729,
+                    "mask": 63
+               },
+               {
+                    "x": 21,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 3,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35731,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 17,
+                    "enemyNumber": 1,
+                    "name": "Red Magic Jar",
+                    "offset": 35733,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35735,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35737,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 3,
+                    "mapNumber": 17,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35739,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 16,
+                    "offset": 41548
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41549
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41550
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41551
+               }
+          }
+     },
+     "3:18": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35727,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35729,
+                    "mask": 63
+               },
+               {
+                    "x": 21,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 3,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35731,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 18,
+                    "enemyNumber": 1,
+                    "name": "Red Magic Jar",
+                    "offset": 35733,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35735,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35737,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 3,
+                    "mapNumber": 18,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35739,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41552
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41553
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41554
+               },
+               "right": {
+                    "mapNumber": 19,
+                    "offset": 41555
+               }
+          }
+     },
+     "3:19": {
+          "enemies": [
+               {
+                    "x": 13,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 19,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 35773,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 19,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35775,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 19,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 35777,
+                    "mask": 63
+               },
+               {
+                    "x": 59,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 19,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35779,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 18,
+                    "offset": 41556
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41557
+               },
+               "up": {
+                    "mapNumber": 16,
+                    "offset": 41558
+               },
+               "right": {
+                    "mapNumber": 20,
+                    "offset": 41559
+               }
+          }
+     },
+     "3:20": {
+          "enemies": [
+               {
+                    "x": 32,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 20,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 35782,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 19,
+                    "offset": 41560
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41561
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41562
+               },
+               "right": {
+                    "mapNumber": 21,
+                    "offset": 41563
+               }
+          }
+     },
+     "3:21": {
+          "enemies": [
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 21,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35753,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 21,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35755,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 20,
+                    "offset": 41564
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41565
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41566
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41567
+               }
+          }
+     },
+     "3:22": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 22,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 35581,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 22,
+                    "enemyNumber": 15,
+                    "name": "Bago Bago Generator",
+                    "offset": 35583,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41568
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41569
+               },
+               "up": {
+                    "mapNumber": 23,
+                    "offset": 41570
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41571
+               }
+          }
+     },
+     "3:23": {
+          "enemies": [
+               {
+                    "x": 26,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 23,
+                    "enemyNumber": 31,
+                    "offset": 35586,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 23,
+                    "enemyNumber": 31,
+                    "offset": 35588,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 23,
+                    "enemyNumber": 31,
+                    "offset": 35590,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 23,
+                    "enemyNumber": 28,
+                    "name": "Blue Lizalfo",
+                    "offset": 35592,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 23,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 35594,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 23,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 35596,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 3,
+                    "mapNumber": 23,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35598,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41572
+               },
+               "down": {
+                    "mapNumber": 22,
+                    "offset": 41573
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41574
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41575
+               }
+          }
+     },
+     "3:24": {
+          "enemies": [
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 24,
+                    "enemyNumber": 28,
+                    "name": "Blue Lizalfo",
+                    "offset": 35627,
+                    "mask": 63
+               },
+               {
+                    "x": 25,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 24,
+                    "enemyNumber": 26,
+                    "name": "Red Lizalfo",
+                    "offset": 35629,
+                    "mask": 63
+               },
+               {
+                    "x": 28,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 24,
+                    "enemyNumber": 28,
+                    "name": "Blue Lizalfo",
+                    "offset": 35631,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 24,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35633,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41576
+               },
+               "down": {
+                    "mapNumber": 25,
+                    "offset": 41577
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41578
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41579
+               }
+          }
+     },
+     "3:25": {
+          "enemies": [
+               {
+                    "x": 9,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 25,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 35641,
+                    "mask": 63
+               },
+               {
+                    "x": 11,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 25,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35643,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 25,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 35645,
+                    "mask": 63
+               },
+               {
+                    "x": 17,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 1,
+                    "mapSet": 3,
+                    "mapNumber": 25,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35647,
+                    "mask": 63
+               },
+               {
+                    "x": 20,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 4,
+                    "mapSet": 3,
+                    "mapNumber": 25,
+                    "enemyNumber": 7,
+                    "name": "Ache",
+                    "offset": 35649,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 3,
+                    "mapNumber": 25,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35651,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41580
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41581
+               },
+               "up": {
+                    "mapNumber": 24,
+                    "offset": 41582
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41583
+               }
+          }
+     },
+     "3:29": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 29,
+                    "enemyNumber": 12,
+                    "name": "Rock Generator (messed up link-doll sprite in east hyrule)",
+                    "offset": 35902,
+                    "mask": 63
+               },
+               {
+                    "x": 10,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "offset": 35904,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "offset": 35906,
+                    "mask": 63
+               },
+               {
+                    "x": 26,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "offset": 35908,
+                    "mask": 63
+               },
+               {
+                    "x": 33,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 1,
+                    "mapSet": 3,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "offset": 35910,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 29,
+                    "enemyNumber": 32,
+                    "offset": 35912,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 29,
+                    "enemyNumber": 12,
+                    "name": "Rock Generator (messed up link-doll sprite in east hyrule)",
+                    "offset": 35914,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:30": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 30,
+                    "enemyNumber": 12,
+                    "name": "Rock Generator (messed up link-doll sprite in east hyrule)",
+                    "offset": 35902,
+                    "mask": 63
+               },
+               {
+                    "x": 10,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "offset": 35904,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "offset": 35906,
+                    "mask": 63
+               },
+               {
+                    "x": 26,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "offset": 35908,
+                    "mask": 63
+               },
+               {
+                    "x": 33,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 1,
+                    "mapSet": 3,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "offset": 35910,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 30,
+                    "enemyNumber": 32,
+                    "offset": 35912,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 30,
+                    "enemyNumber": 12,
+                    "name": "Rock Generator (messed up link-doll sprite in east hyrule)",
+                    "offset": 35914,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:34": {
+          "enemies": [
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 34,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35794,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 34,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35796,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 34,
+                    "enemyNumber": 18,
+                    "name": "Blue Octorock (Moving and Jumping)",
+                    "offset": 35798,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 3,
+                    "mapNumber": 34,
+                    "enemyNumber": 20,
+                    "name": "Tektite",
+                    "offset": 35800,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:35": {
+          "enemies": [
+               {
+                    "x": 23,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 7,
+                    "mapSet": 3,
+                    "mapNumber": 35,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35803,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 35,
+                    "enemyNumber": 20,
+                    "name": "Tektite",
+                    "offset": 35805,
+                    "mask": 63
+               },
+               {
+                    "x": 52,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 4,
+                    "mapSet": 3,
+                    "mapNumber": 35,
+                    "enemyNumber": 20,
+                    "name": "Tektite",
+                    "offset": 35807,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:37": {
+          "enemies": [
+               {
+                    "x": 40,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 37,
+                    "enemyNumber": 27,
+                    "name": "Orange Lizalfo",
+                    "offset": 35875,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:38": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35825,
+                    "mask": 63
+               },
+               {
+                    "x": 24,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35827,
+                    "mask": 63
+               },
+               {
+                    "x": 28,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 12,
+                    "mapSet": 3,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35829,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35831,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 3,
+                    "mapNumber": 38,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35833,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:39": {
+          "enemies": [
+               {
+                    "x": 7,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 7,
+                    "mapSet": 3,
+                    "mapNumber": 39,
+                    "enemyNumber": 21,
+                    "name": "Eye",
+                    "offset": 35878,
+                    "mask": 63
+               },
+               {
+                    "x": 11,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 39,
+                    "enemyNumber": 14,
+                    "name": "Blue Deeler",
+                    "offset": 35880,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 39,
+                    "enemyNumber": 13,
+                    "name": "Red Deeler",
+                    "offset": 35882,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 3,
+                    "mapNumber": 39,
+                    "enemyNumber": 14,
+                    "name": "Blue Deeler",
+                    "offset": 35884,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 39,
+                    "enemyNumber": 21,
+                    "name": "Eye",
+                    "offset": 35886,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:40": {
+          "enemies": [
+               {
+                    "x": 7,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 7,
+                    "mapSet": 3,
+                    "mapNumber": 40,
+                    "enemyNumber": 21,
+                    "name": "Eye",
+                    "offset": 35878,
+                    "mask": 63
+               },
+               {
+                    "x": 11,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 3,
+                    "mapNumber": 40,
+                    "enemyNumber": 14,
+                    "name": "Blue Deeler",
+                    "offset": 35880,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 40,
+                    "enemyNumber": 13,
+                    "name": "Red Deeler",
+                    "offset": 35882,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 3,
+                    "mapNumber": 40,
+                    "enemyNumber": 14,
+                    "name": "Blue Deeler",
+                    "offset": 35884,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 40,
+                    "enemyNumber": 21,
+                    "name": "Eye",
+                    "offset": 35886,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:47": {
+          "enemies": [
+               {
+                    "x": 32,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 47,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35836,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 3,
+                    "mapNumber": 47,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35838,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 3,
+                    "mapNumber": 47,
+                    "enemyNumber": 20,
+                    "name": "Tektite",
+                    "offset": 35840,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:48": {
+          "enemies": [
+               {
+                    "x": 22,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 3,
+                    "mapNumber": 48,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35843,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 0,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 3,
+                    "mapNumber": 48,
+                    "enemyNumber": 23,
+                    "name": "Boon",
+                    "offset": 35845,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:49": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 49,
+                    "enemyNumber": 4,
+                    "name": "Bot (blue)",
+                    "offset": 35848,
+                    "mask": 63
+               },
+               {
+                    "x": 24,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 49,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35850,
+                    "mask": 63
+               },
+               {
+                    "x": 26,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 49,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35852,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 49,
+                    "enemyNumber": 20,
+                    "name": "Tektite",
+                    "offset": 35854,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:50": {
+          "enemies": [
+               {
+                    "x": 13,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 50,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35857,
+                    "mask": 63
+               },
+               {
+                    "x": 15,
+                    "y": 2,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 50,
+                    "enemyNumber": 20,
+                    "name": "Tektite",
+                    "offset": 35859,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 50,
+                    "enemyNumber": 1,
+                    "name": "Red Magic Jar",
+                    "offset": 35861,
+                    "mask": 63
+               },
+               {
+                    "x": 42,
+                    "y": 3,
+                    "xUpper": 2,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 50,
+                    "enemyNumber": 17,
+                    "name": "Blue Octoroc (Jumping Only)",
+                    "offset": 35863,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 50,
+                    "enemyNumber": 20,
+                    "name": "Tektite",
+                    "offset": 35865,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:51": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 6,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 3,
+                    "mapNumber": 51,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35868,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 3,
+                    "mapNumber": 51,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35870,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 6,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 51,
+                    "enemyNumber": 24,
+                    "name": "Basilisk",
+                    "offset": 35872,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:52": {
+          "enemies": [
+               {
+                    "x": 2,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 2,
+                    "mapSet": 3,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35926,
+                    "mask": 63
+               },
+               {
+                    "x": 8,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35928,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35930,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35932,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35934,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35936,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35938,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 52,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35940,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
+     "3:53": {
+          "enemies": [
+               {
+                    "x": 2,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 2,
+                    "mapSet": 3,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35926,
+                    "mask": 63
+               },
+               {
+                    "x": 8,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 8,
+                    "mapSet": 3,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35928,
+                    "mask": 63
+               },
+               {
+                    "x": 14,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35930,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 3,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35932,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 3,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35934,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 3,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35936,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 3,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35938,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 3,
+                    "mapNumber": 53,
+                    "enemyNumber": 6,
+                    "name": "Moa",
+                    "offset": 35940,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 41480
+               },
+               "down": {
+                    "mapNumber": 63,
+                    "offset": 41481
+               },
+               "up": {
+                    "mapNumber": 63,
+                    "offset": 41482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 41483
+               }
+          }
+     },
      "4:0": {
           "enemies": [
                {
@@ -13063,6 +16469,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 0,
                     "enemyNumber": 34,
                     "offset": 51378,
                     "mask": 63
@@ -13072,6 +16480,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 0,
                     "enemyNumber": 35,
                     "offset": 51380,
                     "mask": 63
@@ -13081,6 +16491,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 0,
                     "enemyNumber": 32,
                     "offset": 51382,
                     "mask": 63
@@ -13090,6 +16502,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 4,
+                    "mapNumber": 0,
                     "enemyNumber": 20,
                     "offset": 51384,
                     "mask": 63
@@ -13099,6 +16513,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 0,
                     "enemyNumber": 35,
                     "offset": 51386,
                     "mask": 63
@@ -13108,6 +16524,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 0,
                     "enemyNumber": 31,
                     "offset": 51388,
                     "mask": 63
@@ -13140,6 +16558,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 1,
                     "enemyNumber": 34,
                     "offset": 51378,
                     "mask": 63
@@ -13149,6 +16569,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 1,
                     "enemyNumber": 35,
                     "offset": 51380,
                     "mask": 63
@@ -13158,6 +16580,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 1,
                     "enemyNumber": 32,
                     "offset": 51382,
                     "mask": 63
@@ -13167,6 +16591,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 4,
+                    "mapNumber": 1,
                     "enemyNumber": 20,
                     "offset": 51384,
                     "mask": 63
@@ -13176,6 +16602,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 1,
                     "enemyNumber": 35,
                     "offset": 51386,
                     "mask": 63
@@ -13185,6 +16613,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 1,
                     "enemyNumber": 31,
                     "offset": 51388,
                     "mask": 63
@@ -13217,6 +16647,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 4,
+                    "mapNumber": 2,
                     "enemyNumber": 23,
                     "offset": 51391,
                     "mask": 63
@@ -13226,6 +16658,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 2,
                     "enemyNumber": 35,
                     "offset": 51393,
                     "mask": 63
@@ -13235,6 +16669,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 4,
+                    "mapNumber": 2,
                     "enemyNumber": 18,
                     "offset": 51395,
                     "mask": 63
@@ -13244,6 +16680,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 2,
                     "enemyNumber": 35,
                     "offset": 51397,
                     "mask": 63
@@ -13253,6 +16691,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 2,
                     "enemyNumber": 34,
                     "offset": 51399,
                     "mask": 63
@@ -13285,6 +16725,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 3,
                     "enemyNumber": 34,
                     "offset": 51402,
                     "mask": 63
@@ -13294,6 +16736,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 3,
                     "enemyNumber": 35,
                     "offset": 51404,
                     "mask": 63
@@ -13303,6 +16747,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 4,
+                    "mapNumber": 3,
                     "enemyNumber": 17,
                     "offset": 51406,
                     "mask": 63
@@ -13312,6 +16758,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 3,
                     "enemyNumber": 35,
                     "offset": 51408,
                     "mask": 63
@@ -13321,6 +16769,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 4,
+                    "mapNumber": 3,
                     "enemyNumber": 22,
                     "offset": 51410,
                     "mask": 63
@@ -13330,6 +16780,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 3,
                     "enemyNumber": 29,
                     "offset": 51412,
                     "mask": 63
@@ -13362,6 +16814,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 4,
                     "enemyNumber": 34,
                     "offset": 51402,
                     "mask": 63
@@ -13371,6 +16825,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 4,
                     "enemyNumber": 35,
                     "offset": 51404,
                     "mask": 63
@@ -13380,6 +16836,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 4,
+                    "mapNumber": 4,
                     "enemyNumber": 17,
                     "offset": 51406,
                     "mask": 63
@@ -13389,6 +16847,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 4,
                     "enemyNumber": 35,
                     "offset": 51408,
                     "mask": 63
@@ -13398,6 +16858,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 4,
+                    "mapNumber": 4,
                     "enemyNumber": 22,
                     "offset": 51410,
                     "mask": 63
@@ -13407,6 +16869,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 4,
                     "enemyNumber": 29,
                     "offset": 51412,
                     "mask": 63
@@ -13439,6 +16903,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 5,
                     "enemyNumber": 35,
                     "offset": 51415,
                     "mask": 63
@@ -13448,6 +16914,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 5,
                     "enemyNumber": 24,
                     "offset": 51417,
                     "mask": 63
@@ -13457,6 +16925,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 4,
+                    "mapNumber": 5,
                     "enemyNumber": 31,
                     "offset": 51419,
                     "mask": 63
@@ -13466,6 +16936,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 5,
                     "enemyNumber": 23,
                     "offset": 51421,
                     "mask": 63
@@ -13475,6 +16947,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 5,
                     "enemyNumber": 35,
                     "offset": 51423,
                     "mask": 63
@@ -13484,6 +16958,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 4,
+                    "mapNumber": 5,
                     "enemyNumber": 34,
                     "offset": 51425,
                     "mask": 63
@@ -13516,6 +16992,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 6,
                     "enemyNumber": 34,
                     "offset": 51429,
                     "mask": 63
@@ -13548,6 +17026,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 7,
                     "enemyNumber": 23,
                     "offset": 51432,
                     "mask": 63
@@ -13557,6 +17037,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 7,
                     "enemyNumber": 35,
                     "offset": 51434,
                     "mask": 63
@@ -13566,6 +17048,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 4,
+                    "mapNumber": 7,
                     "enemyNumber": 24,
                     "offset": 51436,
                     "mask": 63
@@ -13575,6 +17059,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 4,
+                    "mapNumber": 7,
                     "enemyNumber": 32,
                     "offset": 51438,
                     "mask": 63
@@ -13584,6 +17070,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 7,
                     "enemyNumber": 35,
                     "offset": 51440,
                     "mask": 63
@@ -13616,6 +17104,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 8,
                     "enemyNumber": 35,
                     "offset": 51443,
                     "mask": 63
@@ -13625,6 +17115,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 8,
                     "enemyNumber": 20,
                     "offset": 51445,
                     "mask": 63
@@ -13634,6 +17126,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 4,
+                    "mapNumber": 8,
                     "enemyNumber": 16,
                     "offset": 51447,
                     "mask": 63
@@ -13643,6 +17137,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 8,
                     "enemyNumber": 35,
                     "offset": 51449,
                     "mask": 63
@@ -13652,6 +17148,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 8,
                     "enemyNumber": 34,
                     "offset": 51451,
                     "mask": 63
@@ -13684,6 +17182,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 9,
                     "enemyNumber": 33,
                     "offset": 51454,
                     "mask": 63
@@ -13693,6 +17193,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 9,
                     "enemyNumber": 35,
                     "offset": 51456,
                     "mask": 63
@@ -13702,6 +17204,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 9,
                     "enemyNumber": 31,
                     "offset": 51458,
                     "mask": 63
@@ -13711,6 +17215,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 9,
                     "enemyNumber": 35,
                     "offset": 51460,
                     "mask": 63
@@ -13720,6 +17226,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 4,
+                    "mapNumber": 9,
                     "enemyNumber": 21,
                     "offset": 51462,
                     "mask": 63
@@ -13752,6 +17260,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 10,
                     "enemyNumber": 24,
                     "offset": 51465,
                     "mask": 63
@@ -13761,6 +17271,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 10,
                     "enemyNumber": 35,
                     "offset": 51467,
                     "mask": 63
@@ -13770,6 +17282,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 4,
+                    "mapNumber": 10,
                     "enemyNumber": 34,
                     "offset": 51469,
                     "mask": 63
@@ -13779,6 +17293,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 10,
                     "enemyNumber": 29,
                     "offset": 51471,
                     "mask": 63
@@ -13788,6 +17304,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 10,
                     "enemyNumber": 35,
                     "offset": 51473,
                     "mask": 63
@@ -13820,6 +17338,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 11,
                     "enemyNumber": 35,
                     "offset": 51476,
                     "mask": 63
@@ -13829,6 +17349,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 4,
+                    "mapNumber": 11,
                     "enemyNumber": 32,
                     "offset": 51478,
                     "mask": 63
@@ -13838,6 +17360,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 4,
+                    "mapNumber": 11,
                     "enemyNumber": 23,
                     "offset": 51480,
                     "mask": 63
@@ -13847,6 +17371,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 11,
                     "enemyNumber": 35,
                     "offset": 51482,
                     "mask": 63
@@ -13856,6 +17382,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 11,
                     "enemyNumber": 33,
                     "offset": 51484,
                     "mask": 63
@@ -13888,6 +17416,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 12,
                     "enemyNumber": 35,
                     "offset": 51523,
                     "mask": 63
@@ -13897,6 +17427,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 12,
                     "enemyNumber": 34,
                     "offset": 51525,
                     "mask": 63
@@ -13906,6 +17438,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 12,
                     "enemyNumber": 31,
                     "offset": 51527,
                     "mask": 63
@@ -13915,6 +17449,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 12,
                     "enemyNumber": 35,
                     "offset": 51529,
                     "mask": 63
@@ -13924,6 +17460,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 4,
+                    "mapNumber": 12,
                     "enemyNumber": 17,
                     "offset": 51531,
                     "mask": 63
@@ -13956,6 +17494,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 4,
+                    "mapNumber": 13,
                     "enemyNumber": 23,
                     "offset": 51534,
                     "mask": 63
@@ -13965,6 +17505,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 13,
                     "enemyNumber": 35,
                     "offset": 51536,
                     "mask": 63
@@ -13974,6 +17516,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 13,
                     "enemyNumber": 29,
                     "offset": 51538,
                     "mask": 63
@@ -13983,6 +17527,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 4,
+                    "mapNumber": 13,
                     "enemyNumber": 33,
                     "offset": 51540,
                     "mask": 63
@@ -13992,6 +17538,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 13,
                     "enemyNumber": 35,
                     "offset": 51542,
                     "mask": 63
@@ -14001,6 +17549,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 2,
+                    "mapSet": 4,
+                    "mapNumber": 13,
                     "enemyNumber": 22,
                     "offset": 51544,
                     "mask": 63
@@ -14033,6 +17583,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 4,
+                    "mapNumber": 14,
                     "enemyNumber": 24,
                     "offset": 51547,
                     "mask": 63
@@ -14042,6 +17594,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 14,
                     "enemyNumber": 35,
                     "offset": 51549,
                     "mask": 63
@@ -14051,6 +17605,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 14,
                     "enemyNumber": 35,
                     "offset": 51551,
                     "mask": 63
@@ -14060,6 +17616,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 4,
+                    "mapNumber": 14,
                     "enemyNumber": 34,
                     "offset": 51553,
                     "mask": 63
@@ -14092,6 +17650,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 4,
+                    "mapNumber": 15,
                     "enemyNumber": 33,
                     "offset": 51556,
                     "mask": 63
@@ -14101,6 +17661,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 15,
                     "enemyNumber": 35,
                     "offset": 51558,
                     "mask": 63
@@ -14110,6 +17672,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 4,
+                    "mapSet": 4,
+                    "mapNumber": 15,
                     "enemyNumber": 32,
                     "offset": 51560,
                     "mask": 63
@@ -14119,6 +17683,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 4,
+                    "mapNumber": 15,
                     "enemyNumber": 16,
                     "offset": 51562,
                     "mask": 63
@@ -14128,6 +17694,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 15,
                     "enemyNumber": 35,
                     "offset": 51564,
                     "mask": 63
@@ -14137,6 +17705,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 4,
+                    "mapNumber": 15,
                     "enemyNumber": 21,
                     "offset": 51566,
                     "mask": 63
@@ -14169,6 +17739,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 16,
                     "enemyNumber": 35,
                     "offset": 51569,
                     "mask": 63
@@ -14178,6 +17750,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 4,
+                    "mapNumber": 16,
                     "enemyNumber": 29,
                     "offset": 51571,
                     "mask": 63
@@ -14187,6 +17761,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 16,
                     "enemyNumber": 35,
                     "offset": 51573,
                     "mask": 63
@@ -14196,6 +17772,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 16,
                     "enemyNumber": 12,
                     "offset": 51575,
                     "mask": 63
@@ -14228,6 +17806,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 17,
                     "enemyNumber": 24,
                     "offset": 51578,
                     "mask": 63
@@ -14237,6 +17817,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 17,
                     "enemyNumber": 35,
                     "offset": 51580,
                     "mask": 63
@@ -14246,6 +17828,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 17,
                     "enemyNumber": 23,
                     "offset": 51582,
                     "mask": 63
@@ -14255,6 +17839,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 17,
                     "enemyNumber": 32,
                     "offset": 51584,
                     "mask": 63
@@ -14264,6 +17850,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 17,
                     "enemyNumber": 35,
                     "offset": 51586,
                     "mask": 63
@@ -14273,6 +17861,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 17,
                     "enemyNumber": 33,
                     "offset": 51588,
                     "mask": 63
@@ -14305,6 +17895,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 4,
+                    "mapNumber": 18,
                     "enemyNumber": 34,
                     "offset": 51591,
                     "mask": 63
@@ -14314,6 +17906,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 18,
                     "enemyNumber": 35,
                     "offset": 51593,
                     "mask": 63
@@ -14323,6 +17917,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 18,
                     "enemyNumber": 21,
                     "offset": 51595,
                     "mask": 63
@@ -14332,6 +17928,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 1,
+                    "mapSet": 4,
+                    "mapNumber": 18,
                     "enemyNumber": 17,
                     "offset": 51597,
                     "mask": 63
@@ -14341,6 +17939,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 18,
                     "enemyNumber": 30,
                     "offset": 51599,
                     "mask": 63
@@ -14350,6 +17950,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 18,
                     "enemyNumber": 35,
                     "offset": 51601,
                     "mask": 63
@@ -14359,6 +17961,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 18,
                     "enemyNumber": 24,
                     "offset": 51603,
                     "mask": 63
@@ -14391,6 +17995,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 19,
                     "enemyNumber": 23,
                     "offset": 51606,
                     "mask": 63
@@ -14400,6 +18006,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 19,
                     "enemyNumber": 35,
                     "offset": 51608,
                     "mask": 63
@@ -14409,6 +18017,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 4,
+                    "mapNumber": 19,
                     "enemyNumber": 31,
                     "offset": 51610,
                     "mask": 63
@@ -14418,6 +18028,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 4,
+                    "mapNumber": 19,
                     "enemyNumber": 29,
                     "offset": 51612,
                     "mask": 63
@@ -14427,6 +18039,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 19,
                     "enemyNumber": 35,
                     "offset": 51614,
                     "mask": 63
@@ -14459,6 +18073,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51618,
@@ -14469,6 +18085,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51620,
@@ -14479,6 +18097,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51622,
@@ -14489,6 +18109,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51624,
@@ -14499,6 +18121,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51626,
@@ -14509,6 +18133,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51628,
@@ -14519,6 +18145,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51630,
@@ -14529,6 +18157,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 21,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51632,
@@ -14562,6 +18192,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 22,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51618,
@@ -14572,6 +18204,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 22,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51620,
@@ -14582,6 +18216,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 22,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51622,
@@ -14592,6 +18228,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 22,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51624,
@@ -14602,6 +18240,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 22,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51626,
@@ -14612,6 +18252,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 22,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51628,
@@ -14622,6 +18264,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 22,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51630,
@@ -14632,6 +18276,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 22,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51632,
@@ -14665,6 +18311,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 23,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51649,
@@ -14675,6 +18323,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 23,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51651,
@@ -14685,6 +18335,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 23,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51653,
@@ -14695,6 +18347,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 4,
+                    "mapNumber": 23,
                     "enemyNumber": 6,
                     "name": "Purple Moa",
                     "offset": 51655,
@@ -14705,6 +18359,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 7,
+                    "mapSet": 4,
+                    "mapNumber": 23,
                     "enemyNumber": 33,
                     "offset": 51657,
                     "mask": 63
@@ -14737,6 +18393,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 4,
+                    "mapNumber": 26,
                     "enemyNumber": 33,
                     "offset": 51646,
                     "mask": 63
@@ -14769,6 +18427,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 28,
                     "enemyNumber": 16,
                     "offset": 51501,
                     "mask": 63
@@ -14778,6 +18438,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 28,
                     "enemyNumber": 14,
                     "offset": 51503,
                     "mask": 63
@@ -14810,6 +18472,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 29,
                     "enemyNumber": 18,
                     "offset": 51506,
                     "mask": 63
@@ -14819,6 +18483,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 29,
                     "enemyNumber": 14,
                     "offset": 51508,
                     "mask": 63
@@ -14851,6 +18517,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 30,
                     "enemyNumber": 33,
                     "offset": 51511,
                     "mask": 63
@@ -14860,6 +18528,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 30,
                     "enemyNumber": 13,
                     "offset": 51513,
                     "mask": 63
@@ -14869,6 +18539,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 30,
                     "enemyNumber": 11,
                     "offset": 51515,
                     "mask": 63
@@ -14878,6 +18550,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 30,
                     "enemyNumber": 13,
                     "offset": 51517,
                     "mask": 63
@@ -14910,6 +18584,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 4,
+                    "mapNumber": 31,
                     "enemyNumber": 16,
                     "offset": 51490,
                     "mask": 63
@@ -14919,6 +18595,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 31,
                     "enemyNumber": 14,
                     "offset": 51492,
                     "mask": 63
@@ -14951,6 +18629,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 4,
+                    "mapNumber": 32,
                     "enemyNumber": 14,
                     "offset": 51635,
                     "mask": 63
@@ -14960,6 +18640,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 4,
+                    "mapNumber": 32,
                     "enemyNumber": 10,
                     "offset": 51637,
                     "mask": 63
@@ -14992,6 +18674,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 4,
+                    "mapNumber": 33,
                     "enemyNumber": 34,
                     "offset": 51640,
                     "mask": 63
@@ -15024,6 +18708,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 34,
                     "enemyNumber": 12,
                     "offset": 51643,
                     "mask": 63
@@ -15056,6 +18742,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 35,
                     "enemyNumber": 34,
                     "offset": 51663,
                     "mask": 63
@@ -15088,6 +18776,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 36,
                     "enemyNumber": 15,
                     "offset": 51495,
                     "mask": 63
@@ -15120,6 +18810,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 37,
                     "enemyNumber": 15,
                     "offset": 51495,
                     "mask": 63
@@ -15152,6 +18844,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 38,
                     "enemyNumber": 15,
                     "offset": 51495,
                     "mask": 63
@@ -15184,6 +18878,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 39,
                     "enemyNumber": 15,
                     "offset": 51495,
                     "mask": 63
@@ -15216,6 +18912,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 40,
                     "enemyNumber": 15,
                     "offset": 51495,
                     "mask": 63
@@ -15248,6 +18946,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 41,
                     "enemyNumber": 15,
                     "offset": 51495,
                     "mask": 63
@@ -15280,6 +18980,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 42,
                     "enemyNumber": 15,
                     "offset": 51495,
                     "mask": 63
@@ -15312,6 +19014,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 43,
                     "enemyNumber": 15,
                     "offset": 51495,
                     "mask": 63
@@ -15344,6 +19048,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 44,
                     "enemyNumber": 13,
                     "offset": 51498,
                     "mask": 63
@@ -15376,6 +19082,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 45,
                     "enemyNumber": 13,
                     "offset": 51498,
                     "mask": 63
@@ -15408,6 +19116,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 4,
+                    "mapSet": 4,
+                    "mapNumber": 48,
                     "enemyNumber": 17,
                     "offset": 51487,
                     "mask": 63
@@ -15440,6 +19150,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 58,
                     "enemyNumber": 18,
                     "offset": 51660,
                     "mask": 63
@@ -15472,6 +19184,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 4,
+                    "mapNumber": 60,
                     "enemyNumber": 13,
                     "offset": 51520,
                     "mask": 63
@@ -15504,6 +19218,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 61,
                     "enemyNumber": 34,
                     "offset": 51378,
                     "mask": 63
@@ -15513,6 +19229,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 61,
                     "enemyNumber": 35,
                     "offset": 51380,
                     "mask": 63
@@ -15522,6 +19240,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 61,
                     "enemyNumber": 32,
                     "offset": 51382,
                     "mask": 63
@@ -15531,6 +19251,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 4,
+                    "mapNumber": 61,
                     "enemyNumber": 20,
                     "offset": 51384,
                     "mask": 63
@@ -15540,6 +19262,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 61,
                     "enemyNumber": 35,
                     "offset": 51386,
                     "mask": 63
@@ -15549,6 +19273,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 61,
                     "enemyNumber": 31,
                     "offset": 51388,
                     "mask": 63
@@ -15581,6 +19307,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 62,
                     "enemyNumber": 34,
                     "offset": 51378,
                     "mask": 63
@@ -15590,6 +19318,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 4,
+                    "mapNumber": 62,
                     "enemyNumber": 35,
                     "offset": 51380,
                     "mask": 63
@@ -15599,6 +19329,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 4,
+                    "mapNumber": 62,
                     "enemyNumber": 32,
                     "offset": 51382,
                     "mask": 63
@@ -15608,6 +19340,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 4,
+                    "mapNumber": 62,
                     "enemyNumber": 20,
                     "offset": 51384,
                     "mask": 63
@@ -15617,6 +19351,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 4,
+                    "mapNumber": 62,
                     "enemyNumber": 35,
                     "offset": 51386,
                     "mask": 63
@@ -15626,6 +19362,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 4,
+                    "mapNumber": 62,
                     "enemyNumber": 31,
                     "offset": 51388,
                     "mask": 63
@@ -15658,6 +19396,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 5,
+                    "mapNumber": 1,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 67763,
@@ -15668,6 +19408,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 1,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 67765,
@@ -15701,6 +19443,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 2,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68247,
@@ -15711,6 +19455,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 2,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 68249,
@@ -15721,6 +19467,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 2,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 68251,
@@ -15731,6 +19479,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 2,
                     "enemyNumber": 30,
                     "name": "Hammer Thrower",
                     "offset": 68253,
@@ -15741,6 +19491,8 @@ export default {
                     "y": 5,
                     "xUpper": 3,
                     "xLower": 13,
+                    "mapSet": 5,
+                    "mapNumber": 2,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 68255,
@@ -15774,6 +19526,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 3,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 67777,
@@ -15784,6 +19538,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 3,
                     "enemyNumber": 31,
                     "name": "Red Stalfos",
                     "offset": 67779,
@@ -15794,6 +19550,8 @@ export default {
                     "y": 2,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 3,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67781,
@@ -15804,6 +19562,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 3,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67783,
@@ -15837,6 +19597,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 4,
                     "enemyNumber": 11,
                     "name": "Rathead Generator",
                     "offset": 67786,
@@ -15847,6 +19609,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 4,
                     "enemyNumber": 11,
                     "name": "Rathead Generator",
                     "offset": 67788,
@@ -15880,6 +19644,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 5,
                     "enemyNumber": 11,
                     "name": "Rathead Generator",
                     "offset": 67791,
@@ -15890,6 +19656,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 5,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67793,
@@ -15900,6 +19668,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 5,
                     "enemyNumber": 11,
                     "name": "Rathead Generator",
                     "offset": 67795,
@@ -15933,6 +19703,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 6,
                     "enemyNumber": 31,
                     "name": "Red Stalfos",
                     "offset": 67798,
@@ -15943,6 +19715,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 6,
                     "enemyNumber": 31,
                     "name": "Red Stalfos",
                     "offset": 67800,
@@ -15976,6 +19750,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 7,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67803,
@@ -15986,6 +19762,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 7,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67805,
@@ -15996,6 +19774,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 7,
                     "enemyNumber": 31,
                     "name": "Red Stalfos",
                     "offset": 67807,
@@ -16006,6 +19786,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 7,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 67809,
@@ -16039,6 +19821,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 8,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 67812,
@@ -16049,6 +19833,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 8,
                     "enemyNumber": 30,
                     "name": "Hammer Thrower",
                     "offset": 67814,
@@ -16082,6 +19868,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 9,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68258,
@@ -16092,6 +19880,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 9,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68260,
@@ -16102,6 +19892,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 9,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68262,
@@ -16112,6 +19904,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 9,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68264,
@@ -16145,6 +19939,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 10,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67817,
@@ -16155,6 +19951,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 5,
+                    "mapNumber": 10,
                     "enemyNumber": 14,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 67819,
@@ -16165,6 +19963,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 10,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67821,
@@ -16175,6 +19975,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 10,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67823,
@@ -16208,6 +20010,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 11,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 67826,
@@ -16218,6 +20022,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 5,
+                    "mapNumber": 11,
                     "enemyNumber": 31,
                     "name": "Red Stalfos",
                     "offset": 67828,
@@ -16228,6 +20034,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 11,
                     "enemyNumber": 31,
                     "name": "Red Stalfos",
                     "offset": 67830,
@@ -16261,6 +20069,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 12,
                     "enemyNumber": 30,
                     "name": "Hammer Thrower",
                     "offset": 67833,
@@ -16271,6 +20081,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 12,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 67835,
@@ -16304,6 +20116,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 13,
                     "enemyNumber": 32,
                     "name": "Horse Head",
                     "offset": 68206,
@@ -16314,6 +20128,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 13,
                     "enemyNumber": 20,
                     "name": "Crystal Slot",
                     "offset": 68208,
@@ -16347,6 +20163,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 14,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 68239,
@@ -16380,6 +20198,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 15,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67838,
@@ -16390,6 +20210,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 15,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67840,
@@ -16400,6 +20222,8 @@ export default {
                     "y": 2,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 15,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 67842,
@@ -16433,6 +20257,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 5,
+                    "mapNumber": 16,
                     "enemyNumber": 14,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 67845,
@@ -16443,6 +20269,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 16,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 67847,
@@ -16453,6 +20281,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 5,
+                    "mapNumber": 16,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 67849,
@@ -16463,6 +20293,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 16,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67851,
@@ -16496,6 +20328,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 17,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67854,
@@ -16506,6 +20340,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 17,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67856,
@@ -16516,6 +20352,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 17,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67858,
@@ -16526,6 +20364,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 17,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67860,
@@ -16536,6 +20376,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 17,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67862,
@@ -16546,6 +20388,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 5,
+                    "mapNumber": 17,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67864,
@@ -16579,6 +20423,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 18,
                     "enemyNumber": 10,
                     "name": "Blue Skull Head",
                     "offset": 68221,
@@ -16589,6 +20435,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 18,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68223,
@@ -16599,6 +20447,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 18,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68225,
@@ -16609,6 +20459,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 5,
+                    "mapNumber": 18,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68227,
@@ -16619,6 +20471,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 18,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68229,
@@ -16629,6 +20483,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 18,
                     "enemyNumber": 10,
                     "name": "Blue Skull Head",
                     "offset": 68231,
@@ -16662,6 +20518,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 19,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 67867,
@@ -16672,6 +20530,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 5,
+                    "mapNumber": 19,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67869,
@@ -16682,6 +20542,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 19,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67871,
@@ -16715,6 +20577,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 20,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 67874,
@@ -16725,6 +20589,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 20,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 67876,
@@ -16735,6 +20601,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 20,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67878,
@@ -16745,6 +20613,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 20,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 67880,
@@ -16778,6 +20648,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 21,
                     "enemyNumber": 8,
                     "name": "Falling Block Generator",
                     "offset": 67996,
@@ -16811,6 +20683,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 22,
                     "enemyNumber": 17,
                     "name": "Rope Jumping Only",
                     "offset": 67883,
@@ -16821,6 +20695,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 22,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 67885,
@@ -16831,6 +20707,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 5,
+                    "mapNumber": 22,
                     "enemyNumber": 17,
                     "name": "Rope Jumping Only",
                     "offset": 67887,
@@ -16864,6 +20742,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 23,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 67890,
@@ -16874,6 +20754,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 23,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 67892,
@@ -16884,6 +20766,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 23,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67894,
@@ -16917,6 +20801,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 24,
                     "enemyNumber": 18,
                     "name": "Rope Jumping and Moving",
                     "offset": 67897,
@@ -16927,6 +20813,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 24,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67899,
@@ -16937,6 +20825,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 24,
                     "enemyNumber": 18,
                     "name": "Rope Jumping and Moving",
                     "offset": 67901,
@@ -16947,6 +20837,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 24,
                     "enemyNumber": 18,
                     "name": "Rope Jumping and Moving",
                     "offset": 67903,
@@ -16957,6 +20849,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 24,
                     "enemyNumber": 18,
                     "name": "Rope Jumping and Moving",
                     "offset": 67905,
@@ -16990,6 +20884,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 25,
                     "enemyNumber": 7,
                     "name": "Orange Moa",
                     "offset": 67908,
@@ -17000,6 +20896,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 25,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 67910,
@@ -17010,6 +20908,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 25,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 67912,
@@ -17043,6 +20943,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 26,
                     "enemyNumber": 22,
                     "name": "Energy ball shooter (to down-right)",
                     "offset": 67915,
@@ -17053,6 +20955,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 26,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 67917,
@@ -17063,6 +20967,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 26,
                     "enemyNumber": 23,
                     "name": "Energy ball shooter (to down-left)",
                     "offset": 67919,
@@ -17073,6 +20979,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 26,
                     "enemyNumber": 22,
                     "name": "Energy ball shooter (to down-right)",
                     "offset": 67921,
@@ -17083,6 +20991,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 5,
+                    "mapNumber": 26,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 67923,
@@ -17093,6 +21003,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 26,
                     "enemyNumber": 23,
                     "name": "Energy ball shooter (to down-left)",
                     "offset": 67925,
@@ -17103,6 +21015,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 26,
                     "enemyNumber": 22,
                     "name": "Energy ball shooter (to down-right)",
                     "offset": 67927,
@@ -17113,6 +21027,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 26,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 67929,
@@ -17123,6 +21039,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 26,
                     "enemyNumber": 23,
                     "name": "Energy ball shooter (to down-left)",
                     "offset": 67931,
@@ -17156,6 +21074,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 27,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67934,
@@ -17166,6 +21086,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 27,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67936,
@@ -17176,6 +21098,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 5,
+                    "mapNumber": 27,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67938,
@@ -17186,6 +21110,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 27,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67940,
@@ -17196,6 +21122,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 27,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67942,
@@ -17206,6 +21134,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 27,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67944,
@@ -17239,6 +21169,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 28,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67768,
@@ -17249,6 +21181,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 28,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 67770,
@@ -17259,6 +21193,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 28,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 67772,
@@ -17269,6 +21205,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 28,
                     "enemyNumber": 30,
                     "name": "Hammer Thrower",
                     "offset": 67774,
@@ -17302,6 +21240,8 @@ export default {
                     "y": 2,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 29,
                     "enemyNumber": 22,
                     "name": "Energy ball shooter (to down-right)",
                     "offset": 67947,
@@ -17312,6 +21252,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 29,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67949,
@@ -17322,6 +21264,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 29,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67951,
@@ -17332,6 +21276,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 29,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67953,
@@ -17342,6 +21288,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 29,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67955,
@@ -17352,6 +21300,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 5,
+                    "mapNumber": 29,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67957,
@@ -17385,6 +21335,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 30,
                     "enemyNumber": 30,
                     "name": "Hammer Thrower",
                     "offset": 68242,
@@ -17395,6 +21347,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 30,
                     "enemyNumber": 30,
                     "name": "Hammer Thrower",
                     "offset": 68244,
@@ -17428,6 +21382,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 31,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 67975,
@@ -17438,6 +21394,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 31,
                     "enemyNumber": 30,
                     "name": "Hammer Thrower",
                     "offset": 67977,
@@ -17448,6 +21406,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 31,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 67979,
@@ -17481,6 +21441,8 @@ export default {
                     "y": 5,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 32,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 67982,
@@ -17491,6 +21453,8 @@ export default {
                     "y": 5,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 5,
+                    "mapNumber": 32,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 67984,
@@ -17501,6 +21465,8 @@ export default {
                     "y": 5,
                     "xUpper": 3,
                     "xLower": 2,
+                    "mapSet": 5,
+                    "mapNumber": 32,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 67986,
@@ -17534,6 +21500,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 33,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 67989,
@@ -17544,6 +21512,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 33,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 67991,
@@ -17554,6 +21524,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 33,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 67993,
@@ -17587,6 +21559,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 34,
                     "enemyNumber": 33,
                     "name": "Helmethead/Gooma (5th Palace Boss)",
                     "offset": 68211,
@@ -17597,6 +21571,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 34,
                     "enemyNumber": 20,
                     "name": "Crystal Slot",
                     "offset": 68213,
@@ -17630,6 +21606,8 @@ export default {
                     "y": 2,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 36,
                     "enemyNumber": 22,
                     "name": "Energy ball shooter (to down-right)",
                     "offset": 67999,
@@ -17640,6 +21618,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 36,
                     "enemyNumber": 17,
                     "name": "Rope Jumping Only",
                     "offset": 68001,
@@ -17650,6 +21630,8 @@ export default {
                     "y": 6,
                     "xUpper": 2,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 36,
                     "enemyNumber": 17,
                     "name": "Rope Jumping Only",
                     "offset": 68003,
@@ -17660,6 +21642,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 36,
                     "enemyNumber": 17,
                     "name": "Rope Jumping Only",
                     "offset": 68005,
@@ -17670,6 +21654,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 36,
                     "enemyNumber": 17,
                     "name": "Rope Jumping Only",
                     "offset": 68007,
@@ -17680,6 +21666,8 @@ export default {
                     "y": 3,
                     "xUpper": 3,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 36,
                     "enemyNumber": 17,
                     "name": "Rope Jumping Only",
                     "offset": 68009,
@@ -17713,6 +21701,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 37,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68012,
@@ -17723,6 +21713,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 37,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68014,
@@ -17733,6 +21725,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 37,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68016,
@@ -17766,6 +21760,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 38,
                     "enemyNumber": 10,
                     "name": "Blue Skull Head",
                     "offset": 68019,
@@ -17776,6 +21772,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 38,
                     "enemyNumber": 10,
                     "name": "Blue Skull Head",
                     "offset": 68021,
@@ -17809,6 +21807,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 39,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68024,
@@ -17819,6 +21819,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 39,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 68026,
@@ -17829,6 +21831,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 39,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68028,
@@ -17862,6 +21866,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 40,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 68031,
@@ -17872,6 +21878,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 5,
+                    "mapNumber": 40,
                     "enemyNumber": 26,
                     "name": "Blue Iron Knuckle",
                     "offset": 68033,
@@ -17882,6 +21890,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 40,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68035,
@@ -17915,6 +21925,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 41,
                     "enemyNumber": 33,
                     "name": "Helmethead/Gooma (5th Palace Boss)",
                     "offset": 68216,
@@ -17925,6 +21937,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 41,
                     "enemyNumber": 20,
                     "name": "Crystal Slot",
                     "offset": 68218,
@@ -17958,6 +21972,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 42,
                     "enemyNumber": 7,
                     "name": "Orange Moa",
                     "offset": 68038,
@@ -17968,6 +21984,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 42,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 68040,
@@ -17978,6 +21996,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 42,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 68042,
@@ -17988,6 +22008,8 @@ export default {
                     "y": 2,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 42,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 68044,
@@ -17998,6 +22020,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 42,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 68046,
@@ -18031,6 +22055,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 43,
                     "enemyNumber": 7,
                     "name": "Orange Moa",
                     "offset": 68234,
@@ -18041,6 +22067,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 43,
                     "enemyNumber": 8,
                     "name": "Falling Block Generator",
                     "offset": 68236,
@@ -18074,6 +22102,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 44,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68049,
@@ -18084,6 +22114,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 5,
+                    "mapNumber": 44,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68051,
@@ -18094,6 +22126,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 44,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68053,
@@ -18127,6 +22161,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 45,
                     "enemyNumber": 18,
                     "name": "Rope Jumping and Moving",
                     "offset": 67960,
@@ -18137,6 +22173,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 45,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 67962,
@@ -18147,6 +22185,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 45,
                     "enemyNumber": 18,
                     "name": "Rope Jumping and Moving",
                     "offset": 67964,
@@ -18157,6 +22197,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 5,
+                    "mapNumber": 45,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 67966,
@@ -18167,6 +22209,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 45,
                     "enemyNumber": 18,
                     "name": "Rope Jumping and Moving",
                     "offset": 67968,
@@ -18177,6 +22221,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 45,
                     "enemyNumber": 18,
                     "name": "Rope Jumping and Moving",
                     "offset": 67970,
@@ -18187,6 +22233,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 45,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67972,
@@ -18220,6 +22268,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 46,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68056,
@@ -18230,6 +22280,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 5,
+                    "mapNumber": 46,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68058,
@@ -18240,6 +22292,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 46,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68060,
@@ -18250,6 +22304,8 @@ export default {
                     "y": 4,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 46,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 68062,
@@ -18260,6 +22316,8 @@ export default {
                     "y": 3,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 46,
                     "enemyNumber": 30,
                     "name": "Hammer Thrower",
                     "offset": 68064,
@@ -18293,6 +22351,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 47,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67934,
@@ -18303,6 +22363,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 47,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67936,
@@ -18313,6 +22375,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 5,
+                    "mapNumber": 47,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67938,
@@ -18323,6 +22387,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 47,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67940,
@@ -18333,6 +22399,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 47,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 67942,
@@ -18343,6 +22411,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 47,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 67944,
@@ -18376,6 +22446,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 48,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68067,
@@ -18386,6 +22458,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 5,
+                    "mapNumber": 48,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68069,
@@ -18396,6 +22470,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 48,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68071,
@@ -18406,6 +22482,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 48,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68073,
@@ -18416,6 +22494,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 48,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68075,
@@ -18426,6 +22506,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 48,
                     "enemyNumber": 4,
                     "name": "Bot",
                     "offset": 68077,
@@ -18459,6 +22541,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 49,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 68080,
@@ -18469,6 +22553,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 49,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68082,
@@ -18479,6 +22565,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 49,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68084,
@@ -18489,6 +22577,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 49,
                     "enemyNumber": 15,
                     "name": "Bago Bago Generator",
                     "offset": 68086,
@@ -18522,6 +22612,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 50,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68089,
@@ -18532,6 +22624,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 50,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 68091,
@@ -18542,6 +22636,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 50,
                     "enemyNumber": 26,
                     "name": "Blue Iron Knuckle",
                     "offset": 68093,
@@ -18552,6 +22648,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 50,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 68095,
@@ -18585,6 +22683,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 51,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 68098,
@@ -18595,6 +22695,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 51,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 68100,
@@ -18605,6 +22707,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 51,
                     "enemyNumber": 35,
                     "name": "Blue Stalfos",
                     "offset": 68102,
@@ -18638,6 +22742,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 52,
                     "enemyNumber": 26,
                     "name": "Blue Iron Knuckle",
                     "offset": 68105,
@@ -18648,6 +22754,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 52,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68107,
@@ -18658,6 +22766,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 52,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 68109,
@@ -18691,6 +22801,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68112,
@@ -18701,6 +22813,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 53,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68114,
@@ -18711,6 +22825,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 53,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68116,
@@ -18721,6 +22837,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 53,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68118,
@@ -18731,6 +22849,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 53,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68120,
@@ -18764,6 +22884,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 54,
                     "enemyNumber": 14,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 68123,
@@ -18774,6 +22896,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 54,
                     "enemyNumber": 30,
                     "name": "Hammer Thrower",
                     "offset": 68125,
@@ -18784,6 +22908,8 @@ export default {
                     "y": 3,
                     "xUpper": 3,
                     "xLower": 8,
+                    "mapSet": 5,
+                    "mapNumber": 54,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68127,
@@ -18817,6 +22943,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68130,
@@ -18827,6 +22955,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 55,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68132,
@@ -18837,6 +22967,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 55,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68134,
@@ -18847,6 +22979,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 55,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68136,
@@ -18857,6 +22991,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 55,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68138,
@@ -18890,6 +23026,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 56,
                     "enemyNumber": 26,
                     "name": "Blue Iron Knuckle",
                     "offset": 68141,
@@ -18923,6 +23061,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 57,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68144,
@@ -18933,6 +23073,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 5,
+                    "mapNumber": 57,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68146,
@@ -18943,6 +23085,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 57,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 68148,
@@ -18953,6 +23097,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 57,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 68150,
@@ -18963,6 +23109,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 57,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68152,
@@ -18996,6 +23144,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 58,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 68155,
@@ -19006,6 +23156,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 3,
+                    "mapSet": 5,
+                    "mapNumber": 58,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68157,
@@ -19016,6 +23168,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 58,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 68159,
@@ -19026,6 +23180,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 58,
                     "enemyNumber": 12,
                     "name": "Rathead",
                     "offset": 68161,
@@ -19036,6 +23192,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 58,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68163,
@@ -19069,6 +23227,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 5,
+                    "mapNumber": 59,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68166,
@@ -19079,6 +23239,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 1,
+                    "mapSet": 5,
+                    "mapNumber": 59,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 68168,
@@ -19089,6 +23251,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 59,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 68170,
@@ -19099,6 +23263,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 5,
+                    "mapNumber": 59,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68172,
@@ -19109,6 +23275,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 59,
                     "enemyNumber": 25,
                     "name": "Red Iron Knuckle",
                     "offset": 68174,
@@ -19119,6 +23287,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 59,
                     "enemyNumber": 13,
                     "name": "Dripping Column",
                     "offset": 68176,
@@ -19152,6 +23322,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 60,
                     "enemyNumber": 10,
                     "name": "Blue Skull Head",
                     "offset": 68179,
@@ -19162,6 +23334,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 5,
+                    "mapNumber": 60,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68181,
@@ -19172,6 +23346,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 60,
                     "enemyNumber": 6,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 68183,
@@ -19182,6 +23358,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 5,
+                    "mapNumber": 60,
                     "enemyNumber": 10,
                     "name": "Blue Skull Head",
                     "offset": 68185,
@@ -19215,6 +23393,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 5,
+                    "mapNumber": 61,
                     "enemyNumber": 26,
                     "name": "Blue Iron Knuckle",
                     "offset": 68188,
@@ -19225,6 +23405,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 6,
+                    "mapSet": 5,
+                    "mapNumber": 61,
                     "enemyNumber": 24,
                     "name": "Orange Iron Knuckle",
                     "offset": 68190,
@@ -19235,6 +23417,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 12,
+                    "mapSet": 5,
+                    "mapNumber": 61,
                     "enemyNumber": 5,
                     "name": "Strike for Red Jar",
                     "offset": 68192,
@@ -19268,6 +23452,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 5,
+                    "mapNumber": 62,
                     "enemyNumber": 27,
                     "name": "Wolf Head Generator",
                     "offset": 68195,
@@ -19278,6 +23464,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 9,
+                    "mapSet": 5,
+                    "mapNumber": 62,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68197,
@@ -19288,6 +23476,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 5,
+                    "mapNumber": 62,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68199,
@@ -19298,6 +23488,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 5,
+                    "mapNumber": 62,
                     "enemyNumber": 29,
                     "name": "Mago",
                     "offset": 68201,
@@ -19308,6 +23500,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 5,
+                    "mapNumber": 62,
                     "enemyNumber": 27,
                     "name": "Wolf Head Generator",
                     "offset": 68203,
@@ -19334,6 +23528,3951 @@ export default {
                }
           }
      },
+     "6:0": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 0,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68267,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74248
+               },
+               "down": {
+                    "mapNumber": 1,
+                    "offset": 74249
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74250
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74251
+               }
+          }
+     },
+     "6:1": {
+          "enemies": [
+               {
+                    "x": 27,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 1,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68288,
+                    "mask": 63
+               },
+               {
+                    "x": 42,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 1,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68290,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 1,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68292,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74252
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74253
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74254
+               },
+               "right": {
+                    "mapNumber": 2,
+                    "offset": 74255
+               }
+          }
+     },
+     "6:2": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 2,
+                    "enemyNumber": 11,
+                    "name": "Rathead Generator",
+                    "offset": 68295,
+                    "mask": 63
+               },
+               {
+                    "x": 24,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 2,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68297,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 6,
+                    "mapNumber": 2,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68299,
+                    "mask": 63
+               },
+               {
+                    "x": 33,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 2,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68301,
+                    "mask": 63
+               },
+               {
+                    "x": 35,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 2,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68303,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 2,
+                    "enemyNumber": 11,
+                    "name": "Rathead Generator",
+                    "offset": 68305,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 1,
+                    "offset": 74256
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74257
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74258
+               },
+               "right": {
+                    "mapNumber": 3,
+                    "offset": 74259
+               }
+          }
+     },
+     "6:3": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 3,
+                    "enemyNumber": 7,
+                    "name": "Orange Moa",
+                    "offset": 68308,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 3,
+                    "enemyNumber": 8,
+                    "name": "Falling Blocks Generator",
+                    "offset": 68310,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 2,
+                    "offset": 74260
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74261
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74262
+               },
+               "right": {
+                    "mapNumber": 4,
+                    "offset": 74263
+               }
+          }
+     },
+     "6:4": {
+          "enemies": [
+               {
+                    "x": 12,
+                    "y": 5,
+                    "xUpper": 0,
+                    "xLower": 12,
+                    "mapSet": 6,
+                    "mapNumber": 4,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68313,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 4,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68315,
+                    "mask": 63
+               },
+               {
+                    "x": 37,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 4,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68317,
+                    "mask": 63
+               },
+               {
+                    "x": 52,
+                    "y": 5,
+                    "xUpper": 3,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 4,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68319,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 3,
+                    "offset": 74264
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74265
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74266
+               },
+               "right": {
+                    "mapNumber": 5,
+                    "offset": 74267
+               }
+          }
+     },
+     "6:5": {
+          "enemies": [
+               {
+                    "x": 12,
+                    "y": 5,
+                    "xUpper": 0,
+                    "xLower": 12,
+                    "mapSet": 6,
+                    "mapNumber": 5,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68322,
+                    "mask": 63
+               },
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 5,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68324,
+                    "mask": 63
+               },
+               {
+                    "x": 20,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 5,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68326,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 5,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68328,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 5,
+                    "enemyNumber": 31,
+                    "name": "Doomknocker",
+                    "offset": 68330,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 4,
+                    "offset": 74268
+               },
+               "down": {
+                    "mapNumber": 9,
+                    "offset": 74269
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74270
+               },
+               "right": {
+                    "mapNumber": 6,
+                    "offset": 74271
+               }
+          }
+     },
+     "6:6": {
+          "enemies": [
+               {
+                    "x": 28,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 12,
+                    "mapSet": 6,
+                    "mapNumber": 6,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68333,
+                    "mask": 63
+               },
+               {
+                    "x": 24,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 6,
+                    "enemyNumber": 7,
+                    "name": "Orange Moa",
+                    "offset": 68335,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 5,
+                    "offset": 74272
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74273
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74274
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74275
+               }
+          }
+     },
+     "6:7": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 7,
+                    "enemyNumber": 27,
+                    "name": "Wolf Head Generator",
+                    "offset": 68338,
+                    "mask": 63
+               },
+               {
+                    "x": 43,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 7,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68340,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 7,
+                    "enemyNumber": 27,
+                    "name": "Wolf Head Generator",
+                    "offset": 68342,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74276
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74277
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74278
+               },
+               "right": {
+                    "mapNumber": 8,
+                    "offset": 74279
+               }
+          }
+     },
+     "6:8": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 8,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68345,
+                    "mask": 63
+               },
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 8,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68347,
+                    "mask": 63
+               },
+               {
+                    "x": 18,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 8,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68349,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 8,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68351,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 7,
+                    "offset": 74280
+               },
+               "down": {
+                    "mapNumber": 12,
+                    "offset": 74281
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74282
+               },
+               "right": {
+                    "mapNumber": 9,
+                    "offset": 74283
+               }
+          }
+     },
+     "6:9": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 9,
+                    "enemyNumber": 27,
+                    "name": "Wolf Head Generator",
+                    "offset": 68354,
+                    "mask": 63
+               },
+               {
+                    "x": 24,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot",
+                    "offset": 68356,
+                    "mask": 63
+               },
+               {
+                    "x": 26,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot",
+                    "offset": 68358,
+                    "mask": 63
+               },
+               {
+                    "x": 35,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 9,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68360,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 9,
+                    "enemyNumber": 4,
+                    "name": "Bot",
+                    "offset": 68362,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 9,
+                    "enemyNumber": 27,
+                    "name": "Wolf Head Generator",
+                    "offset": 68364,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 8,
+                    "offset": 74284
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74285
+               },
+               "up": {
+                    "mapNumber": 5,
+                    "offset": 74286
+               },
+               "right": {
+                    "mapNumber": 10,
+                    "offset": 74287
+               }
+          }
+     },
+     "6:10": {
+          "enemies": [
+               {
+                    "x": 14,
+                    "y": 5,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 10,
+                    "enemyNumber": 4,
+                    "name": "Bot",
+                    "offset": 68367,
+                    "mask": 63
+               },
+               {
+                    "x": 30,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 10,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68369,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 10,
+                    "enemyNumber": 4,
+                    "name": "Bot",
+                    "offset": 68371,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 5,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 10,
+                    "enemyNumber": 4,
+                    "name": "Bot",
+                    "offset": 68373,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 9,
+                    "offset": 74288
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74289
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74290
+               },
+               "right": {
+                    "mapNumber": 11,
+                    "offset": 74291
+               }
+          }
+     },
+     "6:11": {
+          "enemies": [
+               {
+                    "x": 13,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 13,
+                    "mapSet": 6,
+                    "mapNumber": 11,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68376,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 11,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68378,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 10,
+                    "offset": 74292
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74293
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74294
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74295
+               }
+          }
+     },
+     "6:12": {
+          "enemies": [
+               {
+                    "x": 30,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 12,
+                    "enemyNumber": 31,
+                    "name": "Doomknocker",
+                    "offset": 68381,
+                    "mask": 63
+               },
+               {
+                    "x": 57,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 9,
+                    "mapSet": 6,
+                    "mapNumber": 12,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68383,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74296
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74297
+               },
+               "up": {
+                    "mapNumber": 8,
+                    "offset": 74298
+               },
+               "right": {
+                    "mapNumber": 13,
+                    "offset": 74299
+               }
+          }
+     },
+     "6:13": {
+          "enemies": [
+               {
+                    "x": 27,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 13,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68386,
+                    "mask": 63
+               },
+               {
+                    "x": 43,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 13,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68388,
+                    "mask": 63
+               },
+               {
+                    "x": 57,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 9,
+                    "mapSet": 6,
+                    "mapNumber": 13,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68390,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 12,
+                    "offset": 74300
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74301
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74302
+               },
+               "right": {
+                    "mapNumber": 14,
+                    "offset": 74303
+               }
+          }
+     },
+     "6:14": {
+          "enemies": [
+               {
+                    "x": 26,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 14,
+                    "enemyNumber": 32,
+                    "name": "Blue Iron Knuckle on horse",
+                    "offset": 68393,
+                    "mask": 63
+               },
+               {
+                    "x": 54,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 14,
+                    "enemyNumber": 20,
+                    "name": "Crystal Slot",
+                    "offset": 68395,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 13,
+                    "offset": 74304
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74305
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74306
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74307
+               }
+          }
+     },
+     "6:15": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 15,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68398,
+                    "mask": 63
+               },
+               {
+                    "x": 24,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 15,
+                    "enemyNumber": 7,
+                    "name": "Orange Moa",
+                    "offset": 68400,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74308
+               },
+               "down": {
+                    "mapNumber": 18,
+                    "offset": 74309
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74310
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74311
+               }
+          }
+     },
+     "6:16": {
+          "enemies": [
+               {
+                    "x": 7,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 16,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68403,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 16,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68405,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74312
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74313
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74314
+               },
+               "right": {
+                    "mapNumber": 17,
+                    "offset": 74315
+               }
+          }
+     },
+     "6:17": {
+          "enemies": [
+               {
+                    "x": 14,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 17,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68408,
+                    "mask": 63
+               },
+               {
+                    "x": 18,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 17,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68410,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 17,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68412,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 6,
+                    "mapNumber": 17,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68414,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 17,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68416,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 16,
+                    "offset": 74316
+               },
+               "down": {
+                    "mapNumber": 21,
+                    "offset": 74317
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74318
+               },
+               "right": {
+                    "mapNumber": 18,
+                    "offset": 74319
+               }
+          }
+     },
+     "6:18": {
+          "enemies": [
+               {
+                    "x": 31,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 18,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68419,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 18,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68421,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 17,
+                    "offset": 74320
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74321
+               },
+               "up": {
+                    "mapNumber": 15,
+                    "offset": 74322
+               },
+               "right": {
+                    "mapNumber": 19,
+                    "offset": 74323
+               }
+          }
+     },
+     "6:19": {
+          "enemies": [
+               {
+                    "x": 23,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 19,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68424,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 19,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68426,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 18,
+                    "offset": 74324
+               },
+               "down": {
+                    "mapNumber": 23,
+                    "offset": 74325
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74326
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74327
+               }
+          }
+     },
+     "6:20": {
+          "enemies": [
+               {
+                    "x": 11,
+                    "y": 2,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 20,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68429,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 3,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 20,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68431,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 20,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68433,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74328
+               },
+               "down": {
+                    "mapNumber": 26,
+                    "offset": 74329
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74330
+               },
+               "right": {
+                    "mapNumber": 21,
+                    "offset": 74331
+               }
+          }
+     },
+     "6:21": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 21,
+                    "enemyNumber": 11,
+                    "name": "Rathead Generator",
+                    "offset": 68436,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 21,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68438,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 21,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68440,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 21,
+                    "enemyNumber": 11,
+                    "name": "Rathead Generator",
+                    "offset": 68442,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 20,
+                    "offset": 74332
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74333
+               },
+               "up": {
+                    "mapNumber": 17,
+                    "offset": 74334
+               },
+               "right": {
+                    "mapNumber": 22,
+                    "offset": 74335
+               }
+          }
+     },
+     "6:22": {
+          "enemies": [
+               {
+                    "x": 16,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 22,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68270,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 22,
+                    "enemyNumber": 15,
+                    "name": "???",
+                    "offset": 68272,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 22,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68274,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 22,
+                    "enemyNumber": 15,
+                    "name": "???",
+                    "offset": 68276,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 22,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68278,
+                    "mask": 63
+               },
+               {
+                    "x": 59,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 22,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68280,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 21,
+                    "offset": 74336
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74337
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74338
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74339
+               }
+          }
+     },
+     "6:23": {
+          "enemies": [
+               {
+                    "x": 54,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 23,
+                    "enemyNumber": 31,
+                    "name": "Doomknocker",
+                    "offset": 68445,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74340
+               },
+               "down": {
+                    "mapNumber": 29,
+                    "offset": 74341
+               },
+               "up": {
+                    "mapNumber": 19,
+                    "offset": 74342
+               },
+               "right": {
+                    "mapNumber": 24,
+                    "offset": 74343
+               }
+          }
+     },
+     "6:24": {
+          "enemies": [
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 24,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68448,
+                    "mask": 63
+               },
+               {
+                    "x": 52,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 24,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68450,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 23,
+                    "offset": 74344
+               },
+               "down": {
+                    "mapNumber": 30,
+                    "offset": 74345
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74346
+               },
+               "right": {
+                    "mapNumber": 25,
+                    "offset": 74347
+               }
+          }
+     },
+     "6:25": {
+          "enemies": [
+               {
+                    "x": 16,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 25,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68453,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 25,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68455,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 25,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68457,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 25,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68459,
+                    "mask": 63
+               },
+               {
+                    "x": 59,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 25,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68461,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 24,
+                    "offset": 74348
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74349
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74350
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74351
+               }
+          }
+     },
+     "6:26": {
+          "enemies": [
+               {
+                    "x": 29,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 6,
+                    "mapNumber": 26,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68464,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 26,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68466,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74352
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74353
+               },
+               "up": {
+                    "mapNumber": 20,
+                    "offset": 74354
+               },
+               "right": {
+                    "mapNumber": 27,
+                    "offset": 74355
+               }
+          }
+     },
+     "6:27": {
+          "enemies": [
+               {
+                    "x": 9,
+                    "y": 0,
+                    "xUpper": 0,
+                    "xLower": 9,
+                    "mapSet": 6,
+                    "mapNumber": 27,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68469,
+                    "mask": 63
+               },
+               {
+                    "x": 42,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 27,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68471,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 26,
+                    "offset": 74356
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74357
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74358
+               },
+               "right": {
+                    "mapNumber": 28,
+                    "offset": 74359
+               }
+          }
+     },
+     "6:28": {
+          "enemies": [
+               {
+                    "x": 27,
+                    "y": 6,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 28,
+                    "enemyNumber": 34,
+                    "name": "Wizard (4th palace boss)",
+                    "offset": 68474,
+                    "mask": 63
+               },
+               {
+                    "x": 54,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 28,
+                    "enemyNumber": 20,
+                    "name": "Crystal Slot",
+                    "offset": 68476,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 27,
+                    "offset": 74360
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74361
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74362
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74363
+               }
+          }
+     },
+     "6:29": {
+          "enemies": [
+               {
+                    "x": 35,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 29,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68283,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 6,
+                    "mapNumber": 29,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68285,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74364
+               },
+               "down": {
+                    "mapNumber": 33,
+                    "offset": 74365
+               },
+               "up": {
+                    "mapNumber": 23,
+                    "offset": 74366
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74367
+               }
+          }
+     },
+     "6:30": {
+          "enemies": [
+               {
+                    "x": 46,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 30,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68479,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 30,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68481,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 30,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68483,
+                    "mask": 63
+               },
+               {
+                    "x": 55,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 30,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68485,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74368
+               },
+               "down": {
+                    "mapNumber": 34,
+                    "offset": 74369
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74370
+               },
+               "right": {
+                    "mapNumber": 31,
+                    "offset": 74371
+               }
+          }
+     },
+     "6:31": {
+          "enemies": [
+               {
+                    "x": 20,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 31,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68488,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 31,
+                    "enemyNumber": 31,
+                    "name": "Doomknocker",
+                    "offset": 68490,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 31,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68492,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 30,
+                    "offset": 74372
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74373
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74374
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74375
+               }
+          }
+     },
+     "6:32": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 32,
+                    "enemyNumber": 27,
+                    "name": "Wolf Head Generator",
+                    "offset": 68495,
+                    "mask": 63
+               },
+               {
+                    "x": 43,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 32,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68497,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 32,
+                    "enemyNumber": 27,
+                    "name": "Wolf Head Generator",
+                    "offset": 68499,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74376
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74377
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74378
+               },
+               "right": {
+                    "mapNumber": 33,
+                    "offset": 74379
+               }
+          }
+     },
+     "6:33": {
+          "enemies": [
+               {
+                    "x": 17,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 33,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68502,
+                    "mask": 63
+               },
+               {
+                    "x": 22,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 33,
+                    "enemyNumber": 4,
+                    "name": "Bot",
+                    "offset": 68504,
+                    "mask": 63
+               },
+               {
+                    "x": 26,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 33,
+                    "enemyNumber": 4,
+                    "name": "Bot",
+                    "offset": 68506,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 33,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68508,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 33,
+                    "enemyNumber": 4,
+                    "name": "Bot",
+                    "offset": 68510,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 32,
+                    "offset": 74380
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74381
+               },
+               "up": {
+                    "mapNumber": 29,
+                    "offset": 74382
+               },
+               "right": {
+                    "mapNumber": 34,
+                    "offset": 74383
+               }
+          }
+     },
+     "6:34": {
+          "enemies": [
+               {
+                    "x": 4,
+                    "y": 2,
+                    "xUpper": 0,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 34,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68513,
+                    "mask": 63
+               },
+               {
+                    "x": 9,
+                    "y": 2,
+                    "xUpper": 0,
+                    "xLower": 9,
+                    "mapSet": 6,
+                    "mapNumber": 34,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68515,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 34,
+                    "enemyNumber": 15,
+                    "name": "???",
+                    "offset": 68517,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 0,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 34,
+                    "enemyNumber": 15,
+                    "name": "???",
+                    "offset": 68519,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 33,
+                    "offset": 74384
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74385
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74386
+               },
+               "right": {
+                    "mapNumber": 35,
+                    "offset": 74387
+               }
+          }
+     },
+     "6:35": {
+          "enemies": [
+               {
+                    "x": 16,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 35,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68522,
+                    "mask": 63
+               },
+               {
+                    "x": 18,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 35,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68524,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 35,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68526,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 35,
+                    "enemyNumber": 31,
+                    "name": "Doomknocker",
+                    "offset": 68528,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 35,
+                    "enemyNumber": 16,
+                    "name": "Flame",
+                    "offset": 68530,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 35,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68532,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 34,
+                    "offset": 74388
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74389
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74390
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74391
+               }
+          }
+     },
+     "6:36": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 36,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68535,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74392
+               },
+               "down": {
+                    "mapNumber": 38,
+                    "offset": 74393
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74394
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74395
+               }
+          }
+     },
+     "6:37": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 37,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68538,
+                    "mask": 63
+               },
+               {
+                    "x": 16,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 37,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68540,
+                    "mask": 63
+               },
+               {
+                    "x": 19,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 37,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68542,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 37,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68544,
+                    "mask": 63
+               },
+               {
+                    "x": 56,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 37,
+                    "enemyNumber": 7,
+                    "name": "Orange Moa",
+                    "offset": 68546,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74396
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74397
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74398
+               },
+               "right": {
+                    "mapNumber": 38,
+                    "offset": 74399
+               }
+          }
+     },
+     "6:38": {
+          "enemies": [
+               {
+                    "x": 9,
+                    "y": 3,
+                    "xUpper": 0,
+                    "xLower": 9,
+                    "mapSet": 6,
+                    "mapNumber": 38,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68549,
+                    "mask": 63
+               },
+               {
+                    "x": 24,
+                    "y": 3,
+                    "xUpper": 1,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 38,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68551,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 38,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68553,
+                    "mask": 63
+               },
+               {
+                    "x": 57,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 9,
+                    "mapSet": 6,
+                    "mapNumber": 38,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68555,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 37,
+                    "offset": 74400
+               },
+               "down": {
+                    "mapNumber": 39,
+                    "offset": 74401
+               },
+               "up": {
+                    "mapNumber": 36,
+                    "offset": 74402
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74403
+               }
+          }
+     },
+     "6:39": {
+          "enemies": [
+               {
+                    "x": 21,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 39,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68558,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 39,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68560,
+                    "mask": 63
+               },
+               {
+                    "x": 45,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 13,
+                    "mapSet": 6,
+                    "mapNumber": 39,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68562,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74404
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74405
+               },
+               "up": {
+                    "mapNumber": 38,
+                    "offset": 74406
+               },
+               "right": {
+                    "mapNumber": 40,
+                    "offset": 74407
+               }
+          }
+     },
+     "6:40": {
+          "enemies": [
+               {
+                    "x": 11,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 40,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68565,
+                    "mask": 63
+               },
+               {
+                    "x": 30,
+                    "y": 2,
+                    "xUpper": 1,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 40,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68567,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 6,
+                    "mapNumber": 40,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68569,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 39,
+                    "offset": 74408
+               },
+               "down": {
+                    "mapNumber": 45,
+                    "offset": 74409
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74410
+               },
+               "right": {
+                    "mapNumber": 41,
+                    "offset": 74411
+               }
+          }
+     },
+     "6:41": {
+          "enemies": [
+               {
+                    "x": 16,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 41,
+                    "enemyNumber": 22,
+                    "name": "Energy ball shooter (to down-right)",
+                    "offset": 68572,
+                    "mask": 63
+               },
+               {
+                    "x": 26,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 41,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68574,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 41,
+                    "enemyNumber": 23,
+                    "name": "Energy ball shooter (to down-left)",
+                    "offset": 68576,
+                    "mask": 63
+               },
+               {
+                    "x": 37,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 41,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68578,
+                    "mask": 63
+               },
+               {
+                    "x": 38,
+                    "y": 4,
+                    "xUpper": 2,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 41,
+                    "enemyNumber": 22,
+                    "name": "Energy ball shooter (to down-right)",
+                    "offset": 68580,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 41,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68582,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 4,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 41,
+                    "enemyNumber": 23,
+                    "name": "Energy ball shooter (to down-left)",
+                    "offset": 68584,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 40,
+                    "offset": 74412
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74413
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74414
+               },
+               "right": {
+                    "mapNumber": 42,
+                    "offset": 74415
+               }
+          }
+     },
+     "6:42": {
+          "enemies": [
+               {
+                    "x": 8,
+                    "y": 2,
+                    "xUpper": 0,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 42,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68587,
+                    "mask": 63
+               },
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 42,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68589,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 4,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 42,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68591,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 42,
+                    "enemyNumber": 30,
+                    "name": "Red Stalfos Knight",
+                    "offset": 68593,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 41,
+                    "offset": 74416
+               },
+               "down": {
+                    "mapNumber": 46,
+                    "offset": 74417
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74418
+               },
+               "right": {
+                    "mapNumber": 43,
+                    "offset": 74419
+               }
+          }
+     },
+     "6:43": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 4,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 43,
+                    "enemyNumber": 7,
+                    "name": "Orange Moa",
+                    "offset": 68596,
+                    "mask": 63
+               },
+               {
+                    "x": 18,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 43,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68598,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 4,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 43,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68600,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 43,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68602,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 42,
+                    "offset": 74420
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74421
+               },
+               "up": {
+                    "mapNumber": 47,
+                    "offset": 74422
+               },
+               "right": {
+                    "mapNumber": 44,
+                    "offset": 74423
+               }
+          }
+     },
+     "6:44": {
+          "enemies": [
+               {
+                    "x": 26,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 44,
+                    "enemyNumber": 32,
+                    "name": "Blue Iron Knuckle on horse",
+                    "offset": 68605,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 43,
+                    "offset": 74424
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74425
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74426
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74427
+               }
+          }
+     },
+     "6:45": {
+          "enemies": [
+               {
+                    "x": 11,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 45,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68608,
+                    "mask": 63
+               },
+               {
+                    "x": 41,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 9,
+                    "mapSet": 6,
+                    "mapNumber": 45,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68610,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74428
+               },
+               "down": {
+                    "mapNumber": 48,
+                    "offset": 74429
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74430
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74431
+               }
+          }
+     },
+     "6:46": {
+          "enemies": [
+               {
+                    "x": 17,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 46,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68613,
+                    "mask": 63
+               },
+               {
+                    "x": 29,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 13,
+                    "mapSet": 6,
+                    "mapNumber": 46,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68615,
+                    "mask": 63
+               },
+               {
+                    "x": 37,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 46,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68617,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 46,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68619,
+                    "mask": 63
+               },
+               {
+                    "x": 54,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 46,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68621,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74432
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74433
+               },
+               "up": {
+                    "mapNumber": 42,
+                    "offset": 74434
+               },
+               "right": {
+                    "mapNumber": 47,
+                    "offset": 74435
+               }
+          }
+     },
+     "6:47": {
+          "enemies": [
+               {
+                    "x": 8,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 47,
+                    "enemyNumber": 7,
+                    "name": "Orange Moa",
+                    "offset": 68624,
+                    "mask": 63
+               },
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 47,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68626,
+                    "mask": 63
+               },
+               {
+                    "x": 30,
+                    "y": 3,
+                    "xUpper": 1,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 47,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68628,
+                    "mask": 63
+               },
+               {
+                    "x": 55,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 47,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68630,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 46,
+                    "offset": 74436
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74437
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74438
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74439
+               }
+          }
+     },
+     "6:48": {
+          "enemies": [
+               {
+                    "x": 54,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 48,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68633,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74440
+               },
+               "down": {
+                    "mapNumber": 55,
+                    "offset": 74441
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74442
+               },
+               "right": {
+                    "mapNumber": 49,
+                    "offset": 74443
+               }
+          }
+     },
+     "6:49": {
+          "enemies": [
+               {
+                    "x": 26,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 49,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68636,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 49,
+                    "enemyNumber": 15,
+                    "name": "???",
+                    "offset": 68638,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 5,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 49,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68640,
+                    "mask": 63
+               },
+               {
+                    "x": 36,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 49,
+                    "enemyNumber": 15,
+                    "name": "???",
+                    "offset": 68642,
+                    "mask": 63
+               },
+               {
+                    "x": 46,
+                    "y": 5,
+                    "xUpper": 2,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 49,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68644,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 5,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 49,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68646,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 48,
+                    "offset": 74444
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74445
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74446
+               },
+               "right": {
+                    "mapNumber": 50,
+                    "offset": 74447
+               }
+          }
+     },
+     "6:50": {
+          "enemies": [
+               {
+                    "x": 17,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 50,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68649,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 50,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68651,
+                    "mask": 63
+               },
+               {
+                    "x": 47,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 50,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68653,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 49,
+                    "offset": 74448
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74449
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74450
+               },
+               "right": {
+                    "mapNumber": 51,
+                    "offset": 74451
+               }
+          }
+     },
+     "6:51": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 2,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 51,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68656,
+                    "mask": 63
+               },
+               {
+                    "x": 23,
+                    "y": 0,
+                    "xUpper": 1,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 51,
+                    "enemyNumber": 13,
+                    "name": "Dripping Column",
+                    "offset": 68658,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 2,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 51,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68660,
+                    "mask": 63
+               },
+               {
+                    "x": 40,
+                    "y": 0,
+                    "xUpper": 2,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 51,
+                    "enemyNumber": 13,
+                    "name": "Dripping Column",
+                    "offset": 68662,
+                    "mask": 63
+               },
+               {
+                    "x": 49,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 51,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68664,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 50,
+                    "offset": 74452
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74453
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74454
+               },
+               "right": {
+                    "mapNumber": 52,
+                    "offset": 74455
+               }
+          }
+     },
+     "6:52": {
+          "enemies": [
+               {
+                    "x": 21,
+                    "y": 1,
+                    "xUpper": 1,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 52,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68667,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 52,
+                    "enemyNumber": 7,
+                    "name": "Orange Moa",
+                    "offset": 68669,
+                    "mask": 63
+               },
+               {
+                    "x": 52,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 52,
+                    "enemyNumber": 3,
+                    "name": "Myu",
+                    "offset": 68671,
+                    "mask": 63
+               },
+               {
+                    "x": 53,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 5,
+                    "mapSet": 6,
+                    "mapNumber": 52,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68673,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 51,
+                    "offset": 74456
+               },
+               "down": {
+                    "mapNumber": 56,
+                    "offset": 74457
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74458
+               },
+               "right": {
+                    "mapNumber": 53,
+                    "offset": 74459
+               }
+          }
+     },
+     "6:53": {
+          "enemies": [
+               {
+                    "x": 26,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 53,
+                    "enemyNumber": 32,
+                    "name": "Blue Iron Knuckle on horse",
+                    "offset": 68676,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 52,
+                    "offset": 74460
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74461
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74462
+               },
+               "right": {
+                    "mapNumber": 54,
+                    "offset": 74463
+               }
+          }
+     },
+     "6:54": {
+          "enemies": [
+               {
+                    "x": 47,
+                    "y": 0,
+                    "xUpper": 2,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 54,
+                    "enemyNumber": 26,
+                    "name": "Blue Iron Knuckle",
+                    "offset": 68679,
+                    "mask": 63
+               },
+               {
+                    "x": 60,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 12,
+                    "mapSet": 6,
+                    "mapNumber": 54,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68681,
+                    "mask": 63
+               },
+               {
+                    "x": 61,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 13,
+                    "mapSet": 6,
+                    "mapNumber": 54,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68683,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 53,
+                    "offset": 74464
+               },
+               "down": {
+                    "mapNumber": 57,
+                    "offset": 74465
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74466
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74467
+               }
+          }
+     },
+     "6:55": {
+          "enemies": [
+               {
+                    "x": 10,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 10,
+                    "mapSet": 6,
+                    "mapNumber": 55,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68686,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 55,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68688,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74468
+               },
+               "down": {
+                    "mapNumber": 40,
+                    "offset": 74469
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74470
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74471
+               }
+          }
+     },
+     "6:56": {
+          "enemies": [
+               {
+                    "x": 35,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 56,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68283,
+                    "mask": 63
+               },
+               {
+                    "x": 44,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 12,
+                    "mapSet": 6,
+                    "mapNumber": 56,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68285,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74472
+               },
+               "down": {
+                    "mapNumber": 60,
+                    "offset": 74473
+               },
+               "up": {
+                    "mapNumber": 52,
+                    "offset": 74474
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74475
+               }
+          }
+     },
+     "6:57": {
+          "enemies": [
+               {
+                    "x": 49,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 57,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68691,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74476
+               },
+               "down": {
+                    "mapNumber": 62,
+                    "offset": 74477
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74478
+               },
+               "right": {
+                    "mapNumber": 58,
+                    "offset": 74479
+               }
+          }
+     },
+     "6:58": {
+          "enemies": [
+               {
+                    "x": 27,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 58,
+                    "enemyNumber": 33,
+                    "name": "Dragon (6th palace boss)",
+                    "offset": 68694,
+                    "mask": 63
+               },
+               {
+                    "x": 54,
+                    "y": 6,
+                    "xUpper": 3,
+                    "xLower": 6,
+                    "mapSet": 6,
+                    "mapNumber": 58,
+                    "enemyNumber": 20,
+                    "name": "Crystal Slot",
+                    "offset": 68696,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 57,
+                    "offset": 74480
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74481
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74482
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74483
+               }
+          }
+     },
+     "6:59": {
+          "enemies": [
+               {
+                    "x": 15,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 59,
+                    "enemyNumber": 27,
+                    "name": "Wolf Head Generator",
+                    "offset": 68699,
+                    "mask": 63
+               },
+               {
+                    "x": 17,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 59,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68701,
+                    "mask": 63
+               },
+               {
+                    "x": 34,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 59,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68703,
+                    "mask": 63
+               },
+               {
+                    "x": 48,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 59,
+                    "enemyNumber": 27,
+                    "name": "Wolf Head Generator",
+                    "offset": 68705,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 63,
+                    "offset": 74484
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74485
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74486
+               },
+               "right": {
+                    "mapNumber": 60,
+                    "offset": 74487
+               }
+          }
+     },
+     "6:60": {
+          "enemies": [
+               {
+                    "x": 8,
+                    "y": 7,
+                    "xUpper": 0,
+                    "xLower": 8,
+                    "mapSet": 6,
+                    "mapNumber": 60,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68708,
+                    "mask": 63
+               },
+               {
+                    "x": 12,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 12,
+                    "mapSet": 6,
+                    "mapNumber": 60,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68710,
+                    "mask": 63
+               },
+               {
+                    "x": 27,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 11,
+                    "mapSet": 6,
+                    "mapNumber": 60,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68712,
+                    "mask": 63
+               },
+               {
+                    "x": 34,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 60,
+                    "enemyNumber": 12,
+                    "name": "Rathead",
+                    "offset": 68714,
+                    "mask": 63
+               },
+               {
+                    "x": 51,
+                    "y": 1,
+                    "xUpper": 3,
+                    "xLower": 3,
+                    "mapSet": 6,
+                    "mapNumber": 60,
+                    "enemyNumber": 35,
+                    "name": "Blue Stalfos Knight",
+                    "offset": 68716,
+                    "mask": 63
+               },
+               {
+                    "x": 52,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 4,
+                    "mapSet": 6,
+                    "mapNumber": 60,
+                    "enemyNumber": 29,
+                    "name": "Wizrobe",
+                    "offset": 68718,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 59,
+                    "offset": 74488
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74489
+               },
+               "up": {
+                    "mapNumber": 56,
+                    "offset": 74490
+               },
+               "right": {
+                    "mapNumber": 61,
+                    "offset": 74491
+               }
+          }
+     },
+     "6:61": {
+          "enemies": [
+               {
+                    "x": 17,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 61,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68721,
+                    "mask": 63
+               },
+               {
+                    "x": 31,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 15,
+                    "mapSet": 6,
+                    "mapNumber": 61,
+                    "enemyNumber": 7,
+                    "name": "Orange Moa",
+                    "offset": 68723,
+                    "mask": 63
+               },
+               {
+                    "x": 39,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 7,
+                    "mapSet": 6,
+                    "mapNumber": 61,
+                    "enemyNumber": 25,
+                    "name": "Red Iron Knuckle",
+                    "offset": 68725,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 60,
+                    "offset": 74492
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74493
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74494
+               },
+               "right": {
+                    "mapNumber": 62,
+                    "offset": 74495
+               }
+          }
+     },
+     "6:62": {
+          "enemies": [
+               {
+                    "x": 14,
+                    "y": 1,
+                    "xUpper": 0,
+                    "xLower": 14,
+                    "mapSet": 6,
+                    "mapNumber": 62,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68728,
+                    "mask": 63
+               },
+               {
+                    "x": 17,
+                    "y": 7,
+                    "xUpper": 1,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 62,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68730,
+                    "mask": 63
+               },
+               {
+                    "x": 32,
+                    "y": 7,
+                    "xUpper": 2,
+                    "xLower": 0,
+                    "mapSet": 6,
+                    "mapNumber": 62,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68732,
+                    "mask": 63
+               },
+               {
+                    "x": 33,
+                    "y": 1,
+                    "xUpper": 2,
+                    "xLower": 1,
+                    "mapSet": 6,
+                    "mapNumber": 62,
+                    "enemyNumber": 14,
+                    "name": "Fast Magic Stealing Skulls",
+                    "offset": 68734,
+                    "mask": 63
+               },
+               {
+                    "x": 50,
+                    "y": 7,
+                    "xUpper": 3,
+                    "xLower": 2,
+                    "mapSet": 6,
+                    "mapNumber": 62,
+                    "enemyNumber": 6,
+                    "name": "Slow Magic Stealing Skulls",
+                    "offset": 68736,
+                    "mask": 63
+               },
+               {
+                    "x": 60,
+                    "y": 2,
+                    "xUpper": 3,
+                    "xLower": 12,
+                    "mapSet": 6,
+                    "mapNumber": 62,
+                    "enemyNumber": 5,
+                    "name": "Strike for Red Jar/Ironknuckle",
+                    "offset": 68738,
+                    "mask": 63
+               }
+          ],
+          "paths": {},
+          "exits": {
+               "left": {
+                    "mapNumber": 61,
+                    "offset": 74496
+               },
+               "down": {
+                    "mapNumber": 0,
+                    "offset": 74497
+               },
+               "up": {
+                    "mapNumber": 0,
+                    "offset": 74498
+               },
+               "right": {
+                    "mapNumber": 63,
+                    "offset": 74499
+               }
+          }
+     },
      "7:0": {
           "enemies": [
                {
@@ -19341,6 +27480,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 1,
+                    "mapSet": 7,
+                    "mapNumber": 0,
                     "enemyNumber": 32,
                     "name": "Barrier for Grand Palace",
                     "offset": 84147,
@@ -19374,6 +27515,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 7,
+                    "mapNumber": 1,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84150,
@@ -19384,6 +27527,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 7,
+                    "mapNumber": 1,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84152,
@@ -19394,6 +27539,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 7,
+                    "mapNumber": 1,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84154,
@@ -19427,6 +27574,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 7,
+                    "mapNumber": 2,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84157,
@@ -19460,6 +27609,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 7,
+                    "mapNumber": 3,
                     "enemyNumber": 15,
                     "name": "Fire Bago Bago Generator",
                     "offset": 84160,
@@ -19470,6 +27621,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 7,
+                    "mapNumber": 3,
                     "enemyNumber": 15,
                     "name": "Fire Bago Bago Generator",
                     "offset": 84162,
@@ -19503,6 +27656,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 4,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84165,
@@ -19513,6 +27668,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 4,
                     "enemyNumber": 21,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 84167,
@@ -19546,6 +27703,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 5,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84170,
@@ -19556,6 +27715,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 5,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84172,
@@ -19589,6 +27750,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 1,
+                    "mapSet": 7,
+                    "mapNumber": 8,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84440,
@@ -19622,6 +27785,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84175,
@@ -19632,6 +27797,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84177,
@@ -19642,6 +27809,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 7,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84179,
@@ -19652,6 +27821,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 7,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84181,
@@ -19662,6 +27833,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84183,
@@ -19672,6 +27845,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 9,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84185,
@@ -19705,6 +27880,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 0,
+                    "mapSet": 7,
+                    "mapNumber": 10,
                     "enemyNumber": 20,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 84188,
@@ -19715,6 +27892,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 7,
+                    "mapNumber": 10,
                     "enemyNumber": 20,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 84190,
@@ -19725,6 +27904,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 7,
+                    "mapNumber": 10,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84192,
@@ -19735,6 +27916,8 @@ export default {
                     "y": 2,
                     "xUpper": 3,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 10,
                     "enemyNumber": 20,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 84194,
@@ -19768,6 +27951,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 1,
+                    "mapSet": 7,
+                    "mapNumber": 11,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84197,
@@ -19778,6 +27963,8 @@ export default {
                     "y": 3,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 7,
+                    "mapNumber": 11,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84199,
@@ -19811,6 +27998,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 12,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84202,
@@ -19821,6 +28010,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 12,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84204,
@@ -19854,6 +28045,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 7,
+                    "mapNumber": 13,
                     "enemyNumber": 25,
                     "name": "Red Dreadhawk",
                     "offset": 84207,
@@ -19864,6 +28057,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 13,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84209,
@@ -19897,6 +28092,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 7,
+                    "mapNumber": 14,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84212,
@@ -19930,6 +28127,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 7,
+                    "mapNumber": 15,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84443,
@@ -19963,6 +28162,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 7,
+                    "mapNumber": 16,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84446,
@@ -19996,6 +28197,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 7,
+                    "mapNumber": 17,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84449,
@@ -20029,6 +28232,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 18,
                     "enemyNumber": 23,
                     "name": "Large Magic Stealing Skull",
                     "offset": 84215,
@@ -20062,6 +28267,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 19,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84218,
@@ -20072,6 +28279,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 7,
+                    "mapNumber": 19,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84220,
@@ -20082,6 +28291,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 19,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84222,
@@ -20092,6 +28303,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 19,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84224,
@@ -20125,6 +28338,8 @@ export default {
                     "y": 3,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 20,
                     "enemyNumber": 25,
                     "name": "Red Dreadhawk",
                     "offset": 84227,
@@ -20158,6 +28373,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 21,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84230,
@@ -20168,6 +28385,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 7,
+                    "mapNumber": 21,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84232,
@@ -20178,6 +28397,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 7,
+                    "mapNumber": 21,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84234,
@@ -20188,6 +28409,8 @@ export default {
                     "y": 5,
                     "xUpper": 3,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 21,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84236,
@@ -20198,6 +28421,8 @@ export default {
                     "y": 7,
                     "xUpper": 3,
                     "xLower": 6,
+                    "mapSet": 7,
+                    "mapNumber": 21,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84238,
@@ -20231,6 +28456,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 7,
+                    "mapNumber": 22,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84241,
@@ -20241,6 +28468,8 @@ export default {
                     "y": 5,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 7,
+                    "mapNumber": 22,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84243,
@@ -20274,6 +28503,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 7,
+                    "mapNumber": 23,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84246,
@@ -20284,6 +28515,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 7,
+                    "mapNumber": 23,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84248,
@@ -20294,6 +28527,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 23,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84250,
@@ -20304,6 +28539,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 23,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84252,
@@ -20314,6 +28551,8 @@ export default {
                     "y": 3,
                     "xUpper": 3,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 23,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84254,
@@ -20347,6 +28586,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 24,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 84257,
@@ -20380,6 +28621,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 25,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84260,
@@ -20390,6 +28633,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 7,
+                    "mapNumber": 25,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84262,
@@ -20400,6 +28645,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 25,
                     "enemyNumber": 26,
                     "name": "Blue Dreadhawk",
                     "offset": 84264,
@@ -20433,6 +28680,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 7,
+                    "mapNumber": 26,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84267,
@@ -20443,6 +28692,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 1,
+                    "mapSet": 7,
+                    "mapNumber": 26,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84269,
@@ -20453,6 +28704,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 26,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84271,
@@ -20463,6 +28716,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 7,
+                    "mapNumber": 26,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84273,
@@ -20473,6 +28728,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 13,
+                    "mapSet": 7,
+                    "mapNumber": 26,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84275,
@@ -20506,6 +28763,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 27,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84278,
@@ -20516,6 +28775,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 9,
+                    "mapSet": 7,
+                    "mapNumber": 27,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84280,
@@ -20526,6 +28787,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 27,
                     "enemyNumber": 26,
                     "name": "Blue Dreadhawk",
                     "offset": 84282,
@@ -20559,6 +28822,8 @@ export default {
                     "y": 5,
                     "xUpper": 0,
                     "xLower": 14,
+                    "mapSet": 7,
+                    "mapNumber": 28,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84285,
@@ -20569,6 +28834,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 9,
+                    "mapSet": 7,
+                    "mapNumber": 28,
                     "enemyNumber": 21,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 84287,
@@ -20602,6 +28869,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 7,
+                    "mapNumber": 29,
                     "enemyNumber": 20,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 84290,
@@ -20612,6 +28881,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 29,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84292,
@@ -20622,6 +28893,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 7,
+                    "mapNumber": 29,
                     "enemyNumber": 20,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 84294,
@@ -20655,6 +28928,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 7,
+                    "mapNumber": 30,
                     "enemyNumber": 21,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 84297,
@@ -20665,6 +28940,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 30,
                     "enemyNumber": 21,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 84299,
@@ -20675,6 +28952,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 30,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84301,
@@ -20685,6 +28964,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 7,
+                    "mapNumber": 30,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84303,
@@ -20718,6 +28999,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 31,
                     "enemyNumber": 23,
                     "name": "Large Magic Stealing Skull",
                     "offset": 84306,
@@ -20728,6 +29011,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 12,
+                    "mapSet": 7,
+                    "mapNumber": 31,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84308,
@@ -20761,6 +29046,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 8,
+                    "mapSet": 7,
+                    "mapNumber": 32,
                     "enemyNumber": 26,
                     "name": "Blue Dreadhawk",
                     "offset": 84311,
@@ -20771,6 +29058,8 @@ export default {
                     "y": 1,
                     "xUpper": 2,
                     "xLower": 8,
+                    "mapSet": 7,
+                    "mapNumber": 32,
                     "enemyNumber": 23,
                     "name": "Large Magic Stealing Skull",
                     "offset": 84313,
@@ -20804,6 +29093,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 7,
+                    "mapNumber": 33,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84455,
@@ -20837,6 +29128,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 7,
+                    "mapNumber": 34,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84316,
@@ -20870,6 +29163,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 35,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84319,
@@ -20880,6 +29175,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 7,
+                    "mapNumber": 35,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84321,
@@ -20890,6 +29187,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 35,
                     "enemyNumber": 20,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 84323,
@@ -20900,6 +29199,8 @@ export default {
                     "y": 3,
                     "xUpper": 3,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 35,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84325,
@@ -20910,6 +29211,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 35,
                     "enemyNumber": 20,
                     "name": "Slow Magic Stealing Skull",
                     "offset": 84327,
@@ -20920,6 +29223,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 9,
+                    "mapSet": 7,
+                    "mapNumber": 35,
                     "enemyNumber": 17,
                     "name": "Fire Rope Jumping Only",
                     "offset": 84329,
@@ -20953,6 +29258,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 36,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84332,
@@ -20963,6 +29270,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 36,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84334,
@@ -20996,6 +29305,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 37,
                     "enemyNumber": 30,
                     "name": "King Bot",
                     "offset": 84337,
@@ -21029,6 +29340,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 7,
+                    "mapNumber": 38,
                     "enemyNumber": 25,
                     "name": "Red Dreadhawk",
                     "offset": 84340,
@@ -21062,6 +29375,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 39,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84343,
@@ -21072,6 +29387,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 39,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84345,
@@ -21082,6 +29399,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 39,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84347,
@@ -21092,6 +29411,8 @@ export default {
                     "y": 5,
                     "xUpper": 2,
                     "xLower": 10,
+                    "mapSet": 7,
+                    "mapNumber": 39,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84349,
@@ -21125,6 +29446,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 10,
+                    "mapSet": 7,
+                    "mapNumber": 40,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84352,
@@ -21135,6 +29458,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 40,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84354,
@@ -21145,6 +29470,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 14,
+                    "mapSet": 7,
+                    "mapNumber": 40,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84356,
@@ -21155,6 +29482,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 40,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84358,
@@ -21165,6 +29494,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 40,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84360,
@@ -21198,6 +29529,8 @@ export default {
                     "y": 2,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 7,
+                    "mapNumber": 41,
                     "enemyNumber": 25,
                     "name": "Red Dreadhawk",
                     "offset": 84363,
@@ -21208,6 +29541,8 @@ export default {
                     "y": 3,
                     "xUpper": 0,
                     "xLower": 13,
+                    "mapSet": 7,
+                    "mapNumber": 41,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84365,
@@ -21218,6 +29553,8 @@ export default {
                     "y": 3,
                     "xUpper": 1,
                     "xLower": 6,
+                    "mapSet": 7,
+                    "mapNumber": 41,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84367,
@@ -21251,6 +29588,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 42,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84370,
@@ -21261,6 +29600,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 42,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84372,
@@ -21271,6 +29612,8 @@ export default {
                     "y": 4,
                     "xUpper": 1,
                     "xLower": 2,
+                    "mapSet": 7,
+                    "mapNumber": 42,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84374,
@@ -21281,6 +29624,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 42,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84376,
@@ -21291,6 +29636,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 7,
+                    "mapNumber": 42,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84378,
@@ -21301,6 +29648,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 12,
+                    "mapSet": 7,
+                    "mapNumber": 42,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 84380,
@@ -21334,6 +29683,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 5,
+                    "mapSet": 7,
+                    "mapNumber": 43,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84383,
@@ -21344,6 +29695,8 @@ export default {
                     "y": 7,
                     "xUpper": 2,
                     "xLower": 0,
+                    "mapSet": 7,
+                    "mapNumber": 43,
                     "enemyNumber": 26,
                     "name": "Blue Dreadhawk",
                     "offset": 84385,
@@ -21354,6 +29707,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 43,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84387,
@@ -21387,6 +29742,8 @@ export default {
                     "y": 1,
                     "xUpper": 0,
                     "xLower": 8,
+                    "mapSet": 7,
+                    "mapNumber": 44,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84452,
@@ -21420,6 +29777,8 @@ export default {
                     "y": 0,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 45,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84390,
@@ -21430,6 +29789,8 @@ export default {
                     "y": 0,
                     "xUpper": 2,
                     "xLower": 4,
+                    "mapSet": 7,
+                    "mapNumber": 45,
                     "enemyNumber": 22,
                     "name": "Orange Skull Head",
                     "offset": 84392,
@@ -21463,6 +29824,8 @@ export default {
                     "y": 4,
                     "xUpper": 0,
                     "xLower": 10,
+                    "mapSet": 7,
+                    "mapNumber": 46,
                     "enemyNumber": 29,
                     "name": "Firebird",
                     "offset": 84395,
@@ -21473,6 +29836,8 @@ export default {
                     "y": 6,
                     "xUpper": 1,
                     "xLower": 1,
+                    "mapSet": 7,
+                    "mapNumber": 46,
                     "enemyNumber": 4,
                     "name": "Bot (blue)",
                     "offset": 84397,
@@ -21506,6 +29871,8 @@ export default {
                     "y": 5,
                     "xUpper": 1,
                     "xLower": 11,
+                    "mapSet": 7,
+                    "mapNumber": 47,
                     "enemyNumber": 26,
                     "name": "Blue Dreadhawk",
                     "offset": 84400,
@@ -21516,6 +29883,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 10,
+                    "mapSet": 7,
+                    "mapNumber": 47,
                     "enemyNumber": 21,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 84402,
@@ -21549,6 +29918,8 @@ export default {
                     "y": 1,
                     "xUpper": 3,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 48,
                     "enemyNumber": 30,
                     "name": "King Bot",
                     "offset": 84405,
@@ -21582,6 +29953,8 @@ export default {
                     "y": 6,
                     "xUpper": 0,
                     "xLower": 12,
+                    "mapSet": 7,
+                    "mapNumber": 49,
                     "enemyNumber": 21,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 84408,
@@ -21592,6 +29965,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 12,
+                    "mapSet": 7,
+                    "mapNumber": 49,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84410,
@@ -21602,6 +29977,8 @@ export default {
                     "y": 2,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 7,
+                    "mapNumber": 49,
                     "enemyNumber": 3,
                     "name": "Myu",
                     "offset": 84412,
@@ -21612,6 +29989,8 @@ export default {
                     "y": 6,
                     "xUpper": 3,
                     "xLower": 3,
+                    "mapSet": 7,
+                    "mapNumber": 49,
                     "enemyNumber": 21,
                     "name": "Fast Magic Stealing Skull",
                     "offset": 84414,
@@ -21645,6 +30024,8 @@ export default {
                     "y": 0,
                     "xUpper": 0,
                     "xLower": 15,
+                    "mapSet": 7,
+                    "mapNumber": 50,
                     "enemyNumber": 15,
                     "name": "Fire Bago Bago Generator",
                     "offset": 84417,
@@ -21655,6 +30036,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 0,
+                    "mapSet": 7,
+                    "mapNumber": 50,
                     "enemyNumber": 15,
                     "name": "Fire Bago Bago Generator",
                     "offset": 84419,
@@ -21688,6 +30071,8 @@ export default {
                     "y": 2,
                     "xUpper": 1,
                     "xLower": 15,
+                    "mapSet": 7,
+                    "mapNumber": 51,
                     "enemyNumber": 23,
                     "name": "Large Magic Stealing Skull",
                     "offset": 84422,
@@ -21698,6 +30083,8 @@ export default {
                     "y": 4,
                     "xUpper": 2,
                     "xLower": 3,
+                    "mapSet": 7,
+                    "mapNumber": 51,
                     "enemyNumber": 23,
                     "name": "Large Magic Stealing Skull",
                     "offset": 84424,
@@ -21708,6 +30095,8 @@ export default {
                     "y": 0,
                     "xUpper": 3,
                     "xLower": 12,
+                    "mapSet": 7,
+                    "mapNumber": 51,
                     "enemyNumber": 0,
                     "name": "Fairy",
                     "offset": 84426,
@@ -21741,6 +30130,8 @@ export default {
                     "y": 7,
                     "xUpper": 0,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 52,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84429,
@@ -21751,6 +30142,8 @@ export default {
                     "y": 7,
                     "xUpper": 1,
                     "xLower": 7,
+                    "mapSet": 7,
+                    "mapNumber": 52,
                     "enemyNumber": 5,
                     "name": "Bit (red)",
                     "offset": 84431,
@@ -21784,6 +30177,8 @@ export default {
                     "y": 2,
                     "xUpper": 2,
                     "xLower": 1,
+                    "mapSet": 7,
+                    "mapNumber": 53,
                     "enemyNumber": 34,
                     "name": "Thunder Bird Boss",
                     "offset": 84434,
@@ -21817,6 +30212,8 @@ export default {
                     "y": 1,
                     "xUpper": 1,
                     "xLower": 13,
+                    "mapSet": 7,
+                    "mapNumber": 54,
                     "enemyNumber": 35,
                     "name": "Trigger for Dark Link battle",
                     "offset": 84437,
