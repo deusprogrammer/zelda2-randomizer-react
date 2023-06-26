@@ -115,16 +115,16 @@ export default () => {
                     <ul>
                         <li>Vanilla overworld location shuffling</li>
                         <li>Item shuffling</li>
+                        <li>Enemy Shuffling</li>
+                        <li>Random Terrain</li>
                     </ul>
                     <h2>Coming Soon</h2>
                     <ul>
                         <li>Encounter shuffling</li>
                         <li>XP shuffling</li>
                         <li>Drop shuffling</li>
-                        <li>Enemy/Enemy Generator Shuffling</li>
                         <li>Palace room shuffling</li>
                         <li>Town spell shuffling</li>
-                        <li>Random terrain generation</li>
                     </ul>
                     <h2>FAQ</h2>
                     <h3>Why Make a New One?</h3>
