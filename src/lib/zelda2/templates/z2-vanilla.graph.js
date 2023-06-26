@@ -9429,7 +9429,7 @@ export default {
           }
      },
      "NODE101": {
-          "id": "ELEVATOR_CAVE_H_D_BL",
+          "id": "ELEVATOR_CAVE_H_S_BL",
           "type": "CAVE",
           "continent": 1,
           "worldNumber": 0,

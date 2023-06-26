@@ -1196,7 +1196,7 @@ export default {
           "type": "CAVE"
      },
      "NODE101": {
-          "locationKey": "ELEVATOR_CAVE_H_D_BL",
+          "locationKey": "ELEVATOR_CAVE_H_S_BL",
           "x": 18,
           "y": 40,
           "isolationGroup": 20,

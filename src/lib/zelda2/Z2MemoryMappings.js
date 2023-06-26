@@ -808,7 +808,7 @@ export const DEATH_MOUNTAIN_LOCATION_MAPPINGS = {
         offset: 0x612E,
         fields: LOCATION_MAPPING_FIELDS
     },
-    ELEVATOR_CAVE_H_D_BL: {
+    ELEVATOR_CAVE_H_S_BL: {
         offset: 0x612F,
         fields: LOCATION_MAPPING_FIELDS
     },
@@ -1057,7 +1057,7 @@ export const MAZE_ISLAND_LOCATION_MAPPINGS = {
         offset: 0xA12E,
         fields: LOCATION_MAPPING_FIELDS
     },
-    ELEVATOR_CAVE_H_D_BL: {
+    ELEVATOR_CAVE_H_S_BL: {
         offset: 0xA12F,
         fields: LOCATION_MAPPING_FIELDS
     },

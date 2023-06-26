@@ -43,7 +43,7 @@ export default ({maps, overworld: {locations, spriteMap, worldNumber}, terrainCe
                     isolationZone = terrainCells[y][x].isolationZone;
                 }
         
-                if (!sprite.type) {
+                if (sprite.type === undefined) {
                     mapBlocks.push(
                         <div 
                             key={`${x},${y}`}

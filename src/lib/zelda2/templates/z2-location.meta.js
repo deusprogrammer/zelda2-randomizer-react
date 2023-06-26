@@ -4657,8 +4657,8 @@ export default {
         },
         "itemRomMetaData": []
     },
-    "ELEVATOR_CAVE_H_D_BL": {
-        "id": "ELEVATOR_CAVE_H_D_BL",
+    "ELEVATOR_CAVE_H_S_BL": {
+        "id": "ELEVATOR_CAVE_H_S_BL",
         "type": "CAVE",
         "continent": 0,
         "worldNumber": 1,
@@ -4763,7 +4763,7 @@ export default {
         "links": [
             "ELEVATOR_CAVE_H_W_TR",
             "ELEVATOR_CAVE_H_N_BR",
-            "ELEVATOR_CAVE_H_D_BL"
+            "ELEVATOR_CAVE_H_S_BL"
         ],
         "linkRequirements": {},
         "romMetaData": {
@@ -4849,7 +4849,7 @@ export default {
         "entryRequirements": [],
         "completionRequirements": [],
         "links": [
-            "ELEVATOR_CAVE_H_D_BL",
+            "ELEVATOR_CAVE_H_S_BL",
             "ELEVATOR_CAVE_H_E_TL",
             "ELEVATOR_CAVE_H_W_TR"
         ],
@@ -4937,7 +4937,7 @@ export default {
         "entryRequirements": [],
         "completionRequirements": [],
         "links": [
-            "ELEVATOR_CAVE_H_D_BL",
+            "ELEVATOR_CAVE_H_S_BL",
             "ELEVATOR_CAVE_H_E_TL",
             "ELEVATOR_CAVE_H_N_BR"
         ],

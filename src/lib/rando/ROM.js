@@ -1,8 +1,8 @@
 import parse from "../Z2Parser";
 import { assembleCode } from "../memory/Assembler";
 import { CONTINENT_EXIT_MAPPINGS, CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RANDO_MAP_OFFSETS } from "../zelda2/Z2MemoryMappings";
-import { printSpriteMap, stringToZ2Bytes } from "../zelda2/Z2Utils";
-import itemMetaData from '../zelda2/templates/z2-items.meta';
+import { stringToZ2Bytes } from "../zelda2/Z2Utils";
+import itemMetaData from '../zelda2/templates/z2-vanilla.items';
 import locationMetadata from '../zelda2/templates/z2-location.meta';
 
 const LAST_BIT_MASK = 1 >>> 0;
