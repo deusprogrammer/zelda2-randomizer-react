@@ -1,4 +1,4 @@
-import { ENEMY_MAPPINGS } from "../zelda2/Z2Data";
+import { ENEMY_MAPPINGS, ENEMY_RANDO_EXCLUSIONS } from "../zelda2/Z2Data";
 import { ENEMY_DATA_MAPPING } from "../zelda2/Z2MemoryMappings";
 import { deepCopy, merge, randomSeed, removeNode } from "./util";
 
@@ -1668,18 +1668,38 @@ export class Z2Randomizer {
     randomizeEnemiesAndPalaces = () => {
         Object.keys(this.levels).forEach((key) => {
             let {enemies} = this.levels[key];
+            console.log(key);
             enemies.forEach((enemy, index) => {
                 if ([4].includes(enemy.mapSet)) {
                     return;
                 }
 
-                if ([5, 6, 7].includes(enemy.mapSet) && [0x20, 0x21, 0x22, 0x23].includes(enemy.enemyNumber)) {
+                if (ENEMY_RANDO_EXCLUSIONS[enemy.mapSet].includes(enemy.enemyNumber)) {
+                    return;
+                }
 
+                let acceptableEnemies = Object.keys(ENEMY_MAPPINGS[enemy.mapSet]);
+                acceptableEnemies = acceptableEnemies.filter(key => !ENEMY_RANDO_EXCLUSIONS[enemy.mapSet].includes(parseInt(key)));
+
+                let originalEnemyData = ENEMY_MAPPINGS[enemy.mapSet][enemy.enemyNumber];
+
+                let chosenEnemy = this.chooseRandomNode(acceptableEnemies);
+                let chosenEnemyData = ENEMY_MAPPINGS[enemy.mapSet][chosenEnemy];
+                
+                let heightDifference = 0;
+                let newY = 0;
+                if (chosenEnemyData && originalEnemyData) {
+                    heightDifference = chosenEnemyData.height - originalEnemyData.height;
+
+                    if (chosenEnemyData.height !== 0) {
+                        newY = enemy.y - heightDifference;
+                    }
                 }
 
                 this.levels[key].enemies[index] = {
                     ...enemy,
-                    enemyNumber: this.chooseRandomNode(Object.keys(ENEMY_MAPPINGS[enemy.mapSet]))
+                    y: newY,
+                    enemyNumber: chosenEnemy
                 }
             })
         })

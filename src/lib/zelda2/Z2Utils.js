@@ -348,7 +348,11 @@ export const extractMapEnemyData = (buffer) => {
                 let enemyObject = extractFields(ENEMY_DATA_MAPPING, buffer, enemyPointer + read);
                 read += 2;
                 enemyObject.x = (enemyObject.xUpper << 4) + enemyObject.xLower;
-                enemyObject.name = ENEMY_MAPPINGS[mapEnemies.length][enemyObject.enemyNumber];
+                if (ENEMY_MAPPINGS[mapEnemies.length][enemyObject.enemyNumber]) {
+                    let enemyData = ENEMY_MAPPINGS[mapEnemies.length][enemyObject.enemyNumber];
+                    enemyObject.name = enemyData.name;
+                    enemyObject.height = enemyData.height;
+                }
                 enemyElements.push(enemyObject);
             }
             enemies.push({header, enemies: enemyElements, mapSetNumber: mapEnemies.length, offset: enemyPointer});
@@ -375,7 +379,11 @@ export const extractMapEnemyData = (buffer) => {
                 let enemyObject = extractFields(ENEMY_DATA_MAPPING, buffer, enemyPointer + read);
                 read += 2;
                 enemyObject.x = (enemyObject.xUpper << 4) + enemyObject.xLower;
-                enemyObject.name = ENEMY_MAPPINGS[mapEnemies.length][enemyObject.enemyNumber];
+                if (ENEMY_MAPPINGS[mapEnemies.length][enemyObject.enemyNumber]) {
+                    let enemyData = ENEMY_MAPPINGS[mapEnemies.length][enemyObject.enemyNumber];
+                    enemyObject.name = enemyData.name;
+                    enemyObject.height = enemyData.height;
+                }
                 enemyElements.push(enemyObject);
             }
             enemies.push({header, enemies: enemyElements, mapSetNumber: mapEnemies.length, offset: enemyPointer});

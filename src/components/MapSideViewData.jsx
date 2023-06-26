@@ -83,16 +83,18 @@ export default ({level, onStepChange, location}) => {
                             <th>Enemy Number</th>
                             <th>X</th>
                             <th>Y</th>
+                            <th>Height</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {level.enemyData.enemies.map(({x, y, name, enemyNumber}, index) => 
+                        {level.enemyData.enemies.map(({x, y, name, enemyNumber, height}, index) => 
                             <tr>
                                 <td>{index}</td>
                                 <td>{name}</td>
                                 <td><HexValue>{enemyNumber}</HexValue></td>
                                 <td>{x}</td>
                                 <td>{y}</td>
+                                <td>{height}</td>
                             </tr>
                         )}
                     </tbody>

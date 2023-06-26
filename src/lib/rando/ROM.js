@@ -441,7 +441,7 @@ export class ROM {
      * Patch the ROM with the graph
      * @param {string} fileName 
      */
-    patchRom = (graphData, mapData) => {
+    patchRom = (graphData, mapData, levelData) => {
         // Patch ROM here
         console.log("PATCHING ROM...");
 
@@ -527,6 +527,14 @@ export class ROM {
                 mapOffset += bytesWritten;
             });
         }
+
+        // Patch enemy data
+        Object.values(levelData).forEach(({enemies}) => {
+            enemies.forEach((enemy) => {
+                this.writeFieldToROM(enemy, "enemyNumber");
+                this.writeFieldToROM(enemy, "y");
+            });
+        });
 
         // Sign the ROM.
         let signature = stringToZ2Bytes("TKOS\0");

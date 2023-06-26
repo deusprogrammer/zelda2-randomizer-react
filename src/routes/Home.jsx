@@ -63,10 +63,9 @@ export default () => {
             
                     let randomizer = new Z2Randomizer(template, z2LocationMeta, z2VanillaLevels, newSeed);
                     let graph = randomizer.randomizeLocationsAndItems();
-                    let levels = randomizer.randomizeEnemiesAndPalaces();
-                    console.log(JSON.stringify(levels, null, 5));
+                    let levelData = randomizer.randomizeEnemiesAndPalaces();
                     let rom = new ROM(new Uint8Array(cleanRom));
-                    let patchedRom = rom.patchRom(graph, maps);
+                    let patchedRom = rom.patchRom(graph, maps, levelData);
                     parseRom(patchedRom);
                     resolve();
                 } catch (e) {

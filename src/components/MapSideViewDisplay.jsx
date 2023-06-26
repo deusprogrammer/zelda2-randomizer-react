@@ -23,11 +23,9 @@ export default ({level, steps, enemyData}) => {
                 return x === x1 && y === y1;
             });
 
-            console.log(`${x}, ${y}`);
             let border = null;
             if (found) {
                 border = "1px solid yellow";
-                console.log("FOUND");
             }
 
             if (!mapBlock || mapBlock.clear) {
