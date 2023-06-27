@@ -24,6 +24,10 @@ import z2VanillaMap from '../lib/zelda2/templates/z2-vanilla.map';
 export default () => {
     const [ seed, setSeed ] = useState(0);
     const [ cleanRom, setCleanRom ] = useState(null);
+    const [ options, setOptions ] = useState({
+        overworld: "VANILLA",
+        monsters: "VANILLA"
+    });
     const [ mode, setMode ] = useState("USER");
     const [ romData, setRomData ] = useAtom(romAtom);
     const { pathname } = useLocation();
@@ -45,7 +49,7 @@ export default () => {
         fr.readAsArrayBuffer(file);
     }
 
-    const randomizeRom = (generateSeed=false, generateTerrain=false) => {
+    const randomizeRom = (generateSeed=false) => {
         let newSeed = seed;
         if (generateSeed) {
             newSeed = Math.trunc(Math.random() * (Math.pow(2, 32) - 1));
@@ -57,16 +61,30 @@ export default () => {
                 try {
                     let template = z2VanillaTemplate;
                     let maps = z2VanillaMap;
-                    if (generateTerrain) {
+
+                    // Generate random terrain
+                    if (options.overworld === "RANDOMIZED") {
                         let terrainGenerator = new TerrainGenerator(newSeed);
                         ({template, maps} = terrainGenerator.generateContinents());
                     }
             
+                    // Initialize randomizer
                     let randomizer = new Z2Randomizer(template, z2LocationMeta, z2VanillaLevels, newSeed);
+
+                    // Shuffle items and locations
                     let graph = randomizer.randomizeLocationsAndItems();
-                    let levelData = randomizer.randomizeEnemiesAndPalaces();
+
+                    // Randomize enemies
+                    let levelData = z2VanillaLevels;
+                    if (options.monsters === "RANDOMIZED") {
+                        levelData = randomizer.randomizeEnemiesAndPalaces();
+                    }
+
+                    // Patch ROM
                     let rom = new ROM(new Uint8Array(cleanRom));
                     let patchedRom = rom.patchRom(graph, maps, levelData);
+
+                    // Reparse ROM to display in admin tools
                     parseRom(patchedRom);
                     resolve();
                 } catch (e) {
@@ -95,6 +113,12 @@ export default () => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
+    const setOption = (field, value) => {
+        let optionsCopy = {...options};
+        optionsCopy[field] = value;
+        setOptions(optionsCopy);
+    }
+
     if (!romData) {
         return (
             <div style={{width: "80%", margin: "auto", textAlign: "center"}}>
@@ -107,13 +131,6 @@ export default () => {
                     }} />
                     <h2>ROM File Selection</h2>
                     <input type="file" accept='.nes' onChange={onFileLoad} />
-                </div>
-                <div style={{display: "flex", flexDirection: "column"}}>
-                    <h2>Actions</h2>
-                    <h3>Tools</h3>
-                    <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link>
-                    <Link to={`${process.env.PUBLIC_URL}/hex`}><button>Hex Viewer</button></Link>
-                    <Link to={`${process.env.PUBLIC_URL}/terrain`}><button>Terrain Generator Test</button></Link>
                 </div>
                 <div>
                     <h2>What is Zelda 2 Randomizer JS?</h2>
@@ -150,44 +167,44 @@ export default () => {
     } else {
         return (
             <div>
-                <h2>Randomizer Details</h2>
+                <h2>Randomizer</h2>
                 <h3>Data</h3>
                 <KeyValueTable showHex={false} editable={false} map={{
                     "Randomizer Version": RANDOMIZER_VERSION,
                     "ROM Version": romData.isExtendedRom ? 'Extended' : 'Vanilla'
                 }} />
-                <h3>Actions</h3>
+                <h3>Options</h3>
                 <div className="data-div">
-                    <h4>Tools</h4>
-                    <Link to={`${process.env.PUBLIC_URL}/hex`}><button>Hex Viewer</button></Link><br/>
-                    <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link><br/>
-                    <h4>ROM</h4>
+                    <div style={{display: "grid", gap: "5px", gridTemplateColumns: "1fr 1fr 1fr 1fr"}}>
+                        <div>
+                            <label>Overworld:</label>
+                            <select value={options.overworld} onChange={({target: {value}}) => {setOption("overworld", value)}}>
+                                <option value="VANILLA">Vanilla</option>
+                                <option value="RANDOMIZED">Randomized</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Monsters:</label>
+                            <select value={options.monsters} onChange={({target: {value}}) => {setOption("monsters", value)}}>
+                                <option value="VANILLA">Vanilla</option>
+                                <option value="RANDOMIZED">Randomized</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <h3>Randomize</h3>
+                <div className="data-div">
                     <input type="number" value={seed} onChange={({target: {value}}) => {setSeed(parseInt(value))}} />
                     <button onClick={() => {
                         setSeed(Math.trunc(Math.random() * (Math.pow(2, 32) - 1)));
                     }}>
                         Generate Seed
-                    </button><br />
+                    </button>
                     <button onClick={() => {
-                        randomizeRom(true);
+                        randomizeRom(false);
                     }}>
-                        Randomize ROM with New Seed (Vanilla Overworld)
-                    </button><br />
-                    <button onClick={() => {
-                        randomizeRom(true, true);
-                    }}>
-                        Randomize ROM with New Seed (Randomized Overworld)
-                    </button><br />
-                    <button onClick={() => {
-                        randomizeRom();
-                    }}>
-                        Randomize ROM (Vanilla Overworld)
-                    </button><br />
-                    <button onClick={() => {
-                        randomizeRom(false, true);
-                    }}>
-                        Randomize ROM (Randomized Overworld)
-                    </button><br />
+                        Randomize ROM
+                    </button><br/>
                     <button onClick={() => {
                         let file = new File([romData.rawBytes], `Z2RA${seed}.nes`, {type: "application/octet-stream"});
                         FileSaver.saveAs(file);
@@ -199,6 +216,13 @@ export default () => {
 
                 {mode === "ADMIN" ?
                     <>
+                        <h2>Debugging Tools</h2>
+                        <h3>Tools</h3>
+                        <div className="data-div" style={{display: "flex", flexDirection: "column"}}>
+                            <Link to={`${process.env.PUBLIC_URL}/cdl`}><button>CDL Viewer</button></Link>
+                            <Link to={`${process.env.PUBLIC_URL}/hex`}><button>Hex Viewer</button></Link>
+                            <Link to={`${process.env.PUBLIC_URL}/terrain`}><button>Terrain Generator Test</button></Link>
+                        </div>
                         <h3>West Hyrule</h3>
                         <h4>Data</h4>
                         <MapData overworld={romData.overworld[0]} continent={0} />
