@@ -74,6 +74,46 @@ export const LEVEL_EXIT_BLOCK = {
     }
 }
 
+// Bytes for enemy data:
+// 0 -
+// 	....xxxx = X coordinate (in tiles)
+// 	xxxx.... = Y coordinate (in tiles)
+// 		Y coordinate 0 maps to row 1, otherwise maps to row 2+x
+// 1 -
+// 	xx...... = Upper bits of X coordinate
+// 	..xxxxxx = Enemy number (0-63)
+
+export const ENEMY_HEADER_MAPPING = [
+    {
+        name: 'sizeOfEnemy',
+        relOffset: 0x00,
+        mask: 0b11111111
+    }
+];
+
+export const ENEMY_DATA_MAPPING = [
+    {
+        name: 'xLower',
+        relOffset: 0x00,
+        mask: 0b00001111
+    },
+    {
+        name: 'xUpper',
+        relOffset: 0x01,
+        mask: 0b11000000
+    },
+    {
+        name: 'y',
+        relOffset: 0x00,
+        mask: 0b11110000
+    },
+    {
+        name: "enemyNumber",
+        relOffset: 0x01,
+        mask: 0b00111111
+    }
+];
+
 export const LEVEL_HEADER_MAPPING = [
     {
         name: 'sizeOfLevel',
@@ -290,9 +330,11 @@ export const OVERWORLD_SPRITE_MAPPING = {
     "SPIDER": 15
 }
 
-export const BACKMAP_OFFSET      = 0x8000;
-export const MAP_POINTER_OFFSET1 = 0x8523;
-export const MAP_POINTER_OFFSET2 = 0xA000;
+export const BACKMAP_OFFSET         = 0x8000;
+export const MAP_POINTER_OFFSET1    = 0x8523;
+export const MAP_POINTER_OFFSET2    = 0xA000;
+export const ENEMY_POINTER_OFFSET1  = 0x85A1;
+export const ENEMY_POINTER_OFFSET2  = 0xA07E;
 
 export const BACKMAP_POINTER_BANK_OFFSETS = [
     toFileAddr(BACKMAP_OFFSET, 1),
@@ -318,6 +360,22 @@ export const MAP_POINTER_BANK_OFFSETS2 = [
     toFileAddr(MAP_POINTER_OFFSET2, 5),
 ];
 
+export const ENEMY_POINTER_BANK_OFFSETS1 = [
+    toFileAddr(ENEMY_POINTER_OFFSET1, 1),
+    toFileAddr(ENEMY_POINTER_OFFSET1, 2),
+    toFileAddr(ENEMY_POINTER_OFFSET1, 3),
+    toFileAddr(ENEMY_POINTER_OFFSET1, 4),
+    toFileAddr(ENEMY_POINTER_OFFSET1, 5),
+];
+
+export const ENEMY_POINTER_BANK_OFFSETS2 = [
+    toFileAddr(ENEMY_POINTER_OFFSET2, 1),
+    toFileAddr(ENEMY_POINTER_OFFSET2, 2),
+    toFileAddr(ENEMY_POINTER_OFFSET2, 3),
+    toFileAddr(ENEMY_POINTER_OFFSET2, 4),
+    toFileAddr(ENEMY_POINTER_OFFSET2, 5),
+];
+
 export const LEVEL_EXITS_OFFSET1 = 0x871B;
 export const LEVEL_EXITS_OFFSET2 = 0xA1F8;
 
@@ -340,6 +398,26 @@ export const LEVEL_EXITS_BANK_OFFSETS2 = [
 export const WEST_HYRULE_MAP_RANDO_OFFSET      = 0x7480;
 export const WEST_HYRULE_MAP_VANILLA_OFFSET    = 0x506C;
 export const WEST_HYRULE_MAP_LENGTH            = 0x538C - 0x506C;
+export const EXTENDED_MAP_LENGTH               = 0x7f80 - 0x7a00;
+
+export const WEST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING = {
+    size: EXTENDED_MAP_LENGTH,
+    elements: {
+        size: 0x01,
+        fields: [
+            {
+                name: 'length',
+                relOffset: 0x0,
+                mask: 0b11110000
+            },
+            {
+                name: 'type',
+                relOffset: 0x0,
+                mask: 0b00001111
+            }
+        ]
+    }
+}
 
 export const WEST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
     size: WEST_HYRULE_MAP_LENGTH,
@@ -551,6 +629,25 @@ export const DEATH_MOUNTAIN_MAP_RANDO_OFFSET = 0x7A00;
 export const DEATH_MOUNTAIN_MAP_VANILLA_OFFSET = 0x665C;
 export const DEATH_MOUNTAIN_MAP_LENGTH = 0x6942 - 0x665C;
 
+export const DEATH_MOUNTAIN_OVERWORLD_EXTENDED_SPRITE_MAPPING = {
+    size: EXTENDED_MAP_LENGTH,
+    elements: {
+        size: 0x01,
+        fields: [
+            {
+                name: 'length',
+                relOffset: 0x0,
+                mask: 0b11110000
+            },
+            {
+                name: 'type',
+                relOffset: 0x0,
+                mask: 0b00001111
+            }
+        ]
+    }
+}
+
 export const DEATH_MOUNTAIN_OVERWORLD_SPRITE_MAPPING = {
     size: WEST_HYRULE_MAP_LENGTH,
     elements: {
@@ -711,7 +808,7 @@ export const DEATH_MOUNTAIN_LOCATION_MAPPINGS = {
         offset: 0x612E,
         fields: LOCATION_MAPPING_FIELDS
     },
-    ELEVATOR_CAVE_H_D_BL: {
+    ELEVATOR_CAVE_H_S_BL: {
         offset: 0x612F,
         fields: LOCATION_MAPPING_FIELDS
     },
@@ -780,6 +877,25 @@ export const DEATH_MOUNTAIN_LOCATION_MAPPINGS = {
 export const MAZE_ISLAND_MAP_RANDO_OFFSET = 0xBA00;
 export const MAZE_ISLAND_MAP_VANILLA_OFFSET = 0xA65C;
 export const MAZE_ISLAND_MAP_LENGTH = 0xA942 - 0xA65C;
+
+export const MAZE_ISLAND_OVERWORLD_EXTENDED_SPRITE_MAPPING = {
+    size: EXTENDED_MAP_LENGTH,
+    elements: {
+        size: 0x01,
+        fields: [
+            {
+                name: 'length',
+                relOffset: 0x0,
+                mask: 0b11110000
+            },
+            {
+                name: 'type',
+                relOffset: 0x0,
+                mask: 0b00001111
+            }
+        ]
+    }
+}
 
 export const MAZE_ISLAND_OVERWORLD_SPRITE_MAPPING = {
     size: WEST_HYRULE_MAP_LENGTH,
@@ -941,7 +1057,7 @@ export const MAZE_ISLAND_LOCATION_MAPPINGS = {
         offset: 0xA12E,
         fields: LOCATION_MAPPING_FIELDS
     },
-    ELEVATOR_CAVE_H_D_BL: {
+    ELEVATOR_CAVE_H_S_BL: {
         offset: 0xA12F,
         fields: LOCATION_MAPPING_FIELDS
     },
@@ -1010,6 +1126,25 @@ export const MAZE_ISLAND_LOCATION_MAPPINGS = {
 export const EAST_HYRULE_MAP_RANDO_OFFSET      = 0xB480;
 export const EAST_HYRULE_MAP_VANILLA_OFFSET    = 0x9056;
 export const EAST_HYRULE_MAP_LENGTH            = 0x936F - 0x9056;
+
+export const EAST_HYRULE_OVERWORLD_EXTENDED_SPRITE_MAPPING = {
+    size: EXTENDED_MAP_LENGTH,
+    elements: {
+        size: 0x01,
+        fields: [
+            {
+                name: 'length',
+                relOffset: 0x0,
+                mask: 0b11110000
+            },
+            {
+                name: 'type',
+                relOffset: 0x0,
+                mask: 0b00001111
+            }
+        ]
+    }
+}
 
 export const EAST_HYRULE_OVERWORLD_SPRITE_MAPPING = {
     size: EAST_HYRULE_MAP_LENGTH,

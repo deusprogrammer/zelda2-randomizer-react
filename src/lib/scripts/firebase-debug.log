@@ -1,0 +1,39 @@
+[debug] [2023-06-26T18:25:10.494Z] ----------------------------------------------------------------------
+[debug] [2023-06-26T18:25:10.495Z] Command:       /opt/homebrew/Cellar/node/20.0.0/bin/node /opt/homebrew/bin/firebase deploy
+[debug] [2023-06-26T18:25:10.495Z] CLI Version:   11.15.0
+[debug] [2023-06-26T18:25:10.495Z] Platform:      darwin
+[debug] [2023-06-26T18:25:10.495Z] Node Version:  v20.0.0
+[debug] [2023-06-26T18:25:10.495Z] Time:          Mon Jun 26 2023 13:25:10 GMT-0500 (Central Daylight Time)
+[debug] [2023-06-26T18:25:10.495Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-26T18:25:10.531Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-26T18:25:10.531Z] > authorizing via signed-in user (deusprogrammer@gmail.com)
+[debug] [2023-06-26T18:25:10.531Z] [iam] checking project z2r-react for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-26T18:25:10.532Z] > refreshing access token with scopes: []
+[debug] [2023-06-26T18:25:10.533Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-06-26T18:25:10.533Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-06-26T18:25:14.879Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-06-26T18:25:14.880Z] > refreshing access token with scopes: []
+[debug] [2023-06-26T18:25:14.880Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-06-26T18:25:14.880Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-06-26T18:25:18.926Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-06-26T18:25:19.358Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (/opt/homebrew/lib/node_modules/firebase-tools/lib/auth.js:144:12)
+    at refreshTokens (/opt/homebrew/lib/node_modules/firebase-tools/lib/auth.js:508:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Client.getAccessToken (/opt/homebrew/lib/node_modules/firebase-tools/lib/apiv2.js:149:23)
+    at async Client.addAuthHeader (/opt/homebrew/lib/node_modules/firebase-tools/lib/apiv2.js:140:21)
+    at async Client.request (/opt/homebrew/lib/node_modules/firebase-tools/lib/apiv2.js:96:34)
+    at async getFirebaseProject (/opt/homebrew/lib/node_modules/firebase-tools/lib/management/projects.js:295:21)
+    at async getDefaultHostingSite (/opt/homebrew/lib/node_modules/firebase-tools/lib/getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (/opt/homebrew/lib/node_modules/firebase-tools/lib/requireHostingSite.js:9:18)
+    at async Object.fn (/opt/homebrew/lib/node_modules/firebase-tools/lib/commands/deploy.js:74:9)
+    at async /opt/homebrew/lib/node_modules/firebase-tools/lib/command.js:214:17
+[error] 
+[error] Error: Failed to get Firebase project z2r-react. Please make sure the project exists and your account has permission to access it.

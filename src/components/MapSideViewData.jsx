@@ -74,6 +74,33 @@ export default ({level, onStepChange, location}) => {
                 </table>
             </div>
             <div>
+                <h5>Enemy Data</h5>
+                <table className="data-table striped">
+                    <thead>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Enemy Name</th>
+                            <th>Enemy Number</th>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>Height</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {level.enemyData.enemies.map(({x, y, name, enemyNumber, height}, index) => 
+                            <tr>
+                                <td>{index}</td>
+                                <td>{name}</td>
+                                <td><HexValue>{enemyNumber}</HexValue></td>
+                                <td>{x}</td>
+                                <td>{y}</td>
+                                <td>{height}</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+            </div>
+            <div>
                 <h5>Data</h5>
                 <table className="data-table striped col-labeled link-rows">
                     <tr>

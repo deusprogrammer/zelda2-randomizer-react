@@ -87,6 +87,7 @@ body * {
     color: white;
     align-items: center;
     justify-content: center;
+    font-size: 0.5rem;
 }
 
 .map-container .map-square:hover {
@@ -286,4 +287,12 @@ li {
     100% {
         bottom: 0px;
     }
+}
+
+.sigma-container {
+    border: 1px solid black;
+}
+
+.sigma-container > canvas {
+    left: 0px;
 }

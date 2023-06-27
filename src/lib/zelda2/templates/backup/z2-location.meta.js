@@ -672,7 +672,7 @@ export default {
             "ELEVATOR_CAVE_G_E_BL"
         ]
     },
-    "ELEVATOR_CAVE_H_D_BL": {
+    "ELEVATOR_CAVE_H_S_BL": {
         "type": "CAVE",
         "continent": 0,
         "mapSet": 0,
@@ -699,7 +699,7 @@ export default {
         "links": [
             "ELEVATOR_CAVE_H_W_TR",
             "ELEVATOR_CAVE_H_N_BR",
-            "ELEVATOR_CAVE_H_D_BL"
+            "ELEVATOR_CAVE_H_S_BL"
         ]
     },
     "ELEVATOR_CAVE_H_N_BR": {
@@ -712,7 +712,7 @@ export default {
         "spells": [],
         "requirements": [],
         "links": [
-            "ELEVATOR_CAVE_H_D_BL",
+            "ELEVATOR_CAVE_H_S_BL",
             "ELEVATOR_CAVE_H_E_TL"
         ]
     },
@@ -726,7 +726,7 @@ export default {
         "spells": [],
         "requirements": [],
         "links": [
-            "ELEVATOR_CAVE_H_D_BL",
+            "ELEVATOR_CAVE_H_S_BL",
             "ELEVATOR_CAVE_H_E_TL"
         ]
     },

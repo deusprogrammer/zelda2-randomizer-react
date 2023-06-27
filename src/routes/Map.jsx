@@ -40,7 +40,7 @@ export default () => {
         console.log("HIIIIII!  I'M DERPY BARBA!");
     }
 
-    let location, map;
+    let location, map, enemyData;
     if (locationKey) {
         [location] = getLocationByKey(romData, locationKey);
         map = getMapByKey(romData, locationKey);
@@ -48,6 +48,7 @@ export default () => {
         mapNumber = location.mapNumber;
     } else {
         map = romData.sideViewMaps[mapSet][mapNumber];
+        enemyData = romData.enemyData[mapSet][mapNumber];
     }
 
     return (
@@ -57,7 +58,7 @@ export default () => {
                 <input type="number" onChange={({target: {value}}) => {updateNavForm("mapSet", value)}} value={navFormData.mapSet} />:
                 <input type="number" onChange={({target: {value}}) => {updateNavForm("mapNumber", value)}} value={navFormData.mapNumber} />
             </div> */}
-            <MapSideView location={location} map={map} />
+            <MapSideView location={location} map={map} enemyData={enemyData} />
             {mapSet === "6" && mapNumber === "58" ? <img src={`${process.env.PUBLIC_URL}/derpybarba.png`} className="popup" /> : null}
         </>
     )

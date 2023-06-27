@@ -1,9 +1,8 @@
 import parse from "../Z2Parser";
 import { assembleCode } from "../memory/Assembler";
 import { CONTINENT_EXIT_MAPPINGS, CREDITS_OFFSET, OVERWORLD_SPRITE_MAPPING, PALACE_PALETTE_LOCATIONS, RANDO_MAP_OFFSETS } from "../zelda2/Z2MemoryMappings";
-import { printSpriteMap, stringToZ2Bytes } from "../zelda2/Z2Utils";
-import itemMetaData from '../zelda2/templates/z2-items.meta';
-import vanillaMapData from '../zelda2/templates/z2-vanilla.map';
+import { stringToZ2Bytes } from "../zelda2/Z2Utils";
+import itemMetaData from '../zelda2/templates/z2-vanilla.items';
 import locationMetadata from '../zelda2/templates/z2-location.meta';
 
 const LAST_BIT_MASK = 1 >>> 0;
@@ -435,8 +434,6 @@ export class ROM {
             compressedMap.push({type: currentBlockType, length: run - 1});
         }
 
-        printSpriteMap(compressedMap);
-
         return compressedMap;
     }
 
@@ -444,7 +441,7 @@ export class ROM {
      * Patch the ROM with the graph
      * @param {string} fileName 
      */
-    patchRom = (graphData) => {
+    patchRom = (graphData, mapData, levelData) => {
         // Patch ROM here
         console.log("PATCHING ROM...");
 
@@ -510,7 +507,7 @@ export class ROM {
         
         // Compress each sprite map and write it to memory
         for (let continent = 0; continent < 4; continent++) {
-            let compressedMap = this.compressMap(vanillaMapData[continent], continent, graphData);
+            let compressedMap = this.compressMap(mapData[continent], continent, graphData);
             let mapOffset = RANDO_MAP_OFFSETS[continent];
 
             compressedMap.forEach(blockRun => {
@@ -530,6 +527,14 @@ export class ROM {
                 mapOffset += bytesWritten;
             });
         }
+
+        // Patch enemy data
+        Object.values(levelData).forEach(({enemies}) => {
+            enemies.forEach((enemy) => {
+                this.writeFieldToROM(enemy, "enemyNumber");
+                this.writeFieldToROM(enemy, "y");
+            });
+        });
 
         // Sign the ROM.
         let signature = stringToZ2Bytes("TKOS\0");
