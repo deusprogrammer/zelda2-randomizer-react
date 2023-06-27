@@ -24,6 +24,7 @@ import z2VanillaMap from '../lib/zelda2/templates/z2-vanilla.map';
 export default () => {
     const [ seed, setSeed ] = useState(0);
     const [ cleanRom, setCleanRom ] = useState(null);
+    const [ mode, setMode ] = useState("USER");
     const [ romData, setRomData ] = useAtom(romAtom);
     const { pathname } = useLocation();
 
@@ -79,6 +80,16 @@ export default () => {
             error: "Failed to generate ROM.  Please note the seed number and give it to one of our administrators."
         })
     }
+
+    useEffect(() => {
+        let mode = localStorage.getItem("mode");
+
+        if (!mode) {
+            mode = "USER";
+        }
+
+        setMode(mode);
+    }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -186,32 +197,36 @@ export default () => {
                     <button onClick={() => {setRomData(null)}}>Close ROM</button>
                 </div>
 
-                <h3>West Hyrule</h3>
-                <h4>Data</h4>
-                <MapData overworld={romData.overworld[0]} continent={0} />
-                <h4>Map</h4>
-                <MapDisplay id="map-0" maps={romData.sideViewMaps} overworld={romData.overworld[0]} />
+                {mode === "ADMIN" ?
+                    <>
+                        <h3>West Hyrule</h3>
+                        <h4>Data</h4>
+                        <MapData overworld={romData.overworld[0]} continent={0} />
+                        <h4>Map</h4>
+                        <MapDisplay id="map-0" maps={romData.sideViewMaps} overworld={romData.overworld[0]} />
 
-                <h3>Death Mountain</h3>
-                <h4>Data</h4>
-                <MapData overworld={romData.overworld[1]} continent={1} />
-                <h4>Map</h4>
-                <MapDisplay id="map-1" maps={romData.sideViewMaps} overworld={romData.overworld[1]} />
+                        <h3>Death Mountain</h3>
+                        <h4>Data</h4>
+                        <MapData overworld={romData.overworld[1]} continent={1} />
+                        <h4>Map</h4>
+                        <MapDisplay id="map-1" maps={romData.sideViewMaps} overworld={romData.overworld[1]} />
 
-                <h3>East Hyrule</h3>
-                <h4>Data</h4>
-                <MapData overworld={romData.overworld[2]} continent={2} />
-                <h4>Map</h4>
-                <MapDisplay id="map-2" maps={romData.sideViewMaps} overworld={romData.overworld[2]} />
-                
-                <h3>Maze Island</h3>
-                <h4>Data</h4>
-                <MapData overworld={romData.overworld[3]} continent={3} />
-                <h4>Map</h4>
-                <MapDisplay id="map-3" maps={romData.sideViewMaps} overworld={romData.overworld[3]} />
+                        <h3>East Hyrule</h3>
+                        <h4>Data</h4>
+                        <MapData overworld={romData.overworld[2]} continent={2} />
+                        <h4>Map</h4>
+                        <MapDisplay id="map-2" maps={romData.sideViewMaps} overworld={romData.overworld[2]} />
+                        
+                        <h3>Maze Island</h3>
+                        <h4>Data</h4>
+                        <MapData overworld={romData.overworld[3]} continent={3} />
+                        <h4>Map</h4>
+                        <MapDisplay id="map-3" maps={romData.sideViewMaps} overworld={romData.overworld[3]} />
 
-                <h3>Text Data</h3>
-                <TextData textData={romData.textData} />
+                        <h3>Text Data</h3>
+                        <TextData textData={romData.textData} />
+                    </> : null
+                }
             </div>
         );
     }
