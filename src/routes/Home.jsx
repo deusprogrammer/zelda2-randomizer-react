@@ -22,6 +22,7 @@ import { ROM } from '../lib/rando/ROM';
 import z2VanillaMap from '../lib/zelda2/templates/z2-vanilla.map';
 
 export default () => {
+    const [ rooms, setRooms ] = useState({});
     const [ seed, setSeed ] = useState(0);
     const [ cleanRom, setCleanRom ] = useState(null);
     const [ options, setOptions ] = useState({
@@ -107,6 +108,10 @@ export default () => {
         }
 
         setMode(mode);
+
+        let rooms = localStorage.getItem("connectionData");
+        rooms = JSON.parse(rooms);
+        setRooms(JSON.stringify(rooms, null, 5));
     }, []);
 
     useEffect(() => {
@@ -249,6 +254,11 @@ export default () => {
 
                         <h3>Text Data</h3>
                         <TextData textData={romData.textData} />
+
+                        <h3>Room Data</h3>
+                        <pre>
+                            {rooms}
+                        </pre>
                     </> : null
                 }
             </div>

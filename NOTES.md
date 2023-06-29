@@ -16,12 +16,11 @@
 
 ## Next Feature
 
-* Randomize enemy placement, xp, and drops
+* Randomize palaces
 
 ## TODO
 
-* Randomize terrain
-* Randomize enemy placement
+* Fix enemy randomization of strong enemies
 * Randomize spell placements
 * Randomize palace layouts
 

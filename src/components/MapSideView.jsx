@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
 import MapSideViewData from "./MapSideViewData"
@@ -7,6 +7,7 @@ import MapSideViewExitData from "./MapSideViewExitData"
 
 export default ({location, map, enemyData}) => {
     const [steps, setSteps] = useState(-1);
+    const [connectionData, setConnectionData] = useState({});
 
     return (
         <div>
