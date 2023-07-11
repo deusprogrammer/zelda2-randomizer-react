@@ -1,14 +1,15 @@
 export default {
     "5:0": {
+        "type": "ENTRANCE",
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
@@ -17,27 +18,27 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right",
-            "down"
+        "exits": [
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "down",
+                "from": "DOWN",
                 "to": "KEY",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -47,12 +48,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -62,12 +63,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -75,39 +76,39 @@ export default {
     },
     "5:4": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "5:5": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
@@ -116,56 +117,56 @@ export default {
     },
     "5:6": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "5:7": {
         "items": [],
-        "nodes": [
-            "left",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -176,12 +177,12 @@ export default {
         "items": [
             "CANDLE"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "CANDLE",
                 "requirements": [
                     "KEY"
@@ -191,28 +192,28 @@ export default {
     },
     "5:9": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "5:10": {
         "items": [],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -221,28 +222,28 @@ export default {
     },
     "5:11": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "5:12": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
@@ -250,15 +251,16 @@ export default {
         ]
     },
     "5:13": {
+        "type": "BOSS",
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY",
                     "BOSS"
@@ -267,29 +269,30 @@ export default {
         ]
     },
     "5:14": {
+        "type": "ENTRANCE",
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "5:15": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -298,42 +301,42 @@ export default {
     },
     "5:16": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "5:17": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "5:18": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
@@ -342,27 +345,27 @@ export default {
     },
     "5:19": {
         "items": [],
-        "nodes": [
-            "left",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -373,12 +376,12 @@ export default {
         "items": [
             "GLOVE"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "GLOVE",
                 "requirements": [
                     "KEY"
@@ -390,66 +393,66 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": [
                     "JUMP"
                 ]
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "JUMP"
                 ]
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "5:22": {
         "items": [],
-        "nodes": [
-            "left",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -460,12 +463,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -473,27 +476,27 @@ export default {
     },
     "5:24": {
         "items": [],
-        "nodes": [
-            "left",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -502,28 +505,28 @@ export default {
     },
     "5:25": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "5:26": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -532,29 +535,29 @@ export default {
     },
     "5:27": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
@@ -563,12 +566,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -576,14 +579,14 @@ export default {
     },
     "5:29": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
@@ -592,12 +595,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -605,42 +608,42 @@ export default {
     },
     "5:31": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "5:32": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "5:33": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
@@ -648,15 +651,16 @@ export default {
         ]
     },
     "5:34": {
+        "type": "BOSS",
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY",
                     "BOSS"
@@ -665,29 +669,30 @@ export default {
         ]
     },
     "5:35": {
+        "type": "ENTRANCE",
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "5:36": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
@@ -696,27 +701,27 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "FAIRY"
                 ]
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": [
                     "FAIRY"
                 ]
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -724,28 +729,28 @@ export default {
     },
     "5:38": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "5:39": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -756,25 +761,25 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right",
-            "down"
+        "exits": [
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             },
             {
-                "from": "down",
+                "from": "DOWN",
                 "to": "KEY",
                 "requirements": [
                     "KEY"
@@ -783,15 +788,16 @@ export default {
         ]
     },
     "5:41": {
+        "type": "BOSS",
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY",
                     "BOSS"
@@ -803,25 +809,25 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right",
-            "down"
+        "exits": [
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             },
             {
-                "from": "down",
+                "from": "DOWN",
                 "to": "KEY",
                 "requirements": [
                     "KEY"
@@ -833,64 +839,64 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": [
                     "JUMP"
                 ]
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "JUMP"
                 ]
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "5:44": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
@@ -899,12 +905,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -914,29 +920,29 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "JUMP"
@@ -946,29 +952,29 @@ export default {
     },
     "5:47": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -977,14 +983,14 @@ export default {
     },
     "5:49": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
@@ -993,13 +999,13 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -1007,14 +1013,14 @@ export default {
     },
     "5:51": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -1025,12 +1031,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -1038,14 +1044,14 @@ export default {
     },
     "5:53": {
         "items": [],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -1056,82 +1062,82 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "5:55": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "5:56": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "5:57": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -1140,14 +1146,14 @@ export default {
     },
     "5:58": {
         "items": [],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -1158,12 +1164,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -1171,14 +1177,14 @@ export default {
     },
     "5:60": {
         "items": [],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -1189,12 +1195,12 @@ export default {
         "items": [
             "RECORDER"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "RECORDER",
                 "requirements": [
                     "KEY"
@@ -1204,14 +1210,14 @@ export default {
     },
     "5:62": {
         "items": [],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -1219,29 +1225,30 @@ export default {
         ]
     },
     "6:0": {
+        "type": "ENTRANCE",
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:1": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -1252,18 +1259,18 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "DOWNSTAB",
@@ -1271,7 +1278,7 @@ export default {
                 ]
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": [
                     "DOWNSTAB",
@@ -1282,24 +1289,24 @@ export default {
     },
     "6:3": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
@@ -1308,18 +1315,18 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "DOWNSTAB",
@@ -1327,7 +1334,7 @@ export default {
                 ]
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": [
                     "DOWNSTAB",
@@ -1338,36 +1345,36 @@ export default {
     },
     "6:5": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "down",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
@@ -1376,24 +1383,24 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
@@ -1402,12 +1409,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "GLOVE"
@@ -1419,33 +1426,33 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "UPSTAB",
@@ -1453,7 +1460,7 @@ export default {
                 ]
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": [
                     "KEY",
@@ -1467,21 +1474,21 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY",
                     "GLOVE"
                 ]
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": [
                     "KEY",
@@ -1489,8 +1496,8 @@ export default {
                 ]
             },
             {
-                "from": "right",
-                "to": "key",
+                "from": "RIGHT",
+                "to": "KEY",
                 "requirements": [
                     "KEY",
                     "GLOVE"
@@ -1500,14 +1507,14 @@ export default {
     },
     "6:12": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -1516,14 +1523,14 @@ export default {
     },
     "6:13": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "GLOVE",
                     "DOWNSTAB",
@@ -1533,15 +1540,16 @@ export default {
         ]
     },
     "6:14": {
+        "type": "BOSS",
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY",
                     "BOSS"
@@ -1550,15 +1558,16 @@ export default {
         ]
     },
     "6:15": {
+        "type": "ENTRANCE",
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
@@ -1567,12 +1576,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "GLOVE"
@@ -1584,33 +1593,33 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "UPSTAB",
@@ -1618,7 +1627,7 @@ export default {
                 ]
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": [
                     "UPSTAB"
@@ -1628,14 +1637,14 @@ export default {
     },
     "6:18": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
@@ -1644,42 +1653,42 @@ export default {
     },
     "6:19": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:20": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:21": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
@@ -1690,92 +1699,92 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "6:23": {
         "items": [],
-        "nodes": [
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:24": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "down",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "left",
+                "from": "RIGHT",
+                "to": "LEFT",
                 "requirements": [
                     "FAIRY"
                 ]
             },
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
@@ -1784,38 +1793,38 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "6:26": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -1824,39 +1833,40 @@ export default {
     },
     "6:27": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "6:28": {
+        "type": "BOSS",
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY",
                     "BOSS"
@@ -1866,41 +1876,41 @@ export default {
     },
     "6:29": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:30": {
         "items": [],
-        "nodes": [
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
@@ -1911,12 +1921,12 @@ export default {
         "items": [
             "BOOTS"
         ],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "BOOTS",
                 "requirements": [
                     "KEY"
@@ -1928,12 +1938,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "GLOVE"
@@ -1943,27 +1953,27 @@ export default {
     },
     "6:33": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -1972,25 +1982,25 @@ export default {
     },
     "6:34": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
@@ -1999,38 +2009,39 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "6:36": {
+        "type": "ENTRANCE",
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
@@ -2039,12 +2050,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "GLOVE"
@@ -2054,39 +2065,39 @@ export default {
     },
     "6:38": {
         "items": [],
-        "nodes": [
-            "left",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:39": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -2095,45 +2106,45 @@ export default {
     },
     "6:40": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
@@ -2144,23 +2155,23 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": []
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": []
             }
@@ -2168,55 +2179,55 @@ export default {
     },
     "6:42": {
         "items": [],
-        "nodes": [
-            "up",
-            "left",
-            "right",
-            "down"
+        "exits": [
+            "UP",
+            "LEFT",
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             }
         ]
     },
     "6:43": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -2227,12 +2238,12 @@ export default {
         "items": [
             "CROSS"
         ],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": [
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "CROSS",
                 "requirements": [
                     "KEY"
@@ -2242,28 +2253,28 @@ export default {
     },
     "6:45": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:46": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -2272,14 +2283,14 @@ export default {
     },
     "6:47": {
         "items": [],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -2288,27 +2299,27 @@ export default {
     },
     "6:48": {
         "items": [],
-        "nodes": [
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
@@ -2317,14 +2328,14 @@ export default {
     },
     "6:49": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -2333,39 +2344,39 @@ export default {
     },
     "6:50": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "6:51": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "FAIRY"
                 ]
@@ -2376,33 +2387,33 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "left",
-            "right",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "UPSTAB",
@@ -2411,7 +2422,7 @@ export default {
                 ]
             },
             {
-                "from": "left",
+                "from": "LEFT",
                 "to": "KEY",
                 "requirements": [
                     "KEY",
@@ -2424,97 +2435,98 @@ export default {
     },
     "6:53": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "6:54": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:55": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:56": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:57": {
         "items": [],
-        "nodes": [
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": [
                     "FAIRY"
                 ]
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "6:58": {
+        "type": "BOSS",
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "BOSS",
                     "KEY"
@@ -2526,12 +2538,12 @@ export default {
         "items": [
             "KEY"
         ],
-        "nodes": [
-            "right"
+        "exits": [
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "right",
+                "from": "RIGHT",
                 "to": "KEY",
                 "requirements": [
                     "GLOVE"
@@ -2541,27 +2553,27 @@ export default {
     },
     "6:60": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "KEY"
                 ]
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "KEY"
                 ]
@@ -2570,205 +2582,206 @@ export default {
     },
     "6:61": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             }
         ]
     },
     "6:62": {
         "items": [],
-        "nodes": [
-            "left",
-            "up"
+        "exits": [
+            "LEFT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             }
         ]
     },
     "7:0": {
+        "type": "ENTRANCE",
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:1": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:2": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "7:3": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:4": {
         "items": [],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": []
     },
     "7:5": {
         "items": [],
-        "nodes": [
-            "right",
-            "down"
+        "exits": [
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:6": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "7:7": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:8": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:9": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -2777,39 +2790,39 @@ export default {
     },
     "7:10": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:11": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -2818,35 +2831,35 @@ export default {
     },
     "7:12": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "7:13": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": [
                     "GLOVE"
                 ]
             },
             {
-                "from": "down",
-                "to": "left",
+                "from": "DOWN",
+                "to": "LEFT",
                 "requirements": [
                     "GLOVE",
                     "UPSTAB",
@@ -2857,187 +2870,187 @@ export default {
     },
     "7:14": {
         "items": [],
-        "nodes": [
-            "right",
-            "down"
+        "exits": [
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:16": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:17": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:18": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:19": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "7:20": {
         "items": [],
-        "nodes": [
-            "up",
-            "left",
-            "down"
+        "exits": [
+            "UP",
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:21": {
         "items": [],
-        "nodes": [
-            "right",
-            "down"
+        "exits": [
+            "RIGHT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:22": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "7:23": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:24": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:25": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -3046,28 +3059,28 @@ export default {
     },
     "7:26": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:27": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -3076,84 +3089,84 @@ export default {
     },
     "7:29": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "7:30": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:31": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "7:33": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:34": {
         "items": [],
-        "nodes": [
-            "up",
-            "down"
+        "exits": [
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:35": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -3162,150 +3175,150 @@ export default {
     },
     "7:36": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:37": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:38": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:39": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:40": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "7:41": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:42": {
         "items": [],
-        "nodes": [
-            "left",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:43": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": [
                     "GLOVE"
                 ]
@@ -3314,14 +3327,14 @@ export default {
     },
     "7:44": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "FAIRY"
                 ]
@@ -3330,21 +3343,21 @@ export default {
     },
     "7:45": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": [
                     "GLOVE",
                     "DOWNSTAB"
@@ -3354,136 +3367,137 @@ export default {
     },
     "7:46": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             }
         ]
     },
     "7:47": {
         "items": [],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": []
     },
     "7:48": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:49": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "left",
+                "from": "UP",
+                "to": "LEFT",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:50": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:51": {
         "items": [],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": []
     },
     "7:52": {
         "items": [],
-        "nodes": [
-            "right",
-            "up"
+        "exits": [
+            "RIGHT",
+            "UP"
         ],
         "connections": [
             {
-                "from": "up",
-                "to": "right",
+                "from": "UP",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
     },
     "7:53": {
+        "type": "BOSS",
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": [
                     "BOSS",
                     "KEY"
@@ -3492,147 +3506,148 @@ export default {
         ]
     },
     "7:54": {
+        "type": "DARK_LINK",
         "items": [],
-        "nodes": [
-            "left"
+        "exits": [
+            "LEFT"
         ],
         "connections": []
     },
     "7:55": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:56": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:57": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:58": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:59": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:60": {
         "items": [],
-        "nodes": [
-            "left",
-            "down"
+        "exits": [
+            "LEFT",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:61": {
         "items": [],
-        "nodes": [
-            "left",
-            "right",
-            "up",
-            "down"
+        "exits": [
+            "LEFT",
+            "RIGHT",
+            "UP",
+            "DOWN"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             },
             {
-                "from": "up",
-                "to": "down",
+                "from": "UP",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "up",
+                "from": "LEFT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "left",
-                "to": "down",
+                "from": "LEFT",
+                "to": "DOWN",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "up",
+                "from": "RIGHT",
+                "to": "UP",
                 "requirements": []
             },
             {
-                "from": "right",
-                "to": "down",
+                "from": "RIGHT",
+                "to": "DOWN",
                 "requirements": []
             }
         ]
     },
     "7:62": {
         "items": [],
-        "nodes": [
-            "left",
-            "right"
+        "exits": [
+            "LEFT",
+            "RIGHT"
         ],
         "connections": [
             {
-                "from": "left",
-                "to": "right",
+                "from": "LEFT",
+                "to": "RIGHT",
                 "requirements": []
             }
         ]
