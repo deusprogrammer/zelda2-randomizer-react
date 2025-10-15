@@ -489,21 +489,55 @@ export class Z2Randomizer {
 
         let result = true;
         requirements.forEach((requirement) => {
-            let subRequirements = requirement
-                .split("|")
-                .map((subRequirement) => subRequirement.trim());
-            let subResult = false;
-            subRequirements.forEach((subRequirement) => {
-                subResult =
-                    subResult ||
-                    items.includes(subRequirement) ||
-                    spells.includes(subRequirement) ||
-                    abilities.includes(subRequirement);
-            });
-            result = result && subResult;
+            let requirementResult = this.evaluateRequirement(requirement, items, spells, abilities);
+            result = result && requirementResult;
         });
 
         return result;
+    };
+
+    /**
+     * Evaluate a single requirement string that may contain boolean operators
+     * @param {string} requirement - A requirement string like "FAIRY | JUMP" or "FAIRY & JUMP"
+     * @param {Array} items
+     * @param {Array} spells  
+     * @param {Array} abilities
+     * @returns {boolean}
+     */
+    evaluateRequirement = (requirement, items, spells, abilities) => {
+        // Handle OR operations (|)
+        if (requirement.includes("|")) {
+            let orParts = requirement.split("|").map(part => part.trim());
+            return orParts.some(part => {
+                // Each OR part might have AND operations
+                return this.evaluateAndRequirement(part, items, spells, abilities);
+            });
+        } else {
+            // No OR, just check for AND operations
+            return this.evaluateAndRequirement(requirement, items, spells, abilities);
+        }
+    };
+
+    /**
+     * Evaluate an AND requirement (no OR operations)
+     * @param {string} requirement - A requirement string like "FAIRY & JUMP" or just "FAIRY"
+     * @param {Array} items
+     * @param {Array} spells
+     * @param {Array} abilities  
+     * @returns {boolean}
+     */
+    evaluateAndRequirement = (requirement, items, spells, abilities) => {
+        // Handle AND operations (&)
+        if (requirement.includes("&")) {
+            let andParts = requirement.split("&").map(part => part.trim());
+            return andParts.every(part => {
+                return items.includes(part) || spells.includes(part) || abilities.includes(part);
+            });
+        } else {
+            // Single requirement
+            let trimmedReq = requirement.trim();
+            return items.includes(trimmedReq) || spells.includes(trimmedReq) || abilities.includes(trimmedReq);
+        }
     };
 
     /**
@@ -527,6 +561,91 @@ export class Z2Randomizer {
         });
 
         return expanded;
+    };
+
+    /**
+     * Format requirements for display, properly handling boolean operators
+     * @param {Array} requirements
+     * @returns {string}
+     */
+    formatRequirements = (requirements) => {
+        if (!requirements || requirements.length === 0) {
+            return "none";
+        }
+
+        // Handle each requirement (AND between array elements)
+        let formattedRequirements = requirements.map(requirement => {
+            // Handle OR within each requirement
+            if (requirement.includes(" | ")) {
+                let orParts = requirement.split(" | ").map(part => part.trim());
+                return `(${orParts.join(" OR ")})`;
+            } else if (requirement.includes("|")) {
+                let orParts = requirement.split("|").map(part => part.trim());
+                return `(${orParts.join(" OR ")})`;
+            } else if (requirement.includes(" & ")) {
+                let andParts = requirement.split(" & ").map(part => part.trim());
+                return andParts.join(" AND ");
+            } else if (requirement.includes("&")) {
+                let andParts = requirement.split("&").map(part => part.trim());
+                return andParts.join(" AND ");
+            } else {
+                return requirement;
+            }
+        });
+
+        // Join multiple requirements with AND
+        return formattedRequirements.join(" AND ");
+    };
+
+    /**
+     * Parse a requirement string and place appropriate remedies
+     * For example: "FAIRY | JUMP" - place either FAIRY (spell) or JUMP (ability) with their requirements
+     * @param {string} requirement
+     * @param {Array} accessibleNodes
+     */
+    placeRequirementRemedies = (requirement, accessibleNodes) => {
+        if (!requirement) return;
+        
+        // Split by | for OR operations - we only need to satisfy ONE of these
+        if (requirement.includes("|")) {
+            let orOptions = requirement.split("|").map(part => part.trim());
+            // For OR requirements, place the first option we can
+            // TODO: Could be randomized or pick the "easiest" option
+            let selectedOption = orOptions[0];
+            this.placeIndividualRequirement(selectedOption, accessibleNodes);
+        } else if (requirement.includes("&")) {
+            // Split by & for AND operations - we need ALL of these
+            let andOptions = requirement.split("&").map(part => part.trim());
+            andOptions.forEach(option => {
+                this.placeIndividualRequirement(option, accessibleNodes);
+            });
+        } else {
+            // Single requirement
+            this.placeIndividualRequirement(requirement.trim(), accessibleNodes);
+        }
+    };
+
+    /**
+     * Place a single requirement (item, spell, or ability) and its dependencies
+     * @param {string} requirement - A single requirement like "FAIRY" or "JUMP"
+     * @param {Array} accessibleNodes
+     */
+    placeIndividualRequirement = (requirement, accessibleNodes) => {
+        if (!requirement) return;
+        
+        if (this.isSpell(requirement)) {
+            // It's a spell - place the spell and its requirements
+            console.log(`   🪄 Placing spell requirement: ${requirement}`);
+            this.placeRemedies(requirement, accessibleNodes);
+        } else if (this.isAbility(requirement)) {
+            // It's an ability - place the ability and its requirements  
+            console.log(`   💪 Placing ability requirement: ${requirement}`);
+            this.placeRemedies(requirement, accessibleNodes);
+        } else {
+            // It's an item - place the item directly
+            console.log(`   🎒 Placing item requirement: ${requirement}`);
+            this.placeRemedies(requirement, accessibleNodes);
+        }
     };
 
     /**
@@ -1113,9 +1232,8 @@ export class Z2Randomizer {
 
             // If town needs remedy, recurse into place remedies again.
             if (spellTown.spellRequirements) {
-                let spellTownRemedy = spellTown.spellRequirements[0];
-
-                this.placeRemedies(spellTownRemedy, accessibleNodes);
+                let spellTownRequirement = spellTown.spellRequirements[0];
+                this.placeRequirementRemedies(spellTownRequirement, accessibleNodes);
             }
 
             this.addSpell(nextRemedy);
@@ -1143,9 +1261,8 @@ export class Z2Randomizer {
 
             // If town needs remedy, recurse into place remedies again.
             if (abilityTown.abilityRequirements) {
-                let abilityTownRemedy = abilityTown.abilityRequirements[0];
-
-                this.placeRemedies(abilityTownRemedy, accessibleNodes);
+                let abilityTownRequirement = abilityTown.abilityRequirements[0];
+                this.placeRequirementRemedies(abilityTownRequirement, accessibleNodes);
             }
 
             this.addAbility(nextRemedy);
@@ -1238,9 +1355,12 @@ export class Z2Randomizer {
                 randomItemBearingLocation.itemRequirements.length > 0
             ) {
                 let itemIndex = this.graphData[remedyNode].mappedItems.length - 1;
-                let itemRemedy = randomItemBearingLocation.itemRequirements[itemIndex];
+                let itemRequirement = randomItemBearingLocation.itemRequirements[itemIndex];
 
-                this.placeRemedies(itemRemedy, accessibleNodes);
+                // Parse and place requirements properly
+                if (itemRequirement) {
+                    this.placeRequirementRemedies(itemRequirement, accessibleNodes);
+                }
             }
 
             this.addItem(nextRemedy);
@@ -1285,10 +1405,11 @@ export class Z2Randomizer {
 
             // If town needs remedy, recurse into place remedies again.
             if (spellTown.spellRequirements) {
-                let spellTownRemedy = spellTown.spellRequirements[0];
+                let spellTownRequirement = spellTown.spellRequirements[0];
 
-                let [recurseCount, recurseSameContinentCount] =
-                    this.getNodeCountNeededForRemedy(spellTownRemedy, accessibleNodes);
+                // For counting, we need to parse the requirement and count nodes for each option
+                let [recurseCount, recurseSameContinentCount] = 
+                    this.getNodeCountForRequirement(spellTownRequirement, accessibleNodes);
                 count += recurseCount;
                 sameContinentCount += recurseSameContinentCount;
             }
@@ -1308,10 +1429,11 @@ export class Z2Randomizer {
 
             // If town needs remedy, recurse into place remedies again.
             if (abilityTown.abilityRequirements) {
-                let abilityTownRemedy = abilityTown.abilityRequirements[0];
+                let abilityTownRequirement = abilityTown.abilityRequirements[0];
 
-                let [recurseCount, recurseSameContinentCount] =
-                    this.getNodeCountNeededForRemedy(abilityTownRemedy, accessibleNodes);
+                // For counting, we need to parse the requirement and count nodes for each option
+                let [recurseCount, recurseSameContinentCount] = 
+                    this.getNodeCountForRequirement(abilityTownRequirement, accessibleNodes);
                 count += recurseCount;
                 sameContinentCount += recurseSameContinentCount;
             }
@@ -1381,6 +1503,39 @@ export class Z2Randomizer {
             unmappedLocations >= count &&
             unmappedContinentalLocations >= sameContinentCount
         );
+    };
+
+    /**
+     * Get node count needed for a requirement (handles boolean operators)
+     * @param {string} requirement
+     * @param {Array} accessibleNodes
+     * @returns {Array} [count, sameContinentCount]
+     */
+    getNodeCountForRequirement = (requirement, accessibleNodes) => {
+        if (!requirement) return [0, 0];
+        
+        let totalCount = 0;
+        let totalSameContinentCount = 0;
+        
+        // Split by | for OR operations - we only need to place one of these
+        if (requirement.includes("|")) {
+            let orOptions = requirement.split("|").map(part => part.trim());
+            // For OR requirements, we only need to count the first option
+            let selectedOption = orOptions[0];
+            return this.getNodeCountNeededForRemedy(selectedOption, accessibleNodes);
+        } else if (requirement.includes("&")) {
+            // Split by & for AND operations - we need all of these
+            let andOptions = requirement.split("&").map(part => part.trim());
+            andOptions.forEach(option => {
+                let [count, sameContinentCount] = this.getNodeCountNeededForRemedy(option, accessibleNodes);
+                totalCount += count;
+                totalSameContinentCount += sameContinentCount;
+            });
+            return [totalCount, totalSameContinentCount];
+        } else {
+            // Single requirement
+            return this.getNodeCountNeededForRemedy(requirement.trim(), accessibleNodes);
+        }
     };
 
     /**
@@ -2327,7 +2482,7 @@ export class Z2Randomizer {
             console.log("   ✅ All paths have been explored!");
         } else {
             blockedPaths.forEach((requirements, path) => {
-                console.log(`   🔒 ${path}: Needs ${requirements.join(" or ")}`);
+                console.log(`   🔒 ${path}: Needs ${this.formatRequirements(requirements)}`);
             });
         }
         
@@ -2398,7 +2553,7 @@ export class Z2Randomizer {
             formattedStory += "✅ All paths have been explored!\n\n";
         } else {
             blockedPaths.forEach((requirements, path) => {
-                formattedStory += `- 🔒 **${path}:** Needs ${requirements.join(" or ")}\n`;
+                formattedStory += `- 🔒 **${path}:** Needs ${this.formatRequirements(requirements)}\n`;
             });
         }
         
@@ -2407,7 +2562,7 @@ export class Z2Randomizer {
             formattedStory += "✅ All accessible palaces were completed!\n\n";
         } else {
             failedPalaces.forEach((palaceInfo, nodeId) => {
-                formattedStory += `- 🔒 **${palaceInfo.name}:** Needs ${palaceInfo.requirements.join(" and ")}\n`;
+                formattedStory += `- 🔒 **${palaceInfo.name}:** Needs ${this.formatRequirements(palaceInfo.requirements)}\n`;
             });
         }
         
