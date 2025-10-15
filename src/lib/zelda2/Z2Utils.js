@@ -243,7 +243,7 @@ export const extractWestHyruleSpriteMap = (buffer, mode) => {
 }
 
 export const extractEastHyruleSpriteMap = (buffer, mode) => {
-    let spriteMapping = WEST_HYRULE_OVERWORLD_SPRITE_MAPPING;
+    let spriteMapping = EAST_HYRULE_OVERWORLD_SPRITE_MAPPING;
     let offset = EAST_HYRULE_MAP_VANILLA_OFFSET;
     if (mode === "RANDO") {
         offset = EAST_HYRULE_MAP_RANDO_OFFSET;

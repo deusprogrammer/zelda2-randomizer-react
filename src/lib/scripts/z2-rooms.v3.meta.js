@@ -1,4 +1,4 @@
-let rooms = {
+export default {
     "5:0": {
         "type": "ENTRANCE",
         "mapSet": 5,
@@ -4553,5 +4553,3 @@ let rooms = {
         "memoryLocation": "0x14a88"
     }
 }
-
-export default rooms;
