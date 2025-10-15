@@ -12110,7 +12110,7 @@ export default {
         "ability": "UPSTAB",
         "spell": "REFLECT",
         "abilityRequirements": [
-            "FAIRY"
+            "FAIRY | JUMP"
         ],
         "spellRequirements": [
             "CHILD"

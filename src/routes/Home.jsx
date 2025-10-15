@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { useAtom } from "jotai";
+import Markdown from "react-markdown";
 
 import { parse } from "../lib/Z2Parser";
 import MapData from "../components/MapData";
@@ -26,6 +27,9 @@ const Home = () => {
   const [seed, setSeed] = useState(0);
   const [cleanRom, setCleanRom] = useState(null);
   const [walkthrough, setWalkthrough] = useState("");
+  const [completionStatus, setCompletionStatus] = useState(null);
+  const [randomizer, setRandomizer] = useState(null);
+  const [walkthroughExpanded, setWalkthroughExpanded] = useState(false);
   const [options, setOptions] = useState({
     overworld: "VANILLA",
     overworldBiome: "cellular",
@@ -85,11 +89,8 @@ const Home = () => {
             // Shuffle items and locations
             let graph = randomizer.randomizeLocationsAndItems();
 
-            // Generate walkthrough story if in admin mode
-            if (mode === "ADMIN") {
-              let story = randomizer.generateWalkthroughStory(graph);
-              setWalkthrough(story);
-            }
+            // Store the randomizer instance for later testing
+            setRandomizer(randomizer);
 
             // Randomize enemies
             let levelData = z2VanillaLevels;
@@ -103,6 +104,22 @@ const Home = () => {
 
             // Reparse ROM to display in admin tools
             parseRom(patchedRom);
+
+            // Automatically test ROM completability
+            try {
+              const testResult = randomizer.testRandomizedROM();
+              setCompletionStatus(testResult);
+              setWalkthrough(testResult.walkthrough);
+            } catch (error) {
+              console.error("Error testing ROM:", error);
+              setCompletionStatus({
+                success: false,
+                error: "Failed to test ROM completability",
+                completedPalaces: 0,
+                totalPalaces: 7,
+              });
+            }
+
             resolve();
           } catch (e) {
             console.error(e);
@@ -304,6 +321,39 @@ const Home = () => {
           >
             Randomize ROM
           </button>
+          {completionStatus && (
+            <div
+              style={{
+                margin: "10px 0",
+                padding: "10px",
+                borderRadius: "5px",
+                backgroundColor: completionStatus.success
+                  ? "#d4edda"
+                  : "#f8d7da",
+                color: completionStatus.success ? "#155724" : "#721c24",
+                border: `1px solid ${
+                  completionStatus.success ? "#c3e6cb" : "#f5c6cb"
+                }`,
+              }}
+            >
+              <strong>
+                {completionStatus.success
+                  ? "✅ ROM is Completable!"
+                  : "⚠️ ROM has Issues"}
+              </strong>
+              <br />
+              Palaces Completable: {completionStatus.completedPalaces}/
+              {completionStatus.totalPalaces}
+              {completionStatus.stats && (
+                <div style={{ fontSize: "0.9em", marginTop: "5px" }}>
+                  Items: {completionStatus.stats.itemsCollected} | Spells:{" "}
+                  {completionStatus.stats.spellsLearned} | Abilities:{" "}
+                  {completionStatus.stats.abilitiesGained} | Steps:{" "}
+                  {completionStatus.stats.steps}
+                </div>
+              )}
+            </div>
+          )}
           <br />
           <button
             onClick={() => {
@@ -331,7 +381,11 @@ const Home = () => {
             <h3>Tools</h3>
             <div
               className="data-div"
-              style={{ display: "flex", flexDirection: "column" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
             >
               <Link to={`${process.env.PUBLIC_URL}/cdl`}>
                 <button>CDL Viewer</button>
@@ -342,7 +396,30 @@ const Home = () => {
               <Link to={`${process.env.PUBLIC_URL}/terrain`}>
                 <button>Terrain Generator Test</button>
               </Link>
+              {walkthrough && (
+                <>
+                  <button
+                    onClick={() => setWalkthroughExpanded(!walkthroughExpanded)}
+                    style={{
+                      marginBottom: "10px",
+                    }}
+                  >
+                    {walkthroughExpanded
+                      ? "Hide Test Results"
+                      : "Show Test Results"}
+                  </button>
+                  {walkthroughExpanded && (
+                    <div
+                      className="walkthrough-container data-div"
+                      style={{ textAlign: "left" }}
+                    >
+                      <Markdown>{walkthrough}</Markdown>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
+
             <h3>West Hyrule</h3>
             <h4>Data</h4>
             <MapData overworld={romData.overworld[0]} continent={0} />
@@ -388,23 +465,6 @@ const Home = () => {
 
             <h3>Room Data</h3>
             <pre>{rooms}</pre>
-
-            {walkthrough && (
-              <>
-                <h3>Walkthrough Story</h3>
-                <div className="data-div" style={{ textAlign: "left" }}>
-                  <pre
-                    style={{
-                      whiteSpace: "pre-wrap",
-                      fontSize: "14px",
-                      textAlign: "left",
-                    }}
-                  >
-                    {walkthrough}
-                  </pre>
-                </div>
-              </>
-            )}
           </>
         ) : null}
       </div>

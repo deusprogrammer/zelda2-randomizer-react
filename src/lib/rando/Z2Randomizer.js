@@ -127,6 +127,10 @@ export class Z2Randomizer {
      * @returns
      */
     chooseRandomNode = (nodes) => {
+        if (!nodes || nodes.length === 0) {
+            console.warn("chooseRandomNode called with empty or null nodes:", nodes);
+            return null;
+        }
         // let r = Math.trunc(Math.random() * nodes.length);
         let r = Math.trunc(this.randomNumberGenerator() * nodes.length);
         return nodes[r];
@@ -415,8 +419,9 @@ export class Z2Randomizer {
                     (link) => {
                         return Object.keys(this.graphData).find((linkKey) => {
                             if (this.graphData[linkKey].mappedLocation === link) {
-                                return true;
+                                return linkKey;
                             }
+                            return undefined;
                         });
                     }
                 );
@@ -428,8 +433,9 @@ export class Z2Randomizer {
                 ).forEach((link) => {
                     let nodeId = Object.keys(this.graphData).find((linkKey) => {
                         if (this.graphData[linkKey].mappedLocation === link) {
-                            return true;
+                            return linkKey;
                         }
+                        return undefined;
                     });
                     templateNode.linkRequirements[nodeId] =
                         this.locationMetadata[mappedLocation].linkRequirements[link];
@@ -1641,8 +1647,9 @@ export class Z2Randomizer {
 
                 // Find accessible nodes, completable palaces, and needed remedies to progress
                 [accessibleNodes] = this.getAccessibleNodes(this.northCastleNode);
+                const currentAccessibleNodes = accessibleNodes;
                 inaccessibleNodes = Object.keys(this.graphData).filter(
-                    (node) => !accessibleNodes.includes(node)
+                    (node) => !currentAccessibleNodes.includes(node)
                 );
                 completablePalaces = this.getCompletablePalaces(accessibleNodes);
                 neededRemedies = this.getPlaceableRemedies(
@@ -1831,16 +1838,183 @@ export class Z2Randomizer {
         // Place all items and nodes
         this.placeItemsAndNodes();
 
-        // Generate walkthrough story for testing
-        this.generateWalkthroughStory();
-
         return this.graphData;
     };
 
     /**
-     * Generate a walkthrough story by simulating optimal graph traversal
+     * Process palace completion and item rewards
      */
-    generateWalkthroughStory = () => {
+    processPalaceCompletion = (nextNode, nodeData, palaceRequirements, currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep, addStoryStep, updateCrystalCount, containerCounts, isReturnVisit = false) => {
+        // Update crystal count (palace completion tracking)
+        updateCrystalCount();
+        
+        // Show traversal details for palace entry
+        let traversalDetails = "";
+        if (palaceRequirements.length > 0) {
+            traversalDetails = isReturnVisit ? `(used ${palaceRequirements.join(" and ")} to enter)` : "";
+            console.log(`   🔑 Link used ${palaceRequirements.join(" and ")} to enter the palace`);
+        }
+        
+        // Get the item from completing this palace
+        if (nodeData.mappedItems && nodeData.mappedItems.length > 0) {
+            let palaceItem = nodeData.mappedItems[0];
+            let locationName = this.getLocationDisplayName(nextNode);
+            
+            this.processItemAcquisition(
+                palaceItem, locationName, "from palace",
+                currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep
+            );
+        }
+        
+        let completionMessage = isReturnVisit 
+            ? `and completed the palace on return visit ${traversalDetails}`
+            : `and completed the palace`;
+        
+        let action = isReturnVisit ? "🏰 returned to" : "🏰 went to";
+        addStoryStep(action, nextNode, null, completionMessage);
+        
+        let statusMessage = isReturnVisit ? "Palace completed on return!" : "Palace completed!";
+        console.log(`   🏆 ${statusMessage} (${containerCounts.CRYSTALS}/7 palaces done)`);
+    };
+
+    /**
+     * Process an item and add it to the appropriate inventory
+     */
+    processItemAcquisition = (item, locationName, context, currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep, collectedLocations = null, nodeId = null) => {
+        if (this.isSpell(item)) {
+            if (!currentSpells.includes(item)) {
+                currentSpells.push(item);
+                console.log(`   🪄 Added ${item} to spell inventory`);
+                addAcquisitionStep("spell", item, locationName, context);
+                return `a magical spell (${item})`;
+            }
+        } else if (this.isAbility(item)) {
+            if (!currentAbilities.includes(item)) {
+                currentAbilities.push(item);
+                console.log(`   💪 Added ${item} to ability inventory`);
+                addAcquisitionStep("ability", item, locationName, context);
+                return `a new ability (${item})`;
+            }
+        } else {
+            // Regular items
+            updateContainerCount(item);
+            currentItems.push(item);
+            
+            if (collectedLocations && nodeId) {
+                collectedLocations.add(nodeId);
+            }
+            
+            console.log(`   🎒 Added ${item} to item inventory`);
+            addAcquisitionStep("item", item, locationName, context);
+            
+            if (item === "BAGU_SAUCE") {
+                return "and talked to Bagu";
+            } else if (item === "MAGIC_CONTAINER") {
+                return `a magic container`;
+            } else {
+                return `${item}`;
+            }
+        }
+        return null; // Already had this item
+    };
+
+    /**
+     * Check if an item can be accessed at a location with current inventory
+     */
+    canAccessItemAtLocation = (item, locationMeta, currentItems, currentSpells, currentAbilities, containerCounts, itemIndex = 0) => {
+        let canAccess = true;
+        
+        // Check item requirements for this specific item index
+        if (locationMeta.itemRequirements && locationMeta.itemRequirements.length > itemIndex && locationMeta.itemRequirements[itemIndex]) {
+            let specificRequirements = Array.isArray(locationMeta.itemRequirements[itemIndex]) 
+                ? locationMeta.itemRequirements[itemIndex] 
+                : [locationMeta.itemRequirements[itemIndex]];
+            canAccess = this.checkRequirements(specificRequirements, currentItems, currentSpells, currentAbilities);
+            console.log(`   🔍 ${item} (index ${itemIndex}) item requirements check: ${canAccess} (needs: ${specificRequirements.join(", ")})`);
+        }
+        
+        // Check spell requirements for this specific item index
+        if (canAccess && locationMeta.spellRequirements && locationMeta.spellRequirements.length > itemIndex && locationMeta.spellRequirements[itemIndex]) {
+            let specificSpellRequirements = Array.isArray(locationMeta.spellRequirements[itemIndex]) 
+                ? locationMeta.spellRequirements[itemIndex] 
+                : [locationMeta.spellRequirements[itemIndex]];
+            canAccess = this.checkRequirements(specificSpellRequirements, currentItems, currentSpells, currentAbilities);
+            console.log(`   🔍 ${item} (index ${itemIndex}) spell requirements check: ${canAccess} (needs: ${specificSpellRequirements.join(", ")})`);
+        }
+        
+        // Check magic level requirements for containers
+        if (canAccess && item === "MAGIC_CONTAINER") {
+            let specificRequirements = locationMeta.itemRequirements && locationMeta.itemRequirements.length > itemIndex 
+                ? (Array.isArray(locationMeta.itemRequirements[itemIndex]) ? locationMeta.itemRequirements[itemIndex] : [locationMeta.itemRequirements[itemIndex]])
+                : [];
+            let magicLevelRequired = specificRequirements.find(req => req && req.startsWith("MAGIC"));
+            if (magicLevelRequired) {
+                let requiredLevel = parseInt(magicLevelRequired.replace("MAGIC", ""));
+                let currentMagicLevel = containerCounts.MAGIC;
+                canAccess = currentMagicLevel >= requiredLevel;
+                console.log(`   🔍 ${item} (index ${itemIndex}) level check: ${canAccess} (has ${currentMagicLevel}, needs ${requiredLevel})`);
+            }
+        }
+        
+        return canAccess;
+    };
+
+    /**
+     * Process all items at a location after learning a spell/ability
+     */
+    processLocationItems = (nodeId, nodeData, locationMeta, currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep, addStoryStep, containerCounts, failedItemLocations) => {
+        if (!nodeData.mappedItems || nodeData.mappedItems.length === 0) return;
+        
+        let locationName = this.getLocationDisplayName(nodeId);
+        
+        nodeData.mappedItems.forEach((item, index) => {
+            console.log(`   🔍 Checking item ${index + 1}/${nodeData.mappedItems.length} at ${locationName}: ${item}`);
+            
+            let canAccess = this.canAccessItemAtLocation(item, locationMeta, currentItems, currentSpells, currentAbilities, containerCounts, index);
+            
+            if (canAccess) {
+                let description = this.processItemAcquisition(
+                    item, locationName, "also found in same location after learning spell",
+                    currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep
+                );
+                
+                if (description) {
+                    if (item === "MAGIC_CONTAINER") {
+                        addStoryStep("🔮 also found", nodeId, null, `${description} in the same location (now accessible with new spell!)`, true);
+                    } else {
+                        addStoryStep("🗡️ also found", nodeId, null, `${description} in the same location`);
+                    }
+                }
+            } else {
+                console.log(`   🔒 Cannot access ${item} yet (requirements not met)`);
+                
+                // Track this failed item location for later re-evaluation
+                failedItemLocations.set(`${nodeId}_${index}`, {
+                    nodeId: nodeId,
+                    item: item,
+                    itemIndex: index,
+                    locationName: locationName,
+                    requirements: locationMeta.itemRequirements || [],
+                    spellRequirements: locationMeta.spellRequirements || []
+                });
+                console.log(`   📋 Tracking ${item} (index ${index}) at ${locationName} for later re-evaluation`);
+            }
+        });
+    };
+
+    /**
+     * Test the randomized ROM by simulating optimal graph traversal
+     * Returns completion status and walkthrough details
+     */
+    testRandomizedROM = () => {
+        // Ensure randomization has been completed
+        if (!this.graphData || Object.keys(this.graphData).length === 0) {
+            return {
+                success: false,
+                error: "No randomized ROM data found. Please run randomization first.",
+                walkthrough: ""
+            };
+        }
         console.log("\n🗡️ === LINK'S ADVENTURE WALKTHROUGH ===");
         
         // Find the North Castle node by mappedLocation
@@ -1857,6 +2031,10 @@ export class Z2Randomizer {
         let startingLocationName = this.getLocationDisplayName(startingNode);
         console.log(`📍 Link begins his journey at ${startingLocationName}...`);
         
+        // Count how many magic containers are placed on the map
+        let totalMagicContainersOnMap = this.getMagicContainersAlreadyPlaced();
+        console.log(`🔮 Total magic containers placed on map: ${totalMagicContainersOnMap}`);
+        
         let currentItems = [];
         let currentSpells = [];
         let currentAbilities = [];
@@ -1864,6 +2042,8 @@ export class Z2Randomizer {
         let blockedPaths = new Map(); // Track what's blocking each path
         let failedPalaces = new Map(); // Track palaces we couldn't complete and their requirements
         let failedLocations = new Map(); // Track locations with multiple reasons to revisit (spells, abilities, etc.)
+        let failedItemLocations = new Map(); // Track locations with items we couldn't access and their requirements
+        let collectedLocations = new Set(); // Track locations where items have been collected from
         let storySteps = [];
         
         // Track container counts and crystals
@@ -1884,18 +2064,61 @@ export class Z2Randomizer {
         const updateContainerCount = (containerType) => {
             if (containerType === "MAGIC_CONTAINER" || containerType === "magic_container") {
                 containerCounts.MAGIC++;
-                console.log(`   🔮 Magic containers: ${containerCounts.MAGIC} total`);
+                console.log(`   🔮 Magic containers: ${containerCounts.MAGIC} total (${containerCounts.MAGIC - 4} found, need ${Math.max(0, 8 - containerCounts.MAGIC)} more for THUNDER)`);
                 
                 // Add MAGIC level items to inventory for requirements
                 let magicLevel = `MAGIC${containerCounts.MAGIC}`;
                 if (!currentItems.includes(magicLevel)) {
                     currentItems.push(magicLevel);
                 }
+                
+                // Check for newly accessible items at failed locations with this higher magic level
+                console.log(`🔄 Magic level increased to ${containerCounts.MAGIC}! Checking failed item locations...`);
+                checkFailedItemLocationsForNewAccess();
             } else if (containerType === "HEART_CONTAINER" || containerType === "heart_container") {
                 containerCounts.HEART++;
                 console.log(`   ❤️ Heart containers: ${containerCounts.HEART} total`);
             }
             // Note: Function is called for all items, but only acts on containers
+        };
+        
+        // Helper function to re-check failed item locations when magic level increases
+        const checkFailedItemLocationsForNewAccess = () => {
+            let newlyAccessibleItems = [];
+            
+            failedItemLocations.forEach((itemInfo, key) => {
+                let nodeData = this.graphData[itemInfo.nodeId];
+                let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
+                
+                if (locationMeta && itemInfo.item) {
+                    let canAccessNow = this.canAccessItemAtLocation(
+                        itemInfo.item, 
+                        locationMeta, 
+                        currentItems, 
+                        currentSpells, 
+                        currentAbilities, 
+                        containerCounts, 
+                        itemInfo.itemIndex
+                    );
+                    
+                    if (canAccessNow) {
+                        console.log(`🔄 Can now access ${itemInfo.item} (index ${itemInfo.itemIndex}) at ${this.getLocationDisplayName(itemInfo.nodeId)}!`);
+                        newlyAccessibleItems.push({nodeId: itemInfo.nodeId, item: itemInfo.item, locationName: itemInfo.locationName});
+                        failedItemLocations.delete(key); // Remove from failed list
+                    }
+                }
+            });
+            
+            // Immediately collect newly accessible items
+            newlyAccessibleItems.forEach(({nodeId, item, locationName}) => {
+                updateContainerCount(item);
+                currentItems.push(item);
+                collectedLocations.add(nodeId);
+                
+                console.log(`🔄 Collected ${item} from ${locationName} (now accessible with MAGIC${containerCounts.MAGIC - 1}!)`)
+                addAcquisitionStep("item", item, locationName, `collected after reaching MAGIC${containerCounts.MAGIC - 1}`);
+                addStoryStep("🔄 returned to", nodeId, null, `and collected ${item} (now accessible with higher magic level!)`, true);
+            });
         };
         
         // Helper function to update crystal count when palace is completed
@@ -1965,50 +2188,7 @@ export class Z2Randomizer {
                 let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
                 if (locationMeta && locationMeta.type === "PALACE") {
                     let palaceRequirements = locationMeta.completionRequirements || [];
-                    
-                    // Update crystal count (palace completion tracking)
-                    updateCrystalCount();
-                    
-                    // Show traversal details for palace entry
-                    let traversalDetails = "";
-                    if (palaceRequirements.length > 0) {
-                        traversalDetails = `(used ${palaceRequirements.join(" and ")} to enter)`;
-                        console.log(`   🔑 Link used ${palaceRequirements.join(" and ")} to enter the palace`);
-                    }
-                    
-                    // Get the item from completing this palace
-                    let palaceItem = null;
-                    if (nodeData.mappedItems && nodeData.mappedItems.length > 0) {
-                        palaceItem = nodeData.mappedItems[0];
-                        
-                        // Add item to appropriate inventory and create emphasized log
-                        if (this.isSpell(palaceItem)) {
-                            if (!currentSpells.includes(palaceItem)) {
-                                currentSpells.push(palaceItem);
-                                console.log(`   🪄 Gained spell: ${palaceItem}`);
-                                addAcquisitionStep("spell", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
-                            }
-                        } else if (this.isAbility(palaceItem)) {
-                            if (!currentAbilities.includes(palaceItem)) {
-                                currentAbilities.push(palaceItem);
-                                console.log(`   💪 Gained ability: ${palaceItem}`);
-                                addAcquisitionStep("ability", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
-                            }
-                        } else {
-                            // Always update container count for containers (can have multiple)
-                            updateContainerCount(palaceItem);
-                            
-                            // Add item to inventory (items like containers and experience bags can stack)
-                            currentItems.push(palaceItem);
-                            console.log(`   🎁 Gained item: ${palaceItem}`);
-                            addAcquisitionStep("item", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
-                        }
-                    }
-                    
-                    let completionMessage = `and completed the palace on return visit ${traversalDetails}`;
-                    
-                    addStoryStep("🏰 returned to", nextNode, null, completionMessage);
-                    console.log(`   🏆 Palace completed on return! (${containerCounts.CRYSTALS}/7 palaces done)`);
+                    this.processPalaceCompletion(nextNode, nodeData, palaceRequirements, currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep, addStoryStep, updateCrystalCount, containerCounts, true);
                 }
                 continue; // Skip the normal node selection process
             }
@@ -2043,7 +2223,13 @@ export class Z2Randomizer {
             }
             
             // Choose the most optimal next node
-            let nextNode = this.chooseOptimalNextNode(newAccessibleNodes, currentItems, containerCounts.CRYSTALS);
+            let nextNode = this.chooseOptimalNextNode(newAccessibleNodes, currentItems, containerCounts.CRYSTALS, collectedLocations);
+            
+            if (!nextNode) {
+                console.log(`\n🚫 No valid next node found - ending exploration`);
+                break;
+            }
+            
             let nodeData = this.graphData[nextNode];
             
             visitedNodes.add(nextNode);
@@ -2059,47 +2245,7 @@ export class Z2Randomizer {
                 let palaceRequirements = locationMeta.completionRequirements || [];
                 
                 if (this.checkRequirements(palaceRequirements, currentItems, currentSpells, currentAbilities)) {
-                    // Update crystal count (palace completion tracking)
-                    updateCrystalCount();
-                    
-                    // Show traversal details for palace entry
-                    if (palaceRequirements.length > 0) {
-                        console.log(`   🔑 Link used ${palaceRequirements.join(" and ")} to enter the palace`);
-                    }
-                    
-                    // Get the item from completing this palace
-                    let palaceItem = null;
-                    if (nodeData.mappedItems && nodeData.mappedItems.length > 0) {
-                        palaceItem = nodeData.mappedItems[0];
-                        
-                        // Add item to appropriate inventory and create emphasized log
-                        if (this.isSpell(palaceItem)) {
-                            if (!currentSpells.includes(palaceItem)) {
-                                currentSpells.push(palaceItem);
-                                console.log(`   🪄 Gained spell: ${palaceItem}`);
-                                addAcquisitionStep("spell", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
-                            }
-                        } else if (this.isAbility(palaceItem)) {
-                            if (!currentAbilities.includes(palaceItem)) {
-                                currentAbilities.push(palaceItem);
-                                console.log(`   💪 Gained ability: ${palaceItem}`);
-                                addAcquisitionStep("ability", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
-                            }
-                        } else {
-                            // Always update container count for containers (can have multiple)
-                            updateContainerCount(palaceItem);
-                            
-                            // Add item to inventory (items like containers and experience bags can stack)
-                            currentItems.push(palaceItem);
-                            console.log(`   🎁 Gained item: ${palaceItem}`);
-                            addAcquisitionStep("item", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
-                        }
-                    }
-                    
-                    let completionMessage = `and completed the palace`;
-                    
-                    addStoryStep("🏰 went to", nextNode, null, completionMessage);
-                    console.log(`   🏆 Palace completed! (${containerCounts.CRYSTALS}/7 palaces done)`);
+                    this.processPalaceCompletion(nextNode, nodeData, palaceRequirements, currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep, addStoryStep, updateCrystalCount, containerCounts, false);
                 } else {
                     // Track this failed palace for potential revisit later
                     let palaceName = this.getLocationDisplayName(nextNode);
@@ -2114,44 +2260,40 @@ export class Z2Randomizer {
             }
             // Check if this is a spell/ability town
             else if (locationMeta && (locationMeta.spell || locationMeta.ability)) {
+                console.log(`   🏫 Processing spell/ability town: ${this.getLocationDisplayName(nextNode)}`);
+                console.log(`   🏫 Location metadata:`, {
+                    spell: locationMeta.spell,
+                    ability: locationMeta.ability,
+                    itemRequirements: locationMeta.itemRequirements,
+                    spellRequirements: locationMeta.spellRequirements,
+                    abilityRequirements: locationMeta.abilityRequirements
+                });
+                console.log(`   🏫 Mapped items at this location:`, nodeData.mappedItems);
+                
                 this.processLocationForContent(nextNode, locationMeta, currentItems, currentSpells, currentAbilities, addStoryStep, updateContainerCount, failedLocations, containerCounts, addAcquisitionStep);
+                
+                // After learning a spell/ability, check for newly accessible items at the same location
+                this.processLocationItems(nextNode, nodeData, locationMeta, currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep, addStoryStep, containerCounts, failedItemLocations);
             }
             // Check if this location has items (use mapped items)
             else if (nodeData.mappedItems && nodeData.mappedItems.length > 0) {
                 let item = nodeData.mappedItems[0]; // Get the first item
                 let locationName = this.getLocationDisplayName(nextNode);
                 
-                // Add item to appropriate inventory based on type and create emphasized log
-                if (this.isSpell(item)) {
-                    if (!currentSpells.includes(item)) {
-                        currentSpells.push(item);
-                        console.log(`   🪄 Added ${item} to spell inventory`);
-                        addAcquisitionStep("spell", item, locationName, "found in location");
-                        addStoryStep("🗡️ went to", nextNode, null, "and found a magical spell");
-                    }
-                } else if (this.isAbility(item)) {
-                    if (!currentAbilities.includes(item)) {
-                        currentAbilities.push(item);
-                        console.log(`   💪 Added ${item} to ability inventory`);
-                        addAcquisitionStep("ability", item, locationName, "found in location");
-                        addStoryStep("🗡️ went to", nextNode, null, "and found a new ability");
-                    }
-                } else {
-                    // All other items (including BAGU_SAUCE, TROPHY, CHILD, etc.)
-                    
-                    // Always update container count for containers (can have multiple)
-                    updateContainerCount(item);
-                    
-                    // Add item to inventory (items like containers and experience bags can stack)
-                    currentItems.push(item);
-                    
+                let description = this.processItemAcquisition(
+                    item, locationName, "found in location",
+                    currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep,
+                    collectedLocations, nextNode
+                );
+                
+                if (description) {
                     if (item === "BAGU_SAUCE") {
-                        console.log(`   👨 Added ${item} to item inventory (Bagu's favor gained!)`);
-                        addAcquisitionStep("item", item, locationName, "(gained Bagu's favor)");
-                        addStoryStep("🏠 went to", nextNode, null, "and talked to Bagu");
+                        addStoryStep("🏠 went to", nextNode, null, description);
+                    } else if (this.isSpell(item)) {
+                        addStoryStep("🗡️ went to", nextNode, null, "and found a magical spell");
+                    } else if (this.isAbility(item)) {
+                        addStoryStep("🗡️ went to", nextNode, null, "and found a new ability");
                     } else {
-                        console.log(`   🎒 Added ${item} to item inventory`);
-                        addAcquisitionStep("item", item, locationName, "found in location");
                         addStoryStep("🗡️ went to", nextNode, null, "and found a valuable item");
                     }
                 }
@@ -2228,50 +2370,50 @@ export class Z2Randomizer {
         console.log(`   🐾 Total steps: ${stepCount}`);
         console.log(`   🚧 Blocked paths discovered: ${blockedPaths.size}`);
         
-        // Format the story as a string with proper line breaks
-        let formattedStory = "🗡️ === LINK'S ADVENTURE WALKTHROUGH ===\n\n";
-        formattedStory += `📍 Link begins his journey at ${this.getLocationDisplayName(startingNode)}...\n\n`;
+        // Format the story as markdown
+        let formattedStory = "# 🗡️ Link's Adventure Walkthrough\n\n";
+        formattedStory += `*📍 Link begins his journey at ${this.getLocationDisplayName(startingNode)}...*\n\n`;
         
         // Add a brief summary
-        formattedStory += `📈 ADVENTURE SUMMARY:\n`;
-        formattedStory += `   🏰 Palaces completed: ${containerCounts.CRYSTALS}/7\n`;
-        formattedStory += `   🎒 Items collected: ${currentItems.length}\n`;
-        formattedStory += `   ✨ Spells learned: ${currentSpells.length}\n`;
-        formattedStory += `   💪 Abilities gained: ${currentAbilities.length}\n`;
-        formattedStory += `   📍 Key locations visited: ${storySteps.length}\n\n`;
+        formattedStory += `## 📈 Adventure Summary\n\n`;
+        formattedStory += `- 🏰 **Palaces completed:** ${containerCounts.CRYSTALS}/7\n`;
+        formattedStory += `- 🎒 **Items collected:** ${currentItems.length}\n`;
+        formattedStory += `- ✨ **Spells learned:** ${currentSpells.length}\n`;
+        formattedStory += `- 💪 **Abilities gained:** ${currentAbilities.length}\n`;
+        formattedStory += `- 📍 **Key locations visited:** ${storySteps.length}\n\n`;
         
-        formattedStory += `📖 KEY EVENTS:\n`;
+        formattedStory += `## 📖 Key Events\n\n`;
         storySteps.forEach((step, index) => {
             formattedStory += `${index + 1}. ${step}\n`;
         });
         
         if (containerCounts.CRYSTALS >= 7) {
-            formattedStory += "\n🎉 Link completed all palaces and saved Hyrule!\n";
+            formattedStory += "\n> 🎉 **Link completed all palaces and saved Hyrule!**\n\n";
         } else {
-            formattedStory += `\n⚠️ Adventure incomplete - only ${containerCounts.CRYSTALS}/7 palaces completed\n`;
+            formattedStory += `\n> ⚠️ **Adventure incomplete** - only ${containerCounts.CRYSTALS}/7 palaces completed\n\n`;
         }
         
-        formattedStory += `\n🚧 Remaining Blocked Paths:\n`;
+        formattedStory += `## 🚧 Remaining Blocked Paths\n\n`;
         if (blockedPaths.size === 0) {
-            formattedStory += "   ✅ All paths have been explored!\n";
+            formattedStory += "✅ All paths have been explored!\n\n";
         } else {
             blockedPaths.forEach((requirements, path) => {
-                formattedStory += `   🔒 ${path}: Needs ${requirements.join(" or ")}\n`;
+                formattedStory += `- 🔒 **${path}:** Needs ${requirements.join(" or ")}\n`;
             });
         }
         
-        formattedStory += `\n🏰 Failed Palaces:\n`;
+        formattedStory += `\n## 🏰 Failed Palaces\n\n`;
         if (failedPalaces.size === 0) {
-            formattedStory += "   ✅ All accessible palaces were completed!\n";
+            formattedStory += "✅ All accessible palaces were completed!\n\n";
         } else {
             failedPalaces.forEach((palaceInfo, nodeId) => {
-                formattedStory += `   🔒 ${palaceInfo.name}: Needs ${palaceInfo.requirements.join(" and ")}\n`;
+                formattedStory += `- 🔒 **${palaceInfo.name}:** Needs ${palaceInfo.requirements.join(" and ")}\n`;
             });
         }
         
-        formattedStory += `\n🏫 Failed Locations:\n`;
+        formattedStory += `\n## 🏫 Failed Locations\n\n`;
         if (failedLocations.size === 0) {
-            formattedStory += "   ✅ All accessible spells and abilities were learned!\n";
+            formattedStory += "✅ All accessible spells and abilities were learned!\n\n";
         } else {
             failedLocations.forEach((locationInfo, nodeId) => {
                 let failures = [];
@@ -2281,29 +2423,49 @@ export class Z2Randomizer {
                 if (locationInfo.failedAbility) {
                     failures.push(`${locationInfo.failedAbility.ability} ability (needs: ${locationInfo.failedAbility.requirements.join(", ")})`);
                 }
-                formattedStory += `   🔒 ${locationInfo.name}: ${failures.join(", ")}\n`;
+                formattedStory += `- 🔒 **${locationInfo.name}:** ${failures.join(", ")}\n`;
             });
         }
         
-        formattedStory += `\n📊 Adventure Summary:\n`;
-        formattedStory += `   🏰 Palaces completed: ${containerCounts.CRYSTALS}/7\n`;
-        formattedStory += `   🔮 Magic containers: ${containerCounts.MAGIC}\n`;
-        formattedStory += `   ❤️ Heart containers: ${containerCounts.HEART}\n`;
-        formattedStory += `   💎 Crystals: ${containerCounts.CRYSTALS}/6\n`;
-        formattedStory += `   🎒 Items collected: ${currentItems.length} - [${currentItems.join(", ") || "none"}]\n`;
-        formattedStory += `   ✨ Spells learned: ${currentSpells.length} - [${currentSpells.join(", ") || "none"}]\n`;
-        formattedStory += `   💪 Abilities gained: ${currentAbilities.length} - [${currentAbilities.join(", ") || "none"}]\n`;
-        formattedStory += `   📍 Locations visited: ${visitedNodes.size}\n`;
-        formattedStory += `   🐾 Total steps: ${stepCount}\n`;
-        formattedStory += `   🚧 Blocked paths discovered: ${blockedPaths.size}\n`;
+        formattedStory += `\n## 📊 Adventure Summary\n\n`;
+        formattedStory += `- 🏰 **Palaces completed:** ${containerCounts.CRYSTALS}/7\n`;
+        formattedStory += `- 🔮 **Magic containers:** ${containerCounts.MAGIC}\n`;
+        formattedStory += `- ❤️ **Heart containers:** ${containerCounts.HEART}\n`;
+        formattedStory += `- 💎 **Crystals:** ${containerCounts.CRYSTALS}/6\n`;
+        formattedStory += `- 🎒 **Items collected:** ${currentItems.length} - [${currentItems.join(", ") || "none"}]\n`;
+        formattedStory += `- ✨ **Spells learned:** ${currentSpells.length} - [${currentSpells.join(", ") || "none"}]\n`;
+        formattedStory += `- 💪 **Abilities gained:** ${currentAbilities.length} - [${currentAbilities.join(", ") || "none"}]\n`;
+        formattedStory += `- 📍 **Locations visited:** ${visitedNodes.size}\n`;
+        formattedStory += `- 🐾 **Total steps:** ${stepCount}\n`;
+        formattedStory += `- 🚧 **Blocked paths discovered:** ${blockedPaths.size}\n`;
+        formattedStory += `- 🔮 **Magic containers collected:** ${containerCounts.MAGIC} / ${totalMagicContainersOnMap + 4} total (started with 4)\n`;
+        formattedStory += `- ⚡ **THUNDER spell accessible:** ${containerCounts.MAGIC >= 8 ? "YES" : `NO (need ${8 - containerCounts.MAGIC} more)`}\n\n`;
         
-        return formattedStory;
+        // Determine if the ROM is completable
+        const isCompletable = containerCounts.CRYSTALS >= 7;
+        
+        return {
+            success: isCompletable,
+            completedPalaces: containerCounts.CRYSTALS,
+            totalPalaces: 7,
+            walkthrough: formattedStory,
+            stats: {
+                itemsCollected: currentItems.length,
+                spellsLearned: currentSpells.length,
+                abilitiesGained: currentAbilities.length,
+                locationsVisited: visitedNodes.size,
+                steps: stepCount,
+                blockedPaths: blockedPaths.size,
+                magicContainers: containerCounts.MAGIC,
+                heartContainers: containerCounts.HEART
+            }
+        };
     };
 
     /**
      * Choose the optimal next node for story progression
      */
-    chooseOptimalNextNode = (availableNodes, currentItems, crystalCount) => {
+    chooseOptimalNextNode = (availableNodes, currentItems, crystalCount, collectedLocations = new Set()) => {
         // Priority 1: Uncompleted palaces we can actually complete
         let completablePalaces = availableNodes.filter(node => {
             let nodeData = this.graphData[node];
@@ -2347,11 +2509,31 @@ export class Z2Randomizer {
             return spellAbilityTowns[0];
         }
         
-        // Priority 3: Locations with useful items we don't have yet
+        // Priority 3: Locations with useful items we don't have yet or can collect more of
         let itemLocations = availableNodes.filter(node => {
             let nodeData = this.graphData[node];
-            return nodeData.mappedItems && nodeData.mappedItems.length > 0 &&
-                   !currentItems.includes(nodeData.mappedItems[0]);
+            if (nodeData.mappedItems && nodeData.mappedItems.length > 0) {
+                let item = nodeData.mappedItems[0];
+                
+                // Skip if we've already collected from this location
+                if (collectedLocations.has(node)) {
+                    return false;
+                }
+                
+                // Magic containers can always be collected (we need 8 for THUNDER)
+                if (item === "MAGIC_CONTAINER") {
+                    return true;
+                }
+                
+                // Heart containers can always be collected
+                if (item === "HEART_CONTAINER") {
+                    return true;
+                }
+                
+                // Other items should only be collected once
+                return !currentItems.includes(item);
+            }
+            return false;
         });
         
         if (itemLocations.length > 0) {
@@ -2359,7 +2541,13 @@ export class Z2Randomizer {
         }
         
         // Priority 4: Any available node
-        return availableNodes[0];
+        if (availableNodes.length > 0) {
+            return availableNodes[0];
+        }
+        
+        // No nodes available
+        console.warn("chooseOptimalNextNode: No available nodes to choose from");
+        return null;
     };
 
     /**
