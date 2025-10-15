@@ -1,5 +1,4 @@
-import { ENEMY_MAPPINGS, ENEMY_RANDO_EXCLUSIONS } from "../zelda2/Z2Data";
-import { ENEMY_DATA_MAPPING } from "../zelda2/Z2MemoryMappings";
+import { ENEMY_MAPPINGS, ENEMY_RANDO_EXCLUSIONS, QUALITY_OF_LIFE_ITEMS } from "../zelda2/Z2Data";
 import { deepCopy, merge, randomSeed, removeNode } from "./util";
 
 const REMEDY_LIST = [
@@ -166,7 +165,16 @@ export class Z2Randomizer {
      * @returns
      */
     isBagu = (remedy) => {
-        return ["BAGU_SAUCE"].includes(remedy);
+        return ["BAGU", "BAGU_SAUCE"].includes(remedy);
+    };
+
+    /**
+     * Check if an item is a meta item (story progression)
+     * @param {string} item
+     * @returns
+     */
+    isMetaItem = (item) => {
+        return ["BAGU", "BAGU_SAUCE", "TROPHY", "CHILD", "MEDICINE", "WATER_OF_LIFE", "MAGIC_KEY", "CRYSTALS"].includes(item);
     };
 
     /**
@@ -1430,10 +1438,171 @@ export class Z2Randomizer {
     };
 
     /**
+     * Get item-bearing nodes that are accessible with minimal requirements (0-1 items)
+     */
+    getEarlyAccessibleNodes = (availableNodes) => {
+        return availableNodes.filter(nodeName => {
+            let node = this.graphData[nodeName];
+            if (!node?.items || node.items.length === 0) return false;
+            
+            // Calculate requirements to reach this node from North Castle
+            let requirements = this.getRequirementsToReach(nodeName);
+            return requirements.length <= 1; // Accessible with 0-1 items
+        });
+    };
+
+    /**
+     * Calculate what items are needed to reach a specific node from North Castle
+     */
+    getRequirementsToReach = (targetNode) => {
+        let visited = new Set();
+        let requirements = new Set();
+        
+        const traverse = (currentNode, currentReqs) => {
+            if (visited.has(currentNode)) return;
+            visited.add(currentNode);
+            
+            if (currentNode === targetNode) {
+                currentReqs.forEach(req => requirements.add(req));
+                return;
+            }
+            
+            let node = this.graphData[currentNode];
+            if (!node?.connections) return;
+            
+            node.connections.forEach(connection => {
+                let connectionReqs = [...currentReqs];
+                if (node.connectionRequirements?.[connection]) {
+                    node.connectionRequirements[connection].forEach(req => {
+                        if (req && req !== "") {
+                            connectionReqs.push(req);
+                        }
+                    });
+                }
+                traverse(connection, connectionReqs);
+            });
+        };
+        
+        traverse(this.northCastleNode, []);
+        return Array.from(requirements);
+    };
+
+    /**
+     * Find the closest node to North Castle by graph distance
+     */
+    findClosestToNorthCastle = (candidates) => {
+        let bestDistance = Infinity;
+        let bestNode = null;
+        
+        candidates.forEach(candidate => {
+            let distance = this.calculateGraphDistance(this.northCastleNode, candidate);
+            if (distance < bestDistance) {
+                bestDistance = distance;
+                bestNode = candidate;
+            }
+        });
+        
+        return bestNode;
+    };
+
+    /**
+     * Calculate graph distance between two nodes (BFS)
+     */
+    calculateGraphDistance = (from, to) => {
+        if (from === to) return 0;
+        
+        let queue = [{node: from, distance: 0}];
+        let visited = new Set();
+        
+        while (queue.length > 0) {
+            let {node, distance} = queue.shift();
+            
+            if (visited.has(node)) continue;
+            visited.add(node);
+            
+            if (node === to) return distance;
+            
+            let nodeData = this.graphData[node];
+            if (nodeData?.connections) {
+                nodeData.connections.forEach(connection => {
+                    if (!visited.has(connection)) {
+                        queue.push({node: connection, distance: distance + 1});
+                    }
+                });
+            }
+        }
+        
+        return Infinity; // Not reachable
+    };
+
+    /**
+     * Attempt to place quality of life items early near North Castle
+     */
+    attemptEarlyQoLPlacement = (accessibleNodes) => {
+        // Get all item-bearing nodes
+        let itemBearingNodes = accessibleNodes.filter(nodeName => {
+            let node = this.graphData[nodeName];
+            return node?.items && node.items.length > 0;
+        });
+        
+        // Check if we have enough nodes for safe early placement
+        let totalItemsToPlace = REMEDY_LIST.length;
+        let safetyBuffer = 2;
+        
+        if (itemBearingNodes.length < totalItemsToPlace + safetyBuffer) {
+            console.log("Not enough item nodes for safe QoL early placement");
+            return [];
+        }
+        
+        // Find early accessible item-bearing nodes
+        let earlyNodes = this.getEarlyAccessibleNodes(itemBearingNodes);
+        
+        if (earlyNodes.length === 0) {
+            console.log("No early accessible item nodes found");
+            return [];
+        }
+        
+        let placedEarly = [];
+        
+        // Try to place each QoL item early
+        QUALITY_OF_LIFE_ITEMS.forEach(item => {
+            if (earlyNodes.length > 0 && 
+                !this.items.includes(item) && 
+                !this.spells.includes(item) && 
+                !this.abilities.includes(item)) {
+                
+                let bestNode = this.findClosestToNorthCastle(earlyNodes);
+                if (bestNode) {
+                    try {
+                        this.placeRemedies(item, [bestNode]);
+                        placedEarly.push({item, location: bestNode});
+                        earlyNodes = earlyNodes.filter(n => n !== bestNode);
+                        console.log(`✓ Placed QoL item ${item} early at ${bestNode}`);
+                    } catch (error) {
+                        console.log(`✗ Failed to place ${item} early: ${error.message}`);
+                    }
+                }
+            }
+        });
+        
+        return placedEarly;
+    };
+
+    /**
      * Place all items and nodes in such a way that the game is beatable
      */
     placeItemsAndNodes = () => {
         let [accessibleNodes] = this.getAccessibleNodes(this.northCastleNode);
+        
+        // Phase 1: Attempt early placement of quality of life items
+        let earlyPlacements = this.attemptEarlyQoLPlacement(accessibleNodes);
+        if (earlyPlacements.length > 0) {
+            console.log(`Early QoL placement successful: ${earlyPlacements.map(p => `${p.item} at ${p.location}`).join(', ')}`);
+            // Refresh accessible nodes after early placements
+            [accessibleNodes] = this.getAccessibleNodes(this.northCastleNode);
+        }
+        
+        // Phase 2: Continue with critical path item placement using existing algorithm
         let inaccessibleNodes = Object.keys(this.graphData).filter(
             (node) => !accessibleNodes.includes(node)
         );
@@ -1662,13 +1831,959 @@ export class Z2Randomizer {
         // Place all items and nodes
         this.placeItemsAndNodes();
 
+        // Generate walkthrough story for testing
+        this.generateWalkthroughStory();
+
         return this.graphData;
+    };
+
+    /**
+     * Generate a walkthrough story by simulating optimal graph traversal
+     */
+    generateWalkthroughStory = () => {
+        console.log("\n🗡️ === LINK'S ADVENTURE WALKTHROUGH ===");
+        
+        // Find the North Castle node by mappedLocation
+        let startingNode = Object.keys(this.graphData).find(nodeId => {
+            let node = this.graphData[nodeId];
+            return node.mappedLocation === "NORTH_CASTLE";
+        });
+        
+        if (!startingNode) {
+            console.log("❌ Could not find North Castle starting location");
+            return [];
+        }
+        
+        let startingLocationName = this.getLocationDisplayName(startingNode);
+        console.log(`📍 Link begins his journey at ${startingLocationName}...`);
+        
+        let currentItems = [];
+        let currentSpells = [];
+        let currentAbilities = [];
+        let visitedNodes = new Set([startingNode]);
+        let blockedPaths = new Map(); // Track what's blocking each path
+        let failedPalaces = new Map(); // Track palaces we couldn't complete and their requirements
+        let failedLocations = new Map(); // Track locations with multiple reasons to revisit (spells, abilities, etc.)
+        let storySteps = [];
+        
+        // Track container counts and crystals
+        let containerCounts = {
+            MAGIC: 4,      // Start with 4 magic containers
+            HEART: 4,      // Start with 4 heart containers  
+            CRYSTALS: 0    // Start with 0 crystals (palaces completed)
+        };
+        
+        // Helper for adding emphasized acquisition logs
+        const addAcquisitionStep = (type, name, location, context) => {
+            let emoji = type === "spell" ? "✨" : (type === "ability" ? "💪" : "🎁");
+            let typeLabel = type === "spell" ? "Spell" : (type === "ability" ? "Ability" : "Item");
+            addStoryStep(`${emoji} **${typeLabel}**`, `**${name}**`, null, `acquired at ${location} ${context}`, true);
+        };
+        
+        // Helper function to update container counts
+        const updateContainerCount = (containerType) => {
+            if (containerType === "MAGIC_CONTAINER" || containerType === "magic_container") {
+                containerCounts.MAGIC++;
+                console.log(`   🔮 Magic containers: ${containerCounts.MAGIC} total`);
+                
+                // Add MAGIC level items to inventory for requirements
+                let magicLevel = `MAGIC${containerCounts.MAGIC}`;
+                if (!currentItems.includes(magicLevel)) {
+                    currentItems.push(magicLevel);
+                }
+            } else if (containerType === "HEART_CONTAINER" || containerType === "heart_container") {
+                containerCounts.HEART++;
+                console.log(`   ❤️ Heart containers: ${containerCounts.HEART} total`);
+            }
+            // Note: Function is called for all items, but only acts on containers
+        };
+        
+        // Helper function to update crystal count when palace is completed
+        const updateCrystalCount = () => {
+            containerCounts.CRYSTALS++;
+            console.log(`   💎 Crystals: ${containerCounts.CRYSTALS}/6 (palaces completed)`);
+            
+            // Add CRYSTALS item to inventory when 6 palaces completed
+            if (containerCounts.CRYSTALS >= 6 && !currentItems.includes("CRYSTALS")) {
+                currentItems.push("CRYSTALS");
+                console.log(`   ✨ CRYSTALS item acquired! (6 palaces completed)`);
+            }
+        };
+        
+        // Track story progression with mapped location names - only eventful moments
+        const addStoryStep = (action, nodeId, item = null, details = "", isEventful = true) => {
+            let locationName = this.getLocationDisplayName(nodeId);
+            let step = `${action} ${locationName}`;
+            if (item) step += ` and retrieved the ${item}`;
+            if (details) step += ` ${details}`;
+            
+            // Only add eventful moments to the story
+            if (isEventful) {
+                storySteps.push(step);
+            }
+            console.log(`📖 Link ${step.toLowerCase()}`);
+        };
+        
+        let stepCount = 0;
+        
+        // Continue until all palaces are completed or no more progress can be made
+        while (containerCounts.CRYSTALS < 7) {
+            stepCount++;
+            
+            // Get accessible nodes with current inventory
+            let [accessibleNodes] = this.getAccessibleNodes(
+                startingNode, 
+                currentItems, 
+                currentSpells, 
+                currentAbilities
+            );
+            
+            // Check for newly accessible paths after item collection
+            this.checkNewlyAccessiblePaths(accessibleNodes, blockedPaths, currentItems, currentSpells, currentAbilities);
+            
+            // Check for previously failed palaces that we can now complete
+            let nowCompletablePalaces = this.checkFailedPalaces(failedPalaces, currentItems, currentSpells, currentAbilities);
+            
+            // Check for locations with multiple reasons to revisit (spells, abilities, etc.)
+            let nowAccessibleLocations = this.checkFailedLocations(failedLocations, currentItems, currentSpells, currentAbilities);
+            
+            // Find new nodes we can visit
+            let newAccessibleNodes = accessibleNodes.filter(node => !visitedNodes.has(node));
+            
+            // Prioritize newly completable palaces (that we've already visited but couldn't complete)
+            let priorityPalaces = nowCompletablePalaces.filter(nodeId => visitedNodes.has(nodeId));
+            
+            // Also prioritize locations with newly accessible content (spells, abilities)
+            let priorityLocations = nowAccessibleLocations.filter(nodeId => visitedNodes.has(nodeId));
+            
+            if (priorityPalaces.length > 0) {
+                console.log(`🏰 Prioritizing previously failed palace: ${this.getLocationDisplayName(priorityPalaces[0])}`);
+                let nextNode = priorityPalaces[0];
+                let nodeData = this.graphData[nextNode];
+                
+                // Handle palace completion for revisited palaces
+                let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
+                if (locationMeta && locationMeta.type === "PALACE") {
+                    let palaceRequirements = locationMeta.completionRequirements || [];
+                    
+                    // Update crystal count (palace completion tracking)
+                    updateCrystalCount();
+                    
+                    // Show traversal details for palace entry
+                    let traversalDetails = "";
+                    if (palaceRequirements.length > 0) {
+                        traversalDetails = `(used ${palaceRequirements.join(" and ")} to enter)`;
+                        console.log(`   🔑 Link used ${palaceRequirements.join(" and ")} to enter the palace`);
+                    }
+                    
+                    // Get the item from completing this palace
+                    let palaceItem = null;
+                    if (nodeData.mappedItems && nodeData.mappedItems.length > 0) {
+                        palaceItem = nodeData.mappedItems[0];
+                        
+                        // Add item to appropriate inventory and create emphasized log
+                        if (this.isSpell(palaceItem)) {
+                            if (!currentSpells.includes(palaceItem)) {
+                                currentSpells.push(palaceItem);
+                                console.log(`   🪄 Gained spell: ${palaceItem}`);
+                                addAcquisitionStep("spell", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
+                            }
+                        } else if (this.isAbility(palaceItem)) {
+                            if (!currentAbilities.includes(palaceItem)) {
+                                currentAbilities.push(palaceItem);
+                                console.log(`   💪 Gained ability: ${palaceItem}`);
+                                addAcquisitionStep("ability", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
+                            }
+                        } else {
+                            // Always update container count for containers (can have multiple)
+                            updateContainerCount(palaceItem);
+                            
+                            // Add item to inventory (items like containers and experience bags can stack)
+                            currentItems.push(palaceItem);
+                            console.log(`   🎁 Gained item: ${palaceItem}`);
+                            addAcquisitionStep("item", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
+                        }
+                    }
+                    
+                    let completionMessage = `and completed the palace on return visit ${traversalDetails}`;
+                    
+                    addStoryStep("🏰 returned to", nextNode, null, completionMessage);
+                    console.log(`   🏆 Palace completed on return! (${containerCounts.CRYSTALS}/7 palaces done)`);
+                }
+                continue; // Skip the normal node selection process
+            }
+            
+            // Handle locations with newly accessible content (spells, abilities)
+            if (priorityLocations.length > 0) {
+                console.log(`🏫 Prioritizing location with newly accessible content: ${this.getLocationDisplayName(priorityLocations[0])}`);
+                let nextNode = priorityLocations[0];
+                let nodeData = this.graphData[nextNode];
+                let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
+                
+                // Process this location for spells and abilities
+                this.processLocationForContent(nextNode, locationMeta, currentItems, currentSpells, currentAbilities, addStoryStep, updateContainerCount, failedLocations, containerCounts, addAcquisitionStep);
+                continue; // Skip the normal node selection process
+            }
+            
+            if (newAccessibleNodes.length === 0) {
+                console.log("❌ No new accessible nodes found - checking if we can make progress...");
+                
+                // Check if we have any blocked paths that could lead to progress
+                let progressPossible = this.canMakeProgress(blockedPaths, currentItems, currentSpells, currentAbilities);
+                
+                if (!progressPossible) {
+                    console.log("❌ No way to make further progress - adventure ends here");
+                    this.exploreBlockedPaths(visitedNodes, blockedPaths, currentItems, currentSpells, currentAbilities);
+                    break;
+                } else {
+                    console.log("⚠️ No new nodes accessible but progress still possible - continuing exploration...");
+                    this.exploreBlockedPaths(visitedNodes, blockedPaths, currentItems, currentSpells, currentAbilities);
+                    break;
+                }
+            }
+            
+            // Choose the most optimal next node
+            let nextNode = this.chooseOptimalNextNode(newAccessibleNodes, currentItems, containerCounts.CRYSTALS);
+            let nodeData = this.graphData[nextNode];
+            
+            visitedNodes.add(nextNode);
+            
+            // Explore all edges from this node to understand what's blocked
+            this.exploreEdgesFromNode(nextNode, visitedNodes, blockedPaths, currentItems, currentSpells, currentAbilities);
+            
+            // Check what type of location this is and handle accordingly
+            let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
+            
+            // Check if this is a palace
+            if (locationMeta && locationMeta.type === "PALACE") {
+                let palaceRequirements = locationMeta.completionRequirements || [];
+                
+                if (this.checkRequirements(palaceRequirements, currentItems, currentSpells, currentAbilities)) {
+                    // Update crystal count (palace completion tracking)
+                    updateCrystalCount();
+                    
+                    // Show traversal details for palace entry
+                    if (palaceRequirements.length > 0) {
+                        console.log(`   🔑 Link used ${palaceRequirements.join(" and ")} to enter the palace`);
+                    }
+                    
+                    // Get the item from completing this palace
+                    let palaceItem = null;
+                    if (nodeData.mappedItems && nodeData.mappedItems.length > 0) {
+                        palaceItem = nodeData.mappedItems[0];
+                        
+                        // Add item to appropriate inventory and create emphasized log
+                        if (this.isSpell(palaceItem)) {
+                            if (!currentSpells.includes(palaceItem)) {
+                                currentSpells.push(palaceItem);
+                                console.log(`   🪄 Gained spell: ${palaceItem}`);
+                                addAcquisitionStep("spell", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
+                            }
+                        } else if (this.isAbility(palaceItem)) {
+                            if (!currentAbilities.includes(palaceItem)) {
+                                currentAbilities.push(palaceItem);
+                                console.log(`   💪 Gained ability: ${palaceItem}`);
+                                addAcquisitionStep("ability", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
+                            }
+                        } else {
+                            // Always update container count for containers (can have multiple)
+                            updateContainerCount(palaceItem);
+                            
+                            // Add item to inventory (items like containers and experience bags can stack)
+                            currentItems.push(palaceItem);
+                            console.log(`   🎁 Gained item: ${palaceItem}`);
+                            addAcquisitionStep("item", palaceItem, this.getLocationDisplayName(nextNode), "from palace");
+                        }
+                    }
+                    
+                    let completionMessage = `and completed the palace`;
+                    
+                    addStoryStep("🏰 went to", nextNode, null, completionMessage);
+                    console.log(`   🏆 Palace completed! (${containerCounts.CRYSTALS}/7 palaces done)`);
+                } else {
+                    // Track this failed palace for potential revisit later
+                    let palaceName = this.getLocationDisplayName(nextNode);
+                    failedPalaces.set(nextNode, {
+                        name: palaceName,
+                        requirements: palaceRequirements,
+                        location: locationMeta
+                    });
+                    console.log(`   🔒 Failed to complete ${palaceName} - tracking for later (needs: ${palaceRequirements.join(", ")})`);
+                    addStoryStep("🔍 explored", nextNode, null, `but couldn't complete the palace yet (needs: ${palaceRequirements.join(", ")})`);
+                }
+            }
+            // Check if this is a spell/ability town
+            else if (locationMeta && (locationMeta.spell || locationMeta.ability)) {
+                this.processLocationForContent(nextNode, locationMeta, currentItems, currentSpells, currentAbilities, addStoryStep, updateContainerCount, failedLocations, containerCounts, addAcquisitionStep);
+            }
+            // Check if this location has items (use mapped items)
+            else if (nodeData.mappedItems && nodeData.mappedItems.length > 0) {
+                let item = nodeData.mappedItems[0]; // Get the first item
+                let locationName = this.getLocationDisplayName(nextNode);
+                
+                // Add item to appropriate inventory based on type and create emphasized log
+                if (this.isSpell(item)) {
+                    if (!currentSpells.includes(item)) {
+                        currentSpells.push(item);
+                        console.log(`   🪄 Added ${item} to spell inventory`);
+                        addAcquisitionStep("spell", item, locationName, "found in location");
+                        addStoryStep("🗡️ went to", nextNode, null, "and found a magical spell");
+                    }
+                } else if (this.isAbility(item)) {
+                    if (!currentAbilities.includes(item)) {
+                        currentAbilities.push(item);
+                        console.log(`   💪 Added ${item} to ability inventory`);
+                        addAcquisitionStep("ability", item, locationName, "found in location");
+                        addStoryStep("🗡️ went to", nextNode, null, "and found a new ability");
+                    }
+                } else {
+                    // All other items (including BAGU_SAUCE, TROPHY, CHILD, etc.)
+                    
+                    // Always update container count for containers (can have multiple)
+                    updateContainerCount(item);
+                    
+                    // Add item to inventory (items like containers and experience bags can stack)
+                    currentItems.push(item);
+                    
+                    if (item === "BAGU_SAUCE") {
+                        console.log(`   👨 Added ${item} to item inventory (Bagu's favor gained!)`);
+                        addAcquisitionStep("item", item, locationName, "(gained Bagu's favor)");
+                        addStoryStep("🏠 went to", nextNode, null, "and talked to Bagu");
+                    } else {
+                        console.log(`   🎒 Added ${item} to item inventory`);
+                        addAcquisitionStep("item", item, locationName, "found in location");
+                        addStoryStep("🗡️ went to", nextNode, null, "and found a valuable item");
+                    }
+                }
+            }
+            // Legacy handling for locations that give BAGU_SAUCE but don't have it in mappedItems
+            else if (locationMeta && locationMeta.items && locationMeta.items.includes("BAGU_SAUCE")) {
+                if (!currentItems.includes("BAGU_SAUCE")) {
+                    currentItems.push("BAGU_SAUCE");
+                    console.log(`   👨 Link talked to Bagu and gained his favor (BAGU_SAUCE)!`);
+                    addAcquisitionStep("item", "BAGU_SAUCE", this.getLocationDisplayName(nextNode), "(gained Bagu's favor)");
+                    addStoryStep("🏠 went to", nextNode, null, "and talked to Bagu");
+                } else {
+                    // Not eventful if already have BAGU_SAUCE
+                    addStoryStep("🏠 revisited", nextNode, null, "but Bagu had nothing new to say", false);
+                }
+            } else {
+                // Regular exploration - not eventful enough for story
+                addStoryStep("🚶 visited", nextNode, null, "", false);
+            }
+        }
+        
+        if (containerCounts.CRYSTALS >= 7) {
+            console.log("🎉 Link completed all palaces and saved Hyrule!");
+        } else {
+            console.log(`⚠️ Adventure incomplete - only ${containerCounts.CRYSTALS}/7 palaces completed`);
+        }
+        
+        // Final summary of what's still blocked
+        console.log(`\n🚧 Remaining Blocked Paths:`);
+        if (blockedPaths.size === 0) {
+            console.log("   ✅ All paths have been explored!");
+        } else {
+            blockedPaths.forEach((requirements, path) => {
+                console.log(`   🔒 ${path}: Needs ${requirements.join(" or ")}`);
+            });
+        }
+        
+        // Summary of failed palaces
+        console.log(`\n🏰 Failed Palaces:`);
+        if (failedPalaces.size === 0) {
+            console.log("   ✅ All accessible palaces were completed!");
+        } else {
+            failedPalaces.forEach((palaceInfo, nodeId) => {
+                console.log(`   🔒 ${palaceInfo.name}: Needs ${palaceInfo.requirements.join(" and ")}`);
+            });
+        }
+        
+        // Summary of failed locations (spells/abilities)
+        console.log(`\n🏫 Failed Locations:`);
+        if (failedLocations.size === 0) {
+            console.log("   ✅ All accessible spells and abilities were learned!");
+        } else {
+            failedLocations.forEach((locationInfo, nodeId) => {
+                let failures = [];
+                if (locationInfo.failedSpell) {
+                    failures.push(`${locationInfo.failedSpell.spell} spell (needs: ${locationInfo.failedSpell.requirements.join(", ")})`);
+                }
+                if (locationInfo.failedAbility) {
+                    failures.push(`${locationInfo.failedAbility.ability} ability (needs: ${locationInfo.failedAbility.requirements.join(", ")})`);
+                }
+                console.log(`   🔒 ${locationInfo.name}: ${failures.join(", ")}`);
+            });
+        }
+        
+        console.log(`\n📊 Adventure Summary:`);
+        console.log(`   🏰 Palaces completed: ${containerCounts.CRYSTALS}/7`);
+        console.log(`   🔮 Magic containers: ${containerCounts.MAGIC}`);
+        console.log(`   ❤️ Heart containers: ${containerCounts.HEART}`);
+        console.log(`   💎 Crystals: ${containerCounts.CRYSTALS}/6`);
+        console.log(`   🎒 Items collected: ${currentItems.length} - [${currentItems.join(", ") || "none"}]`);
+        console.log(`   ✨ Spells learned: ${currentSpells.length} - [${currentSpells.join(", ") || "none"}]`);
+        console.log(`   💪 Abilities gained: ${currentAbilities.length} - [${currentAbilities.join(", ") || "none"}]`);
+        console.log(`   📍 Locations visited: ${visitedNodes.size}`);
+        console.log(`   🐾 Total steps: ${stepCount}`);
+        console.log(`   🚧 Blocked paths discovered: ${blockedPaths.size}`);
+        
+        // Format the story as a string with proper line breaks
+        let formattedStory = "🗡️ === LINK'S ADVENTURE WALKTHROUGH ===\n\n";
+        formattedStory += `📍 Link begins his journey at ${this.getLocationDisplayName(startingNode)}...\n\n`;
+        
+        // Add a brief summary
+        formattedStory += `📈 ADVENTURE SUMMARY:\n`;
+        formattedStory += `   🏰 Palaces completed: ${containerCounts.CRYSTALS}/7\n`;
+        formattedStory += `   🎒 Items collected: ${currentItems.length}\n`;
+        formattedStory += `   ✨ Spells learned: ${currentSpells.length}\n`;
+        formattedStory += `   💪 Abilities gained: ${currentAbilities.length}\n`;
+        formattedStory += `   📍 Key locations visited: ${storySteps.length}\n\n`;
+        
+        formattedStory += `📖 KEY EVENTS:\n`;
+        storySteps.forEach((step, index) => {
+            formattedStory += `${index + 1}. ${step}\n`;
+        });
+        
+        if (containerCounts.CRYSTALS >= 7) {
+            formattedStory += "\n🎉 Link completed all palaces and saved Hyrule!\n";
+        } else {
+            formattedStory += `\n⚠️ Adventure incomplete - only ${containerCounts.CRYSTALS}/7 palaces completed\n`;
+        }
+        
+        formattedStory += `\n🚧 Remaining Blocked Paths:\n`;
+        if (blockedPaths.size === 0) {
+            formattedStory += "   ✅ All paths have been explored!\n";
+        } else {
+            blockedPaths.forEach((requirements, path) => {
+                formattedStory += `   🔒 ${path}: Needs ${requirements.join(" or ")}\n`;
+            });
+        }
+        
+        formattedStory += `\n🏰 Failed Palaces:\n`;
+        if (failedPalaces.size === 0) {
+            formattedStory += "   ✅ All accessible palaces were completed!\n";
+        } else {
+            failedPalaces.forEach((palaceInfo, nodeId) => {
+                formattedStory += `   🔒 ${palaceInfo.name}: Needs ${palaceInfo.requirements.join(" and ")}\n`;
+            });
+        }
+        
+        formattedStory += `\n🏫 Failed Locations:\n`;
+        if (failedLocations.size === 0) {
+            formattedStory += "   ✅ All accessible spells and abilities were learned!\n";
+        } else {
+            failedLocations.forEach((locationInfo, nodeId) => {
+                let failures = [];
+                if (locationInfo.failedSpell) {
+                    failures.push(`${locationInfo.failedSpell.spell} spell (needs: ${locationInfo.failedSpell.requirements.join(", ")})`);
+                }
+                if (locationInfo.failedAbility) {
+                    failures.push(`${locationInfo.failedAbility.ability} ability (needs: ${locationInfo.failedAbility.requirements.join(", ")})`);
+                }
+                formattedStory += `   🔒 ${locationInfo.name}: ${failures.join(", ")}\n`;
+            });
+        }
+        
+        formattedStory += `\n📊 Adventure Summary:\n`;
+        formattedStory += `   🏰 Palaces completed: ${containerCounts.CRYSTALS}/7\n`;
+        formattedStory += `   🔮 Magic containers: ${containerCounts.MAGIC}\n`;
+        formattedStory += `   ❤️ Heart containers: ${containerCounts.HEART}\n`;
+        formattedStory += `   💎 Crystals: ${containerCounts.CRYSTALS}/6\n`;
+        formattedStory += `   🎒 Items collected: ${currentItems.length} - [${currentItems.join(", ") || "none"}]\n`;
+        formattedStory += `   ✨ Spells learned: ${currentSpells.length} - [${currentSpells.join(", ") || "none"}]\n`;
+        formattedStory += `   💪 Abilities gained: ${currentAbilities.length} - [${currentAbilities.join(", ") || "none"}]\n`;
+        formattedStory += `   📍 Locations visited: ${visitedNodes.size}\n`;
+        formattedStory += `   🐾 Total steps: ${stepCount}\n`;
+        formattedStory += `   🚧 Blocked paths discovered: ${blockedPaths.size}\n`;
+        
+        return formattedStory;
+    };
+
+    /**
+     * Choose the optimal next node for story progression
+     */
+    chooseOptimalNextNode = (availableNodes, currentItems, crystalCount) => {
+        // Priority 1: Uncompleted palaces we can actually complete
+        let completablePalaces = availableNodes.filter(node => {
+            let nodeData = this.graphData[node];
+            let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
+            if (locationMeta && locationMeta.type === "PALACE") {
+                // Check if we can complete this palace
+                let palaceRequirements = locationMeta.completionRequirements || [];
+                return this.checkRequirements(palaceRequirements, currentItems, [], []);
+            }
+            return false;
+        });
+        
+        if (completablePalaces.length > 0) {
+            return completablePalaces[0];
+        }
+        
+        // Priority 2: Spell/ability towns where we can learn new content
+        let spellAbilityTowns = availableNodes.filter(node => {
+            let nodeData = this.graphData[node];
+            let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
+            if (locationMeta && (locationMeta.spell || locationMeta.ability)) {
+                let canLearnSpell = false;
+                let canLearnAbility = false;
+                
+                if (locationMeta.spell) {
+                    let spellRequirements = locationMeta.spellRequirements || [];
+                    canLearnSpell = this.checkRequirements(spellRequirements, currentItems, [], []);
+                }
+                
+                if (locationMeta.ability) {
+                    let abilityRequirements = locationMeta.abilityRequirements || [];
+                    canLearnAbility = this.checkRequirements(abilityRequirements, currentItems, [], []);
+                }
+                
+                return canLearnSpell || canLearnAbility;
+            }
+            return false;
+        });
+        
+        if (spellAbilityTowns.length > 0) {
+            return spellAbilityTowns[0];
+        }
+        
+        // Priority 3: Locations with useful items we don't have yet
+        let itemLocations = availableNodes.filter(node => {
+            let nodeData = this.graphData[node];
+            return nodeData.mappedItems && nodeData.mappedItems.length > 0 &&
+                   !currentItems.includes(nodeData.mappedItems[0]);
+        });
+        
+        if (itemLocations.length > 0) {
+            return itemLocations[0];
+        }
+        
+        // Priority 4: Any available node
+        return availableNodes[0];
+    };
+
+    /**
+     * Extract palace number from node data
+     */
+    extractPalaceNumber = (nodeId) => {
+        let nodeData = this.graphData[nodeId];
+        
+        // Check mapped location first (this is where P1, P2, etc. are stored)
+        let mappedLocation = nodeData.mappedLocation;
+        let locationKey = nodeData.locationKey;
+        
+        // Look for palace IDs in mapped location first (P1, P2, etc.)
+        if (mappedLocation === "P1") return 1;
+        if (mappedLocation === "P2") return 2;
+        if (mappedLocation === "P3") return 3;
+        if (mappedLocation === "P4") return 4;
+        if (mappedLocation === "P5") return 5;
+        if (mappedLocation === "P6") return 6;
+        if (mappedLocation === "GP") return 7;
+        
+        // Try location key as fallback
+        if (locationKey && locationKey.includes("P1")) return 1;
+        if (locationKey && locationKey.includes("P2")) return 2;
+        if (locationKey && locationKey.includes("P3")) return 3;
+        if (locationKey && locationKey.includes("P4")) return 4;
+        if (locationKey && locationKey.includes("P5")) return 5;
+        if (locationKey && locationKey.includes("P6")) return 6;
+        if (locationKey && (locationKey.includes("GP") || locationKey.includes("GREAT_PALACE"))) return 7;
+        
+        // Check nodeId itself as last resort
+        if (nodeId === "P1" || nodeId.includes("P1")) return 1;
+        if (nodeId === "P2" || nodeId.includes("P2")) return 2;
+        if (nodeId === "P3" || nodeId.includes("P3")) return 3;
+        if (nodeId === "P4" || nodeId.includes("P4")) return 4;
+        if (nodeId === "P5" || nodeId.includes("P5")) return 5;
+        if (nodeId === "P6" || nodeId.includes("P6")) return 6;
+        if (nodeId === "GP" || nodeId.includes("GP")) return 7;
+        
+        console.warn(`⚠️ Could not determine palace number for node ${nodeId} (mapped: ${mappedLocation}, key: ${locationKey}), defaulting to 1`);
+        return 1;
+    };
+
+    /**
+     * Check if a palace can be completed with current inventory
+     */
+    canCompletePalace = (palaceNumber, items, spells, abilities) => {
+        // Define palace completion requirements
+        const palaceRequirements = {
+            1: [], // No requirements
+            2: ["GLOVE"], // Needs glove
+            3: ["RAFT"], // Needs raft to access
+            4: ["BOOTS"], // Needs boots
+            5: ["FLUTE"], // Needs flute
+            6: ["FAIRY", "JUMP", "MAGIC_KEY"], // Needs fairy, jump, and magic key
+            7: ["CRYSTALS"] // Needs all 6 crystals
+        };
+        
+        let requirements = palaceRequirements[palaceNumber] || [];
+        return this.checkRequirements(requirements, items, spells, abilities);
+    };
+
+    /**
+     * Get the spell reward for completing a palace
+     */
+    getPalaceSpellReward = (palaceNumber) => {
+        const spellRewards = {
+            1: "SHIELD",
+            2: "JUMP", 
+            3: "LIFE",
+            4: "FAIRY",
+            5: "FIRE",
+            6: "REFLECT"
+        };
+        return spellRewards[palaceNumber];
+    };
+
+    /**
+     * Get the display name for a location (mapped location or location key)
+     */
+    getLocationDisplayName = (nodeId) => {
+        let node = this.graphData[nodeId];
+        if (!node) return nodeId;
+        
+        // Prefer mapped location name, fall back to location key, then node ID
+        return node.mappedLocation || node.locationKey || nodeId;
+    };
+
+    /**
+     * Explore all edges from a node to understand what's blocked
+     */
+    exploreEdgesFromNode = (nodeId, visitedNodes, blockedPaths, items, spells, abilities) => {
+        let node = this.graphData[nodeId];
+        let currentLocation = this.getLocationDisplayName(nodeId);
+        
+        // Check connections
+        if (node.connections) {
+            node.connections.forEach(connectedNode => {
+                if (!visitedNodes.has(connectedNode)) {
+                    let pathName = `${currentLocation} → ${this.getLocationDisplayName(connectedNode)}`;
+                    
+                    // Check if this connection has requirements
+                    if (node.connectionRequirements && node.connectionRequirements[connectedNode]) {
+                        let requirements = node.connectionRequirements[connectedNode];
+                        let canTraverse = this.checkRequirements(requirements, items, spells, abilities);
+                        
+                        if (!canTraverse) {
+                            blockedPaths.set(pathName, requirements);
+                            console.log(`   🚧 Path blocked: ${pathName} (needs: ${requirements.join(" and ")})`);
+                        } else {
+                            console.log(`   ✅ Path open: ${pathName} (used: ${requirements.join(" and ")})`);
+                        }
+                    } else {
+                        console.log(`   🚶 Free path: ${pathName}`);
+                    }
+                }
+            });
+        }
+        
+        // Check links  
+        if (node.links) {
+            node.links.forEach(linkedNode => {
+                if (!visitedNodes.has(linkedNode)) {
+                    let pathName = `${currentLocation} → ${this.getLocationDisplayName(linkedNode)}`;
+                    
+                    // Check if this link has requirements
+                    if (node.linkRequirements && node.linkRequirements[linkedNode]) {
+                        let requirements = node.linkRequirements[linkedNode];
+                        let canTraverse = this.checkRequirements(requirements, items, spells, abilities);
+                        
+                        if (!canTraverse) {
+                            blockedPaths.set(pathName, requirements);
+                            console.log(`   🌉 Bridge blocked: ${pathName} (needs: ${requirements.join(" and ")})`);
+                        } else {
+                            console.log(`   🌉 Bridge open: ${pathName} (used: ${requirements.join(" and ")})`);
+                        }
+                    } else {
+                        console.log(`   🌉 Free bridge: ${pathName}`);
+                    }
+                }
+            });
+        }
+    };
+
+    /**
+     * Check if any previously blocked paths are now accessible
+     */
+    checkNewlyAccessiblePaths = (accessibleNodes, blockedPaths, items, spells, abilities) => {
+        let newlyOpened = [];
+        
+        blockedPaths.forEach((requirements, pathName) => {
+            let canTraverse = this.checkRequirements(requirements, items, spells, abilities);
+            if (canTraverse) {
+                console.log(`   🔓 Path unlocked: ${pathName} (now have: ${requirements.join(", ")})`);
+                newlyOpened.push(pathName);
+            }
+        });
+        
+        // Remove newly opened paths from blocked list
+        newlyOpened.forEach(pathName => {
+            blockedPaths.delete(pathName);
+        });
+        
+        if (newlyOpened.length > 0) {
+            console.log(`   🎉 ${newlyOpened.length} new path(s) opened!`);
+        }
+    };
+
+    /**
+     * Check if any previously failed palaces can now be completed
+     */
+    checkFailedPalaces = (failedPalaces, items, spells, abilities) => {
+        let nowCompletable = [];
+        
+        failedPalaces.forEach((palaceInfo, nodeId) => {
+            let canComplete = this.checkRequirements(palaceInfo.requirements, items, spells, abilities);
+            if (canComplete) {
+                console.log(`   🏰 Palace ${palaceInfo.name} can now be completed! (have: ${palaceInfo.requirements.join(", ")})`);
+                nowCompletable.push(nodeId);
+            }
+        });
+        
+        // Remove palaces that can now be completed from failed list
+        nowCompletable.forEach(nodeId => {
+            failedPalaces.delete(nodeId);
+        });
+        
+        if (nowCompletable.length > 0) {
+            console.log(`   🎉 ${nowCompletable.length} palace(s) can now be completed!`);
+        }
+        
+        return nowCompletable;
+    };
+
+    /**
+     * Check if any previously failed locations can now provide spells or abilities
+     */
+    checkFailedLocations = (failedLocations, items, spells, abilities) => {
+        let nowAccessible = [];
+        
+        failedLocations.forEach((locationInfo, nodeId) => {
+            let hasNewContent = false;
+            
+            // Check if any previously failed spells can now be learned
+            if (locationInfo.failedSpell) {
+                let canLearnSpell = this.checkRequirements(locationInfo.failedSpell.requirements, items, spells, abilities);
+                if (canLearnSpell && !spells.includes(locationInfo.failedSpell.spell)) {
+                    console.log(`   🏫 Spell ${locationInfo.failedSpell.spell} can now be learned at ${locationInfo.name}!`);
+                    hasNewContent = true;
+                }
+            }
+            
+            // Check if any previously failed abilities can now be learned
+            if (locationInfo.failedAbility) {
+                let canLearnAbility = this.checkRequirements(locationInfo.failedAbility.requirements, items, spells, abilities);
+                if (canLearnAbility && !abilities.includes(locationInfo.failedAbility.ability)) {
+                    console.log(`   🏫 Ability ${locationInfo.failedAbility.ability} can now be learned at ${locationInfo.name}!`);
+                    hasNewContent = true;
+                }
+            }
+            
+            if (hasNewContent) {
+                nowAccessible.push(nodeId);
+            }
+        });
+        
+        return nowAccessible;
+    };
+
+    /**
+     * Process a location for spells, abilities, and other content
+     */
+    processLocationForContent = (nodeId, locationMeta, currentItems, currentSpells, currentAbilities, addStoryStep, updateContainerCount, failedLocations = null, containerCounts = null, addAcquisitionStep = null) => {
+        let locationName = this.getLocationDisplayName(nodeId);
+        let hasFailedContent = false;
+        let completedActions = [];
+        
+        // Check for spells
+        if (locationMeta.spell) {
+            let spellToLearn = locationMeta.spell;
+            let spellRequirements = locationMeta.spellRequirements || [];
+            
+            if (this.checkRequirements(spellRequirements, currentItems, currentSpells, currentAbilities)) {
+                if (!currentSpells.includes(spellToLearn)) {
+                    currentSpells.push(spellToLearn);
+                    if (spellRequirements.length > 0) {
+                        console.log(`   🎁 Link presented ${spellRequirements.join(" and ")} and learned ${spellToLearn}!`);
+                        addAcquisitionStep("spell", spellToLearn, locationName, `(presented ${spellRequirements.join(" and ")})`);
+                        completedActions.push(`learned the ${spellToLearn} spell by presenting ${spellRequirements.join(" and ")}`);
+                    } else {
+                        console.log(`   🎓 Link learned ${spellToLearn} from the wise man!`);
+                        addAcquisitionStep("spell", spellToLearn, locationName, "(from wise man)");
+                        completedActions.push(`learned the ${spellToLearn} spell from the wise man`);
+                    }
+                }
+            } else {
+                // Track failed spell attempt
+                if (failedLocations) {
+                    let locationInfo = failedLocations.get(nodeId) || { name: locationName };
+                    locationInfo.failedSpell = { spell: spellToLearn, requirements: spellRequirements };
+                    failedLocations.set(nodeId, locationInfo);
+                }
+                hasFailedContent = true;
+                console.log(`   🔒 Cannot learn ${spellToLearn} yet (needs: ${spellRequirements.join(", ")})`);
+            }
+        }
+        
+        // Check for abilities
+        if (locationMeta.ability) {
+            let abilityToLearn = locationMeta.ability;
+            let abilityRequirements = locationMeta.abilityRequirements || [];
+            
+            if (this.checkRequirements(abilityRequirements, currentItems, currentSpells, currentAbilities)) {
+                if (!currentAbilities.includes(abilityToLearn)) {
+                    currentAbilities.push(abilityToLearn);
+                    if (abilityRequirements.length > 0) {
+                        console.log(`   🎁 Link presented ${abilityRequirements.join(" and ")} and learned ${abilityToLearn}!`);
+                        addAcquisitionStep("ability", abilityToLearn, locationName, `(presented ${abilityRequirements.join(" and ")})`);
+                        completedActions.push(`learned the ${abilityToLearn} ability by presenting ${abilityRequirements.join(" and ")}`);
+                    } else {
+                        console.log(`   💪 Link learned ${abilityToLearn} from the master!`);
+                        addAcquisitionStep("ability", abilityToLearn, locationName, "(from master)");
+                        completedActions.push(`learned the ${abilityToLearn} ability from the master`);
+                    }
+                }
+            } else {
+                // Track failed ability attempt
+                if (failedLocations) {
+                    let locationInfo = failedLocations.get(nodeId) || { name: locationName };
+                    locationInfo.failedAbility = { ability: abilityToLearn, requirements: abilityRequirements };
+                    failedLocations.set(nodeId, locationInfo);
+                }
+                hasFailedContent = true;
+                console.log(`   🔒 Cannot learn ${abilityToLearn} yet (needs: ${abilityRequirements.join(", ")})`);
+            }
+        }
+        
+        // Check for THUNDER spell (8 magic containers requirement)
+        if (locationMeta.spell === "THUNDER") {
+            // Use the container count instead of filtering items array
+            let magicContainerCount = containerCounts ? containerCounts.MAGIC : currentItems.filter(item => item === "MAGIC_CONTAINER").length;
+            if (magicContainerCount >= 8) {
+                if (!currentSpells.includes("THUNDER")) {
+                    currentSpells.push("THUNDER");
+                    console.log(`   ⚡ Link has enough magic containers (${magicContainerCount}) and learned THUNDER!`);
+                    addAcquisitionStep("spell", "THUNDER", locationName, `(with ${magicContainerCount} magic containers)`);
+                    completedActions.push(`learned the THUNDER spell with ${magicContainerCount} magic containers`);
+                }
+            } else {
+                console.log(`   ⚡ Cannot learn THUNDER yet (has ${magicContainerCount}/8 magic containers)`);
+                hasFailedContent = true;
+            }
+        }
+        
+        // Remove from failed locations if all content has been accessed
+        if (failedLocations && !hasFailedContent) {
+            failedLocations.delete(nodeId);
+        }
+        
+        // Create story step only if there were failed attempts (acquisitions get their own logs)
+        if (hasFailedContent) {
+            let failedReasons = [];
+            if (locationMeta.spell && locationMeta.spellRequirements && locationMeta.spellRequirements.length > 0) {
+                failedReasons.push(`${locationMeta.spell} spell (needs: ${locationMeta.spellRequirements.join(", ")})`);
+            }
+            if (locationMeta.ability && locationMeta.abilityRequirements && locationMeta.abilityRequirements.length > 0) {
+                failedReasons.push(`${locationMeta.ability} ability (needs: ${locationMeta.abilityRequirements.join(", ")})`);
+            }
+            if (locationMeta.spell === "THUNDER") {
+                let magicCount = containerCounts ? containerCounts.MAGIC : currentItems.filter(item => item === "MAGIC_CONTAINER").length;
+                failedReasons.push(`THUNDER spell (needs: 8 magic containers, has ${magicCount})`);
+            }
+            
+            addStoryStep("🏫 went to", nodeId, null, `but couldn't access: ${failedReasons.join(", ")}`);
+        } else if (completedActions.length === 0) {
+            // Not eventful if nothing was gained or blocked
+            addStoryStep("🏫 revisited", nodeId, null, "but had nothing new to offer", false);
+        }
+    };
+
+    /**
+     * Explore what paths are currently blocked and what would be needed
+     */
+    exploreBlockedPaths = (visitedNodes, blockedPaths, items, spells, abilities) => {
+        console.log(`\n🔍 Analyzing blocked paths to find progression opportunities...`);
+        
+        if (blockedPaths.size === 0) {
+            console.log("   ✅ No blocked paths found - all reachable areas explored!");
+            return;
+        }
+        
+        // Group blocked paths by what's needed
+        let itemNeeds = new Map();
+        
+        blockedPaths.forEach((requirements, pathName) => {
+            requirements.forEach(requirement => {
+                // Parse OR requirements (e.g., "ITEM1|ITEM2")
+                let alternatives = requirement.split("|").map(alt => alt.trim());
+                alternatives.forEach(alt => {
+                    if (!items.includes(alt) && !spells.includes(alt) && !abilities.includes(alt)) {
+                        if (!itemNeeds.has(alt)) {
+                            itemNeeds.set(alt, []);
+                        }
+                        itemNeeds.get(alt).push(pathName);
+                    }
+                });
+            });
+        });
+        
+        console.log(`\n📋 Items needed for progression:`);
+        if (itemNeeds.size === 0) {
+            console.log("   ✅ No specific items needed - may need palace completion or other progression");
+        } else {
+            itemNeeds.forEach((paths, item) => {
+                console.log(`   🔑 ${item} would unlock:`);
+                paths.forEach(path => {
+                    console.log(`      → ${path}`);
+                });
+            });
+        }
+        
+        console.log(`\n🎒 Current inventory:`);
+        console.log(`   Items: [${items.join(", ") || "none"}]`);
+        console.log(`   Spells: [${spells.join(", ") || "none"}]`);
+        console.log(`   Abilities: [${abilities.join(", ") || "none"}]`);
+    };
+
+    /**
+     * Check if we can still make progress given current blocked paths and inventory
+     */
+    canMakeProgress = (blockedPaths, items, spells, abilities) => {
+        // If no blocked paths, we can't make progress
+        if (blockedPaths.size === 0) {
+            return false;
+        }
+        
+        // Check if any blocked path could be opened with items we could potentially get
+        for (let [pathName, requirements] of blockedPaths) {
+            // Check if we're close to satisfying any requirements
+            let missingItems = [];
+            requirements.forEach(requirement => {
+                let alternatives = requirement.split("|").map(alt => alt.trim());
+                let hasSome = alternatives.some(alt => 
+                    items.includes(alt) || spells.includes(alt) || abilities.includes(alt)
+                );
+                if (!hasSome) {
+                    missingItems.push(requirement);
+                }
+            });
+            
+            // If we're only missing a few items, there might be hope
+            if (missingItems.length <= 2) {
+                console.log(`   🤔 Potentially reachable: ${pathName} (missing: ${missingItems.join(", ")})`);
+                return true;
+            }
+        }
+        
+        return false;
     };
 
     randomizeEnemiesAndPalaces = () => {
         Object.keys(this.levels).forEach((key) => {
             let {enemies} = this.levels[key];
-            console.log(key);
+            // console.log(key);
             enemies.forEach((enemy, index) => {
                 if ([4].includes(enemy.mapSet)) {
                     return;

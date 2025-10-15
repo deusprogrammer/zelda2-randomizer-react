@@ -483,3 +483,23 @@ export const LARGE_OBJECT_SETS = [
     PALACE_LARGE_OBJECTS,
     PALACE_LARGE_OBJECTS
 ]
+
+// Item Priority Classification for Two-Phase Placement
+export const CRITICAL_PATH_ITEMS = [
+    "BOOTS",      // Only water traversal method
+    "RAFT",       // Only East ↔ West Hyrule travel
+    "HANDY_GLOVE", // Block manipulation (palace progression)
+    "JUMP",       // Required for palace progression
+    "LIFE",       // Required for palace progression
+    "FAIRY",      // Required for palace progression
+    "REFLECT",    // Required for palace progression
+    "THUNDER"     // Required for palace progression
+];
+
+export const QUALITY_OF_LIFE_ITEMS = [
+    "MAGIC_KEY",  // Only needed for P6 access
+    "CANDLE",     // Makes dark areas easier
+    "FIRE",       // Borderline useless
+    "SHIELD",     // Not critical for progression
+    "SPELL"       // Only opens one optional item location in New Kasuto
+];

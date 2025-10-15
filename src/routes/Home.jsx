@@ -25,6 +25,7 @@ const Home = () => {
   const [rooms, setRooms] = useState({});
   const [seed, setSeed] = useState(0);
   const [cleanRom, setCleanRom] = useState(null);
+  const [walkthrough, setWalkthrough] = useState("");
   const [options, setOptions] = useState({
     overworld: "VANILLA",
     overworldBiome: "cellular",
@@ -83,6 +84,12 @@ const Home = () => {
 
             // Shuffle items and locations
             let graph = randomizer.randomizeLocationsAndItems();
+
+            // Generate walkthrough story if in admin mode
+            if (mode === "ADMIN") {
+              let story = randomizer.generateWalkthroughStory(graph);
+              setWalkthrough(story);
+            }
 
             // Randomize enemies
             let levelData = z2VanillaLevels;
@@ -381,6 +388,23 @@ const Home = () => {
 
             <h3>Room Data</h3>
             <pre>{rooms}</pre>
+
+            {walkthrough && (
+              <>
+                <h3>Walkthrough Story</h3>
+                <div className="data-div" style={{ textAlign: "left" }}>
+                  <pre
+                    style={{
+                      whiteSpace: "pre-wrap",
+                      fontSize: "14px",
+                      textAlign: "left",
+                    }}
+                  >
+                    {walkthrough}
+                  </pre>
+                </div>
+              </>
+            )}
           </>
         ) : null}
       </div>

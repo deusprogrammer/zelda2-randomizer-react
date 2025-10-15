@@ -7368,7 +7368,7 @@ export default {
         ],
         "linkRequirements": {
             "LIFE_TOWN_S": [
-                "FAIRY | JUMP"
+                "FAIRY | JUMP | BAGU_SAUCE"
             ]
         },
         "romMetaData": {
