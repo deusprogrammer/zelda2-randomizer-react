@@ -22,8 +22,17 @@ Home.jsx:125 TypeError: Cannot read properties of undefined (reading 'filter')
 N/A
 ```
 
-- Notes: connectableAreas is empty. I assume this means that the generated map doesn't have anymore room to connect isolation zones?
-- Fix: If there is one disconnected area and one connected area, connect them (new if block condition)
+- Notes:
+
+```
+connectableAreas is empty. I assume this means that the generated map doesn't have anymore room to connect isolation zones?
+```
+
+- Fix:
+
+```
+If there is one disconnected area and one connected area, connect them (new if block condition)
+```
 
 ## 3353461179
 
@@ -193,4 +202,9 @@ Z2Randomizer.js:2124 		NODE69           REFLECT_TOWN_CLIFF_2                    
 ```
 
 - Notes:
+
+```
+Seems as if these nodes should be accessible.  Their calculated connections only show them as connected to each other.  Probably a template generation problem.
+```
+
 - Fix:

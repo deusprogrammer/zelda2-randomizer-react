@@ -2002,6 +2002,12 @@ export class Z2Randomizer {
 
             // Check if all nodes are accessible
             if (inaccessibleNodes.length > 0) {
+                // eslint-disable-next-line no-console
+                console.log("INACCESSIBLE NODE DATA:");
+                inaccessibleNodes.forEach(node => {
+                    // eslint-disable-next-line no-console
+                    console.log(`   ${node}:`, this.graphData[node]);
+                });
                 throw new Error("Unable to place all nodes");
             }
 
