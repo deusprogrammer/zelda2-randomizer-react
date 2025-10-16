@@ -34,7 +34,7 @@ connectableAreas is empty. I assume this means that the generated map doesn't ha
 If there is one disconnected area and one connected area, connect them (new if block condition)
 ```
 
-## 3353461179
+## ~~3353461179~~
 
 - Overworld: Randomized
 - Biome: Islands
@@ -205,6 +205,60 @@ Z2Randomizer.js:2124 		NODE69           REFLECT_TOWN_CLIFF_2                    
 
 ```
 Seems as if these nodes should be accessible.  Their calculated connections only show them as connected to each other.  Probably a template generation problem.
+
+There are only two isolation zones.
+
+The smaller zone has only two nodes.
+
+Claude added connections for the bridges, despite them not being necessary.
 ```
 
 - Fix:
+
+```
+Claude misunderstood what connections were so I had to properly implement it in the end.
+```
+
+## ~~188940664~~
+
+- Overworld: Randomized
+- Biome: Islands
+- Monsters: Randomized
+- Error:
+
+```
+Z2Randomizer.js:2027 Can't place anymore items:  TypeError: Cannot read properties of undefined (reading 'id')
+    at Z2Randomizer.js:1516:1
+    at Array.find (<anonymous>)
+    at Z2Randomizer.placeRemedies (Z2Randomizer.js:1516:1)
+    at Z2Randomizer.js:2025:1
+    at Array.forEach (<anonymous>)
+    at Z2Randomizer.placeItemsAndNodes (Z2Randomizer.js:2023:1)
+    at Z2Randomizer.randomizeLocationsAndItems (Z2Randomizer.js:2201:1)
+    at Home.jsx:90:1
+
+Home.jsx:125 Error: All palaces aren't completeable
+    at Z2Randomizer.placeItemsAndNodes (Z2Randomizer.js:2039:1)
+    at Z2Randomizer.randomizeLocationsAndItems (Z2Randomizer.js:2186:1)
+    at Home.jsx:90:1
+```
+
+- State:
+
+```
+
+```
+
+- Notes:
+
+```
+The randomizer stops attempting to place items because of the error happening at line 1516
+
+At line 1488 we should filter our choices further to find a continent with unused item bearing nodes.
+```
+
+- Fix:
+
+```
+Filtered possible placements further to check that the placement area is in a continent that still has item bearings in it.
+```

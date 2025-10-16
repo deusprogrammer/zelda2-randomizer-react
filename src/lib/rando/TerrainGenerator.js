@@ -1035,7 +1035,33 @@ export class TerrainGenerator {
         }));
 
         // For islands, we'll use Manhattan distance for bridge connections
-        let connections = this.generateManhattanBridgeConnections(isolationZones, terrain);
+        // let connections = this.generateManhattanBridgeConnections(isolationZones, terrain);
+
+        // Find connections
+        let connections = {};
+        isolationZones.forEach((isolationZone) => {
+            let { x, y, isolationZone: index } = isolationZone[0];
+            this.findSoftConnections(index, x, y - 30, terrain, [MOUNTAIN], [WATER], connections);
+        });
+    
+        // Clean up connections
+        let toDelete = [];
+        Object.keys(connections).forEach(key => {
+            let {to, from} = connections[key];
+    
+            // If to delete already contains this entry, don't delete it's counterpart
+            if (toDelete.includes(key)) {
+                return;
+            }
+    
+            toDelete.push(`${to}:${from}`);
+        });
+        toDelete.forEach((keyToDelete) => {
+            delete connections[keyToDelete];
+        })
+    
+        // Turn object into an array
+        connections = Object.values(connections);
 
         // Flatten the map
         let mapBlocks = terrain.flat().map(({ type }) => type);

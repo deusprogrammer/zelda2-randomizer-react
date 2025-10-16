@@ -74,6 +74,35 @@ export class Z2Randomizer {
     }
 
     /**
+     * Returns all worldNumbers (continents) that still have unplaced item bearing locations
+     * @returns {Array<number>} Array of worldNumbers with available item bearing locations
+     */
+    getContinentsWithUnplacedItemLocations = () => {
+        // Collect all locationMetadata keys that are item bearing
+        const locationNames = Object.keys(this.locationMetadata);
+        const continentsWithUnplaced = new Set();
+        locationNames.forEach(locationName => {
+            const location = this.locationMetadata[locationName];
+            // Must have items and be a valid item location
+            if (!location.items || location.items.length === 0) return;
+            // Get node mapped to this location
+            const mappedNodeName = this.getMappedLocationNodeName(locationName);
+            // If not mapped, it's unplaced
+            if (!mappedNodeName) {
+                continentsWithUnplaced.add(location.worldNumber);
+                return;
+            }
+            // If mapped, check if it still has room for more items
+            const mappedNode = this.graphData[mappedNodeName];
+            const itemCount = mappedNode.mappedItems ? mappedNode.mappedItems.length : 0;
+            if (itemCount < location.items.length) {
+                continentsWithUnplaced.add(location.worldNumber);
+            }
+        });
+        return Array.from(continentsWithUnplaced);
+    };
+
+    /**
      * Check node to see if it is either unmapped or still has room
      * @param {string} node
      * @returns
@@ -1500,7 +1529,17 @@ export class Z2Randomizer {
                 console.log(`   🔍 Sample: ${nodeName}: isCave=${node?.isCave}, continent=${node?.continent}, mapped=${!!node?.mappedLocation}`);
             });
 
-            let remedyNode = this.chooseRandomNode(allUnmappedNodes);
+            const validContinents = this.getContinentsWithUnplacedItemLocations();
+
+            // Expanded filter with logging
+            const filteredUnmappedNodes = allUnmappedNodes.filter((unMappedNode) => {
+                const nodeContinent = this.graphData[unMappedNode].continent;
+                const isValid = validContinents.includes(nodeContinent);
+                console.log(`   🧮 Node: ${unMappedNode}, worldNumber: ${nodeContinent}, valid: ${isValid}`);
+                return isValid;
+            });
+            console.log(`   🧮 validContinents: [${validContinents.join(', ')}]`);
+            let remedyNode = this.chooseRandomNode(filteredUnmappedNodes);
             console.log(`   🎲 Selected node: ${remedyNode}, isCave: ${this.graphData[remedyNode].isCave}, continent: ${this.graphData[remedyNode].continent}`);
             
             // Select appropriate location for this node
@@ -1511,6 +1550,10 @@ export class Z2Randomizer {
             );
             
             let randomItemBearingLocation = this.locationMetadata[randomItemBearingLocationName];
+            
+            if (!randomItemBearingLocation) {
+                throw new Error("No item bearing locations are available in this continent");
+            }
 
             // Check to see if location we picked is already mapped
             let existingNode = accessibleNodes.find(
@@ -2024,7 +2067,7 @@ export class Z2Randomizer {
                 try {
                     this.placeRemedies(optionalItem, accessibleNodes);
                 } catch (error) {
-                    console.trace("Can't place anymore items");
+                    console.error("Can't place anymore items: ", error);
                 }
             });
 
@@ -2036,6 +2079,21 @@ export class Z2Randomizer {
 
             // Check that all palaces are completeable
             if (this.getCompletablePalaces(accessibleNodes).length < 7) {
+                // eslint-disable-next-line no-console
+                console.log("INACCESSIBLE PALACES:");
+                let allPalaceNodes = Object.keys(this.graphData).filter(node => {
+                    let mappedLocation = this.getNodeMappedLocationName(node);
+                    return mappedLocation && this.locationMetadata[mappedLocation]?.type === "PALACE";
+                });
+                let completablePalaces = this.getCompletablePalaces(accessibleNodes);
+                allPalaceNodes.forEach(node => {
+                    let palaceName = this.getNodeMappedLocationName(node);
+                    if (!completablePalaces.includes(palaceName)) {
+                        let palaceMeta = this.locationMetadata[palaceName];
+                        let reqs = palaceMeta?.completionRequirements || [];
+                        console.log(`   ${palaceName} not accessible. Requirements: ${JSON.stringify(reqs)}`);
+                    }
+                });
                 throw new Error("All palaces aren't completeable");
             }
 
