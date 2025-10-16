@@ -1,6 +1,6 @@
 {
   "name": "zelda2-randomizer-react",
-  "version": "0.1.0",
+  "version": "1.0.0-beta",
   "private": true,
   "dependencies": {
     "@react-sigma/core": "^3.1.0",
