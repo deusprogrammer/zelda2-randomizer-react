@@ -3092,13 +3092,6 @@ export class Z2Randomizer {
         let nowCompletable = [];
         
         failedPalaces.forEach((palaceInfo, nodeId) => {
-            // Add detailed logging before testing requirements
-            console.log("TESTING PREVIOUSLY FAILED PALACE: " + palaceInfo.name);
-            console.log("   Requirements to test: ", palaceInfo.requirements);
-            console.log("   Current items: ", items);
-            console.log("   Current spells: ", spells);
-            console.log("   Current abilities: ", abilities);
-            
             let canComplete = this.checkRequirements(palaceInfo.requirements, items, spells, abilities);
             if (canComplete) {
                 console.log(`   🏰 Palace ${palaceInfo.name} can now be completed! (have: ${palaceInfo.requirements.join(", ")})`);
