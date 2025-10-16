@@ -2,6 +2,7 @@ import vanillaTemplate from '../zelda2/templates/z2-vanilla.template';
 import vanillaMap from '../zelda2/templates/z2-vanilla.map';
 import { randomSeed } from './util';
 
+const BRIDGE = 0x3;
 const DESERT = 0x4;
 const GRASS = 0x5;
 const FOREST = 0x6;
@@ -10,7 +11,6 @@ const CEMETARY = 0x8;
 const MOUNTAIN = 0xb;
 const DEEP_WATER = 0xc;
 const WATER = 0xd;
-const BRIDGE = 0xe; // Bridge terrain type for connecting islands
 
 const DESERT_RATE = 0.20;
 const GRASS_RATE = 0.45;
