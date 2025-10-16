@@ -395,6 +395,7 @@ export class TerrainGenerator {
         // Flatten the map
         let mapBlocks = terrain.flat().map(({ type }) => type);        return {mapBlocks, terrain, isolationZones, mountainBorders, mountainRanges: this.groupMountainRanges(mountainBorders, terrain), connections};
     };    // Generate a text representation of the terrain for debugging
+    
     generateTerrainTextDump = (terrain, template = null, continent = 0) => {
         // Terrain type to character mapping (lowercase = no node, uppercase = has node)
         const terrainMap = {
@@ -640,7 +641,7 @@ export class TerrainGenerator {
                     let nodeData = {
                         ...template[randomContinentNode],
                         softIsolationZone,
-                        isolationGroup: hardIsolationZone || softIsolationZone,
+                        isolationGroup: hardIsolationZone != null ? hardIsolationZone : softIsolationZone,  // TODO Investigate this
                         x,
                         y,
                         isCave,  // Preserve the isCave flag for randomizer prioritization

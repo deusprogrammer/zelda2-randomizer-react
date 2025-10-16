@@ -262,3 +262,53 @@ At line 1488 we should filter our choices further to find a continent with unuse
 ```
 Filtered possible placements further to check that the placement area is in a continent that still has item bearings in it.
 ```
+
+## 3703176165
+
+- Overworld: Randomized
+- Biome: Islands
+- Monsters: Randomized
+- Error:
+
+```
+Home.jsx:125 Error: No more connectable zones exist, impossible terrain
+    at Z2Randomizer.js:1213:31
+    at Array.forEach (<anonymous>)
+    at d (Z2Randomizer.js:1176:32)
+    at t (Z2Randomizer.js:1112:55)
+    at u.placeConnectionsPalacesAndExits (Z2Randomizer.js:1030:62)
+    at u.randomizeLocationsAndItems (Z2Randomizer.js:2230:14)
+    at Home.jsx:90:36
+```
+
+- State:
+
+```
+ISOLATION ZONES:
+    ISOLATION 0:
+        ["NODE0","NODE1","NODE2","NODE3","NODE4","NODE5","NODE6","NODE7","NODE8","NODE9","NODE10","NODE11","NODE12","NODE13","NODE14","NODE15", "NODE16","NODE17","NODE18","NODE19","NODE20","NODE21","NODE22","NODE23","NODE24","NODE25","NODE26","NODE27","NODE28","NODE30","NODE31","NODE33","NODE34","NODE35","NODE36","NODE37","NODE38","NODE39","NODE40","NODE41","NODE43","NODE44"]
+    ISOLATION 1:
+        ["NODE29"]
+    ISOLATION 2:
+        ["NODE42"]
+    ISOLATION 3:
+        ["NODE32"]
+```
+
+- Notes:
+
+```
+It speaks the truth.  There are in fact 4 isolation zones, and 3 of them only have one node.
+
+Despite the isolation groups appearing correctly on the map in the terrain editor, those three nodes have different isolation groups (and I have no idea why).
+
+L116-121: floodFill has side effects
+
+Check generateTemplate to see how it decides whether to use hard or soft isolation zones
+```
+
+- Fix:
+
+```
+
+```
