@@ -613,9 +613,6 @@ export class Z2Randomizer {
             const inItems = items.includes(trimmedReq);
             const inSpells = spells.includes(trimmedReq);
             const inAbilities = abilities.includes(trimmedReq);
-            console.log(
-                `CHECKING: ${trimmedReq} | items: ${inItems} | spells: ${inSpells} | abilities: ${inAbilities}`
-            );
             return inItems || inSpells || inAbilities;
         }
     };
