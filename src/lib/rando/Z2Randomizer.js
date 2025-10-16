@@ -505,39 +505,51 @@ export class Z2Randomizer {
      * @returns {boolean}
      */
     evaluateRequirement = (requirement, items, spells, abilities) => {
-        // Handle OR operations (|)
+        // Handle OR operations first (lowest precedence)
         if (requirement.includes("|")) {
-            let orParts = requirement.split("|").map(part => part.trim());
-            return orParts.some(part => {
-                // Each OR part might have AND operations
-                return this.evaluateAndRequirement(part, items, spells, abilities);
-            });
-        } else {
-            // No OR, just check for AND operations
+            return this.evaluateOrRequirement(requirement, items, spells, abilities);
+        } 
+        // Handle AND operations (higher precedence)
+        else if (requirement.includes("&")) {
             return this.evaluateAndRequirement(requirement, items, spells, abilities);
+        } 
+        // Single requirement
+        else {
+            let trimmedReq = requirement.trim();
+            return items.includes(trimmedReq) || spells.includes(trimmedReq) || abilities.includes(trimmedReq);
         }
     };
 
     /**
-     * Evaluate an AND requirement (no OR operations)
-     * @param {string} requirement - A requirement string like "FAIRY & JUMP" or just "FAIRY"
+     * Evaluate an OR requirement (contains | operator) - recursively handles nested operations
+     * @param {string} requirement - A requirement string like "FAIRY | JUMP" or "FAIRY | (JUMP & FIRE)"
+     * @param {Array} items
+     * @param {Array} spells
+     * @param {Array} abilities  
+     * @returns {boolean}
+     */
+    evaluateOrRequirement = (requirement, items, spells, abilities) => {
+        let orParts = requirement.split("|").map(part => part.trim());
+        return orParts.some(part => {
+            // Recursively evaluate each OR part (might contain AND operations or be single requirements)
+            return this.evaluateRequirement(part, items, spells, abilities);
+        });
+    };
+
+    /**
+     * Evaluate an AND requirement (contains & operator) - recursively handles nested operations
+     * @param {string} requirement - A requirement string like "FAIRY & JUMP" or "(FAIRY | LIFE) & JUMP"
      * @param {Array} items
      * @param {Array} spells
      * @param {Array} abilities  
      * @returns {boolean}
      */
     evaluateAndRequirement = (requirement, items, spells, abilities) => {
-        // Handle AND operations (&)
-        if (requirement.includes("&")) {
-            let andParts = requirement.split("&").map(part => part.trim());
-            return andParts.every(part => {
-                return items.includes(part) || spells.includes(part) || abilities.includes(part);
-            });
-        } else {
-            // Single requirement
-            let trimmedReq = requirement.trim();
-            return items.includes(trimmedReq) || spells.includes(trimmedReq) || abilities.includes(trimmedReq);
-        }
+        let andParts = requirement.split("&").map(part => part.trim());
+        return andParts.every(part => {
+            // Recursively evaluate each AND part (might contain OR operations or be single requirements)
+            return this.evaluateRequirement(part, items, spells, abilities);
+        });
     };
 
     /**
@@ -575,22 +587,10 @@ export class Z2Randomizer {
 
         // Handle each requirement (AND between array elements)
         let formattedRequirements = requirements.map(requirement => {
-            // Handle OR within each requirement
-            if (requirement.includes(" | ")) {
-                let orParts = requirement.split(" | ").map(part => part.trim());
-                return `(${orParts.join(" OR ")})`;
-            } else if (requirement.includes("|")) {
-                let orParts = requirement.split("|").map(part => part.trim());
-                return `(${orParts.join(" OR ")})`;
-            } else if (requirement.includes(" & ")) {
-                let andParts = requirement.split(" & ").map(part => part.trim());
-                return andParts.join(" AND ");
-            } else if (requirement.includes("&")) {
-                let andParts = requirement.split("&").map(part => part.trim());
-                return andParts.join(" AND ");
-            } else {
-                return requirement;
-            }
+            // Simply replace operators and remove whitespace - all items use underscores
+            return requirement
+                .replace(/\s*\|\s*/g, ' OR ')  // Replace | with OR
+                .replace(/\s*&\s*/g, ' AND '); // Replace & with AND
         });
 
         // Join multiple requirements with AND
