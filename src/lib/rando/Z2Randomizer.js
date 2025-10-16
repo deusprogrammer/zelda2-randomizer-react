@@ -610,7 +610,13 @@ export class Z2Randomizer {
         // Single requirement
         else {
             let trimmedReq = requirement.trim();
-            return items.includes(trimmedReq) || spells.includes(trimmedReq) || abilities.includes(trimmedReq);
+            const inItems = items.includes(trimmedReq);
+            const inSpells = spells.includes(trimmedReq);
+            const inAbilities = abilities.includes(trimmedReq);
+            console.log(
+                `CHECKING: ${trimmedReq} | items: ${inItems} | spells: ${inSpells} | abilities: ${inAbilities}`
+            );
+            return inItems || inSpells || inAbilities;
         }
     };
 
@@ -1139,9 +1145,17 @@ export class Z2Randomizer {
 
                 // For each exit, select a random isolation zone to connect it to
                 let availableExits = this.locationMetadata[entrance].links;
+
+                // eslint-disable-next-line
                 availableExits.forEach((exit) => {
                     let exitIndex;
-                    if (
+                    if (connectedIsolationAreas.length === 1 &&
+                        disconnectedIsolationAreas.length === 1) {
+                        console.log(`There is one connected zone and one disconnected zone`);
+                        console.log(`   disconnectedIsolationAreas: ${JSON.stringify(disconnectedIsolationAreas)}`);
+                        console.log(`   connectedIsolationAreas: ${JSON.stringify(connectedIsolationAreas)}`);
+                        exitIndex = this.chooseRandomNode(disconnectedIsolationAreas);
+                    } else if (
                         connectedIsolationAreas.length === 1 &&
                         disconnectedIsolationAreas.length > 0
                     ) {
@@ -1149,14 +1163,28 @@ export class Z2Randomizer {
                             disconnectedIsolationAreas,
                             isolationAreas
                         );
+                        console.log(`There is one connected zone and one or more disconnected zones`);
+                        console.log(`   disconnectedIsolationAreas: ${JSON.stringify(disconnectedIsolationAreas)}`);
+                        console.log(`   connectedIsolationAreas: ${JSON.stringify(connectedIsolationAreas)}`);
+                        console.log(`   connectableZones: ${JSON.stringify(connectableZones)}`);
                         exitIndex = this.chooseRandomNode(connectableZones);
                     } else if (
                         disconnectedIsolationAreas.length > 0 &&
                         connectedIsolationAreas.length > 0
                     ) {
+                        console.log(`There is one or more connected zones and one or more disconnected zones`);
+                        console.log(`   disconnectedIsolationAreas: ${JSON.stringify(disconnectedIsolationAreas)}`);
+                        console.log(`   connectedIsolationAreas: ${JSON.stringify(connectedIsolationAreas)}`);
                         exitIndex = this.chooseRandomNode(disconnectedIsolationAreas);
                     } else {
+                        console.log(`There are no disconnected isolation zones`);
+                        console.log(`   disconnectedIsolationAreas: ${JSON.stringify(disconnectedIsolationAreas)}`);
+                        console.log(`   connectedIsolationAreas: ${JSON.stringify(connectedIsolationAreas)}`);
                         exitIndex = this.chooseRandomNode(connectedIsolationAreas);
+                    }
+
+                    if (exitIndex == null) {
+                        throw new Error("No more connectable zones exist, impossible terrain");
                     }
 
                     // Choose a random node from this exit's isolation area
@@ -2496,29 +2524,57 @@ export class Z2Randomizer {
             let priorityLocations = nowAccessibleLocations.filter(nodeId => visitedNodes.has(nodeId));
             
             if (priorityPalaces.length > 0) {
-                console.log(`🏰 Prioritizing previously failed palace: ${this.getLocationDisplayName(priorityPalaces[0])}`);
-                let nextNode = priorityPalaces[0];
-                let nodeData = this.graphData[nextNode];
-                
-                // Handle palace completion for revisited palaces
-                let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
-                if (locationMeta && locationMeta.type === "PALACE") {
-                    let palaceRequirements = locationMeta.completionRequirements || [];
-                    this.processPalaceCompletion(nextNode, nodeData, palaceRequirements, currentItems, currentSpells, currentAbilities, updateContainerCount, addAcquisitionStep, addStoryStep, updateCrystalCount, containerCounts, true);
-                }
-                continue; // Skip the normal node selection process
+                // Loop through all newly completable palaces and process each one
+                priorityPalaces.forEach(nextNode => {
+                    console.log(`🏰 Prioritizing previously failed palace: ${this.getLocationDisplayName(nextNode)}`);
+                    let nodeData = this.graphData[nextNode];
+
+                    // Handle palace completion for revisited palaces
+                    let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
+                    if (locationMeta && locationMeta.type === "PALACE") {
+                        let palaceRequirements = locationMeta.completionRequirements || [];
+                        this.processPalaceCompletion(
+                            nextNode,
+                            nodeData,
+                            palaceRequirements,
+                            currentItems,
+                            currentSpells,
+                            currentAbilities,
+                            updateContainerCount,
+                            addAcquisitionStep,
+                            addStoryStep,
+                            updateCrystalCount,
+                            containerCounts,
+                            true
+                        );
+                    }
+                });
+                continue; // Skip the normal node selection process after handling all
             }
             
             // Handle locations with newly accessible content (spells, abilities)
             if (priorityLocations.length > 0) {
-                console.log(`🏫 Prioritizing location with newly accessible content: ${this.getLocationDisplayName(priorityLocations[0])}`);
-                let nextNode = priorityLocations[0];
-                let nodeData = this.graphData[nextNode];
-                let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
-                
-                // Process this location for spells and abilities
-                this.processLocationForContent(nextNode, locationMeta, currentItems, currentSpells, currentAbilities, addStoryStep, updateContainerCount, failedLocations, containerCounts, addAcquisitionStep);
-                continue; // Skip the normal node selection process
+                // Loop through all locations with newly accessible content and process each one
+                priorityLocations.forEach(nextNode => {
+                    console.log(`🏫 Prioritizing location with newly accessible content: ${this.getLocationDisplayName(nextNode)}`);
+                    let nodeData = this.graphData[nextNode];
+                    let locationMeta = nodeData.mappedLocation ? this.locationMetadata[nodeData.mappedLocation] : null;
+
+                    // Process this location for spells and abilities
+                    this.processLocationForContent(
+                        nextNode,
+                        locationMeta,
+                        currentItems,
+                        currentSpells,
+                        currentAbilities,
+                        addStoryStep,
+                        updateContainerCount,
+                        failedLocations,
+                        containerCounts,
+                        addAcquisitionStep
+                    );
+                });
+                continue; // Skip the normal node selection process after handling all
             }
             
             if (newAccessibleNodes.length === 0) {
@@ -3039,6 +3095,13 @@ export class Z2Randomizer {
         let nowCompletable = [];
         
         failedPalaces.forEach((palaceInfo, nodeId) => {
+            // Add detailed logging before testing requirements
+            console.log("TESTING PREVIOUSLY FAILED PALACE: " + palaceInfo.name);
+            console.log("   Requirements to test: ", palaceInfo.requirements);
+            console.log("   Current items: ", items);
+            console.log("   Current spells: ", spells);
+            console.log("   Current abilities: ", abilities);
+            
             let canComplete = this.checkRequirements(palaceInfo.requirements, items, spells, abilities);
             if (canComplete) {
                 console.log(`   🏰 Palace ${palaceInfo.name} can now be completed! (have: ${palaceInfo.requirements.join(", ")})`);
