@@ -1532,12 +1532,7 @@ export class Z2Randomizer {
             const validContinents = this.getContinentsWithUnplacedItemLocations();
 
             // Expanded filter with logging
-            const filteredUnmappedNodes = allUnmappedNodes.filter((unMappedNode) => {
-                const nodeContinent = this.graphData[unMappedNode].continent;
-                const isValid = validContinents.includes(nodeContinent);
-                console.log(`   🧮 Node: ${unMappedNode}, worldNumber: ${nodeContinent}, valid: ${isValid}`);
-                return isValid;
-            });
+            const filteredUnmappedNodes = allUnmappedNodes.filter((unMappedNode) => validContinents.includes(this.graphData[unMappedNode].continent));
             console.log(`   🧮 validContinents: [${validContinents.join(', ')}]`);
             let remedyNode = this.chooseRandomNode(filteredUnmappedNodes);
             console.log(`   🎲 Selected node: ${remedyNode}, isCave: ${this.graphData[remedyNode].isCave}, continent: ${this.graphData[remedyNode].continent}`);
