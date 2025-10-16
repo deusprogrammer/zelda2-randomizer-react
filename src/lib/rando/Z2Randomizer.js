@@ -61,6 +61,16 @@ export class Z2Randomizer {
         this.levels = deepCopy(levels);
         this.randomNumberGenerator = randomSeed(seed);
         this.options = options;
+
+        // Debug: Check if isCave properties survived the deep copy
+        const caveNodesInGraphData = Object.keys(this.graphData).filter(key => this.graphData[key].isCave);
+        console.log(`🔍 INITIALIZATION: ${caveNodesInGraphData.length} nodes with isCave=true in graphData: [${caveNodesInGraphData.join(', ')}]`);
+        
+        // Sample a few to show their properties
+        caveNodesInGraphData.slice(0, 3).forEach(nodeName => {
+            const node = this.graphData[nodeName];
+            console.log(`   ${nodeName}: isCave=${node.isCave}, continent=${node.continent}, type=${node.type}`);
+        });
     }
 
     /**
@@ -119,6 +129,90 @@ export class Z2Randomizer {
         return this.graphData[node].mappedItems
             ? this.graphData[node].mappedItems.length
             : 0;
+    };
+
+    /**
+     * Select appropriate node for a connection location based on cave preference
+     * @param {Array} availableNodes - Nodes available for connection placement
+     * @param {string} connectionLocation - The connection location to place
+     * @returns {string} Selected node name
+     */
+    selectNodeForConnection = (availableNodes, connectionLocation) => {
+        if (this.locationMetadata[connectionLocation].type === "CAVE") {
+            const caveNodes = availableNodes.filter(node => this.graphData[node].isCave);
+            if (caveNodes.length > 0) {
+                const selectedNode = this.chooseRandomNode(caveNodes);
+                console.log(`\t\t\t🏔️ Connection: Placing cave connection ${connectionLocation} in cave node ${selectedNode} (${caveNodes.length} cave nodes available)`);
+                return selectedNode;
+            } else {
+                const selectedNode = this.chooseRandomNode(availableNodes);
+                console.log(`\t\t\t📍 Connection: No cave nodes available for ${connectionLocation}, using regular node ${selectedNode}`);
+                return selectedNode;
+            }
+        } else {
+            const selectedNode = this.chooseRandomNode(availableNodes);
+            console.log(`\t\t\t🏛️ Connection: Placing non-cave connection ${connectionLocation} in node ${selectedNode}`);
+            return selectedNode;
+        }
+    };
+
+    /**
+     * Get available cave locations for a specific continent
+     * @param {Array} itemBearingLocations - All available item-bearing locations
+     * @param {number} continent - Continent number to filter by
+     * @param {Array} accessibleNodes - Currently accessible nodes
+     * @returns {Array} Available cave locations on the specified continent
+     */
+    getAvailableCaveLocations = (itemBearingLocations, continent, accessibleNodes) => {
+        return itemBearingLocations.filter(locationName => {
+            const location = this.locationMetadata[locationName];
+            return location.type === "CAVE" &&
+                   location.worldNumber === continent &&
+                   !accessibleNodes.some(node => this.graphData[node].mappedLocation === location.id);
+        });
+    };
+
+    /**
+     * Select appropriate location for a node based on its cave status
+     * @param {string} nodeName - The node to select a location for
+     * @param {Array} itemBearingLocations - All available item-bearing locations
+     * @param {Array} accessibleNodes - Currently accessible nodes
+     * @returns {string} Selected location name
+     */
+    selectLocationForNode = (nodeName, itemBearingLocations, accessibleNodes) => {
+        const node = this.graphData[nodeName];
+        const nodeContinent = node.continent;
+        
+        // Filter locations by node's continent
+        const continentLocations = itemBearingLocations.filter(locationName =>
+            this.locationMetadata[locationName].worldNumber === nodeContinent
+        );
+        
+        if (node.isCave) {
+            console.log(`   🏔️ Cave node detected! Looking for cave locations on continent ${nodeContinent}...`);
+            
+            const availableCaveLocations = this.getAvailableCaveLocations(
+                continentLocations, 
+                nodeContinent, 
+                accessibleNodes
+            );
+            
+            console.log(`   🏔️ Found ${availableCaveLocations.length} available cave locations: ${availableCaveLocations.join(', ')}`);
+            
+            if (availableCaveLocations.length > 0) {
+                const selectedLocation = this.chooseRandomNode(availableCaveLocations);
+                console.log(`   🏔️ Selected cave location ${selectedLocation} for cave node`);
+                return selectedLocation;
+            } else {
+                const fallbackLocation = this.chooseRandomNode(continentLocations);
+                console.log(`   📍 No cave locations available, using regular location ${fallbackLocation}`);
+                return fallbackLocation;
+            }
+        } else {
+            const selectedLocation = this.chooseRandomNode(continentLocations);
+            console.log(`   🏛️ Regular node, selected location ${selectedLocation}`);
+            return selectedLocation;
+        }
     };
 
     /**
@@ -908,6 +1002,26 @@ export class Z2Randomizer {
             let continentNodes = Object.keys(this.graphData).filter(
                 (key) => this.graphData[key].continent === continent
             );
+
+            // 🏔️ LOG CAVE NODES IN THIS CONTINENT BY ISOLATION ZONE
+            let isolationAreasForLogging = this.getIsolationZones(continent);
+            console.log(`\t🏔️ CONTINENT ${continent} CAVE NODE ANALYSIS:`);
+            let totalCaveNodes = 0;
+            isolationAreasForLogging.forEach((zone, zoneIndex) => {
+                let caveNodes = zone.filter(nodeName => this.graphData[nodeName] && this.graphData[nodeName].isCave);
+                totalCaveNodes += caveNodes.length;
+                console.log(`\t\tZone ${zoneIndex}: ${caveNodes.length} cave nodes out of ${zone.length} total nodes`);
+                if (caveNodes.length > 0) {
+                    caveNodes.forEach(nodeName => {
+                        let node = this.graphData[nodeName];
+                        console.log(`\t\t\t🏔️ ${nodeName} at (${node.x}, ${node.y}) - mountainRange: ${node.mountainRange}`);
+                    });
+                } else {
+                    console.log(`\t\t\t❌ No cave nodes in this zone`);
+                }
+            });
+            console.log(`\t🏔️ CONTINENT ${continent} TOTAL: ${totalCaveNodes} cave nodes across ${isolationAreasForLogging.length} isolation zones`);
+            console.log(``);
             let localPassThroughAreas = passThroughAreas.filter(
                 (key) =>
                     this.locationMetadata[key].worldNumber === continent &&
@@ -930,6 +1044,22 @@ export class Z2Randomizer {
 
             // Separate all nodes into their isolation groups
             let isolationAreas = this.getIsolationZones(continent);
+
+            // Debug: Check isCave status in isolation zones for continent 1
+            if (continent === 1) {
+                console.log(`\t🔍 CONTINENT 1 ISOLATION ZONE CAVE DEBUG:`);
+                isolationAreas.forEach((zone, zoneIndex) => {
+                    let caveNodes = zone.filter(nodeName => this.graphData[nodeName] && this.graphData[nodeName].isCave);
+                    console.log(`\t\tZone ${zoneIndex}: ${zone.length} nodes, ${caveNodes.length} cave nodes: [${caveNodes.join(', ')}]`);
+                    
+                    // Sample a few nodes to show their isCave status
+                    let sampleNodes = zone.slice(0, 3);
+                    sampleNodes.forEach(nodeName => {
+                        let node = this.graphData[nodeName];
+                        console.log(`\t\t\t${nodeName}: isCave=${node?.isCave}, type=${node?.type}, continent=${node?.continent}`);
+                    });
+                });
+            }
 
             // Create a list of what isolation groups have been connected.
             let disconnectedIsolationAreas = [...Array(isolationAreas.length).keys()];
@@ -971,12 +1101,17 @@ export class Z2Randomizer {
                 // Choose a random isolation zone for the entrance
                 let entranceIndex = this.chooseRandomNode(connectedIsolationAreas);
 
-                // Choose a random entrance node for the entrance
-                let entranceNodes = isolationAreas[entranceIndex];
-                let entranceNode = this.chooseRandomNode(entranceNodes);
-
                 // Choose a random connecting location and collect it's exits
                 let entrance = this.chooseRandomNode(localPassThroughAreas);
+                
+                // Choose entrance node, preferring cave nodes for cave locations
+                let entranceNodes = isolationAreas[entranceIndex];
+                
+                // Debug: Check if any nodes have isCave property
+                let caveNodeCount = entranceNodes.filter(node => this.graphData[node].isCave).length;
+                console.log(`\t\t\t🔍 Connection Debug: ${entranceNodes.length} entrance nodes, ${caveNodeCount} have isCave=true`);
+                
+                let entranceNode = this.selectNodeForConnection(entranceNodes, entrance);
 
                 // Set entrance
                 this.graphData[entranceNode].mappedLocation = entrance;
@@ -1026,7 +1161,16 @@ export class Z2Randomizer {
 
                     // Choose a random node from this exit's isolation area
                     let exitNodes = isolationAreas[exitIndex];
-                    let exitNode = this.chooseRandomNode(exitNodes);
+                    
+                    // 🏔️ LOG: Show available nodes and cave status for this exit
+                    let caveNodesInZone = exitNodes.filter(node => this.graphData[node].isCave);
+                    console.log(`\t\t🚪 Exit ${exit} - Zone ${exitIndex}: ${exitNodes.length} nodes available, ${caveNodesInZone.length} cave nodes`);
+                    if (caveNodesInZone.length > 0) {
+                        console.log(`\t\t\t🏔️ Cave nodes available: [${caveNodesInZone.join(', ')}]`);
+                    }
+                    
+                    // Use the helper function to select node based on connection type
+                    let exitNode = this.selectNodeForConnection(exitNodes, exit);
 
                     // Set exit
                     this.graphData[exitNode].mappedLocation = exit;
@@ -1314,29 +1458,46 @@ export class Z2Randomizer {
                 completablePalaces,
                 accessibleNodes
             );
-            let randomItemBearingLocationName =
-                this.chooseRandomNode(itemBearingLocations);
-            let randomItemBearingLocation =
-                this.locationMetadata[randomItemBearingLocationName];
-            let randomItemBearingLocationContinent =
-                randomItemBearingLocation.worldNumber;
+
+            // First get all unmapped nodes across all continents
+            let allUnmappedNodes = accessibleNodes.filter(
+                (node) => !this.graphData[node].mappedLocation
+            );
+            
+            // Debug: Check if any nodes have isCave property
+            let caveNodeCount = allUnmappedNodes.filter(node => this.graphData[node].isCave).length;
+            console.log(`   🔍 Debug: ${allUnmappedNodes.length} unmapped nodes, ${caveNodeCount} have isCave=true`);
+            
+            // Extra debugging: Show some sample nodes with their isCave status
+            let sampleNodes = allUnmappedNodes.slice(0, 5);
+            sampleNodes.forEach(nodeName => {
+                let node = this.graphData[nodeName];
+                console.log(`   🔍 Sample: ${nodeName}: isCave=${node?.isCave}, continent=${node?.continent}, mapped=${!!node?.mappedLocation}`);
+            });
+
+            let remedyNode = this.chooseRandomNode(allUnmappedNodes);
+            console.log(`   🎲 Selected node: ${remedyNode}, isCave: ${this.graphData[remedyNode].isCave}, continent: ${this.graphData[remedyNode].continent}`);
+            
+            // Select appropriate location for this node
+            let randomItemBearingLocationName = this.selectLocationForNode(
+                remedyNode, 
+                itemBearingLocations, 
+                accessibleNodes
+            );
+            
+            let randomItemBearingLocation = this.locationMetadata[randomItemBearingLocationName];
 
             // Check to see if location we picked is already mapped
-            let remedyNode = accessibleNodes.find(
+            let existingNode = accessibleNodes.find(
                 (node) =>
                     this.graphData[node].mappedLocation === randomItemBearingLocation.id
             );
 
-            // If it's not already mapped, then find an accessible node and place it there
-            if (!remedyNode) {
-                let unmappedNodes = this.getAvailableNodes(
-                    accessibleNodes,
-                    randomItemBearingLocationContinent
-                );
-
-                remedyNode = this.chooseRandomNode(unmappedNodes);
-                this.graphData[remedyNode].mappedLocation =
-                    randomItemBearingLocationName;
+            // If it's already mapped somewhere else, use that node instead
+            if (existingNode) {
+                remedyNode = existingNode;
+            } else {
+                this.graphData[remedyNode].mappedLocation = randomItemBearingLocationName;
             }
 
             // If mapped items isn't initialized for this area, initialize it

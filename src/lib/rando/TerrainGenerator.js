@@ -391,11 +391,9 @@ export class TerrainGenerator {
     
         // Turn object into an array
         connections = Object.values(connections);
-    
-        // Flatten the map
-        let mapBlocks = terrain.flat().map(({ type }) => type);
 
-        return {mapBlocks, terrain, isolationZones, mountainBorders, mountainRanges: this.groupMountainRanges(mountainBorders, terrain), connections};
+        // Flatten the map
+        let mapBlocks = terrain.flat().map(({ type }) => type);        return {mapBlocks, terrain, isolationZones, mountainBorders, mountainRanges: this.groupMountainRanges(mountainBorders, terrain), connections};
     };    // Generate a text representation of the terrain for debugging
     generateTerrainTextDump = (terrain, template = null, continent = 0) => {
         // Terrain type to character mapping (lowercase = no node, uppercase = has node)
@@ -550,15 +548,12 @@ export class TerrainGenerator {
             console.log(`Total nodes to distribute: ${continentNodes.length}, Total zones: ${isolationZones.length}`);
 
             // Use mountain ranges from continent data (calculated during terrain generation)
-            let maxCaveRanges = Math.min(6, mountainRanges?.length || 0); // Up to 6 mountain ranges get caves
-            let selectedRanges = mountainRanges?.slice(0, maxCaveRanges) || [];
+            console.log(`CAVE PLACEMENT: Processing ${mountainRanges?.length || 0} mountain ranges for cave placement`);
             
-            console.log(`CAVE PLACEMENT: Selected ${selectedRanges.length} mountain ranges for cave placement`);
-            
-            // Simple approach: Pick one random border from each of the first 6 mountain ranges
-            // and add them as potential node locations (they'll be marked as caves later)
+            // Simple approach: Place one cave node in every mountain range
             let mountainRangeNodes = [];
-            selectedRanges.forEach((range, index) => {
+            
+            mountainRanges?.forEach((range, index) => {
                 if (range.length > 0) {
                     // Filter to only substantial mountain walls (3+ consecutive borders)
                     let substantialWalls = this.filterSubstantialMountainWalls(range);
@@ -572,7 +567,7 @@ export class TerrainGenerator {
                             isCave: true,
                             mountainRange: index
                         });
-                        console.log(`  Range ${index}: Selected substantial wall border at (${randomBorder.x}, ${randomBorder.y}) from ${substantialWalls.length}/${range.length} candidates`);
+                        console.log(`  Range ${index}: 🏔️ Cave node selected at (${randomBorder.x}, ${randomBorder.y}) from ${substantialWalls.length}/${range.length} candidates`);
                     } else {
                         // Fallback to any border if no substantial walls found
                         let randomBorder = this.chooseRandomNode(range);
@@ -583,10 +578,12 @@ export class TerrainGenerator {
                             isCave: true,
                             mountainRange: index
                         });
-                        console.log(`  Range ${index}: No substantial walls found, using fallback border at (${randomBorder.x}, ${randomBorder.y})`);
+                        console.log(`  Range ${index}: 🏔️ Cave node fallback at (${randomBorder.x}, ${randomBorder.y}) - no substantial walls`);
                     }
                 }
             });
+            
+            console.log(`🏔️ CAVE DISTRIBUTION SUMMARY: ${mountainRangeNodes.length} cave nodes placed in ${mountainRanges?.length || 0} mountain ranges (100% coverage)`);
 
             // Randomly place nodes among the isolation zones based on their size, connecting nodes within each zone.
             let firstLocations = {};
@@ -646,11 +643,17 @@ export class TerrainGenerator {
                         isolationGroup: hardIsolationZone || softIsolationZone,
                         x,
                         y,
+                        isCave,  // Preserve the isCave flag for randomizer prioritization
                         renderData: {
                             area: continentIndex === 0 ? 0 : 1,
                             subArea: 0
                         }
                     };
+                    
+                    // Debug: Log when we set isCave=true
+                    if (isCave) {
+                        console.log(`🏔️ Template Generation: Setting ${randomContinentNode} isCave=true at (${x}, ${y})`);
+                    }
                     
                     // Mark as cave if placed on mountain border
                     if (isCave && template[randomContinentNode].type !== "CAVE") {
@@ -658,7 +661,7 @@ export class TerrainGenerator {
                         nodeData.type = "CAVE";
                     }
                     
-                    template[randomContinentNode] = this.reorderMapKeys(nodeData, ["locationKey", "type", "x", "y", "isolationGroup", "softIsolationZone", "continent", "continentName", "connections", "connectionRequirements", "renderData"]);
+                    template[randomContinentNode] = this.reorderMapKeys(nodeData, ["locationKey", "type", "x", "y", "isolationGroup", "softIsolationZone", "continent", "continentName", "connections", "connectionRequirements", "renderData", "isCave"]);
                 }
             });
             
@@ -700,6 +703,19 @@ export class TerrainGenerator {
                 template[fromLocation].connectionRequirements[toLocation] = [requirements];
             });
         });
+    
+        // Debug: Dump template with isCave information
+        console.log("🏗️ TEMPLATE DUMP - Cave Node Analysis:");
+        Object.keys(template).forEach(nodeKey => {
+            const node = template[nodeKey];
+            if (node.isCave) {
+                console.log(`  ✅ ${nodeKey}: isCave=true, type=${node.type}, location=(${node.x}, ${node.y})`);
+            }
+        });
+        
+        const totalNodes = Object.keys(template).length;
+        const caveNodes = Object.keys(template).filter(key => template[key].isCave).length;
+        console.log(`📊 Template Summary: ${totalNodes} total nodes, ${caveNodes} marked as isCave=true`);
     
         return template;
     }
